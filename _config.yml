@@ -1,0 +1,28 @@
+title: "Roy's Notes"
+description: "关于 AI、产品、具身智能与创业的长期思考"
+url: "https://roy-tong.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+
+author:
+  name: Roy
+  github: roy-tong
+
+permalink: /notes/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - LICENSE
+
