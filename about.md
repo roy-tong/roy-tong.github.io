@@ -48,6 +48,6 @@ description: 关于 Roy：连续创业者、产品经理，长期关注 AI、具
 
     <h2>联系我</h2>
 
-    <p>如果你也在研究 AI、具身智能、AI 硬件或新产品，可以通过 <a href="https://github.com/roy-tong">GitHub</a> 找到我。</p>
+    <p>如果你也在研究 AI、具身智能、AI 硬件或新产品，可以前往<a href="{{ '/support/' | relative_url }}">联系与支持页面</a>添加我的微信，或通过 <a href="https://github.com/roy-tong">GitHub</a> 找到我。</p>
   </div>
 </section>

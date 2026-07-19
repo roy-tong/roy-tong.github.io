@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /support/
+Disallow: /assets/images/wechat-contact.jpeg
+Disallow: /assets/images/wechat-tip.jpeg
+
