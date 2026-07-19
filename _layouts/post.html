@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post shell reading-shell">
+  <header class="post-header">
+    <a class="eyebrow back-link" href="{{ '/archive/' | relative_url }}">← 返回文章</a>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %-m 月 %-d 日' }}</time>
+      {% if page.reading_time %}<span>{{ page.reading_time }} 分钟阅读</span>{% endif %}
+      {% if page.tags %}
+        <span class="post-tags">
+          {% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}
+        </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-end">
+    <span class="post-end-mark">R</span>
+    <div>
+      <strong>感谢阅读</strong>
+      <p>这里会持续更新我对 AI、产品与创业的观察。</p>
+    </div>
+  </footer>
+</article>
+
