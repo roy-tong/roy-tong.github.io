@@ -8,15 +8,14 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}{{ '/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
-  {% assign public_pages = site.pages | where_exp: "item", "item.url != '/support/' and item.url != '/404.html' and item.url != '/sitemap.xml'" %}
-  {% for item in public_pages %}
-    {% unless item.url == '/' %}
   <url>
-    <loc>{{ site.url }}{{ item.url | relative_url }}</loc>
+    <loc>{{ site.url }}{{ '/about/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
-    {% endunless %}
-  {% endfor %}
+  <url>
+    <loc>{{ site.url }}{{ '/archive/' | relative_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url | relative_url }}</loc>
