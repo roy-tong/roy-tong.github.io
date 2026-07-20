@@ -1,52 +1,77 @@
 ---
 layout: default
 title: 首页
-description: Roy 的个人主页，记录关于 AI、产品、具身智能与创业的长期思考。
+description: Roy Tong（仝夏瑞）的个人主页，展示 AI 产品、具身智能研究、开源项目 iRead 与长期写作。
+image: /assets/images/social-preview.png
 ---
 
-<section class="hero shell">
-  <div class="hero-copy">
-    <p class="eyebrow">PRODUCT · AI · EMBODIED INTELLIGENCE</p>
-    <h1>把复杂问题想清楚，<br><em>把真实思考写下来。</em></h1>
-    <p class="hero-lead">你好，我是 Roy，一名产品经理、创业者和长期主义的研究者。这里记录我对 AI、具身智能、产品与组织的观察。</p>
-    <div class="hero-actions">
-      <a class="button primary" href="#latest">阅读文章 <span>↘</span></a>
-      <a class="button secondary" href="{{ '/about/' | relative_url }}">了解我</a>
+<section class="profile-intro shell">
+  <p class="eyebrow">PRODUCT BUILDER · RESEARCHER · OPEN SOURCE</p>
+  <h1>Roy Tong <span>仝夏瑞</span></h1>
+  <p class="profile-lead">产品经理、连续创业者。过去近十年，我在 AI、消费软件与智能硬件之间做产品，也持续研究智能如何从信息世界进入真实任务。</p>
+  <div class="profile-actions">
+    <a class="button primary" href="https://github.com/roy-tong/iRead">查看 iRead <span>↗</span></a>
+    <a class="button secondary" href="#latest">阅读研究文章</a>
+  </div>
+  <dl class="profile-facts" aria-label="关注方向">
+    <div>
+      <dt>正在构建</dt>
+      <dd>AI 研究助手 iRead</dd>
     </div>
-  </div>
-  <div class="hero-card" aria-label="本站关注主题">
-    <div class="orbit orbit-one"></div>
-    <div class="orbit orbit-two"></div>
-    <div class="hero-monogram">R</div>
-    <div class="topic topic-one">AI × Product</div>
-    <div class="topic topic-two">Embodied AI</div>
-    <div class="topic topic-three">0 → 1</div>
-  </div>
+    <div>
+      <dt>长期研究</dt>
+      <dd>AI Agent · 具身智能 · AI 硬件</dd>
+    </div>
+    <div>
+      <dt>产品经验</dt>
+      <dd>企业 AI · 消费软件 · 智能硬件</dd>
+    </div>
+  </dl>
 </section>
 
-<section class="principles shell" aria-label="写作原则">
-  <div class="principle">
-    <span>01</span>
-    <h2>事实优先</h2>
-    <p>让数据和一线材料先于观点。</p>
+<section class="featured-work shell" id="projects" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">FEATURED WORK</p>
+      <h2 id="projects-title">正在做的项目</h2>
+    </div>
   </div>
-  <div class="principle">
-    <span>02</span>
-    <h2>持续修正</h2>
-    <p>判断不是结论，而是待验证的版本。</p>
-  </div>
-  <div class="principle">
-    <span>03</span>
-    <h2>创造价值</h2>
-    <p>研究最终要回到产品与真实世界。</p>
+
+  <article class="project-showcase">
+    <div class="project-copy">
+      <p class="project-label">OPEN SOURCE · LOCAL FIRST</p>
+      <h3>iRead</h3>
+      <p>说出一个或多个研究领域，得到可审核的高质量信源组合，以及持续更新的日报、周报和月报。</p>
+      <ul class="project-points">
+        <li>自动发现并评估官方机构、专业媒体、研究者与从业者</li>
+        <li>采集 RSS、公开网页候选和已授权公众号</li>
+        <li>数据与报告默认保留在本机</li>
+      </ul>
+      <div class="project-links">
+        <a class="button primary" href="https://github.com/roy-tong/iRead">GitHub 与安装 <span>↗</span></a>
+        <a class="text-link" href="https://github.com/roy-tong/iRead/tree/main/examples/ai-embodied-research">真实运行案例</a>
+      </div>
+    </div>
+    <a class="project-visual" href="https://github.com/roy-tong/iRead" aria-label="查看 iRead GitHub 仓库">
+      <img src="{{ '/assets/images/iread-preview.png' | relative_url }}" width="1280" height="640" alt="iRead：输入研究领域，得到可信的研究日报" loading="lazy">
+    </a>
+  </article>
+
+  <div class="secondary-work">
+    <div>
+      <p class="project-label">RESEARCH NOTES</p>
+      <h3>Roy's Notes</h3>
+    </div>
+    <p>记录 AI 产品、具身智能、智能硬件与创业研究。这里不追求日更，而是保留判断、证据与修正过程。</p>
+    <a class="text-link" href="{{ '/archive/' | relative_url }}">浏览全部文章 <span>→</span></a>
   </div>
 </section>
 
 <section class="latest shell" id="latest">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">LATEST NOTES</p>
-      <h2>最近的思考</h2>
+      <p class="eyebrow">LATEST RESEARCH</p>
+      <h2>最近的研究</h2>
     </div>
     <a class="text-link" href="{{ '/archive/' | relative_url }}">查看全部 <span>→</span></a>
   </div>
@@ -75,10 +100,9 @@ description: Roy 的个人主页，记录关于 AI、产品、具身智能与创
 
 <section class="subscribe shell">
   <div>
-    <p class="eyebrow">FOLLOW ALONG</p>
-    <h2>把更新带进你的阅读器</h2>
-    <p>通过 RSS 订阅新文章，不依赖算法推荐。</p>
+    <p class="eyebrow">FOLLOW WITHOUT AN ALGORITHM</p>
+    <h2>通过 RSS 继续阅读</h2>
+    <p>新文章直接进入你的阅读器，不依赖平台推荐。</p>
   </div>
   <a class="button light" href="{{ '/feed.xml' | relative_url }}">订阅 RSS <span>↗</span></a>
 </section>
-

@@ -1,28 +1,28 @@
 :root {
-  --paper: #f5f1e8;
-  --paper-deep: #ece5d7;
-  --ink: #17251e;
-  --muted: #667069;
-  --line: rgba(23, 37, 30, 0.16);
-  --accent: #e8b92d;
-  --accent-soft: #f4d35e;
-  --forest: #1e4935;
-  --white: #fffdf8;
-  --shadow: 0 24px 70px rgba(30, 45, 35, 0.12);
-  --serif: "Noto Serif SC", "Songti SC", serif;
-  --sans: "DM Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --paper: #f4f5f2;
+  --paper-deep: #e6e9e4;
+  --ink: #171a18;
+  --muted: #626964;
+  --line: rgba(23, 26, 24, 0.16);
+  --accent: #ed5a3a;
+  --accent-soft: #ffc85a;
+  --forest: #176b5a;
+  --white: #ffffff;
+  --shadow: 0 24px 70px rgba(23, 26, 24, 0.1);
+  --serif: Georgia, "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 :root[data-theme="dark"] {
-  --paper: #111914;
-  --paper-deep: #18231d;
+  --paper: #121513;
+  --paper-deep: #1d211e;
   --ink: #edf1eb;
   --muted: #a6afa9;
   --line: rgba(237, 241, 235, 0.16);
-  --accent: #e5b932;
-  --accent-soft: #f2cf5b;
-  --forest: #87b89b;
-  --white: #19251e;
+  --accent: #ff7658;
+  --accent-soft: #ffd16f;
+  --forest: #76c7b5;
+  --white: #1b1f1c;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
@@ -184,13 +184,13 @@ a {
   margin: 0;
   font-family: var(--serif);
   font-weight: 600;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
   line-height: 1.22;
 }
 
 .hero h1 {
   max-width: 740px;
-  font-size: clamp(46px, 5.7vw, 76px);
+  font-size: 76px;
 }
 
 .hero h1 em {
@@ -258,9 +258,161 @@ a {
 }
 
 .button.light {
-  color: #17251e;
-  background: #fffdf8;
-  border-color: #fffdf8;
+  color: #171a18;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.profile-intro {
+  padding-block: 104px 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-intro h1 {
+  max-width: 980px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 96px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.profile-intro h1 span {
+  display: inline-block;
+  color: var(--forest);
+  font-size: 0.38em;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.profile-lead {
+  max-width: 780px;
+  margin: 36px 0 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.85;
+}
+
+.profile-actions {
+  display: flex;
+  margin-top: 38px;
+  gap: 12px;
+}
+
+.profile-facts {
+  display: grid;
+  margin: 72px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+
+.profile-facts div {
+  min-width: 0;
+}
+
+.profile-facts dt {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profile-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.featured-work {
+  padding-block: 112px 20px;
+}
+
+.project-showcase {
+  display: grid;
+  padding-block: 48px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  gap: 64px;
+}
+
+.project-label {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.project-copy h3,
+.secondary-work h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.project-copy > p:not(.project-label) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.project-points {
+  margin: 24px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project-points li + li {
+  margin-top: 7px;
+}
+
+.project-links {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  gap: 22px;
+}
+
+.project-visual {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.project-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.secondary-work {
+  display: grid;
+  padding-block: 36px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 0.65fr 1.25fr auto;
+  gap: 36px;
+}
+
+.secondary-work h3 {
+  font-size: 27px;
+}
+
+.secondary-work p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .hero-card {
@@ -390,7 +542,7 @@ a {
 .subscribe h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: 48px;
   font-weight: 600;
 }
 
@@ -561,7 +713,7 @@ a {
 }
 
 .page-intro h1 {
-  font-size: clamp(48px, 7vw, 82px);
+  font-size: 72px;
 }
 
 .page-deck {
@@ -677,7 +829,7 @@ a {
 }
 
 .post-header h1 {
-  font-size: clamp(42px, 6vw, 66px);
+  font-size: 60px;
 }
 
 .post-subtitle {
@@ -947,9 +1099,9 @@ a {
 .error-code {
   margin: 0;
   color: var(--accent);
-  font-size: clamp(90px, 18vw, 200px);
+  font-size: 160px;
   font-weight: 600;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   line-height: 0.8;
 }
 
@@ -964,6 +1116,21 @@ a {
 }
 
 @media (max-width: 900px) {
+  .profile-facts {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary-work {
+    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .hero {
     min-height: auto;
     padding-block: 74px;
@@ -1017,8 +1184,50 @@ a {
     padding-block: 60px;
   }
 
+  .profile-intro {
+    padding-block: 72px 48px;
+  }
+
+  .profile-intro h1 {
+    font-size: 58px;
+  }
+
+  .profile-intro h1 span {
+    display: block;
+    margin-top: 14px;
+    font-size: 22px;
+  }
+
+  .profile-lead {
+    margin-top: 28px;
+    font-size: 18px;
+  }
+
+  .profile-actions,
+  .project-links {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .profile-facts {
+    margin-top: 48px;
+  }
+
+  .featured-work {
+    padding-top: 80px;
+  }
+
+  .project-showcase {
+    padding-block: 34px;
+    gap: 38px;
+  }
+
+  .project-copy h3 {
+    font-size: 38px;
+  }
+
   .hero h1 {
-    font-size: clamp(39px, 11vw, 56px);
+    font-size: 48px;
   }
 
   .hero-lead {

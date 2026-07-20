@@ -3,3 +3,4 @@ Disallow: /support/
 Disallow: /assets/images/wechat-contact.jpeg
 Disallow: /assets/images/wechat-tip.jpeg
 
+Sitemap: https://roy-tong.github.io/sitemap.xml

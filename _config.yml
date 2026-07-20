@@ -1,13 +1,21 @@
-title: "Roy's Notes"
-description: "关于 AI、产品、具身智能与创业的长期思考"
+title: "Roy Tong"
+tagline: "AI 产品、具身智能与开源研究工具"
+description: "Roy Tong（仝夏瑞）的个人网站：长期研究 AI 产品、Agent、具身智能、AI 硬件与创业，并构建开源研究助手 iRead。"
 url: "https://roy-tong.github.io"
 baseurl: ""
 lang: zh-CN
 timezone: Asia/Shanghai
+logo: /assets/images/social-preview.png
+image: /assets/images/social-preview.png
 
 author:
-  name: Roy
+  name: "Roy Tong（仝夏瑞）"
   github: roy-tong
+
+social:
+  name: "Roy Tong"
+  links:
+    - https://github.com/roy-tong
 
 permalink: /notes/:title/
 markdown: kramdown
@@ -25,4 +33,3 @@ feed:
 exclude:
   - README.md
   - LICENSE
-

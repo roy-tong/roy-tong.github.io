@@ -5,12 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f5f1e8">
+    <meta name="theme-color" content="#f4f5f2">
+    <meta name="author" content="{{ site.author.name }}">
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     {% feed_meta %}
     {% seo %}
@@ -22,11 +20,12 @@
       <div class="shell nav-wrap">
         <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回首页">
           <span class="brand-mark">R</span>
-          <span>Roy's Notes</span>
+          <span>Roy Tong</span>
         </a>
 
         <nav class="nav" aria-label="主导航">
           <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>首页</a>
+          <a href="{{ '/#projects' | relative_url }}">项目</a>
           <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>文章</a>
           <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
           <a href="{{ '/support/' | relative_url }}" {% if page.url == '/support/' %}aria-current="page"{% endif %}>联系</a>
@@ -44,11 +43,12 @@
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
-          <p class="footer-title">Roy's Notes</p>
-          <p>记录未完成的判断，也记录判断如何被事实改变。</p>
+          <p class="footer-title">Roy Tong</p>
+          <p>研究 AI 如何从模型能力走向真实产品与真实世界。</p>
         </div>
         <div class="footer-links">
           <a href="{{ '/support/' | relative_url }}">联系与支持</a>
+          <a href="https://github.com/roy-tong/iRead">iRead</a>
           <a href="https://github.com/{{ site.author.github }}" rel="me">GitHub</a>
           <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         </div>
