@@ -1,0 +1,41 @@
+name: Build preview PDF
+
+on:
+  push:
+    paths:
+      - scripts/generate_preview_pdf.py
+      - .github/workflows/build-preview-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install reportlab "qrcode[pil]"
+
+      - name: Generate preview PDF
+        run: python scripts/generate_preview_pdf.py
+
+      - name: Commit generated PDF
+        run: |
+          if git diff --quiet -- assets/downloads/embodied-intelligence-preview-2026-summer.pdf; then
+            echo "Preview PDF is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/downloads/embodied-intelligence-preview-2026-summer.pdf
+          git commit -m "build: refresh embodied intelligence preview PDF [skip ci]"
+          git push
