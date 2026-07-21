@@ -27,6 +27,10 @@ layout: default
       <strong>感谢阅读</strong>
       <p>这里会持续更新我对 AI、产品与创业的观察。</p>
     </div>
-    <a class="support-link" href="{{ '/support/#tip' | relative_url }}" data-umami-event="open-support-from-article">赞赏这篇文章 <span>♡</span></a>
+    {% if page.book_page %}
+      <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}" data-carry-source data-umami-event="open-book-checkout-from-article-footer">购买正式版 <span>→</span></a>
+    {% else %}
+      <a class="support-link" href="{{ '/support/#tip' | relative_url }}" data-umami-event="open-support-from-article">赞赏这篇文章 <span>♡</span></a>
+    {% endif %}
   </footer>
 </article>
