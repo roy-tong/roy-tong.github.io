@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /book/
+sitemap: false
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, follow">
+    <meta name="canonical" content="{{ '/notes/embodied-intelligence-beginners-guide/' | absolute_url }}">
+    <title>《具身智能入门》</title>
+  </head>
+  <body>
+    <p>正在前往《具身智能入门》介绍页……</p>
+    <script>
+      (function () {
+        var target = new URL('{{ '/notes/embodied-intelligence-beginners-guide/' | absolute_url }}');
+        target.search = window.location.search;
+        target.hash = window.location.hash;
+        window.location.replace(target.toString());
+      })();
+    </script>
+    <noscript><a href="{{ '/notes/embodied-intelligence-beginners-guide/' | relative_url }}">打开《具身智能入门》介绍页</a></noscript>
+  </body>
+</html>
