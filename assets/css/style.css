@@ -1320,6 +1320,15 @@ a {
     margin-bottom: 44px;
   }
 
+  .post-header h1 {
+    font-size: 42px;
+    line-height: 1.25;
+  }
+
+  .post-subtitle {
+    font-size: 18px;
+  }
+
   .post-end {
     align-items: start;
     flex-wrap: wrap;
