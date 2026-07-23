@@ -11,6 +11,7 @@
 
 ## 推荐阅读
 
+- [WAIC 之后：AI 产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/)
 - [从 AI 应用到真实世界：我的一次转向](https://roy-tong.github.io/notes/from-ai-software-to-physical-world/)
 - [具身智能入门：产业、公司、产品、技术与职业地图](https://roy-tong.github.io/notes/embodied-intelligence-beginners-guide/)
 - [重新开始写作](https://roy-tong.github.io/notes/start-writing/)
