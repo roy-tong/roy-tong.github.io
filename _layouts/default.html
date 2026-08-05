@@ -15,23 +15,40 @@
     {% seo %}
   </head>
   <body>
+    <!--
+      IMPECCABLE-DIRECTION: homepage-canon-c / seed ed0eedd0
+      THESIS: Roy.Tong is understood through one capability claim, public-safe evidence, and visible work in progress; the page refuses a resume dump and generic AI spectacle.
+      OWN-WORLD: Cool paper, forest, ink, and accessible coral; editorial serif headlines, humanist sans UI, quiet dividers, one elevated product artifact.
+      STORY: Understand the claim, inspect three evidence paths, follow the research infrastructure, choose a knowledge path, then contact or subscribe.
+      FIRST VIEWPORT: A full-width claim and two actions lead into a three-part evidence ribbon; iRead begins the transition into the next fold.
+      FORM: High-craft category-standard portfolio, narrative-led composition; approved comp .impeccable/mocks/homepage-comp-c.svg.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
     <a class="skip-link" href="#main">跳到正文</a>
 
     <header class="site-header">
       <div class="shell nav-wrap">
         <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回首页">
           <span class="brand-mark">R</span>
-          <span>Roy Tong</span>
+          <span>Roy.Tong</span>
         </a>
 
-        <nav class="nav" aria-label="主导航">
-          <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>首页</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="打开导航">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="主导航">
           <a href="{{ '/#projects' | relative_url }}">项目</a>
           <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>文章</a>
           <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
           <a href="{{ '/support/' | relative_url }}" {% if page.url == '/support/' %}aria-current="page"{% endif %}>联系</a>
-          <button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
-            <span class="theme-icon" aria-hidden="true">◐</span>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="切换至深色模式" title="切换至深色模式">
+            <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+            </svg>
           </button>
         </nav>
       </div>
@@ -44,8 +61,8 @@
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
-          <p class="footer-title">Roy Tong</p>
-          <p>研究 AI 如何从模型能力走向真实产品与真实世界。</p>
+          <p class="footer-title">Roy.Tong</p>
+          <p>把新技术变成可以使用、交付和验证的产品。</p>
         </div>
         <div class="footer-links">
           <a href="{{ '/support/' | relative_url }}">联系与支持</a>
@@ -55,8 +72,8 @@
         </div>
       </div>
       <div class="shell footer-bottom">
-        <span>© {{ 'now' | date: '%Y' }} Roy</span>
-        <span>Built in the open.</span>
+        <span>© {{ 'now' | date: '%Y' }} Roy.Tong</span>
+        <span>事实、判断、实验与修正。</span>
       </div>
     </footer>
 

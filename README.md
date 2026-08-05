@@ -1,8 +1,8 @@
-# Roy Tong · AI 产品、具身智能与开源研究工具
+# Roy.Tong · AI 产品、具身智能与开源研究工具
 
 [访问网站](https://roy-tong.github.io) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
-这是 Roy Tong（仝夏瑞）的个人网站与长期研究档案，主要记录：
+这是 Roy.Tong 的个人网站与长期研究档案，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；

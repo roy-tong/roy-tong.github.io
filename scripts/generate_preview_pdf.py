@@ -16,8 +16,26 @@ OUT = ROOT / 'assets/downloads/embodied-intelligence-preview-2026-summer.pdf'
 BOOK_URL = 'https://roy-tong.github.io/book/'
 
 pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
-pdfmetrics.registerFont(TTFont('DejaVuSans', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
-pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
+
+
+def first_available_font(paths):
+    for path in paths:
+        if Path(path).exists():
+            return path
+    raise FileNotFoundError(f'No supported Latin font found in: {paths}')
+
+
+regular_font = first_available_font([
+    '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+    '/System/Library/Fonts/Supplemental/Arial.ttf',
+])
+bold_font = first_available_font([
+    '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+    '/System/Library/Fonts/Supplemental/Arial Bold.ttf',
+])
+
+pdfmetrics.registerFont(TTFont('DejaVuSans', regular_font))
+pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', bold_font))
 
 W, H = A4
 NAVY = HexColor('#0B2A3F')
@@ -43,7 +61,7 @@ qr.make_image(fill_color='black', back_color='white').save(QR)
 OUT.parent.mkdir(parents=True, exist_ok=True)
 c = canvas.Canvas(str(OUT), pagesize=A4)
 c.setTitle('《具身智能入门》试读版（2026 夏季版）')
-c.setAuthor('Roy Tong（仝夏瑞）')
+c.setAuthor('Roy.Tong')
 c.setSubject('具身智能产业、公司、产品、技术与职业地图免费试读版')
 c.setKeywords('具身智能, 人形机器人, VLA, 世界模型, 产品经理, 求职')
 
@@ -167,7 +185,7 @@ c.setFont('STSong-Light', 9.5)
 c.drawString(M, H - 158 * mm, '12 页精华内容 · 约 15 分钟读完 · 先判断是否值得购买完整版')
 c.setFillColor(white)
 c.setFont('STSong-Light', 10)
-c.drawString(M, 59 * mm, '作者  Roy Tong（仝夏瑞）')
+c.drawString(M, 59 * mm, '作者  Roy.Tong')
 c.setFillColor(HexColor('#93B7C4'))
 c.setFont('DejaVuSans', 8.5)
 c.drawString(M, 51 * mm, 'roy-tong.github.io/book/')
@@ -570,7 +588,7 @@ c.drawCentredString(W / 2, by + 6 * mm, 'roy-tong.github.io/book/')
 c.linkURL(BOOK_URL, (bx, by, bx + bw, by + bh), relative=0)
 c.setFillColor(white)
 c.setFont('STSong-Light', 10)
-c.drawString(M, 40 * mm, '关于作者：Roy Tong（仝夏瑞），连续创业者、产品经理。')
+c.drawString(M, 40 * mm, '关于作者：Roy.Tong，连续创业者、产品经理。')
 c.setFillColor(HexColor('#A8C3CF'))
 c.setFont('STSong-Light', 8.2)
 c.drawString(M, 31 * mm, '曾在平安银行、百度、科大讯飞、字节跳动和大疆工作，长期关注 AI、软件、硬件与真实商业化。')
