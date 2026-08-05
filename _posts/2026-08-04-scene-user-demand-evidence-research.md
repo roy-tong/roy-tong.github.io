@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "20 万条用户反馈，不等于真实需求"
+title_en: "200,000 User Comments Are Not the Same as Real Demand"
 subtitle: "研究对象可以完全不同，但寻找真实需求的逻辑其实是同一套"
+subtitle_en: "The subjects may differ completely, but the logic for finding real demand remains the same"
 date: 2026-08-04 20:00:00 +0800
 tags: [用户研究, 产品方法, 数据挖掘, AI]
 reading_time: 17
 excerpt: "三个行业，三批大规模用户反馈，最后指向同一套研究方法。先找到人们正在完成的任务，再看现有做法、真实代价和付费行为。"
+excerpt_en: "Three industries and three large feedback datasets led to the same method: identify the task people are completing, then examine current substitutes, real costs, and paying behavior."
 ---
 
 过去一个月，我先后做了三次大规模用户研究。

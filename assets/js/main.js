@@ -4,15 +4,47 @@
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const menuToggle = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.nav');
-  const saved = localStorage.getItem('theme');
+  const languageToggle = document.querySelector('[data-language-switch]');
   const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isEnglish = root.lang.toLowerCase().startsWith('en');
+  const labels = isEnglish ? {
+    darkMode: 'Switch to dark mode',
+    lightMode: 'Switch to light mode',
+    openNavigation: 'Open navigation',
+    closeNavigation: 'Close navigation',
+    copied: 'Copied'
+  } : {
+    darkMode: '切换至深色模式',
+    lightMode: '切换至浅色模式',
+    openNavigation: '打开导航',
+    closeNavigation: '关闭导航',
+    copied: '已复制'
+  };
+
+  function readPreference(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function savePreference(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {
+      /* Controls remain functional when storage is unavailable. */
+    }
+  }
+
+  const saved = readPreference('theme');
 
   function applyTheme(theme) {
     root.dataset.theme = theme;
     const isDark = theme === 'dark';
 
     if (themeToggle) {
-      const label = isDark ? '切换至浅色模式' : '切换至深色模式';
+      const label = isDark ? labels.lightMode : labels.darkMode;
       themeToggle.setAttribute('aria-pressed', String(isDark));
       themeToggle.setAttribute('aria-label', label);
       themeToggle.setAttribute('title', label);
@@ -30,7 +62,13 @@
       const isDark = root.dataset.theme === 'dark';
       const nextTheme = isDark ? 'light' : 'dark';
       applyTheme(nextTheme);
-      localStorage.setItem('theme', nextTheme);
+      savePreference('theme', nextTheme);
+    });
+  }
+
+  if (languageToggle) {
+    languageToggle.addEventListener('click', function () {
+      savePreference('site-language', languageToggle.dataset.targetLanguage || 'zh-CN');
     });
   }
 
@@ -38,7 +76,7 @@
     if (!menuToggle || !navigation) return;
     navigation.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', '打开导航');
+    menuToggle.setAttribute('aria-label', labels.openNavigation);
     document.body.classList.remove('nav-open');
   }
 
@@ -47,7 +85,7 @@
       const shouldOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
       navigation.classList.toggle('is-open', shouldOpen);
       menuToggle.setAttribute('aria-expanded', String(shouldOpen));
-      menuToggle.setAttribute('aria-label', shouldOpen ? '关闭导航' : '打开导航');
+      menuToggle.setAttribute('aria-label', shouldOpen ? labels.closeNavigation : labels.openNavigation);
       document.body.classList.toggle('nav-open', shouldOpen);
     });
 
@@ -87,7 +125,7 @@
         document.body.removeChild(textarea);
       }
 
-      button.textContent = '已复制';
+      button.textContent = labels.copied;
       window.setTimeout(function () {
         button.textContent = originalText;
       }, 1600);

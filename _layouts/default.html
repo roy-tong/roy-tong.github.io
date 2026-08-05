@@ -1,7 +1,12 @@
 ---
 ---
+{% assign current_lang = page.lang | default: site.lang | default: 'zh-CN' %}
+{% assign is_english = false %}
+{% if current_lang == 'en' or current_lang == 'en-US' %}
+  {% assign is_english = true %}
+{% endif %}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+<html lang="{{ current_lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +16,24 @@
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     {% if page.book_page %}<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">{% endif %}
+    {% if page.lang_switch_url %}
+      <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
+      <link rel="alternate" hreflang="{% if is_english %}zh-CN{% else %}en{% endif %}" href="{{ page.lang_switch_url | absolute_url }}">
+    {% endif %}
+    {% if page.url == '/' %}
+      <script>
+        (function () {
+          try {
+            var savedLanguage = window.localStorage.getItem('site-language');
+            var primaryLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+            var prefersEnglish = savedLanguage === 'en' || (!savedLanguage && !primaryLanguage.toLowerCase().startsWith('zh'));
+            if (prefersEnglish) window.location.replace('{{ '/en/' | relative_url }}');
+          } catch (error) {
+            /* Keep the Chinese source page when language detection is unavailable. */
+          }
+        })();
+      </script>
+    {% endif %}
     {% feed_meta %}
     {% seo %}
   </head>
@@ -24,32 +47,35 @@
       FORM: High-craft category-standard portfolio, narrative-led composition; approved comp .impeccable/mocks/homepage-comp-c.svg.
       FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
     -->
-    <a class="skip-link" href="#main">跳到正文</a>
+    <a class="skip-link" href="#main">{% if is_english %}Skip to content{% else %}跳到正文{% endif %}</a>
 
     <header class="site-header">
       <div class="shell nav-wrap">
-        <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回首页">
+        <a class="brand" href="{% if is_english %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="{% if is_english %}Back to homepage{% else %}返回首页{% endif %}">
           <span class="brand-mark">R</span>
           <span>Roy.Tong</span>
         </a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="打开导航">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="{% if is_english %}Open navigation{% else %}打开导航{% endif %}">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16"/>
           </svg>
         </button>
 
-        <nav class="nav" id="site-navigation" aria-label="主导航">
-          <a href="{{ '/#projects' | relative_url }}">项目</a>
-          <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>文章</a>
-          <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
-          <a href="{{ '/support/' | relative_url }}" {% if page.url == '/support/' %}aria-current="page"{% endif %}>联系</a>
-          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="切换至深色模式" title="切换至深色模式">
-            <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
-            </svg>
-          </button>
+        <nav class="nav" id="site-navigation" aria-label="{% if is_english %}Main navigation{% else %}主导航{% endif %}">
+          <a href="{% if is_english %}{{ '/en/#projects' | relative_url }}{% else %}{{ '/#projects' | relative_url }}{% endif %}">{% if is_english %}Projects{% else %}项目{% endif %}</a>
+          <a href="{% if is_english %}{{ '/en/archive/' | relative_url }}{% else %}{{ '/archive/' | relative_url }}{% endif %}" {% if page.url == '/archive/' or page.url == '/en/archive/' %}aria-current="page"{% endif %}>{% if is_english %}Writing{% else %}文章{% endif %}</a>
+          <a href="{% if is_english %}{{ '/en/about/' | relative_url }}{% else %}{{ '/about/' | relative_url }}{% endif %}" {% if page.url == '/about/' or page.url == '/en/about/' %}aria-current="page"{% endif %}>{% if is_english %}About{% else %}关于{% endif %}</a>
+          <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}" {% if page.url == '/support/' or page.url == '/en/support/' %}aria-current="page"{% endif %}>{% if is_english %}Contact{% else %}联系{% endif %}</a>
+          <div class="nav-tools">
+            <a class="language-toggle" href="{% if page.lang_switch_url %}{{ page.lang_switch_url | relative_url }}{% elsif is_english %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" hreflang="{% if is_english %}zh-CN{% else %}en{% endif %}" lang="{% if is_english %}zh-CN{% else %}en{% endif %}" data-language-switch data-target-language="{% if is_english %}zh-CN{% else %}en{% endif %}" aria-label="{% if is_english %}切换至中文{% else %}View in English{% endif %}" title="{% if is_english %}切换至中文{% else %}View in English{% endif %}">{% if is_english %}中文{% else %}EN{% endif %}</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="{% if is_english %}Switch to dark mode{% else %}切换至深色模式{% endif %}" title="{% if is_english %}Switch to dark mode{% else %}切换至深色模式{% endif %}">
+              <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
@@ -62,10 +88,10 @@
       <div class="shell footer-grid">
         <div>
           <p class="footer-title">Roy.Tong</p>
-          <p>把新技术变成可以使用、交付和验证的产品。</p>
+          <p>{% if is_english %}Turning emerging technology into products people can use, teams can ship, and businesses can validate.{% else %}把新技术变成可以使用、交付和验证的产品。{% endif %}</p>
         </div>
         <div class="footer-links">
-          <a href="{{ '/support/' | relative_url }}">联系与支持</a>
+          <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}">{% if is_english %}Contact{% else %}联系与支持{% endif %}</a>
           <a href="https://github.com/roy-tong/iRead">iRead</a>
           <a href="https://github.com/{{ site.author.github }}" rel="me">GitHub</a>
           <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
@@ -73,7 +99,7 @@
       </div>
       <div class="shell footer-bottom">
         <span>© {{ 'now' | date: '%Y' }} Roy.Tong</span>
-        <span>事实、判断、实验与修正。</span>
+        <span>{% if is_english %}Facts, judgment, experiments, and revision.{% else %}事实、判断、实验与修正。{% endif %}</span>
       </div>
     </footer>
 

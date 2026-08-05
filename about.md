@@ -3,6 +3,7 @@ layout: default
 title: 关于 Roy.Tong
 permalink: /about/
 description: Roy.Tong 的产品经历、研究方法，以及正在构建的 iRead、行业研究 Skill 与个人知识库。
+lang_switch_url: /en/about/
 ---
 
 <section class="page-intro shell reading-shell">

@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "从 AI 应用到真实世界：我的一次转向"
+title_en: "From AI Applications to the Physical World: A Change of Direction"
 subtitle: "为什么停下软件创业，开始重新理解硬件、具身智能与下一代 AI 产品"
+subtitle_en: "Why I paused a software startup and began rethinking hardware, embodied intelligence, and the next generation of AI products"
 date: 2026-07-19 12:00:00 +0800
 tags: [AI, 具身智能, AI硬件, 创业]
 reading_time: 9
 excerpt: "2025 年 8 月，我停下了 AI 应用创业。此后在 DJI 的大半年，让我重新理解了软件、硬件与竞争门槛，也让我开始把目光投向具身智能和新一代 AI 硬件。"
+excerpt_en: "In August 2025, I paused an AI application startup. The months that followed at DJI changed how I think about software, hardware, defensibility, embodied intelligence, and the next generation of AI products."
 ---
 
 这是我在这里写下的第二篇文章。

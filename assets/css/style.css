@@ -160,6 +160,32 @@ a {
   background: var(--paper-deep);
 }
 
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-toggle {
+  display: grid;
+  min-width: 44px;
+  height: 44px;
+  padding-inline: 10px;
+  place-items: center;
+  color: var(--ink) !important;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  background: var(--paper-deep);
+}
+
 .hero {
   display: grid;
   min-height: 680px;
@@ -1481,6 +1507,13 @@ a {
   gap: 12px;
 }
 
+@media (min-width: 681px) {
+  html[lang^="en"] .home-hero h1 {
+    max-width: 1100px;
+    font-size: clamp(52px, 6vw, 76px);
+  }
+}
+
 .proof-ribbon {
   display: grid;
   padding-block: 0;
@@ -2163,7 +2196,19 @@ a {
   }
 
   .theme-toggle {
+    margin-top: 0;
+  }
+
+  .nav-tools {
     margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-tools .language-toggle {
+    display: grid;
+    min-height: 44px;
+    border: 1px solid var(--line);
   }
 
   .home-hero {

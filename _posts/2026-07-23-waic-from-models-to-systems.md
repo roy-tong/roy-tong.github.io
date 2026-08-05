@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "WAIC 之后：AI 产业开始为“把事做成”买单"
+title_en: "After WAIC: The AI Industry Is Starting to Pay for Getting Work Done"
 subtitle: "从 Coding、Agent、RSI 到具身智能，2026 年的竞争单位正在从模型变成系统"
+subtitle_en: "From coding, agents, and RSI to embodied intelligence, the unit of competition is moving from models to systems"
 date: 2026-07-23 08:00:00 +0800
 tags: [AI, WAIC, Agent, 具身智能]
 reading_time: 16
 excerpt: "WAIC 2026 把一套新的评价标准推到了台前：交付率、连续运行、人工接管，以及完成一次任务的真实成本。"
+excerpt_en: "WAIC 2026 brought a new evaluation standard to the foreground: delivery rate, continuous operation, human intervention, and the real cost of completing a task."
 ---
 
 过去半年，我用 iRead 持续跟踪 AI 应用、具身智能和 AI 硬件。到 7 月 21 日，本地资料库里已经积累了 23,930 篇文章，来自 112 个信源。WAIC 四天里，与大会直接相关的文章就有 166 篇。

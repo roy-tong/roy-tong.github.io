@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "国内硬件产品创新的组织与管理方法论"
+title_en: "How Chinese Hardware Teams Organize and Manage Product Innovation"
 subtitle: "从创始团队、产品定义到规模化交付"
+subtitle_en: "From the founding team and product definition to delivery at scale"
 date: 2026-08-05 14:30:00 +0800
 tags: [智能硬件, 产品管理, 组织管理, 产品创新]
 reading_time: 20
 excerpt: "硬件创新团队如何从少数核心成员出发，逐步建立产品、系统、项目、供应链和规模化经营能力。"
+excerpt_en: "How an innovative hardware team grows from a small core into product, systems, program, supply-chain, and scaled operating capabilities."
 ---
 
 ## 一、先理解硬件组织的特殊性：不同产品，需要不同管理方式

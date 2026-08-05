@@ -1,11 +1,14 @@
 ---
 layout: post
 title: "重新开始写作"
+title_en: "Starting to Write Again"
 subtitle: "关于这个网站，以及我准备在这里记录什么。"
+subtitle_en: "Why this site exists and what I plan to record here."
 date: 2026-07-19 08:00:00 +0800
 tags: [写作, 产品思考]
 reading_time: 3
 excerpt: "我想把零散的观察放进一个长期、公开、可以持续修正的容器里。"
+excerpt_en: "I want to place scattered observations inside a long-term, public record that can keep being revised."
 ---
 
 我一直在做需要大量输入和判断的工作：理解技术变化，寻找真实需求，设计产品，也评估一个方向是否值得投入时间。
