@@ -88,7 +88,7 @@
       <div class="shell footer-grid">
         <div>
           <p class="footer-title">Roy.Tong</p>
-          <p>{% if is_english %}Turning emerging technology into products people can use, teams can ship, and businesses can validate.{% else %}把新技术变成可以使用、交付和验证的产品。{% endif %}</p>
+          <p>{% if is_english %}Turning emerging technology into products people can use, teams can ship, and businesses can validate.{% else %}把新技术做成用户能用、团队能交付、业务能验证的产品。{% endif %}</p>
         </div>
         <div class="footer-links">
           <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}">{% if is_english %}Contact{% else %}联系与支持{% endif %}</a>
@@ -99,7 +99,7 @@
       </div>
       <div class="shell footer-bottom">
         <span>© {{ 'now' | date: '%Y' }} Roy.Tong</span>
-        <span>{% if is_english %}Facts, judgment, experiments, and revision.{% else %}事实、判断、实验与修正。{% endif %}</span>
+        <span>{% if is_english %}Facts, judgment, experiments, and revision.{% else %}记录事实，也保留判断被修正的过程。{% endif %}</span>
       </div>
     </footer>
 

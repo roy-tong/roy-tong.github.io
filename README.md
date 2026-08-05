@@ -2,7 +2,7 @@
 
 [访问网站](https://roy-tong.github.io) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
-这是 Roy.Tong 的个人网站与长期研究档案，主要记录：
+这是 Roy.Tong 的个人网站，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
@@ -13,16 +13,16 @@
 
 - [WAIC 之后：AI 产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/)
 - [从 AI 应用到真实世界：我的一次转向](https://roy-tong.github.io/notes/from-ai-software-to-physical-world/)
-- [具身智能入门：产业、公司、产品、技术与职业地图](https://roy-tong.github.io/notes/embodied-intelligence-beginners-guide/)
+- [具身智能入门地图：我怎样整理产业、公司与技术](https://roy-tong.github.io/notes/embodied-intelligence-beginners-guide/)
 - [重新开始写作](https://roy-tong.github.io/notes/start-writing/)
 
-## 站点能力
+## 站点说明
 
 - GitHub Pages + Jekyll，无数据库和广告追踪。
 - 响应式布局、深色模式、RSS 和语义化页面结构。
-- 中英文核心页面：首次访问参考浏览器首选语言，页头可手动切换并记住选择；不调用第三方 IP 定位服务。
-- Open Graph、结构化 SEO 信息、sitemap 和明确的 robots 边界。
-- 中文系统字体优先，不依赖 Google Fonts，降低首次打开等待时间。
+- 中英文核心页面：首次访问时参考浏览器首选语言，页头也可手动切换；网站会记住选择，不调用第三方 IP 定位服务。
+- 提供 Open Graph、结构化 SEO 信息、sitemap 和 robots.txt 规则。
+- 优先使用中文系统字体，不依赖 Google Fonts，减少首次加载时间。
 
 ## 发布文章
 
