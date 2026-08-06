@@ -1703,18 +1703,24 @@ a {
 
 .build-flow {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .build-flow > article {
-  padding: 42px 48px 44px 0;
+  padding: 42px 32px 44px;
+}
+
+.build-flow > article:first-child {
+  padding-left: 0;
+}
+
+.build-flow > article:last-child {
+  padding-right: 0;
 }
 
 .build-flow > article + article {
-  padding-right: 0;
-  padding-left: 48px;
   border-left: 1px solid var(--line);
 }
 
@@ -1748,6 +1754,20 @@ a {
 .build-flow .build-now {
   color: var(--ink);
   font-size: 14px;
+}
+
+.build-card-links {
+  display: flex;
+  margin-top: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.build-card-links .button {
+  min-height: 42px;
+  padding: 10px 15px;
+  font-size: 12px;
 }
 
 .knowledge {
@@ -2118,6 +2138,22 @@ a {
     gap: 56px;
   }
 
+  .build-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .build-flow > article,
+  .build-flow > article:first-child,
+  .build-flow > article:last-child,
+  .build-flow > article + article {
+    padding: 34px 0;
+    border-left: 0;
+  }
+
+  .build-flow > article + article {
+    border-top: 1px solid var(--line);
+  }
+
   .build-artifact {
     grid-row: 1;
   }
@@ -2227,13 +2263,15 @@ a {
   }
 
   .home-actions,
-  .build-links {
+  .build-links,
+  .build-card-links {
     align-items: stretch;
     flex-direction: column;
   }
 
   .home-actions .button,
-  .build-links .button {
+  .build-links .button,
+  .build-card-links .button {
     width: 100%;
   }
 

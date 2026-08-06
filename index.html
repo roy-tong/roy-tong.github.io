@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Roy.Tong｜AI 产品、具身智能与研究工具
-description: Roy.Tong 的个人主页，记录 AI 产品、具身智能与 AI 硬件实践，以及 iRead、行业研究 Skill 和个人知识库的开发进展。
+description: Roy.Tong 的个人主页，记录 AI 产品、具身智能与 AI 硬件实践，以及 iRead、SURE 行业研究 Skill、B 站视频转译 Pipeline 和个人知识库的开发进展。
 image: /assets/images/social-preview.png
 lang_switch_url: /en/
 ---
@@ -38,8 +38,8 @@ lang_switch_url: /en/
 
 <section class="building shell" id="projects" aria-labelledby="building-title">
   <div class="building-intro">
-    <h2 id="building-title">我正在做三个研究项目</h2>
-    <p>iRead 负责持续收集信源，行业研究 Skill 处理数据和证据，个人知识库整理适合长期公开的内容。</p>
+    <h2 id="building-title">我正在做四个研究项目</h2>
+    <p>iRead 收集信源，SURE 组织证据，B 站视频转译 Pipeline 把长视频变成可检索材料，个人知识库负责长期整理和公开。</p>
   </div>
 
   <article class="build-feature">
@@ -64,10 +64,24 @@ lang_switch_url: /en/
 
   <div class="build-flow" aria-label="研究基础设施流程">
     <article>
-      <div class="build-stage-meta"><span>数据与行业研究</span><strong>研究中</strong></div>
-      <h3>行业研究 Skill</h3>
-      <p>流程包括公开数据采集、清洗、结构化、公司比较和报告生成。分析时保留来源、冲突与不确定性，方便分别检查事实、推断和判断。</p>
-      <p class="build-now"><strong>当前在验证：</strong>来源追踪、证据冲突处理和可复查数据表。</p>
+      <div class="build-stage-meta"><span>需求与行业研究</span><strong>已开源</strong></div>
+      <h3>SURE 行业研究 Skill</h3>
+      <p>用“用户角色 × 场景/触发 × 任务 × 替代方案 × 摩擦 × 后果 × 证据等级”组织研究，内置六类采样框、E0–E5 证据等级和质量审计流程。</p>
+      <p class="build-now"><strong>适合：</strong>把公开数据、用户证据和行业判断整理成可追溯、可复查的研究结果。</p>
+      <div class="build-card-links">
+        <a class="button secondary" href="https://github.com/roy-tong/sure-user-demand-research/archive/refs/heads/main.zip">下载 Skill</a>
+        <a class="text-link" href="https://github.com/roy-tong/sure-user-demand-research">查看 GitHub <span>→</span></a>
+      </div>
+    </article>
+    <article>
+      <div class="build-stage-meta"><span>视频资料结构化</span><strong>已开源</strong></div>
+      <h3>B 站视频转译 Pipeline</h3>
+      <p>把公开视频的音频提取、格式转换、Whisper 转写或英译，以及 Markdown、SRT、JSON 输出串成一条本地流水线。</p>
+      <p class="build-now"><strong>提供：</strong>可批量、可断点复用的 CLI，以及可用自然语言调用的 Codex Skill。</p>
+      <div class="build-card-links">
+        <a class="button secondary" href="https://github.com/roy-tong/bilibili-transcript-pipeline/releases/latest">下载 / 使用</a>
+        <a class="text-link" href="https://github.com/roy-tong/bilibili-transcript-pipeline">查看 GitHub <span>→</span></a>
+      </div>
     </article>
     <article>
       <div class="build-stage-meta"><span>知识整理与公开</span><strong>审核中</strong></div>
