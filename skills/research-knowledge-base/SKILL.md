@@ -1,6 +1,6 @@
 ---
 name: research-knowledge-base
-description: Search and synthesize Roy.Tong's public research notes about AI products, AI agents, embodied AI, intelligent hardware, product commercialization, and evidence-led industry research. Use when an Agent needs a concise source map, wants to find relevant Roy's Notes articles, compare published arguments across time, or cite the original public pages. 中文触发：检索 Roy.Tong 知识库、AI产品研究、Agent研究、具身智能、智能硬件、商业化产品、行业研究文章。
+description: Search and synthesize Roy.Tong's public AI product research about AI agents, embodied AI, intelligent hardware, product commercialization, and evidence-led industry research. Use for AI product research, embodied AI research, intelligent hardware research, public research notes, finding relevant Roy's Notes articles, comparing published arguments across time, or citing original public pages. 中文触发：检索 Roy.Tong 知识库、AI产品研究、Agent研究、具身智能、智能硬件、商业化产品、行业研究文章。
 license: MIT
 compatibility: Requires network access to https://roy-tong.github.io. The knowledge base is public and read-only.
 ---

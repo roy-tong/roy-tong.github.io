@@ -2,6 +2,8 @@ name: Build preview PDF
 
 on:
   push:
+    branches:
+      - main
     paths:
       - scripts/generate_preview_pdf.py
       - .github/workflows/build-preview-pdf.yml
