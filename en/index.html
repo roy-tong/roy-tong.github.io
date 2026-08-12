@@ -40,23 +40,23 @@ lang_switch_url: /
 
 <section class="building shell" id="projects" aria-labelledby="building-title">
   <div class="building-intro">
-    <h2 id="building-title">I am building four pieces of research infrastructure</h2>
-    <p>iRead collects durable sources, SURE structures evidence, the Bilibili pipeline turns long videos into searchable material, and the knowledge base curates what remains useful over time.</p>
+    <h2 id="building-title">Four research capabilities for agents</h2>
+    <p>Each project is being built as a discoverable, installable, and callable agent component: continuous monitoring, demand research, video transcription, and knowledge retrieval.</p>
   </div>
 
   <article class="build-feature">
     <div class="build-feature-copy">
       <div class="build-status"><span>Open source</span><span>In active development</span></div>
       <h3>iRead</h3>
-      <p>Name one or more research domains, review the recommended sources and representative work, then generate continuously updated daily, weekly, and monthly research reports.</p>
+      <p>Give an agent one or more research domains, review the recommended sources and representative work, then receive continuously updated daily, weekly, and monthly reports.</p>
       <ul>
         <li>Separate original evidence from second-hand reporting and duplicates</li>
         <li>Keep data and reports on the local machine by default</li>
         <li>Preserve human review instead of treating generated output as final judgment</li>
       </ul>
       <div class="build-links">
-        <a class="button primary" href="https://github.com/roy-tong/iRead">View on GitHub</a>
-        <a class="text-link" href="https://github.com/roy-tong/iRead/tree/main/examples/ai-embodied-research">See a working example <span>→</span></a>
+        <a class="button primary" href="https://github.com/roy-tong/iRead#install-as-an-agent-skill-recommended">Install Agent Skill</a>
+        <a class="text-link" href="https://skills.sh/roy-tong/iRead/iread">View install count <span>→</span></a>
       </div>
     </div>
     <a class="build-artifact" href="https://github.com/roy-tong/iRead" aria-label="View the iRead GitHub repository">
@@ -66,30 +66,34 @@ lang_switch_url: /
 
   <div class="build-flow" aria-label="Research infrastructure workflow">
     <article>
-      <div class="build-stage-meta"><span>User and industry research</span><strong>Open source</strong></div>
+      <div class="build-stage-meta"><span>Agent capability: demand research</span><strong>Standard Skill</strong></div>
       <h3>SURE Research Skill</h3>
       <p>Structures research around role × scene or trigger × task × alternative × friction × consequence × evidence level, with six sampling frames, E0–E5 evidence levels, and a quality-audit workflow.</p>
-      <p class="build-now"><strong>Use it to:</strong> turn public data, user evidence, and industry judgments into traceable, reviewable research.</p>
+      <p class="build-now"><strong>Agent I/O:</strong> a decision question and evidence records → research contract, evidence ledger, quality audit, and opportunity cards.</p>
       <div class="build-card-links">
-        <a class="button secondary" href="https://github.com/roy-tong/sure-user-demand-research/archive/refs/heads/main.zip">Download Skill</a>
-        <a class="text-link" href="https://github.com/roy-tong/sure-user-demand-research">View on GitHub <span>→</span></a>
+        <a class="button secondary" href="https://github.com/roy-tong/sure-user-demand-research#agent-快速安装">Install Skill</a>
+        <a class="text-link" href="https://skills.sh/roy-tong/sure-user-demand-research/scene-user-demand-research">View install count <span>→</span></a>
       </div>
     </article>
     <article>
-      <div class="build-stage-meta"><span>Video research material</span><strong>Open source</strong></div>
+      <div class="build-stage-meta"><span>Agent capability: video transcription</span><strong>Skill + CLI</strong></div>
       <h3>Bilibili Transcript Pipeline</h3>
       <p>Connects public-video audio extraction, audio normalization, Whisper transcription or English translation, and Markdown, SRT, and JSON output in one local workflow.</p>
-      <p class="build-now"><strong>Available as:</strong> a batchable, resumable CLI and a Codex Skill that can be invoked in natural language.</p>
+      <p class="build-now"><strong>Agent I/O:</strong> Bilibili URL or BV id → timestamped Markdown, SRT, JSON, and a batch manifest.</p>
       <div class="build-card-links">
-        <a class="button secondary" href="https://github.com/roy-tong/bilibili-transcript-pipeline/releases/latest">Download / Use</a>
-        <a class="text-link" href="https://github.com/roy-tong/bilibili-transcript-pipeline">View on GitHub <span>→</span></a>
+        <a class="button secondary" href="https://github.com/roy-tong/bilibili-transcript-pipeline#agent-快速安装">Install / Use</a>
+        <a class="text-link" href="https://skills.sh/roy-tong/bilibili-transcript-pipeline/bilibili-transcript">View install count <span>→</span></a>
       </div>
     </article>
     <article>
-      <div class="build-stage-meta"><span>Knowledge curation and publishing</span><strong>In review</strong></div>
-      <h3>Personal Knowledge Base</h3>
-      <p>I am migrating years of industry notes from Feishu into GitHub. Each document is reviewed for freshness, privacy, overlap, and long-term maintenance value before anything is published.</p>
-      <p class="build-now"><strong>In progress:</strong> inventory, sensitivity classification, and review of the first public candidates.</p>
+      <div class="build-stage-meta"><span>Agent capability: knowledge retrieval</span><strong>Skill + llms.txt</strong></div>
+      <h3>Roy's Research Knowledge Base</h3>
+      <p>Turns public essays into an agent-readable source. The Skill starts from a content index, returns to original pages for citations, and separates my analysis from external facts.</p>
+      <p class="build-now"><strong>Agent I/O:</strong> a research question → relevant originals, a linked synthesis, and evidence gaps to verify.</p>
+      <div class="build-card-links">
+        <a class="button secondary" href="{{ '/llms.txt' | relative_url }}">Read as an Agent</a>
+        <a class="text-link" href="https://github.com/roy-tong/roy-tong.github.io/tree/main/skills/research-knowledge-base">Install Skill <span>→</span></a>
+      </div>
     </article>
   </div>
 </section>

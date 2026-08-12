@@ -1,6 +1,9 @@
 # Roy.Tong · AI 产品、具身智能与开源研究工具
 
-[访问网站](https://roy-tong.github.io) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
+[访问网站](https://roy-tong.github.io) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
+
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
+[![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
 这是 Roy.Tong 的个人网站，主要记录：
 
@@ -8,6 +11,22 @@
 - 具身智能、人形机器人和 AI 硬件；
 - 从技术机会到产品定义、交付与商业化；
 - 开源、本地优先的研究工具 iRead。
+
+## 给 Agent 使用
+
+网站提供符合 `llms.txt` 约定的公开内容索引，以及一个只读 Agent Skill：
+
+```bash
+gh skill install roy-tong/roy-tong.github.io research-knowledge-base --agent codex --scope user
+```
+
+或者使用会公开匿名安装数的 skills.sh CLI：
+
+```bash
+npx skills add roy-tong/roy-tong.github.io --skill research-knowledge-base -g -a codex -y
+```
+
+Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或本地文件。skills.sh 安装数用于衡量安装，`gh skill search` 关键词排名用于衡量可发现性；两者都不等于实际调用次数。
 
 ## 推荐阅读
 

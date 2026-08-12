@@ -1,6 +1,6 @@
 title: "Roy.Tong"
 tagline: "AI 产品、具身智能与开源研究工具"
-description: "Roy.Tong 的个人网站，记录 AI 产品、Agent、具身智能与 AI 硬件研究，以及开源研究助手 iRead 的开发进展。"
+description: "Roy.Tong 的公开研究知识库与 Agent 工具索引，覆盖 AI 产品、Agent、具身智能、AI 硬件，以及 iRead、SURE 和视频转写工具。"
 url: "https://roy-tong.github.io"
 baseurl: ""
 lang: zh-CN
@@ -35,3 +35,4 @@ exclude:
   - LICENSE
   - PRODUCT.md
   - DESIGN.md
+  - vendor
