@@ -2,7 +2,7 @@
 layout: post
 title: "AI Native 之后，产品的基本单位变了"
 subtitle: "页面、文件、幻灯片、图层和时间线不会消失，但它们会从产品的真实状态退回到视图与控制面。"
-date: 2026-08-13 22:00:00 +0800
+date: 2026-08-13 21:30:00 +0800
 reading_time: 11
 tags:
   - AI Native
