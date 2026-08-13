@@ -36,6 +36,11 @@
   line-height: 1.08;
 }
 
+.home-title-line {
+  display: block;
+  white-space: nowrap;
+}
+
 .home-minimal-lead {
   max-width: 720px;
   margin: 34px 0 0;
@@ -314,7 +319,7 @@
   }
 
   .home-minimal-hero h1 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   .home-minimal-lead {
