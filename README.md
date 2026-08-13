@@ -1,16 +1,16 @@
-# Roy Tong · AI 产品、具身智能与产品判断
+# Roy Tong · 把前沿技术转化为可商业化的产品
 
 [访问网站](https://roy-tong.github.io) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy Tong 的个人网站，品牌信息架构按“我是谁 → 我相信什么 → 我写过什么 → 我做过什么 → 我开放了哪些能力”组织，主要记录：
+这是 Roy Tong 的个人网站，首页按“定位 → 文章 → 开源项目 → 关于与联系”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
 - 从技术机会到产品定义、交付与商业化；
-- 从前沿技术到可验证产品的判断方法；
+- 从前沿技术到可商业化产品的方法；
 - iRead、User Demand Research、Bilibili Video to Transcript 与 Product Decision Skills 等开放能力。
 
 ## 给 Agent 使用
@@ -31,6 +31,7 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 
 ## 推荐阅读
 
+- [Agent 向左，具身向右：AI 在信息空间与物理世界的分岔](https://roy-tong.github.io/notes/agent-left-embodied-right/)
 - [WAIC 之后：AI 产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/)
 - [从 AI 应用到真实世界：我的一次转向](https://roy-tong.github.io/notes/from-ai-software-to-physical-world/)
 - [具身智能入门地图：我怎样整理产业、公司与技术](https://roy-tong.github.io/notes/embodied-intelligence-beginners-guide/)

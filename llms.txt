@@ -1,10 +1,10 @@
-# Roy Tong — Public Research and Agent Capabilities
+# Roy Tong — Writing and Open-source Projects
 
-> Roy Tong is a product manager, serial entrepreneur, and product leader working across AI products, Physical AI, intelligent hardware, and commercialization. This is his public research index. Content is analysis unless a page links to primary evidence.
+> Roy Tong is a product manager and serial entrepreneur focused on turning emerging technology into commercial products. This index covers his public writing and open-source projects. Content is analysis unless a page links to primary evidence.
 
 ## Start Here
 
-- [Home](https://roy-tong.github.io/): Identity, working theses, selected writing, product experience, and open Agent capabilities.
+- [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
 - [About Roy Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
 - [Article archive](https://roy-tong.github.io/archive/): All published notes, ordered for human browsing.
 - [RSS feed](https://roy-tong.github.io/feed.xml): Machine-readable updates.
@@ -20,6 +20,7 @@
 
 ## AI Products and Agents
 
+- [Agent 向左，具身向右：AI 在信息空间与物理世界的分岔](https://roy-tong.github.io/notes/agent-left-embodied-right/): Why Agent products and embodied systems share model capabilities but diverge in reversibility, evaluation, safety, deployment, and economics.
 - [WAIC之后：AI产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/): From model capability to systems, tools, workflow, delivery, and organizational adoption.
 - [场景—用户—需求：如何让大规模用户研究更接近真实决策](https://roy-tong.github.io/notes/scene-user-demand-evidence-research/): The public rationale and evidence discipline behind User Demand Research (SURE).
 
