@@ -31,7 +31,8 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 
 ## 推荐阅读
 
-- [竞品分析为什么不该从参数表开始：软件与硬件是两套比较逻辑](https://roy-tong.github.io/notes/competitive-analysis-software-hardware/)
+- [AI Wearable 的竞争，不是眼镜对耳机](https://roy-tong.github.io/notes/ai-wearable-modalities-body-comfort/)
+- [竞品分析为什么不该从参数表开始](https://roy-tong.github.io/notes/competitive-analysis-software-hardware/)
 - [AI Native 之后，产品的基本单位变了](https://roy-tong.github.io/notes/ai-native-basic-unit/)
 - [Agent 向左，具身向右：AI 在信息空间与物理世界的分岔](https://roy-tong.github.io/notes/agent-left-embodied-right/)
 - [WAIC 之后：AI 产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/)
