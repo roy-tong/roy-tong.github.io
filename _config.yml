@@ -1,6 +1,6 @@
-title: "Roy.Tong"
-tagline: "AI 产品、具身智能与开源研究工具"
-description: "Roy.Tong 的公开研究知识库与 Agent 工具索引，覆盖 AI 产品、Agent、具身智能、AI 硬件，以及 iRead、SURE 和视频转写工具。"
+title: "Roy Tong"
+tagline: "AI 产品、具身智能与产品判断"
+description: "Roy Tong 的个人网站与公开研究知识库，记录 AI 产品、具身智能、智能硬件，以及从前沿技术到商业化产品的判断与实践。"
 url: "https://roy-tong.github.io"
 baseurl: ""
 lang: zh-CN
@@ -9,11 +9,11 @@ logo: /assets/images/social-preview.png
 image: /assets/images/social-preview.png
 
 author:
-  name: "Roy.Tong"
+  name: "Roy Tong"
   github: roy-tong
 
 social:
-  name: "Roy.Tong"
+  name: "Roy Tong"
   links:
     - https://github.com/roy-tong
 

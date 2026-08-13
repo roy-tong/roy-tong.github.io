@@ -1,11 +1,11 @@
-# Roy's Notes
+# Roy Tong — Public Research and Agent Capabilities
 
-> Roy.Tong's public research knowledge base about AI products, AI agents, embodied AI, intelligent hardware, product commercialization, and open-source research tools. Content is analysis unless a page links to primary evidence.
+> Roy Tong is a product manager, serial entrepreneur, and product leader working across AI products, Physical AI, intelligent hardware, and commercialization. This is his public research index. Content is analysis unless a page links to primary evidence.
 
 ## Start Here
 
-- [Home](https://roy-tong.github.io/): Current focus, open-source Agent tools, and selected research paths.
-- [About Roy.Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
+- [Home](https://roy-tong.github.io/): Identity, working theses, selected writing, product experience, and open Agent capabilities.
+- [About Roy Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
 - [Article archive](https://roy-tong.github.io/archive/): All published notes, ordered for human browsing.
 - [RSS feed](https://roy-tong.github.io/feed.xml): Machine-readable updates.
 - [Sitemap](https://roy-tong.github.io/sitemap.xml): Complete public URL inventory.
@@ -13,14 +13,15 @@
 ## Agent Tools and Components
 
 - [iRead](https://github.com/roy-tong/iRead): Local-first continuous research monitor with source discovery and evidence-aware daily, weekly, and monthly reports.
-- [SURE](https://github.com/roy-tong/sure-user-demand-research): Auditable scene–user–demand research Skill with E0–E5 evidence grading.
-- [Bilibili Transcript Pipeline](https://github.com/roy-tong/bilibili-transcript-pipeline): Local video-to-Markdown, SRT, and JSON pipeline with an Agent Skill and CLI.
+- [User Demand Research](https://github.com/roy-tong/user-demand-research): SURE (Structured User Research with Evidence), an auditable demand-research Skill with a deterministic validator and E0–E5 evidence grading.
+- [Bilibili Video to Transcript](https://github.com/roy-tong/bilibili-transcript-pipeline): Local video-to-Markdown, SRT, and JSON pipeline with an offline first-success demo, Agent Skill, and CLI.
+- [Product Decision Skills](https://github.com/roy-tong/product-decision-skills): Competitive Analysis and Market Entry Strategy Skills with output packs, trigger evals, examples, and validators.
 - [Research Knowledge Base Skill](https://github.com/roy-tong/roy-tong.github.io/tree/main/skills/research-knowledge-base): Read-only Agent entry point for this public site.
 
 ## AI Products and Agents
 
 - [WAIC之后：AI产业开始为“把事做成”买单](https://roy-tong.github.io/notes/waic-from-models-to-systems/): From model capability to systems, tools, workflow, delivery, and organizational adoption.
-- [场景—用户—需求：如何让大规模用户研究更接近真实决策](https://roy-tong.github.io/notes/scene-user-demand-evidence-research/): The public rationale and evidence discipline behind SURE.
+- [场景—用户—需求：如何让大规模用户研究更接近真实决策](https://roy-tong.github.io/notes/scene-user-demand-evidence-research/): The public rationale and evidence discipline behind User Demand Research (SURE).
 
 ## Embodied AI and Intelligent Hardware
 

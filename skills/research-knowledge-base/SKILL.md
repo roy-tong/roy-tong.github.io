@@ -21,7 +21,7 @@ Use this Skill as a read-only map to Roy.Tong's published research. It exposes p
 
 - Find Roy.Tong's writing relevant to an AI product or embodied-intelligence question.
 - Compare how a product or industry judgment changed across published notes.
-- Route an Agent to iRead, SURE, or the Bilibili Transcript Pipeline.
+- Route an Agent to iRead, User Demand Research, Bilibili Video to Transcript, or Product Decision Skills.
 - Build a source-linked brief from public Roy's Notes pages.
 
 ## Output contract

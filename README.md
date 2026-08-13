@@ -1,16 +1,17 @@
-# Roy.Tong · AI 产品、具身智能与开源研究工具
+# Roy Tong · AI 产品、具身智能与产品判断
 
 [访问网站](https://roy-tong.github.io) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy.Tong 的个人网站，主要记录：
+这是 Roy Tong 的个人网站，品牌信息架构按“我是谁 → 我相信什么 → 我写过什么 → 我做过什么 → 我开放了哪些能力”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
 - 从技术机会到产品定义、交付与商业化；
-- 开源、本地优先的研究工具 iRead。
+- 从前沿技术到可验证产品的判断方法；
+- iRead、User Demand Research、Bilibili Video to Transcript 与 Product Decision Skills 等开放能力。
 
 ## 给 Agent 使用
 
