@@ -1,11 +1,11 @@
-# Roy Tong — Writing and Open-source Projects
+# Roy.Tong — Writing and Open-source Projects
 
-> Roy Tong is a product manager and serial entrepreneur focused on turning emerging technology into commercial products. This index covers his public writing and open-source projects. Content is analysis unless a page links to primary evidence.
+> Roy.Tong is a product manager and serial entrepreneur focused on turning emerging technology into commercial products. This index covers his public writing and open-source projects. Content is analysis unless a page links to primary evidence.
 
 ## Start Here
 
 - [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
-- [About Roy Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
+- [About Roy.Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
 - [Article archive](https://roy-tong.github.io/archive/): All published notes, ordered for human browsing.
 - [RSS feed](https://roy-tong.github.io/feed.xml): Machine-readable updates.
 - [Sitemap](https://roy-tong.github.io/sitemap.xml): Complete public URL inventory.
