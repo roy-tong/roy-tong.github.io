@@ -250,4 +250,3 @@ Geek 帮助探索技术与生态，Professional 帮助发现工作流和质量�
 - [NSF：About I-Corps](https://www.nsf.gov/funding/initiatives/i-corps/about-i-corps)
 - [Steve Blank：Customer Development](https://steveblank.com/tag/customer-development/)
 - [Y Combinator：How to find product-market fit](https://www.ycombinator.com/library/7V-how-to-find-product-market-fit)
-- [Market Entry Strategy：开放的市场进入决策框架](https://github.com/roy-tong/product-decision-skills/tree/main/market-entry-strategy)

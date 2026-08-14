@@ -1,4 +1,4 @@
 interface:
-  display_name: "Roy's Research Knowledge Base"
-  short_description: "Search Roy.Tong's public AI product research"
-  default_prompt: "Use $research-knowledge-base to find and synthesize Roy.Tong's relevant public research with source links."
+  display_name: "Roy's AI Product Research Library"
+  short_description: "Search Roy Tong's public AI product research"
+  default_prompt: "Use $research-knowledge-base to find and synthesize Roy Tong's relevant public research with source links."

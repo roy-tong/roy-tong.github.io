@@ -12,11 +12,11 @@
 
 ## Agent Tools and Components
 
-- [iRead](https://github.com/roy-tong/iRead): Local-first continuous research monitor with source discovery and evidence-aware daily, weekly, and monthly reports.
-- [User Demand Research](https://github.com/roy-tong/user-demand-research): SURE (Structured User Research with Evidence), an auditable demand-research Skill with a deterministic validator and E0–E5 evidence grading.
+- [Agent Research Toolkit catalog](https://raw.githubusercontent.com/roy-tong/roy-tong/main/agent-tools.json): Machine-readable task routing, interfaces, installation commands, first-success checks, constraints, and privacy boundaries for all public tools below.
+- [iRead Research Monitor](https://github.com/roy-tong/iRead): Local-first continuous research monitor with source discovery and evidence-aware daily, weekly, and monthly reports.
+- [User Demand Research (SURE)](https://github.com/roy-tong/user-demand-research): Structured User Research with Evidence, an auditable demand-research Skill with a deterministic validator and E0–E5 evidence grading.
 - [Bilibili Video to Transcript](https://github.com/roy-tong/bilibili-transcript-pipeline): Local video-to-Markdown, SRT, and JSON pipeline with an offline first-success demo, Agent Skill, and CLI.
-- [Product Decision Skills](https://github.com/roy-tong/product-decision-skills): Competitive Analysis and Market Entry Strategy Skills with output packs, trigger evals, examples, and validators.
-- [Research Knowledge Base Skill](https://github.com/roy-tong/roy-tong.github.io/tree/main/skills/research-knowledge-base): Read-only Agent entry point for this public site.
+- [Roy's AI Product Research Library](https://github.com/roy-tong/roy-tong.github.io/tree/main/skills/research-knowledge-base): Read-only Agent entry point for this public site.
 
 ## AI Products and Agents
 

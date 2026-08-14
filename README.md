@@ -11,7 +11,7 @@
 - 具身智能、人形机器人和 AI 硬件；
 - 从技术机会到产品定义、交付与商业化；
 - 从前沿技术到可商业化产品的方法；
-- iRead、User Demand Research、Bilibili Video to Transcript 与 Product Decision Skills 等开放能力。
+- iRead Research Monitor、User Demand Research、Bilibili Video to Transcript 与公开研究知识库等开放能力。
 
 ## 给 Agent 使用
 
