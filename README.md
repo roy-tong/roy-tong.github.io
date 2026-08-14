@@ -1,11 +1,11 @@
-# Roy Tong · 把前沿技术转化为可商业化的产品
+# Roy.Tong · 把前沿技术转化为可商业化的产品
 
 [访问网站](https://roy-tong.github.io) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy Tong 的个人网站，首页按“定位 → 文章 → 开源项目 → 关于与联系”组织，主要记录：
+这是 Roy.Tong 的个人网站，首页按“定位 → 文章 → 开源项目 → 关于与联系”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
@@ -32,8 +32,10 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 ## 推荐阅读
 
 - [空间计算需要自己的“触控时刻”](https://roy-tong.github.io/notes/spatial-computing-touch-moment/)
-- [空降管理者如何从职位合法性走向组织合法性](https://roy-tong.github.io/notes/appointed-manager-organizational-legitimacy/)
+- [RAG 之后，Agent 需要 Context Recommendation](https://roy-tong.github.io/notes/agent-context-recommendation-after-rag/)
 - [家庭机器人为什么技术上更难，经济上可能更丰富](https://roy-tong.github.io/notes/home-robots-harder-richer/)
+- [机器人不是替代人，而是给人增加新的身体](https://roy-tong.github.io/notes/robots-give-people-new-bodies/)
+- [空降管理者如何从职位合法性走向组织合法性](https://roy-tong.github.io/notes/appointed-manager-organizational-legitimacy/)
 - [Geek、Professional、B、C：不同市场负责消灭不同不确定性](https://roy-tong.github.io/notes/market-roles-remove-uncertainty/)
 - [AI Wearable 的竞争，不是眼镜对耳机](https://roy-tong.github.io/notes/ai-wearable-modalities-body-comfort/)
 - [竞品分析为什么不该从参数表开始](https://roy-tong.github.io/notes/competitive-analysis-software-hardware/)
