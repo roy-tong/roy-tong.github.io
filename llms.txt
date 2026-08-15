@@ -7,6 +7,9 @@
 - [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
 - [About Roy.Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
 - [Article archive](https://roy-tong.github.io/archive/): All published notes, ordered for human browsing.
+- [Series A: Tech → Product Translation](https://roy-tong.github.io/series/tech-to-product/): Market roles, competitive analysis, demand evidence, and AI-native product form — reusable judgment methods for turning technology into product and business decisions.
+- [Series B: Agents and AI Terminals](https://roy-tong.github.io/series/agent-and-terminals/): Agent runtimes, embodied intelligence, robots, AI wearables, and spatial computing — new product forms in information space and the physical world.
+- [Series C: Product Management from Software to Hardware](https://roy-tong.github.io/series/software-to-hardware-pm/): Organization, stage gates, and system ownership across software and hardware.
 - [RSS feed](https://roy-tong.github.io/feed.xml): Machine-readable updates.
 - [Sitemap](https://roy-tong.github.io/sitemap.xml): Complete public URL inventory.
 
