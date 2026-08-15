@@ -28,7 +28,7 @@ lang_switch_url: /en/
     <h2>系列文章</h2>
     <div class="archive-items">
       {% for post in site.posts %}
-        {% if post.path contains 'agent-context-recommendation-after-rag' or post.path contains 'agent-left-embodied-right' or post.path contains 'robots-give-people-new-bodies' or post.path contains 'ai-wearable-modalities-body-comfort' or post.path contains 'spatial-computing-touch-moment' %}
+        {% if post.lang != 'en' and (post.path contains 'agent-context-recommendation-after-rag' or post.path contains 'agent-left-embodied-right' or post.path contains 'robots-give-people-new-bodies' or post.path contains 'ai-wearable-modalities-body-comfort' or post.path contains 'spatial-computing-touch-moment') %}
           <article class="archive-item">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
             <div>

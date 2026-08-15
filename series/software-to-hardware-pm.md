@@ -28,7 +28,7 @@ lang_switch_url: /en/
     <h2>系列文章</h2>
     <div class="archive-items">
       {% for post in site.posts %}
-        {% if post.path contains 'from-ai-software-to-physical-world' or post.path contains 'hardware-innovation-organization-management' or post.path contains 'appointed-manager-organizational-legitimacy' or post.path contains 'home-robots-harder-richer' %}
+        {% if post.lang != 'en' and (post.path contains 'from-ai-software-to-physical-world' or post.path contains 'hardware-innovation-organization-management' or post.path contains 'appointed-manager-organizational-legitimacy' or post.path contains 'home-robots-harder-richer') %}
           <article class="archive-item">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
             <div>

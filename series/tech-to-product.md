@@ -27,9 +27,8 @@ lang_switch_url: /en/
   <div class="archive-year">
     <h2>系列文章</h2>
     <div class="archive-items">
-      {% assign series_posts = site.posts | where_exp: "post", "post.tags contains '市场进入' or post.tags contains '产品策略' or post.tags contains '商业化' or post.tags contains '竞品分析' or post.tags contains '用户研究' or post.tags contains 'AI Native'" %}
       {% for post in site.posts %}
-        {% if post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems' %}
+        {% if post.lang != 'en' and (post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems') %}
           <article class="archive-item">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
             <div>
