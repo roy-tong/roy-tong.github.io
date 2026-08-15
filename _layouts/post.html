@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
+{% assign is_en = page.lang == 'en' %}
 <article class="post shell reading-shell">
   <header class="post-header">
-    <a class="eyebrow back-link" href="{{ '/archive/' | relative_url }}">← 返回文章</a>
+    <a class="eyebrow back-link" href="{% if is_en %}{{ '/en/archive/' | relative_url }}{% else %}{{ '/archive/' | relative_url }}{% endif %}">{% if is_en %}← All writing{% else %}← 返回文章{% endif %}</a>
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
     <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %-m 月 %-d 日' }}</time>
-      {% if page.reading_time %}<span>{{ page.reading_time }} 分钟阅读</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y %B %-d' }}</time>
+      {% if page.reading_time %}<span>{{ page.reading_time }}{% if is_en %} min read{% else %} 分钟阅读{% endif %}</span>{% endif %}
       {% if page.tags %}
         <span class="post-tags">
           {% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}
@@ -24,13 +25,18 @@ layout: default
   <footer class="post-end">
     <span class="post-end-mark">R</span>
     <div class="post-end-copy">
-      <strong>谢谢你读到这里。</strong>
-      <p>我会继续记录对 AI、产品与创业的观察。</p>
+      {% if is_en %}
+        <strong>Thanks for reading.</strong>
+        <p>I keep writing about AI, products, and building things from scratch.</p>
+      {% else %}
+        <strong>谢谢你读到这里。</strong>
+        <p>我会继续记录对 AI、产品与创业的观察。</p>
+      {% endif %}
     </div>
     {% if page.book_page %}
-      <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}" data-umami-event="open-book-version-page-from-footer">查看版本说明 <span>→</span></a>
+      <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}" data-umami-event="open-book-version-page-from-footer">{% if is_en %}Version notes <span>→</span>{% else %}查看版本说明 <span>→</span>{% endif %}</a>
     {% else %}
-      <a class="support-link" href="{{ '/support/#tip' | relative_url }}" data-umami-event="open-support-from-article">支持写作 <span>♡</span></a>
+      <a class="support-link" href="{{ '/support/#tip' | relative_url }}" data-umami-event="open-support-from-article">{% if is_en %}Support the writing <span>♡</span>{% else %}支持写作 <span>♡</span>{% endif %}</a>
     {% endif %}
   </footer>
 </article>
