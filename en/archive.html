@@ -20,13 +20,14 @@ lang_switch_url: /archive/
       <h2>{{ year.name }}</h2>
       <div class="archive-items">
         {% for post in year.items %}
+          {% unless post.lang == 'en' %}{% continue %}{% endunless %}
           <article class="archive-item">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d' }}</time>
             <div>
-              <h3><a href="{{ post.url | relative_url }}" hreflang="zh-CN">{{ post.title_en | default: post.title }}</a></h3>
-              {% if post.subtitle_en %}<p>{{ post.subtitle_en }}</p>{% elsif post.subtitle %}<p lang="zh-CN">{{ post.subtitle }}</p>{% endif %}
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
             </div>
-            <a class="post-arrow" href="{{ post.url | relative_url }}" hreflang="zh-CN" aria-label="Read {{ post.title_en | default: post.title }} in Chinese">↗</a>
+            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">↗</a>
           </article>
         {% endfor %}
       </div>

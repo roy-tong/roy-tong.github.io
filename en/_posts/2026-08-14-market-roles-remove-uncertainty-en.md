@@ -13,11 +13,11 @@ description: Geek, Professional, domain B2B, and Consumer users are not rungs on
 permalink: /en/notes/market-roles-remove-uncertainty/
 ---
 
-Every new-product discussion eventually hits the same two questions. B2B first or consumer first? Then the familiar line appears:
+Every new-product discussion hits the same two questions. B2B or consumer first? Then the familiar line appears:
 
 > Geek → Professional → B2B → Consumer
 
-It sounds like a promotion ladder. In practice it fails: products go straight from professionals to consumers, or win a huge consumer base and then retreat to professional scenarios. These are not four levels of maturity but four evidence environments.
+It fails all the time: products go straight from professionals to consumers, or win a huge consumer base and then retreat to professional scenarios. These are not four levels of maturity but four evidence environments.
 
 Before choosing the next stop, ask:
 
@@ -27,19 +27,19 @@ Market entry is about the best learning environment, not the biggest customer ba
 
 ## Technology maturity doesn't tell you whom to serve first
 
-NASA's Technology Readiness Level describes how a technology moves from proof-of-concept to operational use; it cannot prescribe a market sequence. [NASA: Technology Readiness Levels](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/technology-readiness-levels/)
+NASA's Technology Readiness Level describes how a technology moves from proof-of-concept to operational use; it can't prescribe a market sequence. [NASA: Technology Readiness Levels](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/technology-readiness-levels/)
 
-Squeeze technical readiness, user value, workflow, delivery economics and scale into one line, and you get three misjudgments:
+Squeeze technical readiness, user value, workflow, delivery economics and scale into one line and you get three misjudgments:
 
 - Because the technology works, assume users will switch from their existing solution;
 - Because someone is willing to try, assume the business model replicates;
 - Because the data looks good in a small market, assume the evidence transfers to a big one.
 
-NSF's I-Corps treats the road from lab to market as another set of hypotheses to validate. [NSF: About I-Corps](https://www.nsf.gov/funding/initiatives/i-corps/about-i-corps)
+NSF's I-Corps treats the road from lab to market as another set of hypotheses. [NSF: About I-Corps](https://www.nsf.gov/funding/initiatives/i-corps/about-i-corps)
 
 ## Find the biggest unknown first
 
-A new product usually faces five kinds of unknowns at once.
+A new product usually faces five unknowns at once.
 
 | Uncertainty | The question to answer | What goes wrong if you get it wrong |
 | --- | --- | --- |
@@ -53,7 +53,7 @@ Priority is not about which experiment is easiest. Three tests: does the wrong j
 
 ## Geeks: find the capability boundary, don't prove low friction
 
-Geek is not an age, income or occupation label, but people willing to pay configuration, learning, modification and fault-tolerance costs.
+Geek is not an age, income or occupation label, but people willing to pay configuration, learning and fault-tolerance costs.
 
 Best at answering:
 
@@ -62,7 +62,7 @@ Best at answering:
 - Extensibility and integration
 - A community willing to build
 
-Geeks underestimate configuration, charging and maintenance, and overestimate customizability and novelty — a product they happily hand-calibrate may lose the average user at first setup.
+Geeks underestimate configuration, charging and maintenance, and overestimate customizability and novelty — a product they hand-calibrate may lose the average user at setup.
 
 ## Professionals: prove the workflow, not complexity
 
@@ -80,11 +80,11 @@ Professionals bring their skills, equipment and complex processes into the produ
 
 ## Domain B2B: prove delivery economics, don't let customization masquerade as product
 
-Domain B2B puts the product inside real organizations — budgets, permissions, procurement, deployment, operations and accountability. It tests whether results can be counted as revenue, cost, efficiency or risk; whether the system runs reliably across many people, permissions and long cycles; what sales, training, deployment and support cost; and whether contracts renew, expand and replicate.
+Domain B2B puts the product inside real organizations — budgets, permissions, procurement, deployment and accountability. It tests whether results count as revenue, cost, efficiency or risk; whether the system runs reliably across many people, permissions and long cycles; what sales, training, deployment and support cost; and whether contracts renew, expand and replicate.
 
-But a customer paying is not a market existing. A large customer may sign a big contract while demanding dedicated processes, proprietary interfaces, an on-site team and special hardware; the project has revenue, the product doesn't.
+But a customer paying is not a market existing. A big contract may demand dedicated processes, proprietary interfaces, an on-site team and special hardware; the project has revenue, the product doesn't.
 
-So B2B pilots need customization guardrails:
+B2B pilots need customization guardrails:
 
 - A customer-specific requirement must state which reusable capability it is testing;
 - Pricing must include implementation, support and opportunity cost, not just contract value;
@@ -92,15 +92,15 @@ So B2B pilots need customization guardrails:
 - One lighthouse customer cannot substitute for repeated evidence from several similar customers.
 ## Consumer: prove the product stands alone, don't let traffic hide weak value
 
-The consumer market strips away the protection that tolerant users provide. Whether users can onboard themselves, perceive a result quickly, come back after the novelty fades, and whether channel, returns and support costs are affordable — all exposed.
+The consumer market strips away the protection that tolerant users provide: whether users can onboard themselves, perceive a result quickly, come back after the novelty fades, and whether channel, returns and support costs are affordable — all exposed.
 
-One viral moment, a price cut, or a platform recommendation can produce huge registrations without producing repeated value; as user numbers rise, teams easily ignore segmented retention, organic use, returns and support cost.
+One viral moment, a price cut, or a platform recommendation can produce huge registrations without repeated value; as numbers rise, teams ignore segmented retention, organic use, returns and support cost.
 
 Watch whether users return without reminders and whether word-of-mouth survives without the team.
 
 ## The same person can play different market roles
 
-The same person can play different roles: a photographer buying a prototype camera acts as a Geek; buying a mature capture system, as a Professional. The classification doesn't run on company size, price point or user count — only on what this group is validating right now.
+The same person can play different roles: a photographer buying a prototype camera acts as a Geek; buying a mature system, as a Professional. The classification doesn't run on company size, price point or user count — only on what this group is validating right now.
 
 | Market role | Best at proving | Primary evidence | Biggest distortion |
 | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ Market roles are not labels. They are evidence responsibilities.
 
 ## Write down how you will leave before you enter
 
-Too many pilots end up explained as "we're still learning," because nobody wrote down what would change the decision. Every learning market should have five gates.
+Too many pilots end up as "we're still learning," because nobody wrote down what would change the decision. Every learning market should have five gates.
 
 | Stage gate | Answer in advance |
 | --- | --- |
@@ -133,9 +133,9 @@ Stage gates also constrain product expansion: features added during a pilot shou
 
 **Professional → Domain B2B → Consumer** for confirming a high-value task, then validating organizational delivery, then simplifying complex capability for the mass market.
 
-**Domain B2B → adjacent B2B** is fully legitimate. If the value lives in an industry process, there is no need to force a consumer story.
+**Domain B2B → adjacent B2B** is fully legitimate: if the value lives in an industry process, don't force a consumer story.
 
-And sometimes you see **Consumer → Professional → Consumer**: mass-market testing exposes an unclear task, the team retreats to professional users to redefine it, then returns to scale validation.
+Sometimes you see **Consumer → Professional → Consumer**: mass-market testing exposes an unclear task, the team retreats to professionals to redefine it, then returns to scale validation.
 
 Returning is not failure — it means the current market cannot answer the next question. Weak consumer retention may be a broken core task; a stalled geek community may mean the exploration is finished.
 
@@ -151,11 +151,11 @@ Three illustrative scenarios, not real companies.
 
 **Smart wearable hardware.** While sensors, compute and the control chain are unstable, Geeks expose the technical boundary. But if the long-term goal is daily wear, comfort, social acceptance and natural reuse must be re-validated by the target consumers — geeks hand-calibrating and charging constantly is not consumer evidence.
 
-Three products, no shared order — only a shared method: let the market best suited to the job kill the biggest current unknown, and watch how it distorts the product.
+Three products, no shared order — only a shared method: let the market best suited to the job kill the biggest unknown, and watch how it distorts the product.
 
-The next stop should be the market that produces more critical evidence. Before leaving, state four things: the lethal unknown, who can expose it best, how those users will skew the product, and what evidence means you stop.
+The next stop should be the market that produces more critical evidence. Before leaving, state four things: the lethal unknown, who can expose it best, how those users will skew the product, and what evidence means stop.
 
-Market size defines the distant imagination. The next critical piece of evidence decides where you go now.
+Market size defines the distant imagination; the next critical piece of evidence decides where you go now.
 
 ---
 

@@ -30,11 +30,12 @@ lang_switch_url: /
       <a class="text-link" href="{{ '/en/archive/' | relative_url }}">Browse all writing <span>→</span></a>
     </header>
 
-    {% assign featured_post = site.posts.first %}
+    {% assign en_posts = site.posts | where: "lang", "en" %}
+    {% assign featured_post = en_posts.first | default: site.posts.first %}
     {% if featured_post %}
-      <a class="home-featured-article" href="{{ featured_post.url | relative_url }}" hreflang="zh-CN">
+      <a class="home-featured-article" href="{{ featured_post.url | relative_url }}" hreflang="{{ featured_post.lang | default: 'zh-CN' }}">
         <div class="home-featured-meta">
-          <span>Latest · Chinese</span>
+          {% if featured_post.lang == 'en' %}<span>Latest · English</span>{% else %}<span>Latest · Chinese</span>{% endif %}
           <time datetime="{{ featured_post.date | date_to_xmlschema }}">{{ featured_post.date | date: '%Y.%m.%d' }}</time>
         </div>
         <div class="home-featured-copy">
@@ -46,8 +47,8 @@ lang_switch_url: /
     {% endif %}
 
     <div class="home-article-list">
-      {% for post in site.posts limit: 5 offset: 1 %}
-        <a class="home-article-row" href="{{ post.url | relative_url }}" hreflang="zh-CN">
+      {% for post in en_posts limit: 5 offset: 1 %}
+        <a class="home-article-row" href="{{ post.url | relative_url }}" hreflang="en">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
           <div>
             <h3>{{ post.title }}</h3>
@@ -56,6 +57,19 @@ lang_switch_url: /
           <span aria-hidden="true">→</span>
         </a>
       {% endfor %}
+      {% if en_posts.size <= 1 %}
+        {% for post in site.posts limit: 3 %}
+          {% if post.lang == 'en' %}{% continue %}{% endif %}
+          <a class="home-article-row" href="{{ post.url | relative_url }}" hreflang="zh-CN">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
+            <div>
+              <h3>{{ post.title }}</h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </div>
+            <span aria-hidden="true">→</span>
+          </a>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>

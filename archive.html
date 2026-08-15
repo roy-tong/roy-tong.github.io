@@ -19,6 +19,7 @@ lang_switch_url: /en/archive/
       <h2>{{ year.name }}</h2>
       <div class="archive-items">
         {% for post in year.items %}
+          {% if post.lang == 'en' %}{% continue %}{% endif %}
           <article class="archive-item">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
             <div>
