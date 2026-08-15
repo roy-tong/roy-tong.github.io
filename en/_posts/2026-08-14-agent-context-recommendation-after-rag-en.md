@@ -21,7 +21,7 @@ I think that line deserves more discussion than "Everything is a Plugin."
 
 When people build agents, they habitually ask three questions: is the model strong enough, are enough tools connected, is the context window big enough. Harness moves the question one step earlier: even when the model, tools and materials are all in place, what exactly should be handed to the model in the next step?
 
-Consider an agent writing a product kickoff document. First it needs industry research and user studies; second, it must read back the confirmed product boundaries; third, it needs spreadsheet tools; and before editing the formal file, it must know whether it has write permission and which actions require human confirmation. Four steps, the same model — but not the same workbench.
+An agent writing a product kickoff document first needs industry research and user studies; later, before editing the formal file, it must know whether it has write permission and which actions require human confirmation. Four steps, the same model — but not the same workbench.
 
 I used to call the post-RAG version of this problem **Context Recommendation**, when I was mainly thinking about retrieving and ranking material. After reading Harness's public architecture, I'd expand the definition:
 
@@ -33,13 +33,13 @@ DeepSeek Harness does not claim to have completed a Context Recommender. What it
 
 The 2020 RAG paper solved a concrete problem: when knowledge in a model's parameters is insufficient, first retrieve relevant passages from an external knowledge base, then generate answers grounded in that material. [Lewis et al.: Retrieval-Augmented Generation](https://arxiv.org/abs/2005.11401) Engineering expanded endlessly afterward, but the main question still reduces to one sentence: **which materials are relevant to the current question?**
 
-Agents face a much larger scope. A conversation history is context; a research report is context; the current file state is context; whether this step may call a browser, a code environment or a Skill is context; an anomaly found by another agent, a requirement the user just withdrew, a deletion that must be confirmed — all of it changes the next step.
+Agents face a much larger scope. A conversation history is context; a research report is context; the current file state is context; whether this step may call a browser or a Skill is context; an anomaly found by another agent, a requirement the user just withdrew, a deletion that must be confirmed — all of it changes the next step.
 
 RAG usually delivers "material to answer with." An Agent Runtime must deliver a table you can keep working on: which materials are placed, which tools are open, what the current state is, where the boundaries are drawn. This is why a longer context window doesn't make the problem disappear: capacity answers "can it fit?", not "should it be present right now?"
 
 "Lost in the Middle" found that the same critical information produces measurably different model performance depending on its position in a long context; information at the beginning or end is used more readily. [Liu et al.: Lost in the Middle](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long) That doesn't imply long context is useless, but it does show that fitting and using are different questions.
 
-When a product manager runs a pricing meeting, he doesn't spread five years of email, the whole codebase and all support logs across the table; he brings costs, competitors and willingness-to-pay, and flags stale numbers and contested conclusions. Agents need this kind of step-varying workbench too.
+When a product manager runs a pricing meeting, he brings costs, competitors and willingness-to-pay — not five years of email, the whole codebase and all support logs. Agents need a step-varying workbench too.
 
 ## Harness exposes where the choice happens
 
@@ -65,7 +65,7 @@ The mechanism forms a short chain:
 > ↓
 > Written back to Session → next round of selection
 
-Harness provides the place where the workbench is assembled, but it does not make the product's choices. Which content deserves to enter, which tools should be hidden, when to inject new information — that still needs a policy layer. That layer is what I call Context Recommendation.
+Harness provides where the workbench is assembled, but not the product's choices: which content enters, which tools are hidden, when to inject new information — that needs a policy layer. That layer is Context Recommendation.
 
 ## Context is not just documents
 
@@ -80,11 +80,11 @@ If you keep reading "context" as "reference material," agent failures get scatte
 | State | Current files, task stage, environment changes, intermediate results | Acting on old state; duplicating or overwriting work |
 | Authority | Read scope, write permissions, approval conditions, risk levels | Reading beyond authority, or bypassing high-risk confirmation |
 
-Not all six become natural language. Capability may show up as the tool schemas exposed this turn; part of Authority can be told to the model, the rest must be enforced by the execution layer; State may come from structured events; Memory may be a pointer to an already-confirmed decision. They belong in one system because together they decide one thing: what the model understands right now, what it can do, and who is accountable when it goes wrong.
+Not all six become natural language: Capability may show up as tool schemas; part of Authority can be told to the model, the rest enforced by the execution layer; State may come from structured events. They belong in one system because together they decide what the model understands, what it can do, and who is accountable.
 
 ## Why call it Recommendation
 
-Context Routing, Context Selection, Context Management — all defensible names. I keep "Recommendation" because this is not a fixed route; it is a changing candidate set. The current task may have two hundred candidate contexts: official rules, past discussions, research material, code files, tools, Skills, external events, other agents' results. The system generates candidates, passes them through permission and risk gates, then ranks, compresses and composes them into the workbench for this turn.
+Context Routing, Context Selection, Context Management — all defensible. I keep "Recommendation" because this is not a fixed route but a changing candidate set: the current task may have two hundred candidate contexts — rules, past discussions, research, code, tools, Skills, external events, other agents' results. The system generates candidates, passes them through permission and risk gates, then ranks, compresses and composes them into the workbench for this turn.
 
 The minimal pipeline:
 
@@ -96,7 +96,7 @@ If I want a team to agree on the ranking logic first, I'd write a rough product 
 
 > next-step utility = task relevance × trustworthiness × freshness × actionability × permission match − token cost − distraction − risk
 
-It is not a research formula; it is a checklist. An old report can be highly relevant and low on freshness; a capable tool must not appear when the agent lacks permission; a verbatim quote can be trustworthy and still not support the next action; a few dozen tokens can still cause large distraction by conflicting with standing instructions. Weights change with the task: code repair leans on repository state, error logs and execution tools; industry research cares about source, recency and counter-evidence; for deletion, payment, messaging or real-device control, permission and risk outrank relevance. Vector similarity alone cannot solve this.
+It is not a research formula; it is a checklist. An old report can be highly relevant and low on freshness; a capable tool must not appear when the agent lacks permission; a few dozen tokens can still cause large distraction by conflicting with standing instructions. Weights change with the task — and vector similarity alone cannot solve this.
 
 ## What you don't recommend matters as much as what you do
 
@@ -123,7 +123,7 @@ Context Recommendation is not about making the model "feel better informed." It 
 5. Whether permission filtering and human confirmation blocked out-of-bounds actions;
 6. How task completion, rework, tokens, latency and cost change across context combinations.
 
-The run log needs one more layer: what the candidates were, what was selected, what was excluded, why, and what the model did next. With only task outcomes and no record of the selection rationale, you can't tell whether a failure came from the model, the tools, or a wrongly assembled workbench. Start with a human gold standard: label the required, optional and forbidden context for each step of real tasks, then ablate — remove one item and see whether the task fails, add one and see whether errors increase. That is closer to an agent's actual objective than treating click-through rate as recommendation quality.
+The run log needs one more layer: what the candidates were, what was selected, what was excluded, why, and what the model did next — without the selection rationale, you can't tell whether a failure came from the model, the tools, or a wrongly assembled workbench. Start with a human gold standard: label the required, optional and forbidden context for each step, then ablate — remove one item and see whether the task fails, add one and see whether errors increase. That is closer to an agent's objective than click-through rate.
 
 ## RAG stays in the system — in a different position
 
