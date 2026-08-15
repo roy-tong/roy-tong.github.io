@@ -49,6 +49,14 @@
 
 - [重新开始写作](https://roy-tong.github.io/notes/start-writing/): Why this public research archive exists and how judgments will be revised over time.
 
+## English Writing
+
+- [Geek, Professional, B2B, Consumer: Markets as Evidence Environments](https://roy-tong.github.io/en/notes/market-roles-remove-uncertainty/): English edition of the market-entry framework — Geek, Professional, domain B2B, and Consumer users as evidence environments rather than a maturity ladder.
+- [After AI-Native: The Basic Unit of a Product Has Changed](https://roy-tong.github.io/en/notes/ai-native-basic-unit/): English edition — why semantic objects, tasks, relations, and operation history become the primary state of AI-native products.
+- [After RAG, Agents Need Context Recommendation](https://roy-tong.github.io/en/notes/agent-context-recommendation-after-rag/): English edition — an Agent Runtime layer that assembles the information, capabilities, state, and authority each step should receive.
+- [Robots Don't Replace People — They Give People New Bodies](https://roy-tong.github.io/en/notes/robots-give-people-new-bodies/): English edition — a capability-gain framework for robots that extend human vision, presence, action, and physical attributes.
+- [From Formal Authority to Organizational Legitimacy](https://roy-tong.github.io/en/notes/appointed-manager-organizational-legitimacy/): English edition — how an appointed leader moves from formal authority to organizational legitimacy.
+
 ## Usage Notes
 
 - Cite the original article URL, not this index, when using an argument.
