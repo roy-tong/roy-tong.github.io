@@ -9,7 +9,7 @@ tags:
   - robotics
   - embodied intelligence
   - human-robot collaboration
-description: A capability-gain lens on robots: people keep intent, judgment and high-risk commitments, agents handle shared control, and robot bodies carry human capability to places the body can't reach.
+description: "A capability-gain lens on robots: people keep intent, judgment and high-risk commitments, agents handle shared control, and robot bodies carry human capability to places the body can't reach."
 permalink: /en/notes/robots-give-people-new-bodies/
 ---
 
