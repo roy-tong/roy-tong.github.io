@@ -1,90 +1,173 @@
 ---
 layout: post
-title: "工具经济需要客观数据：Agent 调用测量的标准与体系"
-subtitle: "Agent 正在成为软件分发最重要的新渠道，但工具作者对自己工具被 Agent 用了多少次、成功与否、谁在用——一无所知。"
-date: 2026-08-16 08:00:00 +0800
-reading_time: 12
+title: "如何测量 Agent Tool Economy"
+subtitle: "Install ≠ Usage。什么才算软件被 Agent 真实使用——一套开放的 Usage Attribution 标准。"
+date: 2026-08-16 09:00:00 +0800
+reading_time: 15
 tags:
   - Agent
+  - 测量标准
   - 开源
-  - 数据标准
-description: 本文提出一套客观测量 Agent 调用的三层标准（识别/证明/聚合）与开源中间件 agent-used，让"Agent 使用量"成为像 npm 下载量一样可信的开发者决策数据。
+description: 使用漏斗（Selection→Execution→Success→Consumption→Contribution）、证据分级（E0-E3）与六要素测量模型——agent-used 是这套框架的 reference implementation。
 ---
 
-Agent 正在成为软件分发最重要的新渠道。工具作者却对这一层消费完全盲区。
+## 一个基本问题
 
-过去十年，开发者判断"我的项目有没有人用"靠三个数字：下载量、star、issue。它们不完美，但客观、可比较、可追溯。
+**What does it mean for software to be "used by an agent"?**
 
-2026 年，一个新的消费群体出现：Agent。Claude Code、Codex、Cursor 会替用户选择工具、安装 skill、调用 MCP server。对很多工具来说，**Agent 推荐正在成为比搜索更重要的入口**——用户不再浏览 README，而是问 Agent"我要一个研究监测工具"，Agent 替他选。
+2026 年，Agent 正在成为软件分发最重要的新渠道。Claude Code、Codex、DeepSeek Harness 会替用户选择工具、安装 skill、调用 MCP server。工具作者第一次面对一个无法回答的问题：**我的工具到底有没有被 Agent 用？**
 
-但工具作者看到什么？
+现有信号全部失效：
 
-| 渠道 | 你能看到什么 | 缺失 |
-| --- | --- | --- |
-| GitHub star / clone | 人是否关注 | Agent 是否使用？ |
-| skills.sh 安装数 | CLI 自报遥测 | 可刷、无 API、无验证 |
-| MCP registry | 被收录 | 官方明确不做采纳数据 |
-| llms.txt | 声明了 | 审计显示 97% 的 llms.txt 零 AI 请求 |
-| Agent 会话 | 无 | 完全黑箱 |
+- GitHub star / clone 显示的是人，不是 Agent
+- skills.sh 安装数是自报遥测（可刷、无 API、无验证）
+- MCP registry 明确不做采纳数据
+- llms.txt 声明了，审计显示 97% 零 AI 请求
 
-**Agent 经济正在成为一场没有记分牌的比赛。** 没有客观数据，开发者只能靠感觉决策：该不该继续维护这个 MCP server？该把算力投到哪个工具？该不该为 Agent 优化 README？
+于是工具作者只能靠感觉决策：该不该继续维护这个 MCP server？该把算力投到哪个工具？Agent 是怎么发现工具的？
 
-## 为什么是现在
+本文想做的第一件事不是给答案，而是**把问题定义清楚**。
 
-标准正在 2026 年形成：AAIF（Agentic AI Foundation）2025 年 12 月成立，MCP、goose、AGENTS.md 入基金会；gh skill 2026 年 4 月上线，GitHub 正式把 repo 变成 agent 资产；OpenTelemetry GenAI 语义约定包含 Execute tool span（Development 状态）；IETF 出现 11 个 agent 发现草案。
+## 概念贡献：使用不是一个事件，是一条链
 
-**谁定义"Agent 使用量"的口径，谁就拿到下一个 npm 下载量的定义权。**
+工具生态过去有一个隐含假设：下载了 = 用了。Agent 生态把这个假设彻底打破。
 
-## 三层测量标准
-
-任何客观测量体系需要回答三个问题：谁在调用（识别）、调用是否真实（证明）、总量是多少（聚合）。
-
-**L1 识别——谁在调用。** MCP 协议自带的 `clientInfo {name, version}` 零成本完成；HTTP 用请求头；CLI 用环境变量。尽力而为：不自报时记 `unknown`，不拒绝服务。
-
-**L2 证明——调用是真的。** 被调方签发可验证回执（HMAC 签名 + nonce 防重放）。**关键：计数发生在被调方**——wrapper 坐在真实调用边界，调用方无法自报。这是与所有自报式遥测的本质区别。
-
-**L3 聚合——总量可信。** 开放事件格式（JSONL，schema 公开）+ 聚合 API + README 徽章（"本月 N 次 Agent 调用"）+ 异常检测与独立信号交叉验证。
-
-## 实现：一行命令接入的中间件
-
-不要求项目改造内部——wrap 一层：
-
-```bash
-# MCP server（被调方计数）
-agent-used wrap -- npx @your/mcp-server
-
-# Agent 侧（调用方计数，与 wrapper 交叉验证）
-agent-used hook install --agent codex    # 写 ~/.codex/hooks.json
-
-# 本地聚合 → README 徽章
-python3 aggregator.py import --events ~/.agent-used/events/agent-use-events.jsonl
-python3 aggregator.py serve --port 8787
+```text
+Install ≠ Usage
+Discovery ≠ Selection
+Selection ≠ Execution
+Execution ≠ Success
+Success ≠ Consumption
+Consumption ≠ Contribution
 ```
 
-Codex 和 Claude Code 都提供用户级 hooks（PostToolUse 等 11 种事件），在工具调用边界注入脚本**不需要平台合作**——这意味着调用方计数今天就能落地，平台原生支持是升级路径而非前置条件。两侧数据交叉验证，可信度高于任何单侧计数。
+每一层都不能替代下一层：
 
-事件只含元数据：工具名、结果、粗粒度耗时、宿主、时间。**参数、内容、路径、身份——代码级保证不记录**（测试断言防泄漏）。
+| 阶段 | 定义 | 谁可观察 | 意义 |
+| --- | --- | --- | --- |
+| S0 Selected | Agent 选择了该工具 | Agent runtime | 被发现且被选中 |
+| S1 Executed | 实际执行了调用 | 双侧 | 选择变成了行为 |
+| S2 Execution Success | 成功返回 | 双侧 | 行为变成了结果 |
+| S3 Result Consumed | 结果被后续上下文使用 | Agent runtime（部分） | 结果变成了输入 |
+| S4 Task Contribution | 对下游任务完成有贡献 | 研究方向 | 输入变成了价值 |
 
-## 政策与伦理：不碰的红线
+**"调用成功"不等于"工具有用"。** 一个被反复调用但结果从不被 Agent 使用的工具，和没有被调用没有本质区别。长期来看，**Result Consumed Rate 比 Tool Calls 更接近工具的真实价值**——这是整个测量框架最重要的研究方向。
 
-1. **不自动 star / follow**：GitHub AUP 明确禁止 automated starring（rank abuse）——本体系测量"使用"，永远不激励 Agent 去 star
-2. **不爬 GitHub**：数据来自用户自有工具事件；交叉验证走官方 API
-3. **不伪造**：被调方计数 + 签名，伪造即违约
-4. **只收聚合**：`DO_NOT_TRACK=1` 全程生效，默认本地、opt-in 上传
+## 证据分级：签名不等于真实
 
-## 采用路径
+开放生态里不存在绝对 ground truth。任何"客观真实"的宣称都需要回答：**你凭什么证明？**
 
-**Agent 平台路径**：hooks 已证明用户侧注入可行；下一步以白皮书 + 标准草案对齐 AAIF / OTel GenAI，推动"被调方计数"成为平台原生能力——对工具作者是免费的客观数据，对平台是生态吸引力。
+一个工具作者可以生成 100 万条假调用，用自己的 key 做 HMAC——全部是合法签名。所以 HMAC 只证明"数据来自持 key 主体且未被篡改"，不证明"真的有 Agent 调用了它"。
 
-**代码平台路径**：gh skill 已把 repo 变成 agent 资产但无使用指标；agent-used 的验证层（签名 + 异常检测）是 GitHub 生态缺的那块。保持接触。
+因此测量体系必须用**证据等级**取代二元判断：
 
-两条路，一条走通即可。
+| 等级 | 名称 | 能证明什么 | 公共统计可信度 |
+| --- | --- | --- | --- |
+| E0 Observed | 单边日志 | 某一方声称 | 低 |
+| E1 Source-authenticated | 签名事件 | 来源与完整性 | 中低 |
+| **E2 Correlated** | 双边独立观测匹配 | 同一次真实调用 | **高（核心）** |
+| E3 Platform-attested | 平台直接证明 | 平台确认 | 很高 |
+
+**E2 是技术上的关键突破点**：当 Agent 侧与 Tool 侧通过同一 OTel trace（`trace_id`）独立记录到同一次调用，两侧无法单方伪造对方的观测，这才构成 **corroborated usage**。
+
+MCP 2026-07-28 Release Candidate 把 OTel trace context（`traceparent / tracestate / baggage`）正式纳入 `_meta` 传递——**协议级双边关联首次成为现实**。这是本框架最重要的技术基础：不是我们发明了 trace 传播，而是我们第一次定义"trace 对上之后，什么才算一次可信的使用"。
+
+## 测量模型：六要素
+
+```
+Agent Usage Measurement Model
+        ├─ Identity     这次使用属于哪个项目（repo↔npm↔MCP↔tool↔CLI↔skill 归一）
+        ├─ Observation  谁观测的（client / server / platform）
+        ├─ Correlation  双边是否对上（trace_id / tool_use_id）
+        ├─ Evidence     可信到什么程度（E0-E3）
+        ├─ Aggregation  如何归一化（session 归一、重试归一、防拆 API）
+        └─ Privacy      如何公开而不泄露（raw stays local）
+```
+
+其中 **Identity** 是被低估的难点：同一项目在 GitHub、npm、MCP registry、tool 名、CLI、skill 下有六种身份。不做归一，同一个项目会被拆成六份数据——排名失真，也给"拆 API 刷榜"留了空间。Canonical Identity Graph 是测量体系的底层资产。
+
+## 指标：为什么 Raw Call Count 不是北极星
+
+一个 Agent 完成任务需要 `search → fetch → parse` × 2 = 6 次调用；另一个 Agent 用高度封装工具 `research()` = 1 次调用。前者不意味着 6 倍使用。失败重试链 `call → fail → retry → success` 反而产生 3 条记录。
+
+因此公开指标按四层组织，优先级递减：
+
+1. **Adoption**（首要）：Active Agent Sessions——过去 30 天产生 verified usage 的会话数
+2. **Engagement**：Repeat Usage、7d / 30d 回访率
+3. **Quality**：Execution Success、Result Consumption
+4. **Trust**：Corroborated Usage Share（E2 占比）
+
+排行榜按 Active Sessions 而非 calls——否则必然出现"为刷榜把工具拆成 50 个 API"。
+
+## 与现有标准的关系：站在 OTel 上面
+
+agent-used 不替代 OpenTelemetry，也不替代 MCP：
+
+- **OTel 解决 telemetry 怎么传**：trace 传播、span、字段约定
+- **MCP 解决工具怎么调**：协议、`_meta` trace context
+- **agent-used 解决什么才算使用**：语义、证据、身份、指标、隐私
+
+实现上只增加 6 个 `agentused.*` 扩展字段（`project.id`、`observer.side`、`agent.host`、`provenance`、`evidence.level`、`project.version`），其余全部复用标准字段。若 OTel GenAI 工作组未来采纳，字段并入标准，agent-used 退化为纯语义层——这是设计目标。
+
+## 架构：Attribution Layer
+
+```text
+Public Usage Layer（Dashboard / API / Badge / Rankings / Trends）
+        ▲  aggregated only
+Attribution Layer
+  Identity Resolution · Dedup · Correlation · Evidence Grading
+  Privacy Aggregation · Metric Normalization
+        ▲                ▲
+ Agent Adapters        Tool Adapters
+  codex / claude / dsh   mcp / http / cli
+        ▲                ▲
+   OTel / MCP existing standards
+```
+
+三个 Agent 侧 adapter 证明跨平台可统一：
+
+- **Codex**：`PreToolUse / PostToolUse` hooks 观测 MCP、shell 与 local function tools；`prompt / tool_input / tool_output` 默认 DROP——adapter 的意义不是记录更多，而是**证明 Codex 这一侧真的发起了调用**
+- **Claude Code**：原生 OTLP 输出（metrics/events/traces），agent-used 作为 OTel Processor/Exporter 接入——**不要求用户放弃现有 observability backend**
+- **DeepSeek Harness**：everything is a plugin，tool 执行暴露 `pre-execute / execute / post-execute` seam，session 是可持久化事件流——可以做最深的第一方集成
+
+同一套 Measurement Model 横跨三套完全不同的 harness——这就是"标准"的意义。
+
+## 隐私：Raw stays local
+
+```
+Raw Events → 本地 Collector（identity/dedup/redact/aggregate/evidence）→ SAFE AGGREGATES → 公开
+```
+
+云端默认拿不到：prompt、input、output、path、email、username、raw session id。伪匿名 installation id（本地 secret + 按月轮换）支持 unique installations 与 repeat usage 计算，云端无法反推身份。
+
+**为什么"我们绝不记录参数"不够**：那是承诺；体系是架构。把 redaction 放进采集链路的默认路径，让泄漏在代码层不可能发生（adapter 带泄漏测试）。
+
+## 政策红线
+
+1. 不自动 star / follow（GitHub AUP 明确禁止 automated starring）
+2. 不爬 GitHub 网页采集数据（交叉验证走官方 API）
+3. 不按 raw calls 排名（防拆 API 刷榜）
+4. 测量"使用"，不是"好评"
+
+## 生态路径
+
+三条路不是竞争，是互补：
+
+| 伙伴 | 解决什么 | 角色 |
+| --- | --- | --- |
+| **Agent 平台**（OpenAI / Anthropic / DeepSeek） | 谁真正调用了 | 证据的最高权威（E3） |
+| **GitHub** | 项目是谁的、代码在哪 | 身份与归属（repo identity、badge） |
+| **MCP Registry** | 这个 server 是谁 | **第一批生态合作的自然起点**——registry 是身份，agent-used 是实际使用；官方明确欢迎 downstream aggregator 增加 ratings / security / usage 等额外信息 |
 
 ## 行动号召
 
-- **工具作者**：接入 agent-used，用真实数据决定方向
-- **Agent 厂商**：采纳 L1 识别头，让 Agent 调用可被测量——对生态是净收益
-- **标准社区**：参与口径讨论（AAIF / OTel GenAI）
-- **读者**：转发这份白皮书，把"Agent 使用量"变成行业公共品
+- **工具作者**：接入 adapter，先看自己的真实数据（不急着上榜）
+- **Agent 平台**：开放 attestation 接口，让"使用证明"成为平台原生能力
+- **标准社区**：讨论 S0-S4 漏斗与 E0-E3 证据模型——这是可以进 AAIF / OTel GenAI 的草案
+- **研究者**：Result Consumption（S3）与 Task Contribution（S4）的测量方法，是开放问题
 
-项目开源在 [github.com/roy-tong/agent-used](https://github.com/roy-tong/agent-used)（事件标准、wrapper、hook SDK、聚合器，MIT），事件 schema 与 SPEC 全文在仓库内。反馈请开 Issue，或直接在 X 找我。
+**先推动问题定义，再推动实现。** 本文是问题定义；[agent-used](https://github.com/roy-tong/agent-used) 是 reference implementation。
+
+---
+
+*反馈：GitHub Issues（agent-used 仓库）或 X @elliwoodtong。Spec 全文见仓库 `spec/`（measurement-spec / evidence-model / metrics / privacy / identity / threat-model / otel-mapping）。*
