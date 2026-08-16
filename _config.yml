@@ -1,6 +1,6 @@
 title: "Roy.Tong"
 tagline: "把前沿技术转化为可商业化的产品"
-description: "Roy.Tong 的个人网站，发布关于 AI、具身智能、智能硬件、产品与商业化的文章和开源项目。"
+description: "Roy.Tong 的公开研究与项目主页：Research、Essays、Projects，长期关注 Agent、具身智能、多模态交互、端侧 AI 与前沿技术商业化。"
 url: "https://roy-tong.github.io"
 baseurl: ""
 lang: zh-CN
@@ -16,6 +16,7 @@ social:
   name: "Roy.Tong"
   links:
     - https://github.com/roy-tong
+    - https://x.com/elliwoodtong
 
 permalink: /notes/:title/
 markdown: kramdown
