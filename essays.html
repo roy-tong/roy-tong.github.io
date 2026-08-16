@@ -1,0 +1,48 @@
+---
+layout: default
+title: Essays
+permalink: /essays/
+description: Roy.Tong 的长期观点文章：关于 AI、Agent、具身智能、交互、产品与商业化的判断。
+lang_switch_url: /en/essays/
+---
+
+<section class="page-intro shell">
+  <p class="eyebrow">ESSAYS</p>
+  <h1>观点文章</h1>
+  <p class="page-deck">Essays 不是新闻复述，而是我希望长期保留、可以被讨论和反驳的判断。</p>
+</section>
+
+<section class="home-simple-section home-writing">
+  <div class="shell">
+    <a class="home-featured-article" href="{{ '/notes/ai-native-basic-unit/' | relative_url }}">
+      <div class="home-featured-meta"><span>SELECTED</span></div>
+      <div class="home-featured-copy">
+        <h3>AI Native 之后，产品的基本单位变了</h3>
+        <p>从页面、功能和 App，转向意图、任务、能力与结果。</p>
+      </div>
+      <span class="home-article-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="archive shell">
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <div class="archive-year">
+      <h2>{{ year.name }}</h2>
+      <div class="archive-items">
+        {% for post in year.items %}
+          {% if post.lang == 'en' %}{% continue %}{% endif %}
+          <article class="archive-item">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
+            <div>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </div>
+            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
