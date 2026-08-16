@@ -2,7 +2,7 @@
 layout: post
 title: "Agent 软件的使用应该如何被度量？"
 subtitle: "Reach → Choice → Use → Utility → Value：一份 Agent 软件生态的行业度量方法论。"
-date: 2026-08-17 09:00:00 +0800
+date: 2026-08-16 10:00:00 +0800
 reading_time: 15
 tags:
   - Agent
