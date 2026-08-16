@@ -6,50 +6,102 @@ description: 把技术机会翻译成产品与商业决策的判断方法：市�
 lang_switch_url: /en/
 ---
 
-<section class="page-intro shell">
-  <p class="eyebrow">SERIES A</p>
+<section class="series-hero shell">
+  <p class="eyebrow">系列 A · 判断方法</p>
   <h1>技术 → 产品翻译</h1>
-  <p class="page-deck">新技术出现时，最难的不是理解技术，而是判断它应该变成什么产品、先服务谁、凭什么成立。这个系列把"技术机会 → 产品定义 → 商业决策"的翻译过程拆成可复用的判断方法。</p>
+  <p class="series-deck">新技术不缺解读，缺翻译。把一个技术机会变成什么产品、先服务谁、凭什么成立——这个系列把翻译过程拆成可复用的判断方法。</p>
 </section>
 
-<section class="archive shell">
-  <div class="archive-year">
-    <h2>为什么读这个系列</h2>
-    <div class="archive-items">
-      <article class="archive-item">
-        <div>
-          <p>如果你在做 AI、硬件或 Agent 相关的产品决策，这个系列回答的是同一类问题：面对一个看起来很大的机会，什么证据能证明它值得做，什么信号说明该停。</p>
-        </div>
-      </article>
-    </div>
-  </div>
+<section class="series-block shell" aria-labelledby="theses-title">
+  <header class="series-block-heading">
+    <h2 id="theses-title">这个系列的核心判断</h2>
+  </header>
+  <ol class="series-thesis-list">
+    <li>
+      <span class="series-thesis-num">01</span>
+      <div>
+        <h3>市场不是阶梯，是证据环境</h3>
+        <p>Geek、Professional、领域 B 端与大众消费者不是成熟度等级，而是四种证据环境，各自消灭不同的未知。选择下一站，先选最合适的证据场，而不是最大的市场。</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">02</span>
+      <div>
+        <h3>竞品比较工作流，不比较参数表</h3>
+        <p>软件比工作流、迁移与持续变化；硬件还要比物理系统、量产可靠性与服务。参数表没有洞察，只有坐标。</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">03</span>
+      <div>
+        <h3>样本量不等于证据</h3>
+        <p>20 万条用户反馈可能全是噪音。需求判断需要证据分级、场景还原与反例检验——先定义什么算证据，再谈样本。</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">04</span>
+      <div>
+        <h3>AI Native 之后，产品的基本单位变了</h3>
+        <p>页面与文件不会消失，但会退化为同一份语义与任务状态的不同视图。产品定义要从对象模型开始，而不是从界面开始。</p>
+      </div>
+    </li>
+  </ol>
+</section>
 
-  <div class="archive-year">
-    <h2>系列文章</h2>
-    <div class="archive-items">
-      {% for post in site.posts %}
-        {% if post.lang != 'en' and (post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems') %}
-          <article class="archive-item">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
-            <div>
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </div>
-            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
-          </article>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
+<section class="series-block shell" aria-labelledby="articles-title">
+  <header class="series-block-heading">
+    <h2 id="articles-title">系列文章</h2>
+  </header>
 
-  <div class="archive-year">
-    <h2>建议阅读顺序</h2>
-    <div class="archive-items">
-      <article class="archive-item">
+  {% assign entry_slug = 'market-roles-remove-uncertainty' %}
+  {% for post in site.posts %}
+    {% if post.lang != 'en' and post.path contains entry_slug %}
+      <a class="series-entry" href="{{ post.url | relative_url }}">
         <div>
-          <p>从 <a href="{{ '/notes/market-roles-remove-uncertainty/' | relative_url }}">Geek、Professional、B、C</a> 开始——它定义了整套方法的总纲：先找最大的未知，再选能暴露它的市场。之后按你的当前问题选择：<a href="{{ '/notes/competitive-analysis-software-hardware/' | relative_url }}">竞品分析</a>（怎么比较对手）、<a href="{{ '/notes/scene-user-demand-evidence-research/' | relative_url }}">需求证据</a>（怎么验证用户）、<a href="{{ '/notes/ai-native-basic-unit/' | relative_url }}">AI Native 产品形态</a>（怎么定义产品）。</p>
+          <span class="series-entry-tag">入口文章</span>
+          <h3>{{ post.title }}</h3>
+          {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
         </div>
-      </article>
-    </div>
+        <span class="series-entry-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endif %}
+  {% endfor %}
+
+  <div class="series-article-list">
+    {% for post in site.posts %}
+      {% if post.lang != 'en' and (post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems') %}
+        {% if post.path contains entry_slug %}{% continue %}{% endif %}
+        <a class="series-article-row" href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
+          <div>
+            <h3>{{ post.title }}</h3>
+            {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
+
+<section class="series-block series-path-block shell" aria-labelledby="path-title">
+  <header class="series-block-heading">
+    <h2 id="path-title">怎么读这个系列</h2>
+  </header>
+  <ol class="series-path-list">
+    <li><span>1</span><p>先读入口文章，建立总纲：先找最大的未知，再选能暴露它的市场。</p></li>
+    <li><span>2</span><p>按你当前的问题选读：<a href="{{ '/notes/competitive-analysis-software-hardware/' | relative_url }}">怎么比较对手</a>、<a href="{{ '/notes/scene-user-demand-evidence-research/' | relative_url }}">怎么验证用户</a>。</p></li>
+    <li><span>3</span><p>用 <a href="{{ '/notes/ai-native-basic-unit/' | relative_url }}">AI Native 产品形态</a> 收束：把判断落回产品定义。</p></li>
+  </ol>
+</section>
+
+<nav class="series-nav shell" aria-label="其他系列">
+  <a class="series-nav-link" href="{{ '/series/agent-and-terminals/' | relative_url }}">
+    <span>下一个系列</span>
+    <strong>Agent 与 AI 终端 <span aria-hidden="true">→</span></strong>
+  </a>
+  <a class="series-nav-link" href="{{ '/series/software-to-hardware-pm/' | relative_url }}">
+    <span>另一个角度</span>
+    <strong>从软件到硬件的产品管理 <span aria-hidden="true">→</span></strong>
+  </a>
+</nav>
