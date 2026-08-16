@@ -1,0 +1,300 @@
+---
+layout: default
+lang: en
+title: Embodied Intelligence — Research Topic Hub
+permalink: /en/research/embodied-intelligence/
+description: Embodied intelligence research hub: what is changing, market map, companies, products, technology paths, and commercialization evidence, plus Roy's research materials and related essays. Continuously updated.
+lang_switch_url: /research/embodied-intelligence/
+---
+
+<section class="page-intro shell">
+  <p class="eyebrow">RESEARCH · TOPIC HUB · 01</p>
+  <h1>Embodied Intelligence</h1>
+  <p class="page-deck">How robots move from technical demos into real tasks. This hub continuously tracks market change, companies, products, technology paths, and commercialization evidence — recording facts, and keeping the process of revision visible.</p>
+</section>
+
+<nav class="hub-toc" aria-label="Hub contents">
+  <div class="shell hub-toc-inner">
+    <a href="#what-is-changing">01 What is changing</a>
+    <a href="#market-map">02 Market map</a>
+    <a href="#companies">03 Companies</a>
+    <a href="#products">04 Products</a>
+    <a href="#technology">05 Technology</a>
+    <a href="#economics">06 Economics</a>
+    <a href="#my-research">07 My research</a>
+    <a href="#essays">08 Essays</a>
+  </div>
+</nav>
+
+<div class="shell hub-wrap">
+
+  <section class="hub-section" id="what-is-changing">
+    <header class="hub-section-head">
+      <span class="hub-section-num">01</span>
+      <div>
+        <h2>What is changing</h2>
+        <p>One-sentence version for mid-2026: humanoid robots have entered their "year one of mass production" — the industry has switched from a demo competition to a delivery competition, and consolidation has begun.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <p>The dominant narrative shift of the first half of the year is "from show floor to factory floor." A Xinhua observation piece in July called 2026 the year one of humanoid mass production: competitive focus has moved from launch events and demo videos to real deployments on production lines.<span class="hub-label">Fact</span></p>
+      <ul>
+        <li><span class="hub-label">Fact</span> Under industry tracking estimates, humanoid robot shipments grew roughly 272% year over year in H1 2026, with Chinese vendors accounting for about 97% of global shipments.</li>
+        <li><span class="hub-label">Fact</span> Unitree became the world's top seller of humanoid robots, scaling quickly on an aggressive price strategy.</li>
+        <li><span class="hub-label">Fact</span> Capital markets show two opposing forces: private funding surged and leading companies entered a "10-billion-RMB club" (~12 firms by valuation), while an IPO wave opened — and the representative listed company (UBTECH) remains loss-making.</li>
+        <li><span class="hub-label">Fact</span> On the model side, VLA (vision-language-action) and "world models" became the standard industry narrative; NVIDIA shipped a full stack of robot foundation models, simulation tools, and edge hardware at CES 2026, publicly positioning itself as the "Android of robotics."</li>
+        <li><span class="hub-label">Fact</span> The industry has started to consolidate: clear differentiation and elimination signals emerged in 2026, and story-driven companies without real delivery capability are struggling to raise.</li>
+      </ul>
+      <div class="hub-callout">
+        <strong>My judgment</strong>: the industry is moving from "anyone can demo" to "who can deliver reliably." The core evidence for evaluating an embodied-AI company is shifting from launch videos to shipped units, failure rates, real orders, and repeat purchases — the same shift from model capability to system delivery that happened in AI software (see <a href="{{ '/notes/waic-from-models-to-systems/' | relative_url }}" hreflang="zh-CN">WAIC 之后</a>).
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-section" id="market-map">
+    <header class="hub-section-head">
+      <span class="hub-section-num">02</span>
+      <div>
+        <h2>Market map</h2>
+        <p>I split the industry into five layers — hardware body, model brain, data, scenario integration, and infrastructure — and use the same coordinates to compare companies and products.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <p>This layering is not a strict supply-chain taxonomy; it is a way to classify questions when evaluating companies: which layer a company's real moat sits in determines which valuation logic applies.</p>
+      <div class="hub-layer-list">
+        <div class="hub-layer"><span>01 Hardware body</span><p>Actuators, reducers, motors, sensors, dexterous hands, and chassis. China's supply chain (Leaderdrive, Sanhua, Tuopu, etc.) and "shared factory" models have sharply lowered the barrier to mass production; hardware differentiation is narrowing.</p></div>
+        <div class="hub-layer"><span>02 Model brain</span><p>VLA foundation models, world models, reinforcement learning, and data pipelines. Players include NVIDIA, Google DeepMind, Physical Intelligence, and Skild abroad, plus in-house routes at AgiBot, Unitree, and others.</p></div>
+        <div class="hub-layer"><span>03 Data</span><p>Teleoperation collection, synthetic simulation data, and real-world feedback loops. Data scale and quality are becoming the main constraint on capability — and the hardest layer to scale.</p></div>
+        <div class="hub-layer"><span>04 Scenario integration</span><p>Automotive, 3C manufacturing, logistics and warehousing, retail, eldercare, and home. Scenarios decide whether the business loop closes; the competitors here are system integrators and existing automation.</p></div>
+        <div class="hub-layer"><span>05 Infrastructure</span><p>Simulation platforms (NVIDIA Cosmos, Genesis), cloud robotics, remote operation, regulation, and safety standards. This layer determines how cheaply the industry can scale.</p></div>
+      </div>
+      <p><span class="hub-label">Fact</span> Market-size forecasts diverge widely: Morgan Stanley, citing a PwC whitepaper, projects China's embodied-intelligence market at roughly $15 billion by 2030; global forecasts range from tens of billions to over a hundred billion depending on when home robots are assumed to scale. My approach: <strong>watch shipments and real orders; treat market forecasts as scenario assumptions, not facts</strong>.</p>
+      <p><span class="hub-label">To verify</span> The U.S. market shows a "six players, three routes" pattern (vertical integration, model platforms, body-plus-ecosystem alliances). None of the three routes has produced a decisive winner by mid-2026 — the key thing to watch in H2.</p>
+    </div>
+  </section>
+
+  <section class="hub-section" id="companies">
+    <header class="hub-section-head">
+      <span class="hub-section-num">03</span>
+      <div>
+        <h2>Companies</h2>
+        <p>A mid-2026 snapshot. Funding, valuation, and delivery numbers move fast — use the trackers linked in the sources below.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <table class="hub-table">
+        <thead>
+          <tr><th>Company</th><th>Region</th><th>Route</th><th>Mid-2026 status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tesla Optimus</td><td>US</td><td>Vertical integration</td><td>Building a massive in-house factory (reported on the order of 10M sq ft); internal production first, external sales later</td></tr>
+          <tr><td>Figure</td><td>US</td><td>General humanoid + in-house models</td><td>Helix continues the end-to-end route; pilot partnerships with BMW and others</td></tr>
+          <tr><td>1X</td><td>Norway / US</td><td>Home-first</td><td>NEO targets the home, subscription-plus-service route — one of the few firms betting clearly on consumers</td></tr>
+          <tr><td>Apptronik</td><td>US</td><td>Industrial &amp; logistics</td><td>Apollo partners with Mercedes and NVIDIA, emphasizing synergy with existing automation</td></tr>
+          <tr><td>Boston Dynamics</td><td>US</td><td>Industrial / research</td><td>Electric Atlas transition; Spot continues commercializing inspection and similar work</td></tr>
+          <tr><td>Sanctuary AI</td><td>Canada</td><td>Teleoperation + general</td><td>Phoenix emphasizes human remote control with progressive autonomy — the "human-machine hybrid" route</td></tr>
+          <tr><td>Unitree</td><td>China</td><td>Cost-performance hardware</td><td>World's top humanoid seller; G1 and quadrupeds scale on low prices</td></tr>
+          <tr><td>AgiBot (Zhiyuan)</td><td>China</td><td>Full-stack + mass production</td><td>Expedition series; large-scale production plans in Lingang — the Chinese "mass production narrative" representative</td></tr>
+          <tr><td>Fourier</td><td>China</td><td>Rehab → general</td><td>Entered from rehabilitation robots; GR series evolving toward general humanoids</td></tr>
+          <tr><td>UBTECH</td><td>China</td><td>Industrial pilots</td><td>Listed in Hong Kong, persistently loss-making; Walker S in automaker and industrial pilots — the "listed but unprofitable" sample</td></tr>
+          <tr><td>XPeng</td><td>China</td><td>Automaker synergy</td><td>IRON leverages the automaker's supply chain and manufacturing, reusing software and hardware</td></tr>
+          <tr><td>Galaxy General (Galbot)</td><td>China</td><td>Mobile manipulation</td><td>Wheeled base + arm form factor entering retail and logistics scenarios</td></tr>
+        </tbody>
+      </table>
+      <p>Others include Kepler, EngineAI, Star Dynasty, and LimX Dynamics, plus model-layer players such as Physical Intelligence (π series) and Skild. For funding and delivery tracking I use the <a href="https://humanoidindex.org/funding" rel="nofollow">Humanoid Index funding tracker</a> and <a href="https://humanoidintel.ai/companies/" rel="nofollow">HumanoidIntel company tracker</a> as public references.<span class="hub-label">Fact</span></p>
+      <div class="hub-callout">
+        <strong>My judgment</strong>: Chinese and U.S. companies are on the same "factory floor" track, but their approaches are diverging — U.S. firms emphasize model capability and premium pricing (Figure, 1X, Apptronik), Chinese firms emphasize supply chain, price, and mass production (Unitree, AgiBot, UBTECH). The question worth tracking in 2026: <strong>does low-price mass production convert into reliable delivery and repeat orders, or does it just sell demos as toys?</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-section" id="products">
+    <header class="hub-section-head">
+      <span class="hub-section-num">04</span>
+      <div>
+        <h2>Products</h2>
+        <p>Form-factor classification matters more than individual models. The test is "task density": across how many real tasks does one machine work reliably?</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <table class="hub-table">
+        <thead>
+          <tr><th>Form factor</th><th>Representative products</th><th>Current proof point</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>General humanoid</td><td>Tesla Optimus, Figure 02, 1X NEO, Unitree G1, AgiBot Expedition, Walker S, Apollo</td><td>Production-line tasks, long-horizon manipulation, generalization</td></tr>
+          <tr><td>Quadruped</td><td>Unitree Go2 / B2, Boston Dynamics Spot</td><td>Inspection, security, research — one of the few proven profitable categories</td></tr>
+          <tr><td>Mobile manipulation (wheeled + arm)</td><td>Galaxy General Galbot, wheeled variants from several humanoid firms</td><td>Retail, warehousing, sorting: the form closer to break-even</td></tr>
+          <tr><td>Dexterous hands</td><td>Shadow, Instrobots (因时), PaXini, etc.</td><td>Whether hands become a standalone product category or a humanoid standard is undecided</td></tr>
+          <tr><td>Eldercare / service</td><td>Fourier rehab series, 1X NEO (home)</td><td>Willingness to pay and liability boundaries in home and care settings</td></tr>
+        </tbody>
+      </table>
+      <p><span class="hub-label">Judgment</span> A counterintuitive pattern: the first real revenues come from the least human-looking machines. Quadrupeds and wheeled mobile manipulators generated real revenue by 2026, while the most human-like general humanoids remain in factory pilots. The form-factor competition is a tradeoff between "how human it looks" and "task density" — industrial scenarios pay for reliability, not human-likeness.</p>
+    </div>
+  </section>
+
+  <section class="hub-section" id="technology">
+    <header class="hub-section-head">
+      <span class="hub-section-num">05</span>
+      <div>
+        <h2>Technology</h2>
+        <p>End-to-end VLA is the main line, world models are entering training pipelines, and data has become the new scarce resource.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <ul>
+        <li><span class="hub-label">Fact</span> <strong>End-to-end VLA</strong>: vision-language-action models fold perception, reasoning, and action generation into one model. Representatives: NVIDIA GR00T series, Physical Intelligence π series, Google Gemini Robotics, Figure Helix.</li>
+        <li><span class="hub-label">Fact</span> <strong>World models</strong>: predicting the physical world (NVIDIA Cosmos, Genesis) for simulation training, planning, and data synthesis — becoming the second standard component alongside VLA.</li>
+        <li><span class="hub-label">Fact</span> <strong>Data pipelines</strong>: teleoperation collection, synthetic simulation, and real-world feedback in parallel. Chinese vendors commonly split into a "VLA large model + world model" two-layer architecture, trained in the cloud and deployed on-device.</li>
+        <li><span class="hub-label">Fact</span> <strong>Deployment constraints</strong>: control loops are latency-sensitive (millisecond to hundred-millisecond budgets); on-device inference budgets and cloud compute costs together define the product boundary — the same question I track in the On-device AI hub.</li>
+        <li><span class="hub-label">To verify</span> Dexterous manipulation, long-horizon tasks, cross-scenario generalization, failure recovery, and safety liability remain open problems without a general solution in 2026.</li>
+      </ul>
+      <div class="hub-callout">
+        <strong>My judgment</strong>: the technical competition is shifting from "single-model capability" to a "data–model–hardware–scenario" flywheel. Model leaderboards overstate lead margins; the real gap is in data-feedback velocity and deployment stability — which is why "getting to the factory floor" is itself part of the technical competition, not just a sales problem.
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-section" id="economics">
+    <header class="hub-section-head">
+      <span class="hub-section-num">06</span>
+      <div>
+        <h2>Economics</h2>
+        <p>Who pays, why they pay, and whether the business model holds — commercialization evidence matters more than funding news.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <ul>
+        <li><span class="hub-label">Fact</span> <strong>Industrial B2B pays first</strong>: automotive, 3C manufacturing, and logistics/warehousing are the main sources of real orders in 2026; the "factory floor" narrative maps to pilots and batch purchases in these scenarios.</li>
+        <li><span class="hub-label">Fact</span> <strong>Funding and IPOs diverge</strong>: private funding surged and leading valuations entered the 10-billion-RMB club; but reporting notes almost no funding flows to consumer products — "not a penny for ordinary people."</li>
+        <li><span class="hub-label">Fact</span> <strong>Unit economics are improving</strong>: China's supply chain has sharply cut whole-machine BOM cost; leasing (RaaS) and pay-per-task models lower trial barriers; cloud compute adds a new operating-cost line.</li>
+        <li><span class="hub-label">Judgment</span> <strong>Home is a long-term market, not a near-term one</strong>: long-tail tasks and liability boundaries raise technical difficulty and commercial risk together (see <a href="{{ '/notes/home-robots-harder-richer/' | relative_url }}" hreflang="zh-CN">家庭机器人为什么技术上更难，经济上可能更丰富</a>).</li>
+        <li><span class="hub-label">Judgment</span> The likely order of evolution: industrial first, then services, then home; B2B first, then consumer. When evaluating a company: <strong>revenue evidence &gt; order intent &gt; funding amount &gt; launch events</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hub-section" id="my-research">
+    <header class="hub-section-head">
+      <span class="hub-section-num">07</span>
+      <div>
+        <h2>My research</h2>
+        <p>My own research materials and reading paths under this hub.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <div class="hub-research-grid">
+        <a class="hub-research-card" href="{{ '/notes/embodied-intelligence-beginners-guide/' | relative_url }}" hreflang="zh-CN">
+          <strong>An introduction to embodied intelligence</strong>
+          <p>A map of the industry, companies, products, technology, and career choices, built from scratch — Summer 2026 edition. Start here.</p>
+          <span>Read →</span>
+        </a>
+        <a class="hub-research-card" href="{{ '/buy/embodied-intelligence/' | relative_url }}" hreflang="zh-CN">
+          <strong>Version notes for the map</strong>
+          <p>Structure, sources, and update record for the long-form guide, plus how to cite it.</p>
+          <span>Version notes →</span>
+        </a>
+        <a class="hub-research-card" href="{{ '/notes/home-robots-harder-richer/' | relative_url }}" hreflang="zh-CN">
+          <strong>Home robots: harder technically, richer economically</strong>
+          <p>Why long tails and multi-person rules raise technical difficulty yet add value layers.</p>
+          <span>Read →</span>
+        </a>
+        <a class="hub-research-card" href="{{ '/notes/robots-give-people-new-bodies/' | relative_url }}" hreflang="zh-CN">
+          <strong>Robots give people new bodies</strong>
+          <p>A capability-gain framework for how robots extend human vision, presence, action, and physical attributes.</p>
+          <span>Read →</span>
+        </a>
+        <a class="hub-research-card" href="{{ '/notes/agent-left-embodied-right/' | relative_url }}" hreflang="zh-CN">
+          <strong>Agents to the left, embodied to the right</strong>
+          <p>The divergence of information space and the physical world: reversibility, evaluation, safety, deployment, economics.</p>
+          <span>Read →</span>
+        </a>
+        <a class="hub-research-card" href="{{ '/notes/hardware-innovation-organization-management/' | relative_url }}" hreflang="zh-CN">
+          <strong>Hardware innovation and organization</strong>
+          <p>Organization and methodology research for product innovation from software into hardware.</p>
+          <span>Read →</span>
+        </a>
+      </div>
+      <h3 class="hub-sub">Update log</h3>
+      <ul class="hub-log">
+        <li><time>2026-08-16</time> Hub created. Baseline is a mid-2026 snapshot: mass-production year one, +272% shipments, consolidation signals, VLA + world models as the main line.</li>
+      </ul>
+      <p class="hub-note">This page is planned to update quarterly; major changes (funding, launches, delivery data) will be appended as short entries in the log.</p>
+    </div>
+  </section>
+
+  <section class="hub-section" id="essays">
+    <header class="hub-section-head">
+      <span class="hub-section-num">08</span>
+      <div>
+        <h2>Essays</h2>
+        <p>Judgments and articles I have formed on this direction.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <div class="home-article-list">
+        <a class="home-article-row" href="{{ '/notes/embodied-intelligence-beginners-guide/' | relative_url }}" hreflang="zh-CN">
+          <time>Research</time>
+          <div><h3>An introduction to embodied intelligence</h3><p>A complete map of industries, companies, products, technology, and careers.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/agent-left-embodied-right/' | relative_url }}" hreflang="zh-CN">
+          <time>Essay</time>
+          <div><h3>Agents to the left, embodied to the right</h3><p>Where AI diverges between information space and the physical world.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/home-robots-harder-richer/' | relative_url }}" hreflang="zh-CN">
+          <time>Essay</time>
+          <div><h3>Home robots: harder technically, richer economically</h3><p>Long-tail tasks, multi-person rules, and the liability economy.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/robots-give-people-new-bodies/' | relative_url }}" hreflang="zh-CN">
+          <time>Essay</time>
+          <div><h3>Robots don't replace people; they give people new bodies</h3><p>A product view based on capability gain, not substitution.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/waic-from-models-to-systems/' | relative_url }}" hreflang="zh-CN">
+          <time>Observation</time>
+          <div><h3>After WAIC: the AI industry starts paying for getting things done</h3><p>The industrial turn from model capability to system delivery.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/hardware-innovation-organization-management/' | relative_url }}" hreflang="zh-CN">
+          <time>Research</time>
+          <div><h3>Hardware product innovation in China: organization and management</h3><p>Organization, stage gates, and system ownership in hardware.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="home-article-row" href="{{ '/notes/competitive-analysis-software-hardware/' | relative_url }}" hreflang="zh-CN">
+          <time>Method</time>
+          <div><h3>Why competitive analysis shouldn't start with spec sheets</h3><p>Hardware competition also needs physical-system, manufacturing, channel, and service evidence.</p></div>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-section hub-sources" id="sources">
+    <header class="hub-section-head">
+      <span class="hub-section-num">§</span>
+      <div>
+        <h2>Sources &amp; data</h2>
+        <p>Factual sources cited on this page. Analytical statements are my signed views.</p>
+      </div>
+    </header>
+    <div class="hub-body">
+      <ul class="hub-log">
+        <li><a href="https://www.techrepublic.com/article/news-humanoid-robot-shipments-chinese-vendors/" rel="nofollow">TechRepublic — Humanoid Robot Shipments Surge 272% as Chinese Vendors Capture 97% Share</a></li>
+        <li><a href="https://www.news.cn/tech/20260722/269e0fafc9d342b1abbfa28447e8784b/c.html" rel="nofollow">Xinhua — From show floor to factory floor: observations on "year one of humanoid mass production" (Jul 2026)</a></li>
+        <li><a href="https://www.c114.net.cn/industry/70427.html" rel="nofollow">C114 — 2026: embodied intelligence starts to consolidate (Chinese)</a></li>
+        <li><a href="https://pandaily.com/china-embodied-intelligence-early-commercialization-jul2026" rel="nofollow">Pandaily — PwC whitepaper &amp; Morgan Stanley forecast: China embodied intelligence ~$15B by 2030</a></li>
+        <li><a href="https://techcrunch.com/2026/01/05/nvidia-wants-to-be-the-android-of-generalist-robotics/" rel="nofollow">TechCrunch — NVIDIA wants to be the Android of generalist robotics (CES 2026)</a></li>
+        <li><a href="https://valueaddvc.com/blog/humanoid-robots-in-2026-figure-apptronik-1x-and-tesla-optimus-compared" rel="nofollow">ValueAddVC — Humanoid Robots in 2026: Figure, Apptronik, 1X, and Tesla Optimus Compared</a></li>
+        <li><a href="https://robot.m.ofweek.com/2026-07/ART-898890-8420-30696587.html" rel="nofollow">OFweek — The U.S. humanoid industry: six players, three routes (Chinese)</a></li>
+        <li><a href="https://m.jiemian.com/article/14633586.html" rel="nofollow">Jiemian — Robot funding surged, but not a penny went to "ordinary people" (Chinese)</a></li>
+        <li><a href="https://wap.stockstar.com/detail/IG2026081400028810" rel="nofollow">Stockstar — Beyond valuation: who is actually ordering embodied robots? (Aug 2026, Chinese)</a></li>
+        <li><a href="https://wap.stockstar.com/detail/SS2026040700024480" rel="nofollow">Stockstar — The humanoid "10-billion club" grows: 12 firms lead (Apr 2026, Chinese)</a></li>
+        <li><a href="https://humanoidindex.org/funding" rel="nofollow">Humanoid Index — Humanoid Robot Funding Tracker</a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>

@@ -13,6 +13,14 @@
 - [RSS feed](https://roy-tong.github.io/feed.xml): Machine-readable updates.
 - [Sitemap](https://roy-tong.github.io/sitemap.xml): Complete public URL inventory.
 
+## Research Hubs
+
+Long-form topic hubs under the Research program. Each hub tracks current change, market map, companies, products, technology paths, and commercialization evidence, with labeled facts, judgments, and open questions, plus per-hub update logs.
+
+- [具身智能研究专题](https://roy-tong.github.io/research/embodied-intelligence/): Embodied-intelligence hub — mass-production year one, market layers, company and product tables, VLA/world-model technology paths, commercialization evidence, and Roy's research materials and essays.
+- [Embodied Intelligence Hub (EN)](https://roy-tong.github.io/en/research/embodied-intelligence/): English edition of the embodied-intelligence hub.
+- [Research section](https://roy-tong.github.io/research/): Index of all research directions; Multimodal Interaction, On-device AI, and Agents hubs are in progress.
+
 ## Agent Tools and Components
 
 - [Agent Research Toolkit catalog](https://raw.githubusercontent.com/roy-tong/roy-tong/main/agent-tools.json): Machine-readable task routing, interfaces, installation commands, first-success checks, constraints, and privacy boundaries for all public tools below.
