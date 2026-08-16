@@ -40,6 +40,7 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ## AI Products and Agents
 
+- [当软件的消费者变成 Agent](https://roy-tong.github.io/notes/when-the-software-consumer-becomes-an-agent/): The flagship AgentMeasure essay — why the old measurement chain (install, seat, pageview) breaks for agent consumers, why measurement precedes payment, and what an open, verifiable measurement layer for the Agent Capability Economy looks like.
 - [竞品分析为什么不该从参数表开始](https://roy-tong.github.io/notes/competitive-analysis-software-hardware/): Why software competition must be compared through workflow, data, migration, and continuous delivery, while hardware also requires physical-system, manufacturing, reliability, channel, and service evidence.
 - [AI Native 之后，产品的基本单位变了](https://roy-tong.github.io/notes/ai-native-basic-unit/): Why semantic objects, tasks, relations, and operation history may become the primary state of AI-native products while pages, files, and editors become views and control surfaces.
 - [Agent 向左，具身向右：AI 在信息空间与物理世界的分岔](https://roy-tong.github.io/notes/agent-left-embodied-right/): Why Agent products and embodied systems share model capabilities but diverge in reversibility, evaluation, safety, deployment, and economics.
@@ -59,6 +60,7 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ## English Writing
 
+- [When the Software Consumer Becomes an Agent](https://roy-tong.github.io/en/notes/when-the-software-consumer-becomes-an-agent/): Flagship AgentMeasure essay (English) — measurement before payment, the five-link chain, evidence discipline, and why the measurement layer must be an open standard.
 - [Geek, Professional, B2B, Consumer: Markets as Evidence Environments](https://roy-tong.github.io/en/notes/market-roles-remove-uncertainty/): English edition of the market-entry framework — Geek, Professional, domain B2B, and Consumer users as evidence environments rather than a maturity ladder.
 - [After AI-Native: The Basic Unit of a Product Has Changed](https://roy-tong.github.io/en/notes/ai-native-basic-unit/): English edition — why semantic objects, tasks, relations, and operation history become the primary state of AI-native products.
 - [After RAG, Agents Need Context Recommendation](https://roy-tong.github.io/en/notes/agent-context-recommendation-after-rag/): English edition — an Agent Runtime layer that assembles the information, capabilities, state, and authority each step should receive.
