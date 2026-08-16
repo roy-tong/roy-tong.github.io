@@ -1,0 +1,55 @@
+---
+layout: default
+lang: en
+title: Essays
+permalink: /en/essays/
+description: Roy Tong's essays on AI, agents, embodied intelligence, interaction, products, and commercialization.
+lang_switch_url: /essays/
+---
+
+<section class="page-intro shell">
+  <p class="eyebrow">ESSAYS</p>
+  <h1>Essays</h1>
+  <p class="page-deck">Not news summaries, but judgments worth preserving, debating, and revising.</p>
+</section>
+
+<section class="home-simple-section home-writing">
+  <div class="shell">
+    <a class="home-featured-article" href="{{ '/notes/ai-native-basic-unit/' | relative_url }}" hreflang="zh-CN">
+      <div class="home-featured-meta"><span>SELECTED</span></div>
+      <div class="home-featured-copy">
+        <h3>After AI Native, the basic unit of the product changes</h3>
+        <p>From pages, features, and apps toward intent, tasks, capabilities, and outcomes.</p>
+      </div>
+      <span class="home-article-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="archive shell">
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+  {% assign posts_by_year = en_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <div class="archive-year">
+      <h2>{{ year.name }}</h2>
+      <div class="archive-items">
+        {% for post in year.items %}
+          <article class="archive-item">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d' }}</time>
+            <div>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </div>
+            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">↗</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  {% if en_posts.size == 0 %}
+    <div class="archive-year">
+      <p>English essays are being added. The Chinese archive contains the full set of current writing.</p>
+      <a class="text-link" href="{{ '/essays/' | relative_url }}" hreflang="zh-CN">Browse Chinese Essays <span>→</span></a>
+    </div>
+  {% endif %}
+</section>
