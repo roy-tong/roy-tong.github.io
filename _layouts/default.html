@@ -54,9 +54,9 @@
         </button>
 
         <nav class="nav" id="site-navigation" aria-label="{% if is_english %}Main navigation{% else %}主导航{% endif %}">
-          <a href="{% if is_english %}{{ '/en/#research' | relative_url }}{% else %}{{ '/#research' | relative_url }}{% endif %}">Research</a>
-          <a href="{% if is_english %}{{ '/en/#essays' | relative_url }}{% else %}{{ '/#essays' | relative_url }}{% endif %}">Essays</a>
-          <a href="{% if is_english %}{{ '/en/#projects' | relative_url }}{% else %}{{ '/#projects' | relative_url }}{% endif %}">Projects</a>
+          <a href="{% if is_english %}{{ '/en/research/' | relative_url }}{% else %}{{ '/research/' | relative_url }}{% endif %}" {% if page.url == '/research/' or page.url == '/en/research/' %}aria-current="page"{% endif %}>Research</a>
+          <a href="{% if is_english %}{{ '/en/essays/' | relative_url }}{% else %}{{ '/essays/' | relative_url }}{% endif %}" {% if page.url == '/essays/' or page.url == '/en/essays/' %}aria-current="page"{% endif %}>Essays</a>
+          <a href="{% if is_english %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}" {% if page.url == '/projects/' or page.url == '/en/projects/' %}aria-current="page"{% endif %}>Projects</a>
           <a href="{% if is_english %}{{ '/en/about/' | relative_url }}{% else %}{{ '/about/' | relative_url }}{% endif %}" {% if page.url == '/about/' or page.url == '/en/about/' %}aria-current="page"{% endif %}>{% if is_english %}About{% else %}关于{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}" {% if page.url == '/support/' or page.url == '/en/support/' %}aria-current="page"{% endif %}>{% if is_english %}Contact{% else %}联系{% endif %}</a>
           <div class="nav-tools">
