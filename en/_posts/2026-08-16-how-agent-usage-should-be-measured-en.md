@@ -2,14 +2,14 @@
 layout: post
 lang: en
 title: "How Software Usage by AI Agents Should Be Measured"
-subtitle: "Reach → Choice → Use → Utility → Value: an industry methodology for the agent software ecosystem."
+subtitle: "Reach → Choice → Use → Utility → Value: a proposed open measurement standard for the agent software ecosystem."
 date: 2026-08-16 10:00:00 +0800
 reading_time: 12
 tags:
   - agent
   - measurement
   - methodology
-description: Measurement objects, the interaction lifecycle, five metric families, attribution vs incrementality, measurement quality and the Measurement Label — AUAS as the shared data language for agent software.
+description: Measurement objects, the interaction lifecycle, five metric families, attribution vs incrementality, measurement quality and the Measurement Label — AgentMeasure as the shared data language for agent software.
 permalink: /en/notes/how-agent-usage-should-be-measured/
 ---
 
@@ -18,7 +18,7 @@ permalink: /en/notes/how-agent-usage-should-be-measured/
 Agents are becoming a new class of software consumer, yet the industry has no
 common method for measuring how agents discover, choose, use, and depend on
 software. Existing signals — downloads, stars, self-reported installs — measure
-neither agents nor value. This paper defines AUAS, a measurement standard for the
+neither agents nor value. This paper defines AgentMeasure, a measurement standard for the
 agent software ecosystem: what counts as an opportunity, a selection, an
 invocation, a consumption, and a contribution; how these are counted, compared,
 and qualified; and what conclusions each level of evidence can support. The goal
@@ -49,7 +49,7 @@ Useful ≠ Incremental Value
 
 Advertising learned this lesson over decades: impressions are not conversions,
 clicks are not value, and attribution is not incrementality. The agent software
-ecosystem can adopt the discipline on day one. AUAS answers five questions:
+ecosystem can adopt the discipline on day one. AgentMeasure answers five questions:
 
 > **Reach** — did my tool enter the agent's choice set?
 > **Choice** — when the agent had a chance, did it pick me?
@@ -59,7 +59,7 @@ ecosystem can adopt the discipline on day one. AUAS answers five questions:
 
 ## 2. Measurement Objects
 
-An observation is an *evidence unit*, not a *business measurement unit*. AUAS
+An observation is an *evidence unit*, not a *business measurement unit*. AgentMeasure
 defines the business units first:
 
 | Object | Definition | Layer |
@@ -112,7 +112,7 @@ Available ✓ Presented ✗              ← never in the game (distribution gap
 
 ## 4. Measurement Framework
 
-AUAS defines **metric families**, not a universal KPI. A search tool, a payment
+AgentMeasure defines **metric families**, not a universal KPI. A search tool, a payment
 tool, and an enterprise SaaS tool have different value structures; one north star
 cannot serve all.
 
@@ -201,7 +201,7 @@ Cost Lift   = Cost(control) − Cost(tool)
 ```
 
 Advertising moved from last-click attribution to holdout groups and incrementality
-testing for exactly this reason. Agent tools inherit the lesson. AUAS separates
+testing for exactly this reason. Agent tools inherit the lesson. AgentMeasure separates
 the two measurement regimes from the first day.
 
 ## 7. Measurement Quality
@@ -225,7 +225,7 @@ Measurement Quality
 Raw invocations are not qualified usage. A large share of future tool traffic
 will not represent adoption: developer self-testing, CI, benchmarks, evals,
 synthetic agents, health checks, retry storms, agent loops, replays, load tests,
-demos. AUAS requires a **Usage Context** on every observation:
+demos. AgentMeasure requires a **Usage Context** on every observation:
 
 ```text
 production · development · test · benchmark · evaluation · synthetic · ci · unknown
@@ -263,7 +263,7 @@ that the reader can judge its applicability.
 
 ### Measurement Profiles
 
-AUAS defines standard profiles instead of a universal north star:
+AgentMeasure defines standard profiles instead of a universal north star:
 
 | Profile | North Star | Guardrails | Diagnostics |
 | --- | --- | --- | --- |
@@ -301,7 +301,7 @@ expire when the technology changes.
 
 *The normative specification (Measurement Objects, Lifecycle, Metric Families,
 Quality, Reporting) and the reference implementation (agent-used) are published
-openly. Graduation to AUAS 1.0 requires two independent implementations, three
+openly. Graduation to AgentMeasure 1.0 requires two independent implementations, three
 runtime profiles, two tool-side implementations, a public conformance suite with
 canonical test vectors, 5–10 real projects, a published discrepancy report, and
 security and privacy reviews.*
