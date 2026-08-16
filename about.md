@@ -2,23 +2,23 @@
 layout: default
 title: 关于 Roy.Tong
 permalink: /about/
-description: Roy.Tong 的产品经历、研究方法，以及正在构建的 iRead、行业研究 Skill 与个人知识库。
+description: Roy.Tong 的产品经历、研究方法，以及围绕 Agent、具身智能、多模态交互与端侧 AI 的研究和项目。
 lang_switch_url: /en/about/
 ---
 
 <section class="page-intro shell reading-shell">
   <h1>你好，我是 Roy。</h1>
-  <p class="page-deck">做 AI 产品，也做长期研究。</p>
+  <p class="page-deck">做产品，也做长期研究。</p>
 </section>
 
 <section class="about-grid shell reading-shell">
   <aside class="about-aside" aria-label="关注方向">
     <p class="about-name">Roy.Tong</p>
     <ul>
-      <li>AI 产品</li>
+      <li>Agent</li>
       <li>具身智能</li>
-      <li>AI 硬件</li>
-      <li>研究工具</li>
+      <li>多模态交互</li>
+      <li>端侧 AI</li>
     </ul>
   </aside>
 
@@ -138,30 +138,30 @@ lang_switch_url: /en/about/
       </section>
     </div>
 
-    <h2>我正在构建什么</h2>
+    <h2>我正在研究和构建什么</h2>
 
-    <h3>iRead</h3>
+    <h3>AgentMeasure</h3>
 
-    <p><a href="https://github.com/roy-tong/iRead">iRead</a> 是一个本地运行的 AI 研究助手。用户输入关心的领域后，它会先推荐信源和代表作供人审核，再开始采集并生成日报、周报和月报。</p>
+    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a> 是我目前最重要的公开项目。它试图为 Agent Capability Economy 建立一套开放计量语言：从 Reach、Choice、Use、Utility 到 Value，回答 Agent 如何发现、选择、调用软件能力，以及这些能力如何被可靠测量、比较，并进一步支撑未来的 Metering、Marketplace 与 Capability as a Service。</p>
 
-    <p>长期研究需要持续区分原创证据、二手转述和重复信息，iRead 就从这件事开始。</p>
+    <p>我更关心的不是再造支付协议，而是支付之前更基础的问题：当软件消费者从人转向 Agent，我们究竟应该怎样定义一次机会、一次选择、一次使用，以及一次真正产生价值的调用。</p>
 
-    <h3>行业研究 Skill</h3>
+    <h3>Research</h3>
 
-    <p>我正在整理一套从公开数据采集到行业判断的研究 Skill。流程包括数据抓取、清洗、结构化、公司比较和报告生成；分析过程保留来源、冲突和不确定性，方便复查结论。</p>
+    <p>长期研究主要围绕四个方向展开：具身智能、多模态交互、端侧算力与 Agent。Research 关注事实、公司、产品、技术路径和市场变化；我会尽量区分事实、推断和判断，并随着新证据修正结论。</p>
 
-    <h3>个人知识库</h3>
+    <h3>Small tools</h3>
 
-    <p>我也在把多年积累在飞书里的行业笔记迁移成一个公开知识库。这里不会原样搬运全部文档；每篇内容都要先判断是否过期、是否涉及隐私、能否合并，以及是否值得长期维护。</p>
+    <p>我也会把重复出现的研究工作流做成小工具，例如 <a href="https://github.com/roy-tong/user-demand-research">User Demand Research (SURE)</a>、<a href="https://github.com/roy-tong/iRead">iRead</a> 和 <a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Video to Transcript</a>。这些项目主要解决具体问题，不承担我的核心个人品牌叙事。</p>
 
     <h2>我如何研究和写作</h2>
 
     <p>我习惯先建立行业地图，再进入公司、产品和技术。写作时尽量区分事实、推断和立场，也保留判断被新证据修正的过程。</p>
 
-    <p>这个网站不追求日更。我把它当作一个公开工作台：记录研究过什么、正在验证什么、哪些判断已经改变，以及这些工具怎样服务下一轮研究。</p>
+    <p>这个网站不是日更博客。我把它当作一个公开工作台：Research 记录我长期跟踪的问题，Essays 沉淀值得长期讨论的判断，Projects 则把其中一部分判断变成可以验证的系统与工具。</p>
 
     <h2>联系我</h2>
 
-    <p>如果你正在做 AI 产品、具身智能、AI 硬件、行业研究工具，或者需要讨论一个从 0 到 1 的复杂产品，可以通过<a href="{{ '/support/' | relative_url }}">联系页面</a>或 <a href="https://github.com/roy-tong">GitHub</a> 找到我。</p>
+    <p>如果你正在做 AI Agent、具身智能、AI 硬件、复杂的 0→1 产品，或者希望讨论 Agent 时代的软件计量与商业化，可以通过<a href="{{ '/support/' | relative_url }}">联系页面</a>、<a href="https://x.com/elliwoodtong">X / Twitter</a> 或 <a href="https://github.com/roy-tong">GitHub</a> 找到我。</p>
   </div>
 </section>
