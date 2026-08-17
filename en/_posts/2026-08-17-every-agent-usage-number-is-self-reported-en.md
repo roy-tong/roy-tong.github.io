@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "Every Agent Usage Number Is Self-Reported"
 subtitle: "A field audit of six real claims, and what it means for the agent economy"
-date: 2026-08-17 09:00:00 +0800
+date: 2026-08-17 00:30:00 +0800
 reading_time: 8
 tags:
   - agent
