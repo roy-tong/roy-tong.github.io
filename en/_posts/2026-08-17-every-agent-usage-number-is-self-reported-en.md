@@ -10,7 +10,7 @@ tags:
   - measurement
   - benchmark
   - capability economy
-description: We audited six real "agent usage" claims from live ecosystem discussions and graded them on an evidence ladder. One pattern: every number is self-reported. Independence beats volume; nobody publishes the unit definition. This is the measurement gap the agent economy hasn't admitted yet.
+description: "We audited six real 'agent usage' claims from live ecosystem discussions and graded them on an evidence ladder. One pattern: every number is self-reported. Independence beats volume; nobody publishes the unit definition. This is the measurement gap the agent economy hasn't admitted yet."
 permalink: /en/notes/every-agent-usage-number-is-self-reported/
 ---
 
