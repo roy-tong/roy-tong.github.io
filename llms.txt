@@ -27,11 +27,14 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - [iRead Research Monitor](https://github.com/roy-tong/iRead): Local-first continuous research monitor with source discovery and evidence-aware daily, weekly, and monthly reports.
 - [User Demand Research (SURE)](https://github.com/roy-tong/user-demand-research): Structured User Research with Evidence, an auditable demand-research Skill with a deterministic validator and E0–E5 evidence grading.
 - [Bilibili Video to Transcript](https://github.com/roy-tong/bilibili-transcript-pipeline): Local video-to-Markdown, SRT, and JSON pipeline with an offline first-success demo, Agent Skill, and CLI.
+- [AgentMeasure](https://github.com/roy-tong/AgentMeasure): Open measurement infrastructure for the Agent Capability Economy — an open standard (canonical observations, evidence-graded identity, metrics registry) plus an MCP SDK for measuring how agents discover, choose, use, and derive value from software capabilities. Try the 2-minute demo: ./examples/demo-e2e.sh.
 - [Roy's AI Product Research Library](https://github.com/roy-tong/roy-tong.github.io/tree/main/skills/research-knowledge-base): Read-only Agent entry point for this public site.
 
 ## Current Release Sequence
 
 - [空间计算需要自己的“触控时刻”](https://roy-tong.github.io/notes/spatial-computing-touch-moment/): A public interaction grammar for spatial computing: look, point, pinch, and speak; Point and Ask / Point and Act; fast direct manipulation and slower Agent execution.
+- [每个 Agent 用量数字，都是自报的](https://roy-tong.github.io/notes/every-agent-usage-number-is-self-reported-zh/): A field audit of six real agent-usage claims (x402, llms.txt audit, ClaudeBot impersonation, registry badges), graded on an evidence ladder — every number is self-reported; independence beats volume; nobody publishes the unit definition. Companion to AgentMeasure Benchmark Run #001.
+- [Every Agent Usage Number Is Self-Reported (EN)](https://roy-tong.github.io/en/notes/every-agent-usage-number-is-self-reported/): English edition of the claim audit essay.
 - [RAG 之后，Agent 需要 Context Recommendation](https://roy-tong.github.io/notes/agent-context-recommendation-after-rag/): A proposal for an Agent Runtime layer that assembles the information, capabilities, state, and authority each step should receive, informed by DeepSeek Harness.
 - [家庭机器人为什么技术上更难，经济上可能更丰富](https://roy-tong.github.io/notes/home-robots-harder-richer/): Why household long tails and multi-person rules raise technical difficulty while hardware, subscriptions, services, care, and coordination create additional value and responsibility layers.
 - [机器人不是替代人，而是给人增加新的身体](https://roy-tong.github.io/notes/robots-give-people-new-bodies/): A capability-gain framework for robots that extend human vision, presence, action, and physical attributes through shared control.
