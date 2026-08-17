@@ -85,7 +85,7 @@ star 可以刷，安装可以刷，自报遥测可以刷。可验证的计量不
 
 - **CORE 规范**（Draft 0.4.3）：测量对象、三层结构、交互类别、可观测四态、指标资格、qualification（Context × Validity）、测量标签与标准不变量；
 - **参考实现**：Provider SDK → Canonical Observation → Collector → Metrics 的端到端管道；
-- **Measurement Report #001**：本地合成流量验证（fail-closed 语义在真实管道中的行为）；
+- **Pipeline Validation #001**：本地合成流量验证（42 calls → 84 observations，fail-closed 语义在真实管道中的行为；Measurement Report #001 编号预留给第一个外部 Provider）；
 - **Benchmark 草案**：如何对生态里的"使用量"声称做证据分级审计；
 - **Conformance**：标准与实现之间的校验向量。
 

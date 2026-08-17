@@ -86,7 +86,7 @@ This layer is not a concept. The AgentMeasure repository already contains:
 
 - **The Core Specification** (Draft 0.4.3): measurement objects, three-layer structure, interaction classes, observability states, metric eligibility, qualification (Context × Validity), measurement labels, and standard invariants;
 - **A reference implementation**: an end-to-end pipeline from Provider SDK → Canonical Observation → Collector → Metrics;
-- **Measurement Report #001**: local synthetic-traffic verification, including how fail-closed semantics behave in a real pipeline;
+- **Pipeline Validation #001**: local synthetic-traffic verification (42 calls → 84 observations), including how fail-closed semantics behave in a real pipeline; the Measurement Report #001 number is reserved for the first external provider;
 - **A benchmark draft**: how to run evidence-graded audits of "usage" claims across the ecosystem;
 - **Conformance**: check vectors between the standard and implementations.
 
