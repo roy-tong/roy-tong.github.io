@@ -1,0 +1,91 @@
+name: Add a capability
+description: 向 Agent Capability Index 提交一个新的 Agent 可调用软件能力（Add a capability）
+title: "[Capability] <provider / 能力名称>"
+labels: ["capability-index", "new-capability"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢贡献。提交后我会核对公开文档，把条目合并进 `_data/capabilities.json` 并在下一次更新中发布。
+        参考现有条目格式：https://roy-tong.github.io/capability-index/
+  - type: input
+    id: provider
+    attributes:
+      label: Provider（提供方/产品名）
+      description: 例如 Brave Search API、Supabase、Jira Cloud REST API
+      placeholder: "公司或产品名称"
+    validations:
+      required: true
+  - type: input
+    id: capability
+    attributes:
+      label: Capability（能力描述，一句话）
+      description: 这个软件可被 Agent 调用的具体能力是什么？例如「网页搜索 API」「项目管理 issue 读写」
+      placeholder: "一句话描述能力"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 能力类别（Category）
+      description: 与 Capability Index 的 11 个类别对应
+      multiple: false
+      options:
+        - Search 搜索
+        - Coding 编码
+        - Browser 浏览器操作
+        - Data 数据
+        - Compute 计算
+        - Communication 通信
+        - Payments 支付
+        - Commerce 商业
+        - Real-world Action 真实世界动作
+        - Creative Tools 创意工具
+        - Productivity 生产力
+    validations:
+      required: true
+  - type: checkboxes
+    id: interfaces
+    attributes:
+      label: 接口类型（Interface）
+      description: 可多选
+      multiple: true
+      options:
+        - label: "REST API"
+        - label: "GraphQL API"
+        - label: "SDK / Library"
+        - label: "CLI"
+        - label: "MCP server"
+        - label: "Self-hosted"
+  - type: input
+    id: pricing
+    attributes:
+      label: 计价方式（Pricing）
+      description: 免费额度 / 按量 / 订阅 / 合作制，尽量具体
+      placeholder: "例如：免费额度 + 按量"
+  - type: input
+    id: availability
+    attributes:
+      label: 可用状态（Availability）
+      description: GA / Beta / Limited / 合作制
+      placeholder: "GA"
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明（可选）
+      description: 支持的 Agent（Claude/ChatGPT/自建）、已知限制、MCP 支持情况等
+  - type: input
+    id: source
+    attributes:
+      label: 官方文档链接（Source）
+      description: 必须有公开文档，否则无法核验
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我已核对公开文档，以上信息可被第三方验证
+          required: true

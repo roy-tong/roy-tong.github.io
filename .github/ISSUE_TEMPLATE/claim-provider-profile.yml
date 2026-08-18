@@ -1,0 +1,43 @@
+name: Claim your provider profile
+description: 认领你的 provider 档案，补充/更正你产品在 Agent Capability Index 中的条目（Claim your provider profile）
+title: "[Claim] <公司/产品名> 的 provider 档案"
+labels: ["capability-index", "provider-claim"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        认领后你的条目会标注「已由官方确认」（claimed），并优先进入下一次月度更新的修订名单。
+        这也能让你在 Agent Capability Monthly 的 New providers 段被点名。
+  - type: input
+    id: org
+    attributes:
+      label: 组织 / 产品名
+      description: 与索引中条目一致（或注明你希望显示的名称）
+    validations:
+      required: true
+  - type: input
+    id: index_entry
+    attributes:
+      label: 索引中的现有条目
+      description: 例如「Stripe API（Payments 类别）」，或填写「未收录，申请新增」
+    validations:
+      required: true
+  - type: textarea
+    id: updates
+    attributes:
+      label: 需要补充/更正的信息
+      description: pricing、availability、interface、新增能力等，逐条列出
+      placeholder: "1. 计价改为… 2. 新增 MCP server…"
+  - type: input
+    id: contact
+    attributes:
+      label: 官方联系渠道（可选）
+      description: 官方邮箱 / GitHub org，用于后续确认
+      placeholder: "contact@example.com"
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我代表该组织提交此认领，信息属实
+          required: true

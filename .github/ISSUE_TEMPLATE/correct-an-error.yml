@@ -1,0 +1,45 @@
+name: Correct an error
+description: 修正 Agent Capability Index 或月度报告中的错误（Correct an error）
+title: "[Fix] <条目/页面> 的错误"
+labels: ["capability-index", "correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        发现错误直接提交，不用先问。能附上官方文档链接的最好——核验会更快。
+  - type: input
+    id: target
+    attributes:
+      label: 错误在哪里（Target）
+      description: 条目名 / 页面链接 / 月度报告期数
+      placeholder: "例如：Pinecone 的 pricing"
+    validations:
+      required: true
+  - type: textarea
+    id: what_is_wrong
+    attributes:
+      label: 错误内容
+      description: 现在写的是什么，为什么是错的
+      placeholder: "当前写「免费额度 + 按量」，实际已改为纯按量计费…"
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: 正确内容（建议）
+      description: 你认为应该改成什么
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 证据链接（Source）
+      description: 官方文档 / 公告 / 可验证来源
+      placeholder: "https://..."
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我已核对来源，修正后信息可被第三方验证
+          required: true
