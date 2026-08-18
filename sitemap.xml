@@ -33,7 +33,23 @@ permalink: /sitemap.xml
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
+    <loc>{{ site.url }}{{ '/capability-economy/' | relative_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ '/capability-index/' | relative_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
     <loc>{{ site.url }}{{ '/en/' | relative_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ '/en/capability-economy/' | relative_url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ '/en/capability-index/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>

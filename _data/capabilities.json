@@ -1,0 +1,642 @@
+{
+  "schema_version": "0.1",
+  "status": "seed",
+  "updated_at": "2026-08-18",
+  "note": "v0.1 种子数据，由公开文档整理，需人工核验。pricing 与 availability 变化最快，请以 source 链接为准。",
+  "categories": [
+    {
+      "id": "search",
+      "name": "Search 搜索",
+      "name_en": "Search",
+      "description": "Agent 检索网页、文档与答案。搜索是 Agent 最基础的上下文获取方式。",
+      "capabilities": [
+        {
+          "provider": "Brave Search API",
+          "capability": "独立索引的网页搜索 API",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "面向 Agent 的搜索 API，含 AI 答案接口。",
+          "source": "https://brave.com/search/api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Tavily",
+          "capability": "面向 Agent 的搜索与提取",
+          "interfaces": [
+            "REST API",
+            "MCP"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "专为 LLM/Agent 设计的搜索 API，返回可直接注入上下文的摘要。",
+          "source": "https://tavily.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Exa",
+          "capability": "神经/语义搜索",
+          "interfaces": [
+            "REST API",
+            "SDK",
+            "MCP"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "按语义而非关键词检索网页与内容。",
+          "source": "https://exa.ai/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Perplexity API",
+          "capability": "带引用的答案式搜索",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "返回带来源引用的合成答案，适合需要可溯源回答的场景。",
+          "source": "https://docs.perplexity.ai/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Google Programmable Search",
+          "capability": "站点/网页定制搜索",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 配额",
+          "availability": "GA",
+          "notes": "可限定站点范围搜索，配额制。",
+          "source": "https://developers.google.com/custom-search",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Search the web, documents, and answers. Search is the most basic context-acquisition layer for agents."
+    },
+    {
+      "id": "coding",
+      "name": "Coding 编码",
+      "name_en": "Coding",
+      "description": "Agent 读写代码、管理仓库、操作 Issue 与 CI/CD。",
+      "capabilities": [
+        {
+          "provider": "GitHub REST / GraphQL API",
+          "capability": "仓库、Issue、PR、Actions",
+          "interfaces": [
+            "REST API",
+            "GraphQL"
+          ],
+          "pricing": "免费额度",
+          "availability": "GA",
+          "notes": "Agent 编码工作流的默认入口，官方 MCP server 已发布。",
+          "source": "https://docs.github.com/en/rest",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "GitLab API",
+          "capability": "仓库与 CI/CD",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "自托管与 SaaS 均可用。",
+          "source": "https://docs.gitlab.com/ee/api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Sourcegraph",
+          "capability": "代码语义搜索",
+          "interfaces": [
+            "GraphQL API",
+            "Stream API"
+          ],
+          "pricing": "免费 + 企业版",
+          "availability": "GA",
+          "notes": "跨仓库代码搜索，适合 Agent 定位实现。",
+          "source": "https://sourcegraph.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Stack Overflow API",
+          "capability": "问答与知识检索",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度",
+          "availability": "GA",
+          "notes": "公开问答检索，配额限制。",
+          "source": "https://api.stackexchange.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Read and write code, manage repositories, issues, and CI/CD."
+    },
+    {
+      "id": "browser",
+      "name": "Browser 浏览器操作",
+      "name_en": "Browser",
+      "description": "Agent 驱动浏览器访问网页、执行操作、采集结果。",
+      "capabilities": [
+        {
+          "provider": "Playwright",
+          "capability": "浏览器自动化库",
+          "interfaces": [
+            "Library",
+            "CLI"
+          ],
+          "pricing": "开源免费",
+          "availability": "GA",
+          "notes": "主流 Agent 浏览器层的基础设施之一。",
+          "source": "https://playwright.dev/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Puppeteer",
+          "capability": "Chrome 自动化",
+          "interfaces": [
+            "Library"
+          ],
+          "pricing": "开源免费",
+          "availability": "GA",
+          "notes": "Chrome/Chromium 协议层自动化。",
+          "source": "https://pptr.dev/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Browserless",
+          "capability": "托管无头浏览器",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "托管的浏览器会话与抓取服务。",
+          "source": "https://www.browserless.io/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Browserbase",
+          "capability": "云端浏览器会话",
+          "interfaces": [
+            "SDK",
+            "REST API",
+            "MCP"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "面向 Agent 的云端浏览器会话与实时调试。",
+          "source": "https://www.browserbase.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Drive a browser to visit pages, perform actions, and collect results."
+    },
+    {
+      "id": "data",
+      "name": "Data 数据",
+      "name_en": "Data",
+      "description": "Agent 读写结构化数据、文档数据库与分析仓库。",
+      "capabilities": [
+        {
+          "provider": "Notion API",
+          "capability": "文档与数据库",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "Agent 常见的知识库读写入口，官方 MCP server 已发布。",
+          "source": "https://developers.notion.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Airtable API",
+          "capability": "表格型数据库",
+          "interfaces": [
+            "REST API",
+            "MCP"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "轻量结构化数据存储与查询。",
+          "source": "https://airtable.com/developers/web/api/introduction",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Google BigQuery",
+          "capability": "云端分析数据库",
+          "interfaces": [
+            "REST API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "大规模分析查询。",
+          "source": "https://cloud.google.com/bigquery",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Snowflake",
+          "capability": "数据仓库",
+          "interfaces": [
+            "SQL API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "企业数据仓库，Agent 可通过 SQL 访问。",
+          "source": "https://docs.snowflake.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Read and write structured data, document databases, and analytics warehouses."
+    },
+    {
+      "id": "compute",
+      "name": "Compute 计算",
+      "name_en": "Compute",
+      "description": "Agent 调用云端函数、GPU 与模型推理服务执行计算。",
+      "capabilities": [
+        {
+          "provider": "AWS Lambda",
+          "capability": "无服务器函数",
+          "interfaces": [
+            "REST API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "Agent 执行代码的标准计算层。",
+          "source": "https://aws.amazon.com/lambda/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Modal",
+          "capability": "云端 Python 计算",
+          "interfaces": [
+            "SDK",
+            "CLI"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "面向 AI 工作负载的云端 Python 运行环境。",
+          "source": "https://modal.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "RunPod",
+          "capability": "GPU 云",
+          "interfaces": [
+            "API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "GPU 实例与 Serverless 推理。",
+          "source": "https://www.runpod.io/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Replicate",
+          "capability": "模型推理 API",
+          "interfaces": [
+            "REST API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "数千个公开模型的托管推理。",
+          "source": "https://replicate.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Invoke cloud functions, GPUs, and model inference services."
+    },
+    {
+      "id": "communication",
+      "name": "Communication 通信",
+      "name_en": "Communication",
+      "description": "Agent 收发消息、邮件，操作工作区与群组。",
+      "capabilities": [
+        {
+          "provider": "Slack API",
+          "capability": "消息与工作区",
+          "interfaces": [
+            "REST API",
+            "Socket Mode"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "Agent 进入团队协作的标准通道，官方 MCP server 已发布。",
+          "source": "https://api.slack.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Gmail API",
+          "capability": "邮件收发",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费配额",
+          "availability": "GA",
+          "notes": "Google Workspace 邮件访问，需 OAuth。",
+          "source": "https://developers.google.com/gmail/api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Discord API",
+          "capability": "消息与服务器",
+          "interfaces": [
+            "REST API",
+            "Gateway"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "社区型 Agent 交互通道。",
+          "source": "https://discord.com/developers/docs",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Twilio",
+          "capability": "短信 / 语音 / 视频",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "电话通道，Agent 联系真实世界的常用方式。",
+          "source": "https://www.twilio.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Send and receive messages and email; operate workspaces and groups."
+    },
+    {
+      "id": "payments",
+      "name": "Payments 支付",
+      "name_en": "Payments",
+      "description": "Agent 代表用户完成收款、扣款与订阅交易。",
+      "capabilities": [
+        {
+          "provider": "Stripe API",
+          "capability": "收款与订阅",
+          "interfaces": [
+            "REST API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "Agent 时代支付与计量最常被讨论的基础设施。",
+          "source": "https://stripe.com/docs/api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "PayPal API",
+          "capability": "支付",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "国际支付通道。",
+          "source": "https://developer.paypal.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Lemon Squeezy",
+          "capability": "数字商品售卖",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "面向软件与数字产品的收款与税务处理。",
+          "source": "https://docs.lemonsqueezy.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Collect payments, charge, and manage subscriptions on behalf of users."
+    },
+    {
+      "id": "commerce",
+      "name": "Commerce 商业",
+      "name_en": "Commerce",
+      "description": "Agent 操作电商、卖家后台与履约系统。",
+      "capabilities": [
+        {
+          "provider": "Shopify Admin API",
+          "capability": "店铺与订单管理",
+          "interfaces": [
+            "GraphQL API",
+            "REST API"
+          ],
+          "pricing": "订阅 + 按量",
+          "availability": "GA",
+          "notes": "Agent 管理商品、订单与库存的常见入口。",
+          "source": "https://shopify.dev/docs/api/admin",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Amazon SP-API",
+          "capability": "亚马逊卖家后台",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "卖家订单、库存与广告数据。",
+          "source": "https://developer-docs.amazon.com/sp-api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "DoorDash Drive",
+          "capability": "同城配送",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "合作制",
+          "availability": "GA",
+          "notes": "配送能力 API，需合作申请。",
+          "source": "https://developer.doordash.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Operate e-commerce, seller backends, and fulfillment systems."
+    },
+    {
+      "id": "realworld",
+      "name": "Real-world Action 真实世界动作",
+      "name_en": "Real-world Action",
+      "description": "Agent 触发物理世界中的服务：预订、配送、出行。该类别多为合作制 API，需要单独申请。",
+      "capabilities": [
+        {
+          "provider": "Uber Direct",
+          "capability": "同城按需配送",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "合作制",
+          "availability": "GA",
+          "notes": "按需配送 API，需合作申请。",
+          "source": "https://developer.uber.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "OpenTable",
+          "capability": "餐厅预订",
+          "interfaces": [
+            "Partner API"
+          ],
+          "pricing": "合作制",
+          "availability": "Limited",
+          "notes": "预订能力通过合作伙伴渠道开放。",
+          "source": "https://opentable.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Amadeus for Developers",
+          "capability": "旅行搜索与预订",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "航班与酒店搜索、预订（沙盒可用）。",
+          "source": "https://developers.amadeus.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Trigger real-world services: bookings, delivery, travel. Most entries here are partner-gated APIs."
+    },
+    {
+      "id": "creative",
+      "name": "Creative Tools 创意工具",
+      "name_en": "Creative Tools",
+      "description": "Agent 生成图像、视频，操作设计文件与创作流程。",
+      "capabilities": [
+        {
+          "provider": "Figma API",
+          "capability": "设计文件读写",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "读取设计结构、生成标注与导出资源。",
+          "source": "https://developers.figma.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Canva Connect API",
+          "capability": "设计模板与品牌",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "按模板批量生成设计资产。",
+          "source": "https://www.canva.com/developers/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Adobe Firefly Services",
+          "capability": "生成式图像 API",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "图像生成、填充与风格化。",
+          "source": "https://developer.adobe.com/firefly-services/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "OpenAI Images API",
+          "capability": "图像生成",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "DALL·E / gpt-image 系列图像生成。",
+          "source": "https://platform.openai.com/docs/guides/images",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Generate images and video; operate design files and creative workflows."
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity 生产力",
+      "name_en": "Productivity",
+      "description": "Agent 操作办公套件、项目管理与任务系统。",
+      "capabilities": [
+        {
+          "provider": "Google Workspace APIs",
+          "capability": "文档 / 表格 / 日历",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费配额 + 订阅",
+          "availability": "GA",
+          "notes": "Docs、Sheets、Calendar、Drive 的统一入口，官方 MCP server 已发布。",
+          "source": "https://developers.google.com/workspace",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Microsoft 365 Graph API",
+          "capability": "Office / 邮件 / 日历",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "Outlook、Teams、SharePoint、Word 等的统一图 API。",
+          "source": "https://learn.microsoft.com/graph/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Linear API",
+          "capability": "项目管理",
+          "interfaces": [
+            "GraphQL API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "开发团队 issue 管理，GraphQL。",
+          "source": "https://developers.linear.app/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Asana API",
+          "capability": "项目管理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "任务与项目结构读写。",
+          "source": "https://developers.asana.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Todoist API",
+          "capability": "任务管理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "轻量任务创建与同步。",
+          "source": "https://developer.todoist.com/",
+          "updated": "2026-08-18"
+        }
+      ],
+      "description_en": "Operate office suites, project management, and task systems."
+    }
+  ]
+}

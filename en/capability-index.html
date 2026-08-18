@@ -1,0 +1,75 @@
+---
+layout: default
+lang: en
+title: Agent Capability Index｜A public map of the agent software world
+permalink: /en/capability-index/
+description: "The Agent Capability Index is a public map of the agent software world — agent-invocable software by capability, with provider, interface, pricing, availability, and source."
+lang_switch_url: /capability-index/
+---
+
+<section class="page-intro shell">
+  <p class="eyebrow">TRAFFIC ASSET · AGENT CAPABILITY INDEX</p>
+  <h1>A public map of the agent software world</h1>
+  <p class="page-deck">As software consumers shift from humans to agents, how will software be discovered and invoked? This index catalogs agent-invocable software and services by capability: provider, interface, pricing, availability, source, and update date. Even if you disagree with every thesis here, this map is worth bookmarking.</p>
+</section>
+
+<section class="home-simple-section">
+  <div class="shell">
+    <div class="cap-status-note">
+      <strong>v0.1 seed data</strong> · {{ site.data.capabilities.categories | size }} capability categories compiled from public documentation, updated {{ site.data.capabilities.updated_at }}. Pricing and availability change fastest; always check the source link. MCP / Skills support will be added in v0.2 (the interface layer moves fastest). Found an error? <a href="https://github.com/roy-tong/roy-tong.github.io/issues">Open an issue</a> or <a href="https://github.com/roy-tong/roy-tong.github.io/tree/main/_data/capabilities.json">send a PR</a>.
+    </div>
+
+    {% assign cats = site.data.capabilities.categories %}
+    {% for cat in cats %}
+    <section class="cap-category" id="{{ cat.id }}" aria-labelledby="cat-{{ cat.id }}">
+      <div class="cap-category-head">
+        <h2 id="cat-{{ cat.id }}">{{ cat.name_en }}</h2>
+        <p>{{ cat.description_en }} · {{ cat.capabilities | size }} entries</p>
+      </div>
+      <div class="cap-table-wrap">
+        <table class="cap-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Capability</th>
+              <th>Interface</th>
+              <th>Pricing</th>
+              <th>Availability</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cap in cat.capabilities %}
+            <tr>
+              <td class="provider">{{ cap.provider }}</td>
+              <td>
+                {{ cap.capability }}
+                {% if cap.notes %}<div class="cap-note">{{ cap.notes }}</div>{% endif %}
+              </td>
+              <td>
+                {% for iface in cap.interfaces %}
+                  {% if iface == 'MCP' %}<span class="badge mcp">{{ iface }}</span>{% else %}<span class="badge">{{ iface }}</span>{% endif %}
+                {% endfor %}
+              </td>
+              <td>{{ cap.pricing }}</td>
+              <td class="availability">{{ cap.availability }}</td>
+              <td>
+                <a href="{{ cap.source }}" rel="noopener" target="_blank">Docs ↗</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% endfor %}
+
+    <div class="cap-contribute">
+      <h2>This map grows with the community</h2>
+      <p>This is not AgentMeasure's database — it is a public map of the agent software world. Measurement readiness, metering models, and evidence quality will be added over time, so AgentMeasure enters naturally instead of being pushed.</p>
+      <p>You can: Add a capability, Correct an error, Submit a measurement case, or Claim your provider profile.</p>
+      <a class="button light" href="https://github.com/roy-tong/roy-tong.github.io/issues">Submit a capability <span>↗</span></a>
+      <a class="button secondary" href="{{ '/en/capability-economy/' | relative_url }}">About the current campaign</a>
+    </div>
+  </div>
+</section>

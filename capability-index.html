@@ -1,0 +1,74 @@
+---
+layout: default
+title: Agent Capability Index｜Agent 软件世界的公共地图
+permalink: /capability-index/
+description: Agent Capability Index 是 Agent 软件世界的公共地图：按能力分类整理可被 Agent 调用的软件与服务，含 provider、interface、pricing、availability 与来源。
+lang_switch_url: /en/capability-index/
+---
+
+<section class="page-intro shell">
+  <p class="eyebrow">TRAFFIC ASSET · AGENT CAPABILITY INDEX</p>
+  <h1>Agent 软件世界的公共地图</h1>
+  <p class="page-deck">当 Agent 成为软件消费者，软件如何被发现与调用？这里按能力分类整理可被 Agent 调用的软件与服务：provider、interface、pricing、availability、来源与更新时间。即使你不认可任何论点，这张地图也值得收藏。</p>
+</section>
+
+<section class="home-simple-section">
+  <div class="shell">
+    <div class="cap-status-note">
+      <strong>v0.1 种子数据</strong> · 共 {{ site.data.capabilities.categories | size }} 个能力类别，由公开文档整理，更新于 {{ site.data.capabilities.updated_at }}。pricing 与 availability 变化最快，请以 source 链接为准。MCP / Skills 支持情况将在 v0.2 补充（接口层变化最快）。发现错误？欢迎<a href="https://github.com/roy-tong/roy-tong.github.io/issues">提交 Issue</a>或直接 <a href="https://github.com/roy-tong/roy-tong.github.io/tree/main/_data/capabilities.json">PR 修正</a>。
+    </div>
+
+    {% assign cats = site.data.capabilities.categories %}
+    {% for cat in cats %}
+    <section class="cap-category" id="{{ cat.id }}" aria-labelledby="cat-{{ cat.id }}">
+      <div class="cap-category-head">
+        <h2 id="cat-{{ cat.id }}">{{ cat.name }}</h2>
+        <p>{{ cat.description }} · {{ cat.capabilities | size }} 项</p>
+      </div>
+      <div class="cap-table-wrap">
+        <table class="cap-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Capability</th>
+              <th>Interface</th>
+              <th>Pricing</th>
+              <th>Availability</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cap in cat.capabilities %}
+            <tr>
+              <td class="provider">{{ cap.provider }}</td>
+              <td>
+                {{ cap.capability }}
+                {% if cap.notes %}<div class="cap-note">{{ cap.notes }}</div>{% endif %}
+              </td>
+              <td>
+                {% for iface in cap.interfaces %}
+                  {% if iface == 'MCP' %}<span class="badge mcp">{{ iface }}</span>{% else %}<span class="badge">{{ iface }}</span>{% endif %}
+                {% endfor %}
+              </td>
+              <td>{{ cap.pricing }}</td>
+              <td class="availability">{{ cap.availability }}</td>
+              <td>
+                <a href="{{ cap.source }}" rel="noopener" target="_blank">Docs ↗</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% endfor %}
+
+    <div class="cap-contribute">
+      <h2>这张地图靠社区长出来</h2>
+      <p>这不是 AgentMeasure 的数据库，而是 Agent 软件世界的公共地图。下一步会逐步加入 Measurement readiness、Metering model 与 Evidence quality，让 AgentMeasure 自然进入，而不是硬推广。</p>
+      <p>你可以：Add a capability（补充新软件）、Correct an error（修正错误）、Submit a measurement case（提交计量案例）、Claim your provider profile（认领你的 provider 档案）。</p>
+      <a class="button light" href="https://github.com/roy-tong/roy-tong.github.io/issues">提交一个能力 <span>↗</span></a>
+      <a class="button secondary" href="{{ '/capability-economy/' | relative_url }}">了解当前战役</a>
+    </div>
+  </div>
+</section>

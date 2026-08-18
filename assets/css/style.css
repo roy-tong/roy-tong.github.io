@@ -3701,3 +3701,527 @@ a {
   color: var(--muted);
   font-size: 12.5px;
 }
+
+/* ============================================================
+   Current campaign: Agent Capability Economy (2026-08-18)
+   Homepage focus banner, three-asset grid, campaign page,
+   capability index page.
+   ============================================================ */
+
+/* --- Homepage: current focus banner --- */
+.focus-banner {
+  margin-block: -1px 0;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  background: var(--paper-deep);
+}
+
+.focus-banner-grid {
+  display: grid;
+  padding-block: 56px;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 64px;
+}
+
+.focus-banner h2 {
+  margin: 18px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+}
+
+.focus-banner-thesis {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.focus-banner-links {
+  display: flex;
+  margin-top: 32px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.focus-banner-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.focus-banner-side p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+.focus-banner-side .focus-chain {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 12.5px;
+  line-height: 2;
+}
+
+/* --- Homepage: three-asset grid (Traffic / Authority / Identity) --- */
+.asset-grid {
+  display: grid;
+  margin-top: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.asset-card {
+  display: flex;
+  min-height: 260px;
+  padding: 30px 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.asset-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--forest);
+  box-shadow: var(--shadow);
+}
+
+.asset-card-type {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.asset-card h3 {
+  margin: 16px 0 0;
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.asset-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+.asset-card .asset-card-link {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.asset-card .asset-card-link span {
+  color: var(--accent);
+}
+
+/* --- Campaign page --- */
+.campaign-section {
+  padding-block: 92px;
+  border-bottom: 1px solid var(--line);
+}
+
+.campaign-section-head {
+  max-width: 760px;
+  margin-bottom: 46px;
+}
+
+.campaign-section-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+}
+
+.campaign-section-head .campaign-deck {
+  max-width: 640px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.campaign-prose {
+  max-width: 760px;
+}
+
+.campaign-prose p {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 15.5px;
+  line-height: 1.9;
+}
+
+.campaign-prose .lead-strong {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.campaign-fragment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.campaign-fragment-list li {
+  display: grid;
+  padding: 16px 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.campaign-fragment-list li strong {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.campaign-fragment-list li span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Cross-section matrix: Research / Essays / Projects x campaign */
+.campaign-matrix {
+  border-top: 1px solid var(--ink);
+}
+
+.campaign-matrix-row {
+  display: grid;
+  padding: 30px 0;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 48px;
+}
+
+.campaign-matrix-role {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.campaign-matrix-role small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.campaign-matrix-body h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.campaign-matrix-body p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.campaign-matrix-body ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.campaign-matrix-body ul li {
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 14px;
+}
+
+.campaign-matrix-body ul li:last-child {
+  border-bottom: 0;
+}
+
+.campaign-matrix-body ul li a {
+  color: var(--forest);
+  font-weight: 500;
+}
+
+.campaign-matrix-body ul li span {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Terminology */
+.term-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.term-list li {
+  display: grid;
+  padding: 20px 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 40px;
+}
+
+.term-list li strong {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.term-list li span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Monthly report structure */
+.monthly-structure {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: monthly;
+  border-top: 1px solid var(--ink);
+}
+
+.monthly-structure li {
+  display: grid;
+  padding: 18px 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 24px;
+  counter-increment: monthly;
+}
+
+.monthly-structure li::before {
+  content: counter(monthly, decimal-leading-zero);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.monthly-structure li strong {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.monthly-structure li span {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+}
+
+/* --- Capability index page --- */
+.cap-status-note {
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--forest);
+  background: var(--paper-deep);
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.8;
+}
+
+.cap-status-note strong {
+  color: var(--ink);
+}
+
+.cap-category {
+  padding-block: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cap-category-head {
+  display: flex;
+  margin-bottom: 22px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cap-category-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cap-category-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cap-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cap-table th {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.cap-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.cap-table td.provider {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cap-table td.provider a {
+  color: var(--forest);
+}
+
+.cap-table td .cap-note {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.cap-table .availability {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  padding: 1px 8px;
+  border: 1px solid var(--forest);
+  border-radius: 999px;
+  color: var(--forest);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.badge.mcp {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cap-contribute {
+  margin-top: 72px;
+  padding: 40px 44px;
+  color: #fff;
+  background: #171a18;
+}
+
+.cap-contribute h2 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cap-contribute p {
+  max-width: 640px;
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+}
+
+.cap-contribute .button {
+  margin-top: 28px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .focus-banner-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-card {
+    min-height: 0;
+  }
+
+  .campaign-matrix-row,
+  .term-list li,
+  .campaign-fragment-list li {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .campaign-section {
+    padding-block: 64px;
+  }
+
+  .cap-category-head {
+    display: block;
+  }
+
+  .cap-category-head p {
+    margin-top: 8px;
+  }
+
+  .cap-table-wrap {
+    margin-inline: -24px;
+    padding-inline: 24px;
+    overflow-x: auto;
+  }
+
+  .cap-table {
+    min-width: 720px;
+  }
+
+  .monthly-structure li {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .monthly-structure li span {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .cap-contribute {
+    padding: 34px 26px;
+  }
+}

@@ -140,6 +140,10 @@ lang_switch_url: /en/about/
 
     <h2>我正在研究和构建什么</h2>
 
+    <h3>当前战役：Agent Capability Economy</h3>
+
+    <p>长期研究保持多元，但当前只有一个战役：<strong>Agent Capability Economy</strong>——当软件的消费者从人变成 Agent，软件如何被发现、选择、调用、计量与交易。我在这个专题上的工作分为三层：<a href="{{ '/capability-index/' | relative_url }}">Agent Capability Index</a> 提供事实底座（生态地图与数据台账），Essays 提供解释，项目提供证明。</p>
+
     <h3>AgentMeasure</h3>
 
     <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a> 是我目前最重要的公开项目。它试图为 Agent Capability Economy 建立一套开放计量语言：从 Reach、Choice、Use、Utility 到 Value，回答 Agent 如何发现、选择、调用软件能力，以及这些能力如何被可靠测量、比较，并进一步支撑未来的 Metering、Marketplace 与 Capability as a Service。</p>
