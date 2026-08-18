@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "status": "seed",
   "updated_at": "2026-08-18",
-  "note": "v0.1 种子数据，由公开文档整理，需人工核验。pricing 与 availability 变化最快，请以 source 链接为准。",
+  "note": "v0.1 种子数据，由公开文档整理，需人工核验。pricing 与 availability 变化最快，请以 source 链接为准。MCP / Skills 支持情况将在 v0.2 补充（接口层变化最快）。",
   "categories": [
     {
       "id": "search",
@@ -72,6 +72,79 @@
           "notes": "可限定站点范围搜索，配额制。",
           "source": "https://developers.google.com/custom-search",
           "updated": "2026-08-18"
+        },
+        {
+          "provider": "Serper.dev",
+          "capability": "Google SERP 搜索 API",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "无需 Google 官方 key 的 SERP 接口。",
+          "source": "https://serper.dev/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Bing Web Search API",
+          "capability": "网页搜索",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "Azure 认知服务的一部分。",
+          "source": "https://www.microsoft.com/en-us/bing/apis/bing-web-search-api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "You.com API",
+          "capability": "搜索与答案 API",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "面向 LLM 的搜索与引用答案。",
+          "source": "https://api.you.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "SearXNG",
+          "capability": "自托管元搜索",
+          "interfaces": [
+            "Self-hosted",
+            "JSON API"
+          ],
+          "pricing": "开源免费",
+          "availability": "GA",
+          "notes": "自托管、可私有化的元搜索。",
+          "source": "https://docs.searxng.org/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Kagi Universal Summarizer",
+          "capability": "网页摘要与搜索",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "付费订阅制，适合 Agent 摘要流程。",
+          "source": "https://help.kagi.com/api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "DuckDuckGo Instant Answer API",
+          "capability": "即时答案",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "轻量问答数据，配额有限。",
+          "source": "https://duckduckgo.com/api",
+          "updated": "2026-08-18"
         }
       ],
       "description_en": "Search the web, documents, and answers. Search is the most basic context-acquisition layer for agents."
@@ -130,6 +203,78 @@
           "availability": "GA",
           "notes": "公开问答检索，配额限制。",
           "source": "https://api.stackexchange.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Bitbucket Cloud API",
+          "capability": "代码托管与管道",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "Atlassian 生态的仓库与 CI/CD。",
+          "source": "https://developer.atlassian.com/cloud/bitbucket/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Azure DevOps REST API",
+          "capability": "仓库/管道/工作项",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 订阅",
+          "availability": "GA",
+          "notes": "Azure Repos、Pipelines 与 Boards。",
+          "source": "https://learn.microsoft.com/en-us/rest/api/azure/devops/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "npm registry API",
+          "capability": "包元数据",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "JavaScript 包生态的元数据与下载。",
+          "source": "https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "PyPI JSON API",
+          "capability": "包元数据",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "Python 包生态的元数据。",
+          "source": "https://warehouse.pypa.io/api-reference/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Docker Hub API",
+          "capability": "镜像仓库",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "容器镜像的拉取与仓库管理。",
+          "source": "https://docs.docker.com/docker-hub/api/latest/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Snyk API",
+          "capability": "依赖与漏洞扫描",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "依赖风险与修复建议。",
+          "source": "https://apidocs.snyk.io/",
           "updated": "2026-08-18"
         }
       ],
@@ -191,6 +336,79 @@
           "notes": "面向 Agent 的云端浏览器会话与实时调试。",
           "source": "https://www.browserbase.com/",
           "updated": "2026-08-18"
+        },
+        {
+          "provider": "Firecrawl",
+          "capability": "抓取/爬取为 LLM-ready 内容",
+          "interfaces": [
+            "REST API",
+            "MCP"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "网页转结构化 markdown，专为 LLM 设计。",
+          "source": "https://firecrawl.dev/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Jina AI Reader",
+          "capability": "URL 转 markdown",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "把任意 URL 转为可直接注入上下文的文本。",
+          "source": "https://jina.ai/reader/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "ScrapingBee",
+          "capability": "托管网页抓取",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "托管抓取与代理轮换。",
+          "source": "https://www.scrapingbee.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Apify",
+          "capability": "网页抓取与自动化平台",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "数千个现成抓取 Actor。",
+          "source": "https://apify.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Bright Data",
+          "capability": "代理与网页数据",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "代理网络与结构化数据采集。",
+          "source": "https://brightdata.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Stagehand",
+          "capability": "AI 浏览器自动化（开源）",
+          "interfaces": [
+            "Library"
+          ],
+          "pricing": "开源",
+          "availability": "Beta",
+          "notes": "面向 Agent 的自然语言浏览器操作库。",
+          "source": "https://stagehand.dev/",
+          "updated": "2026-08-18"
         }
       ],
       "description_en": "Drive a browser to visit pages, perform actions, and collect results."
@@ -250,6 +468,81 @@
           "availability": "GA",
           "notes": "企业数据仓库，Agent 可通过 SQL 访问。",
           "source": "https://docs.snowflake.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Supabase",
+          "capability": "托管 Postgres + Auth",
+          "interfaces": [
+            "REST API",
+            "PostgREST",
+            "MCP"
+          ],
+          "pricing": "免费额度 + 订阅",
+          "availability": "GA",
+          "notes": "开源 Firebase 替代，官方 MCP server 已发布。",
+          "source": "https://supabase.com/docs",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "MongoDB Atlas Data API",
+          "capability": "文档数据库 HTTP 访问",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "无需驱动即可 HTTP 访问文档数据库。",
+          "source": "https://www.mongodb.com/docs/atlas/app-services/data-api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "PostgREST",
+          "capability": "Postgres 自动 REST",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "开源免费",
+          "availability": "GA",
+          "notes": "把 Postgres schema 直接暴露为 REST。",
+          "source": "https://postgrest.org/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Airbyte API",
+          "capability": "数据管道",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "连接数百个数据源的数据集成平台。",
+          "source": "https://airbyte.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Pinecone",
+          "capability": "向量数据库",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "托管向量检索，RAG 常用。",
+          "source": "https://www.pinecone.io/docs/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Weaviate",
+          "capability": "向量数据库",
+          "interfaces": [
+            "REST API",
+            "GraphQL"
+          ],
+          "pricing": "开源 + 云",
+          "availability": "GA",
+          "notes": "可自托管的向量数据库。",
+          "source": "https://weaviate.io/developers",
           "updated": "2026-08-18"
         }
       ],
@@ -312,6 +605,93 @@
           "notes": "数千个公开模型的托管推理。",
           "source": "https://replicate.com/",
           "updated": "2026-08-18"
+        },
+        {
+          "provider": "Cloudflare Workers",
+          "capability": "边缘函数",
+          "interfaces": [
+            "REST API",
+            "CLI",
+            "MCP"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "边缘计算，官方 MCP server 已发布。",
+          "source": "https://developers.cloudflare.com/workers/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Vercel API",
+          "capability": "部署与函数",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "前端部署与 Serverless 函数。",
+          "source": "https://vercel.com/docs/rest-api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Fly.io Machines API",
+          "capability": "容器运行",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "把任意容器跑在全球边缘。",
+          "source": "https://fly.io/docs/machines/api/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Google Cloud Run",
+          "capability": "容器无服务器",
+          "interfaces": [
+            "REST API",
+            "SDK"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "容器化的无服务器运行环境。",
+          "source": "https://cloud.google.com/run",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Hugging Face Inference API",
+          "capability": "模型推理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "数千个开源模型的一键推理。",
+          "source": "https://huggingface.co/docs/api-inference",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Together AI",
+          "capability": "开源模型推理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "开源模型的高吞吐推理。",
+          "source": "https://docs.together.ai/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Fireworks AI",
+          "capability": "模型推理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "开源与微调模型的快速推理。",
+          "source": "https://docs.fireworks.ai/",
+          "updated": "2026-08-18"
         }
       ],
       "description_en": "Invoke cloud functions, GPUs, and model inference services."
@@ -371,6 +751,66 @@
           "notes": "电话通道，Agent 联系真实世界的常用方式。",
           "source": "https://www.twilio.com/",
           "updated": "2026-08-18"
+        },
+        {
+          "provider": "Telegram Bot API",
+          "capability": "消息机器人",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费",
+          "availability": "GA",
+          "notes": "Agent 触达用户的常见通道。",
+          "source": "https://core.telegram.org/bots/api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "WhatsApp Business Cloud API",
+          "capability": "商家消息",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "Meta 托管的 WhatsApp 消息 API。",
+          "source": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "SendGrid",
+          "capability": "事务邮件",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "邮件发送与模板。",
+          "source": "https://docs.sendgrid.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Resend",
+          "capability": "开发者邮件 API",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "面向开发者的邮件 API。",
+          "source": "https://resend.com/docs",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Zoom API",
+          "capability": "会议与视频",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "会议创建、录制与参与者管理。",
+          "source": "https://developers.zoom.us/docs/api/",
+          "updated": "2026-08-18"
         }
       ],
       "description_en": "Send and receive messages and email; operate workspaces and groups."
@@ -416,6 +856,78 @@
           "availability": "GA",
           "notes": "面向软件与数字产品的收款与税务处理。",
           "source": "https://docs.lemonsqueezy.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Adyen",
+          "capability": "全球支付",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "跨地区收单基础设施。",
+          "source": "https://docs.adyen.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Square API",
+          "capability": "收款与商户",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "线上与线下收款。",
+          "source": "https://developer.squareup.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Chargebee",
+          "capability": "订阅计费",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "订阅生命周期与计费管理。",
+          "source": "https://apidocs.chargebee.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Paddle",
+          "capability": "软件销售与税务",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "全球软件销售的 Merchant of Record。",
+          "source": "https://developer.paddle.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Plaid",
+          "capability": "银行与金融数据",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "账户连接与金融数据访问。",
+          "source": "https://plaid.com/docs/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Coinbase Commerce",
+          "capability": "加密收款",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "加密货币收款通道。",
+          "source": "https://docs.cdp.coinbase.com/commerce/",
           "updated": "2026-08-18"
         }
       ],
@@ -463,6 +975,54 @@
           "notes": "配送能力 API，需合作申请。",
           "source": "https://developer.doordash.com/",
           "updated": "2026-08-18"
+        },
+        {
+          "provider": "WooCommerce REST API",
+          "capability": "电商",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费（开源）",
+          "availability": "GA",
+          "notes": "WordPress 电商的开放 API。",
+          "source": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "BigCommerce API",
+          "capability": "电商",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "商家后台与店面数据。",
+          "source": "https://developer.bigcommerce.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "eBay Sell APIs",
+          "capability": "卖家运营",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "商品、订单与报价管理。",
+          "source": "https://developer.ebay.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Etsy Open API v3",
+          "capability": "卖家运营",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费（需 key）",
+          "availability": "GA",
+          "notes": "店铺与订单数据。",
+          "source": "https://developers.etsy.com/",
+          "updated": "2026-08-18"
         }
       ],
       "description_en": "Operate e-commerce, seller backends, and fulfillment systems."
@@ -507,6 +1067,54 @@
           "availability": "GA",
           "notes": "航班与酒店搜索、预订（沙盒可用）。",
           "source": "https://developers.amadeus.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Google Maps Places API",
+          "capability": "地点与真实世界数据",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "地点搜索、详情与导航数据。",
+          "source": "https://developers.google.com/maps/documentation/places",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Lyft",
+          "capability": "出行",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "合作制",
+          "availability": "GA",
+          "notes": "出行能力 API，需合作申请。",
+          "source": "https://developer.lyft.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Resy",
+          "capability": "餐厅预订",
+          "interfaces": [
+            "Partner API"
+          ],
+          "pricing": "合作制",
+          "availability": "Limited",
+          "notes": "高端餐厅预订，合作伙伴制。",
+          "source": "https://resy.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "EasyPost",
+          "capability": "物流与运输",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "多家承运商统一物流 API。",
+          "source": "https://www.easypost.com/docs",
           "updated": "2026-08-18"
         }
       ],
@@ -564,6 +1172,78 @@
           "availability": "GA",
           "notes": "DALL·E / gpt-image 系列图像生成。",
           "source": "https://platform.openai.com/docs/guides/images",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "ElevenLabs",
+          "capability": "语音合成",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 按量",
+          "availability": "GA",
+          "notes": "高质量 TTS 与语音克隆。",
+          "source": "https://elevenlabs.io/docs",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "D-ID",
+          "capability": "数字人视频",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "照片/角色驱动的口播视频。",
+          "source": "https://docs.d-id.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "HeyGen",
+          "capability": "数字人视频",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "数字人视频生成。",
+          "source": "https://docs.heygen.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Stability AI API",
+          "capability": "图像生成",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "Stable Diffusion 系列托管推理。",
+          "source": "https://platform.stability.ai/docs",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Runway API",
+          "capability": "视频生成",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "Gen 系列视频生成 API，状态以官方文档为准。",
+          "source": "https://runwayml.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Luma Dream Machine API",
+          "capability": "视频生成",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "按量",
+          "availability": "GA",
+          "notes": "文本/图像转视频生成。",
+          "source": "https://lumalabs.ai/",
           "updated": "2026-08-18"
         }
       ],
@@ -633,6 +1313,90 @@
           "availability": "GA",
           "notes": "轻量任务创建与同步。",
           "source": "https://developer.todoist.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Jira Cloud REST API",
+          "capability": "项目管理/Issue",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "软件开发团队 issue 管理的事实标准。",
+          "source": "https://developer.atlassian.com/cloud/jira/platform/rest/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Confluence Cloud REST API",
+          "capability": "团队文档",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "团队知识库读写。",
+          "source": "https://developer.atlassian.com/cloud/confluence/rest/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "ClickUp API",
+          "capability": "项目管理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "任务、文档与目标管理。",
+          "source": "https://docs.clickup.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "monday.com API",
+          "capability": "工作管理",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "低代码工作管理平台。",
+          "source": "https://developer.monday.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Trello API",
+          "capability": "看板任务",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费 + 订阅",
+          "availability": "GA",
+          "notes": "看板式任务管理。",
+          "source": "https://developer.atlassian.com/cloud/trello/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Dropbox API",
+          "capability": "文件存储",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "免费额度 + 订阅",
+          "availability": "GA",
+          "notes": "文件上传、同步与共享。",
+          "source": "https://developers.dropbox.com/",
+          "updated": "2026-08-18"
+        },
+        {
+          "provider": "Box API",
+          "capability": "企业文件",
+          "interfaces": [
+            "REST API"
+          ],
+          "pricing": "订阅",
+          "availability": "GA",
+          "notes": "企业内容管理。",
+          "source": "https://developer.box.com/",
           "updated": "2026-08-18"
         }
       ],
