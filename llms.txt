@@ -34,6 +34,7 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ## Current Release Sequence
 
+- [The Upsider 事件：Agent 第一次作为经济主体收付了钱](https://roy-tong.github.io/notes/the-upsider-event/): An AI agent on X evaluated interactions and automatically sent tokens on-chain — settlement is verifiable (E4) while the semantics of reward and value attribution are undefined. Payment is verifiable; value attribution isn't. Agents are becoming economic actors.
 - [Agent Capability Monthly · Issue 01: 生态基线](https://roy-tong.github.io/notes/agent-capability-monthly-01/): The baseline issue of the fixed monthly report on the Agent Capability Economy — 106 agent-invocable capabilities across 11 categories, pricing-war implications, MCP Registry consolidation, agent commerce protocols (ACP/AP2/x402/Bazaar), and why payment companies building metering validates "measurement precedes payment."
 - [Agent Capability Monthly · Issue 01 (EN)](https://roy-tong.github.io/en/notes/agent-capability-monthly-01/): English edition of the baseline issue.
 - [空间计算需要自己的“触控时刻”](https://roy-tong.github.io/notes/spatial-computing-touch-moment/): A public interaction grammar for spatial computing: look, point, pinch, and speak; Point and Ask / Point and Act; fast direct manipulation and slower Agent execution.
