@@ -146,7 +146,7 @@ lang_switch_url: /en/about/
 
     <h3>AgentMeasure</h3>
 
-    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a> 是我目前最重要的公开项目。它试图为 Agent Capability Economy 建立一套开放计量语言：从 Reach、Choice、Use、Utility 到 Value，回答 Agent 如何发现、选择、调用软件能力，以及这些能力如何被可靠测量、比较，并进一步支撑未来的 Metering、Marketplace 与 Capability as a Service。</p>
+    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a>（<a href="https://roy-tong.github.io/AgentMeasure/">官网</a>）是我目前最重要的公开项目。它试图为 Agent Capability Economy 建立一套开放计量语言：从 Reach、Choice、Use、Utility 到 Value，回答 Agent 如何发现、选择、调用软件能力，以及这些能力如何被可靠测量、比较，并进一步支撑未来的 Metering、Marketplace 与 Capability as a Service。当前版本 v0.2.2：一致性向量套件已接受首个社区贡献 fixture，发布了首个公开证据案例（真实框架遥测跑过规范管线、可复算的 0% 覆盖率诚实报告），实验引擎 Lab 已在真实 Agent 上完成首个预注册对照实验。</p>
 
     <p>我更关心的不是再造支付协议，而是支付之前更基础的问题：当软件消费者从人转向 Agent，我们究竟应该怎样定义一次机会、一次选择、一次使用，以及一次真正产生价值的调用。</p>
 
