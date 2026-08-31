@@ -15,6 +15,7 @@
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20260818-1">
+    <link rel="stylesheet" href="{{ '/assets/css/knowledge.css' | relative_url }}?v=20260831-1">
     {% if page.book_page %}<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">{% endif %}
     {% if page.lang_switch_url %}
       <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
@@ -54,7 +55,7 @@
         </button>
 
         <nav class="nav" id="site-navigation" aria-label="{% if is_english %}Main navigation{% else %}主导航{% endif %}">
-          <a href="{% if is_english %}{{ '/en/research/' | relative_url }}{% else %}{{ '/research/' | relative_url }}{% endif %}" {% if page.url == '/research/' or page.url == '/en/research/' %}aria-current="page"{% endif %}>Research</a>
+          <a href="{{ '/knowledge/' | relative_url }}" {% if page.knowledge_page %}aria-current="page"{% endif %}{% if is_english %} title="Chinese knowledge library"{% endif %}>{% if is_english %}Knowledge{% else %}知识库{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/essays/' | relative_url }}{% else %}{{ '/essays/' | relative_url }}{% endif %}" {% if page.url == '/essays/' or page.url == '/en/essays/' %}aria-current="page"{% endif %}>Essays</a>
           <a href="{% if is_english %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}" {% if page.url == '/projects/' or page.url == '/en/projects/' %}aria-current="page"{% endif %}>Projects</a>
           <a href="{% if is_english %}{{ '/en/capability-index/' | relative_url }}{% else %}{{ '/capability-index/' | relative_url }}{% endif %}" {% if page.url == '/capability-index/' or page.url == '/en/capability-index/' %}aria-current="page"{% endif %}>{% if is_english %}Capability Index{% else %}能力地图{% endif %}</a>
@@ -84,6 +85,7 @@
           <p>{% if is_english %}How AI becomes products, systems and markets.{% else %}研究 AI 如何变成产品、系统与商业。{% endif %}</p>
         </div>
         <div class="footer-links">
+          <a href="{{ '/knowledge/' | relative_url }}">{% if is_english %}Knowledge (中文){% else %}知识库{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/capability-index/' | relative_url }}{% else %}{{ '/capability-index/' | relative_url }}{% endif %}">{% if is_english %}Capability Index{% else %}能力地图{% endif %}</a>
           <a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a>
           <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
@@ -99,5 +101,6 @@
     </footer>
 
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% if page.knowledge_search %}<script src="{{ '/assets/js/knowledge-search.js' | relative_url }}?v=20260831-1" defer></script>{% endif %}
   </body>
 </html>

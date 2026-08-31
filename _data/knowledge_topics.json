@@ -1,0 +1,68 @@
+[
+  {
+    "id": "agent-systems",
+    "title": "Agent 与软件系统",
+    "summary": "让软件接住长期任务：上下文、执行状态、能力分发与计量。",
+    "question": "一个 Agent 怎样从一次回答，变成可以持续交付的系统？",
+    "start": "agent-context",
+    "related": [
+      "ai-devices",
+      "product-research"
+    ]
+  },
+  {
+    "id": "robotics",
+    "title": "具身智能与机器人",
+    "summary": "用任务、可靠性和交付成本理解身体、模型、数据与商业化。",
+    "question": "机器人完成的工作，是否足以覆盖它给人增加的工作？",
+    "start": "robot-industry",
+    "related": [
+      "ai-devices",
+      "organization"
+    ]
+  },
+  {
+    "id": "ai-devices",
+    "title": "AI 终端与新交互",
+    "summary": "从日常使用条件理解眼镜、空间交互、AI PC、NAS 与本地 Agent。",
+    "question": "新的终端形态，为哪项任务创造了已有设备没有的价值？",
+    "start": "local-ai",
+    "related": [
+      "agent-systems",
+      "creative-tools"
+    ]
+  },
+  {
+    "id": "creative-tools",
+    "title": "创作工具与数字制造",
+    "summary": "把生成结果变成可以修改、复用和交付的作品与实物。",
+    "question": "生成越来越便宜之后，谁负责把结果做对、改好并交付？",
+    "start": "video-production",
+    "related": [
+      "agent-systems",
+      "product-research"
+    ]
+  },
+  {
+    "id": "product-research",
+    "title": "产品研究与商业判断",
+    "summary": "从场景与替代方案找需求，用证据决定下一笔投入。",
+    "question": "手里的资料究竟允许我们做出哪一级判断？",
+    "start": "demand-evidence",
+    "related": [
+      "robotics",
+      "organization"
+    ]
+  },
+  {
+    "id": "organization",
+    "title": "组织建设与产业落地",
+    "summary": "把技术、产品、制造与经营放在同一套决策和责任体系里。",
+    "question": "团队怎样将一次成功演示，变成重复交付与持续经营？",
+    "start": "hardware-innovation",
+    "related": [
+      "product-research",
+      "robotics"
+    ]
+  }
+]

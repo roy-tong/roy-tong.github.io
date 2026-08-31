@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign topic = site.data.knowledge_topics | where: 'id', page.topic | first %}
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="当前位置">
+      <a href="{{ '/knowledge/' | relative_url }}">知识库</a><span aria-hidden="true">/</span>
+      <a href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">{{ topic.title | escape }}</a>
+    </nav>
+    <p class="eyebrow">KNOWLEDGE NOTE · 持续修订</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="kb-summary">{{ page.summary | escape }}</p>
+    <p class="kb-meta">作者分析 · 复核于 <time datetime="{{ page.reviewed_at | date: '%Y-%m-%d' }}">{{ page.reviewed_at | date: '%Y.%m.%d' }}</time> · <a href="{{ '/knowledge/method/' | relative_url }}">如何使用这些判断</a></p>
+  </header>
+  <div class="prose">{{ content }}</div>
+  {% if page.source_ids and page.source_ids.size > 0 %}
+  <section class="kb-references" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">公开来源与适用范围</h2>
+    <ul>{% for source_id in page.source_ids %}{% assign source = site.data.research_sources | where: 'id', source_id | first %}
+      <li><a href="{{ source.url | escape }}">{{ source.title | escape }}</a><p>{{ source.role | escape }} · {{ source.scope | escape }}</p></li>
+    {% endfor %}</ul>
+  </section>
+  {% endif %}
+  {% if page.related_posts and page.related_posts.size > 0 %}
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">文章与完整论证</h2>
+    <ul>{% for post_url in page.related_posts %}{% assign article = site.posts | where: 'url', post_url | first %}
+      {% if article %}<li><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></li>{% endif %}
+    {% endfor %}</ul>
+  </section>
+  {% endif %}
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">沿着问题继续读</h2>
+    <ul>{% for slug in page.related %}{% assign related_note = site.knowledge | where: 'slug', slug | first %}
+      {% if related_note %}<li><a href="{{ related_note.url | relative_url }}">{{ related_note.title | escape }}</a><p>{{ related_note.summary | escape }}</p></li>{% endif %}
+    {% endfor %}</ul>
+  </section>
+</article>

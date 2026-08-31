@@ -1,0 +1,11 @@
+{% assign linked_units = page.knowledge_units | default: site.data.essay_knowledge[page.url].units %}
+{% if linked_units and linked_units.size > 0 %}
+<aside class="kb-related" aria-label="{% if page.lang == 'en' %}Related knowledge{% else %}关联知识{% endif %}">
+  <h2>{% if page.lang == 'en' %}Keep exploring · Chinese knowledge notes{% else %}放回知识库继续读{% endif %}</h2>
+  <p>{% if page.lang == 'en' %}Living notes connect this essay with later revisions and related work.{% else %}文章保留完整论证，知识单元继续更新判断、证据和相关研究。{% endif %}</p>
+  <ul>{% for slug in linked_units %}{% assign target = site.knowledge | where: 'slug', slug | first %}
+    {% if target %}<li><a href="{{ target.url | relative_url }}">{{ target.title | escape }}</a></li>{% endif %}
+  {% endfor %}</ul>
+  <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">{% if page.lang == 'en' %}Explore the knowledge library →{% else %}查看六个研究主题 →{% endif %}</a>
+</aside>
+{% endif %}

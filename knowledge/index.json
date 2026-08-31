@@ -1,0 +1,50 @@
+---
+layout: null
+permalink: /knowledge/index.json
+---
+{
+  "schema_version": "1.0",
+  "updated": "2026-08-31",
+  "scope": "Public content only; knowledge notes are evolving author analysis. Existing essays retain their publication context. English translations are separate pages, not independent evidence.",
+  "topics": {{ site.data.knowledge_topics | jsonify }},
+  "records": [
+  {% for note in site.knowledge %}{
+    "id": {{ note.slug | prepend: 'knowledge-' | jsonify }},
+    "kind": "knowledge",
+    "lang": "zh-CN",
+    "title": {{ note.title | jsonify }},
+    "topic": {{ note.topic | jsonify }},
+    "url": {{ note.url | relative_url | jsonify }},
+    "summary": {{ note.summary | jsonify }},
+    "updated": {{ note.reviewed_at | date: '%Y-%m-%d' | jsonify }},
+    "related": {{ note.related | jsonify }},
+    "related_articles": {{ note.related_posts | jsonify }},
+    "source_ids": {{ note.source_ids | jsonify }},
+    "text": {{ note.content | markdownify | strip_html | normalize_whitespace | jsonify }}
+  },{% endfor %}
+  {% for article in site.posts %}{% assign mapping = site.data.essay_knowledge[article.url] %}{
+    "id": {{ article.url | prepend: 'article-' | jsonify }},
+    "kind": "article",
+    "lang": {{ article.lang | default: 'zh-CN' | jsonify }},
+    "title": {{ article.title | jsonify }},
+    "topic": {{ article.knowledge_topic | default: mapping.topic | jsonify }},
+    "url": {{ article.url | relative_url | jsonify }},
+    "summary": {{ article.description | default: article.excerpt | strip_html | normalize_whitespace | jsonify }},
+    "published": {{ article.date | date: '%Y-%m-%d' | jsonify }},
+    "translation_of": {{ mapping.translation_of | jsonify }},
+    "related": {{ article.knowledge_units | default: mapping.units | jsonify }},
+    "text": {{ article.content | markdownify | strip_html | normalize_whitespace | jsonify }}
+  },{% endfor %}
+  {% for project in site.data.knowledge_projects %}{
+    "id": {{ project.id | prepend: 'project-' | jsonify }},
+    "kind": "project",
+    "lang": "zh-CN",
+    "title": {{ project.title | jsonify }},
+    "topic": {{ project.topic | jsonify }},
+    "url": {{ project.url | jsonify }},
+    "summary": {{ project.summary | jsonify }},
+    "related": {{ project.units | jsonify }},
+    "text": {{ project.summary | jsonify }}
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}

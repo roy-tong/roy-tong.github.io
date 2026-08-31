@@ -20,6 +20,19 @@ social:
 
 permalink: /notes/:title/
 markdown: kramdown
+collections:
+  knowledge:
+    output: true
+    permalink: /knowledge/:name/
+defaults:
+  - scope:
+      path: ""
+      type: knowledge
+    values:
+      layout: knowledge
+      lang: zh-CN
+      knowledge_page: true
+      status: evolving
 kramdown:
   input: GFM
   syntax_highlighter: rouge
@@ -37,3 +50,7 @@ exclude:
   - PRODUCT.md
   - DESIGN.md
   - vendor
+  - scripts
+  - tests
+  - docs
+  - .impeccable

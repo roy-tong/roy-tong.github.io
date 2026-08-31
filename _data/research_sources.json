@@ -1,0 +1,138 @@
+[
+  {
+    "id": "agentmeasure-core",
+    "title": "AgentMeasure Core Specification",
+    "url": "https://github.com/roy-tong/AgentMeasure/blob/main/standard/CORE.md",
+    "role": "作者项目规范",
+    "scope": "attempt、operation 与证据语义；草案，不是行业普遍采纳证明。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "agentmeasure-evidence",
+    "title": "AgentMeasure · Langfuse demo traces",
+    "url": "https://github.com/roy-tong/AgentMeasure/tree/main/conformance/evidence/langfuse-demo-traces",
+    "role": "公开演示数据案例",
+    "scope": "公开 demo trace 的适配与复核，不代表生产流量或因果收益。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "agentmeasure-lab",
+    "title": "AgentMeasure Lab",
+    "url": "https://github.com/roy-tong/AgentMeasure/tree/main/lab",
+    "role": "作者项目实验工具",
+    "scope": "实验引擎与合成示例；合成 uplift 不外推为真实 Agent 提升。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "sure",
+    "title": "SURE · User Demand Research",
+    "url": "https://github.com/roy-tong/user-demand-research",
+    "role": "作者项目与方法",
+    "scope": "研究契约、证据分级、CLI 与 MCP；结构检查通过不等于需求成立。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "iread",
+    "title": "iRead",
+    "url": "https://github.com/roy-tong/iRead",
+    "role": "作者项目",
+    "scope": "信源发现、事件去重和报告工作流；不声称长期使用价值已经验证。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "transcript",
+    "title": "Bilibili Transcript Pipeline",
+    "url": "https://github.com/roy-tong/bilibili-transcript-pipeline",
+    "role": "作者项目",
+    "scope": "转录工具及处理流程；工具许可不覆盖第三方视频内容。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "lmstudio-offline",
+    "title": "LM Studio · Offline Operation",
+    "url": "https://lmstudio.ai/docs/app/offline",
+    "role": "厂商技术文档",
+    "scope": "已下载模型、文档处理和本地服务的离线能力；不覆盖外部工具的联网行为。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "ollama-context",
+    "title": "Ollama · Context length",
+    "url": "https://docs.ollama.com/context-length",
+    "role": "项目技术文档",
+    "scope": "上下文设置与内存占用关系；不用于比较不同硬件的任务性能。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "jetson-lifecycle",
+    "title": "NVIDIA · Jetson Product Lifecycle",
+    "url": "https://developer.nvidia.com/embedded/lifecycle",
+    "role": "厂商供货说明",
+    "scope": "模组与开发套件的生命周期区别；不是任意设备的服务承诺。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "otio",
+    "title": "OpenTimelineIO documentation",
+    "url": "https://opentimelineio.readthedocs.io/en/latest/index.html",
+    "role": "开源项目文档",
+    "scope": "剪辑信息交换：片段、时间、轨道、标记、元数据；不内嵌音视频。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "runway-references",
+    "title": "Runway · Creating with Gen-4 Image References",
+    "url": "https://help.runwayml.com/hc/en-us/articles/40042718905875-Creating-with-Gen-4-Image-References",
+    "role": "厂商使用文档",
+    "scope": "参考图与角色/场景一致性工作流；厂商能力说明，不是独立可靠性测试。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "c2pa",
+    "title": "C2PA · Content Credentials Explainer",
+    "url": "https://spec.c2pa.org/specifications/specifications/2.2/explainer/Explainer.html",
+    "role": "标准组织说明",
+    "scope": "内容来源与防篡改机制；来源凭证不裁定内容真实性，也不自动授予版权。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "openvla",
+    "title": "OpenVLA",
+    "url": "https://openvla.github.io/",
+    "role": "研究项目与论文",
+    "scope": "视觉语言动作模型的训练与评测；只支持论文所披露的任务和实验条件。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "droid",
+    "title": "DROID",
+    "url": "https://droid-dataset.github.io/",
+    "role": "研究数据集",
+    "scope": "跨场景真机操作数据及采集基础设施；规模不能替代特定任务适配。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "irobot-care",
+    "title": "iRobot · Roomba s Series Care Frequency Chart",
+    "url": "https://homesupport.irobot.com/articles/en_US/Knowledge/20966",
+    "role": "厂商维护说明",
+    "scope": "特定系列的维护项目与频率；用于说明维护劳动存在，不推断全行业故障率。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "prusa-settings",
+    "title": "PrusaSlicer · Print settings",
+    "url": "https://help.prusa3d.com/product/prusaslicer/print-settings_212",
+    "role": "厂商技术文档",
+    "scope": "材料、打印与设备参数影响制作过程；不作为设备优劣排名。",
+    "reviewed_at": "2026-08-31"
+  },
+  {
+    "id": "world-model-taxonomy",
+    "title": "World Labs · A Functional Taxonomy of World Models",
+    "url": "https://www.worldlabs.ai/blog/taxonomy-of-world-models",
+    "role": "研究团队的分类提案",
+    "scope": "以输出功能区分 renderer、simulator、planner；不是业界统一定义，不代表能力已经融合。",
+    "reviewed_at": "2026-08-31"
+  }
+]

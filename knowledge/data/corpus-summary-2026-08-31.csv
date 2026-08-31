@@ -1,0 +1,4 @@
+study_id,title,record_count,first_month,last_month,largest_source,largest_source_records,largest_source_share_pct,missing_stored_text_hashes
+local-ai-2024,本地 AI 与私有算力,211088,2024-01,2026-07,reddit,190425,90.2112,0
+ai-glasses-2023,AI 眼镜与开放场景,209862,2023-01,2026-07,reddit,174791,83.2885,2
+home-robots-2023,家庭机器人与开放场景,208755,2023-01,2026-08,reddit,184008,88.1454,1

@@ -5,6 +5,11 @@
 ## Start Here
 
 - [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
+- [Personal Knowledge Library](https://roy-tong.github.io/knowledge/): Six connected themes; 20 evolving knowledge notes, 36 article pages (including 10 English translations), and four open-source projects as of 2026-08-31. Original writing URLs remain stable.
+- [Full-text knowledge index](https://roy-tong.github.io/knowledge/index.json): Public-only JSON with type, topic, language, provenance links, related notes, summaries and full text. Translations are not independent evidence.
+- [Research data and limits](https://roy-tong.github.io/knowledge/data/): Reviewed aggregate counts for three private research snapshots. Records are not people or validated demands; raw platform content is not redistributed.
+- [Knowledge source ledger](https://roy-tong.github.io/knowledge/sources/): Public primary sources with source roles and claim boundaries.
+- [Reading and maintenance policy](https://roy-tong.github.io/knowledge/method/): Distinguish fact, author judgment, hypothesis, historical context, and revisions.
 - [About Roy.Tong](https://roy-tong.github.io/about/): Public professional background and product experience.
 - [Article archive](https://roy-tong.github.io/archive/): All published notes, ordered for human browsing.
 - [Agent Capability Economy (Current Campaign)](https://roy-tong.github.io/capability-economy/): The current research campaign — how software is discovered, chosen, invoked, metered, and paid for when software consumers shift from humans to agents. Includes the thesis, the Research/Essays/Projects matrix, measurement terminology, and the Agent Capability Monthly structure.
@@ -21,7 +26,16 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 - [具身智能研究专题](https://roy-tong.github.io/research/embodied-intelligence/): Embodied-intelligence hub — mass-production year one, market layers, company and product tables, VLA/world-model technology paths, commercialization evidence, and Roy's research materials and essays.
 - [Embodied Intelligence Hub (EN)](https://roy-tong.github.io/en/research/embodied-intelligence/): English edition of the embodied-intelligence hub.
-- [Research section](https://roy-tong.github.io/research/): Index of all research directions; Multimodal Interaction, On-device AI, and Agents hubs are in progress.
+- [Research section](https://roy-tong.github.io/research/): Existing research programs and the six-theme knowledge library. Capability Economy and the original embodied-intelligence hub retain their canonical URLs.
+
+## Connected Knowledge Themes
+
+- [Agent and software systems](https://roy-tong.github.io/knowledge/topics/agent-systems/): Runtime context, callable capabilities, measurement, and research workflows.
+- [Embodied intelligence and robotics](https://roy-tong.github.io/knowledge/topics/robotics/): Industry structure, household tasks, manipulation data, world models, and delivery evidence.
+- [AI devices and interaction](https://roy-tong.github.io/knowledge/topics/ai-devices/): Local AI, wearables, spatial objects, permissions, and actual usage conditions.
+- [Creative tools and digital manufacturing](https://roy-tong.github.io/knowledge/topics/creative-tools/): Editable video projects, persistent interactive states, and physical production.
+- [Product research and business judgment](https://roy-tong.github.io/knowledge/topics/product-research/): Demand evidence, alternatives, market entry, denominators, and revision.
+- [Organization and industrial execution](https://roy-tong.github.io/knowledge/topics/organization/): Irreversible hardware investment, responsibility interfaces, and capability transfer.
 
 ## Agent Tools and Components
 
@@ -83,3 +97,6 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - Cite the original article URL, not this index, when using an argument.
 - Check publication context and newer evidence before treating an article as current fact.
 - The site does not expose private notes, user data, credentials, or unpublished Feishu content.
+- [AI 视频软件的护城河，藏在第二次修改里](https://roy-tong.github.io/notes/ai-video-second-edit/): Why preserving approved state through successive edits may matter more than first-generation demos in professional creative workflows; author thesis, not a vendor benchmark.
+- [本地 AI 盒子，得先证明自己值得多占一个插座](https://roy-tong.github.io/notes/local-ai-box-task-economics/): Evaluate a dedicated device against existing computers and allowed alternatives using full task cost, privacy boundaries, uptime, and maintenance.
+- [机器人进家庭，要先过“谁来收拾残局”这一关](https://roy-tong.github.io/notes/home-robots-recovery-burden/): Evaluate household preparation, recovery, intervention and maintenance; buyers, users and maintainers may be different people.

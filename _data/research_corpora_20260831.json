@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-08-31",
+  "title": "三组研究语料的结构复核",
+  "release_scope": "Aggregate counts only. Original platform content is not redistributed.",
+  "not_claimed": [
+    "unique people",
+    "market prevalence",
+    "validated demand",
+    "label accuracy",
+    "complete platform coverage"
+  ],
+  "overlap_method": "Exact matches after Unicode NFKC normalization, whitespace collapse and trimming; one count per unique nonempty text. No fuzzy matching or person linkage.",
+  "studies": [
+    {
+      "id": "local-ai-2024",
+      "title": "本地 AI 与私有算力",
+      "record_count": 211088,
+      "first_month": "2024-01",
+      "last_month": "2026-07",
+      "largest_source": "reddit",
+      "largest_source_records": 190425,
+      "largest_source_share_pct": 90.2112,
+      "platform_counts": {
+        "github": 2092,
+        "hacker_news": 12456,
+        "public_ecommerce_reviews": 368,
+        "public_forum": 2810,
+        "public_review_comments": 1801,
+        "reddit": 190425,
+        "stackexchange": 1136
+      },
+      "machine_evidence_label_counts": {
+        "not-coded": 211088
+      },
+      "duplicate_record_ids": 0,
+      "missing_record_ids": 0,
+      "duplicate_stored_text_hashes": 0,
+      "missing_stored_text_hashes": 0,
+      "nonempty_text_records": 211088,
+      "invalid_json_lines": 0,
+      "input_sha256": "ae7dbd0cef04bc0013f66484207e0c95328250a88b350cb01ac692947ddb863f",
+      "semantic_label_validation": "not-performed-in-this-recount",
+      "unit": "feedback record, not person or validated demand"
+    },
+    {
+      "id": "ai-glasses-2023",
+      "title": "AI 眼镜与开放场景",
+      "record_count": 209862,
+      "first_month": "2023-01",
+      "last_month": "2026-07",
+      "largest_source": "reddit",
+      "largest_source_records": 174791,
+      "largest_source_share_pct": 83.2885,
+      "platform_counts": {
+        "app_store": 155,
+        "bilibili": 2993,
+        "github": 429,
+        "google_play": 283,
+        "hacker_news": 2520,
+        "halliday_judgeme": 4,
+        "inmo_loox": 60,
+        "lucyd_okendo": 622,
+        "public_forum": 26,
+        "reddit": 174791,
+        "rokid_judgeme": 307,
+        "solos_judgeme": 25,
+        "taobao": 2,
+        "tmall": 3,
+        "viture_okendo": 4734,
+        "weibo": 63,
+        "x": 274,
+        "xiaohongshu": 679,
+        "youtube": 21279,
+        "zhihu": 613
+      },
+      "machine_evidence_label_counts": {
+        "E0": 168476,
+        "E1": 29266,
+        "E2": 3630,
+        "E3": 1843,
+        "E4+": 120,
+        "E4-": 943,
+        "E5": 5584
+      },
+      "duplicate_record_ids": 0,
+      "missing_record_ids": 0,
+      "duplicate_stored_text_hashes": 0,
+      "missing_stored_text_hashes": 2,
+      "nonempty_text_records": 209862,
+      "invalid_json_lines": 0,
+      "input_sha256": "a6fabcdbf8a50329c9520efe763b4f460c68838c19cf9409830269c9abe75b89",
+      "semantic_label_validation": "not-performed-in-this-recount",
+      "unit": "feedback record, not person or validated demand"
+    },
+    {
+      "id": "home-robots-2023",
+      "title": "家庭机器人与开放场景",
+      "record_count": 208755,
+      "first_month": "2023-01",
+      "last_month": "2026-08",
+      "largest_source": "reddit",
+      "largest_source_records": 184008,
+      "largest_source_share_pct": 88.1454,
+      "platform_counts": {
+        "bilibili": 941,
+        "github": 905,
+        "hacker_news": 19023,
+        "reddit": 184008,
+        "stackexchange": 297,
+        "youtube": 3581
+      },
+      "machine_evidence_label_counts": {
+        "E0": 161090,
+        "E1": 32030,
+        "E2": 7105,
+        "E3": 668,
+        "E4+": 2707,
+        "E4-": 2434,
+        "E5": 2721
+      },
+      "duplicate_record_ids": 0,
+      "missing_record_ids": 0,
+      "duplicate_stored_text_hashes": 0,
+      "missing_stored_text_hashes": 1,
+      "nonempty_text_records": 208755,
+      "invalid_json_lines": 0,
+      "input_sha256": "5fcb6627471cbf583932a8e7085193a365cce1301e75d84c65feeae11c426cbe",
+      "semantic_label_validation": "not-performed-in-this-recount",
+      "unit": "feedback record, not person or validated demand"
+    }
+  ],
+  "cross_corpus_overlap": [
+    {
+      "study_a": "local-ai-2024",
+      "study_b": "ai-glasses-2023",
+      "shared_normalized_texts": 104
+    },
+    {
+      "study_a": "local-ai-2024",
+      "study_b": "home-robots-2023",
+      "shared_normalized_texts": 133
+    },
+    {
+      "study_a": "ai-glasses-2023",
+      "study_b": "home-robots-2023",
+      "shared_normalized_texts": 72
+    }
+  ],
+  "reproducibility": "Aggregate arithmetic is public. Full recount requires authorized access to private input snapshots; input SHA-256 binds each snapshot. This is not an independently reproducible public raw-data release."
+}

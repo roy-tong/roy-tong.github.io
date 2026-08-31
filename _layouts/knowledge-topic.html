@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign topic = site.data.knowledge_topics | where: 'id', page.topic | first %}
+{% assign notes = site.knowledge | where: 'topic', page.topic | sort: 'order' %}
+<section class="shell kb-topic-page">
+  <header class="kb-topic-header">
+    <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">← 全部主题</a>
+    <p class="eyebrow">RESEARCH THEME · {{ notes.size }} 个知识单元</p>
+    <h1>{{ topic.title | escape }}</h1>
+    <p class="kb-summary">{{ topic.question | escape }}</p>
+    <div class="prose">{{ content }}</div>
+  </header>
+  <ol class="kb-note-list">
+    {% for note in notes %}
+    <li><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
+      <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h2>
+      <p>{{ note.summary | escape }}</p>
+    </div></li>
+    {% endfor %}
+  </ol>
+  <section class="kb-related">
+    <h2>相关项目与长期专题</h2>
+    <ul>{% for project in site.data.knowledge_projects %}{% if project.topic == page.topic %}
+      <li><a href="{{ project.url | escape }}">{{ project.title | escape }}</a><p>{{ project.summary | escape }}</p></li>
+    {% endif %}{% endfor %}
+    {% if page.topic == 'agent-systems' %}<li><a href="{{ '/capability-economy/' | relative_url }}">Agent Capability Economy</a> · <a href="{{ '/capability-index/' | relative_url }}">能力地图与数据台账</a></li>{% endif %}
+    {% if page.topic == 'robotics' %}<li><a href="{{ '/research/embodied-intelligence/' | relative_url }}">原具身智能专题与产业地图</a></li>{% endif %}
+    <li><a href="{{ '/knowledge/data/' | relative_url }}">研究数据与统计边界</a></li>
+    </ul>
+  </section>
+  <section class="kb-related">
+    <h2>关联主题</h2>
+    <ul>{% for related_id in topic.related %}{% assign linked_topic = site.data.knowledge_topics | where: 'id', related_id | first %}
+    <li><a href="{{ '/knowledge/topics/' | append: linked_topic.id | append: '/' | relative_url }}">{{ linked_topic.title | escape }}</a> · {{ linked_topic.summary | escape }}</li>
+    {% endfor %}</ul>
+  </section>
+</section>

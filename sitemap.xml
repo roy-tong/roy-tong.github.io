@@ -76,6 +76,12 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}{{ '/en/support/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
+  {% for note in site.knowledge %}
+  <url><loc>{{ note.url | absolute_url }}</loc><lastmod>{{ note.reviewed_at | date_to_xmlschema }}</lastmod></url>
+  {% endfor %}
+  {% for knowledge_page in site.pages %}{% if knowledge_page.knowledge_page %}
+  <url><loc>{{ knowledge_page.url | absolute_url }}</loc><lastmod>2026-08-31</lastmod></url>
+  {% endif %}{% endfor %}
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url | relative_url }}</loc>

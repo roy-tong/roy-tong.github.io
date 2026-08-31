@@ -1,0 +1,15 @@
+---
+layout: knowledge-document
+title: 公开来源台账
+description: 引用来源说明什么，也保留它没有证明什么。作者项目、厂商文档与研究论文分开标记。
+permalink: /knowledge/sources/
+knowledge_page: true
+---
+<p>本页只列公开来源。原始本地资料不进入站点；可公开的作者分析已重组为知识单元。相关旧文章在各知识页单独链接，保留原始发布时间。</p>
+<p>链接与适用范围复核于 2026 年 8 月 31 日。厂商文档用于确认能力说明，不当作独立性能测试；项目草案不当作行业共识。</p>
+<ul class="kb-sources-list">
+{% for source in site.data.research_sources %}
+<li id="{{ source.id }}"><h2><a href="{{ source.url | escape }}">{{ source.title | escape }}</a></h2><p>{{ source.role | escape }}</p><p>{{ source.scope | escape }}</p></li>
+{% endfor %}
+</ul>
+<p>数据快照及复现限制另见<a href="{{ '/knowledge/data/' | relative_url }}">研究数据页</a>。引用观点时，请引用对应知识页或文章；引用事实时，尽量回到本页的一手来源。</p>

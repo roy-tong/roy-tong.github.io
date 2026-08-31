@@ -1,6 +1,6 @@
 # Roy.Tong · 把前沿技术转化为可商业化的产品
 
-[访问网站](https://roy-tong.github.io) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
+[访问网站](https://roy-tong.github.io) · [个人知识库](https://roy-tong.github.io/knowledge/) · [Agent 索引](https://roy-tong.github.io/llms.txt) · [全部文章](https://roy-tong.github.io/archive/) · [iRead](https://github.com/roy-tong/iRead)
 
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
@@ -14,6 +14,13 @@
 - iRead Research Monitor、User Demand Research、Bilibili Video to Transcript 与公开研究知识库等开放能力。
 
 ## 给 Agent 使用
+
+知识库按六个长期问题组织：Agent 与软件系统、具身智能与机器人、AI 终端与新交互、创作工具与数字制造、产品研究与商业判断、组织建设与产业落地。第一版连接 20 个知识单元、36 页文章（含 10 页英文译文）与 4 个项目；原有文章链接保持不变。
+
+- [全文索引 JSON](https://roy-tong.github.io/knowledge/index.json)：主题、类型、语言、正文与关联关系。
+- [数据与边界](https://roy-tong.github.io/knowledge/data/)：三组研究语料的审查后汇总，不再分发原始平台用户内容。
+- [来源台账](https://roy-tong.github.io/knowledge/sources/)与[修订记录](https://roy-tong.github.io/knowledge/changes/)。
+- [维护与发布说明](docs/knowledge-maintenance.md)：新增知识、文章、数据与验证方法。
 
 网站提供符合 `llms.txt` 约定的公开内容索引，以及一个只读 Agent Skill：
 
@@ -74,3 +81,5 @@ excerpt: "显示在首页和搜索结果中的摘要。"
 bundle install
 bundle exec jekyll serve
 ```
+
+发布前运行 `bundle exec jekyll build` 和 `python3 scripts/verify_knowledge.py`。全文检索在浏览器中完成，搜索词只保存在 URL fragment。JavaScript 不可用时，主题和完整文章目录仍可阅读。

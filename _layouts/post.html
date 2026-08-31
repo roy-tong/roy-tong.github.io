@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-{% assign is_en = page.lang == 'en' %}
+{% assign is_en = false %}
+{% if page.lang == 'en' %}{% assign is_en = true %}{% endif %}
 <article class="post shell reading-shell">
   <header class="post-header">
     <a class="eyebrow back-link" href="{% if is_en %}{{ '/en/archive/' | relative_url }}{% else %}{{ '/archive/' | relative_url }}{% endif %}">{% if is_en %}← All writing{% else %}← 返回文章{% endif %}</a>
@@ -21,6 +22,8 @@ layout: default
   <div class="prose">
     {{ content }}
   </div>
+
+  {% include knowledge-links.html %}
 
   <footer class="post-end">
     <span class="post-end-mark">R</span>

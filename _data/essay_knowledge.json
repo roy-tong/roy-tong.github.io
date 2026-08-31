@@ -1,0 +1,265 @@
+{
+  "/notes/start-writing/": {
+    "topic": "product-research",
+    "units": [
+      "evidence-maintenance"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/from-ai-software-to-physical-world/": {
+    "topic": "organization",
+    "units": [
+      "hardware-innovation",
+      "robot-industry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/embodied-intelligence-beginners-guide/": {
+    "topic": "robotics",
+    "units": [
+      "robot-industry",
+      "world-models",
+      "manipulation-data"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/waic-from-models-to-systems/": {
+    "topic": "robotics",
+    "units": [
+      "robot-industry",
+      "hardware-innovation"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/scene-user-demand-evidence-research/": {
+    "topic": "product-research",
+    "units": [
+      "demand-evidence",
+      "evidence-maintenance"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/hardware-innovation-organization-management/": {
+    "topic": "organization",
+    "units": [
+      "hardware-innovation",
+      "organization-responsibility"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-left-embodied-right/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-context",
+      "robot-industry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/ai-native-basic-unit/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "video-production",
+      "playable-content"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/ai-wearable-modalities-body-comfort/": {
+    "topic": "ai-devices",
+    "units": [
+      "wearables"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/competitive-analysis-software-hardware/": {
+    "topic": "product-research",
+    "units": [
+      "alternatives-entry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/market-roles-remove-uncertainty/": {
+    "topic": "product-research",
+    "units": [
+      "alternatives-entry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/appointed-manager-organizational-legitimacy/": {
+    "topic": "organization",
+    "units": [
+      "organization-responsibility"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/robots-give-people-new-bodies/": {
+    "topic": "robotics",
+    "units": [
+      "household-robots",
+      "wearables"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/home-robots-harder-richer/": {
+    "topic": "robotics",
+    "units": [
+      "household-robots"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-context-recommendation-after-rag/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-context"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/spatial-computing-touch-moment/": {
+    "topic": "ai-devices",
+    "units": [
+      "spatial-computing"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-usage-measurement-standard/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/when-the-software-consumer-becomes-an-agent/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "agent-measurement"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/every-agent-usage-number-is-self-reported-zh/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement",
+      "evidence-maintenance"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-capability-monthly-01/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "agent-measurement"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/the-upsider-event/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/ai-apps-unbundled-before-agent-filled/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "agent-context"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agentmeasure-from-spec-to-evidence/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement",
+      "research-workflows"
+    ],
+    "lang": "zh-CN"
+  },
+  "/en/notes/market-roles-remove-uncertainty/": {
+    "topic": "product-research",
+    "units": [
+      "alternatives-entry"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/market-roles-remove-uncertainty/"
+  },
+  "/en/notes/agent-context-recommendation-after-rag/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-context"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/agent-context-recommendation-after-rag/"
+  },
+  "/en/notes/robots-give-people-new-bodies/": {
+    "topic": "robotics",
+    "units": [
+      "household-robots",
+      "wearables"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/robots-give-people-new-bodies/"
+  },
+  "/en/notes/when-the-software-consumer-becomes-an-agent/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "agent-measurement"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/when-the-software-consumer-becomes-an-agent/"
+  },
+  "/en/notes/agent-capability-monthly-01/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "agent-measurement"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/agent-capability-monthly-01/"
+  },
+  "/en/notes/appointed-manager-organizational-legitimacy/": {
+    "topic": "organization",
+    "units": [
+      "organization-responsibility"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/appointed-manager-organizational-legitimacy/"
+  },
+  "/en/notes/agentmeasure-from-spec-to-evidence/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement",
+      "research-workflows"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/agentmeasure-from-spec-to-evidence/"
+  },
+  "/en/notes/ai-native-basic-unit/": {
+    "topic": "agent-systems",
+    "units": [
+      "software-capabilities",
+      "video-production",
+      "playable-content"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/ai-native-basic-unit/"
+  },
+  "/en/notes/every-agent-usage-number-is-self-reported/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement",
+      "evidence-maintenance"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/every-agent-usage-number-is-self-reported-zh/"
+  },
+  "/en/notes/how-agent-usage-should-be-measured/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement"
+    ],
+    "lang": "en",
+    "translation_of": "/notes/agent-usage-measurement-standard/"
+  }
+}

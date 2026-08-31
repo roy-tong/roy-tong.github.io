@@ -1,0 +1,46 @@
+[
+  {
+    "id": "agentmeasure",
+    "title": "AgentMeasure",
+    "topic": "agent-systems",
+    "url": "https://github.com/roy-tong/AgentMeasure",
+    "summary": "用 operation、attempt 与证据记录研究 Agent 对软件的使用。规范、工具和实验的能力范围分别说明。",
+    "units": [
+      "agent-measurement",
+      "software-capabilities"
+    ]
+  },
+  {
+    "id": "sure",
+    "title": "SURE · 用户需求研究",
+    "topic": "product-research",
+    "url": "https://github.com/roy-tong/user-demand-research",
+    "summary": "证据协议、研究工作流与确定性检查工具。结构通过不等于需求验证。",
+    "units": [
+      "demand-evidence",
+      "evidence-maintenance"
+    ]
+  },
+  {
+    "id": "iread",
+    "title": "iRead",
+    "topic": "agent-systems",
+    "url": "https://github.com/roy-tong/iRead",
+    "summary": "持续研究的信源发现、去重与报告工作流。让新材料回到已有研究问题。",
+    "units": [
+      "research-workflows",
+      "agent-context"
+    ]
+  },
+  {
+    "id": "transcript",
+    "title": "Bilibili Transcript Pipeline",
+    "topic": "creative-tools",
+    "url": "https://github.com/roy-tong/bilibili-transcript-pipeline",
+    "summary": "把视频处理成可回查的转录材料。工具开源不代表第三方音视频可以再分发。",
+    "units": [
+      "research-workflows",
+      "video-production"
+    ]
+  }
+]

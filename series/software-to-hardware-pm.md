@@ -69,7 +69,8 @@ lang_switch_url: /en/
 
   <div class="series-article-list">
     {% for post in site.posts %}
-      {% if post.lang != 'en' and (post.path contains 'from-ai-software-to-physical-world' or post.path contains 'hardware-innovation-organization-management' or post.path contains 'appointed-manager-organizational-legitimacy' or post.path contains 'home-robots-harder-richer') %}
+      {% if post.lang == 'en' %}{% continue %}{% endif %}
+      {% if post.path contains 'from-ai-software-to-physical-world' or post.path contains 'hardware-innovation-organization-management' or post.path contains 'appointed-manager-organizational-legitimacy' or post.path contains 'home-robots-harder-richer' %}
         {% if post.path contains entry_slug %}{% continue %}{% endif %}
         <a class="series-article-row" href="{{ post.url | relative_url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>

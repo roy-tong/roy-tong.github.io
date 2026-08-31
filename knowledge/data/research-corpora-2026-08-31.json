@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /knowledge/data/research-corpora-2026-08-31.json
+---
+{{ site.data.research_corpora_20260831 | jsonify }}

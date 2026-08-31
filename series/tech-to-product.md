@@ -69,7 +69,8 @@ lang_switch_url: /en/
 
   <div class="series-article-list">
     {% for post in site.posts %}
-      {% if post.lang != 'en' and (post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems') %}
+      {% if post.lang == 'en' %}{% continue %}{% endif %}
+      {% if post.path contains 'market-roles-remove-uncertainty' or post.path contains 'competitive-analysis-software-hardware' or post.path contains 'scene-user-demand-evidence-research' or post.path contains 'ai-native-basic-unit' or post.path contains 'waic-from-models-to-systems' %}
         {% if post.path contains entry_slug %}{% continue %}{% endif %}
         <a class="series-article-row" href="{{ post.url | relative_url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>

@@ -2,7 +2,7 @@
 layout: default
 title: Research
 permalink: /research/
-description: Roy.Tong 的长期研究：Agent Capability Economy、具身智能、多模态交互、端侧 AI 与 Agent。
+description: Roy.Tong 的长期研究与六主题知识库，连接 Agent、机器人、AI 终端、创作工具、产品研究和组织建设。
 lang_switch_url: /en/research/
 ---
 
@@ -10,6 +10,7 @@ lang_switch_url: /en/research/
   <p class="eyebrow">RESEARCH · FACTS</p>
   <h1>长期研究</h1>
   <p class="page-deck">Research 回答「世界实际发生了什么」：关注事实、公司、产品、技术路径与市场变化。长期方向多元，当前战役只有一个——Agent Capability Economy。</p>
+  <p class="kb-home-entry"><a href="{{ '/knowledge/' | relative_url }}">进入新版知识库：按问题阅读 20 个知识单元、文章与项目 →</a></p>
 </section>
 
 <section class="home-simple-section home-series">
@@ -22,32 +23,18 @@ lang_switch_url: /en/research/
       </a>
     </div>
 
-    <div class="home-series-grid">
-      <section class="home-project-row">
-        <div><span>01</span><h3>具身智能</h3></div>
-        <p>机器人如何从技术演示走向真实任务；消费级与专业级产品的用户、形态、商业模式、组织和竞争格局如何形成。</p>
-        <strong>Embodied Intelligence</strong>
-      </section>
-      <section class="home-project-row">
-        <div><span>02</span><h3>多模态交互</h3></div>
-        <p>当语音、视觉、空间、动作和环境感知成为输入输出，AI 眼镜、耳机、空间计算与新终端需要怎样的交互原语。</p>
-        <strong>Multimodal Interaction</strong>
-      </section>
-      <section class="home-project-row">
-        <div><span>03</span><h3>端侧算力</h3></div>
-        <p>模型、芯片、功耗、隐私与本地数据如何共同决定端侧 AI 的产品边界，以及 AI Box、AI NAS 与新型终端的机会。</p>
-        <strong>On-device AI</strong>
-      </section>
-      <section class="home-project-row">
-        <div><span>04</span><h3>Agent</h3></div>
-        <p>Agent 如何获得上下文、选择能力、调用软件并完成任务，以及由此产生的新产品形态、基础设施和软件经济。</p>
-        <strong>Agent Systems</strong>
-      </section>
+    <div class="home-project-list">
+      {% for topic in site.data.knowledge_topics %}
+      <a class="home-project-row" href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">
+        <div><span>0{{ forloop.index }}</span><h3>{{ topic.title | escape }}</h3></div>
+        <p>{{ topic.summary | escape }}</p><strong>阅读知识单元 →</strong>
+      </a>
+      {% endfor %}
     </div>
     <div class="hub-index-links">
       <a href="{{ '/capability-index/' | relative_url }}">Agent Capability Index <span>→</span></a>
       <a href="{{ '/research/embodied-intelligence/' | relative_url }}">具身智能专题 <span>→</span></a>
-      <span class="hub-index-soon">多模态交互 · 端侧算力 · Agent 专题建设中</span>
+      <a href="{{ '/knowledge/data/' | relative_url }}">研究数据与复核口径 <span>→</span></a>
     </div>
   </div>
 </section>

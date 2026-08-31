@@ -1,0 +1,16 @@
+study_id,machine_candidate_label,record_count,semantic_validation
+local-ai-2024,not-coded,211088,not-performed-in-this-recount
+ai-glasses-2023,E0,168476,not-performed-in-this-recount
+ai-glasses-2023,E1,29266,not-performed-in-this-recount
+ai-glasses-2023,E2,3630,not-performed-in-this-recount
+ai-glasses-2023,E3,1843,not-performed-in-this-recount
+ai-glasses-2023,E4+,120,not-performed-in-this-recount
+ai-glasses-2023,E4-,943,not-performed-in-this-recount
+ai-glasses-2023,E5,5584,not-performed-in-this-recount
+home-robots-2023,E0,161090,not-performed-in-this-recount
+home-robots-2023,E1,32030,not-performed-in-this-recount
+home-robots-2023,E2,7105,not-performed-in-this-recount
+home-robots-2023,E3,668,not-performed-in-this-recount
+home-robots-2023,E4+,2707,not-performed-in-this-recount
+home-robots-2023,E4-,2434,not-performed-in-this-recount
+home-robots-2023,E5,2721,not-performed-in-this-recount
