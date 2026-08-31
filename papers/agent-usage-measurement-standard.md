@@ -4,6 +4,8 @@ title: "如何度量 AI Agent 对软件的使用"
 subtitle: "面向 CaaS 与 Agent Capability Economy 的统一计量基础"
 date: 2026-08-16 10:00:00 +0800
 reading_time: 18
+permalink: /notes/agent-usage-measurement-standard/
+page_type: whitepaper
 tags:
   - Agent
   - 度量标准

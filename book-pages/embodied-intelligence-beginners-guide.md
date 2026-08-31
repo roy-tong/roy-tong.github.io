@@ -6,6 +6,7 @@ title_en: "Three Months Building a Beginner's Map of Embodied Intelligence"
 subtitle: "把产业、公司、产品、技术与职业选择放进同一套框架"
 subtitle_en: "Placing industries, companies, products, technologies, and career choices inside one framework"
 date: 2026-07-20 10:30:00 +0800
+permalink: /notes/embodied-intelligence-beginners-guide/
 tags: [具身智能, 人形机器人, AI, 职业]
 reading_time: 8
 excerpt: "过去几个月，我从零开始学习具身智能，并把产业、公司、产品、技术与职业选择整理成一份 2026 夏季版入门地图。"
