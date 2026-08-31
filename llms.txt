@@ -5,7 +5,7 @@
 ## Start Here
 
 - [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
-- [Personal Knowledge Library](https://roy-tong.github.io/knowledge/): Six connected themes; 20 evolving knowledge notes, 36 article pages (including 10 English translations), and four open-source projects as of 2026-08-31. Original writing URLs remain stable.
+- [Personal Knowledge Library](https://roy-tong.github.io/knowledge/): The public layer of the research process, on a maturity spectrum from intermediate results to current judgments — six connected themes; 20 evolving knowledge notes (the present tense of the author's judgments), article pages as published argument snapshots (including 10 English translations), four open-source projects testing the judgments, and reviewed research materials/data snapshots as intermediate results. Original writing URLs remain stable.
 - [Full-text knowledge index](https://roy-tong.github.io/knowledge/index.json): Public-only JSON with type, topic, language, provenance links, related notes, summaries and full text. Translations are not independent evidence.
 - [Research data and limits](https://roy-tong.github.io/knowledge/data/): Reviewed aggregate counts for three private research snapshots. Records are not people or validated demands; raw platform content is not redistributed.
 - [Knowledge source ledger](https://roy-tong.github.io/knowledge/sources/): Public primary sources with source roles and claim boundaries.

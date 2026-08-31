@@ -2,7 +2,7 @@
 {% if linked_units and linked_units.size > 0 %}
 <aside class="kb-related" aria-label="{% if page.lang == 'en' %}Related knowledge{% else %}关联知识{% endif %}">
   <h2>{% if page.lang == 'en' %}Keep exploring · Chinese knowledge notes{% else %}放回知识库继续读{% endif %}</h2>
-  <p>{% if page.lang == 'en' %}Living notes connect this essay with later revisions and related work.{% else %}文章保留完整论证，知识单元继续更新判断、证据和相关研究。{% endif %}</p>
+  <p>{% if page.lang == 'en' %}This essay is the argument as published. The current version of each judgment, its evidence boundaries, and later revisions live in the connected knowledge notes.{% else %}这篇文章是发表时的完整论证。判断的当前版本、证据边界与后续修订，在相连的知识单元里持续更新。{% endif %}</p>
   <ul>{% for slug in linked_units %}{% assign target = site.knowledge | where: 'slug', slug | first %}
     {% if target %}<li><a href="{{ target.url | relative_url }}">{{ target.title | escape }}</a></li>{% endif %}
   {% endfor %}</ul>

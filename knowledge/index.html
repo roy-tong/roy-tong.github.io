@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 个人知识库
-description: Roy.Tong 的持续研究知识库。连接 Agent、机器人、AI 终端、创作工具、产品研究与组织建设，保留来源、证据边界与修订。
+description: 研究过程的公开层：研究报告与数据汇总是中间结果，知识单元持续修订当前判断与证据边界，文章保留发表时的完整论证，开源项目负责检验。
 permalink: /knowledge/
 knowledge_page: true
 knowledge_search: true
@@ -12,17 +12,18 @@ knowledge_search: true
   <header class="kb-hero">
     <div>
       <p class="eyebrow">ROY TONG · KNOWLEDGE LIBRARY</p>
-      <h1>研究积累，<br>从一个问题开始读。</h1>
-      <p class="kb-lead">AI 如何变成产品、系统与商业？这里把项目研究与已发表文章重新连接，保留判断，也保留改变判断的依据。</p>
+      <h1>从中间结果，<br>到当前判断。</h1>
+      <p class="kb-lead">AI 如何变成产品、系统与商业？这里公开研究的过程与结果：研究报告与数据汇总是中间结果，知识单元记录当前的判断、依据与反例，文章保留发表时的完整论证，项目负责检验。中间结果会被后续研究替代，判断持续修订。</p>
     </div>
     <aside class="kb-intro-aside" aria-label="知识库的构成">
-      <p class="kb-edition">三类内容，各司其职</p>
+      <p class="kb-edition">四类内容，一条成熟度光谱</p>
       <ul class="kb-type-list">
-        <li><strong>知识单元<em>{{ site.knowledge.size }}</em></strong><span>当前判断 · 持续修订</span></li>
-        <li><strong>文章<em>{{ zh_posts.size }}{% if en_posts.size > 0 %}+{{ en_posts.size }} 译文{% endif %}</em></strong><span>完整论证 · 保留发表语境</span></li>
+        <li><strong>知识单元<em>{{ site.knowledge.size }}</em></strong><span>判断的现在时 · 持续修订</span></li>
+        <li><strong>文章<em>{{ zh_posts.size }}{% if en_posts.size > 0 %}+{{ en_posts.size }} 译文{% endif %}</em></strong><span>发表时的论证快照</span></li>
         <li><strong>项目<em>{{ site.data.knowledge_projects.size }}</em></strong><span>开源实现 · 检验判断</span></li>
+        <li><strong>研究材料</strong><span>报告与数据汇总 · <a href="{{ '/knowledge/data/' | relative_url }}">中间结果入口</a></span></li>
       </ul>
-      <a href="{{ '/knowledge/method/' | relative_url }}">如何阅读与引用 →</a>
+      <a href="{{ '/knowledge/method/' | relative_url }}">如何阅读、引用与维护 →</a>
     </aside>
   </header>
 
