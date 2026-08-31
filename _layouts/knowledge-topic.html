@@ -10,17 +10,23 @@ layout: default
     </nav>
     <p class="eyebrow">RESEARCH THEME · {{ notes.size }} 个知识单元</p>
     <h1>{{ topic.title | escape }}</h1>
-    <p class="kb-summary">{{ topic.question | escape }}</p>
+    <div class="kb-topic-question">
+      <p class="kb-topic-question-label">这个主题在追问</p>
+      <p class="kb-topic-question-text">{{ topic.question | escape }}</p>
+    </div>
     <div class="prose">{{ content }}</div>
   </header>
-  <ol class="kb-note-list">
-    {% for note in notes %}
-    <li{% if note.slug == topic.start %} class="kb-note-start"{% endif %}><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
-      <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>{% if note.slug == topic.start %}<span class="kb-start-tag">从这里开始</span>{% endif %}</h2>
-      <p>{{ note.summary | escape }}</p>
-    </div></li>
-    {% endfor %}
-  </ol>
+  <div class="kb-note-list-wrap">
+    <p class="kb-list-caption">按建议阅读顺序排列 · 从标有「起点」的单元开始</p>
+    <ol class="kb-note-list">
+      {% for note in notes %}
+      <li{% if note.slug == topic.start %} class="kb-note-start"{% endif %}><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
+        <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>{% if note.slug == topic.start %}<span class="kb-start-tag">起点</span>{% endif %}</h2>
+        <p><span class="kb-note-label">核心判断</span>{{ note.summary | escape }}</p>
+      </div></li>
+      {% endfor %}
+    </ol>
+  </div>
   <section class="kb-related">
     <h2>相关项目与长期专题</h2>
     <ul>{% for project in site.data.knowledge_projects %}{% if project.topic == page.topic %}
