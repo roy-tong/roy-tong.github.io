@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-08-31",
+  "scope": "Aggregate-only inventory of local and Feishu research sources. Counts, classification basis and known gaps only; no titles, paths, or private project names.",
+  "method": {
+    "collector": "Local filesystem scan over the private workspace plus the 2026-08-30 Feishu export snapshot",
+    "classification": "Title-and-project keyword heuristics mapped to the six knowledge themes; not a semantic review",
+    "published_basis": "Deployed main branch of this site; two long-form pieces moved out of the article feed into book/paper pages while keeping their original URLs"
+  },
+  "totals": {
+    "records": 441,
+    "by_kind": {
+      "feishu": 178,
+      "local-project": 208,
+      "project-repository-doc": 14,
+      "published-article": 35,
+      "published-book-or-paper": 2,
+      "published-reference": 4
+    }
+  },
+  "project_groups": {
+    "personal-site": 219,
+    "research-projects": 106,
+    "company-projects": 106,
+    "private-personal": 10
+  },
+  "publication_policy": {
+    "private-source-review-required": 237,
+    "exclude-sensitive": 26,
+    "private-company-source-generalization-only": 95,
+    "third-party-reference-only": 42,
+    "already-public": 41
+  },
+  "suggested_theme_distribution": {
+    "feishu": {
+      "agent-systems": 10,
+      "archive": 100,
+      "creative-tools": 14,
+      "product-research": 16,
+      "organization": 6,
+      "ai-devices": 6,
+      "robotics": 26
+    },
+    "local-project": {
+      "ai-devices": 45,
+      "agent-systems": 2,
+      "creative-tools": 12,
+      "archive": 78,
+      "robotics": 53,
+      "organization": 10,
+      "product-research": 8
+    }
+  },
+  "feishu_archive": {
+    "snapshot": "2026-08-30",
+    "nodes": 187,
+    "markdown_files": 178,
+    "known_gaps": [
+      "2 bitable datasets not archived",
+      "3 zero-byte attachments",
+      "1 document contains a failed-export placeholder",
+      "578 image placeholders across 31 documents pending page-by-page PDF comparison",
+      "11 nodes lack official binary exports"
+    ]
+  },
+  "not_claimed": [
+    "Every source has been substantively read",
+    "Source claims are verified",
+    "Sources may be republished",
+    "Live Feishu completeness beyond the supplied snapshot"
+  ]
+}
