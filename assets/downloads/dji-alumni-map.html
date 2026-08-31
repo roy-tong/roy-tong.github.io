@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大疆系创业公司全景宽表（90 条 · 可筛选排序）</title>
+<style>
+  :root{--bg:#f5f6f8;--ink:#1f2430;--muted:#6b7280;--line:#e5e7eb;--accent:#2f6bff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.6;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  .wrap{max-width:1760px;margin:0 auto;padding:28px 24px 80px;}
+  header h1{font-size:23px;letter-spacing:.5px;}
+  header .sub{color:var(--muted);font-size:13px;margin-top:6px;max-width:1150px;}
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;font-size:13px;}
+  .stat b{color:var(--accent);font-size:15px;margin-right:4px;}
+  .panel{position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:6;border-bottom:1px dashed var(--line);}
+  .frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0;}
+  .frow .lab{font-size:12px;color:var(--muted);width:64px;flex-shrink:0;text-align:right;}
+  .chip{padding:3px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12.5px;cursor:pointer;user-select:none;white-space:nowrap;}
+  .chip.on{background:var(--accent);color:#fff;border-color:var(--accent);}
+  #q{padding:8px 13px;border-radius:9px;border:1px solid var(--line);font-size:13.5px;width:280px;outline:none;background:#fff;}
+  #q:focus{border-color:var(--accent);}
+  #count{font-size:12.5px;color:var(--muted);margin-left:8px;}
+  .hint{font-size:12px;color:#9ca3af;margin-top:2px;}
+  .tblwrap{overflow:auto;max-height:calc(100vh - 220px);background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:12px;}
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:1900px;}
+  thead th{position:sticky;top:0;background:#f1f5f9;text-align:left;font-size:12.5px;color:#334155;padding:9px 11px;border-bottom:2px solid var(--line);white-space:nowrap;z-index:3;cursor:pointer;user-select:none;}
+  thead th:hover{background:#e2e8f0;}
+  thead th{cursor:grab;}
+  thead th:active{cursor:grabbing;}
+  thead th.over{outline:2px solid var(--accent);outline-offset:-2px;}
+  thead th .arr{color:var(--accent);font-size:11px;margin-left:3px;}
+  td{padding:8px 11px;border-bottom:1px solid #f0f1f3;vertical-align:top;font-size:12.8px;}
+  tbody tr:hover td{background:#f8faff;}
+  td.idx{color:#9ca3af;white-space:nowrap;}
+  .co{font-weight:700;white-space:nowrap;}
+  .co .en{display:block;font-weight:400;font-size:11.3px;color:var(--muted);}
+  .funder b{display:block;}
+  .funder .dji{color:#c2410c;font-size:12px;}
+  .fu-l{display:block;margin:2px 0;padding-left:9px;border-left:2px solid #e2e8f0;font-size:12.2px;}
+  .tag{display:inline-block;font-size:10.8px;padding:1px 8px;border-radius:999px;margin:1px 2px 1px 0;white-space:nowrap;}
+  .t-pr{background:#fef3c7;color:#92400e;} .t-few{background:#e0e7ff;color:#3730a3;} .t-multi{background:#d1fae5;color:#065f46;}
+  .t-ok{background:#dcfce7;color:#166534;} .t-risk{background:#fee2e2;color:#991b1b;}
+  .t0{background:#111827;color:#facc15;} .t1{background:#2f6bff;color:#fff;} .t2{background:#5b8cff;color:#fff;} .t3{background:#dbe7ff;color:#2f55c7;}
+  .t4{background:#eef3ff;color:#4f6bb5;} .t5{background:#f1f5f9;color:#64748b;}
+  .stg{font-weight:600;white-space:nowrap;}
+  .src a{font-size:11.5px;white-space:nowrap;margin-right:8px;}
+  .empty{padding:40px;text-align:center;color:var(--muted);display:none;}
+  footer{margin-top:20px;color:#9ca3af;font-size:12.5px;line-height:1.8;}
+  mark{background:#fde68a;padding:0 2px;border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>大疆系创业公司全景宽表</h1>
+    <div class="sub">调研快照 · 2026-08-28（第四轮挖掘后）· 90 家。收录标准：创始人/联创有公开报道证实的「前大疆」任职经历；大疆官方分拆单独标注；团队级/口径冲突者入 T5。<b>梯队 T0→T5 按规模/估值/成熟度递减</b>：T0 已上市（1 家）&gt; T1 IPO 递表/估值≥50 亿/营收≥10 亿（8 家）&gt; T2 准独角兽·5–50 亿（11 家）&gt; T3 成长期·A/Pre-A·1–5 亿（24 家）&gt; T4 极早期·种子/天使（27 家）&gt; T5 边缘/存疑·含海外非典型（19 家）。默认按梯队降序；<b>点击表头排序，拖拽表头可自由调整列顺序</b>（自动记忆）。</div>
+  </header>
+
+  <div class="panel">
+    <div class="frow"><input id="q" type="search" placeholder="搜索公司 / 创始人 / 赛道 / 投资方…"><span id="count"></span></div>
+    <div class="frow"><span class="lab">赛道</span><span id="c-sec" class="chips"></span></div>
+    <div class="frow"><span class="lab">当前阶段</span><span id="c-stg" class="chips"></span></div>
+    <div class="frow"><span class="lab">梯队</span><span id="c-grp" class="chips"></span></div>
+    <div class="hint">提示：「仅一条PR」= 全网仅一条融资/产品新闻的长尾团队；金额均以官宣为准，口径冲突处在单元格内注明。</div>
+  </div>
+
+  <div class="tblwrap">
+    <table id="tbl">
+      <thead><tr id="thr"></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="empty">无匹配结果</div>
+  </div>
+
+  <footer>
+    图例：<span class="tag t-pr">仅一条PR</span><span class="tag t-few">少量报道</span><span class="tag t-multi">多源</span><span class="tag t-ok">确认</span><span class="tag t-risk">存疑/边缘</span>　
+    梯队：<span class="tag t0">T0 已上市</span><span class="tag t1">T1 递表/50亿+</span><span class="tag t2">T2 准独角兽 5–50亿</span><span class="tag t3">T3 成长期 A/Pre-A</span><span class="tag t4">T4 极早期 种子/天使</span><span class="tag t5">T5 边缘/存疑</span><br>
+    详见同目录《大疆系创业公司调研存档.md》（人物去向表、加入型案例、资本图谱、误归澄清、来源索引、2026-08-28 勘误）。生成：ZCode 调研。
+  </footer>
+</div>
+
+<script>
+/* ===== 字段：g 梯队T1-T5(成熟度) / s 赛道 / n 公司 / en 英文 / f 创始人 / d 大疆背景 / c 城市 / y 成立 /
+   p 产品 / fu 融资历程(数组) / stg 当前阶段 / v 估值 / mat 成熟度1-5(排序用) / lvl 信息量级 / cred 可信度 / u 来源 ===== */
+const D=[
+{n:"宇树科技（特殊标注）",en:"Unitree 688836",g:"T0",s:"机器人/具身",mat:5,c:"杭州",y:"2016-08",stg:"已上市",tf:"IPO 募资 61 亿元（不含上市前多轮）",tfv:61,lvl:"多源",cred:"确认·特殊标注",
+ f:"王兴兴",d:"2016 年 6–8 月在大疆任职约 2 个月（试用期即离职）——媒体常归「大疆系」，虎嗅明确指出属错误归类，本表仅作对照保留",
+ p:"四足/人形机器人全球头部（四足全球市占约 70%；人形累计下线约 1.8 万台）；A股「具身智能第一股」",
+ fu:["科创板上市 · 2026-08-19 挂牌 ｜ 发行价 150.80 元、募资约 61 亿元、发行市值 610 亿元；首日收盘 +460%（市值约 3417 亿元），8 月下旬回落至约 2488 亿元","上市前多轮融资（明细本表未展开）"],
+ v:"总市值约 2488 亿元（2026-08 下旬，波动大）",
+ u:[["新浪财经","https://finance.sina.com.cn/roll/2026-08-18/doc-ininswne0292018.shtml"],["富途行情","https://www.futunn.com/stock/688836-SH"]]},
+{n:"拓竹科技",en:"Bambu Lab",g:"T1",s:"制造工具",mat:5,c:"深圳",y:"2020-11",stg:"C轮",tf:"未披露（B 轮投后 20 亿美元、C 轮 IDG）",tfv:-1,lvl:"多源",cred:"确认",
+ f:"陶冶、高修峰、刘怀宇、陈子寒、吴伟（+龚明 2025-07 加盟）",d:"陶冶：消费级无人机事业部负责人（2012-2020，掌管大疆超60%营收）；高修峰：系统工程部负责人；刘怀宇：FPV/眼镜产品经理；陈子寒：云台部门主管；吴伟：Mavic Air 2 软件；龚明：芯片与图传负责人（加入拓竹管软件）",
+ p:"消费级 3D 打印机：2025 年营收破 100 亿元（2024 年 55-60 亿、净利近 20 亿），全球市占 42.7%（CONTEXT）",
+ fu:["种子/天使 · 2021-22 ｜ 真格等（早期口径）","B 轮 · 2024 · 投后 20 亿美元（媒体报道）","C 轮 · 2024-04 ｜ IDG 资本（天眼查口径）；2026-08-24 公司向 21 财经否认「2027 年启动 IPO」传闻——无辅导/递表"],
+ v:"约 400 亿元（上一轮融资后，媒体口径）",
+ u:[["财联社","https://www.cls.cn/detail/2201716"],["第一财经·营收破百亿","https://www.yicai.com/news/103029400.php"]]},
+{n:"正浩创新",en:"EcoFlow",g:"T1",s:"消费硬件",mat:5,c:"深圳",y:"2017",stg:"B轮+",tf:"≈1.2 亿美元（约 8 亿元）",tfv:8,lvl:"多源",cred:"确认",
+ f:"王雷",d:"2014 年港大博士毕业加入大疆，创立电池研发部、负责全线产品电池研发（2014-2017）；早期个人投资人含李泽湘",
+ p:"便携储能全球第一（DELTA/RIVER 系列；2022 年营收近 10 亿美元）",
+ fu:["Pre-A+A · 2018-03 · 3000 万元+约 400 万美元 ｜ 德联、博叡、春珈、鹏辉","B 轮 · 2021-06 · 超 1 亿美元 ｜ 红杉领投，高瓴、中金跟投（投后 10 亿美元）","美股 IPO 筹备 · 2025-12 报道（彭博）｜ 拟募资至少 3 亿美元、红杉参与承销洽谈；截至 2026-08 未见 SEC 递表"],
+ v:"投后 10 亿美元（2021）；其后「数十亿美元」（创始人口径，无官方数字）",
+ u:[["界面","https://www.jiemian.com/article/6215182.html"],["新浪科技·美股IPO","https://finance.sina.com.cn/tech/digi/2025-12-16/doc-inhazaxc9804653.shtml"]]},
+{n:"卓驭科技（大疆车载）",en:"Zhuoyu",g:"T1",s:"出行/载具",mat:5,c:"深圳",y:"2023 分拆",stg:"Pre-IPO",tf:"≥36 亿元（另有 Pre-IPO 20 亿元进行中）",tfv:36,lvl:"多源",cred:"确认",
+ f:"沈劭劼（CEO）、马陆（CTO）",d:"沈劭劼：大疆首席机器人专家、HKUST-DJI 联合实验室创始主任（嫡系分拆，带 1000 余人独立）；马陆：车载团队「大管家」（2016 年加入）",
+ p:"成行天下/灵眸智驾方案；9 大车企客户、量产近 20 款车型",
+ fu:["一汽战投 · 2025-11-21 落地 · 超 36 亿元 ｜ 中国一汽（成单一最大股东，投后估值破 100 亿元）","Pre-IPO · 2026-03 启动 · 20 亿元（投前约 125 亿元）｜ 完成交割无官方确认；计划 2026 年内港股（亿欧独家，截至 2026-08 未见递表）"],
+ v:"投后破 100 亿元 → Pre-IPO 投前约 125 亿元",
+ u:[["第一财经","https://www.yicai.com/news/102837369.html"],["新浪财经","https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-03-19/doc-inhrpfxt8663666.shtml"]]},
+{n:"未知星球",en:"LiberLive",g:"T1",s:"消费硬件",mat:5,c:"长沙/东莞/深圳",y:"2016/2019",stg:"A轮",tf:"未披露（天使数百万+A 轮）",tfv:-1,lvl:"多源",cred:"确认",
+ f:"唐文轩",d:"曾任大疆导航算法工程师（2016 离职；宾大 GRASP 硕士，团队多人出自 GRASP）",
+ p:"无弦吉他 LiberLive C1/C2——品类开创者；年销 130 万把、2024 年营收超 10 亿元；《时代》2025 最佳发明",
+ fu:["天使轮 · 2018 底 · 数百万元 ｜ XBOTPARK 基金","A 轮 · 2022-04 ｜ 韦尔股份等产业方","2024 年一线机构受让老股（21财经称红杉，与股权报道矛盾，存疑）"],
+ v:"未披露（年营收 10 亿+）",
+ u:[["36氪","https://m.36kr.com/p/3292115548240001"]]},
+{n:"科比特航空",en:"MMC",g:"T1",s:"无人机/低空",mat:5,c:"深圳",y:"2009/2014",stg:"多轮",tf:"≥5 亿元（9 轮，多数未披露）",tfv:5,lvl:"多源",cred:"确认",
+ f:"卢致辉",d:"2006 年大四加入大疆（自称「2 号员工」，官方未确认），2008 年离开；大疆创业元老中最早出走者；陈金颖（大疆早期员工）任其研发总监",
+ p:"工业级无人机全产业链（「入云龙」等；氢燃料电池；自称中国工业无人机解决方案市场第一）",
+ fu:["15 年 9 轮 ｜ 同创伟业、梅花创投、国信等","Pre-IPO 轮 · 2017 · 2 亿元 ｜ 梅花创投领投","E 轮 · 2022-03 · 3 亿元（当年工业无人机最大单笔）","「筹备 IPO」为 2022 年旧闻——2026-08 核查：北交所/证监会无其申报或辅导记录"],
+ v:"超 50 亿元（公司口径，无最新公开确认）",
+ u:[["腾讯新闻","https://news.qq.com/rain/a/20250513A01NDK00"],["经济日报·2022IPO计划","http://finance.ce.cn/stock/gsgdbd/202203/04/t20220304_37376582.shtml"]]},
+{n:"它石智航",en:"TARS",g:"T1",s:"机器人/具身",mat:5,c:"上海",y:"2024-07",stg:"Pre-A轮",tf:"≈6.97 亿美元（约 50 亿元，一年三轮）",tfv:50,lvl:"多源",cred:"确认",
+ f:"陈亦伦（CEO）",d:"大疆机器视觉总工程师（2017 加入）→华为车 BU 自动驾驶 CTO（从零建成 ADS 1.0）→清华 AIR 首席科学家；董事长李震宇（前百度智驾总裁）、首席科学家丁文超（华为天才少年）均非大疆",
+ p:"具身大模型 AWE 系列（自研 AI World Engine）+数据方案 SenseHub",
+ fu:["天使轮 · 2025-03 · 1.2 亿美元 ｜ 蓝驰+启明领投；线性、联想创投、恒旭等","天使+ · 2025-07 · 1.22 亿美元 ｜ 美团战投领投","Pre-A · 2026-04 · 4.55 亿美元（中国具身单轮纪录）｜ 高瓴+红杉+美团龙珠联合领投"],
+ v:"投前约 50 亿元（累计融资近 7 亿美元）",
+ u:[["财联社","https://m.cls.cn/detail/1983783"],["新华网","http://www.news.cn/tech/20260417/aa7c5116da7648fc99470a6b4a56ef35/c.html"]]},
+{n:"妙动科技",en:"Mondo Tech",g:"T2",s:"机器人/具身",mat:4,c:"深圳",y:"2025-01",stg:"Pre-A轮",tf:"口径不一：官宣两轮各数千万美元；媒体称累计超 3 亿美元",tfv:7,lvl:"多源",cred:"确认",
+ f:"杨硕、高建荣、李昊南",d:"杨硕：大疆技术总监（RoboMaster/智能导航，约2014-2018）→CMU 博士→特斯拉 Optimus；高建荣：大疆总经理助理/供应链负责人；李昊南：飞行系统技术中台 10 年元老（2025-04 离职加盟）",
+ p:"消费机器人「硅基家人」；Beni 两轮全地形跟拍机器人（799 美元；Kickstarter 众筹超 290 万美元，超募 58 倍）",
+ fu:["天使轮 · 2025-04 · 数千万美元 ｜ 经纬、红杉、美团龙珠","老股东追投 · 2025-11 ｜ 红杉、美团（金额未官宣）","Pre-A · 2025-12 · 数千万美元 ｜ 首程资本领投；2026-08 红杉/美团/经纬再投"],
+ v:"媒体称约 6 亿美元（未经公司确认）",
+ u:[["量子位","https://www.qbitai.com/2025/04/272149.html"],["投资界","https://news.pedaily.cn/202608/568037.shtml"]]},
+{n:"求之科技",en:"DISCOVER Robotics",g:"T1",s:"机器人/具身",mat:5,c:"北京→无锡",y:"2023-01",stg:"天使+轮",tf:"≈2 亿美元+（约 14 亿元）",tfv:14,lvl:"多源",cred:"确认",
+ f:"周谷越",d:"大疆任职近 10 年：计算机视觉总监、首席产品经理、杰出工程师（主导「晓」Spark、STEAM 教育）；清华 AIR 副研究员、DISCOVER Lab 主任；MIT 亚太 TR35",
+ p:"消费级具身智能机器人（Sim2Real）",
+ fu:["种子轮 · 2025-07 ｜ 北京信产基金、联想创投","天使轮 · 2026-07 · 超 1 亿美元（消费级具身单笔天使纪录）｜ 君联、信产、联想创投、沄柏、普华、临港科创投等","天使+ · 2026-08 · 1 亿美元 ｜ 华映领投；IDG、武岳峰、达晨、九阳、滨湖产业集团"],
+ v:"一个月两融成独角兽",
+ u:[["新华日报","https://www.xhby.net/content/s6a4f8a88e4b0f1b15e69cfa7.html"]]},
+{n:"硅羽科技",en:"SPARO",g:"T2",s:"无人机/低空",mat:4,c:"深圳",y:"2025-02",stg:"天使+轮",tf:"数亿元（半年四轮）",tfv:4,lvl:"多源",cred:"确认",
+ f:"张富",d:"前大疆高级顾问科学家（2016 年起深度参与飞控/多传感器融合；港大机械工程终身副教授、MaRS Lab 主任；Clarivate 全球前 1% 学者）",
+ p:"「空中智能体」Aerial Agent——2 米以上空间感知-理解-执行",
+ fu:["种子轮 · 2025 ｜ 耀途资本","连续四轮 · 2025-2026 · 累计数亿元 ｜ 耀途（天使+领投）、锦秋、阿里巴巴、弘毅、普洛斯隐山、云时；华兴 FA"],
+ v:"未披露",
+ u:[["36氪首发","https://m.36kr.com/p/3877830625046535"]]},
+{n:"Morpho（汝原再创业）",en:"Morpho",g:"T2",s:"制造工具",mat:4,c:"深圳",y:"2024–25",stg:"多轮",tf:"≈1 亿美元+数亿元（汝原+Morpho 合计）",tfv:12,lvl:"少量报道",cred:"中高",
+ f:"王铭钰",d:"前大疆研发副总裁（2012 年组建相机部，Phantom 2 Vision+ 产品经理）；2019 年先创汝原科技 Zuvi",
+ p:"桌面 UV 打印机（60mm 立体浮雕、2000+ 材料）；团队来自 Apple/DJI/牛津",
+ fu:["汝原天使轮 · 2019 · 近亿美元 ｜ 腾讯、红杉、高瓴、源码","欧莱雅战略投资 · 2024-01 ｜ 欧莱雅 BOLD（合作 AirLight Pro）","Morpho · 2025-26 · 累计数亿元 ｜ 未具名；Kickstarter 16 小时 700 万美元、48 小时 900 万美元"],
+ v:"未披露",
+ u:[["Dealroom","https://dealroom.co/news/146293-morphos-desktop-uv-printer-raises-7m-on-kickstarter-in-16-hours/"]]},
+{n:"本末科技",en:"Dire Drive",g:"T2",s:"传感器/零部件",mat:4,c:"东莞松山湖",y:"2018/2019",stg:"B+轮",tf:"≈5 亿元（7 轮）",tfv:5,lvl:"多源",cred:"确认",
+ f:"张笛、朱志龙（CPO）",d:"朱志龙：曾就职大疆，电机设计师（数款永磁电机从设计到量产）；张笛为李泽湘学生（无大疆背景）；CTO 郁亚南",
+ p:"直驱电机（「干掉减速器」，累计交付超 150 万台）+轮足机器人刑天/TITA；账面盈利",
+ fu:["天使-A 轮 · 2020-2022 · 多轮 ｜ XBOTPARK 等","Pre-B · 2023-09 · 亿元级 ｜ 顺禧、亦庄创投、联想创投","B+B+ · 2025-06 · 合计数亿元 ｜ 北京市先进制造基金领投；联想之星、顺禧、北京国管、北京新材料基金"],
+ v:"未披露",
+ u:[["创业邦","https://m.cyzone.cn/article/801089"]]},
+{n:"松灵机器人/库犸动力",en:"AgileX／Mammotion",g:"T2",s:"消费硬件",mat:4,c:"广州/深圳",y:"2016/2021",stg:"A+轮",tf:"≥2 亿元（多轮）",tfv:2,lvl:"多源",cred:"确认",
+ f:"魏基栋",d:"大疆高级研发经理 3 年、RoboMaster 一号员工/联合创始人兼研发负责人（2017 离职）；港科大、XbotPark 松山湖孵化（大疆系+李泽湘系双重）",
+ p:"移动机器人底盘（松灵）+LUBA 全地形割草机器人（库犸，亚马逊北美类目第一）",
+ fu:["早期多轮 ｜ XbotPark 生态","A 轮 · 2021-07 · 亿元级 ｜ 红杉、五源、祥峰、HKX","新融资 · 2025 · 亿元级 ｜ 投资方未披露"],
+ v:"未披露",
+ u:[["东莞政府网","http://ssl.dg.gov.cn/kcj/jqrcy/qyxx/content/post_3606328.html"]]},
+{n:"深研生物",en:"Eurekabio",g:"T2",s:"生物医疗",mat:4,c:"深圳",y:"2014",stg:"多轮",tf:"≥3 亿元（B+ 轮后累计）",tfv:3,lvl:"少量报道",cred:"中高",
+ f:"马墨",d:"大疆早期创业团队成员（虎嗅称「DJI 真正意义上的联合创始人」，单一信源存疑，退出较早）；2014 年与薛博夫联合创办",
+ p:"CGT 上游工具——国产唯一在售全封闭自动化细胞处理系统、慢病毒载体系统（EuLV 获 FDA DMF 备案）；DJI 在股东名单",
+ fu:["多轮（此前累计）","B+ 轮 · 2024-02 · 超 3 亿元 ｜ 越秀产业基金领投，达晨、粤科金融、天士力资本跟投；无 IPO 动作（2026-08 核查）"],
+ v:"小几十亿元（钛媒体口径）",
+ u:[["公司官网B+轮","https://www.eurekabio.com/cn/news-amp-events/events/297.html"],["虎嗅","https://www.huxiu.com/article/4815966.html"]]},
+{n:"丰疆智能",en:"FJ Intelligent",g:"T1",s:"机器人/具身",mat:5,c:"—",y:"—",stg:"港股递表",tf:"11.76 亿元（招股书口径）",tfv:11.76,lvl:"多源",cred:"确认",
+ f:"吴迪（CEO）",d:"前大疆首席科学家（2019-2020 离职潮人物）",
+ p:"无人农机/农业机器人（智慧农业整机+自驾套件）",
+ fu:["多轮融资 ｜ 腾讯持股 16.47%、深创投等；交表前累计募资 11.76 亿元","港股递表 · 首表 2025-09-26 → 失效 → 二次递表 2026-06-05 ｜ 联席保荐摩根士丹利/中金；累亏近 22 亿元、2025 调整后净利转正；截至 2026-08 未过聆讯"],
+ v:"未披露",
+ u:[["新浪财经·二次递表","https://finance.sina.com.cn/stock/hkstock/hkzmt/2026-06-08/doc-iniatatn7011801.shtml"]]},
+{n:"驰龙动力",en:"DRAXON",g:"T2",s:"出行/载具",mat:4,c:"深圳",y:"2024–2025",stg:"A轮",tf:"2.5–10 亿元（两口径冲突，未经公司确认）",tfv:2.5,lvl:"多源",cred:"确认",
+ f:"龙彪（Billy）",d:"大疆 E-bike 核心研发负责人（动力总成架构+智能骑行算法，推动 E-bike 独立 BU；亦主导云台项目）",
+ p:"电动全地形车 ATV/UTV（毫秒级动力响应，北美越野市场）；首车计划 2026 年发布",
+ fu:["种子轮 ｜ 青瑜、HAX、胜马创投、Tony Fadell（iPod 之父）","天使轮 ｜ 蓝驰创投","Pre-A · 2026-02 ｜ 线性资本（雷峰网口径累计超 2.5 亿元）","A 轮 · 2026 ｜ 红杉、顺为连投；DJI 大疆亲自下场（估值约 1 亿美元；另有报道称累计超 10 亿元——两口径冲突，未经公司确认）"],
+ v:"约 1 亿美元（产品未发布）",
+ u:[["雷峰网独家","https://www.leiphone.com/category/weiwu/dV5O2N5bkSomeSQP.html"]]},
+{n:"璇玑动力",en:"Xuanji",g:"T3",s:"机器人/具身",mat:3,c:"深圳",y:"2024-06",stg:"Pre-A轮",tf:"≈4–5 亿元",tfv:4,lvl:"多源",cred:"确认",
+ f:"欧迪",d:"大疆 Inspire「悟」系列产品线负责人（从 0 到 1）；曾任全平台预研及在产产品线审核评判组组长；核心团队均来自大疆",
+ p:"行业级四足/轮足机器人本体+轴向磁通关节模组",
+ fu:["天使轮 · 2025-12 · 近亿元 ｜ 御海、兰璞、步长家办","Pre-A · 2026-04 · 数亿元 ｜ 上汽金控领投；东方精工、同歌、建银国际、正景跟投"],
+ v:"未披露",
+ u:[["投中网","https://m.chinaventure.com.cn/news/114-20260410-390887.html"]]},
+{n:"涌泉创新",en:"ToolDance",g:"T2",s:"制造工具",mat:4,c:"深圳",y:"2025-04",stg:"Pre-A轮",tf:"数亿元（一年三轮）",tfv:4,lvl:"多源",cred:"确认",
+ f:"王昊",d:"前大疆 Livox 激光雷达产品负责人（2017 年加入，测绘雷达产品组市占近八成）；核心团队含前大疆激光雷达系统构型负责人；CTO 张敏（前金橙子副总，非大疆）",
+ p:"桌面 CNC ToolDance X1（1500W 主轴+9 位换刀+自研 AutoCAM），「消费级 CNC 的拓竹时刻」",
+ fu:["种子轮 · 2025 ｜ 源码资本（超额加投）","天使轮 ｜ 经纬创投","Pre-A · 2026 · 方广资本领投 ｜ 耀途、靖亚、元生跟投；嘉道资本（龚虹嘉）——一年三轮累计数亿元"],
+ v:"成立不到一年破亿美金（媒体口径）",
+ u:[["新浪财经","https://finance.sina.com.cn/roll/2026-02-25/doc-inhnyupu5295718.shtml"],["OFweek","https://mp.ofweek.com/znyj/a156714224697"]]},
+{n:"若创科技",en:"Strutt／昂首",g:"T2",s:"出行/载具",mat:4,c:"深圳",y:"2023-06",stg:"Pre-A+轮",tf:"≈4.75 亿元（6 轮）",tfv:4.75,lvl:"多源",cred:"确认",
+ f:"洪小平、肖文龙",d:"洪小平：原大疆光电部组建者、Livox 览沃激光雷达产品线负责人（UC 伯克利物理博士、187 项专利）；肖文龙：其大疆前同事",
+ p:"智能电动轮椅 Strutt ev¹（Livox 车规激光雷达+Co-Pilot；美 7499 美元/中 29999 元）；CES 2026 最佳创新；2026 下半年进中国",
+ fu:["种子轮 · 约 2024 · 数百万美元 ｜ 硅谷 VC","Pre-A · 2025-11 · 数千万美元 ｜ Matter、祥峰投资","Pre-A+ · 2026-08 ｜ 全球出行科技企业、头部互联网基金、大湾区产业基金（累计近亿美元）"],
+ v:"累计约 4.75 亿元（6 轮）",
+ u:[["品牌方舟","https://www.brandark.com/t/gR4o5VO1"]]},
+{n:"影微创新",en:"—",g:"T3",s:"影像/光学",mat:3,c:"无锡",y:"2024-10",stg:"天使+轮",tf:"≈1.5 亿元级",tfv:1.5,lvl:"少量报道",cred:"确认",
+ f:"张结华",d:"大疆芯片团队创建者之一（此前英伟达）",
+ p:"AI-ISP 影像协处理器 V 系列（进入影石 Ace Pro 2「双芯」方案；客户含索尼/传音/vivo）",
+ fu:["天使+新一轮 · 2025 末 ｜ 影石创新全资子公司投 3000 万、中芯聚源、博华、盈峰、尚颀等 9 名新股东（注册资本 1.64 亿元）"],
+ v:"未披露",
+ u:[["新浪财经","https://finance.sina.com.cn/jjxw/2025-12-01/doc-infzhiak3242175.shtml"]]},
+{n:"边界智控",en:"—",g:"T3",s:"无人机/低空",mat:3,c:"深圳/上海",y:"2020-11",stg:"B轮",tf:"≈3 亿元",tfv:3,lvl:"多源",cred:"确认",
+ f:"翁海敏（携 12 位核心伙伴）",d:"曾就职大疆（飞控方向）；后任顺丰科技无人机研发部负责人、峰飞航空 CTO",
+ p:"eVTOL 及低空航空器高安全等级飞控系统（国内该领域首个 B 轮）",
+ fu:["天使轮 ｜ 红杉资本","A 轮 · 近亿元 ｜ 北航投资","A+ 轮 · 5000 万元","B 轮 · 2025 · 亿元级 ｜ 厦门/上海国资"],
+ v:"未披露",
+ u:[["新浪财经","https://finance.sina.com.cn/stock/t/2025-11-27/doc-infyvxqe8237042.shtml"]]},
+{n:"墨现科技",en:"Moxian",g:"T3",s:"传感器/零部件",mat:3,c:"东莞松山湖",y:"约 2021",stg:"A轮",tf:"≈0.5–1 亿元",tfv:0.7,lvl:"多源",cred:"确认",
+ f:"匡正",d:"前大疆传感器工程师（95 后，深度参与多款产品设计研发生产）",
+ p:"柔性触觉传感器 FLX 系列（72×80 共 5760 压感点，机器人「电子皮肤」）已量产",
+ fu:["天使轮 · 2022-07 ｜ XBOTPARK 基金、险峰、大米创投","战略轮 · 2025-06 · 数千万元 ｜ 首程控股","A 轮 · 2026-03 ｜ 北京机器人产业发展基金领投、秦安股份"],
+ v:"未披露",
+ u:[["证券时报","https://www.stcn.com/article/detail/2156054.html"]]},
+{n:"无限工坊",en:"Infimaker",g:"T3",s:"制造工具",mat:3,c:"上海/深圳",y:"2024-11",stg:"Pre-A轮",tf:"≈1 亿元",tfv:1,lvl:"多源",cred:"确认",
+ f:"谢博文、项林坚",d:"谢博文：大疆扫地机 Romo 感知算法负责人（T4，2020-2024）；项林坚：大疆农业无人机航线规划负责人（均 RoboMaster 核心成员，95 后）",
+ p:"消费级桌面五轴 CNC+自研 CAM（从具身智能转型）",
+ fu:["天使轮 · 2025 ｜ 奇绩创坛","天使+Pre-A · 2026-05 · 近亿元 ｜ 昆仑资本独家领投并追投；美团战投参与"],
+ v:"未披露",
+ u:[["雷峰网","https://www.leiphone.com/category/weiwu/UARHfjGSmTVYN0S1.html"]]},
+{n:"擎羽科技",en:"Feagine Robotics",g:"T3",s:"机器人/具身",mat:3,c:"深圳",y:"2025-03",stg:"Pre-A轮",tf:"≈0.8 亿元（一年四轮）",tfv:0.8,lvl:"多源",cred:"确认",
+ f:"彭锐",d:"前大疆嵌入式工程师，约 10 年机器人工程经验（29 岁，港大机器人学博士）",
+ p:"柔性具身智能——绳驱柔性执行器「肌腱」",
+ fu:["种子/天使前 ｜ 奇绩创坛（最早机构投资方）","天使轮 · 2026-01 · 数千万元 ｜ 德迅领投、奇绩加注","天使+ · 2026-03 · 数千万元 ｜ 东方富海领投","Pre-A · 2026-06 ｜ 顺为+五源联合投资（高鹄 FA）"],
+ v:"未披露",
+ u:[["雷峰网","https://www.leiphone.com/category/ai/1uKAuRYu562APkJt.html"],["投资界","https://news.pedaily.cn/202606/565650.shtml"]]},
+{n:"影辰科技",en:"（影辰同心）",g:"T3",s:"影像/光学",mat:3,c:"深圳",y:"约 2025",stg:"Pre-A轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"李进吉、唐小正",d:"李进吉：大疆 Mavic 3 产品经理；唐小正：大疆影像专利研发（坏点矫正/字幕生成）",
+ p:"4K AI 拍摄眼镜（砍功能换散热续航，主打运动场景）",
+ fu:["Pre-A 轮 · 2026-02 ｜ 红杉中国、高瓴创投（早期工商股东含厦门雅恒）"],
+ v:"未披露",
+ u:[["雷峰网鲸犀","https://m.leiphone.com/category/weiwu/QZsj0Ie2E99aUyJr.html"]]},
+{n:"浪爪智能",en:"Clawlab",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"2022-12",stg:"Pre-A+轮",tf:"超 1 亿元",tfv:1.2,lvl:"少量报道",cred:"确认",
+ f:"胡文鑫",d:"曾就职大疆（工程师）、美团；核心成员多来自大疆系无人机厂商",
+ p:"H1 智能簇绒枪（299 美元）+纺织 Station+纺织 AI Agent；40+ 市场、两年营收近亿",
+ fu:["多轮（Pre-A1/2/3）· 累计超亿元 ｜ 红杉、顺为、元璟（Pre-A2 领投）、米哈游（Pre-A3 领投）"],
+ v:"未披露",
+ u:[["机器之心","http://finance.sina.com.cn/tech/roll/2026-07-07/doc-inifyeew1361383.shtml"]]},
+{n:"纵贯创新",en:"Mowrator",g:"T3",s:"出行/载具",mat:3,c:"深圳",y:"2022-03",stg:"Pre-A轮",tf:"≈数千万元（天使+Pre-A）",tfv:0.4,lvl:"多源",cred:"确认",
+ f:"陈逸奇",d:"大疆 RoboMaster 产品经理（2022 离职）；核心团队来自大疆、阿里达摩院",
+ p:"遥控智能割草机 Mowrator S1（北美陡坡场景；KS 约 102 万美元；亚马逊类目第一）",
+ fu:["天使轮 · 数千万人民币 ｜ 一线机构（未具名）","Pre-A 轮 ｜ 未披露"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com/p/3408279225831045"]]},
+{n:"CODE27",en:"Character Livehouse",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"约 2024",stg:"天使+轮",tf:"≈1000 万美元（约 0.7 亿元）",tfv:0.7,lvl:"少量报道",cred:"确认",
+ f:"Brandon",d:"历任大疆 Simulation 团队负责人、雷鸟创新产品负责人；团队来自大疆/正浩/拓竹/字节/腾讯",
+ p:"AI 虚拟角色交互硬件（KS 190 万美元；日本首日 8500 万日元）",
+ fu:["天使轮 ｜ 上影新视野基金、金沙江创投","天使+ · 2026-03 · 合计超千万美元 ｜ 启明领投；红杉种子、璞跃、基石、赛意"],
+ v:"未披露",
+ u:[["钛媒体","https://www.tmtpost.com/7918966.html"]]},
+{n:"乐逸智能",en:"LAYEE",g:"T3",s:"出行/载具",mat:3,c:"杭州",y:"2025",stg:"天使轮",tf:"未披露（天使投后超 3 亿元）",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"吴旭民",d:"大疆农业植保机事业线开创者/大产品经理（首款植保机 MG-1 以其命名；操盘植保、行业、运动相机三大方向，700+ 专利；2019-06 离职）",
+ p:"智能拖挂式新能源房车+智能房车底盘（飞控/电驱/变形车身技术迁移），已建量产超级工厂",
+ fu:["种子轮 ｜ 初心资本","天使轮 · 2025-12 ｜ 高瓴创投领投、初心资本超额加投（投后超 3 亿元）"],
+ v:"天使投后超 3 亿元",
+ u:[["雷峰网","https://m.leiphone.com/category/weiwu/QFhKrxsDul38m85O.html"]]},
+{n:"清闲智能",en:"LiberNovo",g:"T3",s:"消费硬件",mat:3,c:"深圳南山",y:"2024",stg:"A轮",tf:"≈0.45 亿元",tfv:0.45,lvl:"少量报道",cred:"确认",
+ f:"阎乐、李庐川",d:"阎乐：前大疆全球销售和市场负责人（后任云鲸副总裁兼 CMO）；李庐川：前云鲸营销总监/北鼎",
+ p:"动态人体工学椅 Omni（60 仿生关节实时随动）；Kickstarter 破 820 万美元、9605 名支持者",
+ fu:["天使轮 · 千万级 ｜ 未具名","A 轮 · 2024-12 · 数千万 ｜ 高瓴、山与资本、高秉强"],
+ v:"未披露",
+ u:[["新浪财经","http://finance.sina.com.cn/cj/2026-01-08/doc-inhfreqi3618511.shtml"]]},
+{n:"迅路创新",en:"Tarran",g:"T3",s:"出行/载具",mat:3,c:"深圳",y:"2023",stg:"A轮",tf:"≈1.5 亿元",tfv:1.5,lvl:"少量报道",cred:"确认",
+ f:"郭灼",d:"大疆产品经理（多款无人机+初代 Osmo）→影石 Insta360 产品负责人（GO/X 系列，2019-2023）；团队来自大疆/安克/影石",
+ p:"高端 E-cargo bike（定价超 5 万元，出海欧洲）",
+ fu:["轮次一 · 2025-08 · 数千万元 ｜ 红杉种子基金领投","轮次二 · 2026 · 超亿元 ｜ 弘晖基金、Brizan 领投"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com/p/3413659660160640"]]},
+{n:"汝原科技",en:"Zuvi",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"2019",stg:"战略投资",tf:"≈1 亿美元（约 7 亿元）",tfv:7,lvl:"多源",cred:"确认",
+ f:"王铭钰",d:"前大疆研发副总裁（2012 年组建相机部，推出大疆首款相机与带相机的无人机）",
+ p:"光能无线吹风机 Zuvi Halo「原里」（近红外光+风）",
+ fu:["天使轮 · 2019 · 近亿美元 ｜ 腾讯、红杉、高瓴、源码（虎嗅口径）","战略投资 · 2024-01 ｜ 欧莱雅 BOLD（合作 AirLight Pro 登陆 CES 2024）"],
+ v:"未披露",
+ u:[["新浪财经","https://finance.sina.cn/2024-01-13/detail-inacirun0609356.d.html"]]},
+{n:"物种起源",en:"SYLPH 仙如",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"2016-04",stg:"A轮",tf:"≈数千万美元（约 2.5 亿元）",tfv:2.5,lvl:"多源",cred:"确认",
+ f:"林源",d:"2012 年加入大疆，高级工程师/动力系统（3 轴 G 云台、手持云台、MATRICE 100；自称离职时专利数大疆第一）；第一代大疆创业者代表",
+ p:"180g 高速吹风机（无人机电机技术迁移）；已盈利；滑雪硬件酝酿中",
+ fu:["A 轮 · 2024-05 · 数千万美元 ｜ 衡庐资本领投、StarVC 跟投"],
+ v:"未披露",
+ u:[["极客公园","https://www.geekpark.net/news/345299"]]},
+{n:"赋之科技",en:"Enabot",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"2018",stg:"C轮",tf:"≈1 亿元（累计）",tfv:1,lvl:"多源",cred:"确认",
+ f:"朱虹",d:"前大疆董事长执行助理（港科大博士）、松山湖基地轮值 CEO",
+ p:"EBO 系列宠物陪伴/家庭看护机器人（远程互动+看护）",
+ fu:["A 轮 · 2021-06 · 数千万元 ｜ 红杉、龙湖资本","B 轮 · 2022-01 ｜ 渤海产投、东方富海","C 轮 · 2025-09 · 数千万元 ｜ 红杉、龙湖（累计近亿元）；2026-03 红杉再加注"],
+ v:"累计近亿元",
+ u:[["智东西","https://m.zhidx.com/p/522112.html"]]},
+{n:"一晤未来",en:"evowera",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"2017-12",stg:"A轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"刘翊涵、白睿、林家靖、邓涛",d:"全员大疆班底：空气动力工程师（CEO）/电机控制团队负责人（CTO）/整体设计工程师/动力系统结构设计（COO）",
+ p:"planck O1 高端电动牙刷（微型化工业永磁同步伺服电机）",
+ fu:["A 轮 · 2021-05 ｜ 经纬中国"],
+ v:"未披露",
+ u:[["虎嗅","https://m.huxiu.com/article/3284227.html"]]},
+{n:"禾启智能",en:"HEQ UAV",g:"T3",s:"无人机/低空",mat:3,c:"深圳",y:"2019",stg:"A轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"王坤殿",d:"2016-2019 大疆行业研发（VTOL 固定翼产品经理）；创始及技术团队大多来自大疆",
+ p:"全球首款尾座式无舵面垂起固定翼消费无人机 Swan-K1/K1 Pro（1099 美元，海外 6 个月 600+ 台）",
+ fu:["种子轮 · 2019-02","A 轮 ｜ 红杉种子基金、联想之星（虎嗅口径）"],
+ v:"未披露",
+ u:[["36氪","https://36kr.com/p/1774913687959814"]]},
+{n:"共达地",en:"—",g:"T3",s:"软件/AI",mat:3,c:"深圳",y:"2020-03",stg:"A轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"赵丛",d:"大疆机器视觉/视觉 AI 负责人（精灵 4 跟随避障；早期与沈劭劼共管大疆车载 AI；2019 离开）",
+ p:"AutoML 自动化 AI 训练平台",
+ fu:["已完成 A 轮（细节未披露）"],
+ v:"未披露",
+ u:[["雷峰网","https://m.leiphone.com/category/robot/9oaIWwpbun42wD7E.html"]]},
+{n:"大道智创",en:"—",g:"T3",s:"机器人/具身",mat:3,c:"深圳",y:"2015-07",stg:"Pre-A+轮",tf:"≈千万元级",tfv:0.15,lvl:"少量报道",cred:"确认",
+ f:"邢志伟、朱晓蕊（联创+投资人）",d:"朱晓蕊：大疆前首席科学家（现速腾聚创首席科学家）；邢志伟：哈工大博士、前 NVIDIA",
+ p:"「E 巡」安防巡逻机器人起家，扩展清洁与消费机器人",
+ fu:["Pre-A+ · 千万级 ｜ 嘉道私人资本（龚虹嘉）领投、朱晓蕊跟投","战略融资 ｜ 中关村科技租赁"],
+ v:"未披露",
+ u:[["阿里云创业","https://startup.aliyun.com/info/1012493.html"]]},
+{n:"Farseer",en:"FarseerTech／RocX",g:"T3",s:"影像/光学",mat:3,c:"—",y:"2025 首发",stg:"众筹",tf:"众筹（Kickstarter，无机构融资）",tfv:0,lvl:"少量报道",cred:"中高",
+ f:"创始团队（集体，未具名）",d:"自称「在大疆把手持影像做到极致的工程师」：量产过 Mavic Pro/Inspire/Osmo Pocket/Action/Ronin 4D",
+ p:"AI 超长焦相机 RocX/RocXZoom（1750mm 50x 变焦+AI 追踪，199–699 美元，观鸟/生态摄影）；CES 2026 亮相",
+ fu:["Kickstarter 众筹 · 2025-12 起 ｜ 无机构融资披露"],
+ v:"—",
+ u:[["DroneXL","https://dronexl.co/2025/11/24/ex-dji-engineers-farseer-ai-camera-zoom/"]]},
+{n:"开物匠心",en:"—",g:"T3",s:"制造工具",mat:3,c:"深圳",y:"2025 年底",stg:"天使+轮",tf:"未披露（曾按 2 亿元估值给 TS）",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"王永根、林茂疆、王锴森",d:"王永根：大疆教育机器人项目开发负责人（工号19140；后韶音 OWS 负责人、纵贯创新合伙人）；林茂疆：大疆消费无人机产品线经理/硬件平台负责人（工号0339；后拓竹 X1 研发负责人、正浩研发负责人）；王锴森：大疆视觉算法工程师",
+ p:"桌面五轴 CNC（精密机械+运动控制+AI 一体化，「大疆+拓竹」双血统）",
+ fu:["天使轮 ｜ 高瓴创投（多家美元基金曾按 2 亿元估值争抢 TS）","天使+ ｜ 顺为资本"],
+ v:"约 2 亿元（TS 阶段口径）",
+ u:[["OFweek","https://mp.ofweek.com/znyj/a156714224697"],["鞭牛士","https://www.bianews.com/news/details?id=225898"]]},
+{n:"三号宇宙",en:"Ouropia",g:"T4",s:"机器人/具身",mat:2,c:"深圳南山",y:"2025-06-23",stg:"种子轮",tf:"≈数千万美元（约 2 亿元）",tfv:2,lvl:"少量报道",cred:"确认",
+ f:"李阳",d:"前大疆动力系统专家（Mavic 产品/教育机器人/自驾业务）；后任云鲸产品 VP",
+ p:"毛绒包挂形态 AI 宠物机器人：多模态交互+类宠物养成，主打海外女性市场",
+ fu:["种子轮 · 2025-10 · 数千万美元 ｜ 顺为、经纬、九合创投"],
+ v:"未披露",
+ u:[["智东西","https://m.zhidx.com/p/522112.html"]]},
+{n:"卢登斯智能",en:"Ludens AI",g:"T4",s:"机器人/具身",mat:2,c:"深圳/东莞",y:"2024-07-05",stg:"天使+轮",tf:"≈1 亿元（三轮）",tfv:1,lvl:"少量报道",cred:"确认",
+ f:"薛立君",d:"前大疆工程师（AI 算法，目标跟随/姿态交互专利发明人）→特斯拉→FITURE 创始团队算法负责人",
+ p:"家庭陪伴机器人 COCOMO（10 自由度、37℃）+桌面宠物 INU；自研 Klara OS；2026 CES 首秀",
+ fu:["天使轮 · 数千万元（两轮合计）｜ 线性领投、清水湾跟投","天使+ · 2026-04 ｜ 日本 PKSHA Algorithm Fund、清水湾","新融资 · 2025-11 · 近亿元 ｜ XBOTPARK/清水湾、线性——李泽湘连投三轮"],
+ v:"未披露",
+ u:[["36氪","https://36kr.com/p/3764777930621705"]]},
+{n:"蓝洞探索",en:"Deeplore",g:"T4",s:"消费硬件",mat:2,c:"深圳",y:"2025-06",stg:"种子轮",tf:"数千万元",tfv:0.4,lvl:"少量报道",cred:"确认",
+ f:"丘力、周震昊、顾敏明",d:"丘力：大疆核心结构专家、能源 BU 负责人（曾为森合创新联创 CTO）；周震昊：大疆十余年，主导 Phantom/Mavic 动力系统研发",
+ p:"AI 智能潜水面镜（原生多介质光学+水下 HUD+端侧海洋生物识别），定位「水里的大疆」",
+ fu:["种子轮 · 2026-07 · 数千万元 ｜ 五源、顺为联合投资"],
+ v:"未披露",
+ u:[["投资界","https://news.pedaily.cn/202607/566342.shtml"]]},
+{n:"湃岛科技",en:"—",g:"T4",s:"消费硬件",mat:2,c:"深圳",y:"2025-08",stg:"天使+轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"苏铁",d:"大疆「如影」Ronin 产品线负责人 7 年（「如影之父」，从零做到数十亿营收）；2025-07 离职",
+ p:"「AI 拍立得」；离职数周即完成两轮融资（影石、安克曾接触）",
+ fu:["两轮融资 · 2025 ｜ 未具名（数周内完成）"],
+ v:"未披露",
+ u:[["雷峰网","https://www.leiphone.com/category/weiwu/VdVGTul29bbzfls2.html"]]},
+{n:"旷野创新",en:"—",g:"T4",s:"出行/载具",mat:2,c:"深圳",y:"2025-07-30",stg:"种子轮",tf:"未披露（首轮估值已过亿元）",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"龚鼎（Goding）",d:"大疆前感知算法骨干（曾任职飞控部门，主导无人机复杂环境导航系统）；曾任扫地机公司避障规划负责人",
+ p:"户外智能载具：电动登山辅助、智能露营装备（AI 感知+全地形控制），海外高端",
+ fu:["种子轮 · 2025-11 ｜ 顺为、元璟首轮投资，云沐跟投（首轮估值已过亿元）；天使轮进行中"],
+ v:"首轮过亿元",
+ u:[["DoNews","https://www.donews.com/news/detail/1/6237050.html"]]},
+{n:"折跃科技",en:"—",g:"T4",s:"无人机/低空",mat:2,c:"深圳",y:"2025-06",stg:"天使+轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"中高",
+ f:"石峻",d:"前大疆飞控算法负责人/专家，主导第一代「悟」相关项目；36氪称「大疆第 6 号员工」（官方未确认，存疑）",
+ p:"eVTOL 整机核心系统（电机飞控/整机设计/航空级零部件）+ 电动垂起载人「飞碟」",
+ fu:["天使轮 · 2026-07 ｜ 深创投参投","新一轮 · 2026-08 ｜ 鑫霓资产、一村资本、Empower Alpha、RoboX"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com/p/3897116098731010"]]},
+{n:"溯光灵迹",en:"—",g:"T4",s:"消费硬件",mat:2,c:"深圳/苏州",y:"2026-06-29",stg:"天使轮",tf:"千万元级",tfv:0.15,lvl:"仅一条PR",cred:"确认",
+ f:"Charles（许肇源）",d:"前大疆海外区域消费级业务（影像类目市占 TOP4 做到 TOP1）；核心团队来自华为、大疆",
+ p:"AI 记忆硬件——「记忆操作系统」，全天候多模态记忆库",
+ fu:["天使轮 · 2026-07-30 官宣 · 千万元级 ｜ 产业链上下游多家头部公司（成立半个月完成）"],
+ v:"约 1 亿元",
+ u:[["新浪财经","https://finance.sina.com.cn/jjxw/2026-08-13/doc-ininctay0175200.shtml"]]},
+{n:"岳闪创新",en:"OROX",g:"T4",s:"机器人/具身",mat:1,c:"深圳",y:"2026-02",stg:"天使轮",tf:"未披露",tfv:-1,lvl:"仅一条PR",cred:"确认",
+ f:"陈良深",d:"大疆扫地机 BU 负责人（2017-2025，从零组建事业部，ROMO 上市 8 个月冲进行业第六）",
+ p:"轻量级消费级穿戴机器人（外骨骼）产品线；团队人均 8 年+智能硬件经验",
+ fu:["首轮融资 · 2026 ｜「头部资本」（金额未披露）"],
+ v:"未披露",
+ u:[["网易","https://www.163.com/dy/article/L10R02AL0556CAYF.html"]]},
+{n:"力磅科技",en:"—",g:"T4",s:"消费硬件",mat:1,c:"深圳",y:"2026-04",stg:"天使轮",tf:"未披露",tfv:-1,lvl:"仅一条PR",cred:"确认",
+ f:"白睿",d:"前大疆电机控制团队负责人（一手组建；与一晤未来联创 CTO 同名同岗）",
+ p:"新一代智能健身设备（居家力量训练，自研电机）——电机技术外溢",
+ fu:["天使轮 · 2026-08 ｜ 金额未披露"],
+ v:"未披露",
+ u:[["网易","https://www.163.com/dy/article/L4VGAKI50556CAYF.html"]]},
+{n:"未来智友",en:"—",g:"T4",s:"消费硬件",mat:2,c:"东莞松山湖",y:"2024 年初",stg:"天使轮",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"刘雄伟（一说邱伟）+ 大疆算法/产品骨干（未具名）",d:"创始人为前云鲸东莞子公司负责人（供应链/制造；姓名两说并存）；二跳案例：大疆人才→云鲸体系→创业",
+ p:"AI 宠物烘干箱（首款已量产），后续智能项圈等宠物 AI 硬件",
+ fu:["天使轮 · 2026-07 官宣 ｜ 东莞科创集团（松山湖天使基金二期）独家投资"],
+ v:"未披露",
+ u:[["网易","https://www.163.com/dy/article/L26IPGTM0556CAYF.html"]]},
+{n:"空天探索",en:"Airpath",g:"T4",s:"无人机/低空",mat:2,c:"深圳",y:"2024-08-19",stg:"种子轮",tf:"数百万元",tfv:0.05,lvl:"少量报道",cred:"确认",
+ f:"司佳佩、王亮",d:"司佳佩：曾就职大疆及成都飞机设计研究所（研发/市场/管理）；王亮：清华航空航天学院副教授、宁波低空经济研究院副院长",
+ p:"吨级 eSTOL 电动固定翼 L400（海外大农场植保，宣称降本 50%）",
+ fu:["种子轮 · 2025-07 · 数百万元 ｜ 奇绩创坛（2025 春季创业营）"],
+ v:"未披露",
+ u:[["亿欧","https://baijiahao.baidu.com/s?id=1836476179080874233"]]},
+{n:"一思智能",en:"AceiiLab",g:"T4",s:"机器人/具身",mat:2,c:"深圳",y:"2024-12",stg:"天使轮",tf:"超千万元",tfv:0.12,lvl:"少量报道",cred:"确认",
+ f:"刘礼谦、晁光",d:"刘礼谦：前大疆工程师（研发出身，亦在 KUKA，十余年机器人研发）",
+ p:"AI 网球发球机器人 A1（行李箱形态、双目视觉，2000+ 美元；KS 82 万美元）",
+ fu:["天使轮 · 2026-07 · 超千万元 ｜ 零以资本、变量资本、海益资本"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com/p/3936429616594054"]]},
+{n:"速英科技",en:"—",g:"T4",s:"机器人/具身",mat:2,c:"深圳",y:"2022-03",stg:"天使轮",tf:"超千万元",tfv:0.12,lvl:"少量报道",cred:"确认",
+ f:"何伟松 + 多名大疆工程师",d:"何伟松：前大疆云台算法负责人",
+ p:"智能缝纫机器人（精确运控+视觉定位，1 台替代 17 名工人，服装业招工难）",
+ fu:["天使轮 · 2022-08 · 超千万元 ｜ 创新工场前沿科技基金（李开复）"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com/p/1848353680215428"]]},
+{n:"爱克斯智能",en:"—",g:"T4",s:"消费硬件",mat:2,c:"深圳",y:"2022",stg:"天使轮",tf:"数千万元",tfv:0.4,lvl:"仅一条PR",cred:"确认",
+ f:"三名 90 后前大疆工程师",d:"前大疆工程师",
+ p:"AI 编程陪伴机器人（K12/大学生，小红书起量）",
+ fu:["天使轮 · 2023-06 报道 · 数千万元 ｜ 投资方未详"],
+ v:"未披露",
+ u:[["雷峰网","https://www.leiphone.com"]]},
+{n:"智翔脉络",en:"—",g:"T4",s:"消费硬件",mat:1,c:"深圳",y:"—",stg:"天使+轮",tf:"未披露",tfv:-1,lvl:"仅一条PR",cred:"中",
+ f:"彭睿",d:"大疆前产品经理（Osmo Pocket 产品经理）",
+ p:"AI 桌面陪伴机器人",
+ fu:["天使+轮 · 2025-04 ｜ XBOTPARK 基金"],
+ v:"未披露",
+ u:[["36氪","https://m.36kr.com"]]},
+{n:"奇航疆域",en:"—",g:"T4",s:"无人机/低空",mat:2,c:"深圳南山",y:"2018-06",stg:"获投未详",tf:"未披露",tfv:-1,lvl:"少量报道",cred:"确认",
+ f:"宋航宇",d:"前大疆行业应用（电力业务）约 3 年，曾参与电力/光伏巡检无人机检验认定；团队多来自大疆",
+ p:"无人机巡检「洞察」云平台（电力/光伏/建筑工程数字化监管），入驻 DJI Enterprise 生态",
+ fu:["获松山湖机器人产业基地投资（轮次金额未披露）"],
+ v:"未披露",
+ u:[["OFweek","https://robot.ofweek.com/2021-01/ART-8321203-8460-30483343.html"]]},
+{n:"头家技术",en:"—",g:"T4",s:"无人机/低空",mat:1,c:"深圳宝安",y:"2013-08",stg:"无融资",tf:"无",tfv:0,lvl:"仅一条PR",cred:"确认",
+ f:"陈楚强",d:"大疆初创核心员工（跟随汪滔最早的 3 名员工之一，「四大天王」）",
+ p:"卫星通讯设备（持多项卫星通讯专利）",
+ fu:["未见公开融资"],
+ v:"—",
+ u:[["新浪科技","https://tech.sina.cn/it/2016-04-08/detail-ifxrcizs7058042.d.html"]]},
+{n:"迪迪金科技",en:"—",g:"T4",s:"机器人/具身",mat:1,c:"深圳南山",y:"2018-01-25",stg:"无融资",tf:"无",tfv:0,lvl:"少量报道",cred:"确认",
+ f:"尤中乾",d:"2010-2018 任职大疆，早期核心技术成员，主导高清图传（与汪滔同为「数据传输系统及方法」专利发明人）",
+ p:"智能机器人开发；业务曾因芯片断供停滞（受挫样本；创始人正被多个大疆系团队争抢）",
+ fu:["未获资本青睐"],
+ v:"—",
+ u:[["虎嗅","https://www.huxiu.com/article/4815966.html"]]},
+{n:"向原科技",en:"Oryn Tech",g:"T4",s:"软件/AI",mat:1,c:"深圳",y:"—",stg:"种子轮",tf:"奇绩标准投资（约数百万元）",tfv:0.04,lvl:"仅一条PR",cred:"中",
+ f:"杨思敏、王娴",d:"杨思敏：前大疆产品经理（港科大博士，曾主导 10 万+用户产品）",
+ p:"共情型 Personal AI 多模态生理语义智能穿戴",
+ fu:["奇绩创坛 2026 春季创业营（投资+加速）"],
+ v:"未披露",
+ u:[["智源社区名单","https://hub.baai.ac.cn/view/55384"]]},
+{n:"边缘创智",en:"Finnox",g:"T4",s:"软件/AI",mat:1,c:"—",y:"—",stg:"种子轮",tf:"奇绩标准投资（约数百万元）",tfv:0.04,lvl:"仅一条PR",cred:"中",
+ f:"赵梓合",d:"曾就职大疆",
+ p:"AI 心理量化平台（多模态传感器+AI 量化心理诊疗数据）",
+ fu:["奇绩创坛 2024 春季创业营（投资+加速）"],
+ v:"未披露",
+ u:[["铅笔道名单","https://www.pencilnews.cn/p/44057.html"]]},
+{n:"Interaqt",en:"—",g:"T4",s:"软件/AI",mat:1,c:"—",y:"约 2022",stg:"种子轮",tf:"奇绩标准投资（约数百万元）",tfv:0.04,lvl:"仅一条PR",cred:"中",
+ f:"侯振宇",d:"前大疆大前端负责人（后任蚂蚁商家体验技术部、快手商业化前端通用技术负责人）",
+ p:"大模型「需求结构化」智能软件（自然语言需求转结构化生成代码）",
+ fu:["奇绩创坛 2023 春季创业营"],
+ v:"未披露",
+ u:[["36氪名单转载","http://mt.sohu.com/a/682476497_114778"]]},
+{n:"问知科技",en:"Assembo.ai",g:"T4",s:"软件/AI",mat:1,c:"北京",y:"约 2022",stg:"种子轮",tf:"奇绩标准投资（约数百万元）",tfv:0.04,lvl:"仅一条PR",cred:"中",
+ f:"李澜",d:"前大疆产品经理（市场营销内容策划方向）",
+ p:"AI 广告素材生成 SaaS（一分钟生成多模态电商广告）",
+ fu:["奇绩创坛 2023 春季创业营"],
+ v:"未披露",
+ u:[["36氪名单转载","http://mt.sohu.com/a/682476497_114778"]]},
+{n:"小球圈（光跃极枢）",en:"—",g:"T4",s:"软件/AI",mat:1,c:"北京",y:"2025-07",stg:"无融资",tf:"无",tfv:0,lvl:"仅一条PR",cred:"中低",
+ f:"杨光垚",d:"曾任职大疆车载（后独立为卓驭），负责视觉感知、系统决策、软硬件协同",
+ p:"网球等拍类运动 AI 教练 APP+智能球拍+球场摄像硬件（APP 为数据入口）",
+ fu:["无公开融资（硬件与深圳 ODM 合作）"],
+ v:"—",
+ u:[["新浪财经","https://baijiahao.baidu.com/s?id=1868693745700487897"]]},
+{n:"光之跃迁",en:"Lumisition",g:"T4",s:"机器人/具身",mat:2,c:"深圳",y:"2026-02",stg:"天使轮",tf:"≈0.5 亿元",tfv:0.5,lvl:"少量报道",cred:"中高",
+ f:"乐林株",d:"港中文机器人学博士（CUHK LRL Lab 联合创立者）；曾任大疆创新研发骨干",
+ p:"消费级四足机器人——全地形移动底盘，户外搬运/辅助行动「体力替代」；Physics AI 腿足平台",
+ fu:["天使轮 · 2026 · 近 5000 万元 ｜ 正轩投资领投"],
+ v:"未披露",
+ u:[["网易","https://www.163.com/dy/article/L1KRG47G0556CAYF.html"]]},
+{n:"珞博智能",en:"Robopoet",g:"T5",s:"消费硬件",mat:3,c:"上海/深圳",y:"2024",stg:"Pre-A轮",tf:"≥1 亿元（多轮）",tfv:1.2,lvl:"多源",cred:"边缘",
+ f:"孙兆治（创始人非大疆）",d:"创始人前小鹏机器人产品设计/滴滴背景；仅团队成员有大疆背景（21财经列入大疆系属宽松归类）",
+ p:"AI 潮玩 Fuzozo 芙崽（2026-02 上市）",
+ fu:["天使轮 · 2024-11 ｜ 上影新视野、金沙江","天使+ · 2025-09 ｜ 红杉","Pre-A · 2026 初 · 亿元级 ｜ 红杉、华映、广和通等"],
+ v:"未披露",
+ u:[["钛媒体","https://www.tmtpost.com/7709215.html"]]},
+{n:"诺因智能",en:"—",g:"T5",s:"机器人/具身",mat:3,c:"—",y:"2025-08",stg:"天使+轮",tf:"≈5 亿元（单轮口径）",tfv:5,lvl:"少量报道",cred:"存疑",
+ f:"李银川（创始人非大疆）",d:"创始人系华为诺亚方舟生成式大模型负责人；创始团队含大疆「产品操盘手」（未具名）",
+ p:"家务机器人（合成数据/视频生成训练，可折叠进 40 厘米）",
+ fu:["天使++轮 · 2026 · 5 亿元 ｜ 经纬、商汤等（估值超 20 亿元）"],
+ v:"超 20 亿元",
+ u:[["量子位","https://www.qbitai.com/2026/03/391668.html"]]},
+{n:"ZuzuZoos 查无此园",en:"ZuzuZoos",g:"T5",s:"消费硬件",mat:2,c:"杭州",y:"2025",stg:"Pre-A轮",tf:"数千万元",tfv:0.4,lvl:"少量报道",cred:"边缘",
+ f:"董晓楠（创始人非大疆）",d:"大疆背景在硬件负责人层面（前大疆清扫机器人机械结构负责人，15 年机器人经验）",
+ p:"包挂式硅基 AI 伙伴潮玩（珍珠/小熊/河马 IP，18-35 岁女性情绪消费）",
+ fu:["Pre-A 轮 · 2026-07 · 数千万元 ｜ 锦秋领投、上海复容跟投"],
+ v:"未披露",
+ u:[["36氪硬氪","https://baijiahao.baidu.com/s?id=1869512805024178657"]]},
+{n:"蓝色涌现",en:"—",g:"T5",s:"出行/载具",mat:2,c:"深圳?",y:"约 2023",stg:"天使+轮",tf:"数千万元（天使+）",tfv:0.4,lvl:"少量报道",cred:"存疑",
+ f:"吴赛尔（CEO）",d:"核心成员具大疆 RoboMaster 背景；COO 蔡圣栩早期曾在大疆实习（创始人本人非直系大疆；前本末科技合伙人）",
+ p:"电助力智能海钓渔轮（面向海外海钓市场）",
+ fu:["天使轮 ｜ 高秉强个人","天使+ · 2026 · 数千万元 ｜ 高瓴创投、启明创投、云沐资本、高秉强"],
+ v:"未披露",
+ u:[["36氪首发","https://m.36kr.com/p/3916820073623171"]]},
+{n:"沃玩科技",en:"WooToys",g:"T5",s:"消费硬件",mat:1,c:"深圳",y:"2023",stg:"未披露",tf:"未披露",tfv:-1,lvl:"仅一条PR",cred:"存疑",
+ f:"蔡俊辉",d:"在「无人机巨头」（报道匿名指大疆）工作多年，自称「逃亡者」",
+ p:"高端遥控水上玩具（单价约 2 万元，主销美欧）",
+ fu:["未披露"],
+ v:"—",
+ u:[["21财经","https://www.21jingji.com/article/20251209/fdb0d78d00000000_11c6-4f0f-b7a1-b5339875771f.html"]]},
+{n:"超维无际",en:"—",g:"T5",s:"软件/AI",mat:1,c:"—",y:"—",stg:"天使轮",tf:"≈近亿元（单源）",tfv:0.9,lvl:"仅一条PR",cred:"存疑",
+ f:"「前大疆悍将」（未具名）",d:"报道称前大疆资深人士创办（人物未具名）",
+ p:"AI 基础软件",
+ fu:["天使轮 · 2026-05 报道 · 近亿元 ｜ 未具名"],
+ v:"未披露",
+ u:[["东方财富号","https://caifuhao.eastmoney.com/news/20260519153218281947630"]]},
+{n:"（未具名）刘力源宠物机器人项目",en:"—",g:"T5",s:"消费硬件",mat:1,c:"深圳?",y:"2026",stg:"天使轮",tf:"未披露",tfv:-1,lvl:"仅一条PR",cred:"确认（公司未具名）",
+ f:"刘力源",d:"大疆云台算法高级工程师（陈子寒团队）→安克 eufy 洗地机产品负责人、大健康事业部负责人；2026 年创业（雷峰网独家，公司名未公开）",
+ p:"消费级宠物陪伴机器人（曾探索体感游戏、智能猫砂盆后锁定）",
+ fu:["天使轮 · 2026-08 ｜ 元禾领投（金额未披露）"],
+ v:"未披露",
+ u:[["雷峰网","https://m.leiphone.com/category/weiwu/P3QjuKBAMqtTeGNM.html"]]},
+{n:"Dnsys",en:"Dnsys",g:"T5",s:"机器人/具身",mat:2,c:"北京",y:"2020",stg:"众筹",tf:"众筹约 320 万美元（约 0.23 亿元）",tfv:0.23,lvl:"少量报道",cred:"边缘",
+ f:"创始团队（未具名）",d:"创始团队来自大疆、Segway、小米（团队级背景）",
+ p:"消费级动力外骨骼（户外徒步/力量训练辅助）",
+ fu:["Kickstarter：X1 近 120 万美元、Z1 近 200 万美元（无机构融资披露）"],
+ v:"—",
+ u:[["白鲸出海","https://www.baijing.cn/article/54066"]]},
+{n:"目心智能",en:"TerraMow",g:"T3",s:"出行/载具",mat:3,c:"深圳宝安",y:"2019-06",stg:"B轮",lvl:"少量报道",cred:"确认",
+ f:"张宏辉",d:"前大疆视觉感知部门负责人（精灵 4 感知；导航/机器学习拆分后负责感知方向）；初始约 15 名核心成员均来自大疆感知部门",
+ p:"纯视觉 VSLAM 无边界割草机器人 TerraMow（对标 Mammotion/富世华，欧美庭院市场）",
+ fu:["B 轮 · 2026-01 · 超 1 亿元 ｜ 投资方未详（另有早期轮未披露）"],
+ v:"未披露",tf:"≥1 亿元",tfv:1,
+ u:[["新浪财经","https://finance.sina.com.cn/tech/roll/2026-01-23/doc-inhihsrw2010691.shtml"],["36氪创投","https://pitchhub.36kr.com/project/2139807304937604"]]},
+{n:"Zettlab",en:"Zettlab",g:"T4",s:"消费硬件",mat:2,c:"深圳",y:"2023",stg:"多轮",lvl:"少量报道",cred:"确认",
+ f:"郭亚楠（Noah Guo）",d:"大疆 AI 工程师（2016-2021，AI 项目）；离任后曾任云鲸 AI 团队负责人",
+ p:"AI NAS 个人数据中枢：端侧 AI+自然语言视频搜索+自动剪辑（本地 AI 不依赖云）；Kickstarter 全球首发",
+ fu:["Kickstarter · 2025-04 · 超 140 万美元","第三轮 · 8 位数人民币 ｜ 星联 Xinglian、祥峰 Vertex、Borchid Capital"],
+ v:"未披露",tf:"≈0.5 亿元（含众筹）",tfv:0.5,
+ u:[["KrAsia专访","https://kr-asia.com/can-ai-make-nas-cool-former-dji-engineer-noah-guo-built-zettlab-to-find-out"],["证券时报","https://www.stcn.com/article/detail/3507827.html"]]},
+{n:"ASMOKE",en:"ASMOKE",g:"T3",s:"消费硬件",mat:3,c:"深圳",y:"约 2021–22",stg:"A轮",lvl:"少量报道",cred:"确认",
+ f:"武文琦",d:"大疆哈苏（Hasselblad）品牌业务（2021 年离职）",
+ p:"智能果木颗粒烤炉（出海）：Kickstarter 首日 23 万美元、累计 142 万美元；已进入 Home Depot/Walmart/Lowe's 线下渠道",
+ fu:["Kickstarter · 累计 142 万美元","天使轮 ｜ 高秉强、Brizan Venture","A 轮 ｜ 光远投资"],
+ v:"未披露",tf:"未披露（含众筹 142 万美元）",tfv:-1,
+ u:[["霞光社","https://letschuhai.com/a4db6ef3"],["亿恩网","http://m.ennews.com/article-30172-1.html"]]},
+{n:"艾森智能",en:"—",g:"T4",s:"软件/AI",mat:1,c:"深圳",y:"2015-12",stg:"未披露",lvl:"少量报道",cred:"中高",
+ f:"张卫平",d:"大疆研发管理三人组之一（2014 年底加入，分管视觉导航与硬件）；后兼任上市公司乐心医疗高管",
+ p:"IoT 服务商——能源产业数字化（卫星物联网方向）",
+ fu:["未见公开融资"],
+ v:"—",tf:"未披露",tfv:-1,
+ u:[["七剑文","https://www.hstong.com/news/detail/24110718341270684"],["乐心医疗公告","https://vip.stock.finance.sina.com.cn/corp/view/vCI_CorpManagerInfo.php?stockid=300562&Pcode=30539143"]]},
+{n:"（未具名）刘昂智能美甲机项目",en:"—",g:"T5",s:"消费硬件",mat:1,c:"深圳?",y:"2026",stg:"未披露",lvl:"仅一条PR",cred:"中高（公司未具名）",
+ f:"刘昂",d:"大疆早期员工（北大毕业）：视觉导航部门→导航系统部负责人（精灵 4 导航、一键短片、智能返航）；2020 年起任大疆扫地机业务负责人（首款 ROMO 2025-08 发布）→ 2026 年前后创业",
+ p:"智能美甲机器人（导航技术跨界消费硬件，与字节系团队同场竞技）",
+ fu:["已获头部投资机构意向（融资未官宣）"],
+ v:"未披露",tf:"未披露",tfv:-1,
+ u:[["新浪财经","https://finance.sina.com.cn/roll/2026-01-30/doc-inhizxrr3762858.shtml"]]},
+{n:"速腾聚创",en:"RoboSense 2498.HK",g:"T5",s:"传感器/零部件",mat:5,c:"深圳",y:"2014-08",stg:"已上市",lvl:"多源",cred:"边缘",
+ f:"邱纯鑫（CEO，无大疆背景）、朱晓蕊（联创/首席科学家）",d:"朱晓蕊被多家媒体称「大疆前首席科学家」（实为哈工大深研院教授、早期助力大疆；Dealroom 将 RoboSense 归为 DJI alumni 创立）——大疆成色弱，列边缘档",
+ p:"激光雷达（车载+机器人 B2B）；港股 2498.HK",
+ fu:["港股上市 · 2024-01 ｜ IPO 前多轮：小米、菜鸟、比亚迪等产业方"],
+ v:"百亿港元级",tf:"IPO 前多轮（未加总）",tfv:-1,
+ u:[["新浪人物特稿","https://cj.sina.cn/articles/view/7879776326/1d5abd84606801bx0m"]]},
+{n:"一清创新",en:"UDI",g:"T5",s:"无人机/低空",mat:2,c:"深圳/天津",y:"2018-06",stg:"未披露",lvl:"少量报道",cred:"边缘",
+ f:"刘明（董事长）、王鲁佳（总经理）；朱晓蕊为创始股东",d:"朱晓蕊「大疆前首席科学家」仅在创始股东层面（哈工大教授）",
+ p:"工业低速无人驾驶：无人物流车/接驳/远程驾驶（B2B）",
+ fu:["融资未详"],
+ v:"—",tf:"未披露",tfv:-1,
+ u:[["中国企业家","http://m.iceo.com.cn/article/c425c943-7e35-41bf-b2d5-c36b3d0b21cd"]]},
+{n:"VLAI 未来动力",en:"VLAI Robotics",g:"T5",s:"传感器/零部件",mat:1,c:"广州",y:"2025-05",stg:"天使轮",lvl:"仅一条PR",cred:"边缘",
+ f:"核心团队（港科大广州，未具名）",d:"融资 PR 自述团队含「字节、百度、大疆」经历成员（创始人无前大疆报道）——团队级渊源",
+ p:"一体化关节电机（具身智能零部件 B2B）",
+ fu:["天使轮 · 数百万元 ｜ 奇绩创坛"],
+ v:"未披露",tf:"≈数百万元",tfv:0.04,
+ u:[["36氪创投","https://pitchhub.36kr.com/project/2125623214534272"]]},
+{n:"BRINC",en:"BRINC Drones",g:"T5",s:"无人机/低空",mat:4,c:"美国·西雅图",y:"2017",stg:"C轮",lvl:"多源",cred:"边缘（实习经历）",
+ f:"Blake Resnick（Thiel Fellow）",d:"2017 年在大疆帕洛阿尔托办公室实习（设计防飞丢 Kevlar 无人机系留系统）——实习非正式在职，列边缘档",
+ p:"公共安全/911 应急无人机（室内抗撞击 Dragonfish/Responder，目标部署全美警局与消防站）",
+ fu:["Series C · 2026-01 · 1.25 亿美元 ｜ Motorola Solutions 领投；Index、Figma CEO Dylan Field、早期 Sam Altman（累计约 2.82 亿美元）"],
+ v:"≈8.7 亿美元（Forge 二级市场口径）",tf:"≈2.82 亿美元（约 20 亿元）",tfv:20,
+ u:[["BRINC官方","https://brincdrones.com/news/brinc-raises-125m-to-put-a-911-response-drone-on-every-police-and-fire-station-roof/"],["福布斯","https://www.forbes.com/sites/zoyahasan/2025/12/03/this-25-year-old-founder-wants-to-kick-chinese-drones-out-of-american-skies/"]]},
+{n:"Cresta",en:"—",g:"T5",s:"软件/AI",mat:4,c:"美国·旧金山",y:"2017-10",stg:"多轮",lvl:"多源",cred:"边缘（履历单源）",
+ f:"Tim Shi（施天麟，联创/CTO）",d:"DJI Research 深度学习研究员（OpenAI 之前；履历来自 LinkedIn/Clay，单一来源）",
+ p:"企业 AI：联络中心实时辅助坐席平台",
+ fu:["多轮 ｜ 红杉、Greylock、a16z、Coatue 等（2021 年 D 轮后无新披露）"],
+ v:"≈16 亿美元（2021）",tf:"未加总（多轮）",tfv:-1,
+ u:[["Clay档案","https://www.clay.com/dossier/cresta-cto"]]},
+{n:"Recursive Superintelligence",en:"RSI",g:"T5",s:"软件/AI",mat:4,c:"英国伦敦/旧金山",y:"2026",stg:"多轮",lvl:"多源",cred:"边缘（履历单源）",
+ f:"Tim Shi（与 Richard Socher 共同领导）",d:"同 Tim Shi（DJI Research 出身，履历单源）；此前为 Cresta 联创/CTO",
+ p:"自我改进 AI/科研自动化（「把算力变成知识」）",
+ fu:["首笔 · 2026 年初 · 5 亿美元 ｜ 成立 4 个月","新一轮 · 2026-05 · 6.5 亿美元+ ｜ GV、Greycroft 领投，NVIDIA 参投"],
+ v:"46.5 亿美元",tf:"≈11.5 亿美元（约 83 亿元）",tfv:83,
+ u:[["Sifted","https://sifted.eu/articles/recursive-superintelligence-500m"]]},
+{n:"R-Zero",en:"R-Zero Systems",g:"T5",s:"传感器/零部件",mat:4,c:"美国·盐湖城",y:"2020",stg:"C轮",lvl:"多源",cred:"边缘",
+ f:"Eli Harris（联创；EcoFlow 正浩联创/前 CEO）",d:"曾任职 DJI（职务未披露；DJI+FLIR 背景，见 EcoFlow 团队介绍与 Tracxn 档案）",
+ p:"智能楼宇：医院级 UV-C 空气消毒+楼宇传感 IoT 平台（Arc/Beam/Vive）",
+ fu:["Series C · 2023-02 · 1.05 亿美元 ｜ BMO、高通创投、Upfront、DBL、John Doerr（累计约 1.7 亿美元）"],
+ v:"≈6.25 亿美元（Dealroom）",tf:"≈1.7 亿美元（约 12 亿元）",tfv:12,
+ u:[["PR Newswire","https://www.prnewswire.com/news-releases/r-zero-raises-105-million-series-c-to-improve-the-indoor-air-we-breathe-301748379.html"]]},
+{n:"Hangar Technology",en:"Hangar",g:"T5",s:"无人机/低空",mat:1,c:"美国·奥斯汀",y:"2016",stg:"天使轮",lvl:"少量报道",cred:"确认（北美分公司联创）",
+ f:"Colin Guinn",d:"DJI 北美分公司联合创始人/CEO（2011 年与汪滔共同创立；2013 年离职后与大疆互诉）——特例：北美分公司而非深圳总部",
+ p:"企业级无人机数据平台（自主飞行数据采集与分析；2016 后无公开进展）",
+ fu:["首轮融资 · 2016-10 · 650 万美元 ｜ 未详"],
+ v:"—",tf:"≈650 万美元（约 0.47 亿元）",tfv:0.47,
+ u:[["DroneLife","https://dronelife.com/2016/10/24/former-3dr-hotshot-colin-guinn-founds-drone-startup-hangar-6-5-mill-funding/"]]},
+{n:"Fairmart",en:"Fairmart",g:"T5",s:"软件/AI",mat:1,c:"新加坡",y:"2020-11",stg:"天使轮",lvl:"少量报道",cred:"确认",
+ f:"Jan Gasparic（与 Daniil Moskovtsov 在 Entrepreneur First 相识）",d:"DJI 企业合作负责人/战略合作伙伴总监（Head of Enterprise Partnerships，2016-2019）",
+ p:"零售科技 IoT：为实体小店配智能扫描设备，店内商品可被互联网搜索引流",
+ fu:["累计约 150 万美元 ｜ Quest Ventures 等"],
+ v:"—",tf:"≈150 万美元",tfv:0.11,
+ u:[["Fairmart官网","https://www.fairmart.app/about-us"]]},
+{n:"OPUS",en:"Feelopus",g:"T5",s:"消费硬件",mat:1,c:"美国·奥斯汀",y:"2019",stg:"天使轮",lvl:"少量报道",cred:"存疑",
+ f:"Adam Schlender（联创/CXO）",d:"DJI 市场总监（履历仅第三方档案站，单一来源）",
+ p:"健康科技：1999 美元声波疗愈床 SoundBed 及「情绪健身」平台（2025 年末传已倒闭）",
+ fu:["累计约 618 万美元 ｜ 未详"],
+ v:"—",tf:"≈618 万美元",tfv:0.44,
+ u:[["PR Newswire","https://www.prnewswire.com/news-releases/introducing-innovative-mental-wellness-platform-opus-launches-soundbed-with-unrivaled-design-and-technology-301311714.html"]]}
+,
+{n:"Amflow",en:"Amflow",g:"T2",s:"出行/载具",mat:4,c:"深圳",y:"2022 立项/2024 独立",stg:"无融资",lvl:"少量报道",cred:"确认（大疆分拆）",
+ f:"原大疆 E-Bike 团队（2022 年内部立项孵化，2024 年独立分拆——与卓驭同模式）",d:"大疆 E-Bike 整车品牌，已从大疆体系分拆独立（36氪独家专访，2026-08-28）",
+ p:"高端碳纤维电助力自行车：PL/TL Carbon（6499 欧元起），累计售出超 3 万辆",
+ fu:["体系内分拆，无公开融资 ｜ 大疆体系（累计销售 3 万+辆，对应营收约十数亿元）"],
+ v:"未披露",tf:"无公开融资（体系内）",tfv:-1,
+ u:[["36氪独家","https://36kr.com/p/3923367465266824"]]},
+{n:"Avinox",en:"Avinox",g:"T2",s:"出行/载具",mat:4,c:"深圳",y:"2024",stg:"无融资",lvl:"少量报道",cred:"确认（大疆分拆）",
+ f:"原大疆 E-Bike 团队",d:"大疆 E-Bike 电助力系统品牌，已从大疆拆分独立（同 Amflow）",
+ p:"E-bike 电助力驱动系统供应商：已服务 60 余家整车客户，目标行业第二",
+ fu:["体系内分拆，无公开融资 ｜ 大疆体系"],
+ v:"未披露",tf:"无公开融资（体系内）",tfv:-1,
+ u:[["36氪独家","https://36kr.com/p/3923367465266824"]]},
+{n:"芯雀科技",en:"—",g:"T4",s:"机器人/具身",mat:1,c:"—",y:"—",stg:"种子轮",lvl:"仅一条PR",cred:"确认",
+ f:"谢文麟",d:"大疆工作 10 年+（职务未披露；哈工大校友）",
+ p:"人形机器人/具身智能（攻关核心痛点，样机迭代与量产）",
+ fu:["种子轮 · 2026-08 · 数千万元 ｜ 多家产业资本（未具名）"],
+ v:"未披露",tf:"≈数千万元",tfv:0.4,
+ u:[["亿欧","https://www.iyiou.com/briefing/202608291932846"],["36氪快讯","https://www.36kr.com/newsflashes/3959172709481864"]]}
+
+];
+
+/* ===== 排序/筛选配置 ===== */
+const STG_ORDER={"无融资":0,"—":0,"未披露":1,"众筹":1,"获投未详":2,"种子轮":3,"天使轮":4,"天使+轮":5,"Pre-A轮":6,"Pre-A+轮":7,"A轮":8,"A+轮":8.5,"B轮":9,"B+轮":9.5,"战略投资":9,"C轮":10,"B轮+":9.5,"多轮":10,"Pre-IPO":11,"港股递表":11.5,"IPO辅导":11.5,"已上市":12};
+const STG_GROUPS=["全部","无融资/众筹/未详","种子轮","天使轮/天使+","Pre-A轮","A轮及以上","IPO 通道/已上市"];
+const stgGroupOf=s=>{
+  if(["无融资","未披露","众筹","获投未详","—"].includes(s))return "无融资/众筹/未详";
+  if(s==="种子轮")return "种子轮";
+  if(["天使轮","天使+轮"].includes(s))return "天使轮/天使+";
+  if(["Pre-A轮","Pre-A+轮"].includes(s))return "Pre-A轮";
+  if(["A轮","A+轮","B轮","B+轮","B轮+","C轮","战略投资","多轮"].includes(s))return "A轮及以上";
+  return "IPO 通道/已上市";
+};
+const GRP_LABEL={"T0":"T0 已上市","T1":"T1 IPO通道/50亿+","T2":"T2 准独角兽/成长期","T3":"T3 A轮/Pre-A成长期","T4":"T4 种子/天使极早期","T5":"T5 边缘/存疑"};
+const GRP_ORDER={"T0":0,"T1":1,"T2":2,"T3":3,"T4":4,"T5":5};
+const LVL_W={"多源":3,"少量报道":2,"仅一条PR":1};
+const SECTORS=["全部","机器人/具身","消费硬件","出行/载具","无人机/低空","影像/光学","制造工具","传感器/零部件","软件/AI","生物医疗"];
+
+const COLS=[
+ {k:"idx",t:"#",sort:null},
+ {k:"g",t:"梯队",sort:(a,b)=>GRP_ORDER[a.g]-GRP_ORDER[b.g]},
+ {k:"n",t:"公司 / 品牌",sort:(a,b)=>a.n.localeCompare(b.n,"zh")},
+ {k:"f",t:"创始人（前大疆职务）",sort:(a,b)=>a.f.localeCompare(b.f,"zh")},
+ {k:"c",t:"城市",sort:(a,b)=>a.c.localeCompare(b.c,"zh")},
+ {k:"y",t:"成立",sort:(a,b)=>yearV(a)-yearV(b)},
+ {k:"s",t:"赛道",sort:(a,b)=>a.s.localeCompare(b.s,"zh")},
+ {k:"p",t:"产品与方向",sort:null},
+ {k:"fu",t:"融资历程（轮次 · 时间 · 金额 ｜ 投资方）",sort:(a,b)=>STG_ORDER[a.stg]-STG_ORDER[b.stg]},
+ {k:"stg",t:"当前阶段",sort:(a,b)=>STG_ORDER[a.stg]-STG_ORDER[b.stg]},
+ {k:"tf",t:"累计总融资额",sort:(a,b)=>((a.tfv===undefined||a.tfv===null?-1:a.tfv)-(b.tfv===undefined||b.tfv===null?-1:b.tfv))},
+ {k:"v",t:"估值",sort:(a,b)=>valV(a)-valV(b)},
+ {k:"lvl",t:"信息量级",sort:(a,b)=>LVL_W[a.lvl]-LVL_W[b.lvl]},
+ {k:"u",t:"来源",sort:null}
+];
+function yearV(r){const m=String(r.y).match(/\d{4}/);return m?+m[0]:9999;}
+function valV(r){
+  const s=String(r.v||"");const m=s.match(/([\d.]+)\s*(亿美元|亿元|万美|亿|万)/);
+  if(!m)return -1;let x=parseFloat(m[1]);const u=m[2];
+  if(u.includes("万"))x*=1e4;else x*=1e8;
+  if(u.includes("美"))x*=7.2;return x;
+}
+const defaultCmp=(a,b)=>GRP_ORDER[a.g]-GRP_ORDER[b.g]||b.mat-a.mat||LVL_W[b.lvl]-LVL_W[a.lvl]||STG_ORDER[b.stg]-STG_ORDER[a.stg]||a.n.localeCompare(b.n,"zh");
+
+let state={sec:"全部",stg:"全部",grp:"全部",kw:"",sortKey:null,sortDir:-1};
+const matches=r=>{
+  if(state.sec!=="全部"&&r.s!==state.sec)return false;
+  if(state.stg!=="全部"&&stgGroupOf(r.stg)!==state.stg)return false;
+  if(state.grp!=="全部"&&r.g!==state.grp)return false;
+  if(!state.kw)return true;
+  const blob=(r.n+r.en+r.f+r.d+r.c+r.y+r.s+r.p+r.stg+r.v+r.fu.join(" ")).toLowerCase();
+  return blob.includes(state.kw);
+};
+
+const tbody=document.getElementById("tbody"),thr=document.getElementById("thr");
+const lvlCls={"仅一条PR":"t-pr","少量报道":"t-few","多源":"t-multi"};
+const grpTag={"T0":"t0","T1":"t1","T2":"t2","T3":"t3","T4":"t4","T5":"t5"};
+function cell(k,r,i){
+  switch(k){
+    case "idx":return `<td class="idx">${i+1}</td>`;
+    case "g":return `<td><span class="tag ${grpTag[r.g]}">${r.g}</span></td>`;
+    case "n":return `<td class="co">${r.n}<span class="en">${r.en}</span></td>`;
+    case "f":return `<td class="funder"><b>${r.f}</b><span class="dji">${r.d}</span></td>`;
+    case "c":return `<td>${r.c}</td>`;
+    case "y":return `<td>${r.y}</td>`;
+    case "s":return `<td><span class="tag" style="background:#eef3ff;color:#2f6bff">${r.s}</span></td>`;
+    case "p":return `<td>${r.p}</td>`;
+    case "fu":return `<td>${r.fu.map(x=>`<span class="fu-l">${x}</span>`).join("")}</td>`;
+    case "stg":return `<td class="stg">${r.stg}</td>`;
+    case "tf":return `<td>${r.tf}</td>`;
+    case "v":return `<td>${r.v}</td>`;
+    case "lvl":return `<td><span class="tag ${lvlCls[r.lvl]}">${r.lvl}</span><span class="tag ${r.cred.startsWith("确认")?"t-ok":"t-risk"}">${r.cred}</span></td>`;
+    case "u":return `<td class="src">${r.u.map(x=>`<a href="${x[1]}" target="_blank">${x[0]}</a>`).join("")}</td>`;
+  }
+}
+let dragIdx=-1,dragMoved=false;
+try{
+  const saved=JSON.parse(localStorage.getItem("djiCols")||"null");
+  if(Array.isArray(saved)){
+    const map=new Map(COLS.map(c=>[c.k,c]));
+    const nx=saved.filter(k=>map.has(k)).map(k=>map.get(k));
+    COLS.forEach(c=>{if(!nx.includes(c))nx.push(c);});
+    COLS.length=0;COLS.push(...nx);
+  }
+}catch(_){}
+function buildHead(){
+  thr.innerHTML="";
+  COLS.forEach((c,i)=>{
+    const th=document.createElement("th");
+    th.innerHTML=c.t+(c.sort?'<span class="arr"></span>':"");
+    th.draggable=true;
+    th.title=(c.sort?"点击排序；":"")+"按住拖拽可调整列顺序";
+    if(c.sort){
+      th.onclick=()=>{
+        if(dragMoved)return;
+        if(state.sortKey===c.k)state.sortDir*=-1;else{state.sortKey=c.k;state.sortDir=-1;}
+        render();
+      };
+    }
+    th.addEventListener("dragstart",e=>{dragIdx=i;dragMoved=false;try{e.dataTransfer.setData("text/plain",String(i));e.dataTransfer.effectAllowed="move";}catch(_){}});
+    th.addEventListener("dragend",()=>{dragIdx=-1;[...thr.children].forEach(x=>x.classList.remove("over"));setTimeout(()=>{dragMoved=false;},80);});
+    th.addEventListener("dragover",e=>{e.preventDefault();th.classList.add("over");});
+    th.addEventListener("dragleave",()=>th.classList.remove("over"));
+    th.addEventListener("drop",e=>{
+      e.preventDefault();dragMoved=true;th.classList.remove("over");
+      const from=dragIdx,to=i;
+      if(from<0||from===to)return;
+      const [m]=COLS.splice(from,1);COLS.splice(to,0,m);
+      try{localStorage.setItem("djiCols",JSON.stringify(COLS.map(c=>c.k)));}catch(_){}
+      buildHead();render();
+    });
+    thr.appendChild(th);
+  });
+}
+function render(){
+  [...thr.children].forEach((th,i)=>{
+    const c=COLS[i];const arr=th.querySelector(".arr");
+    if(arr)arr.textContent=state.sortKey===c.k?(state.sortDir<0?"▼":"▲"):"⇅";
+  });
+  let rows=D.filter(matches);
+  rows.sort(state.sortKey?((a,b)=>{const c=COLS.find(x=>x.k===state.sortKey).sort;return state.sortDir*c(a,b)||defaultCmp(a,b);}):defaultCmp);
+  tbody.innerHTML=rows.map((r,i)=>`<tr>${COLS.map(c=>cell(c.k,r,i)).join("")}</tr>`).join("");
+  document.getElementById("count").textContent=`${rows.length} / ${D.length} 家`;
+  document.getElementById("empty").style.display=rows.length?"none":"block";
+}
+function makeChips(id,items,cb){
+  const box=document.getElementById(id);
+  items.forEach(it=>{
+    const c=document.createElement("span");c.className="chip"+(it==="全部"?" on":"");c.textContent=it;
+    c.onclick=()=>{cb(it);[...box.children].forEach(x=>x.classList.remove("on"));c.classList.add("on");render();};
+    box.appendChild(c);
+  });
+}
+makeChips("c-sec",SECTORS,v=>state.sec=v);
+makeChips("c-stg",STG_GROUPS,v=>state.stg=v);
+makeChips("c-grp",["全部","T0","T1","T2","T3","T4","T5"],v=>state.grp=v);
+document.getElementById("q").addEventListener("input",e=>{state.kw=e.target.value.trim().toLowerCase();render();});
+buildHead();
+render();
+</script>
+</body>
+</html>
