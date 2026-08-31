@@ -6,6 +6,8 @@ permalink: /knowledge/
 knowledge_page: true
 knowledge_search: true
 ---
+{% assign zh_posts = site.posts | where_exp: 'p', 'p.lang != "en"' %}
+{% assign en_posts = site.posts | where: 'lang', 'en' %}
 <section class="shell kb-home">
   <header class="kb-hero">
     <div>
@@ -13,42 +15,48 @@ knowledge_search: true
       <h1>研究积累，<br>从一个问题开始读。</h1>
       <p class="kb-lead">AI 如何变成产品、系统与商业？这里把项目研究与已发表文章重新连接，保留判断，也保留改变判断的依据。</p>
     </div>
-    <aside class="kb-intro-aside" aria-label="阅读说明">
-      <p class="kb-edition">第一版 · 2026.08.31</p>
-      <p>知识单元持续修订，文章展开论证，项目用于检验。目录按问题组织，不按资料来源分箱。</p>
-      <a href="{{ '/knowledge/method/' | relative_url }}">阅读与引用说明 →</a>
-      <a href="{{ '/knowledge/data/' | relative_url }}">研究数据与边界 →</a>
-      <a href="{{ '/knowledge/changes/' | relative_url }}">本次整理做了什么 →</a>
+    <aside class="kb-intro-aside" aria-label="知识库的构成">
+      <p class="kb-edition">三类内容，各司其职</p>
+      <ul class="kb-type-list">
+        <li><strong>知识单元<em>{{ site.knowledge.size }}</em></strong><span>当前判断 · 持续修订</span></li>
+        <li><strong>文章<em>{{ zh_posts.size }}{% if en_posts.size > 0 %}+{{ en_posts.size }} 译文{% endif %}</em></strong><span>完整论证 · 保留发表语境</span></li>
+        <li><strong>项目<em>{{ site.data.knowledge_projects.size }}</em></strong><span>开源实现 · 检验判断</span></li>
+      </ul>
+      <a href="{{ '/knowledge/method/' | relative_url }}">如何阅读与引用 →</a>
     </aside>
   </header>
 
   <section class="kb-search-section" aria-labelledby="search-heading">
     <h2 id="search-heading">找一个问题</h2>
-    <form class="kb-search-form" role="search" data-kb-search hidden data-index-url="{{ '/knowledge/index.json' | relative_url }}">
-      <div class="kb-search-input"><label for="kb-query">搜索知识、文章与项目</label><input id="kb-query" type="search" name="q" maxlength="200" placeholder="例如：第二次修改、需求证据、本地 AI" autocomplete="off" aria-describedby="kb-search-help"></div>
-      <div><label for="kb-topic-filter">主题</label><select id="kb-topic-filter" name="topic"><option value="">全部主题</option>{% for topic in site.data.knowledge_topics %}<option value="{{ topic.id }}">{{ topic.title | escape }}</option>{% endfor %}</select></div>
-      <div><label for="kb-kind-filter">内容类型</label><select id="kb-kind-filter" name="kind"><option value="">全部类型</option><option value="knowledge">知识单元</option><option value="article">文章</option><option value="project">开源项目</option></select></div>
-      <button type="reset">清空</button>
-      <p id="kb-search-help">全文检索仅在浏览器本地运行，不上传查询。英文译文单独标记。</p>
+    <form class="kb-search-form" role="search" data-kb-search data-kb-pending data-index-url="{{ '/knowledge/index.json' | relative_url }}">
+      <div class="kb-search-input"><label for="kb-query">搜索知识、文章与项目</label><input id="kb-query" type="search" name="q" maxlength="200" placeholder="例如：第二次修改、需求证据、本地 AI" autocomplete="off" aria-describedby="kb-search-help" disabled></div>
+      <div><label for="kb-topic-filter">主题</label><select id="kb-topic-filter" name="topic" disabled><option value="">全部主题</option>{% for topic in site.data.knowledge_topics %}<option value="{{ topic.id }}">{{ topic.title | escape }}</option>{% endfor %}</select></div>
+      <div><label for="kb-kind-filter">内容类型</label><select id="kb-kind-filter" name="kind" disabled><option value="">全部类型</option><option value="knowledge">知识单元</option><option value="article">文章</option><option value="project">开源项目</option></select></div>
+      <button type="reset" disabled>清空</button>
+      <p id="kb-search-help">全文检索在浏览器本地运行，不上传查询，覆盖三类公开内容。</p>
     </form>
-    <p class="kb-search-status" data-kb-status role="status" aria-live="polite"></p>
-    <noscript><p>未开启 JavaScript。仍可通过下方六个主题与文章目录阅读全部内容。</p></noscript>
-    <section class="kb-search-results" data-kb-results hidden aria-label="检索结果"><ol data-kb-result-list></ol></section>
-    <nav class="kb-paths" aria-label="按问题开始阅读">
-      <a href="{{ '/knowledge/software-capabilities/' | relative_url }}">Agent 怎样改变软件？</a>
-      <a href="{{ '/knowledge/local-ai/' | relative_url }}">新硬件凭什么值得买？</a>
-      <a href="{{ '/knowledge/demand-evidence/' | relative_url }}">这算不算需求证据？</a>
-    </nav>
+    <p class="kb-search-status" data-kb-status role="status" aria-live="polite">正在读取公开检索索引…</p>
+    <noscript><p>未开启 JavaScript：全文检索不可用，但下方主题目录与完整目录仍可浏览全部内容。</p></noscript>
+    <section class="kb-search-results" data-kb-results hidden aria-label="检索结果"><div data-kb-result-list></div></section>
   </section>
 
   <section class="kb-themes" aria-labelledby="themes-heading">
-    <div class="kb-section-heading"><h2 id="themes-heading">六个长期主题</h2><span>{{ site.knowledge.size }} 个知识单元 · 相互连接</span></div>
-    {% for topic in site.data.knowledge_topics %}{% assign notes = site.knowledge | where: 'topic', topic.id | sort: 'order' %}
-    <section class="kb-theme-row" aria-labelledby="theme-{{ topic.id }}">
-      <div class="kb-theme-label"><span class="kb-order" aria-hidden="true">0{{ forloop.index }}</span><h3 id="theme-{{ topic.id }}"><a href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">{{ topic.title | escape }}</a></h3><p>{{ topic.summary | escape }}</p></div>
-      <ul>{% for note in notes %}<li><a href="{{ note.url | relative_url }}">{{ note.title | escape }}<span aria-hidden="true">↗</span></a></li>{% endfor %}</ul>
-    </section>
-    {% endfor %}
+    <div class="kb-section-heading"><h2 id="themes-heading">六个长期主题</h2><span>{{ site.knowledge.size }} 个知识单元 · 按问题组织</span></div>
+    <ol class="kb-theme-catalog">
+      {% for topic in site.data.knowledge_topics %}{% assign notes = site.knowledge | where: 'topic', topic.id %}
+      {% assign start_note = site.knowledge | where: 'slug', topic.start | first %}
+      <li class="kb-theme-card">
+        <div class="kb-theme-main">
+          <h3><a href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">{{ topic.title | escape }}</a></h3>
+          <p class="kb-theme-question">{{ topic.question | escape }}</p>
+        </div>
+        <div class="kb-theme-actions">
+          <span class="kb-theme-count">{{ notes.size }} 个知识单元</span>
+          {% if start_note %}<a href="{{ start_note.url | relative_url }}">从《{{ start_note.title | escape }}》读起 →</a>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
   </section>
 
   <section class="kb-new-essays" aria-labelledby="new-essays-heading">
@@ -57,7 +65,7 @@ knowledge_search: true
     {% assign featured_count = 0 %}
     {% for article in ordered_posts %}{% if article.knowledge_units and featured_count < 3 %}{% assign featured_count = featured_count | plus: 1 %}
       <article class="kb-essay-row"><time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time><div><h3><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h3><p>{{ article.description | escape }}</p></div></article>
-    {% endif %}{% endfor %}
+      {% endif %}{% endfor %}
   </section>
 
   <section class="kb-project-section" aria-labelledby="projects-heading">
@@ -66,8 +74,16 @@ knowledge_search: true
   </section>
 
   <details class="kb-archive">
-    <summary>完整文章目录（{{ site.posts.size }} 页，含英文译文）</summary>
+    <summary>完整目录（{{ site.knowledge.size }} 个知识单元 · {{ site.posts.size }} 页文章 · 无脚本可用）</summary>
+    {% for topic in site.data.knowledge_topics %}{% assign notes = site.knowledge | where: 'topic', topic.id | sort: 'order' %}
+    <h3>{{ topic.title | escape }}</h3>
+    <ul>{% for note in notes %}<li><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></li>{% endfor %}</ul>
+    {% endfor %}
+    <h3>文章（含英文译文）</h3>
     <ul>{% for article in ordered_posts %}<li><time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>{% if article.lang == 'en' %}<span lang="en">EN</span>{% endif %}</li>{% endfor %}</ul>
   </details>
-  <footer class="kb-library-footer"><a href="{{ '/knowledge/sources/' | relative_url }}">公开来源台账</a><a href="{{ '/knowledge/index.json' | relative_url }}">机器可读索引</a><a href="{{ '/llms.txt' | relative_url }}">Agent 阅读入口</a><a href="{{ '/research/' | relative_url }}">长期研究与原有专题</a></footer>
+  <footer class="kb-library-footer">
+    <div><a href="{{ '/knowledge/method/' | relative_url }}">阅读与引用说明</a><a href="{{ '/knowledge/sources/' | relative_url }}">公开来源台账</a><a href="{{ '/knowledge/data/' | relative_url }}">研究数据与边界</a><a href="{{ '/knowledge/changes/' | relative_url }}">修订记录</a></div>
+    <div><a href="{{ '/knowledge/index.json' | relative_url }}">机器可读索引</a><a href="{{ '/llms.txt' | relative_url }}">Agent 阅读入口</a><a href="{{ '/research/' | relative_url }}">长期研究与原有专题</a></div>
+  </footer>
 </section>

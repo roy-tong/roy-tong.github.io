@@ -161,7 +161,8 @@ home = Page(SITE / "knowledge/index.html")
 for row in list(notes.values()) + list(articles.values()):
     check(row["url"] in home.links, "Missing static/no-script directory link: " + row["url"])
 check("<noscript>" in home.text, "No-script guidance missing.")
-check('data-kb-search hidden' in home.text, "Search must not appear interactive before initialization.")
+check('data-kb-pending' in home.text and 'disabled' in home.text,
+      "Search must not appear interactive before initialization.")
 check('credentials: \'omit\'' in (ROOT / "assets/js/knowledge-search.js").read_text(), "Search must not send credentials.")
 
 # Scan only the newly distributed rendered surfaces; print paths, never matches.

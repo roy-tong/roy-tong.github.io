@@ -5,7 +5,7 @@ order: 30
 reviewed_at: 2026-08-31
 summary: "把创业名单、组织经验和产业结果分开，避免由少数成功公司反推人才流动的原因与成功率。"
 related: ["hardware-innovation","robot-industry","evidence-maintenance"]
-related_posts: ["/notes/hardware-innovation-organization-management/"]
+related_posts: ["/notes/hardware-innovation-organization-management/","/notes/dji-talent-whale-fall/"]
 source_ids: []
 ---
 

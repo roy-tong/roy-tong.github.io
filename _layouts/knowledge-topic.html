@@ -5,7 +5,9 @@ layout: default
 {% assign notes = site.knowledge | where: 'topic', page.topic | sort: 'order' %}
 <section class="shell kb-topic-page">
   <header class="kb-topic-header">
-    <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">← 全部主题</a>
+    <nav class="kb-breadcrumb" aria-label="当前位置">
+      <a href="{{ '/knowledge/' | relative_url }}">知识库</a><span aria-hidden="true">/</span><span aria-current="page">{{ topic.title | escape }}</span>
+    </nav>
     <p class="eyebrow">RESEARCH THEME · {{ notes.size }} 个知识单元</p>
     <h1>{{ topic.title | escape }}</h1>
     <p class="kb-summary">{{ topic.question | escape }}</p>
@@ -13,8 +15,8 @@ layout: default
   </header>
   <ol class="kb-note-list">
     {% for note in notes %}
-    <li><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
-      <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h2>
+    <li{% if note.slug == topic.start %} class="kb-note-start"{% endif %}><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
+      <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>{% if note.slug == topic.start %}<span class="kb-start-tag">从这里开始</span>{% endif %}</h2>
       <p>{{ note.summary | escape }}</p>
     </div></li>
     {% endfor %}

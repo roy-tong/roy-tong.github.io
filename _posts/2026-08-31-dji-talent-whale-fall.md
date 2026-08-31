@@ -8,6 +8,8 @@ reading_time: 14
 tags: ["硬件","大疆","创业生态","组织"]
 description: "宇树上市首日市值 3417 亿，创始人王兴兴在大疆只待过两个月。两个月解释不了宇树，但沿着「前大疆」这条线往下找，另一群人更值得看：他们负责过电池、云台、整条产品线，后来把新的事业放到了公司之外。本文基于 90 条公开线索的逐项审计（63 条核心样本），讨论大疆的竞争处境、激励与组织成本，以及一场不必等到公司衰退就已经发生的鲸落。"
 permalink: /notes/dji-talent-whale-fall/
+knowledge_topic: organization
+knowledge_units: ["talent-and-industry"]
 attachments:
   - name: "大疆系创业公司全景宽表（90 条 · 可筛选排序 · 含来源链接）"
     url: "/assets/downloads/dji-alumni-map.html"
