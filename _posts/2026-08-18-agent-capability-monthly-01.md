@@ -107,7 +107,7 @@ description: Agent Capability Monthly 创刊号。固定八段结构：新能力
 
 基线判断保持不变，并增加一条：
 
-- 不变：measurement 先于 payment；五段链（Reach → Choice → Use → Utility → Value）是不可再压缩的计量粒度；证据分级（E0–E5）是可验证性的最小实现。
+- 不变：measurement 先于 payment；五段链（Reach → Choice → Use → Utility → Value）与证据分级（E0–E5）仍是不可再压缩的计量粒度与可验证性实现。
 - 新增：支付商亲自做 metering 不是威胁，而是验证——它把「计量」从学术主张变成了商业基础设施的组成部分。AgentMeasure 的定位应从「提出计量语言」推进到「成为跨厂商口径的裁判与注册表」：与 ACP/AP2/x402 并存，但不属于任何一家。
 - 下一步（8–9 月）：Capability Index 扩到 200+ 条并开放 provider 认领；发布 Measurement Report #001（第一个外部 Provider 数据）；把本刊做成固定预期——每月同日更新。
 

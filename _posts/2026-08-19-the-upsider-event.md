@@ -4,7 +4,7 @@ title: "The Upsider 事件：Agent 第一次作为经济主体收付了钱"
 subtitle: "一条链上转账，把 Agent 经济劈成两半：结算已经有了，计量还缺着。"
 date: 2026-08-18 20:30:00 +0800
 permalink: /notes/the-upsider-event/
-reading_time: 7
+reading_time: 4
 tags:
   - Agent
   - Capability Economy

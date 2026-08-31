@@ -8,7 +8,7 @@ date: 2026-08-04 20:00:00 +0800
 updated: 2026-08-27 08:50:00 +0800
 last_modified_at: 2026-08-27 08:50:00 +0800
 tags: [用户研究, 产品方法, 数据挖掘, 社媒调研, AI]
-reading_time: 34
+reading_time: 24
 excerpt: "从一个具体产品决定出发，设计五类证据来源，把每条材料整理成用户、场景、任务、替代方案、摩擦与后果，再用问题、方案、商业行为和反证四条链控制结论。"
 excerpt_en: "Start from a product decision, design five evidence roles, reconstruct each record as user, scene, task, substitute, friction and consequence, then gate conclusions with problem, solution, commercial behavior and counter-evidence."
 ---
@@ -332,6 +332,8 @@ Amazon Reviews 2023 可以用来开发历史评论解析、商品变体采样和
 - 预先记录接受条件、拒绝原因和继续使用意愿
 - 若多数目标任务仍需拿起手机，且出现明确 E3 接受，再进入短期现场试用
 ```
+
+这里的 `8—12 次` 是示例规模，用于快速发现接受条件和明显拒绝原因。
 
 ## 第八步：机器扩大阅读范围，人负责校准关键判断
 
