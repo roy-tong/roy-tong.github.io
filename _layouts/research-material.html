@@ -1,0 +1,58 @@
+---
+layout: default
+---
+{% assign material_type = site.data.research_material_types | where: 'id', page.resource_type | first %}
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="当前位置"><a href="{{ '/knowledge/' | relative_url }}">研究资料库</a><span aria-hidden="true">/</span><a href="{{ '/knowledge/library/' | relative_url }}">全部资料</a><span aria-hidden="true">/</span><span aria-current="page">{{ material_type.label }}</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">{{ material_type.label }} · {{ page.access | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="kb-summary">{{ page.summary | escape }}</p>
+    <dl class="kb-resource-facts">
+      <div><dt>资料版本</dt><dd>{{ page.version | escape }}</dd></div>
+      <div><dt>最近复核</dt><dd><time datetime="{{ page.reviewed_at | date: '%Y-%m-%d' }}">{{ page.reviewed_at | date: '%Y.%m.%d' }}</time></dd></div>
+      <div><dt>来源</dt><dd>{{ page.source_label | escape }}</dd></div>
+      <div><dt>复核状态</dt><dd>{{ page.review_status | escape }}</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="阅读与下载">
+      {% for download in page.downloads %}<a class="kb-resource-action{% if forloop.first %} kb-resource-action-primary{% endif %}" href="{{ download.url | relative_url }}"{% if download.format contains 'JSON' or download.format contains 'CSV' %} download{% endif %}>{{ download.label | escape }} <span aria-hidden="true">↗</span><small>{{ download.format | escape }}</small></a>{% endfor %}
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">使用边界</p><h2 id="material-use-heading">使用前先看</h2></div>
+    <div>
+      <article><span>适合回答</span><p>{{ page.use_for | escape }}</p></article>
+      <article><span>公开内容</span><p>{{ page.scope_note | escape }}</p></article>
+      <article><span>不能外推</span><p>{{ page.boundary | escape }}</p></article>
+    </div>
+  </section>
+
+  {% if page.study_id %}{% assign study = site.data.research_corpora_20260831.studies | where: 'id', page.study_id | first %}
+  <section class="kb-dataset-preview" aria-labelledby="data-preview-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">公开汇总</p><h2 id="data-preview-heading">数据概览</h2></div>
+    <p>统计单位是记录，不是人数或已验证需求。以下字段来自 {{ site.data.research_corpora_20260831.reviewed_at }} 的公开汇总。</p>
+    <dl class="kb-data-metrics">
+      <div><dt>记录</dt><dd>{{ page.record_count_label | default: study.record_count }}</dd></div>
+      <div><dt>来源类型</dt><dd>{{ study.platform_counts.size }}</dd></div>
+      <div><dt>时间字段</dt><dd>{{ study.first_month }}<br>— {{ study.last_month }}</dd></div>
+    </dl>
+    <div class="kb-data-detail-grid">
+      <div><h3>主要来源</h3><ol>{% for source in page.top_sources %}<li><span>{{ source.label | escape }}</span><strong>{{ source.records }}</strong><em>{{ source.share }}%</em></li>{% endfor %}</ol></div>
+      <div><h3>结构检查</h3><dl>
+        <div><dt>重复记录 ID</dt><dd>{{ study.duplicate_record_ids }}</dd></div>
+        <div><dt>无效 JSON 行</dt><dd>{{ study.invalid_json_lines }}</dd></div>
+        <div><dt>缺少既有文本哈希</dt><dd>{{ study.missing_stored_text_hashes }}</dd></div>
+        <div><dt>逐条语义复核</dt><dd>未进行</dd></div>
+      </dl></div>
+    </div>
+    <p class="kb-data-warning">最大来源占 {{ study.largest_source_share_pct | round: 2 }}%。这是来源集中度，不是市场份额；机器候选标签也不是人工确认的需求。</p>
+    <a class="kb-text-link" href="{{ '/knowledge/data/' | relative_url }}">查看三组数据的方法、交叉重复与完整边界 →</a>
+  </section>{% endif %}
+
+  <div class="prose kb-material-body">{{ content }}</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">这份资料属于哪些研究</h2><ul>{% for collection in site.data.research_collections %}{% if collection.materials contains page.slug %}<li><a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection.title | escape }}</a><p>{{ collection.question | escape }}</p></li>{% endif %}{% endfor %}</ul></section>
+  <p class="kb-citation">引用时请注明 Roy.Tong、标题、资料版本和本页地址。公开阅读不扩大第三方内容的再分发权。<a href="{{ '/knowledge/method/' | relative_url }}">查看收录与引用规则</a></p>
+</article>

@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /knowledge/data/home-robots-summary.json
+study_id: home-robots-2023
+---
+{% include corpus-download.json %}

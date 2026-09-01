@@ -1,0 +1,257 @@
+[
+  {
+    "id": "embodied-industry",
+    "title": "具身智能产业",
+    "summary": "从任务和交付阶段出发，再分别理解本体、技术、公司与产品。",
+    "coverage": "已有：2026 夏季版入门地图的 12 页试读，产业、灵巧操作与世界模型三份研究笔记。",
+    "notes": [
+      "robot-industry",
+      "manipulation-data",
+      "world-models"
+    ],
+    "materials": [
+      "embodied-field-guide"
+    ],
+    "articles": [
+      "/notes/agent-left-embodied-right/",
+      "/notes/waic-from-models-to-systems/"
+    ],
+    "section": "research",
+    "status": "持续更新",
+    "updated_at": "2026-08-31",
+    "question": "怎样把机器人演示、技术路线和真实交付放进同一张产业地图？",
+    "current_answer": "演示、试点和持续交付是三种不同证据。产业判断应先说明机器人替谁完成什么任务，再比较形态、技术路线和公司位置。",
+    "gap": "待补：完整版公开范围、公司状态复核，以及技术路线与真实部署案例的持续更新。",
+    "findings": [
+      "同一项技术在研究原型、试点设备和规模交付中承担的证明责任不同。",
+      "自由度、模型规模和数据量不能越过任务成功率与交付条件，直接证明产品价值。"
+    ],
+    "lead_material": "embodied-field-guide"
+  },
+  {
+    "id": "home-robots",
+    "title": "家庭机器人",
+    "summary": "把任务价值、现有替代方案和失败恢复放在一起判断。",
+    "coverage": "已有：一份任务与失败恢复笔记，以及 208,755 条开放场景记录的结构汇总。原始反馈未公开。",
+    "notes": [
+      "household-robots"
+    ],
+    "materials": [
+      "home-robots-corpus"
+    ],
+    "articles": [
+      "/notes/home-robots-recovery-burden/",
+      "/notes/home-robots-harder-richer/",
+      "/notes/robots-give-people-new-bodies/"
+    ],
+    "section": "research",
+    "status": "资料复核中",
+    "updated_at": "2026-08-31",
+    "question": "家庭机器人在什么任务上值得进入日常生活，失败后又由谁接管？",
+    "current_answer": "家庭任务是否成立，取决于节省的劳动是否大于部署、维护和救援成本。平台讨论能暴露任务线索，不能直接证明购买需求。",
+    "gap": "待补：按家庭角色和具体任务进行人工复核，并补充长期使用、接管频率和愿意付出成本的证据。",
+    "findings": [
+      "同一个家庭任务要同时记录执行者、受益者、接管者和维护者。",
+      "记录数不是人数，也不是独立需求；来源集中度必须与结论一起披露。"
+    ],
+    "lead_material": "home-robots-corpus"
+  },
+  {
+    "id": "ai-glasses",
+    "title": "AI 眼镜与空间交互",
+    "summary": "从使用时刻、身体负担和对象连续性判断新终端的必要性。",
+    "coverage": "已有：穿戴与空间交互两份笔记，以及 209,862 条开放场景记录的结构汇总。",
+    "notes": [
+      "wearables",
+      "spatial-computing"
+    ],
+    "materials": [
+      "ai-glasses-corpus"
+    ],
+    "articles": [
+      "/notes/ai-wearable-modalities-body-comfort/",
+      "/notes/spatial-computing-touch-moment/",
+      "/notes/scene-user-demand-evidence-research/"
+    ],
+    "section": "research",
+    "status": "资料复核中",
+    "updated_at": "2026-08-31",
+    "question": "哪些时刻值得让 AI 离开手机，进入身体和空间中的新设备？",
+    "current_answer": "新设备需要同时满足高频任务、身体可接受和现有设备不便完成三个条件。组合语料可以发现场景线索，不能代替真实行为与采用证据。",
+    "gap": "待补：按设备、角色和场景复核样本，并补充持续佩戴、实际行为和付费选择的证据。",
+    "findings": [
+      "功能清单不能替代可用时刻；输入输出条件与身体阻力决定设备能否长期存在。",
+      "历史文章的产品反馈子集与组合快照不是同一分母，数字不能直接互换。"
+    ],
+    "lead_material": "ai-glasses-corpus"
+  },
+  {
+    "id": "local-ai",
+    "title": "本地 AI 与个人算力",
+    "summary": "先明确任务、隐私和持续运行条件，再计算整套使用成本。",
+    "coverage": "已有：本地 AI 与 Agent 上下文两份笔记，以及 211,088 条相关记录的结构汇总。",
+    "notes": [
+      "local-ai",
+      "agent-context"
+    ],
+    "materials": [
+      "local-ai-corpus"
+    ],
+    "articles": [
+      "/notes/local-ai-box-task-economics/",
+      "/notes/agent-context-recommendation-after-rag/"
+    ],
+    "section": "research",
+    "status": "资料复核中",
+    "updated_at": "2026-08-31",
+    "question": "什么任务真的需要在本地运行，又该选择现有电脑、共享设备还是专用硬件？",
+    "current_answer": "先证明任务必须在本地持续发生，再比较性能、权限、维护和人工介入。现有电脑是默认替代方案，专用设备要证明完整工作流的增量价值。",
+    "gap": "待补：按实际工作负载比较设备，并补充非技术用户的安装、维护、失败恢复和长期使用证据。",
+    "findings": [
+      "离线运行模型不等于整个 Agent 工作流都不离开设备。",
+      "公开语料约九成来自 Reddit，适合发现问题，不代表总体市场分布。"
+    ],
+    "lead_material": "local-ai-corpus"
+  },
+  {
+    "id": "ai-video",
+    "title": "AI 视频与创作工具",
+    "summary": "把首轮生成与后续编辑分开，观察项目文件、局部修改和资产管理。",
+    "coverage": "已有：视频生产和可交互内容两份工作笔记。行业报告原稿尚未公开。",
+    "notes": [
+      "video-production",
+      "playable-content"
+    ],
+    "materials": [],
+    "articles": [
+      "/notes/ai-video-second-edit/",
+      "/notes/ai-native-basic-unit/",
+      "/notes/ai-apps-unbundled-before-agent-filled/"
+    ],
+    "section": "exploration",
+    "status": "主报告整理中",
+    "updated_at": "2026-08-31",
+    "question": "生成模型怎样进入可修改、可协作、可交付的专业视频工作流？",
+    "current_answer": "首轮生成解决的是素材起点，专业交付还需要稳定的局部修改、时间线控制、版本资产和协作接口。",
+    "gap": "待补：核对本地与飞书版本，完成产品和工作流事实检查，再确定主报告公开范围。",
+    "findings": [
+      "编辑者需要保留已确认的部分，只重做其余内容。",
+      "能生成连续画面不等于形成可持续交互的世界。"
+    ],
+    "lead_material": "video-production"
+  },
+  {
+    "id": "agent-systems",
+    "title": "Agent 系统与能力计量",
+    "summary": "拆开发现、选择、执行、结果消费与价值，建立可核对的计量层级。",
+    "coverage": "已有：AgentMeasure 白皮书全文，以及上下文、软件能力、计量和研究工作流四份笔记。",
+    "notes": [
+      "agent-context",
+      "software-capabilities",
+      "agent-measurement",
+      "research-workflows"
+    ],
+    "materials": [
+      "agent-measurement-paper"
+    ],
+    "articles": [
+      "/notes/agentmeasure-from-spec-to-evidence/",
+      "/notes/when-the-software-consumer-becomes-an-agent/",
+      "/notes/every-agent-usage-number-is-self-reported-zh/"
+    ],
+    "section": "research",
+    "status": "规范迭代中",
+    "updated_at": "2026-08-31",
+    "question": "Agent 真正使用软件时，应该记录哪些动作、结果和价值？",
+    "current_answer": "一次调用、一次任务、一次结果被使用和一次业务收益属于不同分母。运行时还要同时记录上下文、状态与权限，才能解释任务为什么成功或失败。",
+    "gap": "待补：真实任务基准、跨产品事件对照，以及规范字段与当前实现版本的持续校准。",
+    "findings": [
+      "工具调用成功只能证明动作发生，不能自动证明结果被采用或产生价值。",
+      "能力发现与执行权限必须分开记录，避免把可见能力误当作可用能力。"
+    ],
+    "lead_material": "agent-measurement-paper"
+  },
+  {
+    "id": "product-research",
+    "title": "产品研究与组织方法",
+    "summary": "把证据能支持的决定、责任主体和修订条件写清楚。",
+    "coverage": "已有：需求、替代方案、证据维护、硬件创新和组织责任五份方法笔记，以及公开来源索引。",
+    "notes": [
+      "demand-evidence",
+      "alternatives-entry",
+      "evidence-maintenance",
+      "hardware-innovation",
+      "organization-responsibility"
+    ],
+    "materials": [
+      "public-reading-sources"
+    ],
+    "articles": [
+      "/notes/scene-user-demand-evidence-research/",
+      "/notes/competitive-analysis-software-hardware/",
+      "/notes/hardware-innovation-organization-management/",
+      "/notes/appointed-manager-organizational-legitimacy/"
+    ],
+    "section": "method",
+    "status": "方法持续修订",
+    "updated_at": "2026-08-31",
+    "question": "怎样让需求、竞品、组织和版本证据真正支持下一步决定？",
+    "current_answer": "每条证据都应写清它支持什么决定、由谁负责，以及出现什么变化时需要重新核对。",
+    "gap": "待补：更多经过授权的真实案例，以及方法在不同项目中的使用记录和失败复盘。",
+    "findings": [
+      "一条反馈只能支持与其场景、角色和行为相匹配的决定。",
+      "版本、分母和公开边界必须成为研究产物的一部分。"
+    ],
+    "lead_material": "public-reading-sources"
+  },
+  {
+    "id": "digital-making",
+    "title": "桌面数字制造",
+    "summary": "把生成设计、制造过程和质检反馈连接成一条可复核链路。",
+    "coverage": "已有：一份桌面制造工作笔记。公司与设备比较表尚未完整归档。",
+    "notes": [
+      "desktop-manufacturing"
+    ],
+    "materials": [],
+    "articles": [
+      "/notes/competitive-analysis-software-hardware/"
+    ],
+    "section": "exploration",
+    "status": "材料归并中",
+    "updated_at": "2026-08-31",
+    "question": "数字设计怎样穿过材料、工艺和设备状态，变成可重复交付的实物？",
+    "current_answer": "设计文件只是输入。合格交付还要记录材料批次、工艺参数、设备状态和质检结果，并能追溯各环节。",
+    "gap": "待补：修复多维表归档缺口，核对报告版本，再决定是否发布设备与工艺比较表。",
+    "findings": [
+      "可制造性需要在设计阶段进入约束，而不是在成品失败后补救。",
+      "设备参数无法替代材料、过程和质量记录。"
+    ],
+    "lead_material": "desktop-manufacturing"
+  },
+  {
+    "id": "dji-alumni",
+    "title": "大疆系创业与产业扩散",
+    "summary": "把创业名单、共同履历和产业结果分开，逐项回到公司与产品证据。",
+    "coverage": "已有：一份公开公司图谱和一份人才与产业扩散笔记。",
+    "notes": [
+      "talent-and-industry"
+    ],
+    "materials": [
+      "dji-company-map"
+    ],
+    "articles": [
+      "/notes/dji-talent-whale-fall/"
+    ],
+    "section": "research",
+    "status": "图谱复核中",
+    "updated_at": "2026-08-31",
+    "question": "人才从一家硬件公司流向新团队时，哪些能力真的发生了迁移？",
+    "current_answer": "共同履历只能说明关联，不能单独证明能力迁移、股权关系或创业成功率。研究需要继续追踪产品、供应链和组织经验如何进入新团队。",
+    "gap": "待补：逐项核对公司状态、产品变化与公开来源，并处理样本选择带来的偏差。",
+    "findings": [
+      "履历标签是查证入口，不是因果结论。",
+      "公司与产品状态会变化，图谱必须保留时间和来源。"
+    ],
+    "lead_material": "dji-company-map"
+  }
+]

@@ -1,11 +1,13 @@
 {% assign linked_units = page.knowledge_units | default: site.data.essay_knowledge[page.url].units %}
 {% if linked_units and linked_units.size > 0 %}
-<aside class="kb-related" aria-label="{% if page.lang == 'en' %}Related knowledge{% else %}关联知识{% endif %}">
-  <h2>{% if page.lang == 'en' %}Keep exploring · Chinese knowledge notes{% else %}放回知识库继续读{% endif %}</h2>
-  <p>{% if page.lang == 'en' %}This essay is the argument as published. The current version of each judgment, its evidence boundaries, and later revisions live in the connected knowledge notes.{% else %}这篇文章是发表时的完整论证。判断的当前版本、证据边界与后续修订，在相连的知识单元里持续更新。{% endif %}</p>
+<aside class="kb-related" aria-label="{% if page.lang == 'en' %}Related research materials{% else %}相关研究资料{% endif %}">
+  <h2>{% if page.lang == 'en' %}Related research materials{% else %}相关研究资料{% endif %}</h2>
+  <p>{% if page.lang == 'en' %}Explore related reports, data summaries and notes in the research library. These links show topical connections; direct evidence is cited in the essay itself.{% else %}报告、数据与笔记保留在资料库里，可继续查阅。下列为同题关联；这篇文章直接使用的证据，以正文引用为准。{% endif %}</p>
+  {% assign essay_mapping = site.data.essay_knowledge[page.url] %}{% assign original_url = essay_mapping.translation_of | default: page.url %}
+  <ul>{% for research_collection in site.data.research_collections %}{% if research_collection.articles contains original_url %}<li><a href="{{ '/knowledge/collections/' | append: research_collection.id | append: '/' | relative_url }}">{{ research_collection.title | escape }} · {% if page.lang == 'en' %}research dossier (Chinese){% else %}研究档案{% endif %}</a></li>{% endif %}{% endfor %}</ul>
   <ul>{% for slug in linked_units %}{% assign target = site.knowledge | where: 'slug', slug | first %}
     {% if target %}<li><a href="{{ target.url | relative_url }}">{{ target.title | escape }}</a></li>{% endif %}
   {% endfor %}</ul>
-  <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">{% if page.lang == 'en' %}Explore the knowledge library →{% else %}查看六个研究主题 →{% endif %}</a>
+  <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">{% if page.lang == 'en' %}Explore the research library →{% else %}查阅全部研究资料 →{% endif %}</a>
 </aside>
 {% endif %}

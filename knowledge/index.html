@@ -1,90 +1,124 @@
 ---
 layout: default
-title: 个人知识库
-description: 研究过程的公开层：研究报告与数据汇总是中间结果，知识单元持续修订当前判断与证据边界，文章保留发表时的完整论证，开源项目负责检验。
+title: 研究资料库
+description: Roy.Tong 的研究档案。报告、数据、工作笔记和公开来源按具体研究问题归档，说明目前能确认什么、还缺什么证据。
 permalink: /knowledge/
 knowledge_page: true
-knowledge_search: true
 ---
-{% assign zh_posts = site.posts | where_exp: 'p', 'p.lang != "en"' %}
-{% assign en_posts = site.posts | where: 'lang', 'en' %}
-<section class="shell kb-home">
-  <header class="kb-hero">
-    <div>
-      <p class="eyebrow">ROY TONG · KNOWLEDGE LIBRARY</p>
-      <h1>从中间结果，<br>到当前判断。</h1>
-      <p class="kb-lead">AI 如何变成产品、系统与商业？这里公开研究的过程与结果：研究报告与数据汇总是中间结果，知识单元记录当前的判断、依据与反例，文章保留发表时的完整论证，项目负责检验。中间结果会被后续研究替代，判断持续修订。</p>
+{% assign all_materials = site.materials | concat: site.knowledge %}
+{% assign ordered_materials = site.materials | sort: 'order' %}
+{% assign research_dossiers = site.data.research_collections | where: 'section', 'research' %}
+{% assign working_dossiers = site.data.research_collections | where: 'section', 'exploration' %}
+<section class="shell kb-v3-home">
+  <header class="kb-v3-hero">
+    <div class="kb-v3-hero-main">
+      <p class="kb-resource-label">Roy.Tong · 研究工作的公开层</p>
+      <h1>研究资料库</h1>
+      <p>报告、数据和工作笔记经过整理后，可以先作为中间结果发布，不必等到写成文章。资料按研究问题归档，并标明目前能确认什么、还缺什么证据。</p>
+      <div class="kb-v3-actions">
+        <a class="kb-v3-primary" href="#research-dossiers">浏览研究档案</a>
+        <a href="{{ '/knowledge/library/' | relative_url }}">搜索全部资料 <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
-    <aside class="kb-intro-aside" aria-label="知识库的构成">
-      <p class="kb-edition">四类内容，一条成熟度光谱</p>
-      <ul class="kb-type-list">
-        <li><strong>知识单元<em>{{ site.knowledge.size }}</em></strong><span>判断的现在时 · 持续修订</span></li>
-        <li><strong>文章<em>{{ zh_posts.size }}{% if en_posts.size > 0 %}+{{ en_posts.size }} 译文{% endif %}</em></strong><span>发表时的论证快照</span></li>
-        <li><strong>项目<em>{{ site.data.knowledge_projects.size }}</em></strong><span>开源实现 · 检验判断</span></li>
-        <li><strong>研究材料</strong><span>资料台账与数据汇总 · <a href="{{ '/knowledge/inventory/' | relative_url }}">中间结果入口</a></span></li>
-      </ul>
-      <a href="{{ '/knowledge/method/' | relative_url }}">如何阅读、引用与维护 →</a>
+    <aside class="kb-v3-overview" aria-label="资料库概况">
+      <dl>
+        <div><dt>研究档案</dt><dd>{{ research_dossiers.size }}</dd></div>
+        <div><dt>整理中的方向</dt><dd>{{ working_dossiers.size }}</dd></div>
+        <div><dt>公开资料</dt><dd>{{ all_materials.size }}</dd></div>
+      </dl>
+      <p>这里只统计已有公开内容。私有原稿和来源盘点不在网页中。</p>
     </aside>
   </header>
 
-  <section class="kb-search-section" aria-labelledby="search-heading">
-    <h2 id="search-heading">找一个问题</h2>
-    <form class="kb-search-form" role="search" data-kb-search data-kb-pending data-index-url="{{ '/knowledge/index.json' | relative_url }}">
-      <div class="kb-search-input"><label for="kb-query">搜索知识、文章与项目</label><input id="kb-query" type="search" name="q" maxlength="200" placeholder="例如：第二次修改、需求证据、本地 AI" autocomplete="off" aria-describedby="kb-search-help" disabled></div>
-      <div><label for="kb-topic-filter">主题</label><select id="kb-topic-filter" name="topic" disabled><option value="">全部主题</option>{% for topic in site.data.knowledge_topics %}<option value="{{ topic.id }}">{{ topic.title | escape }}</option>{% endfor %}</select></div>
-      <div><label for="kb-kind-filter">内容类型</label><select id="kb-kind-filter" name="kind" disabled><option value="">全部类型</option><option value="knowledge">知识单元</option><option value="article">文章</option><option value="project">开源项目</option></select></div>
-      <button type="reset" disabled>清空</button>
-      <p id="kb-search-help">全文检索在浏览器本地运行，不上传查询，覆盖三类公开内容。</p>
-    </form>
-    <p class="kb-search-status" data-kb-status role="status" aria-live="polite">正在读取公开检索索引…</p>
-    <noscript><p>未开启 JavaScript：全文检索不可用，但下方主题目录与完整目录仍可浏览全部内容。</p></noscript>
-    <section class="kb-search-results" data-kb-results hidden aria-label="检索结果"><div data-kb-result-list></div></section>
-  </section>
-
-  <section class="kb-themes" aria-labelledby="themes-heading">
-    <div class="kb-section-heading"><h2 id="themes-heading">六个长期主题</h2><span>{{ site.knowledge.size }} 个知识单元 · 按问题组织</span></div>
-    <ol class="kb-theme-catalog">
-      {% for topic in site.data.knowledge_topics %}{% assign notes = site.knowledge | where: 'topic', topic.id %}
-      {% assign start_note = site.knowledge | where: 'slug', topic.start | first %}
-      <li class="kb-theme-card">
-        <div class="kb-theme-main">
-          <h3><a href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">{{ topic.title | escape }}</a></h3>
-          <p class="kb-theme-question">{{ topic.question | escape }}</p>
-        </div>
-        <div class="kb-theme-actions">
-          <span class="kb-theme-count">{{ notes.size }} 个知识单元</span>
-          {% if start_note %}<a href="{{ start_note.url | relative_url }}">从《{{ start_note.title | escape }}》读起 →</a>{% endif %}
-        </div>
-      </li>
-      {% endfor %}
+  <section class="kb-v3-system" aria-labelledby="system-heading">
+    <div class="kb-v3-section-intro">
+      <p class="kb-v3-kicker">组织逻辑</p>
+      <h2 id="system-heading">本地与飞书材料怎样进入公开资料库</h2>
+    </div>
+    <ol>
+      <li><span>01</span><strong>来源</strong><p>盘点本地项目、飞书文档、公开网页和数据快照，识别版本与权属。</p></li>
+      <li><span>02</span><strong>研究档案</strong><p>按同一个问题归并材料，记录当前判断、已有证据和待补部分。</p></li>
+      <li><span>03</span><strong>公开资料</strong><p>逐项确认可公开范围，发布报告、数据、笔记或来源索引。</p></li>
+      <li><span>04</span><strong>文章</strong><p>只在需要完整论证一个观点时产生，可以引用一项或多项资料。</p></li>
     </ol>
   </section>
 
-  <section class="kb-new-essays" aria-labelledby="new-essays-heading">
-    <div class="kb-section-heading"><h2 id="new-essays-heading">从研究里长出的文章</h2><a href="{{ '/essays/' | relative_url }}">全部文章 →</a></div>
-    {% assign ordered_posts = site.posts | sort: 'date' | reverse %}
-    {% assign featured_count = 0 %}
-    {% for article in ordered_posts %}{% if article.knowledge_units and featured_count < 3 %}{% assign featured_count = featured_count | plus: 1 %}
-      <article class="kb-essay-row"><time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time><div><h3><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h3><p>{{ article.description | escape }}</p></div></article>
+  <section class="kb-v3-value" aria-labelledby="value-heading">
+    <div class="kb-v3-section-intro">
+      <p class="kb-v3-kicker">为什么维护</p>
+      <h2 id="value-heading">让研究可以被找回、判断和继续使用</h2>
+    </div>
+    <div class="kb-v3-value-grid">
+      <article>
+        <span>对我</span>
+        <h3>找回已经做过的工作</h3>
+        <p>把散在本地项目和飞书里的报告、数据与版本归到同一个问题下，知道主版本在哪里、上次做到哪里、下一步缺什么。</p>
+      </article>
+      <article>
+        <span>对读者</span>
+        <h3>先判断，再决定是否使用</h3>
+        <p>先看资料适合回答什么、公开到哪、哪些结论不能推出，再决定阅读、引用、下载，或沿来源继续核对。</p>
+      </article>
+    </div>
+    <div class="kb-v3-relation" aria-label="资料库与文章的关系">
+      <div><span>资料库</span><strong>保存可更新、可复用的中间结果</strong></div>
+      <span class="kb-v3-relation-arrow" aria-hidden="true">→</span>
+      <div><span>文章</span><strong>选择材料，完成一次完整论证</strong></div>
+      <p>一份资料可以被多篇文章使用，一篇文章也可以连接多份资料；文章不计入公开资料数量。</p>
+    </div>
+  </section>
+
+  <section class="kb-v3-dossiers" id="research-dossiers" aria-labelledby="dossiers-heading">
+    <div class="kb-v3-section-heading">
+      <div><p class="kb-v3-kicker">持续研究</p><h2 id="dossiers-heading">研究档案</h2></div>
+      <p>每个档案对应一个持续研究的问题。页面同时保留当前判断和待补证据。</p>
+    </div>
+    <div class="kb-v3-dossier-grid">
+      {% for collection in site.data.research_collections %}{% if collection.section == 'research' %}
+      {% assign material_count = collection.notes.size | plus: collection.materials.size %}
+      <article class="kb-v3-dossier-card">
+        <div class="kb-v3-card-meta"><span>{{ collection.status | escape }}</span><span>{{ material_count }} 份资料</span><time datetime="{{ collection.updated_at }}">复核 {{ collection.updated_at | replace: '-', '.' }}</time></div>
+        <h3><a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection.title | escape }}</a></h3>
+        <p class="kb-v3-question">{{ collection.question | escape }}</p>
+        <p class="kb-v3-answer">{{ collection.current_answer | escape }}</p>
+        <a class="kb-v3-card-link" href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">查看档案 <span aria-hidden="true">↗</span></a>
+      </article>
       {% endif %}{% endfor %}
+    </div>
   </section>
 
-  <section class="kb-project-section" aria-labelledby="projects-heading">
-    <div class="kb-section-heading"><h2 id="projects-heading">让研究进入实践</h2><a href="{{ '/projects/' | relative_url }}">项目主页 →</a></div>
-    <ul class="kb-project-list">{% for project in site.data.knowledge_projects %}<li><a href="{{ project.url | escape }}">{{ project.title | escape }} ↗</a><p>{{ project.summary | escape }}</p></li>{% endfor %}</ul>
+  <section class="kb-v3-secondary" aria-label="整理中的方向与研究方法">
+    <div class="kb-v3-secondary-block">
+      <div class="kb-v3-section-heading compact"><div><p class="kb-v3-kicker">尚未完成</p><h2>正在整理</h2></div><p>已有线索，但还不足以作为完整研究成果。</p></div>
+      <div class="kb-v3-compact-list">
+        {% for collection in site.data.research_collections %}{% if collection.section == 'exploration' %}
+        <article><div><span>{{ collection.status | escape }}</span><h3><a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection.title | escape }}</a></h3><p>{{ collection.question | escape }}</p></div><p>{{ collection.gap | remove_first: '待补：' | escape }}</p></article>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    <div class="kb-v3-secondary-block kb-v3-method-block">
+      <div class="kb-v3-section-heading compact"><div><p class="kb-v3-kicker">可复用方法</p><h2>研究方法</h2></div></div>
+      {% for collection in site.data.research_collections %}{% if collection.section == 'method' %}
+      <article><span>{{ collection.status | escape }}</span><h3><a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection.title | escape }}</a></h3><p>{{ collection.current_answer | escape }}</p><a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">查看方法与资料 →</a></article>
+      {% endif %}{% endfor %}
+    </div>
   </section>
 
-  <details class="kb-archive">
-    <summary>完整目录（{{ site.knowledge.size }} 个知识单元 · {{ site.posts.size }} 页文章 · 无脚本可用）</summary>
-    {% for topic in site.data.knowledge_topics %}{% assign notes = site.knowledge | where: 'topic', topic.id | sort: 'order' %}
-    <h3>{{ topic.title | escape }}</h3>
-    <ul>{% for note in notes %}<li><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></li>{% endfor %}</ul>
-    {% endfor %}
-    <h3>文章（含英文译文）</h3>
-    <ul>{% for article in ordered_posts %}<li><time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>{% if article.lang == 'en' %}<span lang="en">EN</span>{% endif %}</li>{% endfor %}</ul>
-  </details>
-  <footer class="kb-library-footer">
-    <div><a href="{{ '/knowledge/method/' | relative_url }}">阅读与引用说明</a><a href="{{ '/knowledge/sources/' | relative_url }}">公开来源台账</a><a href="{{ '/knowledge/data/' | relative_url }}">研究数据与边界</a><a href="{{ '/knowledge/changes/' | relative_url }}">修订记录</a></div>
-    <div><a href="{{ '/knowledge/index.json' | relative_url }}">机器可读索引</a><a href="{{ '/llms.txt' | relative_url }}">Agent 阅读入口</a><a href="{{ '/research/' | relative_url }}">长期研究与原有专题</a></div>
+  <section class="kb-v3-featured" aria-labelledby="featured-heading">
+    <div class="kb-v3-section-heading">
+      <div><p class="kb-v3-kicker">公开资料</p><h2 id="featured-heading">直接查看资料</h2></div>
+      <a href="{{ '/knowledge/library/' | relative_url }}">进入完整资料目录（{{ all_materials.size }}）</a>
+    </div>
+    <ul class="kb-v3-featured-list">
+      {% for entry in ordered_materials limit:5 %}
+      {% assign type = site.data.research_material_types | where: 'id', entry.resource_type | first %}
+      <li><span>{{ type.label | escape }}</span><div><h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3><p>{{ entry.summary | escape }}</p></div><span>{{ entry.access | escape }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer class="kb-v3-footer">
+    <p>资料记录研究过程；文章负责完整表达。两者可以互相引用，也可以独立存在。</p>
+    <nav aria-label="资料库说明"><a href="{{ '/knowledge/method/' | relative_url }}">收录与关系</a><a href="{{ '/knowledge/inventory/' | relative_url }}">公开范围</a><a href="{{ '/knowledge/changes/' | relative_url }}">修订记录</a><a href="{{ '/knowledge/materials.json' | relative_url }}">机器可读索引</a></nav>
   </footer>
 </section>

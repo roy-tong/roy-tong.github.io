@@ -1,0 +1,6 @@
+[
+  {"id": "report", "label": "研究报告", "description": "行业研究、白皮书与阶段报告"},
+  {"id": "data", "label": "数据与表格", "description": "数据汇总、比较表与在线图谱"},
+  {"id": "note", "label": "研究笔记", "description": "阶段分析、方法与研究记录"},
+  {"id": "reference", "label": "来源索引", "description": "公开来源与阅读说明"}
+]

@@ -1,0 +1,49 @@
+---
+layout: default
+title: 全部研究资料
+description: 研究资料库的公开目录。按研究档案与资料类型查找报告、数据、工作笔记和来源索引。
+permalink: /knowledge/library/
+knowledge_page: true
+knowledge_search: true
+---
+{% assign all_materials = site.materials | concat: site.knowledge %}
+{% assign ordered_materials = site.materials | sort: 'order' %}
+{% assign ordered_notes = site.knowledge | sort: 'order' %}
+<section class="shell kb-library kb-v3-catalog" data-library data-index-url="{{ '/knowledge/materials.json' | relative_url }}">
+  <nav class="kb-breadcrumb" aria-label="当前位置"><a href="{{ '/knowledge/' | relative_url }}">研究资料库</a><span aria-hidden="true">/</span><span aria-current="page">全部资料</span></nav>
+  <header class="kb-v3-catalog-header">
+    <div><p class="kb-resource-label">公开资料目录</p><h1>全部研究资料</h1><p class="kb-library-lead">这里列出已经公开的报告、数据、工作笔记和来源索引。知道研究问题时可按档案筛选；知道材料内容时可直接搜索。</p></div>
+    <aside><strong>{{ all_materials.size }}</strong><span>份公开资料</span><p>文章不计入这里。私有原稿、访谈和原始平台内容也不在搜索范围内。</p></aside>
+  </header>
+
+  <div class="kb-library-workspace">
+    <aside class="kb-collection-sidebar">
+      <h2 id="collection-nav-heading">按研究档案筛选</h2>
+      <nav aria-labelledby="collection-nav-heading" data-collection-nav>
+        <a class="kb-collection-link" href="{{ '/knowledge/library/' | relative_url }}" data-collection="" aria-current="true"><span>全部资料</span><span>{{ all_materials.size }}</span></a>
+        {% for collection in site.data.research_collections %}{% assign count = collection.notes.size | plus: collection.materials.size %}<a class="kb-collection-link" href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}" data-collection="{{ collection.id }}"><span>{{ collection.title | escape }}</span><span>{{ count }}</span></a>{% endfor %}
+      </nav>
+      <p class="kb-sidebar-note">一份资料可以进入多个档案；<br>总数按唯一资料计。</p>
+      <div class="kb-sidebar-links"><a href="{{ '/knowledge/data/' | relative_url }}">数据方法与边界</a><a href="{{ '/knowledge/sources/' | relative_url }}">公开来源索引</a></div>
+    </aside>
+
+    <section class="kb-library-main" aria-labelledby="materials-heading">
+      <form class="kb-library-search" role="search" data-library-form hidden>
+        <label for="material-query">搜索标题、摘要和公开正文</label>
+        <div class="kb-library-query"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input type="search" id="material-query" name="q" maxlength="200" placeholder="例如：本地 AI、家庭机器人" autocomplete="off" aria-describedby="library-search-scope"><button type="reset">清空</button></div>
+        <p id="library-search-scope">仅检索公开资料。搜索词留在浏览器，不上传到服务器。</p>
+      </form>
+      <div class="kb-type-filters" data-type-filters role="group" aria-label="资料类型" hidden><button type="button" data-type="" aria-pressed="true">全部 <span>{{ all_materials.size }}</span></button>{% for type in site.data.research_material_types %}{% assign typed_materials = all_materials | where: 'resource_type', type.id %}<button type="button" data-type="{{ type.id }}" aria-pressed="false">{{ type.label }} <span>{{ typed_materials.size }}</span></button>{% endfor %}</div>
+      <div class="kb-library-list-heading"><h2 id="materials-heading" data-list-heading>全部资料</h2><div class="kb-library-sort" data-library-sort hidden><label for="material-sort">排序</label><select name="sort" id="material-sort"><option value="type">按资料类型</option><option value="updated">最近复核</option><option value="title">标题顺序</option></select></div></div>
+      <p class="kb-collection-context" data-collection-context hidden></p>
+      <p class="kb-library-status" role="status" aria-live="polite" data-library-status>{{ all_materials.size }} 份公开资料 · 报告注明全文或试读，数据注明公开层级。</p>
+      <noscript><p class="kb-library-status">未开启 JavaScript：下方完整资料目录仍可阅读，也可以进入左侧研究档案浏览。</p></noscript>
+      <ul class="kb-material-list" data-material-list>{% for entry in ordered_materials %}{% include research-item.html item=entry %}{% endfor %}{% for entry in ordered_notes %}{% include research-item.html item=entry %}{% endfor %}</ul>
+      <div class="kb-library-empty" data-library-empty hidden><h3>没有找到公开资料</h3><p>试试更短的关键词，或清空研究档案和资料类型。未公开原稿不会出现在结果里。</p><button type="button" data-clear-filters>清空全部条件</button></div>
+      <button class="kb-library-more" type="button" data-library-more hidden>显示更多资料</button>
+      <div class="kb-collection-exit" data-collection-exit hidden><a href="{{ '/knowledge/' | relative_url }}" data-collection-page-link>查看研究档案与相关文章 →</a></div>
+    </section>
+  </div>
+
+  <footer class="kb-library-bottom"><p>先看研究档案理解问题和证据，再进入具体资料核对内容。</p><div><a href="{{ '/knowledge/' | relative_url }}">返回研究档案</a><a href="{{ '/knowledge/method/' | relative_url }}">收录与关系</a><a href="{{ '/knowledge/materials.json' | relative_url }}">机器可读索引</a><a href="{{ '/llms.txt' | relative_url }}">Agent 入口</a></div></footer>
+</section>

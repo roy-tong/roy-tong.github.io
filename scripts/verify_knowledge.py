@@ -69,7 +69,12 @@ check(len(notes) >= 20, "Knowledge release is missing required notes.")
 check(len(sources) == len(source_ids), "Source IDs must be unique.")
 check(len(records) == len({r["id"] for r in records}), "Index IDs must be unique.")
 check(len(records) == len({r["url"] for r in records}), "Index URLs must be unique.")
-check(len(articles) >= 36, "Existing writing or the three release essays are missing.")
+expected_articles = list((ROOT / "_posts").glob("*.md")) + list((ROOT / "en/_posts").glob("*.md"))
+check(len(articles) == len(expected_articles), "Article index does not cover the current post collection.")
+# These publications were deliberately moved out of the article stream before v2.
+standalone_publications = {"/notes/embodied-intelligence-beginners-guide/", "/notes/agent-usage-measurement-standard/"}
+for publication_url in standalone_publications:
+    check(target_for(publication_url).is_file(), "Moved publication lost its original URL: " + publication_url)
 check(sum(r["lang"] == "en" for r in articles.values()) >= 10, "Existing English editions are missing.")
 for row in records:
     check(row["topic"] in topics, "Unknown topic: " + row["id"])
@@ -82,9 +87,12 @@ for row in records:
     for sid in row.get("source_ids") or []:
         check(sid in source_ids, "Missing source ID: " + sid)
     for url in row.get("related_articles") or []:
-        check(url in articles, "Missing related article: " + row["id"] + " -> " + url)
+        check(url in articles or url in standalone_publications and target_for(url).is_file(),
+              "Missing related publication: " + row["id"] + " -> " + url)
     if row.get("translation_of"):
-        check(row["translation_of"] in articles, "Missing original of translation: " + row["id"])
+        original = row["translation_of"]
+        check(original in articles or original in standalone_publications and target_for(original).is_file(),
+              "Missing original of translation: " + row["id"])
     if row["kind"] != "project":
         check(target_for(row["url"]).is_file(), "Missing rendered page: " + row["url"])
 
@@ -121,14 +129,19 @@ for path, page in list(parsed.items()):
         checked_links += 1
         if target.is_file() and target.suffix == ".html" and url.fragment:
             destination = parsed.setdefault(target, Page(target))
-            check(unquote(url.fragment) in destination.ids, "Broken anchor: " + href)
+            if url.path == "/knowledge/library/" and url.fragment.startswith("collection="):
+                collection_id = url.fragment.split("=", 1)[1]
+                known = {c["id"] for c in read_json(ROOT / "_data/research_collections.json")}
+                check(collection_id in known, "Unknown collection filter: " + href)
+            else:
+                check(unquote(url.fragment) in destination.ids, "Broken anchor: " + href)
 
 # Existing posts are retained and receive a current related-knowledge entry.
 for url, row in articles.items():
     path = target_for(url)
     if path.exists():
         body = path.read_text(encoding="utf-8")
-        marker = "Keep exploring" if row["lang"] == "en" else "放回知识库继续读"
+        marker = "Related research materials" if row["lang"] == "en" else "相关研究资料"
         check(marker in body, "Article missing knowledge backlink: " + url)
 
 data = read_json(ROOT / "_data/research_corpora_20260831.json")
@@ -156,12 +169,16 @@ for filename, field, key in [
     expected = {(s["id"], k): v for s in data["studies"] for k, v in s[field].items()}
     check(actual == expected, "CSV content mismatch: " + filename)
 
-# No-script access: all note links and article links are present in source HTML.
-home = Page(SITE / "knowledge/index.html")
-for row in list(notes.values()) + list(articles.values()):
-    check(row["url"] in home.links, "Missing static/no-script directory link: " + row["url"])
-check("<noscript>" in home.text, "No-script guidance missing.")
-check('data-kb-pending' in home.text and 'disabled' in home.text,
+# No-script access: materials in the full catalogue; articles in their own archive.
+catalog = Page(SITE / "knowledge/library/index.html")
+for row in notes.values():
+    check(row["url"] in catalog.links, "Missing static/no-script directory link: " + row["url"])
+article_archive = Page(SITE / "archive/index.html")
+for row in articles.values():
+    archive = Page(SITE / "en/archive/index.html") if row["lang"] == "en" else article_archive
+    check(row["url"] in archive.links, "Article missing from its static archive: " + row["url"])
+check("<noscript>" in catalog.text, "No-script guidance missing.")
+check(re.search(r'data-library-form[^>]*hidden', catalog.text),
       "Search must not appear interactive before initialization.")
 check('credentials: \'omit\'' in (ROOT / "assets/js/knowledge-search.js").read_text(), "Search must not send credentials.")
 
@@ -177,7 +194,7 @@ for path in scan:
     body = path.read_text(encoding="utf-8")
     for pattern in sensitive:
         check(not pattern.search(body), "Possible private data in " + str(path.relative_to(SITE)))
-for forbidden in ("PRODUCT.md", "README.md", "docs", "scripts", ".impeccable", "_knowledge", "_data"):
+for forbidden in ("PRODUCT.md", "README.md", "docs", "scripts", ".impeccable", "_knowledge", "_materials", "_data"):
     check(not (SITE / forbidden).exists(), "Build exposes an excluded source path: " + forbidden)
 feed = (SITE / "feed.xml").read_text(encoding="utf-8")
 for slug in ("ai-video-second-edit", "local-ai-box-task-economics", "home-robots-recovery-burden"):

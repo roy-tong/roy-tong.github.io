@@ -1,0 +1,39 @@
+---
+layout: null
+permalink: /knowledge/materials.json
+---
+{% assign library_records = site.materials | concat: site.knowledge %}
+{
+  "schema_version": "3.0",
+  "updated": "2026-09-01",
+  "scope": "Public research dossiers and materials only. Dossiers expose questions, current views and evidence gaps; material records expose use, scope and limits. Articles and project software retain separate canonical locations. Private source inventories are never included.",
+  "types": {{ site.data.research_material_types | jsonify }},
+  "collections": {{ site.data.research_collections | jsonify }},
+  "records": [
+  {% for entry in library_records %}{% assign kind = entry.resource_type | default: 'note' %}{% capture collection_names %}{% for collection in site.data.research_collections %}{% if collection.notes contains entry.slug or collection.materials contains entry.slug %}{{ collection.id }} {% endif %}{% endfor %}{% endcapture %}{% assign collection_ids = collection_names | strip | split: ' ' %}{% assign canonical_source = nil %}{% if entry.source_page %}{% assign canonical_source = site.pages | where: 'url', entry.source_page | first %}{% endif %}{% capture data_search_text %}{% if entry.study_id %}{% assign indexed_study = site.data.research_corpora_20260831.studies | where: 'id', entry.study_id | first %}{{ indexed_study | jsonify }}{% endif %}{% endcapture %}
+    {
+      "id": {{ entry.slug | prepend: '-' | prepend: kind | jsonify }},
+      "kind": {{ kind | jsonify }},
+      "slug": {{ entry.slug | jsonify }},
+      "title": {{ entry.title | jsonify }},
+      "summary": {{ entry.summary | jsonify }},
+      "url": {{ entry.url | relative_url | jsonify }},
+      "lang": "zh-CN",
+      "collections": {{ collection_ids | jsonify }},
+      "updated": {{ entry.reviewed_at | date: '%Y-%m-%d' | jsonify }},
+      "version": {{ entry.version | default: '持续修订的研究笔记' | jsonify }},
+      "access": {{ entry.access | default: '全文公开' | jsonify }},
+      "source_label": {{ entry.source_label | default: '本站已公开研究笔记' | jsonify }},
+      "use_for": {{ entry.use_for | default: entry.summary | jsonify }},
+      "public_scope": {{ entry.scope_note | default: '研究笔记全文' | jsonify }},
+      "boundary": {{ entry.boundary | default: '阶段分析；具体事实、来源与修订范围以正文为准。' | jsonify }},
+      "review_status": {{ entry.review_status | default: '公开正文已收录，持续修订' | jsonify }},
+      "source_page": {{ entry.source_page | jsonify }},
+      "study_id": {{ entry.study_id | jsonify }},
+      "downloads": {{ entry.downloads | jsonify }},
+      "source_ids": {{ entry.source_ids | jsonify }},
+      "text": {{ entry.use_for | append: ' ' | append: entry.scope_note | append: ' ' | append: entry.boundary | append: ' ' | append: entry.content | append: canonical_source.content | append: data_search_text | markdownify | strip_html | normalize_whitespace | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}

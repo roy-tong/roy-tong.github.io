@@ -5,13 +5,13 @@ layout: default
 <article class="shell reading-shell kb-note">
   <header class="kb-note-header">
     <nav class="kb-breadcrumb" aria-label="当前位置">
-      <a href="{{ '/knowledge/' | relative_url }}">知识库</a><span aria-hidden="true">/</span>
-      <a href="{{ '/knowledge/topics/' | append: topic.id | append: '/' | relative_url }}">{{ topic.title | escape }}</a>
+      <a href="{{ '/knowledge/' | relative_url }}">研究资料库</a><span aria-hidden="true">/</span>
+      <span aria-current="page">研究笔记</span>
     </nav>
-    <p class="eyebrow">KNOWLEDGE NOTE · 持续修订</p>
+    <p class="kb-resource-label">研究笔记 · 持续修订</p>
     <h1>{{ page.title | escape }}</h1>
     <p class="kb-summary">{{ page.summary | escape }}</p>
-    <p class="kb-meta">作者分析 · 复核于 <time datetime="{{ page.reviewed_at | date: '%Y-%m-%d' }}">{{ page.reviewed_at | date: '%Y.%m.%d' }}</time> · <a href="{{ '/knowledge/method/' | relative_url }}">如何使用这些判断</a></p>
+    <p class="kb-meta">作者分析 · 内容日期 <time datetime="{{ page.reviewed_at | date: '%Y-%m-%d' }}">{{ page.reviewed_at | date: '%Y.%m.%d' }}</time> · <a href="{{ '/knowledge/method/' | relative_url }}">收录与引用说明</a></p>
   </header>
   <div class="prose">{{ content }}</div>
   {% if page.source_ids and page.source_ids.size > 0 %}
@@ -24,8 +24,8 @@ layout: default
   {% endif %}
   {% if page.related_posts and page.related_posts.size > 0 %}
   <section class="kb-related" aria-labelledby="essays-heading">
-    <h2 id="essays-heading">文章与完整论证</h2>
-    <ul>{% for post_url in page.related_posts %}{% assign article = site.posts | where: 'url', post_url | first %}
+    <h2 id="essays-heading">相关论述与报告</h2>
+    <ul>{% for post_url in page.related_posts %}{% assign article = site.posts | where: 'url', post_url | first %}{% unless article %}{% assign article = site.pages | where: 'url', post_url | first %}{% endunless %}
       {% if article %}<li><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></li>{% endif %}
     {% endfor %}</ul>
   </section>
@@ -36,4 +36,5 @@ layout: default
       {% if related_note %}<li><a href="{{ related_note.url | relative_url }}">{{ related_note.title | escape }}</a><p>{{ related_note.summary | escape }}</p></li>{% endif %}
     {% endfor %}</ul>
   </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">同一研究档案中的报告与数据</h2><ul>{% for research_collection in site.data.research_collections %}{% if research_collection.notes contains page.slug %}<li><a href="{{ '/knowledge/collections/' | append: research_collection.id | append: '/' | relative_url }}">{{ research_collection.title | escape }}</a><p>{{ research_collection.coverage | escape }}</p></li>{% endif %}{% endfor %}</ul></section>
 </article>

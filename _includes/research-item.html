@@ -1,0 +1,13 @@
+{% assign item = include.item %}
+{% assign material_kind = item.resource_type | default: 'note' %}
+{% assign material_type = site.data.research_material_types | where: 'id', material_kind | first %}
+{% capture item_collections %}{% for collection in site.data.research_collections %}{% if collection.notes contains item.slug or collection.materials contains item.slug %}{{ collection.id }} {% endif %}{% endfor %}{% endcapture %}
+<li class="kb-material-row" data-material data-id="{{ material_kind }}-{{ item.slug }}" data-kind="{{ material_kind }}" data-updated="{{ item.reviewed_at | date: '%Y-%m-%d' }}" data-collections="{{ item_collections | strip | escape }}">
+  <div class="kb-material-kind"><span class="kb-kind-tag kb-kind-{{ material_kind }}">{{ material_type.label }}</span><span class="kb-material-format">{% if item.formats %}{{ item.formats | join: ' / ' | escape }}{% else %}网页{% endif %}</span></div>
+  <div class="kb-material-copy">
+    <h3><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a></h3>
+    <p>{{ item.summary | escape }}</p>
+    <div class="kb-material-meta"><span>复核 <time datetime="{{ item.reviewed_at | date: '%Y-%m-%d' }}">{{ item.reviewed_at | date: '%Y.%m.%d' }}</time></span><span>{{ item.access | default: '全文公开 · 持续修订' | escape }}</span>{% for collection in site.data.research_collections %}{% if collection.notes contains item.slug or collection.materials contains item.slug %}<a href="{{ '/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection.title | escape }}</a>{% break %}{% endif %}{% endfor %}</div>
+  </div>
+  <a class="kb-material-open" href="{{ item.url | relative_url }}" aria-label="查看资料：{{ item.title | escape }}">查看 <span aria-hidden="true">↗</span></a>
+</li>

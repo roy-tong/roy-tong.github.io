@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /knowledge/data/ai-glasses-summary.json
+study_id: ai-glasses-2023
+---
+{% include corpus-download.json %}

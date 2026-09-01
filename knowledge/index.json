@@ -4,6 +4,7 @@ permalink: /knowledge/index.json
 ---
 {
   "schema_version": "1.0",
+  "materials_index": {{ '/knowledge/materials.json' | relative_url | jsonify }},
   "updated": "2026-08-31",
   "scope": "Public content only; knowledge notes are evolving author analysis. Existing essays retain their publication context. English translations are separate pages, not independent evidence.",
   "topics": {{ site.data.knowledge_topics | jsonify }},

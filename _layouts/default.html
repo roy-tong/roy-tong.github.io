@@ -15,7 +15,7 @@
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20260818-1">
-    <link rel="stylesheet" href="{{ '/assets/css/knowledge.css' | relative_url }}?v=20260831-3">
+    <link rel="stylesheet" href="{{ '/assets/css/knowledge.css' | relative_url }}?v=20260901-v3">
     {% if page.book_page %}<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">{% endif %}
     {% if page.lang_switch_url %}
       <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
@@ -101,6 +101,6 @@
     </footer>
 
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    {% if page.knowledge_search %}<script src="{{ '/assets/js/knowledge-search.js' | relative_url }}?v=20260831-2" defer></script>{% endif %}
+    {% if page.knowledge_search %}<script src="{{ '/assets/js/knowledge-search.js' | relative_url }}?v=20260901-v3" defer></script>{% endif %}
   </body>
 </html>

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{% assign collection = site.data.research_collections | where: 'id', page.collection_id | first %}
+{% assign material_count = collection.notes.size | plus: collection.materials.size %}
+{% assign lead = site.materials | where: 'slug', collection.lead_material | first %}
+{% unless lead %}{% assign lead = site.knowledge | where: 'slug', collection.lead_material | first %}{% endunless %}
+{% if collection.section == 'method' %}{% assign collection_label = '研究方法' %}{% elsif collection.section == 'exploration' %}{% assign collection_label = '整理中的方向' %}{% else %}{% assign collection_label = '研究档案' %}{% endif %}
+<section class="shell kb-dossier-page">
+  <nav class="kb-breadcrumb" aria-label="当前位置"><a href="{{ '/knowledge/' | relative_url }}">研究资料库</a><span aria-hidden="true">/</span><span aria-current="page">{{ collection_label }}</span></nav>
+
+  <header class="kb-dossier-header">
+    <div class="kb-dossier-meta"><span>{{ collection_label }}</span><span>{{ collection.status | escape }}</span><span>复核于 {{ collection.updated_at | date: '%Y.%m.%d' }}</span></div>
+    <h1>{{ collection.title | escape }}</h1>
+    <p class="kb-dossier-question">{{ collection.question | escape }}</p>
+    <div class="kb-dossier-actions">
+      {% if lead %}<a class="kb-v3-primary" href="{{ lead.url | relative_url }}">先看：{{ lead.title | escape }}</a>{% endif %}
+      <a href="{{ '/knowledge/library/' | relative_url }}#collection={{ collection.id }}">筛选本档案的 {{ material_count }} 份资料</a>
+    </div>
+  </header>
+
+  <section class="kb-dossier-answer" aria-labelledby="answer-heading">
+    <p class="kb-v3-kicker">阶段判断</p>
+    <h2 id="answer-heading">目前能确认什么</h2>
+    <p>{{ collection.current_answer | escape }}</p>
+    <ul>{% for finding in collection.findings %}<li>{{ finding | escape }}</li>{% endfor %}</ul>
+  </section>
+
+  <section class="kb-dossier-state" aria-label="材料覆盖与待补证据">
+    <div><span>现有材料</span><p>{{ collection.coverage | remove_first: '已有：' | escape }}</p></div>
+    <div><span>待补证据</span><p>{{ collection.gap | remove_first: '待补：' | escape }}</p></div>
+  </section>
+
+  <section class="kb-dossier-materials" aria-labelledby="dossier-materials-heading">
+    <div class="kb-v3-section-heading">
+      <div><p class="kb-v3-kicker">档案内容</p><h2 id="dossier-materials-heading">资料路径</h2></div>
+      <p>报告与数据负责保存材料，工作笔记负责记录阶段分析。</p>
+    </div>
+    {% if collection.materials.size > 0 %}
+    <h3 class="kb-dossier-group-title">主要资料</h3>
+    <ul class="kb-material-list">{% for slug in collection.materials %}{% assign entry = site.materials | where: 'slug', slug | first %}{% if entry %}{% include research-item.html item=entry %}{% endif %}{% endfor %}</ul>
+    {% endif %}
+    {% if collection.notes.size > 0 %}
+    <h3 class="kb-dossier-group-title{% if collection.materials.size > 0 %} has-gap{% endif %}">工作笔记</h3>
+    <ul class="kb-material-list">{% for slug in collection.notes %}{% assign entry = site.knowledge | where: 'slug', slug | first %}{% if entry %}{% include research-item.html item=entry %}{% endif %}{% endfor %}</ul>
+    {% endif %}
+  </section>
+
+  {% if collection.articles.size > 0 %}
+  <section class="kb-collection-essays" aria-labelledby="collection-essays-heading">
+    <div><p class="kb-v3-kicker">文章</p><h2 id="collection-essays-heading">相关表达</h2><p>文章围绕一个观点组织叙述。这里标的是同题关系；正文中的具体引用才代表直接证据关系。</p></div>
+    <ul>{% for article_url in collection.articles %}{% assign article = site.posts | where: 'url', article_url | first %}{% if article %}<li><a href="{{ article.url | relative_url }}">{{ article.title | escape }} <span aria-hidden="true">↗</span></a><time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time></li>{% endif %}{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <footer class="kb-v3-footer"><p>判断会随着资料变化而修订；旧版本和公开范围保留在具体资料页。</p><nav aria-label="档案导航"><a href="{{ '/knowledge/' | relative_url }}">全部研究档案</a><a href="{{ '/knowledge/library/' | relative_url }}">全部公开资料</a><a href="{{ '/knowledge/method/' | relative_url }}">收录与关系</a></nav></footer>
+</section>

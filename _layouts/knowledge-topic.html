@@ -8,7 +8,7 @@ layout: default
     <nav class="kb-breadcrumb" aria-label="当前位置">
       <a href="{{ '/knowledge/' | relative_url }}">知识库</a><span aria-hidden="true">/</span><span aria-current="page">{{ topic.title | escape }}</span>
     </nav>
-    <p class="eyebrow">RESEARCH THEME · {{ notes.size }} 个知识单元</p>
+    <p class="kb-resource-label">按研究领域浏览 · {{ notes.size }} 份研究笔记</p>
     <h1>{{ topic.title | escape }}</h1>
     <div class="kb-topic-question">
       <p class="kb-topic-question-label">这个主题在追问</p>
@@ -17,12 +17,12 @@ layout: default
     <div class="prose">{{ content }}</div>
   </header>
   <div class="kb-note-list-wrap">
-    <p class="kb-list-caption">按建议阅读顺序排列 · 从标有「起点」的单元开始</p>
+    <p class="kb-list-caption">这是原有研究领域目录。报告与数据请在<a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">新版资料库</a>中查阅。</p>
     <ol class="kb-note-list">
       {% for note in notes %}
       <li{% if note.slug == topic.start %} class="kb-note-start"{% endif %}><span class="kb-order" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div>
         <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>{% if note.slug == topic.start %}<span class="kb-start-tag">起点</span>{% endif %}</h2>
-        <p><span class="kb-note-label">核心判断</span>{{ note.summary | escape }}</p>
+        <p><span class="kb-note-label">笔记内容</span>{{ note.summary | escape }}</p>
       </div></li>
       {% endfor %}
     </ol>

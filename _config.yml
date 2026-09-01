@@ -21,10 +21,21 @@ social:
 permalink: /notes/:title/
 markdown: kramdown
 collections:
+  materials:
+    output: true
+    permalink: /knowledge/materials/:name/
   knowledge:
     output: true
     permalink: /knowledge/:name/
 defaults:
+  - scope:
+      path: ""
+      type: materials
+    values:
+      layout: research-material
+      lang: zh-CN
+      knowledge_page: true
+      publication_status: public
   - scope:
       path: ""
       type: knowledge
@@ -33,6 +44,7 @@ defaults:
       lang: zh-CN
       knowledge_page: true
       status: evolving
+      resource_type: note
 kramdown:
   input: GFM
   syntax_highlighter: rouge

@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /knowledge/data/local-ai-summary.json
+study_id: local-ai-2024
+---
+{% include corpus-download.json %}

@@ -1,0 +1,10 @@
+{% assign study = site.data.research_corpora_20260831.studies | where: 'id', page.study_id | first %}
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-08-31",
+  "release_scope": "aggregate-only; no raw platform content, account identifiers, or row-level hashes",
+  "source": "{{ '/knowledge/data/research-corpora-2026-08-31.json' | absolute_url }}",
+  "methods": "{{ '/knowledge/data/' | absolute_url }}",
+  "study": {{ study | jsonify }},
+  "limitations": ["Records are not unique people or validated demand.", "Machine labels were not semantically verified in this recount.", "Cross-study text overlap exists; study sizes cannot be summed as independent samples.", "Public aggregates support arithmetic checks, not independent reconstruction of raw data."]
+}
