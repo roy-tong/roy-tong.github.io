@@ -72,10 +72,6 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}{{ '/en/about/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
-  <url>
-    <loc>{{ site.url }}{{ '/en/support/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-  </url>
   {% for material in site.materials %}
   <url><loc>{{ material.url | absolute_url }}</loc><lastmod>{{ material.reviewed_at | date_to_xmlschema }}</lastmod></url>
   {% endfor %}

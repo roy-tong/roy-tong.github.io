@@ -1,0 +1,205 @@
+{
+  "zh": {
+    "headline": "你好，我是 Roy。",
+    "identity": "做产品，也记录技术走进生活的过程。",
+    "intro": "这里是我的个人博客。我写 AI、具身智能、产品与创业：一项技术能做什么，用户为什么需要它，以及把它做成产品时要面对哪些取舍。",
+    "reading_action": "从几篇文章开始",
+    "about_action": "关于我",
+    "about_url": "/about/",
+    "context_label": "近期工作",
+    "now": "最近在做 AgentMeasure，研究 Agent 调用软件时，使用、重试与结果应该怎样计量。",
+    "now_action": "看看这个项目",
+    "essays_title": "从这里开始读",
+    "essays_intro": "几篇代表文章，关于我一直在想的问题。",
+    "essays_more": "全部文章",
+    "essays_url": "/essays/",
+    "library_action": "研究资料与知识库",
+    "essays": [
+      {
+        "topic": "AI 产品",
+        "title": "AI Native 之后，产品的基本单位变了",
+        "description": "当意图、任务与结果成为核心，产品应该如何重新组织？",
+        "url": "/notes/ai-native-basic-unit/"
+      },
+      {
+        "topic": "具身智能",
+        "title": "机器人不是替代人，而是给人增加新的身体",
+        "description": "从人的能力与行动范围出发，重新理解机器人的产品价值。",
+        "url": "/notes/robots-give-people-new-bodies/"
+      },
+      {
+        "topic": "Agent",
+        "title": "当软件的消费者变成 Agent",
+        "description": "软件被发现、选择和使用的方式变了，计量也需要跟着改变。",
+        "url": "/notes/when-the-software-consumer-becomes-an-agent/"
+      },
+      {
+        "topic": "产品与组织",
+        "title": "空降管理者如何从职位合法性走向组织合法性",
+        "description": "拥有一个职位之后，如何在组织里建立真正的信任与协作。",
+        "url": "/notes/appointed-manager-organizational-legitimacy/"
+      }
+    ],
+    "latest_title": "最近更新",
+    "latest_intro": "新的观察、研究和阶段性思考。",
+    "projects_title": "我做的小工具与项目",
+    "projects_intro": "有些问题写成文章，有些问题试着用工具解决。",
+    "projects_url": "/projects/",
+    "projects_more": "全部项目",
+    "project_action": "查看源码与用法",
+    "contact_title": "继续读，也欢迎交流。",
+    "contact_intro": "过去近十年，我在 AI、软件与智能硬件之间做产品，也经历过几次创业。这里留下我的观察、判断，以及判断被新证据改变的过程。",
+    "contact_action": "联系我",
+    "contact_url": "/support/",
+    "rss_action": "通过 RSS 订阅"
+  },
+  "en": {
+    "headline": "Hi, I’m Roy.",
+    "identity": "I build products and write about technology in everyday life.",
+    "intro": "This is my personal blog, about AI, embodied intelligence, products, and building companies: what technology can do, why people need it, and the choices involved in making it useful.",
+    "reading_action": "Start with these essays",
+    "about_action": "About me",
+    "about_url": "/en/about/",
+    "context_label": "Current work",
+    "now": "Lately I have been building AgentMeasure, exploring how to measure usage, retries, and outcomes when agents use software.",
+    "now_action": "Explore the project",
+    "essays_title": "Start here",
+    "essays_intro": "A few essays on the questions I keep coming back to.",
+    "essays_more": "All essays",
+    "essays_url": "/en/essays/",
+    "library_action": "Research library (中文)",
+    "essays": [
+      {
+        "topic": "AI products",
+        "title": "After AI-Native: The Basic Unit of a Product Has Changed",
+        "description": "How products change when intent, tasks, and outcomes become central.",
+        "url": "/en/notes/ai-native-basic-unit/"
+      },
+      {
+        "topic": "Embodied AI",
+        "title": "Robots Give People New Bodies",
+        "description": "Looking at robots through the abilities and reach they give people.",
+        "url": "/en/notes/robots-give-people-new-bodies/"
+      },
+      {
+        "topic": "Agents",
+        "title": "When the Software Consumer Becomes an Agent",
+        "description": "New ways of finding, choosing, and using software call for new ways of measuring it.",
+        "url": "/en/notes/when-the-software-consumer-becomes-an-agent/"
+      },
+      {
+        "topic": "Organizations",
+        "title": "From Positional to Organizational Legitimacy",
+        "description": "How an appointed manager earns trust and builds cooperation.",
+        "url": "/en/notes/appointed-manager-organizational-legitimacy/"
+      }
+    ],
+    "latest_title": "Recent writing",
+    "latest_intro": "Recent essays available in English. The Chinese archive has more.",
+    "projects_title": "Things I’m building",
+    "projects_intro": "Some questions become essays. Others become tools.",
+    "projects_url": "/en/projects/",
+    "projects_more": "All projects",
+    "project_action": "Code and usage",
+    "contact_title": "Keep reading. Stay in touch.",
+    "contact_intro": "For nearly a decade, I have built products across AI, software, and intelligent hardware, with several startup chapters along the way. This blog records my observations and how new evidence changes my mind.",
+    "contact_action": "Contact me",
+    "contact_url": "/en/support/",
+    "rss_action": "Subscribe via RSS"
+  },
+  "projects": [
+    {
+      "id": "agentmeasure",
+      "name": "AgentMeasure",
+      "url": "https://github.com/roy-tong/AgentMeasure",
+      "role": {
+        "zh": "Agent 计量与一致性检查",
+        "en": "Agent measurement and conformance"
+      },
+      "description": {
+        "zh": "检查 Agent 遥测中的尝试、逻辑操作与重试是否被正确计量。每项检查返回 PASS、FAIL 或 UNPROVABLE；证据不足时明确说明。",
+        "en": "Check whether attempts, logical operations, and retries are counted consistently in agent telemetry. Each check reports PASS, FAIL, or UNPROVABLE when evidence is missing."
+      },
+      "links": [
+        {
+          "url": "https://roy-tong.github.io/AgentMeasure/",
+          "label": {
+            "zh": "项目网站",
+            "en": "Project website"
+          }
+        },
+        {
+          "url": "https://github.com/openlit/openlit/pull/1476",
+          "label": {
+            "zh": "OpenLIT 合并记录",
+            "en": "Merged OpenLIT contribution"
+          }
+        }
+      ],
+      "evidence": {
+        "zh": "相关的 token 计数修复已被 OpenLIT 合并；该修复不等于 Conformance Pack 已支持 token 检查。",
+        "en": "A related token-accounting fix was merged into OpenLIT. Token checks are not yet supported by the Conformance Pack."
+      }
+    },
+    {
+      "id": "iread",
+      "name": "iRead Research Monitor",
+      "url": "https://github.com/roy-tong/iRead",
+      "role": {
+        "zh": "持续阅读与信源追踪",
+        "en": "Ongoing reading and source discovery"
+      },
+      "description": {
+        "zh": "把一个研究领域整理成信源组合，持续收集内容，生成保留来源与证据边界的日报、周报和月报。",
+        "en": "Turn a research domain into a source collection and recurring daily, weekly, and monthly digests with sources and evidence boundaries."
+      },
+      "links": []
+    },
+    {
+      "id": "sure",
+      "name": "User Demand Research (SURE)",
+      "url": "https://github.com/roy-tong/user-demand-research",
+      "role": {
+        "zh": "可复查的用户需求研究",
+        "en": "Auditable user-demand research"
+      },
+      "description": {
+        "zh": "把目标、范围与样本设计连接到需求证据和研究报告，保留来源、证据分级与反证。提供 Skill、CLI 与 MCP 接口。",
+        "en": "Connect goals, scope, and sample design to demand evidence and research reports, preserving sources, evidence grades, and counterevidence. Available through Skill, CLI, and MCP interfaces."
+      },
+      "links": []
+    },
+    {
+      "id": "transcript",
+      "name": "Bilibili Video to Transcript",
+      "url": "https://github.com/roy-tong/bilibili-transcript-pipeline",
+      "role": {
+        "zh": "视频研究工具",
+        "en": "Video research tool"
+      },
+      "description": {
+        "zh": "将公开视频转换为带时间戳的 Markdown、SRT 字幕与结构化 JSON，方便检索和后续研究。",
+        "en": "Convert public videos into timestamped Markdown, SRT subtitles, and structured JSON for searchable research."
+      },
+      "links": []
+    },
+    {
+      "id": "library",
+      "name": "Roy’s AI Product Research Library",
+      "url": "https://roy-tong.github.io/knowledge/",
+      "role": {
+        "zh": "公开知识库",
+        "en": "Public research library"
+      },
+      "description": {
+        "zh": "按研究问题组织文章、资料与来源；提供公开全文、资料索引和面向 Agent 的只读入口。",
+        "en": "Essays, materials, and sources organized around research questions, with public full text, material indexes, and read-only access for agents."
+      },
+      "links": [],
+      "action": {
+        "zh": "浏览知识库",
+        "en": "Browse the library"
+      }
+    }
+  ]
+}

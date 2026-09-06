@@ -11,11 +11,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
     <meta name="author" content="{{ site.author.name }}">
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20260818-1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20260906-1">
     <link rel="stylesheet" href="{{ '/assets/css/knowledge.css' | relative_url }}?v=20260901-v3">
+    {% if page.portfolio_page %}<link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}?v=20260906-1">{% endif %}
     {% if page.book_page %}<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">{% endif %}
     {% if page.lang_switch_url %}
       <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
@@ -26,8 +36,7 @@
         (function () {
           try {
             var savedLanguage = window.localStorage.getItem('site-language');
-            var primaryLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-            var prefersEnglish = savedLanguage === 'en' || (!savedLanguage && !primaryLanguage.toLowerCase().startsWith('zh'));
+            var prefersEnglish = savedLanguage === 'en';
             if (prefersEnglish) window.location.replace('{{ '/en/' | relative_url }}');
           } catch (error) {
             /* Keep the Chinese source page when language detection is unavailable. */
@@ -55,10 +64,9 @@
         </button>
 
         <nav class="nav" id="site-navigation" aria-label="{% if is_english %}Main navigation{% else %}主导航{% endif %}">
+          <a href="{% if is_english %}{{ '/en/essays/' | relative_url }}{% else %}{{ '/essays/' | relative_url }}{% endif %}" {% if page.url == '/essays/' or page.url == '/en/essays/' %}aria-current="page"{% endif %}>{% if is_english %}Essays{% else %}文章{% endif %}</a>
           <a href="{{ '/knowledge/' | relative_url }}" {% if page.knowledge_page %}aria-current="page"{% endif %}{% if is_english %} title="Chinese knowledge library"{% endif %}>{% if is_english %}Knowledge{% else %}知识库{% endif %}</a>
-          <a href="{% if is_english %}{{ '/en/essays/' | relative_url }}{% else %}{{ '/essays/' | relative_url }}{% endif %}" {% if page.url == '/essays/' or page.url == '/en/essays/' %}aria-current="page"{% endif %}>Essays</a>
-          <a href="{% if is_english %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}" {% if page.url == '/projects/' or page.url == '/en/projects/' %}aria-current="page"{% endif %}>Projects</a>
-          <a href="{% if is_english %}{{ '/en/capability-index/' | relative_url }}{% else %}{{ '/capability-index/' | relative_url }}{% endif %}" {% if page.url == '/capability-index/' or page.url == '/en/capability-index/' %}aria-current="page"{% endif %}>{% if is_english %}Capability Index{% else %}能力地图{% endif %}</a>
+          <a href="{% if is_english %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}" {% if page.url == '/projects/' or page.url == '/en/projects/' %}aria-current="page"{% endif %}>{% if is_english %}Projects{% else %}项目{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/about/' | relative_url }}{% else %}{{ '/about/' | relative_url }}{% endif %}" {% if page.url == '/about/' or page.url == '/en/about/' %}aria-current="page"{% endif %}>{% if is_english %}About{% else %}关于{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}" {% if page.url == '/support/' or page.url == '/en/support/' %}aria-current="page"{% endif %}>{% if is_english %}Contact{% else %}联系{% endif %}</a>
           <div class="nav-tools">

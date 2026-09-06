@@ -502,12 +502,14 @@ a {
 
 .nav {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 30px;
   font-size: 14px;
 }
 
 .nav a {
+  white-space: nowrap;
   position: relative;
   color: var(--muted);
 }
@@ -4224,4 +4226,10 @@ a {
   .cap-contribute {
     padding: 34px 26px;
   }
+}
+
+/* Keep the full navigation readable between phone and desktop sizes. */
+@media (min-width: 681px) and (max-width: 980px) {
+  .nav { gap: 14px; }
+  .nav-wrap { gap: 20px; }
 }

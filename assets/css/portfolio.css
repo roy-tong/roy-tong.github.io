@@ -1,0 +1,50 @@
+/* Personal portfolio: the site's paper, serif type, and forest accent. */
+.portfolio { --section-space: clamp(52px, 7vw, 92px); }
+.portfolio h1, .portfolio h2, .portfolio h3 { text-wrap: balance; }
+.portfolio p { text-wrap: pretty; }
+.portfolio-hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: clamp(36px, 6vw, 88px); padding-block: clamp(64px, 8vw, 110px) 64px; align-items: end; border-bottom: 1px solid var(--line); }
+.portfolio-intro h1 { max-width: 13em; margin: 0; font-family: var(--serif); font-size: clamp(40px, 5.2vw, 68px); font-weight: 600; line-height: 1.22; letter-spacing: -.025em; }
+.portfolio-identity { margin: 28px 0 12px; color: var(--forest); font-weight: 600; font-size: 18px; }
+.portfolio-lead { margin: 0; max-width: 38em; color: var(--muted); font-size: 18px; line-height: 1.85; }
+.portfolio-actions, .portfolio-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.portfolio-actions { margin-top: 30px; gap: 12px; }
+.portfolio-context { padding-top: 20px; border-top: 1px solid var(--forest); font-size: 14px; }
+.portfolio-context p { margin: 0 0 18px; color: var(--muted); }
+.portfolio-section { padding-block: var(--section-space); border-bottom: 1px solid var(--line); }
+.portfolio-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: 24px 64px; margin-bottom: 32px; }
+.portfolio h2 { margin: 0; font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; letter-spacing: -.02em; line-height: 1.3; }
+.portfolio-heading p { max-width: 38em; margin: 0; color: var(--muted); }
+.portfolio h3 { margin: 0; font-size: 22px; line-height: 1.45; font-weight: 600; }
+.portfolio-project { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.5fr); gap: 20px 64px; padding-block: 30px; border-top: 1px solid var(--line); }
+.portfolio-project p { margin: 0; max-width: 65ch; }
+.portfolio-project .portfolio-topic { margin-top: 8px; }
+.portfolio-topic { color: var(--muted); font-size: 14px; }
+.portfolio-project .portfolio-links { margin-top: 12px; }
+.portfolio-project .portfolio-evidence { margin-top: 12px; color: var(--forest); font-size: 14px; }
+.portfolio .text-link { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; font-size: 14px; }
+.portfolio-arrow { flex: 0 0 20px; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.portfolio-reading { margin-bottom: 18px; }
+.portfolio-essay { display: grid; grid-template-columns: 130px minmax(0, 1fr) 20px; gap: 28px; padding-block: 26px; align-items: baseline; border-top: 1px solid var(--line); }
+.portfolio-essay p { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+.portfolio a:hover h3, .portfolio h3 a:hover { color: var(--forest); }
+.portfolio-contact { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 36px; padding-block: var(--section-space); align-items: center; }
+.portfolio-contact p { max-width: 45em; margin: 20px 0 0; color: var(--muted); }
+.portfolio-contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.portfolio [id] { scroll-margin-top: 100px; }
+@media (max-width: 980px) {
+  .portfolio-hero { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .portfolio-context { max-width: 640px; }
+  .portfolio-context p { margin: 0; }
+}
+@media (max-width: 680px) {
+  .portfolio-hero { padding-block: 48px 40px; }
+  .portfolio-intro h1 { font-size: clamp(36px, 8.8vw, 48px); }
+  .portfolio-identity { font-size: 16px; }
+  .portfolio-lead { font-size: 16px; }
+  .portfolio-heading, .portfolio-project, .portfolio-contact { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .portfolio-actions .button { flex: 1 1 100%; }
+  .portfolio h3 { font-size: 20px; }
+  .portfolio-essay { grid-template-columns: minmax(0, 1fr) 20px; gap: 8px 12px; }
+  .portfolio-essay .portfolio-topic { grid-column: 1 / -1; }
+  .portfolio-contact-actions { align-items: stretch; }
+}

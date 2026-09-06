@@ -1,74 +1,17 @@
 ---
 layout: default
-title: Projects
+title: 公开项目
+lang: zh-CN
 permalink: /projects/
-description: Roy.Tong 的公开项目：AgentMeasure、Agent Capability Index、Benchmark 以及围绕研究工作流构建的小工具。
+description: "围绕 Agent 计量、持续阅读、用户研究与知识整理，我把一些反复遇到的问题做成开放工具。"
+portfolio_page: true
 lang_switch_url: /en/projects/
 ---
 
-<section class="page-intro shell">
-  <p class="eyebrow">PROJECTS · PROOF</p>
-  <h1>公开项目</h1>
-  <p class="page-deck">Projects 回答「这个判断真的能做成东西吗」。不追求数量，当前战役（Agent Capability Economy）的项目排在最前。</p>
+<div class="portfolio">
+<section class="page-intro shell"><h1>公开项目</h1><p class="page-deck">围绕 Agent 计量、持续阅读、用户研究与知识整理，我把一些反复遇到的问题做成开放工具。</p></section>
+<section class="shell portfolio-section" aria-label="公开项目">
+<h2 class="visually-hidden">项目列表</h2>
+{% include portfolio-projects.html language="zh" limit=10 %}
 </section>
-
-<section class="home-simple-section home-projects">
-  <div class="shell">
-    <a class="home-featured-article" href="https://roy-tong.github.io/AgentMeasure/">
-      <div class="home-featured-meta"><span>FLAGSHIP PROJECT · v0.2.2</span></div>
-      <div class="home-featured-copy">
-        <h3>AgentMeasure</h3>
-        <p>Open measurement infrastructure for the Agent Capability Economy.</p>
-        <p><strong>Reach → Choice → Use → Utility → Value</strong></p>
-        <p>当软件的消费者从人变成 Agent，传统安装量、席位和页面访问不足以描述软件价值。AgentMeasure 先把 Agent 对软件能力的发现、选择、调用与价值测清楚，再为未来 Metering、Marketplace 与 Capability as a Service 提供计量基础。当前状态：规范 Draft 0.4.4、一致性向量套件（含首个社区贡献 fixture Urusilla-001）、首个公开证据案例、Lab 开源实验引擎（78 tests）、真实 Agent 上的首个预注册 A/B。</p>
-      </div>
-      <span class="home-article-arrow" aria-hidden="true">↗</span>
-    </a>
-
-    <div class="hub-index-links">
-      <a href="{{ '/notes/when-the-software-consumer-becomes-an-agent/' | relative_url }}">旗舰文章：当软件的消费者变成 Agent <span>→</span></a>
-      <a href="{{ '/notes/agentmeasure-from-spec-to-evidence/' | relative_url }}">进展周报：规范开始长出证据 <span>→</span></a>
-      <a href="https://roy-tong.github.io/AgentMeasure/">项目官网 <span>↗</span></a>
-      <a href="https://github.com/roy-tong/AgentMeasure/tree/main/conformance/evidence/langfuse-demo-traces">首个公开证据案例 <span>↗</span></a>
-      <a href="https://github.com/roy-tong/AgentMeasure/discussions">Discussions <span>↗</span></a>
-    </div>
-
-    <div class="home-project-list">
-      <a class="home-project-row" href="{{ '/capability-index/' | relative_url }}">
-        <div><span>01</span><h3>Agent Capability Index</h3></div>
-        <p>Agent 软件世界的公共地图，当前战役的事实底座。开放贡献：Add a capability / Correct an error / Claim your provider profile。</p>
-        <strong>Campaign ↗</strong>
-      </a>
-      <a class="home-project-row" href="https://github.com/roy-tong/AgentMeasure/tree/main/conformance/evidence/langfuse-demo-traces">
-        <div><span>02</span><h3>AgentMeasure 证据案例</h3></div>
-        <p>真实框架遥测跑过规范管线的首个公开证据案例：12 次尝试、分组证据 0%、安全操作覆盖率 0%——可复算的诚实报告。</p>
-        <strong>Evidence ↗</strong>
-      </a>
-      <a class="home-project-row" href="https://github.com/roy-tong/user-demand-research">
-        <div><span>03</span><h3>User Demand Research (SURE)</h3></div>
-        <p>面向 Agent 的需求研究 Skill 与 CLI：固定研究目录、阶段门、证据等级、反证，以及七个平台的 GitHub 开源连接器审查、采样与审计。</p>
-        <strong>Skill + CLI ↗</strong>
-      </a>
-      <a class="home-project-row" href="https://github.com/roy-tong/iRead">
-        <div><span>04</span><h3>iRead Research Monitor</h3></div>
-        <p>持续发现信源、采集内容，并生成带证据边界的日报、周报和月报。</p>
-        <strong>Tool ↗</strong>
-      </a>
-      <a class="home-project-row" href="https://github.com/roy-tong/bilibili-transcript-pipeline">
-        <div><span>05</span><h3>Bilibili Video to Transcript</h3></div>
-        <p>把公开视频转换为带时间戳、可检索、方便后续研究的文本。</p>
-        <strong>Tool ↗</strong>
-      </a>
-      <a class="home-project-row" href="https://github.com/roy-tong/roy-tong.github.io">
-        <div><span>06</span><h3>AI Product Research Library</h3></div>
-        <p>公开研究、文章以及面向 Agent 的只读知识索引。</p>
-        <strong>Library ↗</strong>
-      </a>
-    </div>
-
-    <div class="hub-index-links">
-      <a href="{{ '/notes/scene-user-demand-evidence-research/' | relative_url }}">SURE 人类实操版：从决策问题到产品验证 <span>→</span></a>
-      <a href="https://github.com/roy-tong/user-demand-research">SURE Agent 版：安装 Skill、运行 CLI 和完整合成案例 <span>↗</span></a>
-    </div>
-  </div>
-</section>
+</div>

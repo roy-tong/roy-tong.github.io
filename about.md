@@ -140,13 +140,13 @@ lang_switch_url: /en/about/
 
     <h2>我正在研究和构建什么</h2>
 
-    <h3>当前战役：Agent Capability Economy</h3>
+    <h3>Agent 与软件计量</h3>
 
-    <p>长期研究保持多元，但当前只有一个战役：<strong>Agent Capability Economy</strong>——当软件的消费者从人变成 Agent，软件如何被发现、选择、调用、计量与交易。我在这个专题上的工作分为三层：<a href="{{ '/capability-index/' | relative_url }}">Agent Capability Index</a> 提供事实底座（生态地图与数据台账），Essays 提供解释，项目提供证明。</p>
+    <p>最近主要在做 <strong>AgentMeasure</strong>，研究 Agent 调用软件时应如何定义和验证用量。更广的研究问题整理在 <a href="{{ '/capability-economy/' | relative_url }}">Agent Capability Economy</a> 专题，相关的软件与服务收录在 <a href="{{ '/capability-index/' | relative_url }}">能力地图</a>。</p>
 
     <h3>AgentMeasure</h3>
 
-    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a>（<a href="https://roy-tong.github.io/AgentMeasure/">官网</a>）是我目前最重要的公开项目。它试图为 Agent Capability Economy 建立一套开放计量语言：从 Reach、Choice、Use、Utility 到 Value，回答 Agent 如何发现、选择、调用软件能力，以及这些能力如何被可靠测量、比较，并进一步支撑未来的 Metering、Marketplace 与 Capability as a Service。当前版本 v0.2.2：一致性向量套件已接受首个社区贡献 fixture，发布了首个公开证据案例（真实框架遥测跑过规范管线、可复算的 0% 覆盖率诚实报告），实验引擎 Lab 已在真实 Agent 上完成首个预注册对照实验。</p>
+    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a> 是我目前主要维护的公开项目。它检查 Agent 遥测中的尝试、逻辑操作、重试和证据边界，让指标的名称与实际统计口径对应起来。<a href="https://github.com/roy-tong/AgentMeasure/tree/main/conformance/pack">一致性检查包</a>提供本地检查；<a href="https://github.com/openlit/openlit/pull/1476">我提交的 token 计数修复</a>已被 OpenLIT 合并。这是相关的上游贡献，token 检查尚未纳入当前检查包。</p>
 
     <p>我更关心的不是再造支付协议，而是支付之前更基础的问题：当软件消费者从人转向 Agent，我们究竟应该怎样定义一次机会、一次选择、一次使用，以及一次真正产生价值的调用。</p>
 
@@ -156,7 +156,7 @@ lang_switch_url: /en/about/
 
     <h3>Small tools</h3>
 
-    <p>我也会把重复出现的研究工作流做成小工具，例如 <a href="https://github.com/roy-tong/user-demand-research">User Demand Research (SURE)</a>、<a href="https://github.com/roy-tong/iRead">iRead</a> 和 <a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Video to Transcript</a>。这些项目主要解决具体问题，不承担我的核心个人品牌叙事。</p>
+    <p>我也会把重复出现的研究工作流做成小工具，例如 <a href="https://github.com/roy-tong/user-demand-research">User Demand Research (SURE)</a>、<a href="https://github.com/roy-tong/iRead">iRead</a> 和 <a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Video to Transcript</a>。这些项目来自我自己反复遇到的研究需求。</p>
 
     <h2>我如何研究和写作</h2>
 

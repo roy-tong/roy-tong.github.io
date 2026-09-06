@@ -94,7 +94,10 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeNavigation();
+      if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+        closeNavigation();
+        menuToggle.focus();
+      }
     });
 
     window.matchMedia('(min-width: 681px)').addEventListener('change', function (event) {

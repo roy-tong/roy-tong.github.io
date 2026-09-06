@@ -1,0 +1,67 @@
+{% assign copy = site.data.portfolio[include.language] %}
+<div class="portfolio">
+  <section class="portfolio-hero shell" aria-labelledby="home-title">
+    <div class="portfolio-intro">
+      <h1 id="home-title">{{ copy.headline }}</h1>
+      <p class="portfolio-identity">{{ copy.identity }}</p>
+      <p class="portfolio-lead">{{ copy.intro }}</p>
+      <div class="portfolio-actions">
+        <a class="button primary" href="#essays">{{ copy.reading_action }}</a>
+        <a class="button secondary" href="{{ copy.about_url | relative_url }}">{{ copy.about_action }}</a>
+      </div>
+    </div>
+    <aside class="portfolio-context" aria-label="{{ copy.context_label }}">
+      <p>{{ copy.now }}</p>
+      <a class="text-link" href="https://roy-tong.github.io/AgentMeasure/">{{ copy.now_action }}{% include portfolio-arrow.html %}</a>
+    </aside>
+  </section>
+
+  <section class="portfolio-section shell" id="essays" aria-labelledby="essays-title">
+    <header class="portfolio-heading">
+      <h2 id="essays-title">{{ copy.essays_title }}</h2>
+      <p>{{ copy.essays_intro }}</p>
+    </header>
+    <div class="portfolio-reading">
+      {% for item in copy.essays %}
+      <a class="portfolio-essay" href="{{ item.url | relative_url }}">
+        <span class="portfolio-topic">{{ item.topic }}</span>
+        <div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div>
+        {% include portfolio-arrow.html %}
+      </a>
+      {% endfor %}
+    </div>
+    <div class="portfolio-links">
+      <a class="text-link" href="{{ copy.essays_url | relative_url }}">{{ copy.essays_more }}{% include portfolio-arrow.html %}</a>
+      <a class="text-link" href="{{ '/knowledge/' | relative_url }}">{{ copy.library_action }}{% include portfolio-arrow.html %}</a>
+    </div>
+  </section>
+
+  <section class="portfolio-section shell" aria-labelledby="latest-title">
+    <header class="portfolio-heading"><h2 id="latest-title">{{ copy.latest_title }}</h2><p>{{ copy.latest_intro }}</p></header>
+    <div class="portfolio-reading">
+      {% assign shown_posts = 0 %}
+      {% for post in site.posts %}
+        {% if include.language == 'en' and post.lang != 'en' %}{% continue %}{% endif %}
+        {% if include.language == 'zh' and post.lang == 'en' %}{% continue %}{% endif %}
+        <a class="portfolio-essay" href="{{ post.url | relative_url }}">
+          <time class="portfolio-topic" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+          <div><h3>{{ post.title }}</h3>{% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}</div>
+          {% include portfolio-arrow.html %}
+        </a>
+        {% assign shown_posts = shown_posts | plus: 1 %}
+        {% if shown_posts == 4 %}{% break %}{% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="portfolio-section shell" id="projects" aria-labelledby="projects-title">
+    <header class="portfolio-heading"><h2 id="projects-title">{{ copy.projects_title }}</h2><p>{{ copy.projects_intro }}</p></header>
+    {% include portfolio-projects.html language=include.language limit=3 %}
+    <a class="text-link" href="{{ copy.projects_url | relative_url }}">{{ copy.projects_more }}{% include portfolio-arrow.html %}</a>
+  </section>
+
+  <section class="portfolio-contact shell" aria-labelledby="contact-title">
+    <div><h2 id="contact-title">{{ copy.contact_title }}</h2><p>{{ copy.contact_intro }}</p></div>
+    <div class="portfolio-contact-actions"><a class="button primary" href="{{ '/feed.xml' | relative_url }}">{{ copy.rss_action }}</a><a class="text-link" href="{{ copy.contact_url | relative_url }}">{{ copy.contact_action }}{% include portfolio-arrow.html %}</a></div>
+  </section>
+</div>

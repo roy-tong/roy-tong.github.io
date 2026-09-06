@@ -5,7 +5,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy.Tong 的个人网站，首页按“定位 → 文章 → 开源项目 → 关于与联系”组织，主要记录：
+这是 Roy.Tong 的个人网站，首页按“个人介绍 → 精选文章 → 最近更新 → 开源项目 → 关于与订阅”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
@@ -54,7 +54,7 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 
 - GitHub Pages + Jekyll，无数据库和广告追踪。
 - 响应式布局、深色模式、RSS 和语义化页面结构。
-- 中英文核心页面：首次访问时参考浏览器首选语言，页头也可手动切换；网站会记住选择，不调用第三方 IP 定位服务。
+- 中英文核心页面：首次访问首页默认中文，只有主动选择英文后才记住这一偏好；文章链接保留原语言，页头可手动切换。
 - 提供 Open Graph、结构化 SEO 信息、sitemap 和 robots.txt 规则。
 - 优先使用中文系统字体，不依赖 Google Fonts，减少首次加载时间。
 
