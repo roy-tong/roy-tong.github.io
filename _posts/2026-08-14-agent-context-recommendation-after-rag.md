@@ -27,9 +27,7 @@ DeepSeek Harness 的架构文档里有一句话：
 
 这四步可以用同一个模型，却不能使用同一份工作台。
 
-以前我把 RAG 之后的这个问题叫作 **Context Recommendation**。当时想的主要是资料检索与排序。看完 DeepSeek Harness 的公开架构后，我会把定义扩大：
-
-> Context Recommendation 是 Agent Runtime 的工作台装配层。它为下一步选择模型该看到的信息、可调用的能力和必须遵守的权限，也决定哪些内容暂时不该出现。
+以前我把 RAG 之后的这个问题叫作 **Context Recommendation**。当时想的主要是资料检索与排序。看完 DeepSeek Harness 的公开架构后，我会把定义扩大：Context Recommendation 是 Agent Runtime 的工作台装配层。它为下一步选择模型该看到的信息、可调用的能力和必须遵守的权限，也决定哪些内容暂时不该出现。
 
 DeepSeek Harness 没有在公开文档中声称已经完成了一套 Context Recommender。它做的事情更基础：把“每一步给模型什么”从 Prompt 里的隐性操作，变成运行时可以组装、注入、限制和回放的正式接口。
 
@@ -37,9 +35,7 @@ DeepSeek Harness 没有在公开文档中声称已经完成了一套 Context Rec
 
 2020 年的 RAG 论文解决了一个很具体的问题：当模型参数里的知识不足时，先从外部知识库找到与问题相关的段落，再让模型基于这些材料生成答案。[RAG 原始论文](https://arxiv.org/abs/2005.11401)
 
-工程实现后来不断扩展，主问题仍然可以概括成一句话：
-
-**哪些资料和当前问题有关？**
+工程实现后来不断扩展，主问题仍然可以概括成一句话：哪些资料和当前问题有关？
 
 Agent 面对的范围更大。
 

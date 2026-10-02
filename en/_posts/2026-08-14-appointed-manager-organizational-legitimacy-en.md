@@ -50,7 +50,7 @@ Whether the team believes you understand the real problems and can separate symp
 
 I call this organizational legitimacy. It's a management-practice frame for this article, not a replacement for an existing academic concept.
 
-> Formal authority lets you demand that the team act. Organizational legitimacy makes the team willing to hand you bad news, real disagreement and unfinished judgments.
+Formal authority lets you demand that the team act. Organizational legitimacy makes the team willing to hand you bad news, real disagreement and unfinished judgments.
 
 The second isn't "make everyone like you." A leader with organizational legitimacy still kills projects, makes trade-offs, restructures and changes people. The difference: the team understands the basis, believes in the process, and has seen commitments honored.
 
@@ -172,7 +172,7 @@ Then restructuring has a purpose — instead of a new chart proving a new leader
 
 Clear safety, compliance and integrity issues get handled immediately. A key role that chronically fails its basic duties, a leader who persistently destroys collaboration, or a role whose requirements have fundamentally changed — none of these wait indefinitely for politeness.
 
-The line to hold: **don't mistake your unfamiliarity for their incompetence.**
+The line to hold: don't mistake your unfamiliarity for their incompetence.
 
 Before any people decision, separate four things: is the role's goal clear, is resourcing sufficient, are interfaces reasonable, and does the person have capability and willingness. Evidence and procedural fairness don't block timely decisions; they stop systemic problems from landing on one person.
 
@@ -216,9 +216,7 @@ What's worth borrowing from that VP isn't "three months of doing nothing," or a 
 
 It's that he didn't mistake a headquarters appointment for the team's endorsement. He handled what had to be handled, had the team co-explain reality, and used checkable decisions to turn a title into a work record.
 
-So for the first 90 days of an appointment, remember three words:
-
-**Understand. Co-evidence. Change.**
+So for the first 90 days of an appointment, I keep three words in mind: understand, co-evidence, change.
 
 When you finally move something important — a structure, a project, a person — the team shouldn't just see "the new boss is changing things."
 

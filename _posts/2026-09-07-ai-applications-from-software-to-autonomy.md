@@ -146,7 +146,7 @@ AI 每往前走一步，都是把过去必须由人承担的一部分责任，�
 
 这就是“吃模型红利”和“被模型替代”之间真正的分界。
 
-**好的应用不应该建立在模型永远做不到某件事上，而应该建立在模型越能做事，我能接管越多责任上。**
+好的应用不应该建立在模型永远做不到某件事上，而应该建立在模型越能做事，我能接管越多责任上。
 
 ## 四、为什么 Coding 是目前最值得迁移的成功范式
 
@@ -207,9 +207,7 @@ AI Native Service 争夺的是 Labor / Outsourcing / Professional Service Budget
 
 客服已经出现很明确的先行信号。Intercom 的 Fin 按 Outcome 收费，一个成功 Resolution 才计费；Salesforce 2026 年推出的 Help Agent 也采用 Pay-per-Resolution，未解决或升级人工的 Session 不计为成功结果。[Intercom: Fin AI Agent Outcomes](https://www.intercom.com/help/en/articles/8205718-fin-ai-agent-outcomes)；[Salesforce: Help Agent Resolutions](https://help.salesforce.com/s/articleView?id=ai.usage_flex_credits.htm&language=en_US&type=5)
 
-收费方式之所以值得看，是因为它反映了产品责任的变化：
-
-> 从“我给你一套工具”，变成“我为完成负责”。
+收费方式之所以值得看，是因为它反映了产品责任的变化：从“我给你一套工具”，变成“我为完成负责”。
 
 未来很可能会看到更多公司表面上不像软件公司，而像律所、会计公司、客服外包、招聘公司、保险 TPA、医疗运营服务商。区别只在于它们内部的生产方式变了：大部分标准工作由 Agent 完成，人处理异常和高责任场景。
 
@@ -324,7 +322,7 @@ Transaction
 
 最上面的入口可能高度集中，下面的经济活动未必集中。
 
-**Agent 会重做分发，不等于它会拥有所有产业利润。**
+Agent 会重做分发，不等于它会拥有所有产业利润。
 
 ## 九、模型越强，护城河反而越往模型之外迁移
 
@@ -366,9 +364,7 @@ Transaction
 
 一旦产品进入资金、订单、资源分配和撮合，价值捕获会再上一个台阶。
 
-这些东西有一个共同特征：
-
-> **模型越强，它们越有用，而不是越没用。**
+这些东西有一个共同特征：模型越强，它们越有用，而不是越没用。
 
 一个好公司应该是 Model-leveraged，而不是 Model-dependent。
 
@@ -416,9 +412,7 @@ Digital Agent 和 Physical AI 的共同点不是“一个是虚拟执行器，�
 
 Google DeepMind 2026 年发布的 Gemini Robotics ER 2 很能说明这个问题：高层 embodied reasoning model 负责理解物理世界、多步规划、协同和任务状态跟踪，然后把具体运动执行交给低层 VLA。高层 Reasoning 可以越来越通用，低层 Motor Control 仍然和具体 embodiment 强相关。[Google DeepMind, Gemini Robotics ER 2](https://deepmind.google/models/gemini-robotics/embodied-reasoning/)
 
-换句话说：
-
-> **大脑可能越来越通用，小脑和身体不会那么快通用。**
+换句话说，大脑可能越来越通用，小脑和身体不会那么快通用。
 
 传感器、自由度、执行器、结构、时延、动力学和安全限制都会反过来决定智能如何落地。
 
@@ -442,9 +436,7 @@ Google DeepMind 2026 年发布的 Gemini Robotics ER 2 很能说明这个问题�
 
 所以长期 TAM 更大，不等于近期创业回报更好。
 
-这两个判断可以同时成立：
-
-> **Physical AI 可能是 AI 最大的长期 Frontier；Digital Agent / AI Native Service 仍然是未来 3–5 年更确定的商业化路径。**
+这两个判断可以同时成立：Physical AI 可能是 AI 最大的长期 Frontier；Digital Agent / AI Native Service 仍然是未来 3–5 年更确定的商业化路径。
 
 ## 十三、世界模型的价值，也不应该被简化成“机器人终于有大脑了”
 
@@ -462,9 +454,7 @@ Coding 为什么容易跑起来？因为代码天然有 Compile、Test、Sandbox
 
 如果 World Model 真正带来价值，很可能不是因为它比视频模型更会生成，而是因为它降低了 Physical Agent 获取训练数据、测试策略和发现 Failure Region 的成本。
 
-这又回到同一条产业逻辑：
-
-> **真正值钱的不是能力展示，而是能否进入生产闭环。**
+这又回到同一条产业逻辑：真正值钱的不是能力展示，而是能否进入生产闭环。
 
 ## 十四、BCI 应该单独看，它更像 Biological I/O，而不是另一种机器人
 
@@ -488,9 +478,7 @@ Coding 为什么容易跑起来？因为代码天然有 Compile、Test、Sandbox
 | Physical World | Robot / Autonomous Machine | 空间、物体、设备、现实任务 | Physical Labor / Asset Utilization | 数据、控制、硬件、可靠性、成本 | 中等 |
 | Biological World | BCI / Human Augmentation | 神经系统与人的能力边界 | Healthcare / Augmentation | 临床、稳定性、监管、伦理 | 较低 |
 
-三条路线最终都在做同一件事情：
-
-> 把机器从“给建议”变成“对一个环境持续采取行动”。
+三条路线最终都在做同一件事情：把机器从“给建议”变成“对一个环境持续采取行动”。
 
 但环境不同，产品规律完全不同。
 
@@ -671,9 +659,7 @@ Physical Result-as-a-Service 可能比单纯硬件销售更接近 AI 的价值�
 
 所以 AI 应用的下一站，不是做更多 Agent。
 
-而是让 AI 从一个会说、会想、会调用工具的模型，逐渐变成真正的生产者：
-
-> **完成工作，交付结果，进入交易，并最终在数字世界和物理世界中持续自主运行。**
+而是让 AI 从一个会说、会想、会调用工具的模型，逐渐变成真正的生产者：完成工作，交付结果，进入交易，并最终在数字世界和物理世界中持续自主运行。
 
 如果一定要用一句话概括我现在对 AI 应用未来的判断：
 

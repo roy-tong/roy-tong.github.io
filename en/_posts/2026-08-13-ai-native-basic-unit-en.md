@@ -17,9 +17,7 @@ Open any traditional editor and you first meet a set of stable basic units. Word
 
 When AI entered software, many products simply added a chat box beside the existing interface: the user makes a request, the model generates content, the result is dropped back into the page, slide or timeline. The AI is still operating on the old product's basic units.
 
-The change has to go deeper:
-
-> The basic unit of a product is shifting from pages, files, layers and features toward semantic objects, relationships, tasks and operation history that both people and machines can understand.
+The change has to go deeper: the basic unit of a product is shifting from pages, files, layers and features toward semantic objects, relationships, tasks and operation history that both people and machines can understand.
 
 Pages and files won't disappear; they remain the most familiar media for reading, editing and delivery. But in an AI-native product they become different views of the same state.
 
@@ -149,9 +147,7 @@ Generation quality still matters. It is just one part of task completion.
 
 Traditional editors were built around direct human manipulation, which is why pages, files, layers and timelines became their basic units. AI can understand higher-level intent and operate on many objects at once; to absorb that capability, products must re-express their own state — a chat box beside the old interface is only the first step.
 
-Not every product needs agents, and not all content needs an elaborate semantic graph. The practical test:
-
-> If the user's core task spans multiple pages, objects and tools, and the AI needs to keep understanding goals, relationships and history, then the product should elevate task and semantic state to first-class objects.
+Not every product needs agents, and not all content needs an elaborate semantic graph. The practical test: if the user's core task spans multiple pages, objects and tools, and the AI needs to keep understanding goals, relationships and history, then the product should elevate task and semantic state to first-class objects.
 
 Pages will still exist, files will still be delivered, editors will still be used — but increasingly as windows through which people observe and control product state, not the state itself.
 

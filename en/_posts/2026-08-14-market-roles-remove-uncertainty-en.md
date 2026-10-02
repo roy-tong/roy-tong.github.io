@@ -19,9 +19,7 @@ Every new-product discussion hits the same two questions. B2B or consumer first?
 
 It fails all the time: products go straight from professionals to consumers, or win a huge consumer base and then retreat to professional scenarios. These are not four levels of maturity but four evidence environments.
 
-Before choosing the next stop, ask:
-
-> What unknown is most likely to kill this product right now, and which market can expose it at the lowest cost with the least distortion?
+Before choosing the next stop, ask: what unknown is most likely to kill this product right now, and which market can expose it at the lowest cost with the least distortion?
 
 Market entry is about the best learning environment, not the biggest customer base.
 

@@ -21,11 +21,9 @@ The industry's default question is: how many people does one robot replace? That
 
 The drone's early value was not replacing a helicopter shoot at a lower price — most creators would never have rented a helicopter at all. Drones gave them, for the first time, a pair of eyes that could fly, and only then did new camera positions, shot language and workflows appear. The photographer didn't leave the task; he gained a body capability: flight.
 
-So next to "replace people," I want a second product line:
+So next to "replace people," I want a second product line: robots can also give people a new body.
 
-> Robots can also give people a new body.
-
-"Body" here is a product metaphor, not a biological claim, and the headline is not denying that robots replace labor. It is a reminder to ask an additional question: once the user has this robot, what can they now do reliably for the first time?
+"Body" here is a product metaphor, not a biological claim. It is a reminder to ask an additional question: once the user has this robot, what can they now do reliably for the first time?
 
 ## Replacement and augmentation are two different product problems
 
