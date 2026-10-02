@@ -2,7 +2,7 @@
 layout: post
 title: "Agent 时代的工作区，需要「唯一上游」"
 subtitle: "复制是债务，挂载是资产。真源要版本化，派生物要可重建，临时状态要有 TTL。"
-date: 2026-10-06 10:00:00 +0800
+date: 2026-10-02 14:00:00 +0800
 lang: zh-CN
 reading_time: 6
 tags: ["Agent", "工程实践", "工作流"]

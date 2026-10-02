@@ -2,7 +2,7 @@
 layout: post
 title: "跑了几百个 Agent 会话后，我留下了三条系统规则"
 subtitle: "能并行但任务必须窄；能失败但必须降级；判断和动作都需要确定性门禁。"
-date: 2026-10-03 10:00:00 +0800
+date: 2026-10-02 11:00:00 +0800
 lang: zh-CN
 reading_time: 5
 tags: ["Agent", "自动化", "工程实践"]

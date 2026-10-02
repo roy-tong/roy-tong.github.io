@@ -2,7 +2,7 @@
 layout: post
 title: "我们审计了 110 个 AI 用量工具：数字都在哪里出错"
 subtitle: "五个 bug 家族、一次独立复现、23 个上游合并，以及发布后第一个外部真实案例。"
-date: 2026-10-05 10:00:00 +0800
+date: 2026-10-02 13:00:00 +0800
 lang: zh-CN
 reading_time: 5
 tags: ["Agent", "AgentMeasure", "计量", "开源"]

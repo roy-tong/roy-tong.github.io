@@ -2,7 +2,7 @@
 layout: post
 title: "「没有竞品」是最危险的竞争分析结论"
 subtitle: "否定性研究无法证明不存在；方法的核心是给「暂时没找到」划一条可审计的边界。"
-date: 2026-10-07 10:00:00 +0800
+date: 2026-10-02 15:00:00 +0800
 lang: zh-CN
 reading_time: 6
 tags: ["研究方法", "竞争分析", "AgentMeasure"]
