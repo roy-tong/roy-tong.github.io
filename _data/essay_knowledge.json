@@ -64,10 +64,11 @@
     ],
     "lang": "zh-CN"
   },
-  "/notes/ai-wearable-modalities-body-comfort/": {
+  "/notes/ai-interaction-grammar/": {
     "topic": "ai-devices",
     "units": [
-      "wearables"
+      "wearables",
+      "spatial-computing"
     ],
     "lang": "zh-CN"
   },
@@ -111,13 +112,6 @@
     "topic": "agent-systems",
     "units": [
       "agent-context"
-    ],
-    "lang": "zh-CN"
-  },
-  "/notes/spatial-computing-touch-moment/": {
-    "topic": "ai-devices",
-    "units": [
-      "spatial-computing"
     ],
     "lang": "zh-CN"
   },

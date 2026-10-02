@@ -5,7 +5,7 @@ order: 30
 reviewed_at: 2026-08-31
 summary: "从“看、指、捏、说”延伸到对象身份、执行确认和跨步骤状态，不把空间展示等同于完整交互。"
 related: ["wearables","world-models","agent-context"]
-related_posts: ["/notes/spatial-computing-touch-moment/"]
+related_posts: ["/notes/ai-interaction-grammar/"]
 source_ids: []
 ---
 

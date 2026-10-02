@@ -39,13 +39,12 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 
 ## 推荐阅读
 
-- [空间计算需要自己的“触控时刻”](https://roy-tong.github.io/notes/spatial-computing-touch-moment/)
+- [AI 交互在等它的“触控时刻”](https://roy-tong.github.io/notes/ai-interaction-grammar/)
 - [RAG 之后，Agent 需要 Context Recommendation](https://roy-tong.github.io/notes/agent-context-recommendation-after-rag/)
-- [家庭机器人为什么技术上更难，经济上可能更丰富](https://roy-tong.github.io/notes/home-robots-harder-richer/)
+- [机器人进家庭，先过“谁来收拾残局”这一关](https://roy-tong.github.io/notes/home-robots-harder-richer/)
 - [机器人不是替代人，而是给人增加新的身体](https://roy-tong.github.io/notes/robots-give-people-new-bodies/)
 - [空降管理者如何从职位合法性走向组织合法性](https://roy-tong.github.io/notes/appointed-manager-organizational-legitimacy/)
 - [Geek、Professional、B、C：不同市场负责消灭不同不确定性](https://roy-tong.github.io/notes/market-roles-remove-uncertainty/)
-- [AI Wearable 的竞争，不是眼镜对耳机](https://roy-tong.github.io/notes/ai-wearable-modalities-body-comfort/)
 - [竞品分析为什么不该从参数表开始](https://roy-tong.github.io/notes/competitive-analysis-software-hardware/)
 - [AI Native 之后，产品的基本单位变了](https://roy-tong.github.io/notes/ai-native-basic-unit/)
 - [Agent 向左，具身向右：AI 在信息空间与物理世界的分岔](https://roy-tong.github.io/notes/agent-left-embodied-right/)

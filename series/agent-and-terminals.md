@@ -48,7 +48,7 @@ lang_switch_url: /en/
     <li>
       <span class="series-thesis-num">05</span>
       <div>
-        <h3>空间计算需要自己的触控时刻</h3>
+        <h3>AI 交互在等它的“触控时刻”</h3>
         <p>缺的不是更多手势，是跨应用稳定、可组合、可撤销的公共交互语法。</p>
       </div>
     </li>
@@ -77,7 +77,7 @@ lang_switch_url: /en/
   <div class="series-article-list">
     {% for post in site.posts %}
       {% if post.lang == 'en' %}{% continue %}{% endif %}
-      {% if post.path contains 'agent-context-recommendation-after-rag' or post.path contains 'agent-left-embodied-right' or post.path contains 'robots-give-people-new-bodies' or post.path contains 'ai-wearable-modalities-body-comfort' or post.path contains 'spatial-computing-touch-moment' %}
+      {% if post.path contains 'agent-context-recommendation-after-rag' or post.path contains 'agent-left-embodied-right' or post.path contains 'robots-give-people-new-bodies' or post.path contains 'ai-interaction-grammar' %}
         {% if post.path contains entry_slug %}{% continue %}{% endif %}
         <a class="series-article-row" href="{{ post.url | relative_url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
@@ -99,7 +99,7 @@ lang_switch_url: /en/
   <ol class="series-path-list">
     <li><span>1</span><p>先读入口文章，看清两条路线的分界与各自约束。</p></li>
     <li><span>2</span><p>信息空间线：<a href="{{ '/notes/agent-context-recommendation-after-rag/' | relative_url }}">Context Recommendation</a>；物理世界线：<a href="{{ '/notes/robots-give-people-new-bodies/' | relative_url }}">机器人给人新身体</a>。</p></li>
-    <li><span>3</span><p>终端形态看 <a href="{{ '/notes/ai-wearable-modalities-body-comfort/' | relative_url }}">AI Wearable</a> 与 <a href="{{ '/notes/spatial-computing-touch-moment/' | relative_url }}">空间计算</a>，比较不同形态的交互入口。</p></li>
+    <li><span>3</span><p>终端形态看 <a href="{{ '/notes/ai-interaction-grammar/' | relative_url }}">AI 交互的公共语法</a>，比较不同形态的交互入口。</p></li>
   </ol>
 </section>
 

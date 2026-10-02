@@ -67,7 +67,7 @@ knowledge_page: true
 
 - [AI 视频软件的护城河，藏在第二次修改里](/notes/ai-video-second-edit/)
 - [本地 AI 盒子，得先证明自己值得多占一个插座](/notes/local-ai-box-task-economics/)
-- [机器人进家庭，要先过“谁来收拾残局”这一关](/notes/home-robots-recovery-burden/)
+- [机器人进家庭，要先过“谁来收拾残局”这一关](/notes/home-robots-harder-richer/)
 
 ## 内容怎样重新组织
 

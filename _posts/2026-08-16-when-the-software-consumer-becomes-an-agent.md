@@ -41,7 +41,7 @@ description: 当软件的消费者从人变成 Agent，安装量、席位与页�
 
 2026 年，支付层正在密集出现：Cloudflare 的 x402 / Agentic Payments、Coinbase 的 Bazaar、OpenAI 与 Stripe 联合发布的 Agentic Commerce Protocol（ACP）。这些协议解决的是同一个问题：Agent 如何为软件能力付钱。
 
-但支付协议们集体默认了一件事：被计费的使用量是可靠的。这是一个危险的默认。你无法为一个无法度量、无法验证的使用行为计费——就像没有电表就没有电费账单。计量（measurement）是计量（metering）的前提，而 metering 是支付的前提。三层必须按顺序建设：
+但支付协议们集体默认了一件事：被计费的使用量是可靠的。这是一个危险的默认。你无法为一个无法度量、无法验证的使用行为计费——就像没有电表就没有电费账单。测量（measurement）是计量（metering）的前提，而计量是支付的前提。三层必须按顺序建设：
 
 ```text
 测量（Measure）→ 计量（Meter）→ 支付（Pay）

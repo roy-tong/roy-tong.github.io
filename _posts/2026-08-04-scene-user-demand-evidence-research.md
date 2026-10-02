@@ -13,11 +13,9 @@ excerpt: "从一个具体产品决定出发，设计五类证据来源，把每�
 excerpt_en: "Start from a product decision, design five evidence roles, reconstruct each record as user, scene, task, substitute, friction and consequence, then gate conclusions with problem, solution, commercial behavior and counter-evidence."
 ---
 
-过去一段时间，我先后做了三次大规模用户研究。
+过去一段时间，我先后做了三次大规模用户研究：一次私有算力和本地 AI 设备，一次 AI 眼镜，一次空间显示、3D 与虚拟世界。其中 AI 眼镜那轮收集到 200,732 条原始记录，经过日期、正文完整性、相关性和去重筛选，进入主样本的只有 45,630 条——超过四分之三的材料在入口就被自己的规则拦下了。另一轮保留了 211,088 条“符合初步条件”的反馈，单一平台仍占 90.21%。
 
-一次研究私有算力和本地 AI 设备，一次研究 AI 眼镜，一次研究空间显示、3D 与虚拟世界。研究对象、平台和行业语言差别很大，执行过程却反复遇到相同的问题：数据量迅速增长，能够支持产品决定的证据仍然不足。
-
-其中一轮研究保留了 211,088 条符合初步条件的反馈，单一平台仍占 90.21%。AI 眼镜研究收集到 200,732 条原始记录，经过日期、正文完整性、相关性和去重筛选，进入主样本的只有 45,630 条。
+研究对象、平台和行业语言差别很大，执行过程却反复撞上同一个问题：数据量迅速增长，能够支持产品决定的证据仍然不足。
 
 这组经历促使我把研究过程重新整理成 SURE：Structured User Research with Evidence。它的核心分析单元是：
 

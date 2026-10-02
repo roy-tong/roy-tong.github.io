@@ -5,7 +5,7 @@ order: 20
 reviewed_at: 2026-08-31
 summary: "按身体位置、输入输出条件与日常使用阻力研究眼镜、耳机和其他穿戴设备。"
 related: ["spatial-computing","household-robots","demand-evidence"]
-related_posts: ["/notes/ai-wearable-modalities-body-comfort/","/notes/robots-give-people-new-bodies/"]
+related_posts: ["/notes/ai-interaction-grammar/","/notes/robots-give-people-new-bodies/"]
 source_ids: ["sure"]
 ---
 

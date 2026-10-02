@@ -5,7 +5,7 @@ order: 20
 reviewed_at: 2026-08-31
 summary: "先确定替谁完成什么，再比较身体；把救援、维护、噪音和多成员权限计入使用成本。"
 related: ["robot-industry","wearables","demand-evidence"]
-related_posts: ["/notes/home-robots-harder-richer/","/notes/robots-give-people-new-bodies/","/notes/home-robots-recovery-burden/"]
+related_posts: ["/notes/home-robots-harder-richer/","/notes/robots-give-people-new-bodies/"]
 source_ids: ["irobot-care"]
 ---
 

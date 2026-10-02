@@ -79,15 +79,9 @@ AI 每往前走一步，都是把过去必须由人承担的一部分责任，�
 
 真正变化的是，应用正在分成两个物种。
 
-第一种，我称为 **Capability Application**。
+第一种，我称为**能力型应用**（Capability Application）。它卖的是 AI 本身会做什么：写作、总结、翻译、生成 PPT、剪视频、搜索、画图、写代码。这类产品的问题是，它的核心价值往往就是基础模型当前还没有完全提供的那一截能力。模型一旦补齐，这一截差异就消失。
 
-它卖的是 AI 本身会做什么：写作、总结、翻译、生成 PPT、剪视频、搜索、画图、写代码。
-
-这类产品的问题是，它的核心产品价值往往就是基础模型当前还没有完全提供的那一截能力。模型一旦补齐，这一截差异就消失。
-
-第二种是 **Responsibility Application**。
-
-它卖的不是“AI 会什么”，而是“这件事情最后有没有完成”。
+第二种是**责任型应用**（Responsibility Application）。它卖的不是“AI 会什么”，而是“这件事情最后有没有完成”。
 
 例如：
 
@@ -110,15 +104,13 @@ AI 每往前走一步，都是把过去必须由人承担的一部分责任，�
 
 > 用户直接用基础模型就行，不需要这个产品了。
 
-这是典型的负模型梯度。
+这是负模型梯度——模型越强，产品离被替代越近。
 
 如果结果是：
 
 > 产品可以自动完成更多工作、减少更多人工、进入更多复杂场景、提高毛利率。
 
-这是正模型梯度。
-
-可以把它叫作 **Base Model Acceleration Test**。
+这是正模型梯度——模型越强，产品能接管的责任越多。可以把它叫作“模型十倍测试”（Base Model Acceleration Test）。
 
 | 模型能力提升 10 倍之后 | 项目状态 |
 | --- | --- |
@@ -219,19 +211,9 @@ Result-as-a-Service 很容易被讲成一句漂亮的话，但真正决定商业
 
 > **每完成 100 个任务，需要多少次人工介入？**
 
-如果每个任务都要人复核，AI 只是提高员工效率，公司仍然是传统服务业。
+人工介入率（Human Exception Rate）往下走，才有人效的故事。如果每个任务都要人复核，AI 只是提高员工效率，公司仍然是传统服务业。如果 100 个任务只需要人处理 30 个异常，已经开始改变人效。如果模型持续变强后变成 10 个、3 个、1 个，公司的成本结构会发生质变。
 
-如果 100 个任务只需要人处理 30 个异常，已经开始改变人效。
-
-如果模型持续变强后变成 10 个、3 个、1 个，公司的成本结构会发生质变。
-
-所以 AI Native Service 最重要的经营曲线不是 DAU，也不只是 Token Cost，而是：
-
-> **Human Exception Rate ↓**
-
-以及由此带来的：
-
-> Automation Rate ↑ → Gross Margin ↑ → Addressable Workflow ↑
+所以 AI Native Service 最重要的经营曲线不是 DAU，也不只是 Token Cost，而是人工介入率的持续下降，以及由此带来的自动化率、毛利与可承接工作流的同步扩张：
 
 这也是为什么很多 AI 公司最终必须自己做 Eval、Tracing、Feedback、Human Review 和数据闭环。这些看起来像 Infra 的东西，在一个真正交付业务结果的公司里，不再是附属工具，而是生产系统。
 
@@ -366,7 +348,7 @@ Agent 会重做分发，不等于它会拥有所有产业利润。
 
 这些东西有一个共同特征：模型越强，它们越有用，而不是越没用。
 
-一个好公司应该是 Model-leveraged，而不是 Model-dependent。
+一个好公司应该是模型杠杆（Model-leveraged），而不是模型依赖（Model-dependent）：前者借模型的进步扩张能接管的范围，后者的存在依赖模型的不完美。
 
 ## 十、Abridge 给了另一种很值得看的演化：从 Wedge 到 Workflow
 
@@ -484,27 +466,7 @@ Coding 为什么容易跑起来？因为代码天然有 Compile、Test、Sandbox
 
 ## 十六、AI 应用的价值池，会沿着责任梯度不断扩大
 
-如果从经济价值看，还可以看到另一条很重要的迁移。
-
-最早的 AI 产品主要争夺：
-
-> Software Budget
-
-Agent 开始进入：
-
-> Labor Budget
-
-AI Native Service 进一步进入：
-
-> Outsourcing / Professional Service Budget
-
-真正完成业务结果以后，会继续进入：
-
-> Transaction Budget
-
-Physical AI 再往外扩张：
-
-> Physical Labor + Asset / Operations Budget
+如果从经济价值看，还可以看到另一条很重要的迁移。最早的 AI 产品争夺的是软件预算（Software Budget）；Agent 开始进入人力预算（Labor Budget）；AI Native Service 进一步进入外包与专业服务预算；真正完成业务结果以后，继续进入交易预算（Transaction Budget）；Physical AI 再往外扩张到物理劳动与资产运营预算。
 
 可以把它写成：
 
