@@ -1,4 +1,12 @@
 {% assign copy = site.data.portfolio[include.language] %}
+{% if include.language == 'en' %}
+  {% assign lang_posts = site.posts | where_exp: "p", "p.lang == 'en'" %}
+{% else %}
+  {% assign lang_posts = site.posts | where_exp: "p", "p.lang != 'en'" %}
+{% endif %}
+{% assign post_count = lang_posts | size %}
+{% assign latest_post = lang_posts | first %}
+{% assign site_latest = site.posts | first %}
 <div class="portfolio">
   <section class="portfolio-hero shell" aria-labelledby="home-title">
     <div class="portfolio-intro">
@@ -9,10 +17,12 @@
         <a class="button primary" href="#essays">{{ copy.reading_action }}</a>
         <a class="button secondary" href="{{ copy.about_url | relative_url }}">{{ copy.about_action }}</a>
       </div>
+      <p class="portfolio-live">{% if include.language == 'en' %}{{ post_count }} essays in English · site updated {{ site_latest.date | date: '%Y-%m-%d' }}{% else %}已写 {{ post_count }} 篇 · 最近更新 {{ latest_post.date | date: '%Y-%m-%d' }}{% endif %}</p>
     </div>
     <aside class="portfolio-context" aria-label="{{ copy.context_label }}">
-      <p>{{ copy.now }}</p>
-      <a class="text-link" href="https://roy-tong.github.io/AgentMeasure/">{{ copy.now_action }}{% include portfolio-arrow.html %}</a>
+      <p class="portfolio-context-kicker">{{ copy.latest_label }}</p>
+      <a class="portfolio-context-title" href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>
+      {% if latest_post.subtitle %}<p class="portfolio-context-note">{{ latest_post.subtitle }}</p>{% endif %}
     </aside>
   </section>
 
@@ -33,6 +43,25 @@
     <div class="portfolio-links">
       <a class="text-link" href="{{ copy.essays_url | relative_url }}">{{ copy.essays_more }}{% include portfolio-arrow.html %}</a>
       <a class="text-link" href="{{ '/knowledge/' | relative_url }}">{{ copy.library_action }}{% include portfolio-arrow.html %}</a>
+    </div>
+  </section>
+
+  <section class="portfolio-section shell" id="tracking" aria-labelledby="tracking-title">
+    <header class="portfolio-heading">
+      <h2 id="tracking-title">{{ copy.tracked_title }}</h2>
+      <p>{{ copy.tracked_intro }}</p>
+    </header>
+    <div class="portfolio-reading">
+      {% for item in copy.tracked %}
+      <a class="portfolio-essay" href="{{ item.url | relative_url }}">
+        <span class="portfolio-topic">{{ item.topic }}</span>
+        <div><h3>{{ item.stance }}</h3><p>{{ item.meta }}</p></div>
+        {% include portfolio-arrow.html %}
+      </a>
+      {% endfor %}
+    </div>
+    <div class="portfolio-links">
+      <a class="text-link" href="{{ '/knowledge/changes/' | relative_url }}">{{ copy.tracked_more }}{% include portfolio-arrow.html %}</a>
     </div>
   </section>
 

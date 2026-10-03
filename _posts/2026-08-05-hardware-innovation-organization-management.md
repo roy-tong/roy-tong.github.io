@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "国内硬件产品创新：组织与管理方法"
+title: "大疆、影石、安克的组织几乎相反，但都成立"
 title_en: "How Chinese Hardware Teams Organize and Manage Product Innovation"
-subtitle: "从创始团队、产品定义到规模化交付"
+subtitle: "硬件组织没有唯一解：每条路在什么条件下成立、付出什么代价。"
 subtitle_en: "From the founding team and product definition to delivery at scale"
 date: 2026-08-05 14:30:00 +0800
 tags: [智能硬件, 产品管理, 组织管理, 产品创新]

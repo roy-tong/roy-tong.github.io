@@ -79,7 +79,7 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 - [具身智能入门：产业、公司、产品、技术与职业地图](https://roy-tong.github.io/notes/embodied-intelligence-beginners-guide/): A structured beginner map of the embodied-intelligence field.
 - [从 AI 应用到真实世界：我的一次转向](https://roy-tong.github.io/notes/from-ai-software-to-physical-world/): Why AI product work shifts from software-only interaction toward physical-world tasks.
-- [智能硬件创新，为什么越来越依赖组织能力](https://roy-tong.github.io/notes/hardware-innovation-organization-management/): Product and organizational constraints behind shipping intelligent hardware.
+- [大疆、影石、安克的组织几乎相反，但都成立](https://roy-tong.github.io/notes/hardware-innovation-organization-management/): Product and organizational constraints behind shipping intelligent hardware.
 
 ## Product Practice and Writing
 

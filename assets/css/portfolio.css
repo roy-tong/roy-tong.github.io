@@ -31,7 +31,13 @@
 .portfolio-contact p { max-width: 45em; margin: 20px 0 0; color: var(--muted); }
 .portfolio-contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .portfolio [id] { scroll-margin-top: 100px; }
+.portfolio-live { margin: 24px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .02em; }
+.portfolio-context .portfolio-context-kicker { margin: 0 0 14px; color: var(--forest); font-size: 13px; font-weight: 600; letter-spacing: .05em; }
+.portfolio-context .portfolio-context-title { display: block; margin: 0 0 10px; font-family: var(--serif); font-size: 17px; font-weight: 600; line-height: 1.5; }
+.portfolio-context .portfolio-context-title:hover { color: var(--forest); }
+.portfolio-context .portfolio-context-note { margin: 0; line-height: 1.7; }
 @media (max-width: 980px) {
+  .portfolio-context .portfolio-context-kicker { margin: 0 0 10px; }
   .portfolio-hero { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .portfolio-context { max-width: 640px; }
   .portfolio-context p { margin: 0; }

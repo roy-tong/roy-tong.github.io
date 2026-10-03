@@ -1,31 +1,30 @@
 {
   "zh": {
     "headline": "你好，我是 Roy。",
-    "identity": "做产品，也记录技术走进生活的过程。",
+    "identity": "写下判断，也记录判断被证据改变的过程。",
     "intro": "这里是我的个人博客。我写 AI、具身智能、产品与创业：一项技术能做什么，用户为什么需要它，以及把它做成产品时要面对哪些取舍。",
     "reading_action": "从几篇文章开始",
     "about_action": "关于我",
     "about_url": "/about/",
-    "context_label": "近期工作",
-    "now": "最近在做 AgentMeasure，研究 Agent 调用软件时，使用、重试与结果应该怎样计量。",
-    "now_action": "看看这个项目",
+    "context_label": "最新判断",
+    "latest_label": "最新判断",
     "essays_title": "从这里开始读",
-    "essays_intro": "几篇代表文章，关于我一直在想的问题。",
+    "essays_intro": "几篇代表文章。前两篇最好进入，后两篇是更长期的判断。",
     "essays_more": "全部文章",
     "essays_url": "/essays/",
     "library_action": "研究资料与知识库",
     "essays": [
       {
-        "topic": "AI 产品",
-        "title": "AI Native 之后，产品的基本单位变了",
-        "description": "当意图、任务与结果成为核心，产品应该如何重新组织？",
-        "url": "/notes/ai-native-basic-unit/"
+        "topic": "具身智能",
+        "title": "摄影机器人正在爆发，但还没人回答：为什么相机一定要会走？",
+        "description": "四类产品在争夺四种不同需求；跟随感可能不需要移动底盘——至少在标准化场景里。",
+        "url": "/notes/camera-robots-why-must-walk/"
       },
       {
-        "topic": "具身智能",
-        "title": "机器人不是替代人，而是给人增加新的身体",
-        "description": "从人的能力与行动范围出发，重新理解机器人的产品价值。",
-        "url": "/notes/robots-give-people-new-bodies/"
+        "topic": "市场研究",
+        "title": "我查了 13 家研究机构，还是找不到全球第 4 名运动相机品牌",
+        "description": "IDC 只给前三，同口径报告相差 3.3 倍——市场数字首先是口径问题。",
+        "url": "/notes/action-camera-no4-untraceable/"
       },
       {
         "topic": "Agent",
@@ -34,10 +33,45 @@
         "url": "/notes/when-the-software-consumer-becomes-an-agent/"
       },
       {
-        "topic": "产品与组织",
-        "title": "空降管理者如何从职位合法性走向组织合法性",
-        "description": "拥有一个职位之后，如何在组织里建立真正的信任与协作。",
-        "url": "/notes/appointed-manager-organizational-legitimacy/"
+        "topic": "AI 产品",
+        "title": "AI Native 之后，产品的基本单位变了",
+        "description": "当意图、任务与结果成为核心，产品应该如何重新组织？",
+        "url": "/notes/ai-native-basic-unit/"
+      }
+    ],
+    "tracked_title": "正在跟踪的问题",
+    "tracked_intro": "每行是一句当前立场和它脚下的证据。立场会跟着证据更新，修订记录公开在知识库。",
+    "tracked_more": "知识库修订日志",
+    "tracked": [
+      {
+        "topic": "具身智能",
+        "stance": "家庭净价值＝省掉的劳动 − 新增的善后",
+        "meta": "自建语料 208,755 条",
+        "url": "/notes/home-robots-harder-richer/"
+      },
+      {
+        "topic": "影像设备",
+        "stance": "相机要会走，先回答哪些任务只有移动机位才能完成",
+        "meta": "四类产品 · 15 家厂商地图 · 13 家机构口径核查",
+        "url": "/notes/camera-robots-why-must-walk/"
+      },
+      {
+        "topic": "Agent 计量",
+        "stance": "每个 Agent 用量数字，都是自报的",
+        "meta": "110 个用量工具审计 · 23 处上游合并",
+        "url": "/notes/ai-usage-metering-audit-zh/"
+      },
+      {
+        "topic": "本地 AI",
+        "stance": "专用盒子要先证明，自己值得多占一个插座",
+        "meta": "自建语料 211,088 条，Reddit 占约 90%",
+        "url": "/notes/local-ai-box-task-economics/"
+      },
+      {
+        "topic": "需求研究",
+        "stance": "用户没有产品心智时，问卷测到的是想象",
+        "meta": "200,732 条原始记录 · BCI 90 条线索 → 63 条核心样本",
+        "url": "/notes/bci-demand-research-method/"
       }
     ],
     "latest_title": "最近更新",
@@ -55,20 +89,25 @@
   },
   "en": {
     "headline": "Hi, I’m Roy.",
-    "identity": "I build products and write about technology in everyday life.",
+    "identity": "I write down judgments — and keep a public record of the ones new evidence changes.",
     "intro": "This is my personal blog, about AI, embodied intelligence, products, and building companies: what technology can do, why people need it, and the choices involved in making it useful.",
     "reading_action": "Start with these essays",
     "about_action": "About me",
     "about_url": "/en/about/",
-    "context_label": "Current work",
-    "now": "Lately I have been building AgentMeasure, exploring how to measure usage, retries, and outcomes when agents use software.",
-    "now_action": "Explore the project",
+    "context_label": "Latest judgment",
+    "latest_label": "Latest judgment",
     "essays_title": "Start here",
     "essays_intro": "A few essays on the questions I keep coming back to.",
     "essays_more": "All essays",
     "essays_url": "/en/essays/",
     "library_action": "Research library (中文)",
     "essays": [
+      {
+        "topic": "Agents",
+        "title": "When the Software Consumer Becomes an Agent",
+        "description": "New ways of finding, choosing, and using software call for new ways of measuring it.",
+        "url": "/en/notes/when-the-software-consumer-becomes-an-agent/"
+      },
       {
         "topic": "AI products",
         "title": "After AI-Native: The Basic Unit of a Product Has Changed",
@@ -82,16 +121,39 @@
         "url": "/en/notes/robots-give-people-new-bodies/"
       },
       {
-        "topic": "Agents",
-        "title": "When the Software Consumer Becomes an Agent",
-        "description": "New ways of finding, choosing, and using software call for new ways of measuring it.",
-        "url": "/en/notes/when-the-software-consumer-becomes-an-agent/"
-      },
-      {
         "topic": "Organizations",
         "title": "From Positional to Organizational Legitimacy",
         "description": "How an appointed manager earns trust and builds cooperation.",
         "url": "/en/notes/appointed-manager-organizational-legitimacy/"
+      }
+    ],
+    "tracked_title": "Questions I’m tracking",
+    "tracked_intro": "Each line is a current stance and the evidence beneath it. Stances move with evidence, and the revisions are logged in the open knowledge base.",
+    "tracked_more": "Knowledge base revisions (中文)",
+    "tracked": [
+      {
+        "topic": "Agents",
+        "stance": "Every agent usage number is self-reported",
+        "meta": "AgentMeasure, open source, with public evidence cases",
+        "url": "/en/notes/every-agent-usage-number-is-self-reported/"
+      },
+      {
+        "topic": "Agent economy",
+        "stance": "Measurement is the missing infrastructure of the AI economy",
+        "meta": "Seats, installs, and pageviews are breaking",
+        "url": "/en/notes/when-the-software-consumer-becomes-an-agent/"
+      },
+      {
+        "topic": "Embodied AI",
+        "stance": "Beyond replacement rates: robots give people new bodies",
+        "meta": "Vision, presence, action, and physical reach",
+        "url": "/en/notes/robots-give-people-new-bodies/"
+      },
+      {
+        "topic": "Markets",
+        "stance": "Market entry is a learning sequence, not a march to the mainstream",
+        "meta": "Geek, professional, B2B, consumer as evidence environments",
+        "url": "/en/notes/market-roles-remove-uncertainty/"
       }
     ],
     "latest_title": "Recent writing",
