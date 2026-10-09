@@ -255,5 +255,68 @@
     ],
     "lang": "en",
     "translation_of": "/notes/agent-usage-measurement-standard/"
+  },
+  "/notes/startup-map-data-methodology/": {
+    "topic": "product-research",
+    "units": [
+      "demand-evidence",
+      "talent-and-industry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/bci-demand-research-method/": {
+    "topic": "product-research",
+    "units": [
+      "demand-evidence",
+      "alternatives-entry"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/no-competitor-most-dangerous-claim/": {
+    "topic": "product-research",
+    "units": [
+      "alternatives-entry",
+      "demand-evidence"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-workspace-single-source/": {
+    "topic": "agent-systems",
+    "units": [
+      "research-workflows",
+      "evidence-maintenance"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/ai-usage-metering-audit-zh/": {
+    "topic": "agent-systems",
+    "units": [
+      "agent-measurement"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/action-camera-no4-untraceable/": {
+    "topic": "product-research",
+    "units": [
+      "evidence-maintenance",
+      "demand-evidence"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/agent-sessions-three-system-rules/": {
+    "topic": "agent-systems",
+    "units": [
+      "research-workflows",
+      "agent-context"
+    ],
+    "lang": "zh-CN"
+  },
+  "/notes/camera-robots-why-must-walk/": {
+    "topic": "robotics",
+    "units": [
+      "robot-industry",
+      "alternatives-entry"
+    ],
+    "lang": "zh-CN"
   }
 }

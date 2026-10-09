@@ -40,7 +40,6 @@
       "home-robots-corpus"
     ],
     "articles": [
-      "/notes/home-robots-recovery-burden/",
       "/notes/home-robots-harder-richer/",
       "/notes/robots-give-people-new-bodies/"
     ],
@@ -94,15 +93,17 @@
       "agent-context"
     ],
     "materials": [
-      "local-ai-corpus"
+      "local-ai-corpus",
+      "ai-product-value-loop"
     ],
     "articles": [
       "/notes/local-ai-box-task-economics/",
-      "/notes/agent-context-recommendation-after-rag/"
+      "/notes/agent-context-recommendation-after-rag/",
+      "/notes/ai-product-value-loop/"
     ],
     "section": "research",
     "status": "资料复核中",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-10",
     "question": "什么任务真的需要在本地运行，又该选择现有电脑、共享设备还是专用硬件？",
     "current_answer": "先证明任务必须在本地持续发生，再比较性能、权限、维护和人工介入。现有电脑是默认替代方案，专用设备要证明完整工作流的增量价值。",
     "gap": "待补：按实际工作负载比较设备，并补充非技术用户的安装、维护、失败恢复和长期使用证据。",
@@ -121,15 +122,18 @@
       "video-production",
       "playable-content"
     ],
-    "materials": [],
+    "materials": [
+      "ai-product-value-loop"
+    ],
     "articles": [
       "/notes/ai-video-second-edit/",
       "/notes/ai-native-basic-unit/",
-      "/notes/ai-apps-unbundled-before-agent-filled/"
+      "/notes/ai-apps-unbundled-before-agent-filled/",
+      "/notes/ai-product-value-loop/"
     ],
     "section": "exploration",
     "status": "主报告整理中",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-10",
     "question": "生成模型怎样进入可修改、可协作、可交付的专业视频工作流？",
     "current_answer": "首轮生成解决的是素材起点，专业交付还需要稳定的局部修改、时间线控制、版本资产和协作接口。",
     "gap": "待补：核对本地与飞书版本，完成产品和工作流事实检查，再确定主报告公开范围。",
@@ -151,16 +155,18 @@
       "research-workflows"
     ],
     "materials": [
-      "agent-measurement-paper"
+      "agent-measurement-paper",
+      "ai-product-value-loop"
     ],
     "articles": [
       "/notes/agentmeasure-from-spec-to-evidence/",
       "/notes/when-the-software-consumer-becomes-an-agent/",
-      "/notes/every-agent-usage-number-is-self-reported-zh/"
+      "/notes/every-agent-usage-number-is-self-reported-zh/",
+      "/notes/ai-product-value-loop/"
     ],
     "section": "research",
     "status": "规范迭代中",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-10",
     "question": "Agent 真正使用软件时，应该记录哪些动作、结果和价值？",
     "current_answer": "一次调用、一次任务、一次结果被使用和一次业务收益属于不同分母。运行时还要同时记录上下文、状态与权限，才能解释任务为什么成功或失败。",
     "gap": "待补：真实任务基准、跨产品事件对照，以及规范字段与当前实现版本的持续校准。",
@@ -174,7 +180,7 @@
     "id": "product-research",
     "title": "产品研究与组织方法",
     "summary": "把证据能支持的决定、责任主体和修订条件写清楚。",
-    "coverage": "已有：需求、替代方案、证据维护、硬件创新和组织责任五份方法笔记，以及公开来源索引。",
+    "coverage": "已有：需求、替代方案、证据维护、硬件创新和组织责任五份方法笔记，以及公开来源索引。 新增：采用、交付与验收的跨专题综合报告。",
     "notes": [
       "demand-evidence",
       "alternatives-entry",
@@ -183,17 +189,20 @@
       "organization-responsibility"
     ],
     "materials": [
-      "public-reading-sources"
+      "public-reading-sources",
+      "ai-product-value-loop",
+      "research-map-20261010"
     ],
     "articles": [
       "/notes/scene-user-demand-evidence-research/",
       "/notes/competitive-analysis-software-hardware/",
       "/notes/hardware-innovation-organization-management/",
-      "/notes/appointed-manager-organizational-legitimacy/"
+      "/notes/appointed-manager-organizational-legitimacy/",
+      "/notes/ai-product-value-loop/"
     ],
     "section": "method",
     "status": "方法持续修订",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-10",
     "question": "怎样让需求、竞品、组织和版本证据真正支持下一步决定？",
     "current_answer": "每条证据都应写清它支持什么决定、由谁负责，以及出现什么变化时需要重新核对。",
     "gap": "待补：更多经过授权的真实案例，以及方法在不同项目中的使用记录和失败复盘。",
@@ -201,7 +210,7 @@
       "一条反馈只能支持与其场景、角色和行为相匹配的决定。",
       "版本、分母和公开边界必须成为研究产物的一部分。"
     ],
-    "lead_material": "public-reading-sources"
+    "lead_material": "ai-product-value-loop"
   },
   {
     "id": "digital-making",

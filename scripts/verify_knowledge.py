@@ -101,7 +101,7 @@ sitemap_urls = [n.text for n in sitemap.findall(".//{*}loc")]
 check(len(sitemap_urls) == len(set(sitemap_urls)), "Duplicate sitemap URLs.")
 pages = list((SITE / "knowledge").rglob("*.html"))
 pages += [SITE / "notes" / slug / "index.html" for slug in
-          ("ai-video-second-edit", "local-ai-box-task-economics", "home-robots-recovery-burden")]
+          ("ai-video-second-edit", "local-ai-box-task-economics", "home-robots-harder-richer")]
 parsed = {}
 for path in pages:
     parsed[path] = Page(path)
@@ -197,8 +197,17 @@ for path in scan:
 for forbidden in ("PRODUCT.md", "README.md", "docs", "scripts", ".impeccable", "_knowledge", "_materials", "_data"):
     check(not (SITE / forbidden).exists(), "Build exposes an excluded source path: " + forbidden)
 feed = (SITE / "feed.xml").read_text(encoding="utf-8")
-for slug in ("ai-video-second-edit", "local-ai-box-task-economics", "home-robots-recovery-burden"):
-    check("/notes/" + slug + "/" in feed, "New essay missing from RSS: " + slug)
+# RSS is a rolling window, not the permanent archive. Check current entries
+# and inclusion of a most-recent publication instead of requiring old essays.
+feed_root = ET.fromstring(feed)
+feed_links = [e.attrib["href"] for e in feed_root.findall(".//{*}entry/{*}link")
+              if e.attrib.get("rel", "alternate") == "alternate" and e.attrib.get("href")]
+check(bool(feed_links), "RSS has no article entries")
+for href in feed_links:
+    check(target_for(href).is_file(), "RSS links to missing article: " + href)
+latest_date = max(row.get("published", "") for row in articles.values())
+check(any(row["url"] in feed for row in articles.values() if row.get("published") == latest_date),
+      "RSS is missing the latest publication date")
 
 print(json.dumps({"checks": CHECKS, "rendered_pages_checked": len(pages), "internal_links_checked": checked_links,
                   "index_records": len(records), "knowledge_notes": len(notes), "article_pages": len(articles),
