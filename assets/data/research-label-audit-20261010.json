@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-10-10",
+  "unit": "record rows, not people",
+  "method": "Stream six JSONL snapshots. GitHub iff source_platform == github; classify source_url by /pull/ or /issues/; count sample_bucket == support_issue. Views overlap and must not be summed.",
+  "scope": "Private research snapshots; aggregate publication only. Raw data and identifiers are not distributed. Semantic content of every issue has not been reviewed.",
+  "views": [
+    {
+      "corpus": "edge",
+      "view": "primary",
+      "snapshot_sha256": "9387c7f68766ac9cdc96b676db49cb500667dcf77c9bb561a83174981cc4833c",
+      "counts": {
+        "all_rows": 211088,
+        "github_rows": 2092,
+        "github_support_issue": 2092,
+        "github_pull_urls": 598,
+        "github_issue_urls": 1494
+      }
+    },
+    {
+      "corpus": "edge",
+      "view": "primary_labeled",
+      "snapshot_sha256": "decb7591e582023d31a2c9f4edd14160fc0132bd4f7327be38632e257e6a5eb1",
+      "counts": {
+        "all_rows": 211088,
+        "github_rows": 2092,
+        "github_support_issue": 2092,
+        "github_pull_urls": 598,
+        "github_issue_urls": 1494
+      }
+    },
+    {
+      "corpus": "edge",
+      "view": "primary_month_balanced",
+      "snapshot_sha256": "d917ae451fd469978385d8d0ca155075c91a711dba456edaebdfc6c3c31a488d",
+      "counts": {
+        "all_rows": 121786,
+        "github_rows": 1395,
+        "github_support_issue": 1395,
+        "github_pull_urls": 352,
+        "github_issue_urls": 1043
+      }
+    },
+    {
+      "corpus": "glasses",
+      "view": "primary",
+      "snapshot_sha256": "9f7da67f084a4319a335bac4743f397a7929a104455bebda27e994e7c401ff83",
+      "counts": {
+        "all_rows": 74719,
+        "github_rows": 429,
+        "github_support_issue": 429,
+        "github_pull_urls": 0,
+        "github_issue_urls": 429
+      }
+    },
+    {
+      "corpus": "glasses",
+      "view": "primary_labeled",
+      "snapshot_sha256": "f0a2ec36ee8708f8ef128f7bc7994527b2cdc9947d5bdcda7ab4e977cfb07462",
+      "counts": {
+        "all_rows": 74719,
+        "github_rows": 429,
+        "github_support_issue": 429,
+        "github_pull_urls": 0,
+        "github_issue_urls": 429
+      }
+    },
+    {
+      "corpus": "glasses",
+      "view": "primary_month_balanced",
+      "snapshot_sha256": "8c5e4e44e00a730c5235b17417a1e78e54b5e0f7bac08aceced2dbd389573ae1",
+      "counts": {
+        "all_rows": 62220,
+        "github_rows": 339,
+        "github_support_issue": 339,
+        "github_pull_urls": 0,
+        "github_issue_urls": 339
+      }
+    }
+  ]
+}
