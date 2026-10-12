@@ -5,6 +5,8 @@
 ## Start Here
 
 - [Home](https://roy-tong.github.io/): Concise introduction, recent writing, open-source projects, and contact.
+- [Disclosure and Editorial Standards](https://roy-tong.github.io/disclosure/): Income sources, review red lines, date semantics (review date is when we tested, not the product's release date), the seven-element testing method, and AI-assistance notes. The preface to every review on this site.
+- [Content Index (JSON)](https://roy-tong.github.io/content-index.json): Machine-readable index of all posts with dates, tags, excerpts, and citation policy. Review-date semantics apply; products change after we test them.
 - [Research Material Library](https://roy-tong.github.io/knowledge/): Human entry point organized as research dossiers. Each dossier states its research question, current view, available materials, and missing evidence. Sources, dossiers, and public materials form the library; essays are optional downstream expressions.
 - [Complete public material catalogue](https://roy-tong.github.io/knowledge/library/): Search and filter reports, aggregate data, research notes, and source indexes. Materials are useful intermediate results and need not become essays.
 - [Research material index](https://roy-tong.github.io/knowledge/materials.json): Public-only schema 3.0 with dossier questions and gaps plus per-material use, scope, boundary, review status, versions, downloads and full text. No private file or Feishu inventory is included.

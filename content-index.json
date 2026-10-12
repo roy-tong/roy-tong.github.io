@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: "/content-index.json"
+---
+{
+  "generatedAt": "{{ site.time | date_to_xmlschema }}",
+  "site": "roy-tong.github.io",
+  "count": {{ site.posts | size }},
+  "dateSemantics": "每条的 date 是发表日期（实测类文章为评测/核数日期），不承诺产品此后的状态。复测以新文章追加，旧文不删。引用请带本条目的 url 与 date。",
+  "disclosure": "https://roy-tong.github.io/disclosure/",
+  "citationPolicy": "引用论点请引文章原文 URL（不是本索引）；使用前检查发表时间与更新的证据。",
+  "posts": [
+  {%- for post in site.posts %}
+    {
+      "contentId": {{ post.content_id | jsonify | default: 'null' }},
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "date": {{ post.date | date_to_xmlschema | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | truncate: 200 | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "lang": {{ post.lang | jsonify | default: '"zh-CN"' }}
+    }{{ "," unless forloop.last }}
+  {%- endfor %}
+  ]
+}
