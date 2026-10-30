@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verovo — this address moved</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://roy-tong.github.io/verovo/">
+<meta http-equiv="refresh" content="1; url=https://roy-tong.github.io/verovo/">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: #090C10; color: #F2F5F7;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 34rem; padding: 2rem; text-align: center; }
+  .mark { display: inline-flex; padding: .5rem .7rem; border-radius: .5rem; background: #F2F5F7; }
+  .mark img { display: block; height: 1.25rem; width: auto; }
+  h1 { font-size: 1.15rem; font-weight: 650; margin: 1.4rem 0 .5rem; letter-spacing: -.01em; }
+  p { margin: 0; color: #AAB4BF; font-size: .95rem; }
+  a { color: #76A5FF; }
+</style>
+</head>
+<body>
+<main>
+  <span class="mark"><img src="https://roy-tong.github.io/verovo/assets/verovo-mark.png" alt="Verovo" width="42" height="23"></span>
+  <h1>AgentMeasure is now Verovo</h1>
+  <p>This address moved to <a href="https://roy-tong.github.io/verovo/">roy-tong.github.io/verovo/</a>.
+     You should be sent there automatically.</p>
+</main>
+<script>
+  // Keep deep links working: /AgentMeasure/tools.html -> /verovo/tools.html
+  var rest = location.pathname.replace(/^\/AgentMeasure\/?/, "");
+  location.replace("https://roy-tong.github.io/verovo/" + rest + location.search + location.hash);
+</script>
+</body>
+</html>

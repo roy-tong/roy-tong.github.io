@@ -10,3 +10,15 @@ permalink: /404.html
   <p>链接可能有误，或者页面地址已经变更。</p>
   <a class="button primary" href="{{ '/' | relative_url }}">返回首页</a>
 </section>
+
+<script>
+  // The old project path is gone after the repository rename; send deep links
+  // (/AgentMeasure/tools.html and friends) to the new site instead of a 404.
+  (function () {
+    var p = location.pathname;
+    if (p === "/AgentMeasure" || p.indexOf("/AgentMeasure/") === 0) {
+      var rest = p.replace(/^\/AgentMeasure\/?/, "");
+      location.replace("https://roy-tong.github.io/verovo/" + rest + location.search + location.hash);
+    }
+  })();
+</script>
