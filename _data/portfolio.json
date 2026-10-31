@@ -171,20 +171,34 @@
   },
   "projects": [
     {
-      "id": "agentmeasure",
-      "name": "AgentMeasure",
-      "url": "https://github.com/roy-tong/AgentMeasure",
+      "id": "askovo",
+      "name": "Askovo",
+      "url": "https://github.com/roy-tong/askovo",
       "role": {
-        "zh": "Agent 计量与一致性检查",
-        "en": "Agent measurement and conformance"
+        "zh": "需求研究引擎",
+        "en": "Demand research engine"
       },
       "description": {
-        "zh": "检查 Agent 遥测中的尝试、逻辑操作与重试是否被正确计量。每项检查返回 PASS、FAIL 或 UNPROVABLE；证据不足时明确说明。",
-        "en": "Check whether attempts, logical operations, and retries are counted consistently in agent telemetry. Each check reports PASS, FAIL, or UNPROVABLE when evidence is missing."
+        "zh": "从场景、用户、痛点、需求一路推理到产品与商业的主链研究工具：每条结论标证据分级（E0–E5），结论超出证据时审计命令直接说出来。提供 CLI、Agent Skill 与 MCP 三种接口，MIT 开源。",
+        "en": "An evidence-led research engine that reasons from scenes, users, pains, and needs through to product and business: every claim carries an evidence grade (E0–E5), and the audit command says when a conclusion outruns its data. CLI, Agent Skill, and MCP interfaces. MIT licensed."
+      },
+      "links": []
+    },
+    {
+      "id": "verovo",
+      "name": "Verovo",
+      "url": "https://github.com/roy-tong/verovo",
+      "role": {
+        "zh": "AI 服务交付验证",
+        "en": "AI service delivery verification"
+      },
+      "description": {
+        "zh": "买方侧的 AI 服务计费与交付验证：标准检查在本地跑，账单可复核，验收与续约决策有证据可查。由 AgentMeasure 演进而来。",
+        "en": "Buyer-side verification of AI service charges and delivery: local criteria checks, supported bill recounts, and evidence for acceptance and renewal decisions. Evolved from AgentMeasure."
       },
       "links": [
         {
-          "url": "https://roy-tong.github.io/AgentMeasure/",
+          "url": "https://roy-tong.github.io/Verovo/",
           "label": {
             "zh": "项目网站",
             "en": "Project website"
@@ -199,9 +213,23 @@
         }
       ],
       "evidence": {
-        "zh": "相关的 token 计数修复已被 OpenLIT 合并；该修复不等于 Conformance Pack 已支持 token 检查。",
-        "en": "A related token-accounting fix was merged into OpenLIT. Token checks are not yet supported by the Conformance Pack."
+        "zh": "前身 AgentMeasure 的 token 计数修复已被 OpenLIT 合并；该修复不等于当前检查包已支持 token 检查。",
+        "en": "A token-accounting fix from its predecessor AgentMeasure was merged into OpenLIT. Token checks are not yet supported by the current check pack."
       }
+    },
+    {
+      "id": "growovo",
+      "name": "Growovo",
+      "url": "https://github.com/roy-tong/Growovo",
+      "role": {
+        "zh": "增长执行内核",
+        "en": "Growth execution kernel"
+      },
+      "description": {
+        "zh": "Agent 原生的 GTM 执行内核：定→造→跑（定位→资产→渠道→承接→归因），输入已发布的产品，交付可验证的真实用户增长。写操作默认 dry-run，过门禁、限速、回读校验并记账。",
+        "en": "An agent-native GTM execution kernel: define → build → run. Feed it a shipped product; it delivers verifiable real-user growth. Every write is dry-run by default — gated, throttled, read back, and logged."
+      },
+      "links": []
     },
     {
       "id": "iread",
@@ -214,20 +242,6 @@
       "description": {
         "zh": "把一个研究领域整理成信源组合，持续收集内容，生成保留来源与证据边界的日报、周报和月报。",
         "en": "Turn a research domain into a source collection and recurring daily, weekly, and monthly digests with sources and evidence boundaries."
-      },
-      "links": []
-    },
-    {
-      "id": "sure",
-      "name": "User Demand Research (SURE)",
-      "url": "https://github.com/roy-tong/user-demand-research",
-      "role": {
-        "zh": "可复查的用户需求研究",
-        "en": "Auditable user-demand research"
-      },
-      "description": {
-        "zh": "把目标、范围与样本设计连接到需求证据和研究报告，保留来源、证据分级与反证。提供 Skill、CLI 与 MCP 接口。",
-        "en": "Connect goals, scope, and sample design to demand evidence and research reports, preserving sources, evidence grades, and counterevidence. Available through Skill, CLI, and MCP interfaces."
       },
       "links": []
     },

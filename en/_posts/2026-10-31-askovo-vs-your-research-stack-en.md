@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "Askovo vs. Your Current Research Stack"
 subtitle: "Others make research cheaper. Askovo makes it accountable — you always know which sentence your evidence can't back."
-date: 2026-10-31 21:00:00 +0800
+date: 2026-10-31 08:10:00 +0800
 reading_time: 6
 tags:
   - user research

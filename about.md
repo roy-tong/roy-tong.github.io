@@ -140,15 +140,15 @@ lang_switch_url: /en/about/
 
     <h2>我正在研究和构建什么</h2>
 
+    <h3>一个人、一个 AI 代理、三个产品</h3>
+
+    <p>我现在的工作方式是：一个人，带着一个常驻代码仓库的 AI 代理，同时做三个产品。代理当参谋——出方案、做资产、写代码；产品内核当执行——对外动作走门禁、限速、回读校验和账本；我当闸门——未经我审的计划拒跑。这套分工为什么成立，写在《<a href="{{ '/notes/one-person-one-agent-three-products/' | relative_url }}">一个人、一个 AI 代理、三个产品</a>》里。</p>
+
+    <p>三个产品各占一条闭环的一段：<a href="https://github.com/roy-tong/askovo">Askovo</a> 做需求研究（从场景、用户、痛点推理到产品与商业的主链，每条结论带证据分级）；<a href="https://github.com/roy-tong/verovo">Verovo</a> 做交付验证（买方侧的 AI 服务计费复核与验收证据，由 AgentMeasure 演进而来）；<a href="https://github.com/roy-tong/Growovo">Growovo</a> 做增长执行（输入已发布的产品，交付可验证的真实用户增长）。三个产品共用同一套证据分级，完整清单见<a href="{{ '/projects/' | relative_url }}">项目页</a>。</p>
+
     <h3>Agent 与软件计量</h3>
 
-    <p>最近主要在做 <strong>AgentMeasure</strong>，研究 Agent 调用软件时应如何定义和验证用量。更广的研究问题整理在 <a href="{{ '/capability-economy/' | relative_url }}">Agent Capability Economy</a> 专题，相关的软件与服务收录在 <a href="{{ '/capability-index/' | relative_url }}">能力地图</a>。</p>
-
-    <h3>AgentMeasure</h3>
-
-    <p><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a> 是我目前主要维护的公开项目。它检查 Agent 遥测中的尝试、逻辑操作、重试和证据边界，让指标的名称与实际统计口径对应起来。<a href="https://github.com/roy-tong/AgentMeasure/tree/main/conformance/pack">一致性检查包</a>提供本地检查；<a href="https://github.com/openlit/openlit/pull/1476">我提交的 token 计数修复</a>已被 OpenLIT 合并。这是相关的上游贡献，token 检查尚未纳入当前检查包。</p>
-
-    <p>我更关心的不是再造支付协议，而是支付之前更基础的问题：当软件消费者从人转向 Agent，我们究竟应该怎样定义一次机会、一次选择、一次使用，以及一次真正产生价值的调用。</p>
+    <p>更广的研究问题整理在 <a href="{{ '/capability-economy/' | relative_url }}">Agent Capability Economy</a> 专题，相关的软件与服务收录在 <a href="{{ '/capability-index/' | relative_url }}">能力地图</a>；这条研究线的产品归宿是 Verovo。我更关心的不是再造支付协议，而是支付之前更基础的问题：当软件消费者从人转向 Agent，我们究竟应该怎样定义一次机会、一次选择、一次使用，以及一次真正产生价值的调用。</p>
 
     <h3>Research</h3>
 
@@ -156,7 +156,7 @@ lang_switch_url: /en/about/
 
     <h3>Small tools</h3>
 
-    <p>我也会把重复出现的研究工作流做成小工具，例如 <a href="https://github.com/roy-tong/user-demand-research">User Demand Research (SURE)</a>、<a href="https://github.com/roy-tong/iRead">iRead</a> 和 <a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Video to Transcript</a>。这些项目来自我自己反复遇到的研究需求。</p>
+    <p>我也会把重复出现的研究工作流做成小工具，例如 <a href="https://github.com/roy-tong/iRead">iRead</a> 和 <a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Video to Transcript</a>。这些项目来自我自己反复遇到的研究需求。</p>
 
     <h2>我如何研究和写作</h2>
 
