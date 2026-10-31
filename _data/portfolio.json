@@ -179,8 +179,8 @@
         "en": "Demand research engine"
       },
       "description": {
-        "zh": "从场景、用户、痛点、需求一路推理到产品与商业的主链研究工具：每条结论标证据分级（E0–E5），结论超出证据时审计命令直接说出来。提供 CLI、Agent Skill 与 MCP 三种接口，MIT 开源。",
-        "en": "An evidence-led research engine that reasons from scenes, users, pains, and needs through to product and business: every claim carries an evidence grade (E0–E5), and the audit command says when a conclusion outruns its data. CLI, Agent Skill, and MCP interfaces. MIT licensed."
+        "zh": "研发前的端到端需求研究引擎：从研究设计、开放平台采集一路做到推理、审计与报告交付。主链从场景、用户、痛点、需求推理到产品与商业，每条结论标证据分级（E0–E5），结论超出证据时审计命令直接说出来。CLI、Agent Skill 与 MCP 三种接口，MIT 开源。",
+        "en": "An end-to-end demand research engine for the pre-build phase: from study design and open-platform collection through reasoning, audit, and report delivery. Its reasoning chain runs from scenes, users, pains, and needs to product and business; every claim carries an evidence grade (E0–E5), and the audit command says when a conclusion outruns its data. CLI, Agent Skill, and MCP interfaces. MIT licensed."
       },
       "links": []
     },
@@ -222,12 +222,12 @@
       "name": "Growovo",
       "url": "https://github.com/roy-tong/Growovo",
       "role": {
-        "zh": "增长执行内核",
-        "en": "Growth execution kernel"
+        "zh": "GTM 增长引擎",
+        "en": "GTM growth engine"
       },
       "description": {
-        "zh": "Agent 原生的 GTM 执行内核：定→造→跑（定位→资产→渠道→承接→归因），输入已发布的产品，交付可验证的真实用户增长。写操作默认 dry-run，过门禁、限速、回读校验并记账。",
-        "en": "An agent-native GTM execution kernel: define → build → run. Feed it a shipped product; it delivers verifiable real-user growth. Every write is dry-run by default — gated, throttled, read back, and logged."
+        "zh": "研发后的端到端 GTM 引擎：定→造→跑（定位→资产→渠道→承接→归因）独立闭环，输入已发布的产品，交付可验证的真实用户增长。执行侧纪律写进内核：写操作默认 dry-run，过门禁、限速、回读校验并记账。",
+        "en": "An end-to-end GTM engine for the post-launch phase: define → build → run (positioning → assets → channels → intake → attribution) in one closed loop. Feed it a shipped product; it delivers verifiable real-user growth. Execution discipline lives in the kernel: every write is dry-run by default — gated, throttled, read back, and logged."
       },
       "links": []
     },

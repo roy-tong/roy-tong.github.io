@@ -28,7 +28,7 @@ First, the products. Each owns one segment of the loop:
 
 **[Growovo](https://github.com/roy-tong/Growovo) does growth** — the "will anyone pay" question. Feed it a shipped product; it delivers verifiable real-user growth — signups, activation, payment — with evidence at every step.
 
-Research tells you what to build. Verification tells you whether it got built. Growth tells you whether anyone pays. Three segments, three kernels.
+Research tells you what to build. Verification tells you whether it got built. Growth tells you whether anyone pays. It is one upstream–downstream line: before development, Askovo takes research end-to-end — from study design and collection through audit and delivery; after launch, Growovo takes growth end-to-end — from positioning and asset building through channel execution and attribution. **Each engine closes its own loop.** This is not "one product does all the reasoning, another does all the executing" — reasoning and execution come paired inside every product: Askovo's collection and audits are execution; Growovo's positioning and channel strategy are reasoning. What crosses the boundary between them is one thing only: graded evidence. Askovo's judgments feed Growovo's positioning; Growovo's first-hand feedback flows back into research, carrying its evidence grade.
 
 ## Three roles, each holding one line
 
@@ -36,9 +36,11 @@ But the real point is not the products. It is the division of labor. Three roles
 
 **The AI agent advises.** It lives inside my code repositories: reading code, drafting plans, building the website, editing copy, fixing CI, running research. Judgment and output are its strengths — the first draft of this very essay was written by it.
 
-**The product kernel executes.** Outbound actions are where I stop trusting the agent's instincts. Growovo's kernel is the executor: publish, reply, message, engage — all actions go through one pipeline. Gate checks first, then throttling; after sending, read-back verification, screenshots, and a ledger entry. Every write is dry-run by default; nothing goes out without an explicit `--go`.
+**The product kernel executes.** Outbound actions are where I stop trusting the agent's instincts — in Growovo, which owns outbound motion, the kernel is the executor: publish, reply, message, engage — all actions go through one pipeline. Gate checks first, then throttling; after sending, read-back verification, screenshots, and a ledger entry. Every write is dry-run by default; nothing goes out without an explicit `--go`.
 
 **I am the gate.** No plan runs without my review. No exceptions.
+
+These three roles are the operating discipline **inside** each product, not a division between products — Askovo's collection and audits and Growovo's positioning and campaigns all run under the same rule.
 
 These three sentences are not management theory I invented. They sit on the first screen of Growovo's README: the agent advises, the kernel executes, the human holds the gate.
 

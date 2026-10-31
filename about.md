@@ -144,7 +144,7 @@ lang_switch_url: /en/about/
 
     <p>我现在的工作方式是：一个人，带着一个常驻代码仓库的 AI 代理，同时做三个产品。代理当参谋——出方案、做资产、写代码；产品内核当执行——对外动作走门禁、限速、回读校验和账本；我当闸门——未经我审的计划拒跑。这套分工为什么成立，写在《<a href="{{ '/notes/one-person-one-agent-three-products/' | relative_url }}">一个人、一个 AI 代理、三个产品</a>》里。</p>
 
-    <p>三个产品各占一条闭环的一段：<a href="https://github.com/roy-tong/askovo">Askovo</a> 做需求研究（从场景、用户、痛点推理到产品与商业的主链，每条结论带证据分级）；<a href="https://github.com/roy-tong/verovo">Verovo</a> 做交付验证（买方侧的 AI 服务计费复核与验收证据，由 AgentMeasure 演进而来）；<a href="https://github.com/roy-tong/Growovo">Growovo</a> 做增长执行（输入已发布的产品，交付可验证的真实用户增长）。三个产品共用同一套证据分级，完整清单见<a href="{{ '/projects/' | relative_url }}">项目页</a>。</p>
+    <p>三个产品各占一条闭环的一段：<a href="https://github.com/roy-tong/askovo">Askovo</a> 做需求研究（研发前，从研究设计、采集到推理与审计交付，主链从场景、用户、痛点推理到产品与商业，每条结论带证据分级）；<a href="https://github.com/roy-tong/verovo">Verovo</a> 做交付验证（买方侧的 AI 服务计费复核与验收证据，由 AgentMeasure 演进而来）；<a href="https://github.com/roy-tong/Growovo">Growovo</a> 做增长（研发后，定→造→跑，输入已发布的产品，交付可验证的真实用户增长）。Askovo 与 Growovo 是上下游：研究判断是增长定位的输入，增长的一手反馈带着证据等级回流研究；两个引擎各自端到端闭环。三个产品共用同一套证据分级，完整清单见<a href="{{ '/projects/' | relative_url }}">项目页</a>。</p>
 
     <h3>Agent 与软件计量</h3>
 
