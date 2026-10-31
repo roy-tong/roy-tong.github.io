@@ -175,12 +175,12 @@
       "name": "Askovo",
       "url": "https://github.com/roy-tong/askovo",
       "role": {
-        "zh": "业务研究与验证",
-        "en": "Business research and validation"
+        "zh": "自主业务研究与证据验证",
+        "en": "Autonomous business research & evidence validation"
       },
       "description": {
-        "zh": "从业务问题和授权来源出发，执行采集、描述性分析和证据审计，交付研究报告、MRD、PRD 或 BRD。研究计划由宿主 Agent 提供，未支持的来源和待验证判断明确保留。",
-        "en": "Turn business questions and authorized sources into traceable research deliverables. Agent-authored plans drive collection, descriptive analysis and evidence audits; unsupported sources and unverified claims stay visible."
+        "zh": "输入业务问题和授权来源，Agent 规划研究，Askovo 完成有边界的采集、描述分析与证据审计，交付可复核的研究与决策成果。新增可选本地 PDF/Office 文档提取与来源哈希；研究结论仍需验证。",
+        "en": "From a business question and authorized sources, the Agent plans research; Askovo collects and analyzes available data, audits evidence and delivers traceable findings. Optional local PDF/Office intake preserves source hashes; extracted text remains unreviewed."
       },
       "links": []
     },
@@ -189,12 +189,12 @@
       "name": "Verovo",
       "url": "https://github.com/roy-tong/verovo",
       "role": {
-        "zh": "AI 财务审计与任务经济性",
-        "en": "AI financial audit and task economics"
+        "zh": "AI 服务账单审计与单任务经济性",
+        "en": "AI charge assurance & task economics"
       },
       "description": {
-        "zh": "关联买方日志、供应商账单、财务记录与业务结果，核查费用和交付，计算单任务成本、成功任务成本与有证据支持的 ROI。现有能力基于明确的本地数据，自动票据解析和保险仍属后续方向。",
-        "en": "Connect buyer logs, supplier charges, financial records and business outcomes. Review charges and delivery, allocate task costs and calculate cost per verified success and evidence-backed ROI. Automatic invoice extraction and insurance remain future work."
+        "zh": "把 Agent 日志、供应商收费、财务记录与业务结果关联起来，检查账单、归集单任务成本，并核算已核验成功任务的成本与 ROI。新增可选本地发票提取，输出待审核草稿，不自动入账；流程优化和保险仍为探索方向。",
+        "en": "Join agent logs, supplier bills, financial records and business outcomes to audit charges and calculate task-level costs, cost per verified success and evidence-backed ROI. Optional local invoice extraction creates unreviewed drafts, not booked expenses; optimization and insurance remain future directions."
       },
       "links": [
         {
@@ -222,12 +222,12 @@
       "name": "Growovo",
       "url": "https://github.com/roy-tong/Growovo",
       "role": {
-        "zh": "重复运营任务执行",
-        "en": "Recurring operations execution"
+        "zh": "可核验的 Agent 运营操作员",
+        "en": "Verified agent operations operator"
       },
       "description": {
-        "zh": "把社区收件箱、内容和沟通任务整理成可审核的队列，使用授权账号执行，记录可核验结果。操作内核与业务 Playbook 分层；写操作默认预演，未知结果须核实后再继续。",
-        "en": "Run recurring community, content and communication tasks through reviewed queues and authorized accounts. The operator kernel and business playbooks share dry-run, approval, quotas and execution records; unknown outcomes require review."
+        "zh": "把社区、内容和客户沟通等重复运营工作变成经授权、可预演、可核验的 Playbook。对操作结果建立执行账本，新增匿名化经验汇总；经验不会自动重放，用户激活与成交仍需独立证据。",
+        "en": "Turn repetitive community, content and communication work into reviewed, authorized playbooks. Record confirmed and uncertain actions, and summarize privacy-safe operational patterns; patterns never auto-replay or prove customer conversion."
       },
       "links": []
     },
