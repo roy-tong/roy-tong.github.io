@@ -11,7 +11,7 @@
 - 具身智能、人形机器人和 AI 硬件；
 - 从技术机会到产品定义、交付与商业化；
 - 从前沿技术到可商业化产品的方法；
-- iRead Research Monitor、User Demand Research、Bilibili Video to Transcript 与公开研究知识库等开放能力。
+- Askovo（业务研究与验证）、Growovo（重复运营任务执行）、Verovo（AI 财务审计与任务经济性），以及 iRead 和公开研究知识库。
 
 ## 给 Agent 使用
 

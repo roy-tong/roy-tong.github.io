@@ -175,12 +175,12 @@
       "name": "Askovo",
       "url": "https://github.com/roy-tong/askovo",
       "role": {
-        "zh": "需求研究引擎",
-        "en": "Demand research engine"
+        "zh": "业务研究与验证",
+        "en": "Business research and validation"
       },
       "description": {
-        "zh": "研发前的端到端需求研究引擎：从研究设计、开放平台采集一路做到推理、审计与报告交付。主链从场景、用户、痛点、需求推理到产品与商业，每条结论标证据分级（E0–E5），结论超出证据时审计命令直接说出来。CLI、Agent Skill 与 MCP 三种接口，MIT 开源。",
-        "en": "An end-to-end demand research engine for the pre-build phase: from study design and open-platform collection through reasoning, audit, and report delivery. Its reasoning chain runs from scenes, users, pains, and needs to product and business; every claim carries an evidence grade (E0–E5), and the audit command says when a conclusion outruns its data. CLI, Agent Skill, and MCP interfaces. MIT licensed."
+        "zh": "从业务问题和授权来源出发，执行采集、描述性分析和证据审计，交付研究报告、MRD、PRD 或 BRD。研究计划由宿主 Agent 提供，未支持的来源和待验证判断明确保留。",
+        "en": "Turn business questions and authorized sources into traceable research deliverables. Agent-authored plans drive collection, descriptive analysis and evidence audits; unsupported sources and unverified claims stay visible."
       },
       "links": []
     },
@@ -189,12 +189,12 @@
       "name": "Verovo",
       "url": "https://github.com/roy-tong/verovo",
       "role": {
-        "zh": "AI 服务交付验证",
-        "en": "AI service delivery verification"
+        "zh": "AI 财务审计与任务经济性",
+        "en": "AI financial audit and task economics"
       },
       "description": {
-        "zh": "买方侧的 AI 服务计费与交付验证：标准检查在本地跑，账单可复核，验收与续约决策有证据可查。由 AgentMeasure 演进而来。",
-        "en": "Buyer-side verification of AI service charges and delivery: local criteria checks, supported bill recounts, and evidence for acceptance and renewal decisions. Evolved from AgentMeasure."
+        "zh": "关联买方日志、供应商账单、财务记录与业务结果，核查费用和交付，计算单任务成本、成功任务成本与有证据支持的 ROI。现有能力基于明确的本地数据，自动票据解析和保险仍属后续方向。",
+        "en": "Connect buyer logs, supplier charges, financial records and business outcomes. Review charges and delivery, allocate task costs and calculate cost per verified success and evidence-backed ROI. Automatic invoice extraction and insurance remain future work."
       },
       "links": [
         {
@@ -222,12 +222,12 @@
       "name": "Growovo",
       "url": "https://github.com/roy-tong/Growovo",
       "role": {
-        "zh": "GTM 增长引擎",
-        "en": "GTM growth engine"
+        "zh": "重复运营任务执行",
+        "en": "Recurring operations execution"
       },
       "description": {
-        "zh": "研发后的端到端 GTM 引擎：定→造→跑（定位→资产→渠道→承接→归因）独立闭环，输入已发布的产品，交付可验证的真实用户增长。执行侧纪律写进内核：写操作默认 dry-run，过门禁、限速、回读校验并记账。",
-        "en": "An end-to-end GTM engine for the post-launch phase: define → build → run (positioning → assets → channels → intake → attribution) in one closed loop. Feed it a shipped product; it delivers verifiable real-user growth. Execution discipline lives in the kernel: every write is dry-run by default — gated, throttled, read back, and logged."
+        "zh": "把社区收件箱、内容和沟通任务整理成可审核的队列，使用授权账号执行，记录可核验结果。操作内核与业务 Playbook 分层；写操作默认预演，未知结果须核实后再继续。",
+        "en": "Run recurring community, content and communication tasks through reviewed queues and authorized accounts. The operator kernel and business playbooks share dry-run, approval, quotas and execution records; unknown outcomes require review."
       },
       "links": []
     },
