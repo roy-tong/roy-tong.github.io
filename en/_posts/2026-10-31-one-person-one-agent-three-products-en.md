@@ -4,6 +4,10 @@ lang: en
 title: "One Person, One AI Agent, Three Products: I Wrote the Company into Code"
 subtitle: "How one person runs three products: the agent advises, the kernels execute, I hold the gate. Discipline lives in code, not in good intentions."
 date: 2026-10-31 08:30:00 +0800
+content_id: one-person-one-agent-three-products
+permalink: /en/notes/one-person-one-agent-three-products/
+knowledge_topic: product-research
+knowledge_units: [demand-evidence, research-workflows]
 reading_time: 5
 tags:
   - agents

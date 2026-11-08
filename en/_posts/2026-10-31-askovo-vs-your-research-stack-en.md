@@ -4,6 +4,10 @@ lang: en
 title: "Askovo vs. Your Current Research Stack"
 subtitle: "Others make research cheaper. Askovo makes it accountable — you always know which sentence your evidence can't back."
 date: 2026-10-31 08:10:00 +0800
+permalink: /en/notes/askovo-vs-your-research-stack/
+content_id: askovo-vs-your-research-stack
+knowledge_topic: product-research
+knowledge_units: [demand-evidence, research-workflows]
 reading_time: 6
 tags:
   - user research
