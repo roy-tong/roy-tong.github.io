@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% comment %}tag_alt covers case variants between zh/en editions (Agent vs agent). where_exp on Jekyll 3.x takes one condition only, so collect matches with a plain loop.{% endcomment %}
+{% assign main_tag = page.tag %}
+{% assign alt = page.tag_alt | default: page.tag %}
+{% assign tag_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.tags contains main_tag or post.tags contains alt %}
+    {% assign tag_posts = tag_posts | push: post %}
+  {% endif %}
+{% endfor %}
+<section class="page-intro shell">
+  <p class="eyebrow">TAG</p>
+  <h1>{{ page.tag }}</h1>
+  <p class="page-deck">{{ tag_posts | size }} 篇文章使用了这个标签。</p>
+</section>
+
+<section class="archive shell">
+  {% assign posts_by_year = tag_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <div class="archive-year">
+      <h2>{{ year.name }}</h2>
+      <div class="archive-items">
+        {% for post in year.items %}
+          <article class="archive-item">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
+            <div>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.lang == 'en' %} <span class="tag-lang">EN</span>{% endif %}</h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </div>
+            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>

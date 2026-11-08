@@ -39,6 +39,7 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 
 ## 推荐阅读
 
+- [一个人，一个 Agent，三个产品](https://roy-tong.github.io/notes/one-person-one-agent-three-products/)
 - [AI 交互在等它的“触控时刻”](https://roy-tong.github.io/notes/ai-interaction-grammar/)
 - [RAG 之后，Agent 需要 Context Recommendation](https://roy-tong.github.io/notes/agent-context-recommendation-after-rag/)
 - [机器人进家庭，先过“谁来收拾残局”这一关](https://roy-tong.github.io/notes/home-robots-harder-richer/)
@@ -82,4 +83,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py` 和 `python3 scripts/verify_library.py`。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。
+发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py`、`python3 scripts/verify_library.py` 和 `python3 scripts/generate_tags.py`（新增或改动文章标签后必须重跑，中英文标签的大小写变体会自动合并；新增 2 篇以上共用的新标签时需在脚本 `TAG_SLUGS` 里补一个 ASCII slug）。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。

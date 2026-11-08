@@ -1268,6 +1268,54 @@ a {
   color: var(--forest);
 }
 
+.post-tags a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-tags a:hover {
+  text-decoration: underline;
+}
+
+/* Tag index (/tags/) and per-tag pages */
+.tag-count {
+  display: inline-block;
+  min-width: 22px;
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tag-lang {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag-cloud-item {
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
 .post-end {
   display: flex;
   margin-top: 80px;

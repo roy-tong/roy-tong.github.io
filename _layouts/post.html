@@ -13,7 +13,7 @@ layout: default
       {% if page.reading_time %}<span>{{ page.reading_time }}{% if is_en %} min read{% else %} 分钟阅读{% endif %}</span>{% endif %}
       {% if page.tags %}
         <span class="post-tags">
-          {% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}
+          {% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | downcase | url_encode | replace: '+', '%20' }}">#{{ tag }}</a>{% endfor %}
         </span>
       {% endif %}
     </div>
@@ -37,9 +37,9 @@ layout: default
       {% endif %}
     </div>
     {% if page.book_page %}
-      <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}" data-umami-event="open-book-version-page-from-footer">{% if is_en %}Version notes <span>→</span>{% else %}查看版本说明 <span>→</span>{% endif %}</a>
+      <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}">{% if is_en %}Version notes <span>→</span>{% else %}查看版本说明 <span>→</span>{% endif %}</a>
     {% else %}
-      <a class="support-link" href="{{ '/support/#tip' | relative_url }}" data-umami-event="open-support-from-article">{% if is_en %}Support the writing <span>♡</span>{% else %}支持写作 <span>♡</span>{% endif %}</a>
+      <a class="support-link" href="{{ '/support/#tip' | relative_url }}">{% if is_en %}Support the writing <span>♡</span>{% else %}支持写作 <span>♡</span>{% endif %}</a>
     {% endif %}
   </footer>
 </article>

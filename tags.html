@@ -1,0 +1,70 @@
+---
+layout: default
+title: 标签索引
+permalink: /tags/
+description: Roy.Tong 全部文章按标签聚合：Agent、具身智能、产品研究、智能硬件、计量与更多主题。
+lang: zh-CN
+---
+
+{% comment %}
+Grouped sections are driven by the generated pages in tags/ (layout: tag,
+sorted by their front-matter count). Single-post tags are listed at the
+bottom; their ids double as anchor targets linked from article pages.
+Case variants (Agent / agent) share one section via tag_alt.
+{% endcomment %}
+{% assign tag_pages = site.pages | where: "layout", "tag" | sort: "count" | reverse %}
+
+<section class="page-intro shell">
+  <p class="eyebrow">TAGS</p>
+  <h1>标签索引</h1>
+  <p class="page-deck">按主题浏览全部文章。多篇文章共享的标签有独立页面；其余标签收录在页面底部。</p>
+</section>
+
+<section class="archive shell">
+  {% for tp in tag_pages %}
+    {% assign alt = tp.tag_alt | default: tp.tag %}
+    {% assign t_posts = "" | split: "" %}
+    {% for post in site.posts %}
+      {% if post.tags contains tp.tag or post.tags contains alt %}
+        {% assign t_posts = t_posts | push: post %}
+      {% endif %}
+    {% endfor %}
+    <div class="archive-year" id="{{ tp.tag | downcase }}">
+      <h2><a href="{{ tp.url | relative_url }}">{{ tp.tag }}</a> <span class="tag-count">{{ t_posts.size }}</span></h2>
+      <div class="archive-items">
+        {% for post in t_posts limit: 3 %}
+          <article class="archive-item">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
+            <div>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.lang == 'en' %} <span class="tag-lang">EN</span>{% endif %}</h3>
+            </div>
+            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% comment %}Single-post tags: any post tag not claimed by a tag page above.{% endcomment %}
+{% assign covered = "|" %}
+{% for tp in tag_pages %}
+  {% assign covered = covered | append: tp.tag | downcase | append: "|" %}
+  {% if tp.tag_alt %}{% assign covered = covered | append: tp.tag_alt | downcase | append: "|" %}{% endif %}
+{% endfor %}
+
+<section class="page-intro shell">
+  <h2>单篇标签</h2>
+  <p class="tag-cloud">
+    {% for post in site.posts %}
+      {% for t in post.tags %}
+        {% assign key = t | downcase %}
+        {% assign marker = "|" | append: key | append: "|" %}
+        {% unless covered contains marker %}
+          {% assign covered = covered | append: key | append: "|" %}
+          <span class="tag-cloud-item" id="{{ t | downcase }}">{{ t }}</span>
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  </p>
+</section>
