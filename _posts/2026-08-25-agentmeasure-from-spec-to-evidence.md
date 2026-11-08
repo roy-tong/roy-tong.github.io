@@ -3,6 +3,7 @@ layout: post
 title: "AgentMeasure 一周进展：规范开始长出证据"
 subtitle: "v0.2.0 → v0.2.2：实验引擎、真实 Agent 上的 A/B、首个外部 fixture、首个公开证据案例，以及一次 0% 的诚实报告。"
 date: 2026-08-25 14:20:00 +0800
+content_id: agentmeasure-from-spec-to-evidence
 permalink: /notes/agentmeasure-from-spec-to-evidence/
 reading_time: 5
 tags:

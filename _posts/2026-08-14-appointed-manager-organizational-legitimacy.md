@@ -3,6 +3,7 @@ layout: post
 title: "空降管理者如何从职位合法性走向组织合法性"
 subtitle: "头衔让你可以做决定，共同解决问题的记录才让团队愿意跟随决定。"
 date: 2026-08-14 09:11:00 +0800
+content_id: appointed-manager-organizational-legitimacy
 reading_time: 11
 tags:
   - 组织管理

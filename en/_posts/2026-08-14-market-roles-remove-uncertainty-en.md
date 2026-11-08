@@ -4,6 +4,7 @@ lang: en
 title: "Geek, Professional, B2B, Consumer: Markets as Evidence Environments"
 subtitle: "Market entry is not a march from niche to mainstream. It is a learning sequence built around the product's biggest current unknown."
 date: 2026-08-14 08:00:00 +0800
+content_id: market-roles-remove-uncertainty
 reading_time: 10
 tags:
   - market entry

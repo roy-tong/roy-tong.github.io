@@ -3,6 +3,7 @@ layout: post
 title: "RAG 之后，Agent 需要 Context Recommendation"
 subtitle: "Harness 把模型周围的运行环境拆成了正式部件，下一步要解决的是每一轮该把哪些信息、能力与权限交给模型。"
 date: 2026-08-14 09:14:00 +0800
+content_id: agent-context-recommendation-after-rag
 reading_time: 11
 tags:
   - AI Agent

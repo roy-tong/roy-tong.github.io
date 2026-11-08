@@ -3,6 +3,7 @@ layout: post
 title: "每个 Agent 用量数字，都是自报的"
 subtitle: "对六个真实声称的一次现场审计，以及它对 Agent 经济意味着什么"
 date: 2026-08-17 00:45:00 +0800
+content_id: every-agent-usage-number-is-self-reported
 reading_time: 3
 tags:
   - Agent

@@ -3,6 +3,7 @@ layout: post
 title: "Agent Capability Monthly · Issue 01：生态基线"
 subtitle: "创刊号不追求当月新闻，而是把生态的当前状态、计量方法与数据口径固定下来，作为后续每一期的参照。"
 date: 2026-08-18 09:00:00 +0800
+content_id: agent-capability-monthly-01
 permalink: /notes/agent-capability-monthly-01/
 reading_time: 9
 tags:

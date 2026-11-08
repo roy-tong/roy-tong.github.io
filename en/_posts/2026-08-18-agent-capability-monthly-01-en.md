@@ -4,6 +4,7 @@ lang: en
 title: "Agent Capability Monthly · Issue 01: The Ecosystem Baseline"
 subtitle: "A baseline issue, not a news roundup — fixing the current state, the measurement method, and the data definitions that every future issue will compare against."
 date: 2026-08-18 09:30:00 +0800
+content_id: agent-capability-monthly-01
 permalink: /en/notes/agent-capability-monthly-01/
 reading_time: 9
 tags:

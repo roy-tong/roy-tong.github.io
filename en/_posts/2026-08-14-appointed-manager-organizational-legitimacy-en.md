@@ -4,6 +4,7 @@ lang: en
 title: "From Formal Authority to Organizational Legitimacy"
 subtitle: "The title lets you make decisions. A record of solving problems together is what makes the team willing to follow them."
 date: 2026-08-14 09:11:00 +0800
+content_id: appointed-manager-organizational-legitimacy
 reading_time: 11
 tags:
   - organizational management

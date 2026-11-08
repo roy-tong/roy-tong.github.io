@@ -4,6 +4,7 @@ lang: en
 title: "After RAG, Agents Need Context Recommendation"
 subtitle: "DeepSeek Harness turns the runtime around the model into formal parts. The next problem is deciding what information, capabilities and permissions each step should receive."
 date: 2026-08-14 09:14:00 +0800
+content_id: agent-context-recommendation-after-rag
 reading_time: 11
 tags:
   - AI agent

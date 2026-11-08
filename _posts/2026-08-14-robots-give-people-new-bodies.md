@@ -3,6 +3,7 @@ layout: post
 title: "机器人不是替代人，而是给人增加新的身体"
 subtitle: "除了计算替代率，还可以看机器人怎样延伸人的视野、在场、动作和身体属性。"
 date: 2026-08-14 09:12:00 +0800
+content_id: robots-give-people-new-bodies
 reading_time: 10
 tags:
   - 机器人

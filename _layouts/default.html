@@ -5,6 +5,22 @@
 {% if current_lang == 'en' or current_lang == 'en-US' %}
   {% assign is_english = true %}
 {% endif %}
+{% comment %}
+  Language switch target: explicit lang_switch_url wins; otherwise posts pair
+  automatically through matching content_id across zh/en editions.
+{% endcomment %}
+{% assign lang_switch_url = page.lang_switch_url %}
+{% if page.content_id %}
+  {% for p in site.posts %}
+    {% if p.content_id == page.content_id and p.url != page.url %}
+      {% if is_english %}
+        {% if p.lang == nil or p.lang == 'zh-CN' %}{% assign lang_switch_url = p.url %}{% endif %}
+      {% else %}
+        {% if p.lang == 'en' or p.lang == 'en-US' %}{% assign lang_switch_url = p.url %}{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 <!doctype html>
 <html lang="{{ current_lang }}">
   <head>
@@ -23,13 +39,19 @@
     <meta name="author" content="{{ site.author.name }}">
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20260906-1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20261109-1">
     <link rel="stylesheet" href="{{ '/assets/css/knowledge.css' | relative_url }}?v=20260901-v3">
     {% if page.portfolio_page %}<link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}?v=20260906-1">{% endif %}
     {% if page.book_page %}<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">{% endif %}
-    {% if page.lang_switch_url %}
+    {% if lang_switch_url %}
       <link rel="alternate" hreflang="{{ current_lang }}" href="{{ page.url | absolute_url }}">
-      <link rel="alternate" hreflang="{% if is_english %}zh-CN{% else %}en{% endif %}" href="{{ page.lang_switch_url | absolute_url }}">
+      {% if is_english %}
+        <link rel="alternate" hreflang="zh-CN" href="{{ lang_switch_url | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ lang_switch_url | absolute_url }}">
+      {% else %}
+        <link rel="alternate" hreflang="en" href="{{ lang_switch_url | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+      {% endif %}
     {% endif %}
     {% if page.url == '/' %}
       <script>
@@ -70,7 +92,7 @@
           <a href="{% if is_english %}{{ '/en/about/' | relative_url }}{% else %}{{ '/about/' | relative_url }}{% endif %}" {% if page.url == '/about/' or page.url == '/en/about/' %}aria-current="page"{% endif %}>{% if is_english %}About{% else %}关于{% endif %}</a>
           <a href="{% if is_english %}{{ '/en/support/' | relative_url }}{% else %}{{ '/support/' | relative_url }}{% endif %}" {% if page.url == '/support/' or page.url == '/en/support/' %}aria-current="page"{% endif %}>{% if is_english %}Contact{% else %}联系{% endif %}</a>
           <div class="nav-tools">
-            <a class="language-toggle" href="{% if page.lang_switch_url %}{{ page.lang_switch_url | relative_url }}{% elsif is_english %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" hreflang="{% if is_english %}zh-CN{% else %}en{% endif %}" lang="{% if is_english %}zh-CN{% else %}en{% endif %}" data-language-switch data-target-language="{% if is_english %}zh-CN{% else %}en{% endif %}" aria-label="{% if is_english %}切换至中文{% else %}View in English{% endif %}" title="{% if is_english %}切换至中文{% else %}View in English{% endif %}">{% if is_english %}中文{% else %}EN{% endif %}</a>
+            <a class="language-toggle" href="{% if lang_switch_url %}{{ lang_switch_url | relative_url }}{% elsif is_english %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" hreflang="{% if is_english %}zh-CN{% else %}en{% endif %}" lang="{% if is_english %}zh-CN{% else %}en{% endif %}" data-language-switch data-target-language="{% if is_english %}zh-CN{% else %}en{% endif %}" aria-label="{% if is_english %}切换至中文{% else %}View in English{% endif %}" title="{% if is_english %}切换至中文{% else %}View in English{% endif %}">{% if is_english %}中文{% else %}EN{% endif %}</a>
             <button class="theme-toggle" type="button" aria-pressed="false" aria-label="{% if is_english %}Switch to dark mode{% else %}切换至深色模式{% endif %}" title="{% if is_english %}Switch to dark mode{% else %}切换至深色模式{% endif %}">
               <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="4"/>

@@ -3,6 +3,7 @@ layout: post
 title: "Geek、Professional、B、C：不同市场负责消灭不同不确定性"
 subtitle: "市场进入不是从小众走向大众，而是按产品当前最大的未知设计学习顺序。"
 date: 2026-08-14 08:00:00 +0800
+content_id: market-roles-remove-uncertainty
 reading_time: 10
 tags:
   - 市场进入

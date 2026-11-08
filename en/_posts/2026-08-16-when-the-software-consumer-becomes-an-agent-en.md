@@ -4,6 +4,7 @@ lang: en
 title: "When the Software Consumer Becomes an Agent"
 subtitle: "Seats, installs, and pageviews are breaking. Measurement is the missing infrastructure of the AI economy."
 date: 2026-08-16 14:00:00 +0800
+content_id: when-the-software-consumer-becomes-an-agent
 permalink: /en/notes/when-the-software-consumer-becomes-an-agent/
 reading_time: 10
 tags:

@@ -4,6 +4,7 @@ lang: en
 title: "After AI-Native: The Basic Unit of a Product Has Changed"
 subtitle: "Pages and files won't disappear — they will become different views of the same semantic and task state."
 date: 2026-08-13 21:30:00 +0800
+content_id: ai-native-basic-unit
 reading_time: 11
 tags:
   - AI native

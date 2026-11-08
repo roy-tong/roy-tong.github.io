@@ -4,6 +4,7 @@ lang: en
 title: "Robots Don't Replace People — They Give People New Bodies"
 subtitle: "Beyond replacement rates: how robots extend human vision, presence, action and physical attributes."
 date: 2026-08-14 09:12:00 +0800
+content_id: robots-give-people-new-bodies
 reading_time: 10
 tags:
   - robotics

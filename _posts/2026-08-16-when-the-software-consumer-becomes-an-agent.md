@@ -3,6 +3,7 @@ layout: post
 title: "当软件的消费者变成 Agent"
 subtitle: "席位、安装量与页面访问正在失效。计量，是 AI 经济缺失的基础设施。"
 date: 2026-08-16 14:00:00 +0800
+content_id: when-the-software-consumer-becomes-an-agent
 permalink: /notes/when-the-software-consumer-becomes-an-agent/
 reading_time: 7
 tags:

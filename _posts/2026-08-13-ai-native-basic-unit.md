@@ -3,6 +3,7 @@ layout: post
 title: "AI Native 之后，产品的基本单位变了"
 subtitle: "页面和文件不会消失，但会逐渐成为同一份语义与任务状态的不同视图。"
 date: 2026-08-13 21:30:00 +0800
+content_id: ai-native-basic-unit
 lang: zh-CN
 reading_time: 9
 tags:

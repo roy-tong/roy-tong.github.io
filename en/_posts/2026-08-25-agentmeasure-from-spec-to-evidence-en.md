@@ -4,6 +4,7 @@ lang: en
 title: "AgentMeasure Weekly: The Spec Is Growing Evidence"
 subtitle: "v0.2.0 → v0.2.2 — an open experiment engine, the first preregistered A/B on a real agent, the first external fixture, the first public evidence case, and an honest 0%."
 date: 2026-08-25 14:20:00 +0800
+content_id: agentmeasure-from-spec-to-evidence
 reading_time: 8
 tags:
   - agent
