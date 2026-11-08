@@ -13,12 +13,11 @@ permalink: /404.html
 
 <script>
   // The old project path is gone after the repository rename; send deep links
-  // (/AgentMeasure/tools.html and friends) to the new site instead of a 404.
+  // (/AgentMeasure/tools.html and friends) to the Verovo repository instead of a 404.
   (function () {
     var p = location.pathname;
     if (p === "/AgentMeasure" || p.indexOf("/AgentMeasure/") === 0) {
-      var rest = p.replace(/^\/AgentMeasure\/?/, "");
-      location.replace("https://roy-tong.github.io/verovo/" + rest + location.search + location.hash);
+      location.replace("https://github.com/roy-tong/verovo" + location.search + location.hash);
     }
   })();
 </script>
