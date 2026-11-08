@@ -15,6 +15,12 @@
     "library_action": "研究资料与知识库",
     "essays": [
       {
+        "topic": "现在在做",
+        "title": "一个人，一个 Agent，三个产品",
+        "description": "Askovo 做研究、Verovo 做核验、Growovo 做增长：三个角色跑同一条闭环，纪律写进代码而不是靠自觉。",
+        "url": "/notes/one-person-one-agent-three-products/"
+      },
+      {
         "topic": "具身智能",
         "title": "摄影机器人正在爆发，但还没人回答：为什么相机一定要会走？",
         "description": "四类产品在争夺四种不同需求；跟随感可能不需要移动底盘——至少在标准化场景里。",
@@ -102,6 +108,12 @@
     "essays_url": "/en/essays/",
     "library_action": "Research library (中文)",
     "essays": [
+      {
+        "topic": "Now building",
+        "title": "One Person, One AI Agent, Three Products",
+        "description": "Askovo researches, Verovo verifies, Growovo grows: three roles on one loop, with the discipline written into code.",
+        "url": "/en/notes/one-person-one-agent-three-products/"
+      },
       {
         "topic": "Agents",
         "title": "When the Software Consumer Becomes an Agent",
