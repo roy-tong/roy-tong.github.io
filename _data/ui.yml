@@ -1,0 +1,54 @@
+# Bilingual UI strings for the site chrome (header, nav, footer) in
+# _layouts/default.html. One source of truth per language; the layout
+# never hardcodes zh/en text. `current` lists the page URLs that light
+# up aria-current for that nav item (zh and en URLs both count);
+# `current_when: knowledge_page` defers to a page front-matter flag.
+zh:
+  skip_link: 跳到正文
+  back_home: 返回首页
+  open_navigation: 打开导航
+  main_navigation: 主导航
+  switch_to_dark: 切换至深色模式
+  switch_to_chinese: 切换至中文
+  view_in_english: View in English
+  tagline: 研究 AI 如何变成产品、系统与商业。
+  footer_note: 记录事实，也保留判断被修正的过程。
+  nav:
+    - { label: 文章, href: /essays/, current: [/essays/, /en/essays/] }
+    - { label: 知识库, href: /knowledge/, current_when: knowledge_page }
+    - { label: 项目, href: /projects/, current: [/projects/, /en/projects/] }
+    - { label: 关于, href: /about/, current: [/about/, /en/about/] }
+    - { label: 联系, href: /support/, current: [/support/, /en/support/] }
+  footer_links:
+    - { label: 知识库, href: /knowledge/ }
+    - { label: 能力地图, href: /capability-index/ }
+    - { label: Verovo, href: "https://github.com/roy-tong/verovo" }
+    - { label: X / Twitter, href: "https://x.com/elliwoodtong", rel: me }
+    - { label: GitHub, href: "https://github.com/roy-tong", rel: me }
+    - { label: 联系, href: /support/ }
+    - { label: RSS, href: /feed.xml }
+
+en:
+  skip_link: Skip to content
+  back_home: Back to homepage
+  open_navigation: Open navigation
+  main_navigation: Main navigation
+  switch_to_dark: Switch to dark mode
+  switch_to_chinese: 切换至中文
+  view_in_english: View in English
+  tagline: How AI becomes products, systems and markets.
+  footer_note: Facts, judgment, experiments, and revision.
+  nav:
+    - { label: Essays, href: /en/essays/, current: [/essays/, /en/essays/] }
+    - { label: Knowledge, href: /knowledge/, current_when: knowledge_page, title: Chinese knowledge library }
+    - { label: Projects, href: /en/projects/, current: [/projects/, /en/projects/] }
+    - { label: About, href: /en/about/, current: [/about/, /en/about/] }
+    - { label: Contact, href: /en/support/, current: [/support/, /en/support/] }
+  footer_links:
+    - { label: Knowledge (中文), href: /knowledge/ }
+    - { label: Capability Index, href: /en/capability-index/ }
+    - { label: Verovo, href: "https://github.com/roy-tong/verovo" }
+    - { label: X / Twitter, href: "https://x.com/elliwoodtong", rel: me }
+    - { label: GitHub, href: "https://github.com/roy-tong", rel: me }
+    - { label: Contact, href: /en/support/ }
+    - { label: RSS, href: /feed.xml }
