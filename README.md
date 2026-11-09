@@ -83,4 +83,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py`、`python3 scripts/verify_library.py` 和 `python3 scripts/generate_tags.py`（新增或改动文章标签后必须重跑，中英文标签的大小写变体会自动合并；新增 2 篇以上共用的新标签时需在脚本 `TAG_SLUGS` 里补一个 ASCII slug）。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。
+发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py`、`python3 scripts/verify_library.py`、`python3 scripts/verify_llms.py` 和 `python3 scripts/generate_tags.py`（新增或改动文章标签后必须重跑，中英文标签的大小写变体会自动合并；新增 2 篇以上共用的新标签时需在脚本 `TAG_SLUGS` 里补一个 ASCII slug）。`verify_llms.py` 检查 llms.txt 里的站内 URL 都已构建、近 45 天的新文章都已收录——新文章发布后记得同步 llms.txt 的 Release Sequence。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。

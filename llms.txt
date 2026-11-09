@@ -54,6 +54,8 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ## Current Release Sequence
 
+### November 2026
+
 - [一个人，一个 Agent，三个产品](https://roy-tong.github.io/notes/one-person-one-agent-three-products/): The current positioning essay — one person runs three products (Askovo research, Verovo verification, Growovo growth) as three roles on one loop: the agent advises, the product kernels execute, the author holds the gate.
 - [One Person, One AI Agent, Three Products (EN)](https://roy-tong.github.io/en/notes/one-person-one-agent-three-products/): English edition of the positioning essay.
 - [Askovo vs. Your Current Research Stack (EN)](https://roy-tong.github.io/en/notes/askovo-vs-your-research-stack/): Row-by-row comparison of what ChatGPT deep research, Dovetail, manual projects, and Askovo each organize — and when Askovo is the wrong choice.
@@ -62,6 +64,29 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - [AI 眼镜的用户反馈](https://roy-tong.github.io/notes/ai-glasses-feedback/): Grading public AI-glasses feedback into what is task evidence and what is shopping talk.
 - [端侧AI盒子怎么选](https://roy-tong.github.io/notes/edge-ai-box-selection/): Six purchase conditions and a five-dimension evaluation frame for local AI boxes, against AI PC / NAS / workstation alternatives.
 - [AgentMeasure 一周进展：规范开始长出证据](https://roy-tong.github.io/notes/agentmeasure-from-spec-to-evidence/): Progress report for Aug 22–25 — Lab v0.4 open experiment engine, the first preregistered A/B on a real agent (honest null, real token metering), v0.2.2 conformance hardening with the first community fixture (Urusilla-001), the first public evidence case (12 attempts, 0% safe operation coverage, recomputable), and the spec's move from a consumption ladder to two states plus ranked evidence. Historical: AgentMeasure is now Verovo.
+
+### October 2026
+
+- [研究盘点 2026：站稳的判断与等证据的判断](https://roy-tong.github.io/notes/research-review-2026/): Annual review — which judgments have held, which are still waiting on evidence, and what changed minds this year.
+- [2026 探路地图](https://roy-tong.github.io/notes/direction-map-2026/): The twelve directions being tracked in 2026.
+- [相机机器人墓园编年史](https://roy-tong.github.io/notes/camera-robot-graveyard-chronicle/): Why camera-robot startups keep dying — a graveyard chronicle of camera robots, and what each failure teaches about task closure.
+- [掘金潮里的卖水人：不做机器人的机器人公司](https://roy-tong.github.io/notes/robot-gold-rush-picks-and-shovels/): Picks and shovels in the robot gold rush — which supplier layers capture value without betting on one robot winner.
+- [AI 按结果收费，「结果」是谁定义的？](https://roy-tong.github.io/notes/who-defines-the-outcome/): When AI is priced by outcome, who gets to define the outcome?
+- [AI 产品价值环：采用、交付与验收的三道门槛](https://roy-tong.github.io/notes/ai-product-value-loop/): How AI products move from "it works" to "it's worth paying for" — adoption, delivery, and acceptance gates.
+- [产品越写越清楚，为什么离用户越来越远](https://roy-tong.github.io/notes/when-product-scope-shrinks/): Why shrinking product scope can drift away from the user's actual task.
+- [二十万条讨论，为什么还不能告诉你谁会买](https://roy-tong.github.io/notes/research-labels-arent-users/): Research labels are not users — what corpus labels can and cannot predict about purchase behavior.
+- [同一场比赛，为什么能卖出两种录像](https://roy-tong.github.io/notes/one-match-two-video-products/): One match, two video products — task and willingness-to-pay split an apparent single market in two.
+
+### Early October 2026
+
+- [创业公司地图的数据方法](https://roy-tong.github.io/notes/startup-map-data-methodology/): Data methodology behind the DJI-alumni startup map — sources, dedup rules, and classification limits.
+- [BCI 需求研究方法](https://roy-tong.github.io/notes/bci-demand-research-method/): Demand-research method for brain-computer interfaces, from public signals to testable claims.
+- [找不到全球第 4 名运动相机品牌](https://roy-tong.github.io/notes/action-camera-no4-untraceable/): Thirteen research institutions, no traceable No.4 action-camera brand — why market numbers are first a scoping problem.
+- [我们审计了 110 个 AI 用量工具](https://roy-tong.github.io/notes/ai-usage-metering-audit-zh/): Audit of 110 AI usage-metering tools — where the numbers go wrong.
+- [相机机器人为什么必须会走](https://roy-tong.github.io/notes/camera-robots-why-must-walk/): Four product classes compete for four different needs; follow-feel may not need a moving chassis.
+- [“没有竞争对手”是最危险的断言](https://roy-tong.github.io/notes/no-competitor-most-dangerous-claim/): "We have no competitor" is the most dangerous claim — alternatives, not rivals, define the real bar.
+- [跑了几百个 Agent 会话后，我留下的三条系统规则](https://roy-tong.github.io/notes/agent-sessions-three-system-rules/): Three system rules kept after running several hundred agent sessions.
+- [Agent 工作台的单一事实源](https://roy-tong.github.io/notes/agent-workspace-single-source/): Single source of truth for agent workspaces — where plans, assets, and receipts live.
 - [AgentMeasure Weekly: The Spec Is Growing Evidence (EN)](https://roy-tong.github.io/en/notes/agentmeasure-from-spec-to-evidence/): English edition of the progress report.
 - [AI 应用不会被 Agent 塞满，它们会先被拆掉](https://roy-tong.github.io/notes/ai-apps-unbundled-before-agent-filled/): DeepSeek Harness and Codex Harness point to a route more radical than "adding agents to software" — model, skills, tools, data, runtime, and UI composed temporarily at runtime and dissolved after the task. The basic unit of software shifts from App to Capability; SaaS gets unbundled; the business model moves from Seat Economy to Machine Economy.
 - [The Upsider 事件：Agent 第一次作为经济主体收付了钱](https://roy-tong.github.io/notes/the-upsider-event/): An AI agent on X evaluated interactions and automatically sent tokens on-chain — settlement is verifiable (E4) while the semantics of reward and value attribution are undefined. Payment is verifiable; value attribution isn't. Agents are becoming economic actors.
