@@ -1,0 +1,33 @@
+{% comment %}
+  The single definition of how an article row renders in a year-grouped
+  archive list. Used by /archive/, /essays/, and tag pages in both
+  languages; callers pre-filter site.posts and pass the array in.
+
+  Params:
+    posts    - pre-filtered array of posts (required)
+    language - 'zh' or 'en'; picks date format and arrow aria-label
+    badge    - optional; mark English posts with an EN badge (tag pages)
+{% endcomment %}
+{% comment %}Liquid assign cannot take a comparison expression; toggle via if.{% endcomment %}
+{% assign list_lang_en = false %}
+{% if include.language == 'en' %}{% assign list_lang_en = true %}{% endif %}
+{% assign date_format = '%m 月 %d 日' %}
+{% if list_lang_en %}{% assign date_format = '%b %d' %}{% endif %}
+{% assign posts_by_year = include.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in posts_by_year %}
+  <div class="archive-year">
+    <h2>{{ year.name }}</h2>
+    <div class="archive-items">
+      {% for post in year.items %}
+        <article class="archive-item">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+          <div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if include.badge and post.lang == 'en' %} <span class="tag-lang">EN</span>{% endif %}</h3>
+            {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+          </div>
+          <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="{% if list_lang_en %}Read {{ post.title }}{% else %}阅读《{{ post.title }}》{% endif %}">↗</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}

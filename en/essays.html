@@ -28,24 +28,7 @@ lang_switch_url: /essays/
 
 <section class="archive shell">
   {% assign en_posts = site.posts | where: "lang", "en" %}
-  {% assign posts_by_year = en_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% for year in posts_by_year %}
-    <div class="archive-year">
-      <h2>{{ year.name }}</h2>
-      <div class="archive-items">
-        {% for post in year.items %}
-          <article class="archive-item">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d' }}</time>
-            <div>
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </div>
-            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">↗</a>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  {% endfor %}
+  {% include archive-list.html posts=en_posts language="en" %}
   {% if en_posts.size == 0 %}
     <div class="archive-year">
       <p>English essays are being added. The Chinese archive contains the full set of current writing.</p>

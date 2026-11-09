@@ -14,23 +14,6 @@ lang_switch_url: /archive/
 </section>
 
 <section class="archive shell">
-  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% for year in posts_by_year %}
-    <div class="archive-year">
-      <h2>{{ year.name }}</h2>
-      <div class="archive-items">
-        {% for post in year.items %}
-          {% unless post.lang == 'en' %}{% continue %}{% endunless %}
-          <article class="archive-item">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d' }}</time>
-            <div>
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </div>
-            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">↗</a>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  {% endfor %}
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+  {% include archive-list.html posts=en_posts language="en" %}
 </section>

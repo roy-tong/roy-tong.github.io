@@ -17,22 +17,5 @@ layout: default
 </section>
 
 <section class="archive shell">
-  {% assign posts_by_year = tag_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% for year in posts_by_year %}
-    <div class="archive-year">
-      <h2>{{ year.name }}</h2>
-      <div class="archive-items">
-        {% for post in year.items %}
-          <article class="archive-item">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m 月 %d 日' }}</time>
-            <div>
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.lang == 'en' %} <span class="tag-lang">EN</span>{% endif %}</h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </div>
-            <a class="post-arrow" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">↗</a>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  {% endfor %}
+  {% include archive-list.html posts=tag_posts language="zh" badge=true %}
 </section>
