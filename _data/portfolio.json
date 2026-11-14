@@ -185,7 +185,7 @@
     {
       "id": "askovo",
       "name": "Askovo",
-      "url": "https://github.com/roy-tong/askovo",
+      "url": "https://roy-tong.github.io/Askovo/",
       "role": {
         "zh": "自主业务研究与证据验证",
         "en": "Autonomous business research & evidence validation"
@@ -194,12 +194,20 @@
         "zh": "输入业务问题和授权来源，Agent 规划研究，Askovo 完成有边界的采集、描述分析与证据审计，交付可复核的研究与决策成果。新增可选本地 PDF/Office 文档提取与来源哈希；研究结论仍需验证。",
         "en": "From a business question and authorized sources, the Agent plans research; Askovo collects and analyzes available data, audits evidence and delivers traceable findings. Optional local PDF/Office intake preserves source hashes; extracted text remains unreviewed."
       },
-      "links": []
+      "links": [
+        {
+          "url": "https://github.com/roy-tong/askovo",
+          "label": {
+            "zh": "代码仓库",
+            "en": "Code"
+          }
+        }
+      ]
     },
     {
       "id": "verovo",
       "name": "Verovo",
-      "url": "https://github.com/roy-tong/verovo",
+      "url": "https://roy-tong.github.io/Verovo/",
       "role": {
         "zh": "AI 服务账单审计与单任务经济性",
         "en": "AI charge assurance & task economics"
@@ -210,17 +218,10 @@
       },
       "links": [
         {
-          "url": "https://roy-tong.github.io/Verovo/",
+          "url": "https://github.com/roy-tong/verovo",
           "label": {
-            "zh": "项目网站",
-            "en": "Project website"
-          }
-        },
-        {
-          "url": "https://github.com/openlit/openlit/pull/1476",
-          "label": {
-            "zh": "OpenLIT 合并记录",
-            "en": "Merged OpenLIT contribution"
+            "zh": "代码仓库",
+            "en": "Code"
           }
         }
       ],
@@ -232,7 +233,7 @@
     {
       "id": "growovo",
       "name": "Growovo",
-      "url": "https://github.com/roy-tong/Growovo",
+      "url": "https://roy-tong.github.io/Growovo/",
       "role": {
         "zh": "可核验的 Agent 运营操作员",
         "en": "Verified agent operations operator"
@@ -241,7 +242,15 @@
         "zh": "把社区、内容和客户沟通等重复运营工作变成经授权、可预演、可核验的 Playbook。对操作结果建立执行账本，新增匿名化经验汇总；经验不会自动重放，用户激活与成交仍需独立证据。",
         "en": "Turn repetitive community, content and communication work into reviewed, authorized playbooks. Record confirmed and uncertain actions, and summarize privacy-safe operational patterns; patterns never auto-replay or prove customer conversion."
       },
-      "links": []
+      "links": [
+        {
+          "url": "https://github.com/roy-tong/Growovo",
+          "label": {
+            "zh": "代码仓库",
+            "en": "Code"
+          }
+        }
+      ]
     },
     {
       "id": "iread",

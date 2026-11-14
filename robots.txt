@@ -4,3 +4,6 @@ Disallow: /assets/images/wechat-contact.jpeg
 Disallow: /assets/images/wechat-tip.jpeg
 
 Sitemap: https://roy-tong.github.io/sitemap.xml
+Sitemap: https://roy-tong.github.io/Askovo/sitemap.xml
+Sitemap: https://roy-tong.github.io/Growovo/sitemap.xml
+Sitemap: https://roy-tong.github.io/Verovo/sitemap.xml
