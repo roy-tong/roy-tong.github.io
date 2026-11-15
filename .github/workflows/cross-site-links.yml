@@ -1,0 +1,24 @@
+name: cross-site-links
+
+# The blog and the three product sites live in four repositories. This check is
+# deliberately non-blocking: it runs weekly (or on demand) and reports broken
+# public URLs, but never sits in a deploy path.
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check public URLs across the four repositories
+        run: python3 scripts/check_cross_site_links.py --strict

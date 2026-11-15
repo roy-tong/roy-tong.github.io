@@ -56,11 +56,12 @@ TAG_SLUGS = {
 FRONT_MATTER = """---
 layout: tag
 title: "标签：{tag}"
+description: "标签「{tag}」下的 {count} 篇文章：按主题聚合的索引页。"
 permalink: /tags/{slug}/
 tag: {tag}
 {alt_line}count: {count}
 lang: zh-CN
-sitemap: true
+{robots_line}sitemap: {sitemap}
 generated: true
 ---
 
@@ -116,8 +117,14 @@ def main() -> int:
         alt = next((n for n in names if n != shown), None)
         alt_line = f"tag_alt: {alt}\n" if alt else ""
         slug = TAG_SLUGS[key]
+        # 2-post tag pages are thin: keep them navigable but out of the index.
+        thin = count < 3
+        robots_line = "robots: \"noindex,follow\"\n" if thin else ""
+        sitemap = "false" if thin else "true"
         path = out_dir / f"{slug}.md"
-        path.write_text(FRONT_MATTER.format(tag=shown, slug=slug, alt_line=alt_line, count=count))
+        path.write_text(FRONT_MATTER.format(
+            tag=shown, slug=slug, alt_line=alt_line, count=count,
+            robots_line=robots_line, sitemap=sitemap))
         keep.add(path.name)
         print(f"{count:>3}  {shown}  ->  /tags/{slug}/")
 

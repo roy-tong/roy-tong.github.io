@@ -70,6 +70,8 @@ usage 字段缺失时，代码里一个 `or 0` 就把「未知」翻译成了「
 
 报告发布之后，第一个从外部浮现的真实案例落进了证据库。rulestack 的用量记录公开可查，账本上有一笔工作计了 436k tokens，独立重算的结果是 54,154——约 8 倍的差。原因不在价表，在缓存的计费语义：同一份重放的缓存前缀（cache prefix），每次 spawn 都被当作新输入重新计费。这个案例走的路，是每笔计费争议都该走的路——主张、重算、引用来源。判定与逐条数据在[证据卡](https://github.com/roy-tong/AgentMeasure/tree/main/conformance/evidence)，完整记录见[审计报告](https://github.com/roy-tong/AgentMeasure/blob/main/campaigns/audit-report-2026-09.md)（[英文完整稿](https://dev.to/roytong/we-audited-110-ai-usage-tools-here-is-where-the-numbers-go-wrong-5d8h)）。
 
+如果账单按「解决量」而不是 token 计，问题会换一层：计量的不是用量，是供应商自己判定的结果。这类账单的本地核对路径，写在 Verovo 的[《你的 AI 客服账单数着它自己认证的解决量》](https://roy-tong.github.io/Verovo/blog/resolution-bill-check.html)。
+
 ## 厂商该公布的两样东西
 
 我们还查了 20 家商业厂商，只查表计错了之后怎么办：公开的争议路径或更正政策，任何一种。在我们核查的这 20 家的公开文档里，截至 2026-09 没有找到任何一种（[英文完整稿](https://dev.to/roytong/we-audited-110-ai-usage-tools-here-is-where-the-numbers-go-wrong-5d8h)）。当厂商运行着表、给自己的作业打分、又不公布更正流程时，「相信我们」就是全部的内控体系。两条最低标准：一条具名的争议路径，一份机器可校验的计费披露。

@@ -80,7 +80,7 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}{{ '/tags/' | relative_url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
-  {% for tag_page in site.pages %}{% if tag_page.layout == 'tag' %}
+  {% for tag_page in site.pages %}{% if tag_page.layout == 'tag' and tag_page.sitemap != false %}
   <url><loc>{{ tag_page.url | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
   {% endif %}{% endfor %}
   {% for material in site.materials %}
@@ -92,8 +92,8 @@ permalink: /sitemap.xml
   {% for knowledge_page in site.pages %}{% if knowledge_page.knowledge_page %}
   <url><loc>{{ knowledge_page.url | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
   {% endif %}{% endfor %}
-  {% for publication_page in site.pages %}{% if publication_page.book_page or publication_page.page_type == 'whitepaper' %}
-  <url><loc>{{ publication_page.url | absolute_url }}</loc><lastmod>{{ publication_page.date | date_to_xmlschema }}</lastmod></url>
+  {% for publication_page in site.pages %}{% if publication_page.robots == nil and publication_page.book_page or publication_page.robots == nil and publication_page.page_type == 'whitepaper' %}
+  <url><loc>{{ publication_page.url | absolute_url }}</loc><lastmod>{{ publication_page.date | default: site.time | date_to_xmlschema }}</lastmod></url>
   {% endif %}{% endfor %}
   {% for post in site.posts %}
   <url>

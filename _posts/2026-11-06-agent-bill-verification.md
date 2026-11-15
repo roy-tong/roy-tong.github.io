@@ -169,3 +169,5 @@ DELIVERY: FAIL (2 checks; 1 evidence gaps)
 ## 七、参考资料
 
 - Verovo 0.13.0 本地源码与合成样例。
+- [AI invoice reconciliation：七类失败模式](https://github.com/roy-tong/verovo/blob/main/buyer-ledger/docs/ai-invoice-reconciliation.md)——90 行合成账单，四类输入桶加输出，重算到分，残余项单独留出。
+- [你的 AI 客服账单数着它自己认证的解决量](https://roy-tong.github.io/Verovo/blog/resolution-bill-check.html)——按 resolution 计费时的本地核对路径。
