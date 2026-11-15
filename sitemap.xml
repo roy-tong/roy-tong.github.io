@@ -6,82 +6,63 @@ permalink: /sitemap.xml
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>{{ site.url }}{{ '/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/about/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/archive/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/research/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/essays/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/projects/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/research/embodied-intelligence/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/capability-economy/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/capability-index/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/capability-economy/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/capability-index/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/research/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/essays/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/projects/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/research/embodied-intelligence/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/en/about/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/disclosure/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   <url>
     <loc>{{ site.url }}{{ '/tags/' | relative_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
   </url>
   {% for tag_page in site.pages %}{% if tag_page.layout == 'tag' and tag_page.sitemap != false %}
-  <url><loc>{{ tag_page.url | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
+  <url><loc>{{ tag_page.url | absolute_url }}</loc>{% if tag_page.last_modified_at or tag_page.date %}<lastmod>{{ tag_page.last_modified_at | default: tag_page.date | date_to_xmlschema }}</lastmod>{% endif %}</url>
   {% endif %}{% endfor %}
   {% for material in site.materials %}
   <url><loc>{{ material.url | absolute_url }}</loc><lastmod>{{ material.reviewed_at | date_to_xmlschema }}</lastmod></url>
@@ -90,10 +71,10 @@ permalink: /sitemap.xml
   <url><loc>{{ note.url | absolute_url }}</loc><lastmod>{{ note.reviewed_at | date_to_xmlschema }}</lastmod></url>
   {% endfor %}
   {% for knowledge_page in site.pages %}{% if knowledge_page.knowledge_page %}
-  <url><loc>{{ knowledge_page.url | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
+  <url><loc>{{ knowledge_page.url | absolute_url }}</loc>{% if knowledge_page.last_modified_at or knowledge_page.date %}<lastmod>{{ knowledge_page.last_modified_at | default: knowledge_page.date | date_to_xmlschema }}</lastmod>{% endif %}</url>
   {% endif %}{% endfor %}
   {% for publication_page in site.pages %}{% if publication_page.robots == nil and publication_page.book_page or publication_page.robots == nil and publication_page.page_type == 'whitepaper' %}
-  <url><loc>{{ publication_page.url | absolute_url }}</loc><lastmod>{{ publication_page.date | default: site.time | date_to_xmlschema }}</lastmod></url>
+  <url><loc>{{ publication_page.url | absolute_url }}</loc>{% if publication_page.date %}<lastmod>{{ publication_page.date | date_to_xmlschema }}</lastmod>{% endif %}</url>
   {% endif %}{% endfor %}
   {% for post in site.posts %}
   <url>
