@@ -2,7 +2,7 @@
 layout: post
 title: "从月度总账到续约判断：成功任务成本怎么算"
 subtitle: "财务看总账单，业务看使用次数，技术看调用日志。三组数字都可能是真的，却仍然回答不了要不要续约。"
-date: 2026-11-20 12:12:00 +0800
+date: 2026-11-20 12:08:00 +0800
 permalink: /notes/successful-task-cost/
 content_id: successful-task-cost
 knowledge_topic: agent-systems
