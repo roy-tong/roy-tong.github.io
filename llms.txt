@@ -56,6 +56,8 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ### November 2026
 
+- [增长自动化先画渠道矩阵](https://roy-tong.github.io/notes/growth-channel-automation-matrix/): Separate research, content, authorization, execution and outcomes; assign system and human work by channel without treating drafts or send receipts as growth.
+- [从月度总账到续约判断：成功任务成本怎么算](https://roy-tong.github.io/notes/successful-task-cost/): Define buyer-accepted successful tasks, connect invoices to task and acceptance records, and calculate cost only where the evidence supports it.
 - [一个人，一个 Agent，三个产品](https://roy-tong.github.io/notes/one-person-one-agent-three-products/): The current positioning essay — one person runs three products (Askovo research, Verovo verification, Growovo growth) as three roles on one loop: the agent advises, the product kernels execute, the author holds the gate.
 - [One Person, One AI Agent, Three Products (EN)](https://roy-tong.github.io/en/notes/one-person-one-agent-three-products/): English edition of the positioning essay.
 - [Askovo vs. Your Current Research Stack (EN)](https://roy-tong.github.io/en/notes/askovo-vs-your-research-stack/): Row-by-row comparison of what ChatGPT deep research, Dovetail, manual projects, and Askovo each organize — and when Askovo is the wrong choice.

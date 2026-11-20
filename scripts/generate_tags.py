@@ -44,6 +44,7 @@ TAG_SLUGS = {
     "用户研究": "user-research",
     "研究方法": "research-methods",
     "研究盘点": "research-review",
+    "验收": "acceptance",
     "计量": "metering",
     "大疆": "dji",
     "组织管理": "organization",
