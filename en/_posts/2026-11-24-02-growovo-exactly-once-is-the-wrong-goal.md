@@ -3,7 +3,7 @@ layout: post
 title: "Growovo: exactly-once execution is the wrong goal"
 subtitle: "Approval fingerprints, capability derivation, attempt leases, durable ingress, and independent readback for authorized execution."
 date: 2026-11-24 12:03:00 +0800
-permalink: /notes/02-growovo-exactly-once-is-the-wrong-goal/
+permalink: /en/notes/02-growovo-exactly-once-is-the-wrong-goal/
 content_id: 02-growovo-exactly-once-is-the-wrong-goal
 knowledge_topic: agent-systems
 knowledge_units: [agent-measurement, evidence-maintenance]

@@ -3,7 +3,7 @@ layout: post
 title: "Growovo: a scheduler that knows when not to send"
 subtitle: "Eligibility filters, stable action identity, UTC budgets, stale-draft pruning, adaptive ordering, and channel recovery."
 date: 2026-11-24 12:04:00 +0800
-permalink: /notes/05-growovo-a-scheduler-that-knows-when-not-to-send/
+permalink: /en/notes/05-growovo-a-scheduler-that-knows-when-not-to-send/
 content_id: 05-growovo-a-scheduler-that-knows-when-not-to-send
 knowledge_topic: agent-systems
 knowledge_units: [agent-measurement, evidence-maintenance]

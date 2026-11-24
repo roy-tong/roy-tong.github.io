@@ -3,7 +3,7 @@ layout: post
 title: "Verovo: deterministic replay for AI charges, with the unknowns intact"
 subtitle: "Decimal arithmetic, counting grain, content-addressed revisions, OCR integrity, and line-level buyer disposition."
 date: 2026-11-24 12:05:00 +0800
-permalink: /notes/03-verovo-deterministic-replay-with-unknowns/
+permalink: /en/notes/03-verovo-deterministic-replay-with-unknowns/
 content_id: 03-verovo-deterministic-replay-with-unknowns
 knowledge_topic: agent-systems
 knowledge_units: [agent-measurement, evidence-maintenance]

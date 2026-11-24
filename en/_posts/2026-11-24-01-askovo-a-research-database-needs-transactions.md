@@ -3,7 +3,7 @@ layout: post
 title: "Askovo: a research database needs transaction semantics"
 subtitle: "Evidence graphs, immutable decision records, request-scoped snapshots, and a deterministic response to contradiction."
 date: 2026-11-24 12:01:00 +0800
-permalink: /notes/01-askovo-a-research-database-needs-transactions/
+permalink: /en/notes/01-askovo-a-research-database-needs-transactions/
 content_id: 01-askovo-a-research-database-needs-transactions
 knowledge_topic: product-research
 knowledge_units: [demand-evidence, research-workflows]

@@ -3,7 +3,7 @@ layout: post
 title: "Askovo: product research needs a type system, not a confidence score"
 subtitle: "Orthogonal evidence qualification, structural transaction checks, conclusion gates, and hash-bound research handoffs."
 date: 2026-11-24 12:02:00 +0800
-permalink: /notes/04-askovo-product-research-needs-a-type-system/
+permalink: /en/notes/04-askovo-product-research-needs-a-type-system/
 content_id: 04-askovo-product-research-needs-a-type-system
 knowledge_topic: product-research
 knowledge_units: [demand-evidence, research-workflows]

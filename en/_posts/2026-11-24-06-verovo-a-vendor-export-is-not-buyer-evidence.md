@@ -3,7 +3,7 @@ layout: post
 title: "Verovo: a vendor export is not buyer evidence"
 subtitle: "Control domains, procedural provenance checks, outcome observer grades, canonical completion axes, and evidence-only handoffs."
 date: 2026-11-24 12:06:00 +0800
-permalink: /notes/06-verovo-a-vendor-export-is-not-buyer-evidence/
+permalink: /en/notes/06-verovo-a-vendor-export-is-not-buyer-evidence/
 content_id: 06-verovo-a-vendor-export-is-not-buyer-evidence
 knowledge_topic: agent-systems
 knowledge_units: [agent-measurement, evidence-maintenance]
