@@ -1,0 +1,196 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/topics/creative-tools/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/topics/creative-tools/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/topics/creative-tools/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creative Tools and Digital Manufacturing | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Creative Tools and Digital Manufacturing">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Turn the generated results into works and physical objects that can be modified, reused and delivered.">
+<meta property="og:description" content="Turn the generated results into works and physical objects that can be modified, reused and delivered.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/topics/creative-tools/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/topics/creative-tools/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Creative Tools and Digital Manufacturing">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"把生成结果变成可以修改、复用和交付的作品与实物。","headline":"创作工具与数字制造","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/topics/creative-tools/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/topics/creative-tools/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/topics/creative-tools/">Read the Chinese original</a>.</p>
+      
+
+<section class="shell kb-topic-page">
+  <header class="kb-topic-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Knowledge base</a><span aria-hidden="true">/</span><span aria-current="page">Creative tools and digital manufacturing</span>
+    </nav>
+    <p class="kb-resource-label">Browse by research field · 3 research notes</p>
+    <h1>Creative tools and digital manufacturing</h1>
+    <div class="kb-topic-question">
+      <p class="kb-topic-question-label">This topic is being questioned.</p>
+      <p class="kb-topic-question-text">After the generation is getting cheaper and cheaper, who is responsible for correcting, correcting and delivering the results?</p>
+    </div>
+    <div class="prose"><p><strong>Cover</strong>: The part after generation - how to continue to modify the results, keep them consistent, process failures and deliver them. Video, interactive content and desktop manufacturing are three observation entrances, which correspond to digital projects, world states and physical processes respectively.</p>
+
+<p><strong>How to read</strong>: Read &quot;AI Video Production&quot; first to see why the &quot;second modification&quot; is more important than to connect a few more models; then see how to maintain the lasting state of interactive content; and finally, how to turn digital ideas into qualified physical objects in desktop manufacturing.</p>
+
+<p><strong>Test</strong>: Bilibili transcription pipeline processes the video into research materials that can be checked back.</p>
+</div>
+  </header>
+  <div class="kb-note-list-wrap">
+    <p class="kb-list-caption">This is the original research field catalog. Please refer to the report and data in<a class="kb-text-link" href="/en/knowledge/">The new version of the database</a>Check it out.</p>
+    <ol class="kb-note-list">
+      
+      <li class="kb-note-start"><span class="kb-order" aria-hidden="true">01</span><div>
+        <h2><a href="/en/knowledge/video-production/">AI video production: keep what has been confirmed and then modify the rest</a><span class="kb-start-tag">Starting point</span></h2>
+        <p><span class="kb-note-label">The content of notes</span>Separate the first round of generation from professional delivery to understand the value of creative software with editable projects, partial modifications and version assets.</p>
+      </div></li>
+      
+      <li><span class="kb-order" aria-hidden="true">02</span><div>
+        <h2><a href="/en/knowledge/playable-content/">Interactive content: users&#x27; actions must have an impact on the world.</a></h2>
+        <p><span class="kb-note-label">The content of notes</span>Separate the continuously generated images from the world of sustainable interaction, and study the state, rules, feedback and recovery.</p>
+      </div></li>
+      
+      <li><span class="kb-order" aria-hidden="true">03</span><div>
+        <h2><a href="/en/knowledge/desktop-manufacturing/">Desktop manufacturing: from generating design to making qualified physical objects</a></h2>
+        <p><span class="kb-note-label">The content of notes</span>Study how materials, processes, equipment status and quality inspection can turn digital ideas into repeatable delivery.</p>
+      </div></li>
+      
+    </ol>
+  </div>
+  <section class="kb-related">
+    <h2>Related projects and long-term topics</h2>
+    <ul>
+      <li><a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Transcript Pipeline</a><p>Process the video into a transcript that can be checked back. The open source of the tool does not mean that third-party audio and video can be redistributed.</p></li>
+    
+    
+    
+    <li><a href="/en/knowledge/data/">Research data and statistical boundaries</a></li>
+    </ul>
+  </section>
+  <section class="kb-related">
+    <h2>Related topics</h2>
+    <ul>
+    <li><a href="/en/knowledge/topics/agent-systems/">Agent and software system</a>· Let the software take over long-term tasks: context, execution status, capability distribution and measurement.</li>
+    
+    <li><a href="/en/knowledge/topics/product-research/">Product research and business judgment</a>· Find the demand from the scenario and alternative plan, and use the evidence to decide the next investment.</li>
+    </ul>
+  </section>
+</section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

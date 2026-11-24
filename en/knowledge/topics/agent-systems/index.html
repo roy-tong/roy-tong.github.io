@@ -1,0 +1,203 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/topics/agent-systems/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/topics/agent-systems/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/topics/agent-systems/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Agent and Software System | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Agent and Software System">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Let the software take over long-term tasks: context, execution status, capability distribution and measurement.">
+<meta property="og:description" content="Let the software take over long-term tasks: context, execution status, capability distribution and measurement.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/topics/agent-systems/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/topics/agent-systems/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Agent and Software System">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"让软件接住长期任务：上下文、执行状态、能力分发与计量。","headline":"Agent 与软件系统","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/topics/agent-systems/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/topics/agent-systems/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/topics/agent-systems/">Read the Chinese original</a>.</p>
+      
+
+<section class="shell kb-topic-page">
+  <header class="kb-topic-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Knowledge base</a><span aria-hidden="true">/</span><span aria-current="page">Agent and software system</span>
+    </nav>
+    <p class="kb-resource-label">Browse by research field · 4 research notes</p>
+    <h1>Agent and software system</h1>
+    <div class="kb-topic-question">
+      <p class="kb-topic-question-label">This topic is being questioned.</p>
+      <p class="kb-topic-question-text">How can an Agent change from a one-time answer to a system that can be delivered continuously?</p>
+    </div>
+    <div class="prose"><p><strong>Cover</strong>: How the software takes over the long-term tasks assigned to the Agent - what context is needed, how the ability is called, how the execution facts are saved, and how to distinguish between use and value.</p>
+
+<p><strong>How to read</strong>: Read Agent Runtime first to see how an Agent holds the task state; then enter capability distribution and capability economy; and finally separate &quot;used&quot; and &quot;creating value&quot; by measurement methods.</p>
+
+<p><strong>Test</strong>: AgentMeasure and iRead provide checkable implementations and boundaries.</p>
+</div>
+  </header>
+  <div class="kb-note-list-wrap">
+    <p class="kb-list-caption">This is the original research field catalog. Please refer to the report and data in<a class="kb-text-link" href="/en/knowledge/">The new version of the database</a>Check it out.</p>
+    <ol class="kb-note-list">
+      
+      <li class="kb-note-start"><span class="kb-order" aria-hidden="true">01</span><div>
+        <h2><a href="/en/knowledge/agent-context/">Agent Runtime: Context, Status and Permissions</a><span class="kb-start-tag">Starting point</span></h2>
+        <p><span class="kb-note-label">The content of notes</span>Converge Context Recommendation into an achieable responsibility: what information is needed for this step, what can be done, and how to recover.</p>
+      </div></li>
+      
+      <li><span class="kb-order" aria-hidden="true">02</span><div>
+        <h2><a href="/en/knowledge/software-capabilities/">Software restructuring and capability economy</a></h2>
+        <p><span class="kb-note-label">The content of notes</span>Interface, callability, delivery assets and economic value are four different objects; judge who has mastered what respectively.</p>
+      </div></li>
+      
+      <li><span class="kb-order" aria-hidden="true">03</span><div>
+        <h2><a href="/en/knowledge/agent-measurement/">Agent measurement: execution facts, task results and value</a></h2>
+        <p><span class="kb-note-label">The content of notes</span>Clarify the denominator and evidence boundaries, and avoid confusing retry, call success, being used and business benefits into one number.</p>
+      </div></li>
+      
+      <li><span class="kb-order" aria-hidden="true">04</span><div>
+        <h2><a href="/en/knowledge/research-workflows/">Connect the research workflow to the inspectable product.</a></h2>
+        <p><span class="kb-note-label">The content of notes</span>Use iRead to find changes, use SURE to organize evidence, and use knowledge pages to maintain judgment; tools and research conclusions are responsible for each.</p>
+      </div></li>
+      
+    </ol>
+  </div>
+  <section class="kb-related">
+    <h2>Related projects and long-term topics</h2>
+    <ul>
+      <li><a href="https://github.com/roy-tong/AgentMeasure">AgentMeasure</a><p>Use operation, attempt and evidence records to study Agent&#x27;s use of software. The scope of competence of specifications, tools and experiments is explained separately.</p></li>
+    
+      <li><a href="https://github.com/roy-tong/iRead">iRead</a><p>Continuously research the source of discovery, de-weighting and reporting workflow. Let the new materials return to the existing research questions.</p></li>
+    
+    <li><a href="/en/capability-economy/">Agent Capability Economy</a> · <a href="/en/capability-index/">Capability map and data ledger</a></li>
+    
+    <li><a href="/en/knowledge/data/">Research data and statistical boundaries</a></li>
+    </ul>
+  </section>
+  <section class="kb-related">
+    <h2>Related topics</h2>
+    <ul>
+    <li><a href="/en/knowledge/topics/ai-devices/">AI terminal and new interaction</a>· Understand glasses, spatial interaction, AI PC, NAS and local Agent from daily use conditions.</li>
+    
+    <li><a href="/en/knowledge/topics/product-research/">Product research and business judgment</a>· Find the demand from the scenario and alternative plan, and use the evidence to decide the next investment.</li>
+    </ul>
+  </section>
+</section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

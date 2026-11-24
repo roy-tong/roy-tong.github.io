@@ -2,6 +2,8 @@
   "zh": {
     "headline": "你好，我是 Roy。",
     "identity": "写下判断，也记录判断被证据改变的过程。",
+    "identity_line_1": "写下判断，",
+    "identity_line_2": "也记录它如何被证据改变。",
     "intro": "这里是我的个人博客。我写 AI、具身智能、产品与创业：一项技术能做什么，用户为什么需要它，以及把它做成产品时要面对哪些取舍。",
     "reading_action": "从几篇文章开始",
     "about_action": "关于我",
@@ -96,6 +98,8 @@
   "en": {
     "headline": "Hi, I’m Roy.",
     "identity": "I write down judgments — and keep a public record of the ones new evidence changes.",
+    "identity_line_1": "Write down the judgment.",
+    "identity_line_2": "Keep the evidence that changes it.",
     "intro": "This is my personal blog, about AI, embodied intelligence, products, and building companies: what technology can do, why people need it, and the choices involved in making it useful.",
     "reading_action": "Start with these essays",
     "about_action": "About me",
@@ -106,7 +110,7 @@
     "essays_intro": "A few essays on the questions I keep coming back to.",
     "essays_more": "All essays",
     "essays_url": "/en/essays/",
-    "library_action": "Research library (中文)",
+    "library_action": "Explore the research library",
     "essays": [
       {
         "topic": "Now building",
@@ -141,7 +145,7 @@
     ],
     "tracked_title": "Questions I’m tracking",
     "tracked_intro": "Each line is a current stance and the evidence beneath it. Stances move with evidence, and the revisions are logged in the open knowledge base.",
-    "tracked_more": "Knowledge base revisions (中文)",
+    "tracked_more": "Knowledge base revisions",
     "tracked": [
       {
         "topic": "Agents",
@@ -169,7 +173,7 @@
       }
     ],
     "latest_title": "Recent writing",
-    "latest_intro": "Recent essays available in English. The Chinese archive has more.",
+    "latest_intro": "New observations, research, and working judgments.",
     "projects_title": "Things I’m building",
     "projects_intro": "Some questions become essays. Others become tools.",
     "projects_url": "/en/projects/",

@@ -1,0 +1,248 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/research-workflows/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/research-workflows/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/research-workflows/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Connect the research workflow to the products that can be checked | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Connect the research workflow to the products that can be checked">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="The research task is most likely to stop at &quot;reading a lot of materials and writing a report&quot;. The next time the problem occurs, the source in the report is expired, the number can&#x27;t be recalculated, and the new Agent doesn&#x27;t know which judgments have been denied.">
+<meta property="og:description" content="The research task is most likely to stop at &quot;reading a lot of materials and writing a report&quot;. The next time the problem occurs, the source in the report is expired, the number can&#x27;t be recalculated, and the new Agent doesn&#x27;t know which judgments have been denied.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/research-workflows/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/research-workflows/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Connect the research workflow to the products that can be checked">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"研究任务最容易停在“读了很多资料，写了一份报告”。下一次问题出现时，报告中的来源过期、数字无从重算，新的 Agent 也不知道哪些判断已经被否定。","headline":"把研究工作流接到可检查的产物上","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/research-workflows/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/research-workflows/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/research-workflows/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/research-workflows/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Research notes</span>
+    </nav>
+    <p class="kb-resource-label">Research Notes · Continuous Revision</p>
+    <h1>Connect the research workflow to the inspectable product.</h1>
+    <p class="kb-summary">Use iRead to find changes, use SURE to organize evidence, and use knowledge pages to maintain judgment; tools and research conclusions are responsible for each.</p>
+    <p class="kb-meta">Author&#x27;s Analysis · Content Date<time datetime="2026-08-31">2026.08.31</time> · <a href="/en/knowledge/method/">Description of inclusion and citation</a></p>
+  </header>
+  <div class="prose"><p>The research task is most likely to stop at &quot;reading a lot of materials and writing a report&quot;. The next time the problem occurs, the source in the report is expired, the number can&#x27;t be recalculated, and the new Agent doesn&#x27;t know which judgments have been denied.</p>
+
+<p>I prefer to organize the things left over from the research into source records, evidence tables, current judgments and verification products. Tools can be different, and these types of objects need to be able to locate each other.</p>
+
+<h2 id="现有项目分别负责什么">What are the existing projects responsible for?</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Input and product</th>
+      <th>I&#x27;m not responsible for proving anything.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>iRead</td>
+      <td>Fields and audited sources; events and reports</td>
+      <td>There are many reports that do not prove that the trend is valid.</td>
+    </tr>
+    <tr>
+      <td>SURE</td>
+      <td>Decision-making issues and feedback evidence; study contracts, coding and audits</td>
+      <td>CLI does not prove that the market demand is real.</td>
+    </tr>
+    <tr>
+      <td>Video transcription tool</td>
+      <td>Media approved for processing; checkable verbatial manuscripts</td>
+      <td>Transcription is not equal to the factual verification of the original author, nor does it grant the right to republish.</td>
+    </tr>
+    <tr>
+      <td>AgentMeasure / Lab</td>
+      <td>Operation log or experimental design; caliber and results</td>
+      <td>The success of the assembly line does not prove the real business benefits.</td>
+    </tr>
+    <tr>
+      <td>Open knowledge base</td>
+      <td>Organized analysis, citation and data description</td>
+      <td>Do not undertake the full backup of the private original</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These projects now have independent entrances. What is described here is a collaborative method that does not claim that they have formed a complete platform that runs automatically and does not require review.</p>
+
+<h2 id="一次更新应该改变明确对象">An update should change the clear object.</h2>
+
+<p>When new information comes in, first judge whether it is another report of the old event, new facts, contrary evidence, or a statement that needs to be further examined. Only the materials that change the research problem are worth updating the subject text.</p>
+
+<p>Update a judgment record: what is the old conclusion, which premise has been changed by the new evidence, and which parts are still valid. The original text can be checked back, and the current knowledge page gives the maintained version. In this way, it can be admitted that the past judgment was limited without erasing the basis at that time.</p>
+
+<h2 id="自动化的边界">The boundary of automation</h2>
+
+<p>Instructions may be included in documents and sources, and tools cannot be authorized to act just because they appear in research materials. Publishing, sending letters, deleting, paying and device control need to be authorized by the task itself.</p>
+
+<p>Data de-weighting, format verification and indicator re-counting are suitable for automation. Whether the source is independent, which product is supported by the comment, and whether a concept is commercially meaningful, need to be reviewed semantics; research tools should expose these problems.</p>
+
+<h2 id="如何验收这套工作流">How to accept this workflow</h2>
+
+<p>Choose a topic that has an old conclusion, and follow the whole process with a new counter-evidence: whether to find the affected knowledge page, update the data caliber, keep the original link, and let the related article prompt readers to check the latest judgment.</p>
+
+<p>If only the number of documents and abstracts is increased, and the retrieval and review costs required for the next judgment are not reduced, the research workflow has not completed its task.</p>
+</div>
+  
+  <section class="kb-references" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Public source and scope of application</h2>
+    <ul>
+      <li><a href="https://github.com/roy-tong/iRead">iRead</a><p>Author project · Source discovery, event de-weighting and reporting workflow; do not claim that the value of long-term use has been verified.</p></li>
+    
+      <li><a href="https://github.com/roy-tong/user-demand-research">SURE · User Demand Research</a><p>Author&#x27;s project and method · Research contract, evidence grading, CLI and MCP; structural inspection is not equal to the establishment of requirements.</p></li>
+    
+      <li><a href="https://github.com/roy-tong/bilibili-transcript-pipeline">Bilibili Transcript Pipeline</a><p>Author&#x27;s project · Transcription tool and processing process; the tool license does not cover third-party video content.</p></li>
+    
+      <li><a href="https://github.com/roy-tong/AgentMeasure/tree/main/lab">AgentMeasure Lab</a><p>Author&#x27;s project experimental tool · Experimental engine and synthesis example; synthetic uplift is not pushed out to the real Agent upgrade.</p></li>
+    </ul>
+  </section>
+  
+  
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">Relevant discussions and reports</h2>
+    <ul>
+      <li><a href="/en/notes/scene-user-demand-evidence-research/">How to form a verifiable demand judgment from 200,000 feedbacks</a></li>
+    
+      <li><a href="/en/notes/agentmeasure-from-spec-to-evidence/">AgentMeasure One-week progress: the standard begins to grow evidence</a></li>
+    </ul>
+  </section>
+  
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">Continue reading along the questions.</h2>
+    <ul>
+      <li><a href="/en/knowledge/agent-context/">Agent Runtime: Context, Status and Permissions</a><p>Converge Context Recommendation into an achieable responsibility: what information is needed for this step, what can be done, and how to recover.</p></li>
+    
+      <li><a href="/en/knowledge/demand-evidence/">Demand evidence: What decision can a feedback support?</a><p>Retain the connection between scenarios, alternatives, acceptance conditions and behaviors, and do not let the corpus scale pretend to be demand verification.</p></li>
+    
+      <li><a href="/en/knowledge/evidence-maintenance/">Research and maintenance: numbers, versions and public boundaries</a><p>So that the report can be continuously revised: fix the denominator, save the source version, and distinguish between machine labels and manual judgment.</p></li>
+    </ul>
+  </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">Reports and data in the same research file</h2><ul><li><a href="/en/knowledge/collections/agent-systems/">Agent system and capacity measurement</a><p>Already: the full text of the AgentMeasure white paper, and four notes on context, software capabilities, measurement and research workflow.</p></li></ul></section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

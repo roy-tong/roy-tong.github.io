@@ -4,10 +4,19 @@
   <h2>{% if page.lang == 'en' %}Related research materials{% else %}相关研究资料{% endif %}</h2>
   <p>{% if page.lang == 'en' %}Explore related reports, data summaries and notes in the research library. These links show topical connections; direct evidence is cited in the essay itself.{% else %}报告、数据与笔记保留在资料库里，可继续查阅。下列为同题关联；这篇文章直接使用的证据，以正文引用为准。{% endif %}</p>
   {% assign essay_mapping = site.data.essay_knowledge[page.url] %}{% assign original_url = essay_mapping.translation_of | default: page.url %}
-  <ul>{% for research_collection in site.data.research_collections %}{% if research_collection.articles contains original_url %}<li><a href="{{ '/knowledge/collections/' | append: research_collection.id | append: '/' | relative_url }}">{{ research_collection.title | escape }} · {% if page.lang == 'en' %}research dossier (Chinese){% else %}研究档案{% endif %}</a></li>{% endif %}{% endfor %}</ul>
-  <ul>{% for slug in linked_units %}{% assign target = site.knowledge | where: 'slug', slug | first %}
-    {% if target %}<li><a href="{{ target.url | relative_url }}">{{ target.title | escape }}</a></li>{% endif %}
-  {% endfor %}</ul>
-  <a class="kb-text-link" href="{{ '/knowledge/' | relative_url }}">{% if page.lang == 'en' %}Explore the research library →{% else %}查阅全部研究资料 →{% endif %}</a>
+  <ul>
+    {% for research_collection in site.data.research_collections %}{% if research_collection.articles contains original_url %}
+      {% assign collection_en = site.data.research_collections_en | where: 'id', research_collection.id | first %}
+      <li><a href="{% if page.lang == 'en' %}{{ '/en/knowledge/collections/' | append: research_collection.id | append: '/' | relative_url }}{% else %}{{ '/knowledge/collections/' | append: research_collection.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ collection_en.title | escape }} · research dossier{% else %}{{ research_collection.title | escape }} · 研究档案{% endif %}</a></li>
+    {% endif %}{% endfor %}
+  </ul>
+  <ul>
+    {% for slug in linked_units %}{% assign target = site.knowledge | where: 'slug', slug | first %}
+      {% if target %}
+        <li><a href="{% if page.lang == 'en' %}{{ target.url | prepend: '/en' | relative_url }}{% else %}{{ target.url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ slug | replace: '-', ' ' | capitalize }}{% else %}{{ target.title | escape }}{% endif %}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <a class="kb-text-link" href="{% if page.lang == 'en' %}{{ '/en/knowledge/' | relative_url }}{% else %}{{ '/knowledge/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Explore the research library →{% else %}查阅全部研究资料 →{% endif %}</a>
 </aside>
 {% endif %}

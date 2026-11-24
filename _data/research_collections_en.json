@@ -1,0 +1,74 @@
+[
+  {
+    "id": "embodied-industry",
+    "title": "Embodied AI Industry",
+    "status": "Continuously updated",
+    "question": "How can robot demos, technical routes, and real delivery fit into one industry map?",
+    "current_answer": "A demo, a pilot, and continuous delivery are different kinds of evidence. Start with the task and the person the robot serves, then compare forms, technical routes, and company positions.",
+    "gap": "Next: confirm the public scope of the full report, review company status, and keep technical routes and real deployments current."
+  },
+  {
+    "id": "home-robots",
+    "title": "Home Robots",
+    "status": "Evidence under review",
+    "question": "Which household tasks justify bringing a robot into daily life, and who takes over when it fails?",
+    "current_answer": "A household task makes sense only when the labor saved exceeds deployment, maintenance, and rescue costs. Platform discussions reveal task leads; they do not prove purchase demand.",
+    "gap": "Next: manually review samples by household role and task, then add long-term use, takeover frequency, and willingness-to-pay evidence."
+  },
+  {
+    "id": "ai-glasses",
+    "title": "AI Glasses and Spatial Interaction",
+    "status": "Evidence under review",
+    "question": "When does AI deserve to leave the phone and enter a new device on the body or in space?",
+    "current_answer": "A new device needs a frequent task, an acceptable physical burden, and a job existing devices cannot complete comfortably. Combined corpora reveal scenarios; they cannot replace behavior and adoption evidence.",
+    "gap": "Next: review samples by device, role, and scenario, then add continuous-wear, real-behavior, and payment evidence."
+  },
+  {
+    "id": "local-ai",
+    "title": "Local AI and Personal Compute",
+    "status": "Evidence under review",
+    "question": "Which tasks truly need to run locally, and should they use an existing computer, shared device, or dedicated hardware?",
+    "current_answer": "First prove that the task must happen locally and continuously. Then compare performance, permissions, maintenance, and human intervention. The existing computer is the default alternative; dedicated hardware must add value across the whole workflow.",
+    "gap": "Next: compare devices on real workloads and add installation, maintenance, recovery, and long-term-use evidence from non-technical users."
+  },
+  {
+    "id": "ai-video",
+    "title": "AI Video and Creative Tools",
+    "status": "Main report in preparation",
+    "question": "How do generative models enter professional video workflows that require editing, collaboration, and delivery?",
+    "current_answer": "The first generation provides a starting point. Professional delivery also needs reliable local edits, timeline control, versioned assets, and collaboration interfaces.",
+    "gap": "Next: reconcile local and Feishu versions, check product and workflow facts, then decide the main report’s public scope."
+  },
+  {
+    "id": "agent-systems",
+    "title": "Agent Systems and Capability Measurement",
+    "status": "Specification evolving",
+    "question": "When agents genuinely use software, which actions, outcomes, and value should be recorded?",
+    "current_answer": "A call, a task, an adopted outcome, and a business gain have different denominators. Context, state, and permissions must also be recorded to explain success or failure.",
+    "gap": "Next: add real-task benchmarks, cross-product event comparisons, and continuous calibration between specification fields and current implementations."
+  },
+  {
+    "id": "product-research",
+    "title": "Product Research and Organizational Methods",
+    "status": "Methods continuously revised",
+    "question": "How can evidence about demand, competitors, organizations, and versions support the next decision?",
+    "current_answer": "Every piece of evidence should name the decision it supports, the responsible owner, and the change that would trigger another review.",
+    "gap": "Next: add authorized real cases and records of how the methods succeed and fail in different projects."
+  },
+  {
+    "id": "digital-making",
+    "title": "Desktop Digital Manufacturing",
+    "status": "Materials being consolidated",
+    "question": "How does a digital design pass through materials, processes, and equipment states to become a repeatable physical delivery?",
+    "current_answer": "The design file is only the input. A valid delivery also records material batches, process parameters, equipment state, and inspection results, with traceability across every step.",
+    "gap": "Next: repair the multidimensional-table archive gap, verify report versions, then decide whether to publish equipment and process comparisons."
+  },
+  {
+    "id": "dji-alumni",
+    "title": "DJI Alumni Startups and Industry Diffusion",
+    "status": "Map under review",
+    "question": "When people leave a hardware company for new teams, which capabilities genuinely travel with them?",
+    "current_answer": "A shared employment history shows association, not capability transfer, equity relationships, or startup success. Research must trace how products, supply chains, and organizational experience enter the new team.",
+    "gap": "Next: review company status, product changes, and public sources item by item while accounting for sample-selection bias."
+  }
+]

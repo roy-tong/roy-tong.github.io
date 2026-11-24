@@ -1,0 +1,275 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/changes/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/changes/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/changes/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Organize and revise records | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Organize and revise records">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Research the catalog, materials, data scope and version change records of the database.">
+<meta property="og:description" content="Research the catalog, materials, data scope and version change records of the database.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/changes/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/changes/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Organize and revise records">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"研究资料库的目录、材料、数据范围与版本变化记录。","headline":"整理与修订记录","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/changes/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/changes/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/changes/">Read the Chinese original</a>.</p>
+      <article class="shell reading-shell kb-document">
+  <a class="kb-text-link" href="/en/knowledge/">← Back to the knowledge base</a>
+  <header><p class="eyebrow">LIBRARY NOTES · 2026.08.31</p><h1>Organize and revise records</h1><p class="kb-summary">Research the catalog, materials, data scope and version change records of the database.</p></header>
+  <div class="prose"><h2 id="2026-09-01--第三版方案研究问题成为入口">2026-09-01 · The third version of the program: research problems become the entrance</h2>
+
+<p>Although the second edition separates the materials from the article, the first page still lays out nine groups of research and 27 materials on the same layer. It is difficult to judge what to look at first and where to do the research. The third edition clearly divides the database into three layers of &quot;source → research file → public information&quot;, and the article is used as a downstream expression: the home page first displays six research files, the AI video and desktop manufacturing are marked as being sorted out, and the method data is grouped separately; the complete data catalog is moved to an independent page.</p>
+
+<p>New research questions in the research file, judgments that can be confirmed at present, existing materials and evidence to be supplemented. New applicable questions, public content, non-inference, and review status have been added to the information page; the three sets of data pages further display the exact same text of the time range, main source, structural inspection and cross-group to avoid the large number from the denominator. This version has been released on 2026-09-01, and no new private manuscripts or original platform content have been added.</p>
+
+<h2 id="2026-08-31--第二版方案资料成为主要入口">2026-08-31 · The second version of the plan: information becomes the main entrance</h2>
+
+<p>The new version of the local preview directly includes reports, data, notes and reference lists, and is organized according to actual research topics. The independent description page of the new report and three sets of corpus indicates the full text, trial reading or only summary scope; the original article and notes address is kept.</p>
+
+<p>The home page no longer arranges knowledge units, articles and projects into the maturity spectrum, and does not require reports to be disassembled into knowledge units first. The relevant article indicates that it is related to the same topic, and the specific evidence relationship shall be subject to the text citation.</p>
+
+<p>Search covers the text of public information, supports topics, types, sorting and complete script-free catalogs. The private local/Feishu inventory is kept outside the public warehouse; this version does not upload new private reports or original platform data.</p>
+
+<p>The following is a historical revision, recording the organization method and counting at that time, which does not mean that the current catalog still uses the same structure.</p>
+
+<h2 id="2026-08-31--主题页导读重设计">2026-08-31 · Theme page introduction and redesign</h2>
+
+<p>The theme page previously mixed questions, introductions and judgments into the same set of typesetting, and it was difficult for readers to distinguish &quot;what it is and how to read it&quot;. In this round, a unified introduction framework is established for six theme pages:</p>
+
+<ul>
+  <li>The research question is divided into independent blocks: &quot;This topic is being questioned&quot; + the original text of the question, and the title is layered.</li>
+  <li>The introduction is changed to a three-line structure: cover (study what) / reading (start from which article, where to go through) / test (which project or topic provides boundaries), and all six topics are rewritten into plain language.</li>
+  <li>Unit list plus reading instructions (in the order of suggestions, starting from the &quot;starting point&quot;, and each summary is marked as &quot;core judgment&quot; when displayed, which is distinguished from the question-type naming of the title.</li>
+</ul>
+
+<h2 id="2026-08-31--中间结果--研究资料台账">2026-08-31 · Intermediate Results · Research Data Ledger</h2>
+
+<p>Take stock of local projects and Feishu documents, and aggregate them into public<a href="/en/knowledge/inventory/">Research data ledger</a>：</p>
+
+<ul>
+  <li>441 text sources: Feishu 178, local project 208, warehouse document 14, published 41 (count caliber based on the deployed version).</li>
+  <li>Aggregated according to six themes and release strategies; classification is based on title and project heuristic, non-semantic review, and nearly half (178 articles) have not been classified.</li>
+  <li>Release boundary: only the aggregate caliber and known gaps are disclosed, and the private title, path and company project list do not enter the public layer; company information can only be de-identified and generalized, and third-party information can only be used for reference.</li>
+  <li>Machine-readable aggregation<code class="language-plaintext highlighter-rouge">knowledge/data/source-inventory-2026-08-31.json</code>; The private index is kept on the local workbench.</li>
+</ul>
+
+<h2 id="2026-08-31--第三轮--定位表述">2026-08-31 · The third round · Positioning expression</h2>
+
+<p>Answer three positioning questions and write the answers on the page:</p>
+
+<ul>
+  <li><strong>Positioning of the knowledge base</strong>: The open layer of the research process, from the intermediate results to the maturity spectrum of the current judgment. Research reports, analysis records and data aggregations are directly entered as intermediate results, and there is no need to wait for it to mature for judgment; the knowledge unit is the only current version of the judgment.</li>
+  <li><strong>The relationship with the article</strong>: The article is a snapshot of the complete argument at the time of publication; the knowledge unit undertakes the subsequent revision. The return link area of the article page and the introduction of the home page are rewritten here.</li>
+  <li><strong>Value to authors, readers and Agents</strong>: The author gets maintainable research assets (new material → ledger → change judgment → update unit); readers can directly judge the current version, evidence boundaries and intermediate results according to the question; Agent gets the machine-readable index and permission boundaries.</li>
+</ul>
+
+<p>The release boundary is clear: the reports written by the author, the summary after review, and the derived data set that can be recalculated can be made public; the third-party original text and original crawling data are kept in the local quarantine area, and only the summary and caliber are published at the public layer. A new section of &quot;New Research Materials (Intermediate Results)&quot; has been added to the maintenance document.</p>
+
+<h2 id="2026-08-31--第二轮--目录与入口重构">2026-08-31 · Second Round · Catalog and Entrance Reconstruction</h2>
+
+<p>The content remains unchanged, but the organizational style is adjusted. The first page of the first edition lays out 20 knowledge units, selected articles, projects and full article catalogs on one page, which overlaps with the responsibilities of the theme page, and the entrance granularity is also inconsistent. In this round, let the three-level structures do their own duties:</p>
+
+<ul>
+  <li>The home page is changed to the catalog page: each of the six themes is presented with one question, the number of units and the starting unit are marked, and the list of units is moved to the theme page; all units are no longer tiled.</li>
+  <li>The home page explains the division of labor of three types of content: knowledge unit (current judgment), article (complete argument), project (open source realization), and<a href="/en/knowledge/method/">Reading method</a>Consistent.</li>
+  <li>The retrieval form is visible by default: the control is disabled and the status is displayed before the index is loaded. When it is ready, it is enabled to eliminate the layout jump during loading; the retrieval results are grouped and displayed according to three types of content.</li>
+  <li>Remove the three single-point entrances below the search area and enter them from the topic catalog; the topic page is marked with the starting unit of &quot;starting from here&quot; for each theme.</li>
+  <li>The folded complete table of contents is kept at the bottom of the page, which clarifies its responsibilities: full volume entrance when browsing without scripts, and groups the units by topic.</li>
+</ul>
+
+<h2 id="2026-08-31--第一版">2026-08-31 · First edition</h2>
+
+<p>Establish a public knowledge base with six topics and 20 knowledge units. Keep the original 23 Chinese articles and 10 pages of English translation, add 3 special articles, and connect 4 open source projects.</p>
+
+<p>New article:</p>
+
+<ul>
+  <li><a href="/en/notes/ai-video-second-edit/">The moat of AI video software is hidden in the second modification.</a></li>
+  <li><a href="/en/notes/local-ai-box-task-economics/">The local AI box must first prove that it is worth occupying an extra socket.</a></li>
+  <li><a href="/en/notes/home-robots-harder-richer/">When a robot enters the family, it must first pass the level of &quot;who will clean up the mess&quot;</a></li>
+</ul>
+
+<h2 id="内容怎样重新组织">How to reorganize the content</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Types of original materials</th>
+      <th>This round of processing</th>
+      <th>Main entrance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agent, AI Native and software economic articles and projects</td>
+      <td>Distinguish between context, ability, running facts and value evidence</td>
+      <td><a href="/en/knowledge/topics/agent-systems/">Agent and software system</a></td>
+    </tr>
+    <tr>
+      <td>Body industry reports, white papers and task research</td>
+      <td>Disassembled into industry, family tasks, operation data, world model</td>
+      <td><a href="/en/knowledge/topics/robotics/">Body intelligence and robots</a></td>
+    </tr>
+    <tr>
+      <td>Local AI, glasses and space research</td>
+      <td>Reorganize with tasks, alternative equipment and conditions of use</td>
+      <td><a href="/en/knowledge/topics/ai-devices/">AI terminal and new interaction</a></td>
+    </tr>
+    <tr>
+      <td>Video, interactive content and desktop manufacturing</td>
+      <td>Refinement of modifiable projects, persistent status and physical delivery</td>
+      <td><a href="/en/knowledge/topics/creative-tools/">Creative tools and digital manufacturing</a></td>
+    </tr>
+    <tr>
+      <td>Demand research, competitive methods and market entry articles</td>
+      <td>Combined evidence judgment, alternative plan and version maintenance</td>
+      <td><a href="/en/knowledge/topics/product-research/">Product research and business judgment</a></td>
+    </tr>
+    <tr>
+      <td>Hardware organization long article, management and talent research</td>
+      <td>Split input decision-making, responsibility interface and capability migration</td>
+      <td><a href="/en/knowledge/topics/organization/">Organizational construction and industrial landing</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="做过的实质修正">Substantive amendments that have been done</h2>
+
+<ul>
+  <li>Business maturity and platformization are divided into two judgment axes. The platform is not automatically more mature than vertical products with stable profits.</li>
+  <li>Automatic working time needs to be combined with effective output, manual intervention and the cost of failure, and is not used as a general value indicator.</li>
+  <li>Agent&#x27;s attempt, operation, billing and value are handled separately to avoid the same &quot;usage&quot; changing meaning in different contexts.</li>
+  <li>Research records, machine candidate coding and verified requirements are separated; the three groups of corpus recalculate the source distribution and cross-group text overlap.</li>
+  <li>The product feedback subset and the combination corpus retain different denominators, and do not need to cover the old caliber with larger numbers.</li>
+  <li>The fixed number of people in the hardware organization and the stage schedule converge to the example under specific conditions, not as a general law.</li>
+  <li>The world model classification indicates the source of the proposal, distinguishes the picture, state and action, and does not regard the good-looking generated video as proof of physical ability.</li>
+</ul>
+
+<h2 id="尚未完成的部分">Unfinished parts</h2>
+
+<p>All the original materials have not been reviewed word by word. Version parallels, attachment gaps, manual verification of machine labels and first-hand source verification of some cases are still on the local research list.</p>
+
+<p>These gaps do not enter the public site in the form of hidden drafts. The first version will first release the derivative content that can be read independently and clearly explain the boundaries of the evidence. Follow up and add according to the questions, and continue to leave records here.</p>
+</div>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

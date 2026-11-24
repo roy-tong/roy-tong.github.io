@@ -19,7 +19,7 @@
     <h2>{{ year.name }}</h2>
     <div class="archive-items">
       {% for post in year.items %}
-        <article class="archive-item">
+        <article class="archive-item" data-archive-item data-search="{{ post.title | append: ' ' | append: post.subtitle | append: ' ' | append: post.tags | escape }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
           <div>
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if include.badge and post.lang == 'en' %} <span class="tag-lang">EN</span>{% endif %}</h3>

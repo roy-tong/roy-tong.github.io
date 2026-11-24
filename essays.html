@@ -84,7 +84,15 @@ lang_switch_url: /en/essays/
   </div>
 </section>
 
-<section class="archive shell">
+<section class="archive shell" data-archive>
+  <search class="archive-search">
+    <label for="archive-search-zh">搜索文章</label>
+    <input id="archive-search-zh" type="search" placeholder="输入标题、摘要或标签" autocomplete="off" data-archive-search>
+    <p aria-live="polite" data-archive-count>{{ site.posts.size }} 篇文章</p>
+  </search>
   {% assign zh_posts = site.posts | where_exp: "p", "p.lang != 'en'" %}
-  {% include archive-list.html posts=zh_posts language="zh" %}
+  <div class="archive-results">
+    {% include archive-list.html posts=zh_posts language="zh" %}
+  </div>
+  <p class="archive-empty" hidden data-archive-empty>没有匹配的文章。试试更短的关键词，或清空搜索。</p>
 </section>

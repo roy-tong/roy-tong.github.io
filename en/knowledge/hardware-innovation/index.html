@@ -1,0 +1,204 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/hardware-innovation/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/hardware-innovation/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/hardware-innovation/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hardware Innovation: Organizational Decision-Making by Irreversible Investment | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Hardware Innovation: Organizational Decision-Making by Irreversible Investment">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Intelligent hardware undertakes two types of changes at the same time: software can still be updated, but devices, structures, molds and inventory may have been locked. The organizational mechanism needs to be built around these different change costs.">
+<meta property="og:description" content="Intelligent hardware undertakes two types of changes at the same time: software can still be updated, but devices, structures, molds and inventory may have been locked. The organizational mechanism needs to be built around these different change costs.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/hardware-innovation/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/hardware-innovation/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Hardware Innovation: Organizational Decision-Making by Irreversible Investment">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"智能硬件同时承担两类变更：软件仍可更新，器件、结构、模具和库存却可能已经锁定。组织机制需要围绕这些不同的变更成本建立。","headline":"硬件创新：按不可逆投入组织决策","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/hardware-innovation/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/hardware-innovation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/hardware-innovation/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/hardware-innovation/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Research notes</span>
+    </nav>
+    <p class="kb-resource-label">Research Notes · Continuous Revision</p>
+    <h1>Hardware innovation: organizational decision-making according to irreversible input</h1>
+    <p class="kb-summary">Let value verification, system integration, supply chain and business commitment connect, and avoid the success of the prototype as a product.</p>
+    <p class="kb-meta">Author&#x27;s Analysis · Content Date<time datetime="2026-08-31">2026.08.31</time> · <a href="/en/knowledge/method/">Description of inclusion and citation</a></p>
+  </header>
+  <div class="prose"><p>Intelligent hardware undertakes two types of changes at the same time: software can still be updated, but devices, structures, molds and inventory may have been locked. The organizational mechanism needs to be built around these different change costs.</p>
+
+<p>The original article is developed according to the founder type, team stage and management prototype. The more general main line is reserved here: what kind of evidence should be supplemented before each expansion of irreversible input.</p>
+
+<h2 id="阶段门应决定投入而不只是检查进度">The stage gate should decide the input, not just check the progress.</h2>
+
+<p>The technical prototype proves that the key ability can be done, the user prototype helps to judge whether the results are important, whether the engineering verification checks the design can be realized, and the trial production and mass production verify the delivery conditions. Different products will be arranged at different stages, but the responsibilities of evidence should not be mixed together.</p>
+
+<p>After the demonstration is successful, it is also necessary to ask what conditions it depends on: who prepares the environment, who intervenes when it fails, where the parts come from, and what is the cost of replacement and manufacturing. The hidden work of the demonstration often reappears at the time of delivery.</p>
+
+<h2 id="三种责任必须有人承担">The three responsibilities must be borne by someone.</h2>
+
+<p>The product leader explains the value boundaries of the user and the current version; the system leader turns the goal into indicators and interfaces that can be met at the same time; the project leader deals with interdisciplinary dependencies, integration plans and risk escalations.</p>
+
+<p>These are responsibilities, not stipulations that all small teams must immediately recruit three full-time positions. It&#x27;s okay to work concurrently, but the key make must be made clearly by someone, and it can&#x27;t be suspended between multiple departments.</p>
+
+<p>The team size given in the original text is suitable as a planning example for a specific complexity, and should not be used as a general number of people in the industry. This page does not follow a set of fixed compilation.</p>
+
+<h2 id="冻结范围同时保留改变的路径">Freeze the range while retaining the changed path.</h2>
+
+<p>Freezing is not to prohibit learning, but to explain what is the baseline of this round of delivery. The new requirements should show the impact on cost, cycle, quality and confirmed experience, and then decide to include in this round, deal with it in the next round or abandon it.</p>
+
+<p>Software updates are not a free remedy. It may affect energy consumption, performance, safety and after-sales service; if the original hardware capacity is insufficient, the update cannot replenish the device or heat dissipation space out of thin air.</p>
+
+<h2 id="从一款产品走向多款产品">From one product to multiple products</h2>
+
+<p>The premise that the reuse platform is worth investing in is that different projects repeatedly need the same ability and can accept common boundaries. Too early unification will limit exploration, and too late unification will cause duplicate construction.</p>
+
+<p>Business responsibilities also need to cover post-listing services, repairs, inventory and life cycles. Celebrating only when the press conference is completed will make the team underestimate the work that still has to be undertaken after being delivered to users.</p>
+
+<p>I will use a question to check whether the organization is really mature: after the key person in charge leaves a meeting, can the team still deal with changes, expose risks and complete trade-of-malls according to the common baseline? If not, the organization may still rely on individual coordination to maintain it.</p>
+</div>
+  
+  
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">Relevant discussions and reports</h2>
+    <ul>
+      <li><a href="/en/notes/hardware-innovation-organization-management/">The organizations of Dajiang, Yingshi and Anke are almost opposite, but they are all established.</a></li>
+    
+      <li><a href="/en/notes/from-ai-software-to-physical-world/">From AI application to the real world: my turn</a></li>
+    </ul>
+  </section>
+  
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">Continue reading along the questions.</h2>
+    <ul>
+      <li><a href="/en/knowledge/organization-responsibility/">Organizational responsibility: repair the interface first, and then judge who is not suitable</a><p>The legitimacy of the organization is placed on the time of decision-making records, cross-team commitments and bad news, and does not simplify trust into satisfaction.</p></li>
+    
+      <li><a href="/en/knowledge/robot-industry/">Intelligent Industry Map: Tasks, Technology and Business Maturity</a><p>Separate the ontological form, technical route, company location and delivery evidence, and avoid answering different questions with the same list.</p></li>
+    
+      <li><a href="/en/knowledge/desktop-manufacturing/">Desktop manufacturing: from generating design to making qualified physical objects</a><p>Study how materials, processes, equipment status and quality inspection can turn digital ideas into repeatable delivery.</p></li>
+    </ul>
+  </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">Reports and data in the same research file</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>There are five method notes: requirements, alternatives, evidence maintenance, hardware innovation and organizational responsibility, as well as a public source index. New: Cross-topic comprehensive report on adoption, delivery and acceptance.</p></li></ul></section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

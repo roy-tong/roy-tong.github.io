@@ -1,0 +1,240 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/data/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/data/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/data/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Research Data and Statistical Boundaries | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Research Data and Statistical Boundaries">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="The first batch of re-counting results, field descriptions and limitations of the three groups of corpus were released. Only publish the summary after review, and no longer distribute the original platform content.">
+<meta property="og:description" content="The first batch of re-counting results, field descriptions and limitations of the three groups of corpus were released. Only publish the summary after review, and no longer distribute the original platform content.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/data/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/data/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Research Data and Statistical Boundaries">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"首批公开三组语料的重计结果、字段说明与局限。只发布审查后的汇总，不再分发原始平台内容。","headline":"研究数据与统计边界","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/data/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/data/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/data/">Read the Chinese original</a>.</p>
+      <article class="shell reading-shell kb-document">
+  <a class="kb-text-link" href="/en/knowledge/">← Back to the knowledge base</a>
+  <header><p class="eyebrow">LIBRARY NOTES · 2026.08.31</p><h1>Research data and statistical boundaries</h1><p class="kb-summary">The first batch of re-counting results, field descriptions and limitations of the three groups of corpus were released. Only publish the summary after review, and no longer distribute the original platform content.</p></header>
+  <div class="prose"><h2 id="这次公开什么">What is disclosed this time?</h2>
+
+<p>This is the structural recount of three local research snapshots on August 31, 2026, and the statistical unit is<strong>Take notes</strong>. The data helps to check the scope and deviation of the research materials, and is not used to infer the market universality or the establishment of demand.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Research corpus</th>
+      <th style="text-align: right">Number of records</th>
+      <th>Record the monthly range</th>
+      <th style="text-align: right">Reddit accounts for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local AI and private computing power</td>
+      <td style="text-align: right">211,088</td>
+      <td>2024-01—2026-07</td>
+      <td style="text-align: right">90.21%</td>
+    </tr>
+    <tr>
+      <td>AI glasses and open scenes</td>
+      <td style="text-align: right">209,862</td>
+      <td>2023-01—2026-07</td>
+      <td style="text-align: right">83.29%</td>
+    </tr>
+    <tr>
+      <td>Home robots and open scenes</td>
+      <td style="text-align: right">208,755</td>
+      <td>2023-01—2026-08</td>
+      <td style="text-align: right">88.15%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A total of 629,705 records are not the number of independent users, nor is it &quot;verified 620,000 requirements&quot;. There are duplicate texts between the three groups; the same person may speak more than once. The month comes from the record field, which does not mean that there is a complete coverage every month.</p>
+
+<p><a href="/knowledge/data/research-corpora-2026-08-31.json">Download the complete JSON</a> · <a href="/knowledge/data/corpus-summary-2026-08-31.csv">Overview CSV</a> · <a href="/knowledge/data/platform-counts-2026-08-31.csv">Source distribution CSV</a> · <a href="/knowledge/data/machine-labels-2026-08-31.csv">Machine candidate label CSV</a></p>
+
+<h2 id="重计做了哪些检查">What tests have been done by the recount?</h2>
+
+<p>Analyze the input line by line, recalculate the number of records, non-empty text, source distribution, record ID and missing and duplicate existing text hashs, and bind the SHA-256 of each input file.</p>
+
+<p>No invalid JSON lines, empty body or duplicate record IDs were found in all three snapshots. There are missing text hash fields: 2 glasses corpus, 1 home robot corpus, and 0 local AI corpus. Therefore, &quot;already hashed but not repeated&quot; cannot be interpreted as a complete content to be re-certify.</p>
+
+<p>Cross-repetition is calculated from the body: Unicode NFKC normalizes, merges continuous blanks and removes the first and last blanks, and compares according to the only non-empty text. Here, only the exact consistency is checked, and the approximate rewriting is not checked, and the personal identity is not related.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Two groups of corps</th>
+      <th style="text-align: right">Shared standardized unique text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local AI / AI Glasses</td>
+      <td style="text-align: right">104</td>
+    </tr>
+    <tr>
+      <td>Local AI / Home Robot</td>
+      <td style="text-align: right">133</td>
+    </tr>
+    <tr>
+      <td>AI Glasses / Home Robot</td>
+      <td style="text-align: right">72</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The intersection of two may contain the same text, and the number of global de-weights cannot be simply added and deducted.</p>
+
+<h2 id="机器标签应怎样阅读">How should the machine label be read?</h2>
+
+<p>The main snapshot selected by the local AI does not have an E0–E5 code field, so it is uniformly recorded as<code class="language-plaintext highlighter-rouge">not-coded</code>. This does not mean that other derived files have never been encoded.</p>
+
+<p>The E0–E5 numbers in glasses and home robots are produced by historical processing.<strong>The number of candidate labels</strong>. There is no one-by-one verification of the semantics in this recount. The existence of the E3 label does not mean that the program acceptance has been established, and the existence of the E5 label does not mean that there is evidence of the product we are studying.</p>
+
+<p>Before using the label, you need to check the speaker, program, scene, role and context. See the meaning of the level<a href="/en/knowledge/demand-evidence/">Demand evidence</a>, see the method protocol<a href="https://github.com/roy-tong/user-demand-research">SURE</a>。</p>
+
+<h2 id="为什么不能与旧文章直接混算">Why can&#x27;t it be mixed with the old article directly?</h2>
+
+<p>In historical research, there are original collection, product feedback screening set, open scene material, balanced sampling and coding set at the same time. The product feedback subset cited in the previous demand research article is not the same denominator as the 209,862 eyeglass combination corpus in this round.</p>
+
+<p>When updating the conclusion, confirm the snapshot and filter criteria first. You can&#x27;t just replace the body number with the larger one.</p>
+
+<h2 id="复现到什么程度">To what extent does it reapplain?</h2>
+
+<p>JSON retains the summary of the input file, statistical caliber and all summaries. Open readers can recalculate the ratio, the sum of groups, and the consistency of CSV and JSON. The original snapshot that requires authorization to be completely recounted one by one;<strong>The original data set cannot be independently reconstructed by public summary alone.</strong>。</p>
+
+<p>The original text, platform account, user identification, original post address collection and content hash by article are not included in this release. There are no documents involving internal materials of the enterprise. The input file-level SHA-256 is only used to fix this snapshot, and does not provide personal associated information.</p>
+
+<p>This warehouse has been licensed and remains unchanged. This page does not grant new rights to the original platform content or third-party materials, nor does it replace the authorization on the grounds of &quot;open source research&quot;.</p>
+
+<h2 id="如何使用">How to use</h2>
+
+<p>It is suitable for understanding the scale, source concentration and structure of this batch of materials, or checking whether the numbers are wrongly amplified in subsequent articles. It is not suitable for directly estimating the purchase rate, retention rate, market share, national user demand or product effect.</p>
+
+<p>The next release will give priority to supplementing reviewable task-level analysis and manual review methods, retaining cases of rejection, satisfactory alternatives and insufficient evidence. The value of the research depends on the quality of judgment, not on the size of the downloaded file.</p>
+</div>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

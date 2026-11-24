@@ -3,14 +3,26 @@ layout: default
 ---
 {% assign is_en = false %}
 {% if page.lang == 'en' %}{% assign is_en = true %}{% endif %}
+{% assign alternate_post = nil %}
+{% assign alternate_url = nil %}
+{% if page.content_id %}
+  {% for candidate in site.posts %}
+    {% if candidate.content_id == page.content_id and candidate.url != page.url %}
+      {% if is_en and candidate.lang != 'en' %}{% assign alternate_post = candidate %}{% endif %}
+      {% unless is_en %}{% if candidate.lang == 'en' %}{% assign alternate_post = candidate %}{% endif %}{% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 <article class="post shell reading-shell">
   <header class="post-header">
     <a class="eyebrow back-link" href="{% if is_en %}{{ '/en/archive/' | relative_url }}{% else %}{{ '/archive/' | relative_url }}{% endif %}">{% if is_en %}← All writing{% else %}← 返回文章{% endif %}</a>
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
     <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y %B %-d' }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% if is_en %}{{ page.date | date: '%b %-d, %Y' }}{% else %}{{ page.date | date: '%Y-%m-%d' }}{% endif %}</time>
       {% if page.reading_time %}<span>{{ page.reading_time }}{% if is_en %} min read{% else %} 分钟阅读{% endif %}</span>{% endif %}
+      {% if alternate_post %}{% assign alternate_url = alternate_post.url %}{% elsif is_en %}{% assign alternate_url = page.url | remove_first: '/en' %}{% else %}{% assign alternate_url = page.url | prepend: '/en' %}{% endif %}
+      <a class="post-translation" href="{{ alternate_url | relative_url }}" hreflang="{% if is_en %}zh-CN{% else %}en{% endif %}">{% if is_en %}阅读中文版{% else %}Read in English{% endif %} →</a>
       {% if page.tags %}
         <span class="post-tags">
           {% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | downcase | url_encode | replace: '+', '%20' }}">#{{ tag }}</a>{% endfor %}
@@ -39,7 +51,7 @@ layout: default
     {% if page.book_page %}
       <a class="support-link" href="{{ '/buy/embodied-intelligence/' | relative_url }}">{% if is_en %}Version notes <span>→</span>{% else %}查看版本说明 <span>→</span>{% endif %}</a>
     {% else %}
-      <a class="support-link" href="{{ '/support/#tip' | relative_url }}">{% if is_en %}Support the writing <span>♡</span>{% else %}支持写作 <span>♡</span>{% endif %}</a>
+      <a class="support-link" href="{% if is_en %}{{ '/en/support/#tip' | relative_url }}{% else %}{{ '/support/#tip' | relative_url }}{% endif %}">{% if is_en %}Support the writing <span>♡</span>{% else %}支持写作 <span>♡</span>{% endif %}</a>
     {% endif %}
   </footer>
 </article>

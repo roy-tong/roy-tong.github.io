@@ -1,0 +1,247 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/demand-evidence/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/demand-evidence/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/demand-evidence/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Demand evidence: What decision can a feedback support | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Demand evidence: What decision can a feedback support">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="The more information, the easier it is to mistakenly write &quot;find a lot of relevant discussions&quot; as &quot;requirements have been verified&quot;. The key action of the research is to let each material only bear the judgment of its actual support.">
+<meta property="og:description" content="The more information, the easier it is to mistakenly write &quot;find a lot of relevant discussions&quot; as &quot;requirements have been verified&quot;. The key action of the research is to let each material only bear the judgment of its actual support.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/demand-evidence/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/demand-evidence/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Demand evidence: What decision can a feedback support">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"资料越多，越容易把“找到很多相关讨论”误写成“需求已经验证”。研究的关键动作，是让每条材料只承担它实际支持的判断。","headline":"需求证据：一条反馈究竟能支持什么决定","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/demand-evidence/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/demand-evidence/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/demand-evidence/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/demand-evidence/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Research notes</span>
+    </nav>
+    <p class="kb-resource-label">Research Notes · Continuous Revision</p>
+    <h1>Demand evidence: What decision can a feedback support?</h1>
+    <p class="kb-summary">Retain the connection between scenarios, alternatives, acceptance conditions and behaviors, and do not let the corpus scale pretend to be demand verification.</p>
+    <p class="kb-meta">Author&#x27;s Analysis · Content Date<time datetime="2026-08-31">2026.08.31</time> · <a href="/en/knowledge/method/">Description of inclusion and citation</a></p>
+  </header>
+  <div class="prose"><p>The more information, the easier it is to mistakenly write &quot;find a lot of relevant discussions&quot; as &quot;requirements have been verified&quot;. The key action of the research is to let each material only bear the judgment of its actual support.</p>
+
+<p>SURE is the method and tool I use to sort out this matter. It distinguishes between scenarios, problems, alternative behaviors, program acceptance and business behavior, and requires evidence to return to the source. The software is responsible for checking the structure, and the researcher is responsible for explaining the semantics and making decisions.<a href="https://github.com/roy-tong/user-demand-research">Project and agreement</a></p>
+
+<h2 id="证据等级不是市场成熟度阶梯">The level of evidence is not the ladder of market maturity.</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Recorded content</th>
+      <th>It can&#x27;t be launched directly.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E0</td>
+      <td>Activities, characters, scene backgrounds</td>
+      <td>There are unmet needs.</td>
+    </tr>
+    <tr>
+      <td>E1</td>
+      <td>Clarify tasks, difficulties or goals</td>
+      <td>Willing to change a solution</td>
+    </tr>
+    <tr>
+      <td>E2</td>
+      <td>Current practice, detour, failure or switching cost</td>
+      <td>Accept the new program in the research</td>
+    </tr>
+    <tr>
+      <td>E3</td>
+      <td>Acceptance or preference for the plan under given conditions</td>
+      <td>Purchased or continuously used</td>
+    </tr>
+    <tr>
+      <td>E4+ / E4−</td>
+      <td>Commercial intention / Rejection, cancellation, return, etc.</td>
+      <td>Everyone has the same will.</td>
+    </tr>
+    <tr>
+      <td>E5</td>
+      <td>Paid holding, deployment, reuse and other behaviors that have occurred</td>
+      <td>These behaviors are caused by a certain function of the product.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The problem chain, scheme chain and behavior chain in the same role, scene and task can be connected for judgment. Putting together A&#x27;s complaint, B&#x27;s payment and C&#x27;s long-term use will create a &quot;complete user&quot; that does not exist at all.</p>
+
+<h2 id="先比较用户现在怎样解决">First, compare how users can solve it now.</h2>
+
+<p>&quot;I want a robot to help me&quot; may just express the desire for results. How do users deal with this matter, how often, what to pay, and why the old plan is not enough, so that the new product has a comparison target.</p>
+
+<p>The satisfactory alternative plan should be retained. It may indicate that the market has a good enough answer, or it may indicate that the new plan needs to cross the threshold too high. Only receiving complaints will turn the research into a library of materials to prove the established plan.</p>
+
+<h2 id="自动编码只能产生待复核候选">Automatic coding can only produce candidates to be reviewed.</h2>
+
+<p>The &quot;return&quot; in a public discussion may refer to the return or the return of the program; &quot;sweeper bought for parents&quot; cannot be directly turned into evidence of the purchase of a general care robot. The price may also be other products, services or unrelated expenses.</p>
+
+<p>In this round, three groups of corpus recounted to verify the number of records, fields and source distribution, and did not confirm the machine labels one by one. See the statistics<a href="/en/knowledge/data/">Data page</a>. The CLI inspection pass and the research conclusion pass, which are two different acceptances.</p>
+
+<h2 id="让研究决定下一项行动">Let the research decide the next action.</h2>
+
+<p>For a scenario to be developed, I hope to study and deliver four things: the strongest supporting evidence at present, the strongest counter-evidence, the threshold of judgment that has not been crossed, and the next verification that can change the investment decision.</p>
+
+<p>If what is missing is the acceptance of the program, design an understandable prototype; if the missing is the delivery cost, make a pilot with complete support records. Continuing to expand the background corpus usually cannot make up for these two types of gaps.</p>
+
+<p>This page converges the original research article into the entrance to reading and action. The specific data contract and command usage are still subject to the project warehouse, so as to avoid maintaining the second set of expiration tool descriptions in the knowledge base.</p>
+</div>
+  
+  <section class="kb-references" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Public source and scope of application</h2>
+    <ul>
+      <li><a href="https://github.com/roy-tong/user-demand-research">SURE · User Demand Research</a><p>Author&#x27;s project and method · Research contract, evidence grading, CLI and MCP; structural inspection is not equal to the establishment of requirements.</p></li>
+    </ul>
+  </section>
+  
+  
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">Relevant discussions and reports</h2>
+    <ul>
+      <li><a href="/en/notes/scene-user-demand-evidence-research/">How to form a verifiable demand judgment from 200,000 feedbacks</a></li>
+    </ul>
+  </section>
+  
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">Continue reading along the questions.</h2>
+    <ul>
+      <li><a href="/en/knowledge/alternatives-entry/">Alternatives and market entry: Let the next stop answer the most important unknown</a><p>Extend the competitive analysis from the parameter table of similar products to the real alternative behavior, and select the order of entry with the responsibility of evidence.</p></li>
+    
+      <li><a href="/en/knowledge/evidence-maintenance/">Research and maintenance: numbers, versions and public boundaries</a><p>So that the report can be continuously revised: fix the denominator, save the source version, and distinguish between machine labels and manual judgment.</p></li>
+    
+      <li><a href="/en/knowledge/agent-measurement/">Agent measurement: execution facts, task results and value</a><p>Clarify the denominator and evidence boundaries, and avoid confusing retry, call success, being used and business benefits into one number.</p></li>
+    </ul>
+  </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">Reports and data in the same research file</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>There are five method notes: requirements, alternatives, evidence maintenance, hardware innovation and organizational responsibility, as well as a public source index. New: Cross-topic comprehensive report on adoption, delivery and acceptance.</p></li></ul></section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

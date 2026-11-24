@@ -1,0 +1,238 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/local-ai/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/local-ai/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/local-ai/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Local AI: After the task is established, the device has a reason to buy | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Local AI: After the task is established, the device has a reason to buy">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Local AI has a clear purpose, but &quot;willing to run locally&quot; and &quot;willing to add a new device&quot; are two different choices. Users may already have a good enough computer and may be willing to accept cloud services. Equipment needs to explain its own incremental value.">
+<meta property="og:description" content="Local AI has a clear purpose, but &quot;willing to run locally&quot; and &quot;willing to add a new device&quot; are two different choices. Users may already have a good enough computer and may be willing to accept cloud services. Equipment needs to explain its own incremental value.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/local-ai/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/local-ai/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Local AI: After the task is established, the device has a reason to buy">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"本地 AI 有明确用途，但“愿意在本地运行”与“愿意新增一台设备”是两次不同的选择。用户可能已经拥有足够好的电脑，也可能愿意接受云端服务。设备需要解释自己的增量价值。","headline":"本地 AI：任务成立之后，设备才有购买理由","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/local-ai/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/local-ai/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/local-ai/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/local-ai/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Research notes</span>
+    </nav>
+    <p class="kb-resource-label">Research Notes · Continuous Revision</p>
+    <h1>Local AI: After the task is established, there is a reason to purchase the equipment.</h1>
+    <p class="kb-summary">Disassemble offline, privacy and computing power into task conditions, and then compare the complete cost of existing computers, shared devices and dedicated hardware.</p>
+    <p class="kb-meta">Author&#x27;s Analysis · Content Date<time datetime="2026-08-31">2026.08.31</time> · <a href="/en/knowledge/method/">Description of inclusion and citation</a></p>
+  </header>
+  <div class="prose"><p>Local AI has a clear purpose, but &quot;willing to run locally&quot; and &quot;willing to add a new device&quot; are two different choices. Users may already have a good enough computer and may be willing to accept cloud services. Equipment needs to explain its own incremental value.</p>
+
+<h2 id="将口号还原成约束">Reduce the slogan to a constraint</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Common reasons</th>
+      <th>Further confirmation is required.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Offline</td>
+      <td>Which steps must be disconnected from the network? Do models, retrieval, authorization and external tools all work?</td>
+    </tr>
+    <tr>
+      <td>Privacy</td>
+      <td>Which data can&#x27;t leave which boundary? Who can view the files, logs and results?</td>
+    </tr>
+    <tr>
+      <td>Low delay</td>
+      <td>Is it the first response, or the complete task and queuing time?</td>
+    </tr>
+    <tr>
+      <td>Low cost</td>
+      <td>Is it included in equipment depreciation, installation, model maintenance, power consumption and failure handling?</td>
+    </tr>
+    <tr>
+      <td>Long-term operation</td>
+      <td>Is the task high-frequency enough to occupy a device that is continuously online?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These conditions may support dedicated hardware, or they may support the installation of software on existing devices. The judgment should not bind the form in advance.</p>
+
+<h2 id="已有设备是必须比较的替代方案">Existing equipment is an alternative that must be compared.</h2>
+
+<p>The document of LM Studio explains that the downloaded models and some local workflows can be used offline. This constitutes at least a baseline: complete the task on the existing computer first, and then find out the reason why you have to buy a new device. Whether the external tool is connected to the network still needs to be checked separately.<a href="https://lmstudio.ai/docs/app/offline">Official explanation</a></p>
+
+<p>The installation of the model file does not mean that the task runs well. Context, concurrency and other processes also take up resources. Ollama&#x27;s documents clearly remind that longer contexts require more memory; only comparing the amount of parameters or computing power peaks will miss the actual workload.<a href="https://docs.ollama.com/context-length">Context document</a></p>
+
+<h2 id="什么任务值得进一步验证专用设备">What tasks are worth further verifying the dedicated equipment?</h2>
+
+<p>Continuously listening to local events, providing services to multiple people, connecting on-site equipment, or the need to separate the researcher&#x27;s personal computer from the execution environment may increase the value of dedicated equipment. What is listed here is the condition to be tested, not the confirmed market size.</p>
+
+<p>Use the same set of tasks to compare existing computers, local dedicated devices and cloud schemes within the allowed range. Record quality, time consumption, manual intervention, network outage performance and maintenance burden. Only when the increased continuous use value exceeds the new burden, there is a reason to buy.</p>
+
+<p>Hardware also brings the responsibility of supply, replacement and system maintenance. NVIDIA explains the life cycle of the module and the development kit differently, which reminds us not to take the development verification conditions directly as a product delivery commitment.<a href="https://developer.nvidia.com/embedded/lifecycle">Life cycle description</a></p>
+
+<h2 id="本轮资料允许说到哪里">What is allowed in this round of information?</h2>
+
+<p>There are 211,088 records of the local AI main corpus checked, and Reddit accounts for about 90.21%. This is a discussion material for a specific collection scope, not a purchase intention survey; the snapshot does not have an E0–E5 code field. See the complete caliber<a href="/en/knowledge/data/">Data description</a>. It can help find clues of tasks and failure, and it cannot prove that a new kind of hardware already has a demand.</p>
+</div>
+  
+  <section class="kb-references" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Public source and scope of application</h2>
+    <ul>
+      <li><a href="https://lmstudio.ai/docs/app/offline">LM Studio · Offline Operation</a><p>Manufacturer&#x27;s technical documents · Downloaded models, document processing and offline capabilities of local services; do not cover the networking behavior of external tools.</p></li>
+    
+      <li><a href="https://docs.ollama.com/context-length">Ollama · Context length</a><p>Project technical documents · The relationship between context settings and memory occupancy; not used to compare the task performance of different hardware.</p></li>
+    
+      <li><a href="https://developer.nvidia.com/embedded/lifecycle">NVIDIA · Jetson Product Lifecycle</a><p>Manufacturer&#x27;s supply description · The difference between the life cycle of the module and the development kit; it is not a service commitment of any equipment.</p></li>
+    </ul>
+  </section>
+  
+  
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">Relevant discussions and reports</h2>
+    <ul>
+      <li><a href="/en/notes/local-ai-box-task-economics/">The local AI box must first prove that it is worth occupying an extra socket.</a></li>
+    
+      <li><a href="/en/notes/agent-left-embodied-right/">Agent to the left, body to the right: the fork of AI in information space and the physical world</a></li>
+    </ul>
+  </section>
+  
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">Continue reading along the questions.</h2>
+    <ul>
+      <li><a href="/en/knowledge/agent-context/">Agent Runtime: Context, Status and Permissions</a><p>Converge Context Recommendation into an achieable responsibility: what information is needed for this step, what can be done, and how to recover.</p></li>
+    
+      <li><a href="/en/knowledge/software-capabilities/">Software restructuring and capability economy</a><p>Interface, callability, delivery assets and economic value are four different objects; judge who has mastered what respectively.</p></li>
+    
+      <li><a href="/en/knowledge/alternatives-entry/">Alternatives and market entry: Let the next stop answer the most important unknown</a><p>Extend the competitive analysis from the parameter table of similar products to the real alternative behavior, and select the order of entry with the responsibility of evidence.</p></li>
+    </ul>
+  </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">Reports and data in the same research file</h2><ul><li><a href="/en/knowledge/collections/local-ai/">Local AI and personal computing power</a><p>Already: two notes of local AI and Agent context, and a structural summary of 211,088 related records.</p></li></ul></section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

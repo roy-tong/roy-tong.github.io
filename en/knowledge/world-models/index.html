@@ -1,0 +1,228 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/world-models/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/world-models/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/world-models/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>World Model: What do pictures, states and actions prove | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="World Model: What do pictures, states and actions prove">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="The &quot;world model&quot; is suitable for describing the research direction, but not enough to define a product acceptance list. It is also a video of the cup being pushed. One system may only generate the picture, the other may save the state of the calculable object, and the third will select the robot&#x27;s action accordingly. The mistakes of the three will cause different consequences.">
+<meta property="og:description" content="The &quot;world model&quot; is suitable for describing the research direction, but not enough to define a product acceptance list. It is also a video of the cup being pushed. One system may only generate the picture, the other may save the state of the calculable object, and the third will select the robot&#x27;s action accordingly. The mistakes of the three will cause different consequences.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/world-models/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/world-models/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="World Model: What do pictures, states and actions prove">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"“世界模型”适合描述研究方向，却不足以定义一份产品验收单。同样是一段杯子被推动的视频，一个系统可能只生成画面，另一个保存可计算的物体状态，第三个据此选择机器人的动作。三者的错误会造成不同后果。","headline":"世界模型：画面、状态与行动各自证明什么","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/world-models/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/world-models/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/world-models/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/world-models/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-note">
+  <header class="kb-note-header">
+    <nav class="kb-breadcrumb" aria-label="Current position">
+      <a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Research notes</span>
+    </nav>
+    <p class="kb-resource-label">Research Notes · Continuous Revision</p>
+    <h1>World model: what do pictures, states and actions prove?</h1>
+    <p class="kb-summary">Use the output contract to distinguish between video generation, computable simulation and action planning, and avoid using visual effects as physical abilities.</p>
+    <p class="kb-meta">Author&#x27;s Analysis · Content Date<time datetime="2026-08-31">2026.08.31</time> · <a href="/en/knowledge/method/">Description of inclusion and citation</a></p>
+  </header>
+  <div class="prose"><p>The &quot;world model&quot; is suitable for describing the research direction, but not enough to define a product acceptance list. It is also a video of the cup being pushed. One system may only generate the picture, the other may save the state of the calculable object, and the third will select the robot&#x27;s action accordingly. The mistakes of the three will cause different consequences.</p>
+
+<h2 id="先问下游拿到什么">First, ask what the downstream got.</h2>
+
+<p>In June 2026, World Labs proposed to distinguish between renderer, simulator and planner by function. I use this classification to help analyze the product; it is a proposal of a research team, not a unified standard.<a href="https://www.worldlabs.ai/blog/taxonomy-of-world-models">The original</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Things obtained downstream</th>
+      <th>My acceptance problem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Picture and sound</td>
+      <td>Is the lens continuous, is the specified object consistent, and is the modification controllable?</td>
+    </tr>
+    <tr>
+      <td>Commasable scene status</td>
+      <td>Can scale, collision, material and state changes support target calculation?</td>
+    </tr>
+    <tr>
+      <td>Action or sequence of action</td>
+      <td>Under a given observation and limitation, can the task be completed safely and can the failure be identified?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This table is not a model ranking list. A system can undertake several responsibilities at the same time, or assign responsibilities to different modules.</p>
+
+<h2 id="可看与可用之间需要一个明确的转换">A clear conversion between viewable and available is needed.</h2>
+
+<p>The video gives a possible future, but the robot also needs the coordinates, time, strength of the action and new observations after execution. Three-dimensional scenes can support roaming, and may not contain material parameters suitable for contact tasks. When connecting the results downstream, it should be clearly written what is retained, what is estimated, and which quantities do not exist at all.</p>
+
+<p>For example, the generation scene is used for robot training, at least check the proportion, collision geometry, action interface and task result definition. The focus here is to check the training contract of the project itself, not to require each entertainment content to have the accuracy of engineering simulation.</p>
+
+<h2 id="数据价值来自补上哪一种缺口">What kind of gap does the data value come from?</h2>
+
+<p>Real videos can enrich the knowledge of appearance and events; the robot trajectory with action and results allows specific execution conditions to enter the data. DROID and OpenVLA show the specific path of real machine data, task adaptation and strategy learning, and cannot jump to &quot;do housework after watching Internet videos&quot;.<a href="https://droid-dataset.github.io/">DROID</a>、<a href="https://openvla.github.io/">OpenVLA</a></p>
+
+<p>When evaluating new data, I will compare the failure types on the same set of tasks: whether the object is not recognized, slips when touching, failure is not detected, or the next step is wrong. The scale of data can only be meaningful to the product if it falls on these differences.</p>
+
+<h2 id="目前保留的判断">The judgment reserved at present</h2>
+
+<p>Generation, simulation and planning may provide training signals to each other, but &quot;possible integration&quot; cannot be regarded as evidence of general action capabilities. The industrial discussion in the white paper is divided into three questions that can be verified separately: whether the results are controllable, whether the status is credible, and whether the actions are reliable. They also connect creative software, space tools and robots respectively.</p>
+</div>
+  
+  <section class="kb-references" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Public source and scope of application</h2>
+    <ul>
+      <li><a href="https://www.worldlabs.ai/blog/taxonomy-of-world-models">World Labs · A Functional Taxonomy of World Models</a><p>The classification proposal of the research team · Distinguish renderer, simulator and planner by output functions; it is not a unified definition of the industry, which does not mean that the ability has been integrated.</p></li>
+    
+      <li><a href="https://openvla.github.io/">OpenVLA</a><p>Research projects and papers · Training and evaluation of visual language action models; only support the tasks and experimental conditions disclosed in the paper.</p></li>
+    
+      <li><a href="https://droid-dataset.github.io/">DROID</a><p>Research data set · Cross-scene real machine operation data and collection infrastructure; scale cannot replace specific task adaptation.</p></li>
+    </ul>
+  </section>
+  
+  
+  <section class="kb-related" aria-labelledby="essays-heading">
+    <h2 id="essays-heading">Relevant discussions and reports</h2>
+    <ul>
+      <li><a href="/en/notes/embodied-intelligence-beginners-guide/">Body intelligent introductory map: how do I organize industries, companies and technologies?</a></li>
+    </ul>
+  </section>
+  
+  <section class="kb-related" aria-labelledby="related-heading">
+    <h2 id="related-heading">Continue reading along the questions.</h2>
+    <ul>
+      <li><a href="/en/knowledge/manipulation-data/">Dexterous operation: how hands, touch and data constrain each other</a><p>Evaluate the dexterity with the target task and the observable contact process, and avoid the jump between the degree of freedom, the number of data hours and the value of the platform.</p></li>
+    
+      <li><a href="/en/knowledge/spatial-computing/">Spatial interaction: the object pointed to needs to be operated continuously.</a><p>From &quot;seeing, pointing, pinching, saying&quot; extends to object identity, execution confirmation and cross-step status, space display is not equed with complete interaction.</p></li>
+    
+      <li><a href="/en/knowledge/playable-content/">Interactive content: users&#x27; actions must have an impact on the world.</a><p>Separate the continuously generated images from the world of sustainable interaction, and study the state, rules, feedback and recovery.</p></li>
+    </ul>
+  </section>
+  <section class="kb-related" aria-labelledby="note-collections-heading"><h2 id="note-collections-heading">Reports and data in the same research file</h2><ul><li><a href="/en/knowledge/collections/embodied-industry/">In-body intelligent industry</a><p>Already: 12-page trial reading of the 2026 summer edition of the introductory map, three research notes on industry, dexterity operation and world model.</p></li></ul></section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

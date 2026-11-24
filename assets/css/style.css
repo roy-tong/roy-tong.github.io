@@ -1202,7 +1202,7 @@ a {
 .prose blockquote {
   padding: 6px 0 6px 24px;
   color: var(--muted);
-  border-left: 3px solid var(--accent);
+  border-left: 1px solid var(--accent);
 }
 
 .prose code {
@@ -1260,6 +1260,15 @@ a {
   gap: 10px 22px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.post-translation {
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.post-translation:hover {
+  text-decoration: underline;
 }
 
 .post-tags {
@@ -3499,7 +3508,7 @@ a {
   margin: 28px 0 8px;
   padding: 22px 26px;
   background: var(--paper-deep);
-  border-left: 3px solid var(--accent);
+  border-left: 1px solid var(--accent);
   border-radius: 0 6px 6px 0;
 }
 
@@ -4091,7 +4100,7 @@ a {
 .cap-status-note {
   padding: 22px 26px;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--forest);
+  border-left: 1px solid var(--forest);
   background: var(--paper-deep);
   color: var(--muted);
   font-size: 13.5px;
@@ -4273,6 +4282,79 @@ a {
 
   .cap-contribute {
     padding: 34px 26px;
+  }
+}
+
+.translation-note {
+  margin: 0 auto 32px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.translation-note a {
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+/* Archive filtering stays usable without JavaScript; the script only narrows the rendered list. */
+.archive-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px;
+  margin-bottom: 56px;
+  align-items: center;
+}
+
+.archive-search label {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.archive-search input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  font: inherit;
+}
+
+.archive-search input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.archive-search p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.archive-empty {
+  padding-block: 48px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.archive-item[hidden],
+.archive-year[hidden],
+.archive-empty[hidden] {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .archive-search {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+
+  .archive-search p {
+    white-space: normal;
   }
 }
 

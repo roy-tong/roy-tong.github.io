@@ -1,0 +1,87 @@
+---
+layout: default
+lang: en
+title: Research Library
+description: Roy Tong’s public research dossiers. Reports, data, working notes, and sources organized around questions, with current judgments and missing evidence.
+permalink: /en/knowledge/
+knowledge_page: true
+lang_switch_url: /knowledge/
+---
+{% assign all_materials = site.materials | concat: site.knowledge %}
+{% assign research_dossiers = site.data.research_collections | where: 'section', 'research' %}
+{% assign working_dossiers = site.data.research_collections | where: 'section', 'exploration' %}
+<section class="shell kb-v3-home">
+  <header class="kb-v3-hero">
+    <div class="kb-v3-hero-main">
+      <p class="kb-resource-label">Roy.Tong · Public research layer</p>
+      <h1>Research library</h1>
+      <p>Reports, data, and working notes can be published as intermediate results before they become essays. Each dossier is organized around a research question and records what the evidence supports and what is still missing.</p>
+      <div class="kb-v3-actions">
+        <a class="kb-v3-primary" href="#research-dossiers">Browse research dossiers</a>
+        <a href="{{ '/en/knowledge/library/' | relative_url }}">Search all materials <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <aside class="kb-v3-overview" aria-label="Library overview">
+      <dl>
+        <div><dt>Research dossiers</dt><dd>{{ research_dossiers.size }}</dd></div>
+        <div><dt>Directions in progress</dt><dd>{{ working_dossiers.size }}</dd></div>
+        <div><dt>Public materials</dt><dd>{{ all_materials.size }}</dd></div>
+      </dl>
+      <p>Only published material is counted. Private drafts and source inventories are excluded.</p>
+    </aside>
+  </header>
+
+  <section class="kb-v3-system" aria-labelledby="system-heading">
+    <div class="kb-v3-section-intro">
+      <p class="kb-v3-kicker">How it works</p>
+      <h2 id="system-heading">From working material to public research</h2>
+    </div>
+    <ol>
+      <li><span>01</span><strong>Sources</strong><p>Inventory local projects, Feishu documents, public pages, and data snapshots, with versions and ownership.</p></li>
+      <li><span>02</span><strong>Dossiers</strong><p>Group material around one question and record the current judgment, evidence, and gaps.</p></li>
+      <li><span>03</span><strong>Public materials</strong><p>Confirm what can be published, then release reports, data, notes, or source indexes.</p></li>
+      <li><span>04</span><strong>Essays</strong><p>Write only when a complete argument is needed, drawing on one or more materials.</p></li>
+    </ol>
+  </section>
+
+  <section class="kb-v3-dossiers" id="research-dossiers" aria-labelledby="dossiers-heading">
+    <div class="kb-v3-section-heading">
+      <div><p class="kb-v3-kicker">Ongoing research</p><h2 id="dossiers-heading">Research dossiers</h2></div>
+      <p>Each dossier tracks one question, its current answer, and the evidence still needed. Open any dossier to inspect its materials and related essays.</p>
+    </div>
+    <div class="kb-v3-dossier-grid">
+      {% for collection_en in site.data.research_collections_en %}{% assign collection = site.data.research_collections | where: 'id', collection_en.id | first %}{% if collection.section == 'research' %}
+      {% assign material_count = collection.notes.size | plus: collection.materials.size %}
+      <article class="kb-v3-dossier-card">
+        <div class="kb-v3-card-meta"><span>{{ collection_en.status }}</span><span>{{ material_count }} materials</span><time datetime="{{ collection.updated_at }}">Reviewed {{ collection.updated_at }}</time></div>
+        <h3><a href="{{ '/en/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection_en.title }}</a></h3>
+        <p class="kb-v3-question">{{ collection_en.question }}</p>
+        <p class="kb-v3-answer">{{ collection_en.current_answer }}</p>
+        <a class="kb-v3-card-link" href="{{ '/en/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">Open dossier <span aria-hidden="true">↗</span></a>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </section>
+
+  <section class="kb-v3-secondary" aria-label="Directions in progress and research methods">
+    <div class="kb-v3-secondary-block">
+      <div class="kb-v3-section-heading compact"><div><p class="kb-v3-kicker">In progress</p><h2>Still being assembled</h2></div><p>Promising leads that are not yet complete research outputs.</p></div>
+      <div class="kb-v3-compact-list">
+        {% for collection_en in site.data.research_collections_en %}{% assign collection = site.data.research_collections | where: 'id', collection_en.id | first %}{% if collection.section == 'exploration' %}
+        <article><div><span>{{ collection_en.status }}</span><h3><a href="{{ '/en/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection_en.title }}</a></h3><p>{{ collection_en.question }}</p></div><p>{{ collection_en.gap }}</p></article>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    <div class="kb-v3-secondary-block kb-v3-method-block">
+      <div class="kb-v3-section-heading compact"><div><p class="kb-v3-kicker">Reusable methods</p><h2>Research methods</h2></div></div>
+      {% for collection_en in site.data.research_collections_en %}{% assign collection = site.data.research_collections | where: 'id', collection_en.id | first %}{% if collection.section == 'method' %}
+      <article><span>{{ collection_en.status }}</span><h3><a href="{{ '/en/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">{{ collection_en.title }}</a></h3><p>{{ collection_en.current_answer }}</p><a href="{{ '/en/knowledge/collections/' | append: collection.id | append: '/' | relative_url }}">Open method and materials →</a></article>
+      {% endif %}{% endfor %}
+    </div>
+  </section>
+
+  <footer class="kb-v3-footer">
+    <p>The library preserves research in progress; essays make complete arguments. They can reference each other or stand alone.</p>
+    <nav aria-label="Library documentation"><a href="{{ '/en/knowledge/method/' | relative_url }}">Collection policy</a><a href="{{ '/en/knowledge/inventory/' | relative_url }}">Public scope</a><a href="{{ '/en/knowledge/changes/' | relative_url }}">Revision log</a><a href="{{ '/knowledge/materials.json' | relative_url }}">Machine-readable index</a></nav>
+  </footer>
+</section>

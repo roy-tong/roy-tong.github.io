@@ -26,13 +26,15 @@ lang_switch_url: /essays/
   </div>
 </section>
 
-<section class="archive shell">
-  {% assign en_posts = site.posts | where: "lang", "en" %}
-  {% include archive-list.html posts=en_posts language="en" %}
-  {% if en_posts.size == 0 %}
-    <div class="archive-year">
-      <p>English essays are being added. The Chinese archive contains the full set of current writing.</p>
-      <a class="text-link" href="{{ '/essays/' | relative_url }}" hreflang="zh-CN">Browse Chinese Essays <span>→</span></a>
-    </div>
-  {% endif %}
+{% assign en_posts = site.posts | where: "lang", "en" %}
+<section class="archive shell" data-archive>
+  <search class="archive-search">
+    <label for="archive-search-en">Search essays</label>
+    <input id="archive-search-en" type="search" placeholder="Search titles, summaries, or tags" autocomplete="off" data-archive-search>
+    <p aria-live="polite" data-archive-count>{{ en_posts.size }} essays</p>
+  </search>
+  <div class="archive-results">
+    {% include archive-list.html posts=en_posts language="en" %}
+  </div>
+  <p class="archive-empty" hidden data-archive-empty>No essays match. Try a shorter search or clear the field.</p>
 </section>

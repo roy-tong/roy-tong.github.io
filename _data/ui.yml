@@ -40,12 +40,12 @@ en:
   footer_note: Facts, judgment, experiments, and revision.
   nav:
     - { label: Essays, href: /en/essays/, current: [/essays/, /en/essays/] }
-    - { label: Knowledge, href: /knowledge/, current_when: knowledge_page, title: Chinese knowledge library }
+    - { label: Research, href: /en/knowledge/, current_when: knowledge_page }
     - { label: Projects, href: /en/projects/, current: [/projects/, /en/projects/] }
     - { label: About, href: /en/about/, current: [/about/, /en/about/] }
     - { label: Contact, href: /en/support/, current: [/support/, /en/support/] }
   footer_links:
-    - { label: Knowledge (中文), href: /knowledge/ }
+    - { label: Research library, href: /en/knowledge/ }
     - { label: Capability Index, href: /en/capability-index/ }
     - { label: Verovo, href: "https://github.com/roy-tong/verovo" }
     - { label: X / Twitter, href: "https://x.com/elliwoodtong", rel: me }

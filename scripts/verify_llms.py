@@ -55,7 +55,7 @@ for posts_dir in (ROOT / "_posts", ROOT / "en" / "_posts"):
         if published < cutoff:
             continue
         slug = re.sub(r"^\d{4}-\d{2}-\d{2}-|\.md$", "", post.name)
-        slug = re.sub(r"-en$", "", slug)
+        slug = re.sub(r"-(?:en|zh)$", "", slug)
         check(slug in llms, f"post from {published} missing from llms.txt: {slug}")
 
 if ERRORS:

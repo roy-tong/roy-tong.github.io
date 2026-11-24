@@ -105,6 +105,46 @@
     });
   }
 
+  document.querySelectorAll('[data-archive]').forEach(function (archive) {
+    const input = archive.querySelector('[data-archive-search]');
+    const count = archive.querySelector('[data-archive-count]');
+    const empty = archive.querySelector('[data-archive-empty]');
+    const items = Array.from(archive.querySelectorAll('[data-archive-item]'));
+    const years = Array.from(archive.querySelectorAll('.archive-year'));
+    if (!input || !items.length) return;
+
+    const totalLabel = count ? count.textContent : '';
+    let announceTimer;
+
+    function filterArchive() {
+      const query = input.value.trim().toLocaleLowerCase();
+      let visibleCount = 0;
+
+      items.forEach(function (item) {
+        const matches = !query || (item.dataset.search || '').toLocaleLowerCase().includes(query);
+        item.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      years.forEach(function (year) {
+        const visibleItems = year.querySelectorAll('[data-archive-item]:not([hidden])');
+        year.hidden = visibleItems.length === 0;
+      });
+
+      if (empty) empty.hidden = visibleCount !== 0;
+      if (!count) return;
+
+      window.clearTimeout(announceTimer);
+      announceTimer = window.setTimeout(function () {
+        count.textContent = query
+          ? (isEnglish ? visibleCount + ' of ' + items.length + ' essays' : '找到 ' + visibleCount + ' 篇，共 ' + items.length + ' 篇')
+          : totalLabel;
+      }, 200);
+    }
+
+    input.addEventListener('input', filterArchive);
+  });
+
   document.querySelectorAll('[data-copy-text]').forEach(function (button) {
     button.addEventListener('click', async function () {
       const selector = button.getAttribute('data-copy-text');

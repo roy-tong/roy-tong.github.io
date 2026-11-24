@@ -1,0 +1,569 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/series/software-to-hardware-pm/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/series/software-to-hardware-pm/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/series/software-to-hardware-pm/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Series · Product Management from Software to Hardware | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="Series · Product Management from Software to Hardware">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Variables that are really different when making products and organizations across software and hardware: change economy, organizational stage, stage gate and system Owner.">
+<meta property="og:description" content="Variables that are really different when making products and organizations across software and hardware: change economy, organizational stage, stage gate and system Owner.">
+<link rel="canonical" href="https://roy-tong.github.io/en/series/software-to-hardware-pm/">
+<meta property="og:url" content="https://roy-tong.github.io/en/series/software-to-hardware-pm/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Series · Product Management from Software to Hardware">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"跨软硬件做产品与组织时真正不同的变量：变更经济性、组织阶段、阶段门与系统 Owner。","headline":"系列 · 从软件到硬件的产品管理","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/series/software-to-hardware-pm/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/series/software-to-hardware-pm/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/series/software-to-hardware-pm/">Read the Chinese original</a>.</p>
+      <section class="series-hero shell">
+  <p class="eyebrow">Series C · Organization and Management</p>
+  <h1>Product management from software to hardware</h1>
+  <p class="series-deck">Software iteration is counted in days, and hardware changes are counted in stages. When the product contains both at the same time, the difficulty is not the respective methods, but putting them into the same system. This series records my judgment, organization method and management review from software to software and hardware integration.</p>
+</section>
+
+<section class="series-block shell" aria-labelledby="theses-title">
+  <header class="series-block-heading">
+    <h2 id="theses-title">The core judgment of this series</h2>
+  </header>
+  <ol class="series-thesis-list">
+    <li>
+      <span class="series-thesis-num">01</span>
+      <div>
+        <h3>Intelligent hardware is the superposition of three rhythms.</h3>
+        <p>Hardware stage gate + software continuous delivery + system engineering. The difficulty of management comes from the difference in change economy: changing a line of code and changing a mold are not the same cost.</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">02</span>
+      <div>
+        <h3>The organization allocates people according to three types of risks</h3>
+        <p>Value risk, technical/system risk, delivery/business risk. Early 6-10 key roles can be concurrent, but the Owner cannot be ambiguous.</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">03</span>
+      <div>
+        <h3>Title is not equal to legitimacy.</h3>
+        <p>Titles provide decision-making power, and the record of solving problems together forms the legitimacy of the organization. The first task of airborne managers is to stabilize and diagnose, not to prove themselves.</p>
+      </div>
+    </li>
+    <li>
+      <span class="series-thesis-num">04</span>
+      <div>
+        <h3>Family is not a scene.</h3>
+        <p>The changing environment, multi-person relationships, multi-task long-tail and multi-payment mechanism superposition make the technology more difficult and the economy more rich - a single-task ROI is not equal to poor economy.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="series-block shell" aria-labelledby="articles-title">
+  <header class="series-block-heading">
+    <h2 id="articles-title">A series of articles</h2>
+  </header>
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <a class="series-entry" href="/en/notes/from-ai-software-to-physical-world/">
+        <div>
+          <span class="series-entry-tag">Entrance article</span>
+          <h3>From AI application to the real world: my turn</h3>
+          <p>Why stop starting a software business and start a new understanding of hardware, physical intelligence and the next generation of AI products?</p>
+        </div>
+        <span class="series-entry-arrow" aria-hidden="true">↗</span>
+      </a>
+    
+  
+    
+  
+
+  <div class="series-article-list">
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+      
+    
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+        
+        <a class="series-article-row" href="/en/notes/home-robots-harder-richer/">
+          <time datetime="2026-08-14T09:13:00+08:00">08.14</time>
+          <div>
+            <h3>When the robot enters the family, it passes the level of &quot;who will clean up the mess&quot; first.</h3>
+            <p>It is more difficult in technology and may be richer in economy - but the labor saved must be combined with its new labor.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        
+        <a class="series-article-row" href="/en/notes/appointed-manager-organizational-legitimacy/">
+          <time datetime="2026-08-14T09:11:00+08:00">08.14</time>
+          <div>
+            <h3>How can airborne managers move from position legitimacy to organizational legitimacy?</h3>
+            <p>The title allows you to make decisions, and the record of solving problems together makes the team willing to follow the decision.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      
+    
+      
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+      
+    
+      
+      
+    
+      
+      
+        
+        <a class="series-article-row" href="/en/notes/hardware-innovation-organization-management/">
+          <time datetime="2026-08-05T14:30:00+08:00">08.05</time>
+          <div>
+            <h3>The organizations of Dajiang, Yingshi and Anke are almost opposite, but they are all established.</h3>
+            <p>There is no single solution to hardware organization: under what conditions each road is established and what price is paid.</p>
+          </div>
+          <span aria-hidden="true">↗</span>
+        </a>
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+        
+      
+      
+    
+  </div>
+</section>
+
+<section class="series-block series-path-block shell" aria-labelledby="path-title">
+  <header class="series-block-heading">
+    <h2 id="path-title">How to read this series</h2>
+  </header>
+  <ol class="series-path-list">
+    <li><span>1</span><p>Read the entry article first: Why switch from software to physical world products, which determines the starting point of all subsequent judgments.</p></li>
+    <li><span>2</span><p>Read again<a href="/en/notes/hardware-innovation-organization-management/">Organization and management methods</a>, establish a system framework: three types of risks, organizational stages, stage gates and System Owner.</p></li>
+    <li><span>3</span><p>Finally, there are two scenario cases:<a href="/en/notes/appointed-manager-organizational-legitimacy/">Airborne manager</a>(Personal perspective) and<a href="/en/notes/home-robots-harder-richer/">Home robot</a>(Scenario judgment).</p></li>
+  </ol>
+</section>
+
+<nav class="series-nav shell" aria-label="Other series">
+  <a class="series-nav-link" href="/en/series/agent-and-terminals/">
+    <span>The previous series</span>
+    <strong>Agent and AI terminal<span aria-hidden="true">→</span></strong>
+  </a>
+  <a class="series-nav-link" href="/en/series/tech-to-product/">
+    <span>Back to the starting point</span>
+    <strong>Technology → Product Translation<span aria-hidden="true">→</span></strong>
+  </a>
+</nav>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

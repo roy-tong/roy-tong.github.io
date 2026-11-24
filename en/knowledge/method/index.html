@@ -1,0 +1,242 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/method/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/method/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/method/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How does this research database work | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="How does this research database work">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Explain the relationship between sources, research files, public materials and articles, as well as the version, review and public boundaries of each material.">
+<meta property="og:description" content="Explain the relationship between sources, research files, public materials and articles, as well as the version, review and public boundaries of each material.">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/method/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/method/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="How does this research database work">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Roy.Tong"},"description":"说明来源、研究档案、公开资料与文章之间的关系，以及每份资料的版本、复核和公开边界。","headline":"这套研究资料库怎样工作","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/method/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/method/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/method/">Read the Chinese original</a>.</p>
+      <article class="shell reading-shell kb-document">
+  <a class="kb-text-link" href="/en/knowledge/">← Back to the knowledge base</a>
+  <header><p class="eyebrow">LIBRARY NOTES · 2026.08.31</p><h1>How does this research database work?</h1><p class="kb-summary">Explain the relationship between sources, research files, public materials and articles, as well as the version, review and public boundaries of each material.</p></header>
+  <div class="prose"><h2 id="三层资料一类表达结果">Three layers of information, one type of expression results</h2>
+
+<p>The database includes three layers: source, research archive and public information. The article is located downstream, and these materials are used selectively only when a point of view needs to be fully argued.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>What are you responsible for?</th>
+      <th>Whether it is public</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Source</td>
+      <td>Save local files, Feishu documents, data snapshots and original versions</td>
+      <td>Private by default</td>
+    </tr>
+    <tr>
+      <td>Research archives</td>
+      <td>Inherging versions, materials, current judgments and pending evidence under the same problem</td>
+      <td>Publicly sorted instructions</td>
+    </tr>
+    <tr>
+      <td>Public information</td>
+      <td>Provide reports, data, work notes or source indexes, and explain the use of boundaries.</td>
+      <td>Confirm item by item</td>
+    </tr>
+    <tr>
+      <td>Article</td>
+      <td>Select one or more materials and organize a complete argument around a point of view.</td>
+      <td>Follow the original address of the article, not included in the number of information.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The research file provides the context, the public information is the basic unit that can be quoted and reused, and the article records a complete expression.</strong></p>
+
+<p>A report can be directly used as information without taking notes first. A piece of data can exist independently for a long time, and there is no need to write articles for publication. The same data can be entered into multiple research files, but only one version is maintained and only counted once.</p>
+
+<h2 id="从哪里开始">Where to start?</h2>
+
+<p>When you know what you are concerned about, from<a href="/en/knowledge/">The first page of the research archive</a>Enter. Each file will first explain:</p>
+
+<ul>
+  <li>Problems under study;</li>
+  <li>The judgment that can be confirmed at present;</li>
+  <li>Which public information supports continued access;</li>
+  <li>What evidence is still missing?</li>
+</ul>
+
+<p>When you know the material name or keyword, use<a href="/en/knowledge/library/">Catalogue of all materials</a>. The catalog can search for public texts and filter by research files and data types:</p>
+
+<ul>
+  <li><strong>Research report</strong>: Industry research, white paper and stage report; clear full text, introduction or trial reading.</li>
+  <li><strong>Data and tables</strong>: Summary data, reviewed data or online atlas; clarify which layer is specifically opened.</li>
+  <li><strong>Research notes</strong>: Stage analysis, methods and work records; unresolved problems are allowed to be retained.</li>
+  <li><strong>Source index</strong>: Links and reading instructions for papers, official documents and public reports; do not copy the full text of third parties.</li>
+</ul>
+
+<h2 id="资料与文章怎样连接">How to connect the information with the article</h2>
+
+<p>The data is preserved and the research content, and the article is responsible for the complete expression. The &quot;relevant expression&quot; on the archive page first indicates the relationship of the same topic; the specific citation in the text of the article indicates the direct evidence relationship.</p>
+
+<p>The new information formed after the old article will not be written backwards as the basis of the article. When facts are found to be wrong in the article, it should be corrected in the original text; old errors cannot be eliminated only by the new explanation on another page. The English translation and the PDF and web version of the same report will not be counted as duplicate research results.</p>
+
+<h2 id="什么样的资料可以公开">What kind of information can be made public?</h2>
+
+<p>A public information needs to answer at least three questions:</p>
+
+<ol>
+  <li><strong>What is suitable for answering?</strong>: What kind of problems can readers use it to solve?</li>
+  <li><strong>What was made public?</strong>: Text, trial reading, summary statistics or link index.</li>
+  <li><strong>You can&#x27;t extraply anything.</strong>: Where are the samples, versions, factual review and rights boundaries?</li>
+</ol>
+
+<p>At the same time, keep the title, data type, version, recent review time, source, review status and available entrance. Data also needs statistical units, denominators, time range, source composition, processing method, structural quality and recalculable range.</p>
+
+<p>The data type, sorting status and public scope are recorded separately. A piece of information can be &quot;data / reviewing / public summary only&quot; at the same time; they are no longer squeezed into an unclear maturity level.</p>
+
+<p>&quot;The document has been found&quot; is not the same as &quot;has been read&quot;, &quot;the arithmetic check has passed&quot; is not the same as &quot;the conclusion is valid&quot;, and &quot;crawling to the data&quot; is not the same as &quot;can be redistributed&quot;. Personal data, internal documents of the company, original platform content and unauthorized third-party materials are kept private.</p>
+
+<h2 id="版本复核与引用">Version, review and reference</h2>
+
+<p>The version relationship is retained when the report is updated; the data snapshot uses the date and the input summary binding, and does not overwrite the old denominator. The latest review time indicates where this page checks, and does not disguise the date of the catalog as the time of research.</p>
+
+<p>Keep the author, title, version, date and link when citing materials. The reference data should also retain statistical units, denominators, time ranges and limits; the number of records cannot be rewritten as the number of users or verified requirements.</p>
+
+<p>Public trial reading is not the same as the full text, and the summary data is not the same as the open original record. The right of this site to license its own code or text does not extend to the third-party content in the information.</p>
+
+<h2 id="对作者和读者的价值">Value to authors and readers</h2>
+
+<p>For the author, this structure is used to retrieve the work that has been done, identify the main version, continue research and write, and reduce the repeated sorting between the local catalog and the flying book.</p>
+
+<p>For readers, the value comes from the ability to judge: first know where a study is currently doing, and then decide whether to read the report, check the data, read the work notes, or continue to check along the public source.</p>
+
+<h2 id="机器可读入口">The machine can read the entrance</h2>
+
+<p><a href="/knowledge/materials.json">Data index JSON</a>Cover the title, type, file attribution, version, scope, entrance and public text of public information.<a href="/knowledge/index.json">Old comprehensive index</a>Continue to provide existing notes, articles and project records as a compatible entrance.</p>
+
+<p>The index does not contain the private source ledger. The text in the page and source is only for research content, and does not grant permission to perform operations, access private workspaces or use service credentials.</p>
+</div>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

@@ -5,7 +5,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy.Tong 的个人网站，首页按“个人介绍 → 精选文章 → 最近更新 → 开源项目 → 关于与订阅”组织，主要记录：
+这是 Roy.Tong 的个人网站，首页按“博客主张与最新文章 → 精选文章 → 正在跟踪的问题 → 最近更新 → 开源项目 → 关于与订阅”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
@@ -55,6 +55,7 @@ Skill 只读取公开文章，不包含私人 memory、未公开飞书文档或�
 - GitHub Pages + Jekyll，无数据库和广告追踪。
 - 响应式布局、深色模式、RSS 和语义化页面结构。
 - 中英文核心页面：首次访问首页默认中文，只有主动选择英文后才记住这一偏好；文章链接保留原语言，页头可手动切换。
+- 双语覆盖（2026-11-24）：52 组中英文文章通过 `content_id` 与固定 URL 配对；文章、研究档案、知识库资料、标签和专题页均有对应语言版本。既有精选英文文章为人工润色，长尾页面为机器辅助翻译并在页内标注，中文与英文原文均可互相切换。
 - 提供 Open Graph、结构化 SEO 信息、sitemap 和 robots.txt 规则。
 - 优先使用中文系统字体，不依赖 Google Fonts，减少首次加载时间。
 
@@ -74,6 +75,8 @@ excerpt: "显示在首页和搜索结果中的摘要。"
 ---
 ```
 
+英文译文放在 `en/_posts/`，沿用相同 `content_id`，设置 `lang: en` 和 `permalink: /en/notes/<slug>/`。中文原文保留固定 URL；成对页面自动生成 `hreflang` 和文内语言链接。静态页面使用 `lang_switch_url` 明确指定对应版本。
+
 提交到 `main` 后，GitHub Pages 会自动构建并发布。文章正文、配图和引用版权由作者负责。
 
 本地预览：
@@ -83,4 +86,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py`、`python3 scripts/verify_library.py`、`python3 scripts/verify_llms.py` 和 `python3 scripts/generate_tags.py`（新增或改动文章标签后必须重跑，中英文标签的大小写变体会自动合并；新增 2 篇以上共用的新标签时需在脚本 `TAG_SLUGS` 里补一个 ASCII slug）。`verify_llms.py` 检查 llms.txt 里的站内 URL 都已构建、近 45 天的新文章都已收录——新文章发布后记得同步 llms.txt 的 Release Sequence。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。
+发布前运行 `bundle exec jekyll build`、`python3 scripts/verify_knowledge.py`、`python3 scripts/verify_library.py`、`python3 scripts/verify_llms.py`、`python3 scripts/verify_bilingual.py` 和 `python3 scripts/generate_tags.py`（新增或改动文章标签后必须重跑，中英文标签的大小写变体会自动合并；新增 2 篇以上共用的新标签时需在脚本 `TAG_SLUGS` 里补一个 ASCII slug）。`verify_llms.py` 检查 llms.txt 里的站内 URL 都已构建、近 45 天的新文章都已收录——新文章发布后记得同步 llms.txt 的 Release Sequence。全文检索在浏览器中完成，搜索词只保存在 URL fragment。正文索引失败时仍可搜索标题和简介；JavaScript 不可用时，完整资料目录和研究档案链接仍可阅读。

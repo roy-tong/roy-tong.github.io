@@ -1,0 +1,187 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/ai-product-value-loop/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/ai-product-value-loop/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/ai-product-value-loop/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI Product Value Closed-loop Research Report | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="AI Product Value Closed-loop Research Report">
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="What is the answer in the report?">
+<meta property="og:description" content="What is the answer in the report?">
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/ai-product-value-loop/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/ai-product-value-loop/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T15:39:36+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="AI Product Value Closed-loop Research Report">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T15:39:36+08:00","datePublished":"2026-11-24T15:39:36+08:00","description":"报告回答什么","headline":"AI 产品价值闭环研究报告","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/ai-product-value-loop/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/ai-product-value-loop/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/ai-product-value-loop/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/ai-product-value-loop/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>AI Product Value Closed-loop Research Report</h1>
+    <p class="kb-summary">Starting from shooting, end-side AI, creative software and Agent measurement, distinguish between adoption, delivery and acceptance, and give the next round of control experiment methods.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>V1.0 · Cross-topic synthesis</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-10-10">2026.10.10</time></dd></div>
+      <div><dt>Source</dt><dd>Published research notes, fixed version of open source projects and official documents</dd></div>
+      <div><dt>Review status</dt><dd>The scope of citation and disclosure has been reviewed; the comprehensive judgment is still to be verified.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      <a class="kb-resource-action kb-resource-action-primary" href="/en/notes/ai-product-value-loop/">Read the full report<span aria-hidden="true">↗</span><small>Web page</small></a>
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Define the user tasks, complete costs, acceptance conditions and the next verification of AI products.</p></article>
+      <article><span>Public content</span><p>Open original analysis, hypothetical examples and experimental designs, excluding private project materials or chat originals.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>The cross-field causal experiment has not been completed, and the market size, the specific company&#x27;s victory or defeat or the medical effect will not be inferred.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><h2 id="报告回答什么">What is the answer in the report?</h2>
+
+<p>How does the ability demonstration cross the program adoption, complete task delivery and result acceptance? The report compares existing shooting, end-side AI, creative system, home robot and Agent measurement research in the same task framework.</p>
+
+<p><a href="/en/notes/ai-product-value-loop/">Read the full text</a>. The text is the only maintenance position; this page is responsible for the information index and version description.</p>
+
+<h2 id="方法与边界">Methods and boundaries</h2>
+
+<p>This is a cross-topic research synthesis, and there are no new user interviews, hardware tests or customer business data. The specific tool functions are checked back to the official document; the open source project reference is fixed for submission. Model sessions are used to discover research problems, not as independent proofs.</p>
+
+<p>Assuming that the case is clearly annotated, the applicable boundaries are reserved between the product types. The adoption of results, payment and incremental value are discussed separately, and the call success rate does not replace the commercial conclusion.</p>
+
+<h2 id="修订条件">Revise the conditions</h2>
+
+<p>When there is new evidence of real task comparison, program rejection, maintenance burden or acceptance failure, first locate the affected judgment, and then revise the text and downstream content. Please indicate Roy.Tong, v1.0 and the report address when quoting.</p>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/local-ai/">Local AI and personal computing power</a><p>What tasks really need to be run locally, and should you choose an existing computer, shared device or dedicated hardware?</p></li><li><a href="/en/knowledge/collections/ai-video/">AI video and creative tools</a><p>How can the generated model enter the modisable, collaborative and deliverable professional video workflow?</p></li><li><a href="/en/knowledge/collections/agent-systems/">Agent system and capacity measurement</a><p>What actions, results and values should Agent record when actually using the software?</p></li><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>How to make the demand, competitive products, organization and version evidence really support the next decision?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

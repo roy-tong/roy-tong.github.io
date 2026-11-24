@@ -68,6 +68,7 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - [一个人，一个 Agent，三个产品](https://roy-tong.github.io/notes/one-person-one-agent-three-products/): The current positioning essay — one person runs three products (Askovo research, Verovo verification, Growovo growth) as three roles on one loop: the agent advises, the product kernels execute, the author holds the gate.
 - [One Person, One AI Agent, Three Products (EN)](https://roy-tong.github.io/en/notes/one-person-one-agent-three-products/): English edition of the positioning essay.
 - [Askovo vs. Your Current Research Stack (EN)](https://roy-tong.github.io/en/notes/askovo-vs-your-research-stack/): Row-by-row comparison of what ChatGPT deep research, Dovetail, manual projects, and Askovo each organize — and when Askovo is the wrong choice.
+- [Askovo 与现有研究工具对比（中文）](https://roy-tong.github.io/notes/askovo-vs-your-research-stack/): 对比 ChatGPT 深度研究、Dovetail、手工研究项目与 Askovo 各自组织什么，以及何时不该选 Askovo。
 - [Agent 账单核验](https://roy-tong.github.io/notes/agent-bill-verification/): How to verify an AI vendor's bill — re-count usage from logs, grade evidence, and decide what can be accepted, questioned, or rejected.
 - [20万条机器人讨论，怎样变成产品判断](https://roy-tong.github.io/notes/home-robot-task-closure/): What 200k public robot discussions can and cannot prove — denominators, evidence grades, and scene differences before counting demand.
 - [AI 眼镜的用户反馈](https://roy-tong.github.io/notes/ai-glasses-feedback/): Grading public AI-glasses feedback into what is task evidence and what is shopping talk.
@@ -139,6 +140,21 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - [After RAG, Agents Need Context Recommendation](https://roy-tong.github.io/en/notes/agent-context-recommendation-after-rag/): English edition — an Agent Runtime layer that assembles the information, capabilities, state, and authority each step should receive.
 - [Robots Don't Replace People — They Give People New Bodies](https://roy-tong.github.io/en/notes/robots-give-people-new-bodies/): English edition — a capability-gain framework for robots that extend human vision, presence, action, and physical attributes.
 - [From Formal Authority to Organizational Legitimacy](https://roy-tong.github.io/en/notes/appointed-manager-organizational-legitimacy/): English edition — how an appointed leader moves from formal authority to organizational legitimacy.
+
+- [Map the Channel Matrix Before Automating Growth](https://roy-tong.github.io/en/notes/growth-channel-automation-matrix/): Five layers separating research, content, authorization, execution, and outcomes.
+- [From the Monthly Invoice to Renewal: Calculate the Cost of a Successful Task](https://roy-tong.github.io/en/notes/successful-task-cost/): Link invoices, task records, and buyer acceptance before calculating economics.
+- [Verovo Charge and Delivery Review](https://roy-tong.github.io/en/notes/agent-bill-verification/): A synthetic, reproducible acceptance protocol separating charges, delivery, and evidence.
+- [How 200,000 Robot Discussions Become a Product Judgment](https://roy-tong.github.io/en/notes/home-robot-task-closure/): Denominators, evidence levels, and task closure in home-robot research.
+- [380,000 AI-Glasses Discussions](https://roy-tong.github.io/en/notes/ai-glasses-feedback/): Separate product feedback from open scenarios and scenario popularity from demand.
+- [How to Choose an Edge-AI Box](https://roy-tong.github.io/en/notes/edge-ai-box-selection/): Six purchase conditions and a five-part evaluation framework.
+- [2026 Research Review](https://roy-tong.github.io/en/notes/research-review-2026/): Judgments that hold, judgments still waiting for evidence, and the next tests.
+- [A Field Map for 2026](https://roy-tong.github.io/en/notes/direction-map-2026/): Twelve research directions, current flags, and failure conditions.
+- [A Chronicle of the Camera-Robot Graveyard](https://roy-tong.github.io/en/notes/camera-robot-graveyard-chronicle/): Why crowdfunding applause is not demand evidence.
+- [Robot Companies That Do Not Sell Robots](https://roy-tong.github.io/en/notes/robot-gold-rush-picks-and-shovels/): Four supplier layers capturing value beyond the robot body.
+- [If AI Charges for Outcomes, Who Defines the Outcome?](https://roy-tong.github.io/en/notes/who-defines-the-outcome/): Outcome pricing, independent measurement, and financial integrity.
+- [One Match, Two Kinds of Video Product](https://roy-tong.github.io/en/notes/one-match-two-video-products/): Coaches, families, and different outcomes from the same footage.
+- [Two Hundred Thousand Discussions Still Cannot Tell You Who Will Buy](https://roy-tong.github.io/en/notes/research-labels-arent-users/): How data labels add meanings the original records never contained.
+- [The Product Gets Clearer. Why Does It Drift Away from Users?](https://roy-tong.github.io/en/notes/when-product-scope-shrinks/): How an easy-to-test scenario quietly replaces the full product question.
 
 ## Usage Notes
 

@@ -18,6 +18,20 @@
   const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
   const typeOrder = { report: 0, data: 1, note: 2, reference: 3 };
   const typeNames = Object.fromEntries(typeButtons.map(button => [button.dataset.type, button.childNodes[0].textContent.trim()]));
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+  const labels = isEnglish ? {
+    all: 'All materials', found: 'Found ', total: '', publicMaterials: ' public materials',
+    showing: ' · showing first ', fullText: ' · Full-text search included.',
+    indexFailed: ' · Full-text index unavailable; titles and summaries still work.',
+    loading: ' · Searching titles and summaries; loading full text.',
+    more: remaining => 'Show more materials (' + remaining + ' remaining)'
+  } : {
+    all: '全部资料', found: '找到 ', total: '共 ', publicMaterials: ' 份公开资料',
+    showing: ' · 显示前 ', fullText: ' · 已包含公开正文检索。',
+    indexFailed: ' · 正文索引暂不可用，仍可搜索标题与简介。',
+    loading: ' · 标题与简介可搜索，正在载入公开正文。',
+    more: remaining => '显示更多资料（还有 ' + remaining + ' 份）'
+  };
   const collections = new Map(collectionLinks.filter(link => link.dataset.collection).map(link => [
     link.dataset.collection, { title: link.querySelector('span').textContent, url: link.getAttribute('href'), coverage: '' }
   ]));
@@ -73,7 +87,7 @@
       (row.title.includes(term) ? 10 : 0) + (row.summary.includes(term) ? 3 : 0), 0);
     matches.sort((a, b) => {
       if (sort.value === 'updated') return b.updated.localeCompare(a.updated) || a.index - b.index;
-      if (sort.value === 'title') return a.title.localeCompare(b.title, 'zh-CN') || a.index - b.index;
+      if (sort.value === 'title') return a.title.localeCompare(b.title, isEnglish ? 'en' : 'zh-CN') || a.index - b.index;
       return (terms.length ? score(b) - score(a) : 0) ||
         typeOrder[a.kind] - typeOrder[b.kind] || a.index - b.index;
     });
@@ -97,22 +111,21 @@
       else link.removeAttribute('aria-current');
     });
     const collection = collections.get(selectedCollection);
-    heading.textContent = collection ? collection.title : '全部资料';
+    heading.textContent = collection ? collection.title : labels.all;
     context.textContent = collection ? collection.coverage : '';
     context.hidden = !context.textContent;
     exit.hidden = !collection;
     if (collection) exitLink.setAttribute('href', collection.url);
     const active = terms.length || selectedCollection || selectedType;
     const visible = Math.min(matches.length, limit);
-    let message = (active ? '找到 ' : '共 ') + matches.length + ' 份公开资料';
+    let message = (active ? labels.found : labels.total) + matches.length + labels.publicMaterials;
     if (selectedType) message += ' · ' + typeNames[selectedType];
-    if (visible < matches.length) message += ' · 显示前 ' + visible + ' 份';
-    message += fullTextReady ? ' · 已包含公开正文检索。' :
-      (indexFailed ? ' · 正文索引暂不可用，仍可搜索标题与简介。' : ' · 标题与简介可搜索，正在载入公开正文。');
+    if (visible < matches.length) message += labels.showing + visible + (isEnglish ? '' : ' 份');
+    message += fullTextReady ? labels.fullText : (indexFailed ? labels.indexFailed : labels.loading);
     status.textContent = message;
     empty.hidden = matches.length !== 0;
     more.hidden = matches.length <= limit;
-    more.textContent = '显示更多资料（还有 ' + Math.max(0, matches.length - visible) + ' 份）';
+    more.textContent = labels.more(Math.max(0, matches.length - visible));
   }
 
   function update(push) { limit = 12; saveState(push); render(); }
