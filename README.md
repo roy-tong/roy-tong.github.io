@@ -5,7 +5,7 @@
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-research--knowledge--base-111111)](skills/research-knowledge-base/SKILL.md)
 [![skills.sh](https://skills.sh/b/roy-tong/roy-tong.github.io)](https://skills.sh/roy-tong/roy-tong.github.io/research-knowledge-base)
 
-这是 Roy.Tong 的个人网站，首页按“博客主张与最新文章 → 精选文章 → 正在跟踪的问题 → 最近更新 → 开源项目 → 关于与订阅”组织，主要记录：
+这是 Roy.Tong 的个人网站，首页按“个人简介与精选文章 → 最近更新 → 开源项目 → 研究、关于与订阅”组织，主要记录：
 
 - AI 产品、Agent 与新交互；
 - 具身智能、人形机器人和 AI 硬件；
