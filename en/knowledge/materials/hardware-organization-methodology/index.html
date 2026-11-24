@@ -1,0 +1,415 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/hardware-organization-methodology/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/hardware-organization-methodology/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/hardware-organization-methodology/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hardware Product Innovation Organization Methodology | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="硬件产品创新组织方法论"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="方法说明"/>
+<meta property="og:description" content="方法说明"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/hardware-organization-methodology/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/hardware-organization-methodology/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="硬件产品创新组织方法论"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"方法说明","headline":"硬件产品创新组织方法论","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/hardware-organization-methodology/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/hardware-organization-methodology/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/hardware-organization-methodology/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/hardware-organization-methodology/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>Organizational methodology of hardware product innovation</h1>
+    <p class="kb-summary">Organization, process and design management methods for hardware teams: dual development rhythm, key handover, verification stage and division of power by decision type.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>2026-08 Methodology deck text version</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-08-05">2026.08.05</time></dd></div>
+      <div><dt>Source</dt><dd>Original method sorting and public practice synthesis</dd></div>
+      <div><dt>Review status</dt><dd>From the current deck copy to the text; no new case data has been added</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Design or check the division of responsibilities, stage gate, design management and mass production decision-making of the hardware team.</p></article>
+      <article><span>Public content</span><p>22 pages of method text; do not contain internal organization, personnel or project data of the enterprise.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>The method needs to be adjusted in combination with product complexity, supply chain and organizational stage, not a general organizational template.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><h2 id="方法说明">Method description</h2>
+
+<p>This report converts the 22-page hardware organization method deck into a retrievable text, covering direction change, software and hardware dual rhythm, team responsibility, design management, stage handover, EVT/DVT/PVT and decision-making power. The style assets and construction projects in the original deck are not disclosed.</p>
+
+<h2 id="1-硬件产品如何从好想法-走到稳定量产">1. Hardware products, how to go from good ideas to stable mass production</h2>
+
+<p><strong>Organization, process and design management methods in hardware product innovation</strong></p>
+
+<p>This sharing focuses on a question: how good ideas can eventually become products that can be stable and mass-produced through product definition, teamwork and engineering verification. The discussion is based on general methods and combined with the practical experience of mature hardware enterprises.</p>
+
+<h2 id="2-高成本阶段的方向变更-是硬件开发的主要风险">2. The change of direction in the high-cost stage is the main risk of hardware development.</h2>
+
+<p><strong>The first task of organizational management is to push forward key decisions.</strong></p>
+
+<p>The main risk of hardware projects comes from the delay in decision-making. If the size, device, architecture and other key matters continue to the stage of mold opening, certification or stock preparation, any adjustment will bring high rework costs. The role of organization and process is to make key decisions complete when the modification cost is low.</p>
+
+<ul>
+  <li>
+    <p><strong>It is decided to freeze.</strong>: The size, device, mold and structure are more and more difficult to change in the future.</p>
+  </li>
+  <li>
+    <p><strong>Results depend on integration</strong>: Product experience is jointly delivered by multiple majors</p>
+  </li>
+  <li>
+    <p><strong>Mass production means commitment.</strong>: After the product is launched, quality, inventory, channel and after-sales service jointly bear long-term responsibility.</p>
+  </li>
+</ul>
+
+<h2 id="3-组织方式取决于产品的交付特征">3. The way of organization depends on the delivery characteristics of the product.</h2>
+
+<p><strong>The delivery method, modification cost and customer commitment are different, and the management method is naturally different.</strong></p>
+
+<p>When designing the organization, you should first analyze the delivery method of the product, modify the cost and customer commitment, and then determine the team size and division of responsibilities. Different constraints correspond to different management methods.</p>
+
+<h2 id="4-智能硬件需要同时管理-两种开发节奏">4. Intelligent hardware needs to be managed at the same time. Two development rhythms</h2>
+
+<p><strong>The hardware is frozen in stages, and the software and algorithms are continuously iterated; the unified architecture, indicators and version plans are responsible for coordination.</strong></p>
+
+<p>The development speed of a single team cannot guarantee the delivery of the whole machine on schedule. The system leader needs to manage the interface between the two sets of rhythms, and clarify the freezing range, the continuous iteration range, and the integration time of the whole machine version.</p>
+
+<h2 id="5-团队配置应从三类关键风险出发">5. Team configuration should start from three types of key risks.</h2>
+
+<p><strong>The early team gives priority to covering the risks that affect the success or failure of the project, and clarifies the person in charge for each type of risk.</strong></p>
+
+<p>The size of the team depends on the key risks that the project needs to deal with. First, list the problems that are most likely to cause the failure of the project, and then assign the person in charge who can make judgments and promote the solution for each type of problem. The technical viability is only a condition for the establishment of the product, and the user value and delivery ability also need to be verified.</p>
+
+<h2 id="6-产品设计应贯穿洞察开发与量产">Six Product design should run through insight, development and mass production.</h2>
+
+<p><strong>The design work starts from understanding the user and continues until the mass production of physical objects is consistent with the design goal.</strong></p>
+
+<p>Design positions should participate from the user scenario and product principle stage, jointly deal with structure, device and cost constraints in engineering development, and be responsible for designing and restoring quality in the mass production stage. If the design intervenes too late, it will significantly compress the adjustment space of the product experience.</p>
+
+<h2 id="7-把审美要求转化为可执行标准">Seven Transform aesthetic requirements into enforceable standards</h2>
+
+<p><strong>Starting from the intention of users and brands, the standards that suppliers and quality teams can jointly accept are formed layer by layer.</strong></p>
+
+<p>The product manager is responsible for clarifying the user, brand and product intention. The person in charge of design transforms the intention into design principles and schemes, and the engineering, supply chain and quality teams then form measurable and acceptable mass production standards.</p>
+
+<h2 id="8-01-阶段优先明确关键责任">8. 0-1 Stage priority to clarify key responsibilities</h2>
+
+<p><strong>Usually, six to ten key roles cover the main responsibility, and each result corresponds to a person in charge.</strong></p>
+
+<p>In the early stage, the key responsibilities can be covered by the elite team, and some roles can be also played by the founder. Before entering the project development, the three responsibilities of product, technology and project management should be gradually separated to ensure that there are people responsible for the goal, program and delivery.</p>
+
+<h2 id="9-团队规模应随产品阶段调整">9. The size of the team should be adjusted according to the product stage.</h2>
+
+<p><strong>Every time the project enters a new stage, the corresponding roles and management mechanisms will be supplemented.</strong></p>
+
+<p>The size of the team should be determined by the product stage. When the project is from verification to mass production, or from a single product to multi-product parallel, the corresponding roles and mechanisms are added. The early introduction of complex processes will reduce the efficiency of exploration, and the late addition of management mechanisms will increase the cost of rework.</p>
+
+<h2 id="10-成熟硬件团队需要三条组织线协同">10. A mature hardware team needs three organizational lines to work together.</h2>
+
+<p><strong>The business and product line are responsible for operation, the professional platform is responsible for building capacity, and the cross-functional project team is responsible for product delivery.</strong></p>
+
+<p>The product line is responsible for the product portfolio and business results. The professional platform is responsible for talent cultivation, standard construction and capacity reuse. The cross-functional project team organizes and collaborates around specific products, and is responsible for the complete delivery from definition to listing.</p>
+
+<h2 id="11-设计职级取决于独立负责的问题范围">11. The design level depends on the scope of the problem of independent responsibility.</h2>
+
+<p><strong>The length of experience is for reference; the scope of responsibility, the ability to make up and the responsibility of evaluation determine the grade.</strong></p>
+
+<p>The design level should comprehensively evaluate the scope of responsibility such as problem definition, program pick-up, engineering coordination and mass production results. Software proficiency and years of experience can be used as a reference, but it is not enough to determine the grade separately.</p>
+
+<h2 id="12-按产品约束选择工业设计人才">12. Select industrial design talents according to product constraints</h2>
+
+<p><strong>Different industries form different ability structures. When selecting people, priority should be given to whether the constraints and experience match.</strong></p>
+
+<p>Excellent industrial design talents are distributed in many industries. When recruiting, you should start from the product constraints, evaluate what complex conditions the candidate has dealt with in the past, how to make a make-off, and whether these experiences can be transferred to the current product.</p>
+
+<h2 id="13-团队要完成七次关键交接">13. The team needs to complete seven key handovers.</h2>
+
+<p><strong>Each stage of handover should close a class of risk and form a clear input for the next stage.</strong></p>
+
+<p>The stage gate is used to confirm the processing results of the risk of this stage and provide clear input for the next stage. After the user&#x27;s evidence meets the requirements, the project is officially launched, and the system baseline is confirmed before entering the mold opening and trial production.</p>
+
+<h2 id="14-先把需求变成一份能评审的设计任务">14. First, turn the requirements into a design task that can be reviewed.</h2>
+
+<p><strong>The first four assessments gradually transform the requirements into goals, principles, programs and engineering constraints.</strong></p>
+
+<p>The start-up of the project needs to transform the original requirements into goals, boundaries and design principles first, and then form a cross-departmental product baseline through concept review and feasibility review.</p>
+
+<h2 id="15-evtdvtpvt-分别验证三类问题">15. EVT, DVT and PVT verify three types of problems respectively</h2>
+
+<p><strong>Answer different questions in each round of verification, and enter the next round after meeting the evidence standard.</strong></p>
+
+<p>Each of the three rounds of verification has a clear goal. EVT verification engineering realization and system integration, DVT verification experience, reliability and certification, PVT verification of the stable replication ability of the production line. Verify the target to determine the prototype content, evidence requirements and passing criteria.</p>
+
+<h2 id="16-最终决定权应按决策类型划分">16. The final decision should be divided according to the type of decision.</h2>
+
+<p><strong>User value, design expression, system security and mass production commitment are four different types of decisions.</strong></p>
+
+<p>The final decision needs to be divided according to the type of decision. The person in charge of design maintains the design expression, the person in charge of the product maintains the user value, the person in charge of the system maintains the architecture and performance, and the NPI and quality team maintain the production commitment. Conflicts that cross the boundaries of responsibilities shall be coordinated by the person in charge of the business.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Make a strategic decision</td>
+      <td>The right to suggest</td>
+      <td>Decision-making power</td>
+      <td>Veto conditions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>For whom to do it and what to solve</td>
+      <td>Product</td>
+      <td>Business and products</td>
+      <td>Lack of user or transaction evidence</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Make a strategic decision</td>
+      <td>The right to suggest</td>
+      <td>Decision-making power</td>
+      <td>Veto conditions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>What does it look like and how to use it?</td>
+      <td>Design</td>
+      <td>The person in charge of design</td>
+      <td>Violation of design principles and key experiences</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Make a strategic decision</td>
+      <td>The right to suggest</td>
+      <td>Decision-making power</td>
+      <td>Veto conditions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Architecture, performance and interface</td>
+      <td>System and research and development</td>
+      <td>The person in charge of the system</td>
+      <td>Key indicators cannot be verified.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Make a strategic decision</td>
+      <td>The right to suggest</td>
+      <td>Decision-making power</td>
+      <td>Veto conditions</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>| — | — | — | — |</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Process, cost and mass production</td>
+      <td>NPI and quality</td>
+      <td>Project and NPI</td>
+      <td>Reliability, regulations or supply risks</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="17-产品与研发之间需要完整的需求翻译链">17. A complete demand translation chain is needed between products and research and development.</h2>
+
+<p><strong>User language is converted into product requirements, system requirements, subsystem specifications and verification standards in turn.</strong></p>
+
+<p>The product language directly enters into research and development, which will cause the team&#x27;s understanding of the needs to be biased. The requirements need to be transformed into system requirements, subsystem specifications and verification standards in turn; the person in charge of the system is responsible for maintaining the integrity of this translation path.</p>
+
+<h2 id="18-高效研发团队需要三类能力协同">18. An efficient R&amp;D team requires three types of ability cooperation.</h2>
+
+<p><strong>Hard power solves complex problems, self-drive promotes risk fronting, and the mechanism ensures cross-departmental coordination.</strong></p>
+
+<p>The ability of the R&amp;D team is composed of three aspects: professional ability is responsible for solving complex problems, proactively promoting the early exposure of risks, and the unified baseline, review and upgrade mechanism is responsible for organizing cross-departmental coordination. The three jointly determine the efficiency of R&amp;D and the quality of delivery.</p>
+
+<h2 id="19-项目经理负责协调五种交付节奏">19. The project manager is responsible for coordinating the five delivery rhythms.</h2>
+
+<p><strong>The core work is to integrate hardware, software, algorithms, manufacturing and listing into an executable plan.</strong></p>
+
+<p>Hardware, software, algorithms, manufacturing and listing have different rhythms. The project leader is responsible for forming an integrated main plan, keeping cross-departmental dependencies, risks, changes and decisions to be upgraded transparent, and promoting the team to deliver at a unified pace.</p>
+
+<h2 id="20-资源优先投入高影响高修改成本的问题">20. The priority of resource investment is high impact and high modification cost.</h2>
+
+<p><strong>The greater the impact and the more difficult it is to reverse, the more priority should be given to the strongest person and the earliest verification.</strong></p>
+
+<p>The resource allocation of innovative projects should comprehensively consider the impact of risk and the cost of modification. For problems that have a great impact on success or failure and the later the adjustment, the higher the cost. Priority should be given to the most experienced personnel and verified as soon as possible.</p>
+
+<h2 id="21-设计管理应同时评价价值质量与交付">21. Design management should evaluate value, quality and delivery at the same time.</h2>
+
+<p><strong>The evaluation of the quality of the key evaluation during the exploration period, and the stability of the evaluation results during the mass production period; the weight of the index is adjusted according to the stage.</strong></p>
+
+<p>The evaluation dimension of design management should change with the product stage. During the exploration period, the key evaluation problem judgment and program trade-off; after entering the engineering and mass production stage, gradually improve the weight of node reliability, engineering coordination and mass production consistency.</p>
+
+<h2 id="22-先把三个问题说清楚">Twenty-two. Make the three questions clear first.</h2>
+
+<p><strong>First, identify the most expensive and most influential organizational problems in the current stage.</strong></p>
+
+<p>Finally, return to the organizational practice of the enterprise itself. These three questions can be used to judge the current stage, responsibility gap and high cost risk, and then enter the question-and-answer discussion accordingly.</p>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>How to make the demand, competitive products, organization and version evidence really support the next decision?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

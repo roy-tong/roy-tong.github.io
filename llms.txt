@@ -42,6 +42,23 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 - [Product research and business judgment](https://roy-tong.github.io/knowledge/topics/product-research/): Demand evidence, alternatives, market entry, denominators, and revision.
 - [Organization and industrial execution](https://roy-tong.github.io/knowledge/topics/organization/): Irreversible hardware investment, responsibility interfaces, and capability transfer.
 
+## Expanded Research Library (2026-11-24)
+
+- [泛具身家庭场景用户需求研究报告](https://roy-tong.github.io/knowledge/materials/embodied-household-research/): Cross-form household robot evidence, task closure, failure recovery, quality gates, and the next validation order. [EN](https://roy-tong.github.io/en/knowledge/materials/embodied-household-research/)
+- [AI 眼镜用户研究方法与场景信号](https://roy-tong.github.io/knowledge/materials/ai-glasses-research-methods/): Scenario signals, source expansion, regional bias, and the data-quality protocol for a 200k-scale public-feedback study. [EN](https://roy-tong.github.io/en/knowledge/materials/ai-glasses-research-methods/)
+- [如何做好 GitHub 开源项目](https://roy-tong.github.io/knowledge/materials/open-source-project-operations/): Open-source positioning, documentation, governance, community, security, and maintenance methods. [EN](https://roy-tong.github.io/en/knowledge/materials/open-source-project-operations/)
+- [平民爆款开源项目解剖](https://roy-tong.github.io/knowledge/materials/open-source-breakout-anatomy/): What small-team open-source projects do to earn attention, trials, and distribution. [EN](https://roy-tong.github.io/en/knowledge/materials/open-source-breakout-anatomy/)
+- [AI 视频与智能创作软件行业研究](https://roy-tong.github.io/knowledge/materials/ai-video-industry-2026/): Which video-production capabilities general agents may absorb, and which delivery responsibilities remain. [EN](https://roy-tong.github.io/en/knowledge/materials/ai-video-industry-2026/)
+- [国产与海外大模型差距研究](https://roy-tong.github.io/knowledge/materials/china-global-llm-gap-20261011/): Base-model, engineering, and application-layer gaps, with evidence boundaries. [EN](https://roy-tong.github.io/en/knowledge/materials/china-global-llm-gap-20261011/)
+- [硬件产品创新组织方法论](https://roy-tong.github.io/knowledge/materials/hardware-organization-methodology/): Dual development rhythms, stage gates, design management, EVT/DVT/PVT, and decision rights. [EN](https://roy-tong.github.io/en/knowledge/materials/hardware-organization-methodology/)
+- [手持智能影像市场：口径、集中度与产品路线（脱敏）](https://roy-tong.github.io/knowledge/materials/imaging-market-anonymized/): Market definitions, concentration, product classes, unit economics, and moving-camera evaluation. [EN](https://roy-tong.github.io/en/knowledge/materials/imaging-market-anonymized/)
+- [消费级脑成像：场景、付费证据与验证顺序（脱敏）](https://roy-tong.github.io/knowledge/materials/bci-industry-anonymized/): Consumer scenarios, evidence stages, institutional buyers, technical constraints, and validation order. [EN](https://roy-tong.github.io/en/knowledge/materials/bci-industry-anonymized/)
+- [家庭四足机器人：任务、失败恢复与产品线约束（脱敏）](https://roy-tong.github.io/knowledge/materials/household-robot-strategy-anonymized/): Household task evidence, recovery burden, product-line scope, and commercial boundaries. [EN](https://roy-tong.github.io/en/knowledge/materials/household-robot-strategy-anonymized/)
+- [端侧私有算力用户研究（脱敏）](https://roy-tong.github.io/knowledge/materials/local-ai-research-anonymized/): Local-AI tasks, substitutes, deployment friction, permissions, and full-cost validation. [EN](https://roy-tong.github.io/en/knowledge/materials/local-ai-research-anonymized/)
+- [表情数据与行为智能（脱敏）](https://roy-tong.github.io/knowledge/materials/expression-ai-infrastructure-anonymized/): Three product lines, consent and data rights, delivery acceptance, and payment evidence. [EN](https://roy-tong.github.io/en/knowledge/materials/expression-ai-infrastructure-anonymized/)
+- [视频访谈研究索引（脱敏）](https://roy-tong.github.io/knowledge/materials/video-research-index-anonymized/): Anonymous topic counts and usage boundaries for a public interview corpus. [EN](https://roy-tong.github.io/en/knowledge/materials/video-research-index-anonymized/)
+- [公众号文章索引：20 篇公开写作与站内入口](https://roy-tong.github.io/knowledge/materials/public-account-writing-index/): Canonical site mapping for 20 public essays, without duplicate versions. [EN](https://roy-tong.github.io/en/knowledge/materials/public-account-writing-index/)
+
 ## Agent Tools and Components
 
 - [Agent Research Toolkit catalog](https://raw.githubusercontent.com/roy-tong/roy-tong/main/agent-tools.json): Machine-readable task routing, interfaces, installation commands, first-success checks, constraints, and privacy boundaries for all public tools below.
@@ -77,6 +94,9 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ### October 2026
 
+- [我的三个 AI，给我留了 24 张没人记账的借条](https://roy-tong.github.io/notes/ai-workspace-debt/): Why copied agent output becomes maintenance debt, and how one-source asset governance works.
+- [AI 硬件为什么都在争夺人的头、耳朵和手腕？](https://roy-tong.github.io/notes/ai-hardware-body-positions/): Body position, context density, input primitives, and the real cost of wearables.
+- [App 之后，空间计算需要一张“世界画布”吗？](https://roy-tong.github.io/notes/world-canvas/): Stable object identity, state, permissions, and recovery beyond app windows.
 - [研究盘点 2026：站稳的判断与等证据的判断](https://roy-tong.github.io/notes/research-review-2026/): Annual review — which judgments have held, which are still waiting on evidence, and what changed minds this year.
 - [2026 探路地图](https://roy-tong.github.io/notes/direction-map-2026/): The twelve directions being tracked in 2026.
 - [相机机器人墓园编年史](https://roy-tong.github.io/notes/camera-robot-graveyard-chronicle/): Why camera-robot startups keep dying — a graveyard chronicle of camera robots, and what each failure teaches about task closure.

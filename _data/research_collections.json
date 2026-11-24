@@ -3,14 +3,16 @@
     "id": "embodied-industry",
     "title": "具身智能产业",
     "summary": "从任务和交付阶段出发，再分别理解本体、技术、公司与产品。",
-    "coverage": "已有：2026 夏季版入门地图的 12 页试读，产业、灵巧操作与世界模型三份研究笔记。",
+    "coverage": "已有：具身智能入门地图试读、产业与操作研究笔记，以及泛具身家庭研究和影像设备市场口径研究。",
     "notes": [
       "robot-industry",
       "manipulation-data",
       "world-models"
     ],
     "materials": [
-      "embodied-field-guide"
+      "embodied-field-guide",
+      "embodied-household-research",
+      "imaging-market-anonymized"
     ],
     "articles": [
       "/notes/agent-left-embodied-right/",
@@ -32,12 +34,14 @@
     "id": "home-robots",
     "title": "家庭机器人",
     "summary": "把任务价值、现有替代方案和失败恢复放在一起判断。",
-    "coverage": "已有：一份任务与失败恢复笔记，以及 208,755 条开放场景记录的结构汇总。原始反馈未公开。",
+    "coverage": "已有：家庭任务与失败恢复笔记、208,755 条开放场景汇总、泛具身家庭研究报告和家庭四足产品线脱敏研究。",
     "notes": [
       "household-robots"
     ],
     "materials": [
-      "home-robots-corpus"
+      "home-robots-corpus",
+      "embodied-household-research",
+      "household-robot-strategy-anonymized"
     ],
     "articles": [
       "/notes/home-robots-harder-richer/",
@@ -59,13 +63,15 @@
     "id": "ai-glasses",
     "title": "AI 眼镜与空间交互",
     "summary": "从使用时刻、身体负担和对象连续性判断新终端的必要性。",
-    "coverage": "已有：穿戴与空间交互两份笔记，以及 209,862 条开放场景记录的结构汇总。",
+    "coverage": "已有：穿戴与空间交互笔记、209,862 条场景汇总、AI 眼镜研究方法包和表情数据基础设施脱敏研究。",
     "notes": [
       "wearables",
       "spatial-computing"
     ],
     "materials": [
-      "ai-glasses-corpus"
+      "ai-glasses-corpus",
+      "ai-glasses-research-methods",
+      "expression-ai-infrastructure-anonymized"
     ],
     "articles": [
       "/notes/ai-interaction-grammar/",
@@ -87,14 +93,15 @@
     "id": "local-ai",
     "title": "本地 AI 与个人算力",
     "summary": "先明确任务、隐私和持续运行条件，再计算整套使用成本。",
-    "coverage": "已有：本地 AI 与 Agent 上下文两份笔记，以及 211,088 条相关记录的结构汇总。",
+    "coverage": "已有：本地 AI 与 Agent 上下文笔记、211,088 条记录汇总，以及端侧私有算力用户研究脱敏报告。",
     "notes": [
       "local-ai",
       "agent-context"
     ],
     "materials": [
       "local-ai-corpus",
-      "ai-product-value-loop"
+      "ai-product-value-loop",
+      "local-ai-research-anonymized"
     ],
     "articles": [
       "/notes/local-ai-box-task-economics/",
@@ -117,13 +124,14 @@
     "id": "ai-video",
     "title": "AI 视频与创作工具",
     "summary": "把首轮生成与后续编辑分开，观察项目文件、局部修改和资产管理。",
-    "coverage": "已有：视频生产和可交互内容两份工作笔记。行业报告原稿尚未公开。",
+    "coverage": "已有：视频生产与可交互内容笔记，以及 AI 视频与智能创作软件行业研究。",
     "notes": [
       "video-production",
       "playable-content"
     ],
     "materials": [
-      "ai-product-value-loop"
+      "ai-product-value-loop",
+      "ai-video-industry-2026"
     ],
     "articles": [
       "/notes/ai-video-second-edit/",
@@ -180,7 +188,7 @@
     "id": "product-research",
     "title": "产品研究与组织方法",
     "summary": "把证据能支持的决定、责任主体和修订条件写清楚。",
-    "coverage": "已有：需求、替代方案、证据维护、硬件创新和组织责任五份方法笔记，以及公开来源索引。 新增：采用、交付与验收的跨专题综合报告。",
+    "coverage": "已有：需求、替代方案、证据维护、硬件创新、组织责任方法，开源项目研究、模型差距、硬件组织、影像市场、脑机、访谈索引和公开写作索引。",
     "notes": [
       "demand-evidence",
       "alternatives-entry",
@@ -191,7 +199,16 @@
     "materials": [
       "public-reading-sources",
       "ai-product-value-loop",
-      "research-map-20261010"
+      "research-map-20261010",
+      "open-source-project-operations",
+      "open-source-breakout-anatomy",
+      "china-global-llm-gap-20261011",
+      "hardware-organization-methodology",
+      "imaging-market-anonymized",
+      "bci-industry-anonymized",
+      "expression-ai-infrastructure-anonymized",
+      "video-research-index-anonymized",
+      "public-account-writing-index"
     ],
     "articles": [
       "/notes/scene-user-demand-evidence-research/",
@@ -201,7 +218,10 @@
       "/notes/ai-product-value-loop/",
       "/notes/research-labels-arent-users/",
       "/notes/when-product-scope-shrinks/",
-      "/notes/one-match-two-video-products/"
+      "/notes/one-match-two-video-products/",
+      "/notes/ai-workspace-debt/",
+      "/notes/ai-hardware-body-positions/",
+      "/notes/world-canvas/"
     ],
     "section": "method",
     "status": "方法持续修订",

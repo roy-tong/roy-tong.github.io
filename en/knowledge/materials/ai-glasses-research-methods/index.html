@@ -1,0 +1,1424 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/ai-glasses-research-methods/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/ai-glasses-research-methods/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/ai-glasses-research-methods/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI Glasses User Research Methods and Scene Signals | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="AI 眼镜用户研究方法与场景信号"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="中文摘要"/>
+<meta property="og:description" content="中文摘要"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/ai-glasses-research-methods/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/ai-glasses-research-methods/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="AI 眼镜用户研究方法与场景信号"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"中文摘要","headline":"AI 眼镜用户研究方法与场景信号","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/ai-glasses-research-methods/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/ai-glasses-research-methods/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/ai-glasses-research-methods/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/ai-glasses-research-methods/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>AI glasses user research methods and scene signals</h1>
+    <p class="kb-summary">Scene opportunities, source extensions, regional deviations and 200,000-level corpus quality protocols for public discussion of AI glasses; keep the original English record.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>Collection of Methods and Scenario Reports · 2026-07 Snapshot</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-07-12">2026.07.12</time></dd></div>
+      <div><dt>Source</dt><dd>Confirmed and public original research and aggregation methods</dd></div>
+      <div><dt>Review status</dt><dd>The method and deviation description have been made public; the original corpus has not entered the site.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Understand how AI eyeglass scene signals are formed, and which conclusions are limited by source concentration and regional coverage.</p></article>
+      <article><span>Public content</span><p>Public method, summary signal and quality protocol; does not include original posts, accounts, text by article or platform export.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>The popularity of the scene is not the demand, and the number of records is not the number of people; rule labels and cross-platform aggregation cannot directly extraduce the market size.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><h2 id="中文摘要">Chinese summary</h2>
+
+<p>This material combines scene signals, source expansion, regional coverage, sample deviation and data quality protocols of 200,000 corpus in AI glasses research into a public method package. The original platform text, account identification and capture status are not uploaded.</p>
+
+<blockquote>
+  <p>The following is the original English research record, and the numbers and limits are understood according to the version of 2026-07.</p>
+</blockquote>
+
+<p>This is an observational signal table, not a market-size estimate. Ranking rewards cross-stage triangulation and source diversity; raw volume alone is insufficient.</p>
+
+<h2 id="scenario-evidence">Scenario Evidence</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th style="text-align: right">Rows</th>
+      <th style="text-align: right">Unmet task</th>
+      <th style="text-align: right">Substitute friction</th>
+      <th style="text-align: right">Solution acceptance</th>
+      <th style="text-align: right">WTP / paid owner</th>
+      <th style="text-align: right">Reject / return</th>
+      <th style="text-align: right">Platforms &gt;=10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>unlabeled</td>
+      <td style="text-align: right">44,708</td>
+      <td style="text-align: right">7,905</td>
+      <td style="text-align: right">669</td>
+      <td style="text-align: right">648</td>
+      <td style="text-align: right">2,092</td>
+      <td style="text-align: right">510</td>
+      <td style="text-align: right">16</td>
+    </tr>
+    <tr>
+      <td>productivity_spatial_monitor</td>
+      <td style="text-align: right">10,229</td>
+      <td style="text-align: right">3,371</td>
+      <td style="text-align: right">880</td>
+      <td style="text-align: right">527</td>
+      <td style="text-align: right">1,685</td>
+      <td style="text-align: right">188</td>
+      <td style="text-align: right">11</td>
+    </tr>
+    <tr>
+      <td>gaming_media_entertainment</td>
+      <td style="text-align: right">7,653</td>
+      <td style="text-align: right">2,144</td>
+      <td style="text-align: right">687</td>
+      <td style="text-align: right">376</td>
+      <td style="text-align: right">1,357</td>
+      <td style="text-align: right">124</td>
+      <td style="text-align: right">10</td>
+    </tr>
+    <tr>
+      <td>hands_free_capture_and_vlogging</td>
+      <td style="text-align: right">7,692</td>
+      <td style="text-align: right">2,176</td>
+      <td style="text-align: right">676</td>
+      <td style="text-align: right">349</td>
+      <td style="text-align: right">779</td>
+      <td style="text-align: right">102</td>
+      <td style="text-align: right">11</td>
+    </tr>
+    <tr>
+      <td>prescription_daily_wear</td>
+      <td style="text-align: right">5,246</td>
+      <td style="text-align: right">2,796</td>
+      <td style="text-align: right">504</td>
+      <td style="text-align: right">199</td>
+      <td style="text-align: right">843</td>
+      <td style="text-align: right">101</td>
+      <td style="text-align: right">7</td>
+    </tr>
+    <tr>
+      <td>developer_hacker_experiment</td>
+      <td style="text-align: right">3,197</td>
+      <td style="text-align: right">1,720</td>
+      <td style="text-align: right">470</td>
+      <td style="text-align: right">128</td>
+      <td style="text-align: right">457</td>
+      <td style="text-align: right">60</td>
+      <td style="text-align: right">9</td>
+    </tr>
+    <tr>
+      <td>commute_everyday_assistant</td>
+      <td style="text-align: right">2,286</td>
+      <td style="text-align: right">632</td>
+      <td style="text-align: right">330</td>
+      <td style="text-align: right">136</td>
+      <td style="text-align: right">356</td>
+      <td style="text-align: right">33</td>
+      <td style="text-align: right">8</td>
+    </tr>
+    <tr>
+      <td>travel_translation_navigation</td>
+      <td style="text-align: right">1,884</td>
+      <td style="text-align: right">516</td>
+      <td style="text-align: right">214</td>
+      <td style="text-align: right">124</td>
+      <td style="text-align: right">241</td>
+      <td style="text-align: right">24</td>
+      <td style="text-align: right">7</td>
+    </tr>
+    <tr>
+      <td>social_privacy_bystander</td>
+      <td style="text-align: right">1,885</td>
+      <td style="text-align: right">1,041</td>
+      <td style="text-align: right">232</td>
+      <td style="text-align: right">78</td>
+      <td style="text-align: right">143</td>
+      <td style="text-align: right">29</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td>fitness_sports_outdoor</td>
+      <td style="text-align: right">1,271</td>
+      <td style="text-align: right">377</td>
+      <td style="text-align: right">199</td>
+      <td style="text-align: right">78</td>
+      <td style="text-align: right">189</td>
+      <td style="text-align: right">15</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td>travel_translation_wayfinding</td>
+      <td style="text-align: right">10,966</td>
+      <td style="text-align: right">884</td>
+      <td style="text-align: right">78</td>
+      <td style="text-align: right">49</td>
+      <td style="text-align: right">88</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">8</td>
+    </tr>
+    <tr>
+      <td>swimming_pool_open_water</td>
+      <td style="text-align: right">11,196</td>
+      <td style="text-align: right">891</td>
+      <td style="text-align: right">129</td>
+      <td style="text-align: right">21</td>
+      <td style="text-align: right">69</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td>accessibility_captioning_assistive</td>
+      <td style="text-align: right">853</td>
+      <td style="text-align: right">246</td>
+      <td style="text-align: right">82</td>
+      <td style="text-align: right">38</td>
+      <td style="text-align: right">94</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>prescription_daily_eyewear</td>
+      <td style="text-align: right">9,288</td>
+      <td style="text-align: right">1,027</td>
+      <td style="text-align: right">58</td>
+      <td style="text-align: right">15</td>
+      <td style="text-align: right">73</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">7</td>
+    </tr>
+    <tr>
+      <td>accessibility_vision_hearing</td>
+      <td style="text-align: right">10,203</td>
+      <td style="text-align: right">1,586</td>
+      <td style="text-align: right">166</td>
+      <td style="text-align: right">14</td>
+      <td style="text-align: right">20</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td>enterprise_field_service_training</td>
+      <td style="text-align: right">464</td>
+      <td style="text-align: right">175</td>
+      <td style="text-align: right">46</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: right">61</td>
+      <td style="text-align: right">19</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td>cycling_micromobility</td>
+      <td style="text-align: right">10,288</td>
+      <td style="text-align: right">738</td>
+      <td style="text-align: right">69</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>hiking_climbing_outdoor</td>
+      <td style="text-align: right">10,007</td>
+      <td style="text-align: right">705</td>
+      <td style="text-align: right">30</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>water_sailing_fishing</td>
+      <td style="text-align: right">10,003</td>
+      <td style="text-align: right">663</td>
+      <td style="text-align: right">29</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td>ski_snow_sports</td>
+      <td style="text-align: right">9,596</td>
+      <td style="text-align: right">573</td>
+      <td style="text-align: right">40</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>parenting_family_memory</td>
+      <td style="text-align: right">9,960</td>
+      <td style="text-align: right">823</td>
+      <td style="text-align: right">46</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>motorcycle_driving</td>
+      <td style="text-align: right">10,142</td>
+      <td style="text-align: right">703</td>
+      <td style="text-align: right">61</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td>running_endurance</td>
+      <td style="text-align: right">9,496</td>
+      <td style="text-align: right">681</td>
+      <td style="text-align: right">43</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td>healthcare_caregiving</td>
+      <td style="text-align: right">9,712</td>
+      <td style="text-align: right">934</td>
+      <td style="text-align: right">48</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">3</td>
+    </tr>
+    <tr>
+      <td>field_work_trades</td>
+      <td style="text-align: right">9,842</td>
+      <td style="text-align: right">640</td>
+      <td style="text-align: right">21</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td>events_creator_live</td>
+      <td style="text-align: right">7,173</td>
+      <td style="text-align: right">564</td>
+      <td style="text-align: right">37</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="dominant-needs-and-frictions">Dominant Needs And Frictions</h2>
+
+<h3 id="unlabeled">unlabeled</h3>
+
+<ul>
+  <li>Needs: comfort_style (1,832), app_ecosystem (1,735), ai_voice_assistant (1,646), object_scene_understanding (1,350), multi_device_compatibility (1,345)</li>
+  <li>Frictions: app_pairing_connectivity (1,782), warranty_support_returns (1,388), battery_too_short (1,297), price_value_not_worth (1,243), weight_fit_comfort (612)</li>
+</ul>
+
+<h3 id="productivity_spatial_monitor">productivity_spatial_monitor</h3>
+
+<ul>
+  <li>Needs: display_mirroring (7,836), multi_device_compatibility (2,624), spatial_monitor (2,031), comfort_style (1,533), app_ecosystem (1,517)</li>
+  <li>Frictions: app_pairing_connectivity (1,654), weight_fit_comfort (894), warranty_support_returns (819), battery_too_short (698), display_blurry_or_eye_strain (636)</li>
+</ul>
+
+<h3 id="gaming_media_entertainment">gaming_media_entertainment</h3>
+
+<ul>
+  <li>Needs: gaming_low_latency (3,648), multi_device_compatibility (3,056), display_mirroring (2,187), camera_capture (1,116), app_ecosystem (1,055)</li>
+  <li>Frictions: app_pairing_connectivity (1,263), battery_too_short (774), weight_fit_comfort (591), warranty_support_returns (546), price_value_not_worth (392)</li>
+</ul>
+
+<h3 id="hands_free_capture_and_vlogging">hands_free_capture_and_vlogging</h3>
+
+<ul>
+  <li>Needs: camera_capture (6,751), display_mirroring (1,472), multi_device_compatibility (1,002), ai_voice_assistant (995), app_ecosystem (983)</li>
+  <li>Frictions: app_pairing_connectivity (1,002), battery_too_short (613), warranty_support_returns (439), weight_fit_comfort (433), privacy_social_acceptance (414)</li>
+</ul>
+
+<h3 id="prescription_daily_wear">prescription_daily_wear</h3>
+
+<ul>
+  <li>Needs: prescription_support (2,749), display_mirroring (1,083), comfort_style (1,041), camera_capture (675), music_calls_audio (511)</li>
+  <li>Frictions: prescription_or_lens_friction (2,736), weight_fit_comfort (1,255), battery_too_short (494), app_pairing_connectivity (445), display_blurry_or_eye_strain (386)</li>
+</ul>
+
+<h3 id="developer_hacker_experiment">developer_hacker_experiment</h3>
+
+<ul>
+  <li>Needs: app_ecosystem (1,298), multi_device_compatibility (1,294), display_mirroring (748), camera_capture (511), ai_voice_assistant (462)</li>
+  <li>Frictions: developer_limitations (1,595), app_pairing_connectivity (1,327), warranty_support_returns (381), battery_too_short (270), latency_tracking_drift (235)</li>
+</ul>
+
+<h3 id="commute_everyday_assistant">commute_everyday_assistant</h3>
+
+<ul>
+  <li>Needs: music_calls_audio (651), ai_voice_assistant (634), display_mirroring (546), comfort_style (504), camera_capture (481)</li>
+  <li>Frictions: app_pairing_connectivity (398), battery_too_short (290), weight_fit_comfort (275), prescription_or_lens_friction (205), warranty_support_returns (188)</li>
+</ul>
+
+<h3 id="travel_translation_navigation">travel_translation_navigation</h3>
+
+<ul>
+  <li>Needs: translation (829), navigation_hud (703), display_mirroring (487), ai_voice_assistant (378), camera_capture (360)</li>
+  <li>Frictions: app_pairing_connectivity (346), battery_too_short (187), weight_fit_comfort (162), warranty_support_returns (126), price_value_not_worth (116)</li>
+</ul>
+
+<h3 id="social_privacy_bystander">social_privacy_bystander</h3>
+
+<ul>
+  <li>Needs: privacy_controls (1,171), camera_capture (549), ai_voice_assistant (368), comfort_style (303), display_mirroring (278)</li>
+  <li>Frictions: privacy_social_acceptance (1,106), app_pairing_connectivity (207), weight_fit_comfort (144), price_value_not_worth (138), battery_too_short (126)</li>
+</ul>
+
+<h3 id="fitness_sports_outdoor">fitness_sports_outdoor</h3>
+
+<ul>
+  <li>Needs: display_mirroring (296), app_ecosystem (276), multi_device_compatibility (274), camera_capture (231), comfort_style (205)</li>
+  <li>Frictions: app_pairing_connectivity (269), battery_too_short (130), brightness_outdoor_readability (120), weight_fit_comfort (118), developer_limitations (106)</li>
+</ul>
+
+<h3 id="travel_translation_wayfinding">travel_translation_wayfinding</h3>
+
+<ul>
+  <li>Needs: translation (144), ai_voice_assistant (103), music_calls_audio (100), camera_capture (95), comfort_style (67)</li>
+  <li>Frictions: app_pairing_connectivity (62), battery_too_short (45), prescription_or_lens_friction (39), weight_fit_comfort (36), audio_or_microphone_quality (23)</li>
+</ul>
+
+<h3 id="swimming_pool_open_water">swimming_pool_open_water</h3>
+
+<ul>
+  <li>Needs: camera_capture (56), comfort_style (46), display_mirroring (39), prescription_support (19), object_scene_understanding (16)</li>
+  <li>Frictions: subscription_or_account_friction (75), weight_fit_comfort (47), app_pairing_connectivity (30), price_value_not_worth (26), prescription_or_lens_friction (19)</li>
+</ul>
+
+<h3 id="accessibility_captioning_assistive">accessibility_captioning_assistive</h3>
+
+<ul>
+  <li>Needs: live_captions (315), display_mirroring (150), ai_voice_assistant (146), camera_capture (143), app_ecosystem (140)</li>
+  <li>Frictions: app_pairing_connectivity (141), warranty_support_returns (61), battery_too_short (54), developer_limitations (51), price_value_not_worth (51)</li>
+</ul>
+
+<h3 id="prescription_daily_eyewear">prescription_daily_eyewear</h3>
+
+<ul>
+  <li>Needs: prescription_support (127), music_calls_audio (50), comfort_style (45), battery_life (20), display_mirroring (19)</li>
+  <li>Frictions: prescription_or_lens_friction (128), weight_fit_comfort (52), battery_too_short (20), app_pairing_connectivity (14), price_value_not_worth (13)</li>
+</ul>
+
+<h3 id="accessibility_vision_hearing">accessibility_vision_hearing</h3>
+
+<ul>
+  <li>Needs: camera_capture (30), ai_voice_assistant (27), live_captions (23), display_mirroring (18), app_ecosystem (17)</li>
+  <li>Frictions: app_pairing_connectivity (19), price_value_not_worth (9), battery_too_short (8), prescription_or_lens_friction (8), warranty_support_returns (7)</li>
+</ul>
+
+<h3 id="enterprise_field_service_training">enterprise_field_service_training</h3>
+
+<ul>
+  <li>Needs: ai_voice_assistant (105), comfort_style (86), display_mirroring (83), camera_capture (79), app_ecosystem (72)</li>
+  <li>Frictions: app_pairing_connectivity (75), warranty_support_returns (74), weight_fit_comfort (54), price_value_not_worth (54), battery_too_short (43)</li>
+</ul>
+
+<h3 id="cycling_micromobility">cycling_micromobility</h3>
+
+<ul>
+  <li>Needs: camera_capture (33), prescription_support (9), display_mirroring (8), navigation_hud (8), battery_life (7)</li>
+  <li>Frictions: prescription_or_lens_friction (9), battery_too_short (7), app_pairing_connectivity (7), warranty_support_returns (3), weight_fit_comfort (3)</li>
+</ul>
+
+<h3 id="hiking_climbing_outdoor">hiking_climbing_outdoor</h3>
+
+<ul>
+  <li>Needs: navigation_hud (15), display_mirroring (9), prescription_support (4), object_scene_understanding (4), camera_capture (4)</li>
+  <li>Frictions: prescription_or_lens_friction (4), battery_too_short (2), weight_fit_comfort (1), availability_region (1), brightness_outdoor_readability (1)</li>
+</ul>
+
+<h3 id="water_sailing_fishing">water_sailing_fishing</h3>
+
+<ul>
+  <li>Needs: camera_capture (30), prescription_support (6), comfort_style (6), ai_voice_assistant (3), battery_life (3)</li>
+  <li>Frictions: prescription_or_lens_friction (6), battery_too_short (3), weight_fit_comfort (3), warranty_support_returns (2), brightness_outdoor_readability (1)</li>
+</ul>
+
+<h3 id="ski_snow_sports">ski_snow_sports</h3>
+
+<ul>
+  <li>Needs: comfort_style (11), camera_capture (7), battery_life (5), ai_voice_assistant (4), app_ecosystem (4)</li>
+  <li>Frictions: price_value_not_worth (7), battery_too_short (5), app_pairing_connectivity (4), weight_fit_comfort (4), prescription_or_lens_friction (4)</li>
+</ul>
+
+<h2 id="interpretation-limits">Interpretation Limits</h2>
+
+<ul>
+  <li>E0-E2 records reveal activity context, unmet tasks, and substitute friction; they do not prove that glasses are the preferred solution.</li>
+  <li>E3 indicates solution acceptance but not payment. Only E4-E5 are direct willingness-to-pay or paid-behavior evidence.</li>
+  <li>Search-region and community labels are sampling context, not verified respondent residence.</li>
+  <li>Analysis weights balance platform/month or scene/month strata; they are not population weights.</li>
+  <li>Automated labels are discovery aids. Product decisions should use human review of full text and targeted interviews/concept tests.</li>
+</ul>
+
+<blockquote>
+  <p>Updated: 2026-07-12 Asia/Shanghai<br/>
+Study window: 2023-01-01 through 2026-07-12</p>
+</blockquote>
+
+<h2 id="executive-judgment">Executive Judgment</h2>
+
+<p>The previous corpus was useful for product feedback but structurally biased toward people who already knew the AI/AR-glasses category. Product and brand queries could not reveal users who experienced a hands-busy, eyes-busy, sunlight, prescription, accessibility, or safety problem without describing glasses as the solution.</p>
+
+<p>The optimized design therefore separates two questions:</p>
+
+<ol>
+  <li>What tasks, pains, and substitute failures exist inside an activity?</li>
+  <li>What evidence shows that glasses are accepted, purchased, paid for, rejected, or returned as the solution?</li>
+</ol>
+
+<p>The resulting strict 2023+ evidence table contains 209,862 deduplicated full-text records: 74,719 product-feedback records and 135,143 open-scene discovery records. Open-scene volume is not counted as product demand unless the user text reaches the relevant evidence level.</p>
+
+<h2 id="problems-found-in-the-previous-data">Problems Found In The Previous Data</h2>
+
+<ol>
+  <li><strong>Keyword-conditioned selection</strong>: searches centered on <code class="language-plaintext highlighter-rouge">AI glasses</code>, <code class="language-plaintext highlighter-rouge">AR glasses</code>, <code class="language-plaintext highlighter-rouge">smart glasses</code>, and product names. This favored category-aware users and missed latent jobs.</li>
+  <li><strong>Platform concentration</strong>: Reddit represented 58.2% of the old strict primary sample. The updated strict primary remains concentrated at 57.7%, so pooled unweighted percentages are still not market estimates.</li>
+  <li><strong>Event-driven time spikes</strong>: 2026-06 represented 17.3% of strict primary feedback. Product launches and archive availability can create false trend acceleration.</li>
+  <li><strong>Owner survivorship</strong>: owner and enthusiast communities over-represent retained users; rejectors, returners, bystanders, and users satisfied with substitutes remain under-covered.</li>
+  <li><strong>Mention-versus-pain ambiguity</strong>: lexical labels such as <code class="language-plaintext highlighter-rouge">battery</code> or <code class="language-plaintext highlighter-rouge">camera</code> previously mixed neutral mentions, requests, and complaints.</li>
+  <li><strong>Scenario-versus-demand ambiguity</strong>: a user needing navigation while cycling does not imply preference for glasses, much less willingness to pay.</li>
+  <li><strong>Geography over-interpretation risk</strong>: search region, platform, language, or a travel community is not verified respondent residence.</li>
+  <li><strong>Missing-date leakage</strong>: logged-in search pages often omit exact dates. These records remain in raw storage but are excluded from the strict 2023+ evidence table.</li>
+  <li><strong>Record count is not people count</strong>: comments, replies, reviews, and posts are observations, not unique users or a population panel.</li>
+</ol>
+
+<h2 id="optimization-implemented">Optimization Implemented</h2>
+
+<ul>
+  <li>Added 14 open-scene families: swimming/open water, travel/translation, cycling, running, skiing, motorcycle/driving, hiking/climbing, sailing/fishing/diving, accessibility, prescription eyewear, field trades, healthcare/caregiving, parenting, and creator/event use.</li>
+  <li>Collected open-scene Reddit data with equal month and equal scenario quotas across 43 continuous months. Communities sample different thirds of each month to reduce end-of-month and latest-post bias.</li>
+  <li>Added scenario-targeted YouTube, Bilibili, X, Zhihu, Xiaohongshu, Weibo, Instagram, Taobao, and JD collection. Marketplace cards are supply/price signals, not buyer reviews.</li>
+  <li>Preserved full text and source URL while hashing available author identifiers.</li>
+  <li>Enforced strict 2023+ dates in the main evidence table; undated and older records remain only in raw files.</li>
+  <li>Deduplicated by record ID and normalized full-text hash. Final duplicate ID and duplicate text counts are both zero.</li>
+  <li>Added evidence levels:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">E0</code>: scene context only.</li>
+      <li><code class="language-plaintext highlighter-rouge">E1</code>: unmet task or pain.</li>
+      <li><code class="language-plaintext highlighter-rouge">E2</code>: substitute workaround or failure.</li>
+      <li><code class="language-plaintext highlighter-rouge">E3</code>: glasses-solution acceptance.</li>
+      <li><code class="language-plaintext highlighter-rouge">E4</code>: explicit willingness to pay, or explicit rejection/return.</li>
+      <li><code class="language-plaintext highlighter-rouge">E5</code>: paid owner behavior.</li>
+    </ul>
+  </li>
+  <li>Added analysis weights that equalize month/scene strata for discovery and platform/month strata for product feedback. These are design weights, not population weights.</li>
+</ul>
+
+<h2 id="final-data-status">Final Data Status</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th style="text-align: right">Records</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Strict product primary</td>
+      <td style="text-align: right">74,719</td>
+      <td>Direct product/category feedback with valid dates and relevance</td>
+    </tr>
+    <tr>
+      <td>Open-scene discovery after date and dedupe filters</td>
+      <td style="text-align: right">135,143</td>
+      <td>Activity ecology, tasks, pains, substitutes, and latent needs</td>
+    </tr>
+    <tr>
+      <td>Combined scenario evidence table</td>
+      <td style="text-align: right">209,862</td>
+      <td>Full-text evidence table with explicit corpus and evidence roles</td>
+    </tr>
+    <tr>
+      <td>Month-balanced strict product view</td>
+      <td style="text-align: right">62,220</td>
+      <td>Product trend analysis with monthly caps</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Evidence distribution in the combined table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Evidence</th>
+      <th style="text-align: right">Records</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E0 scene context</td>
+      <td style="text-align: right">168,476</td>
+      <td>Discovery context; not demand evidence</td>
+    </tr>
+    <tr>
+      <td>E1 unmet task/pain</td>
+      <td style="text-align: right">29,266</td>
+      <td>Problem evidence; not solution preference</td>
+    </tr>
+    <tr>
+      <td>E2 substitute friction</td>
+      <td style="text-align: right">3,630</td>
+      <td>Stronger opportunity evidence; still not glasses preference</td>
+    </tr>
+    <tr>
+      <td>E3 solution acceptance</td>
+      <td style="text-align: right">1,843</td>
+      <td>Glasses accepted as a solution; payment not established</td>
+    </tr>
+    <tr>
+      <td>E4 explicit WTP</td>
+      <td style="text-align: right">120</td>
+      <td>Direct stated payment signal</td>
+    </tr>
+    <tr>
+      <td>E4 rejection/return</td>
+      <td style="text-align: right">943</td>
+      <td>Direct negative commercial signal</td>
+    </tr>
+    <tr>
+      <td>E5 paid owner</td>
+      <td style="text-align: right">5,584</td>
+      <td>Strongest observed paid-behavior signal</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="scenario-interpretation">Scenario Interpretation</h2>
+
+<p>The existing product-centered scenarios remain commercially strongest because they already contain paid owners: spatial display/productivity, gaming/media, hands-free capture, prescription daily wear, commuting, and travel/navigation. They also carry mature product frictions such as connectivity, comfort, battery, prescription integration, returns, blur, and privacy.</p>
+
+<p>Among the expanded must-wear scenarios:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th style="text-align: right">Unmet task</th>
+      <th style="text-align: right">Substitute friction</th>
+      <th style="text-align: right">Acceptance</th>
+      <th style="text-align: right">WTP / paid owner</th>
+      <th>Current judgment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Swimming/open water</td>
+      <td style="text-align: right">891</td>
+      <td style="text-align: right">129</td>
+      <td style="text-align: right">21</td>
+      <td style="text-align: right">69</td>
+      <td>Most promising new category-specific wedge; validate waterproofing, anti-fog, readable pace/navigation, controls, prescription and underwater audio constraints</td>
+    </tr>
+    <tr>
+      <td>Travel/translation/wayfinding</td>
+      <td style="text-align: right">884</td>
+      <td style="text-align: right">78</td>
+      <td style="text-align: right">49</td>
+      <td style="text-align: right">88</td>
+      <td>Strongest broad consumer extension; translation, navigation, photochromic tint, battery and offline reliability must close together</td>
+    </tr>
+    <tr>
+      <td>Accessibility/vision/hearing</td>
+      <td style="text-align: right">1,586</td>
+      <td style="text-align: right">166</td>
+      <td style="text-align: right">14</td>
+      <td style="text-align: right">20</td>
+      <td>High problem intensity but trust, accuracy, affordability and specialist distribution matter more than raw feature count</td>
+    </tr>
+    <tr>
+      <td>Cycling/micromobility</td>
+      <td style="text-align: right">738</td>
+      <td style="text-align: right">69</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">4</td>
+      <td>Real eyes-up task, weak payment proof for glasses; compare against bike computer/watch/radar substitutes</td>
+    </tr>
+    <tr>
+      <td>Ski/snow sports</td>
+      <td style="text-align: right">573</td>
+      <td style="text-align: right">40</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">2</td>
+      <td>Plausible HUD use but seasonal, safety-critical and low direct demand evidence</td>
+    </tr>
+    <tr>
+      <td>Motorcycle/driving</td>
+      <td style="text-align: right">703</td>
+      <td style="text-align: right">61</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">3</td>
+      <td>Strong task tension but helmet HUD, phone projection and legal/safety concerns may be better form factors</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These counts are observational evidence, not conversion rates. Scene labels can overlap and automated coding must be followed by full-text review.</p>
+
+<h2 id="recommended-decision-process">Recommended Decision Process</h2>
+
+<ol>
+  <li>Use the new table to select 200-400 full-text records per priority scenario, balanced across evidence level, platform, month, and positive/negative stance.</li>
+  <li>Conduct human coding for job, trigger, current workaround, consequence, desired outcome, solution acceptance, price reference, rejection reason, and safety/privacy constraints.</li>
+  <li>Run concept tests that compare glasses against the strongest substitute, not against doing nothing.</li>
+  <li>Validate price with Gabor-Granger or Van Westendorp only after the concept and task closure are concrete.</li>
+  <li>Treat swimming and travel as separate product propositions. Their optics, waterproofing, controls, audio, battery, tint, certification, and channel requirements differ enough that one generic AI-glasses concept would obscure demand.</li>
+</ol>
+
+<h2 id="remaining-limits">Remaining Limits</h2>
+
+<ul>
+  <li>Strict product primary still fails the 200k and single-platform caps; the combined table exceeds 200k because it includes a separately identified open-scene corpus.</li>
+  <li>Reddit remains the dominant discovery platform. Analysis must use platform-aware views and qualitative triangulation.</li>
+  <li>X, Instagram, JD, and verified marketplace buyer-review yields remain low without licensed/API exports.</li>
+  <li>East Asia coverage improved through Bilibili, Zhihu, Xiaohongshu, Weibo, Taobao/JD and Chinese queries, but Japan/Korea local-platform coverage remains thinner than Chinese and English coverage.</li>
+  <li>Willingness-to-pay language is sparse and socially biased. Real payment validation still requires concept tests, preorder experiments, retailer data, or controlled surveys.</li>
+</ul>
+
+<blockquote>
+  <p>Version: v0.1<br/>Time window: 2023-01-01 to the collection date<br/>Target market: North America, Europe, East Asia<br/>Objective: At least 200,000 public or authorized exported, complete, traceable, de-weighted user feedback records.</p>
+</blockquote>
+
+<h2 id="0-当前检查点2026-07-08">Zero. Current checkpoint, 2026-07-08</h2>
+
+<p>A round of public source capture and processing has been completed:</p>
+
+<ul>
+  <li>Raw JSONL: 200,732, more than 200,000 raw records.</li>
+  <li>Strictly primary: 45,630, not yet reached 200,000 eligible primary records.</li>
+  <li>Monthly balance primary: 36,439.</li>
+  <li>Current primary source: Reddit 43,110, Hacker News 2,520.</li>
+  <li>Current conclusion: It can be used for exploratory coding, classification system calibration, and preliminary analysis of scenario-claims/problems; it cannot be used as a representative trend sample of the overall market of North America/Europe/East Asia.</li>
+</ul>
+
+<p>Currently unpassed items:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">minimum_records.pass = false</code>, there are still 154,370 eligible primary.</li>
+  <li><code class="language-plaintext highlighter-rouge">source_cap.pass = false</code>, Reddit accounts for 94.5%.</li>
+  <li><code class="language-plaintext highlighter-rouge">platform_cap.pass = false</code>, Reddit accounts for 94.5%.</li>
+  <li>2026-06 A single month accounts for 24.9%, and the monthly balance view or event annotation must be used.</li>
+</ul>
+
+<p>For details, please refer to:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DATA_INVENTORY.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">reports/formal_run_2026-07-08_summary.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">reports/data_quality_audit.md</code></li>
+</ul>
+
+<h2 id="1-验收标准">1. Acceptance standard</h2>
+
+<h3 id="时间窗">Time window</h3>
+
+<p>The main sample is only accepted.<code class="language-plaintext highlighter-rouge">created_at &gt;= 2023-01-01T00:00:00+00:00</code>The record of. Lack of time
+
+The record can enter the original pool, but it does not enter the trend conclusion by default.</p>
+
+<p>Trend analysis must be seen at the same time:</p>
+
+<ul>
+  <li>The original primary full amount.</li>
+  <li><code class="language-plaintext highlighter-rouge">feedback_primary_month_balanced_2023plus.jsonl</code>Monthly balance view.</li>
+  <li>Event comments for the month of major events, such as new product release, platform function update, recall, crowdfunding delivery, and privacy disputes.</li>
+</ul>
+
+<h3 id="内容完整性">Content integrity</h3>
+
+<p>Each record must keep the complete feedback text:</p>
+
+<ul>
+  <li>Community comments: complete comment body.</li>
+  <li>YouTube: complete top-level comments and optional replies.</li>
+  <li>E-commerce/App Store: complete review body.</li>
+  <li>Crowdfunding: complete backer/comment/update discussion.</li>
+  <li>Social media: the complete post/comment/reply text allowed in the export.</li>
+</ul>
+
+<p>Only short excerpts are cited in the report; JSONL retains the original text to facilitate secondary coding.</p>
+
+<h3 id="来源多元性">Diversity of sources</h3>
+
+<p>Suggested structure of 200k main sample:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source family</th>
+      <th style="text-align: right">Target level</th>
+      <th>Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reddit archives/current threads</td>
+      <td style="text-align: right">40k-65k</td>
+      <td>Community soundtrack, mixed Geek/ordinary user, privacy dispute, reverse opinion.</td>
+    </tr>
+    <tr>
+      <td>YouTube comments</td>
+      <td style="text-align: right">30k-40k</td>
+      <td>Evaluate the video audience, purchase intention, real experience supplement, and response from different regions.</td>
+    </tr>
+    <tr>
+      <td>X/Instagram/TikTok authorized exports</td>
+      <td style="text-align: right">40k-55k</td>
+      <td>Social media instant feedback, appearance/social acceptance, content creation scene.</td>
+    </tr>
+    <tr>
+      <td>Amazon/BestBuy/Walmart/app-store exports</td>
+      <td style="text-align: right">25k-40k</td>
+      <td>Post-purchase satisfaction, hardware quality, return, after-sales, star rating.</td>
+    </tr>
+    <tr>
+      <td>Kickstarter/Indiegogo exports</td>
+      <td style="text-align: right">8k-15k</td>
+      <td>Pre-sale, delivery, trust, delivery anxiety, early adopter.</td>
+    </tr>
+    <tr>
+      <td>HN/StackExchange/forums/support</td>
+      <td style="text-align: right">15k-25k</td>
+      <td>Developers, display/connection/privacy/usability problems, high signal-to-noise ratio qualitative samples.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Hard upper limit:</p>
+
+<ul>
+  <li>The single-source family does not exceed 35%.</li>
+  <li>The single platform does not exceed 30%.</li>
+  <li>A single product does not exceed 30%.</li>
+  <li>When the event is not commented, it does not exceed 12% in a single month.</li>
+</ul>
+
+<h3 id="反幸存者偏差">Anti-survivor bias</h3>
+
+<p>The following sample buckets must be covered at the same time:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sample bucket</th>
+      <th>Explain</th>
+      <th style="text-align: right">Suggested proportion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">buyer_owner_review</code></td>
+      <td>Purchased/reviewed by users.</td>
+      <td style="text-align: right">20%-30%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rejector_returned_or_abandoned</code></td>
+      <td>Think it&#x27;s not worth it, return it, cancel the order, give up using it.</td>
+      <td style="text-align: right">10%-20%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">privacy_bystander_or_policy</code></td>
+      <td>Privacy, bystander consent, acceptance of work/school/public scene.</td>
+      <td style="text-align: right">10%-20%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ar_display_productivity_user</code></td>
+      <td>Display/space screen/game/productivity users.</td>
+      <td style="text-align: right">15%-25%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">creator_camera_user</code></td>
+      <td>Shooting, Vlog, first perspective, live broadcast users.</td>
+      <td style="text-align: right">10%-20%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">accessibility_travel_or_assistive</code></td>
+      <td>Translation, subtitles, navigation, hearing impairment/low vision and other auxiliary scenes.</td>
+      <td style="text-align: right">5%-15%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">backer_preorder_or_fulfillment</code></td>
+      <td>Crowdfunding/pre-ordering/delivery/performance anxiety.</td>
+      <td style="text-align: right">5%-10%</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">support_issue</code>Or support/Q&amp;A</td>
+      <td>Connection, display, App, after-sales, repair, firmware problems.</td>
+      <td style="text-align: right">10%-20%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When there is a shortage of buckets, you can&#x27;t make up for it with other buckets; you must expand the query or increase the source.</p>
+
+<h2 id="2-采集合规边界">2. Collect compliance boundaries</h2>
+
+<p>Can be used:</p>
+
+<ul>
+  <li>Official API.</li>
+  <li>Export provided by the platform.</li>
+  <li>Comments that can only be exported by brands/creators/projects.</li>
+  <li>Third-party authorized social media listening or e-commerce comment supplier export.</li>
+  <li>Forums and Q&amp;A stations with no login, no challenge, and public JSON/API.</li>
+</ul>
+
+<p>Don&#x27;t use:</p>
+
+<ul>
+  <li>Bypass Cloudflare, CAPTCHA, login wall, paywall or platform access control.</li>
+  <li>Save the original user name, email, phone number, address and other PII to normalized dataset.</li>
+  <li>After making up 200,000 yuan with a single platform, it claims to represent the whole market.</li>
+</ul>
+
+<h2 id="3-信号提取流程">3. Signal extraction process</h2>
+
+<ol>
+  <li>Raw collection/import: only do source normalization, time, author hash, complete text saving.</li>
+  <li>Primary build: filter 2023+, weight removal, quality score, relevance score, sample bucket.</li>
+  <li>Rule labels: product form, price band, scenario, functional appeal, pain point, purchase stage, market area.</li>
+  <li>Candidate signals: n-gram/keyword open extraction, challenging fixed classification.</li>
+  <li>Human audit: original sample inspection by source × month × product form × sample barrel.</li>
+  <li>LLM-assisted coding: Only do finer subject coding on desensitized samples, and keep manual review.</li>
+  <li>Quant + qual synthesis: counting, trend and representative original text are presented separately.</li>
+</ol>
+
+<h2 id="4-当前脚本">4. Current script</h2>
+
+<p>Small sample verification:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="s2">"（本地路径已省略） app/projects/AI眼镜用户研究"</span>
+python3 scripts/collect_hn.py <span class="nt">--max-records</span> 300 <span class="nt">--out</span> data/raw/hn/hn_seed.jsonl
+python3 scripts/collect_arctic_reddit.py <span class="nt">--max-records</span> 500 <span class="nt">--out</span> data/raw/reddit/arctic_seed.jsonl
+python3 scripts/collect_stackexchange.py <span class="nt">--target-records</span> 200 <span class="nt">--out</span> data/raw/stackexchange/stackexchange_seed.jsonl
+python3 scripts/build_primary_dataset.py
+python3 scripts/label_feedback.py <span class="nt">--input</span> data/processed/feedback_primary_2023plus.jsonl <span class="nt">--out</span> data/processed/feedback_primary_labeled_2023plus.jsonl
+python3 scripts/audit_dataset_quality.py
+</code></pre></div></div>
+
+<p>200k target suggestion:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 scripts/collect_arctic_reddit_stratified.py <span class="nt">--target-records</span> 40000 <span class="nt">--per-bucket</span> 120
+python3 scripts/collect_pullpush_rejector_stratified.py <span class="nt">--target-records</span> 15000 <span class="nt">--per-query-month</span> 50
+<span class="nv">YOUTUBE_API_KEY</span><span class="o">=</span>... python3 scripts/collect_youtube.py <span class="nt">--target-records</span> 35000
+python3 scripts/collect_hn.py <span class="nt">--max-records</span> 12000 <span class="nt">--out</span> data/raw/hn/hn_2023plus.jsonl
+python3 scripts/collect_stackexchange.py <span class="nt">--target-records</span> 8000
+python3 scripts/collect_discourse_public.py <span class="nt">--target-records</span> 10000
+python3 scripts/import_feedback_export.py <span class="nt">--input</span> /path/to/x.csv <span class="nt">--source-platform</span> x <span class="nt">--out</span> data/raw/imports/x_2023plus.jsonl
+python3 scripts/import_feedback_export.py <span class="nt">--input</span> /path/to/instagram.csv <span class="nt">--source-platform</span> instagram <span class="nt">--out</span> data/raw/imports/instagram_2023plus.jsonl
+python3 scripts/import_feedback_export.py <span class="nt">--input</span> /path/to/amazon.csv <span class="nt">--source-platform</span> amazon <span class="nt">--out</span> data/raw/imports/amazon_2023plus.jsonl
+python3 scripts/import_feedback_export.py <span class="nt">--input</span> /path/to/kickstarter.csv <span class="nt">--source-platform</span> kickstarter <span class="nt">--out</span> data/raw/imports/kickstarter_2023plus.jsonl
+python3 scripts/build_primary_dataset.py
+python3 scripts/label_feedback.py <span class="nt">--input</span> data/processed/feedback_primary_2023plus.jsonl <span class="nt">--out</span> data/processed/feedback_primary_labeled_2023plus.jsonl
+python3 scripts/build_month_balanced_dataset.py
+python3 scripts/export_metadata_detail.py
+python3 scripts/extract_candidate_signals.py
+python3 scripts/audit_dataset_quality.py
+</code></pre></div></div>
+
+<h2 id="5-审计通过条件">5. Audit and approval conditions</h2>
+
+<p><code class="language-plaintext highlighter-rouge">scripts/audit_dataset_quality.py</code>Need to pass at least:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">minimum_records.pass = true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">source_cap.pass = true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">platform_cap.pass = true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">product_cap.pass = true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">month_coverage.pass = true</code></li>
+  <li><code class="language-plaintext highlighter-rouge">primary_date_coverage.pass = true</code></li>
+</ul>
+
+<p>Before it is passed, it can only be called an &quot;exploratory corpus&quot; and cannot be used for representative trend conclusions.</p>
+
+<blockquote>
+  <p>Updated: 2026-07-09 09:16 Asia/Shanghai<br/>
+Scope: AI glasses public/authorized user-feedback dataset, 2023-present.</p>
+</blockquote>
+
+<h2 id="what-changed">What Changed</h2>
+
+<ul>
+  <li>Created and verified a Google Cloud API key for YouTube Data API v3, restricted to YouTube Data API v3.</li>
+  <li>Added YouTube official API collection across product, scenario, language, and region queries, then added an existing-video deep pass across already discovered review videos. Current YouTube raw total: 21,086.</li>
+  <li>Added Apple App Store public review RSS collection. Current raw total: 157.</li>
+  <li>Added Google Play public review collection by direct package IDs. Current raw total: 659.</li>
+  <li>Added GitHub public REST API issue collection with strict news/digest/noise filtering. Current raw total: 430.</li>
+  <li>Added brand-store ecommerce review collection through public widget/API endpoints:
+    <ul>
+      <li>Okendo: VITURE and Lucyd, 5,388 raw records.</li>
+      <li>Judge.me: Rokid, Halliday, and Solos, 377 raw records.</li>
+      <li>Loox: INMO, 100 raw records.</li>
+    </ul>
+  </li>
+  <li>Added a Bilibili collector and query config for East Asia/Chinese product terms, but the public endpoint was blocked at scale.</li>
+  <li>Updated region tagging so source queries like <code class="language-plaintext highlighter-rouge">region:US/GB/DE/FR/JP/KR/TW/HK</code> map into North America, Europe, and East Asia.</li>
+  <li>Moved noisy GitHub test files out of <code class="language-plaintext highlighter-rouge">data/raw</code> into <code class="language-plaintext highlighter-rouge">data/quarantine</code> so they are excluded from primary builds.</li>
+</ul>
+
+<p>Official reference links used for compliant collection paths:</p>
+
+<ul>
+  <li>YouTube Data API <code class="language-plaintext highlighter-rouge">commentThreads.list</code>: https://developers.google.com/youtube/v3/docs/commentThreads/list</li>
+  <li>Google Cloud API key security practices: https://docs.cloud.google.com/docs/authentication/api-keys-best-practices</li>
+  <li>X API search overview: https://docs.x.com/x-api/posts/search/introduction</li>
+  <li>X API full-archive search access note: https://docs.x.com/x-api/posts/search/quickstart/full-archive-search</li>
+  <li>Instagram media comments reference: https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-media/comments/</li>
+  <li>GitHub REST Search API: https://docs.github.com/en/rest/search/search</li>
+</ul>
+
+<h2 id="current-dataset-status">Current Dataset Status</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th style="text-align: right">Records</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Active raw JSONL files</td>
+      <td style="text-align: right">228,931</td>
+      <td>Meets raw-volume milestone, but raw still includes source imbalance.</td>
+    </tr>
+    <tr>
+      <td>Strict primary sample</td>
+      <td style="text-align: right">71,320</td>
+      <td>Does not meet the 200k primary-record requirement.</td>
+    </tr>
+    <tr>
+      <td>Month-balanced analysis view</td>
+      <td style="text-align: right">59,275</td>
+      <td>Use this for trend analysis before source mix is fixed.</td>
+    </tr>
+    <tr>
+      <td>YouTube raw comments</td>
+      <td style="text-align: right">21,086</td>
+      <td>Official API-derived, region/query stratified plus existing-video deep pass.</td>
+    </tr>
+    <tr>
+      <td>YouTube primary comments</td>
+      <td style="text-align: right">19,083</td>
+      <td>Passed 2023+ date, quality, relevance, and dedupe filters.</td>
+    </tr>
+    <tr>
+      <td>Okendo raw reviews</td>
+      <td style="text-align: right">5,388</td>
+      <td>VITURE and Lucyd brand-store buyer reviews.</td>
+    </tr>
+    <tr>
+      <td>Judge.me raw reviews</td>
+      <td style="text-align: right">377</td>
+      <td>Rokid, Halliday, and Solos brand-store buyer/backer reviews.</td>
+    </tr>
+    <tr>
+      <td>Loox raw reviews</td>
+      <td style="text-align: right">100</td>
+      <td>INMO brand-store buyer reviews.</td>
+    </tr>
+    <tr>
+      <td>Google Play raw reviews</td>
+      <td style="text-align: right">659</td>
+      <td>Mostly VITURE SpaceWalker, plus XREAL/Meta AI.</td>
+    </tr>
+    <tr>
+      <td>Apple App Store raw reviews</td>
+      <td style="text-align: right">157</td>
+      <td>Meta AI, SpaceWalker/VITURE/XREAL-related.</td>
+    </tr>
+    <tr>
+      <td>GitHub raw issues</td>
+      <td style="text-align: right">430</td>
+      <td>Developer/support/integration feedback after noise filtering.</td>
+    </tr>
+    <tr>
+      <td>Bilibili raw comments</td>
+      <td style="text-align: right">2</td>
+      <td>Public endpoint hit HTTP 412; needs authorized/browser-session export for scale.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="current-source-mix">Current Source Mix</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th style="text-align: right">Primary Records</th>
+      <th style="text-align: right">Share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reddit</td>
+      <td style="text-align: right">43,098</td>
+      <td style="text-align: right">60.4%</td>
+    </tr>
+    <tr>
+      <td>YouTube</td>
+      <td style="text-align: right">19,083</td>
+      <td style="text-align: right">26.8%</td>
+    </tr>
+    <tr>
+      <td>VITURE Okendo</td>
+      <td style="text-align: right">4,734</td>
+      <td style="text-align: right">6.6%</td>
+    </tr>
+    <tr>
+      <td>Hacker News</td>
+      <td style="text-align: right">2,520</td>
+      <td style="text-align: right">3.5%</td>
+    </tr>
+    <tr>
+      <td>Lucyd Okendo</td>
+      <td style="text-align: right">622</td>
+      <td style="text-align: right">0.9%</td>
+    </tr>
+    <tr>
+      <td>GitHub</td>
+      <td style="text-align: right">429</td>
+      <td style="text-align: right">0.6%</td>
+    </tr>
+    <tr>
+      <td>Rokid Judge.me</td>
+      <td style="text-align: right">307</td>
+      <td style="text-align: right">0.4%</td>
+    </tr>
+    <tr>
+      <td>Google Play</td>
+      <td style="text-align: right">283</td>
+      <td style="text-align: right">0.4%</td>
+    </tr>
+    <tr>
+      <td>Apple App Store</td>
+      <td style="text-align: right">155</td>
+      <td style="text-align: right">0.2%</td>
+    </tr>
+    <tr>
+      <td>INMO Loox</td>
+      <td style="text-align: right">60</td>
+      <td style="text-align: right">0.1%</td>
+    </tr>
+    <tr>
+      <td>Solos Judge.me</td>
+      <td style="text-align: right">25</td>
+      <td style="text-align: right">0.0%</td>
+    </tr>
+    <tr>
+      <td>Halliday Judge.me</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">0.0%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The source-mix quality gate still fails. Reddit must fall below the configured 30% platform cap before source-level trend claims can be treated as representative.</p>
+
+<h2 id="regional-coverage">Regional Coverage</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Region Label</th>
+      <th style="text-align: right">Primary Records</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Europe</td>
+      <td style="text-align: right">10,323</td>
+      <td>Improved by YouTube, App Store, Google Play region/country queries and ecommerce text cues.</td>
+    </tr>
+    <tr>
+      <td>East Asia</td>
+      <td style="text-align: right">6,370</td>
+      <td>Improved by YouTube JP/KR/TW/HK, INMO/Rokid brand-store reviews, and limited app-store reviews.</td>
+    </tr>
+    <tr>
+      <td>North America</td>
+      <td style="text-align: right">4,924</td>
+      <td>Improved by YouTube US/CA, app-store reviews, and ecommerce text cues.</td>
+    </tr>
+    <tr>
+      <td>Unknown/global</td>
+      <td style="text-align: right">50,142</td>
+      <td>Dominated by Reddit/HN/ecommerce records where author geography is not reliably inferable.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Important caveat: <code class="language-plaintext highlighter-rouge">regionCode</code>, app-store country, or brand-store locale improves market exposure, but it is not the same as user residence. The dataset still skews English: primary language hints are 69,183 <code class="language-plaintext highlighter-rouge">en_or_unknown</code>, 1,229 <code class="language-plaintext highlighter-rouge">de_possible</code>, 650 <code class="language-plaintext highlighter-rouge">fr_possible</code>, 101 Chinese, 81 Japanese, and 76 Korean.</p>
+
+<h2 id="product-and-use-case-coverage-added">Product and Use-Case Coverage Added</h2>
+
+<p>Newly strengthened source types:</p>
+
+<ul>
+  <li>Video comments: comparative review, creator/demo reaction, privacy, display/gaming, travel translation.</li>
+  <li>Brand-store ecommerce reviews: verified/buyer reviews, ratings, product variants, recommendation/incentive flags, product-specific owner usage and return/support details.</li>
+  <li>Mobile app reviews: owner complaints around pairing, app UX, firmware, support, feature gaps, battery, compatibility.</li>
+  <li>GitHub issues: developer, SDK, Linux/desktop, driver, integration, display and wearable OS feedback.</li>
+</ul>
+
+<p>Top primary labels after rebuild:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Signal Type</th>
+      <th>Top Labels</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scenarios</td>
+      <td>productivity/spatial monitor; hands-free capture/vlogging; gaming/media; prescription daily wear; developer experimentation; commute/everyday assistant; privacy/bystander; travel/translation/navigation.</td>
+    </tr>
+    <tr>
+      <td>Feature needs</td>
+      <td>display mirroring; camera capture; device compatibility; app ecosystem; comfort/style; AI voice assistant; scene understanding; low-latency gaming; music/calls/audio; battery.</td>
+    </tr>
+    <tr>
+      <td>Pain points</td>
+      <td>pairing/connectivity; warranty/returns; battery; value/price; prescription/lens friction; comfort/fit; developer limitations; tracking drift/latency; blurry display/eye strain; FOV.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="gaps-still-blocking-a-representative-200k-primary-dataset">Gaps Still Blocking A Representative 200k Primary Dataset</h2>
+
+<ul>
+  <li>Need 128,680 more eligible primary records to reach 200k.</li>
+  <li>Reddit remains 60.4% of primary records, above the 30% platform cap.</li>
+  <li>June 2026 is 17.8% of primary records, above the 12% single-month cap; use the month-balanced file for trend analysis.</li>
+  <li>Buyer/owner reviews, rejector/return/refund records, and privacy/bystander records remain under-covered.</li>
+  <li>X, Instagram, TikTok, Amazon/Best Buy/Walmart, Kickstarter/Indiegogo, Zhihu, Xiaohongshu, Taobao/JD, Rakuten, Naver/Coupang are not yet present at scale.</li>
+</ul>
+
+<h2 id="recommended-next-acquisition-mix">Recommended Next Acquisition Mix</h2>
+
+<p>To reach the 200k primary target without worsening source bias, the next 128,680+ eligible records should be non-Reddit-heavy:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Family</th>
+      <th style="text-align: right">Target Eligible Records</th>
+      <th>Preferred Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>YouTube additional API runs</td>
+      <td style="text-align: right">25k-40k</td>
+      <td>Continue after quota reset or request quota increase; add CA, TW, HK, IT, ES, NL, SE and local-language queries.</td>
+    </tr>
+    <tr>
+      <td>X / social listening export</td>
+      <td style="text-align: right">35k-50k</td>
+      <td>X API full-archive or licensed social-listening export; recent search alone is only last 7 days.</td>
+    </tr>
+    <tr>
+      <td>Instagram / TikTok comments</td>
+      <td style="text-align: right">20k-35k</td>
+      <td>Meta Graph API where authorized, creator-owned media exports, or licensed social listening.</td>
+    </tr>
+    <tr>
+      <td>Ecommerce reviews</td>
+      <td style="text-align: right">30k-45k</td>
+      <td>Authorized exports or licensed providers for Amazon, Best Buy, Walmart, Rakuten, JD, Tmall/Taobao.</td>
+    </tr>
+    <tr>
+      <td>East Asia local platforms</td>
+      <td style="text-align: right">30k-50k</td>
+      <td>Zhihu, Bilibili, Xiaohongshu, Taobao/JD, Naver/Coupang/Rakuten via authorized exports or browser sessions with user consent.</td>
+    </tr>
+    <tr>
+      <td>Crowdfunding/backer sources</td>
+      <td style="text-align: right">8k-15k</td>
+      <td>Kickstarter/Indiegogo creator/project exports or public comments where allowed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="browserlogin-work-queue">Browser/Login Work Queue</h2>
+
+<p>These are the next high-volume sources that require logged-in browser access, platform export, API credentials, or paid/authorized data provider access:</p>
+
+<ul>
+  <li>X advanced search or full-archive API export for <code class="language-plaintext highlighter-rouge">Ray-Ban Meta</code>, <code class="language-plaintext highlighter-rouge">XREAL</code>, <code class="language-plaintext highlighter-rouge">VITURE</code>, <code class="language-plaintext highlighter-rouge">Rokid</code>, <code class="language-plaintext highlighter-rouge">smart glasses</code>, <code class="language-plaintext highlighter-rouge">AR glasses</code>, with <code class="language-plaintext highlighter-rouge">since:2023-01-01</code>.</li>
+  <li>Instagram/TikTok creator/video comment exports for AI/smart/AR glasses review posts.</li>
+  <li>Amazon/Best Buy/Walmart product review exports for Ray-Ban Meta, XREAL, VITURE, Rokid, RayNeo, Echo Frames, Lucyd, Vuzix.</li>
+  <li>Zhihu, Xiaohongshu, Bilibili, Taobao/JD review/comment exports for Chinese local-language coverage.</li>
+  <li>Rakuten, Naver/Coupang/Qoo10 review/community exports for Japan/Korea coverage.</li>
+</ul>
+
+<p>I can operate the browser for these when the account/session is logged in, but I will not bypass captchas, paywalls, account risk controls, or access walls. If the site asks for a CAPTCHA or account-security prompt, you need to complete or explicitly approve that step in the browser.</p>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/ai-glasses/">AI glasses and space interaction</a><p>When is it worth letting AI leave the mobile phone and enter the new devices in the body and space?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

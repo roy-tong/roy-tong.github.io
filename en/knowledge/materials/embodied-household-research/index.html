@@ -1,0 +1,1051 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/embodied-household-research/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/embodied-household-research/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/embodied-household-research/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Research Report on User Demands of Pan-Body Family Scenes | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="泛具身家庭场景用户需求研究报告"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="版本： v1.1（2026-08-16，含 v2.1 家庭 Physical Agent 补采） | 项目目录： （本地路径已省略） app/deepseek/泛具身用户研究 方法： SURE（Structured User Research with Evidence）+ E0–E5 证据分级；对照 2026-08-06 机器狗数据审计的 19 项质量门 结论属性： 跨形态证据成熟度比较与验证优先级；不是市场规模、渗透率、需求率或销量预测"/>
+<meta property="og:description" content="版本： v1.1（2026-08-16，含 v2.1 家庭 Physical Agent 补采） | 项目目录： （本地路径已省略） app/deepseek/泛具身用户研究 方法： SURE（Structured User Research with Evidence）+ E0–E5 证据分级；对照 2026-08-06 机器狗数据审计的 19 项质量门 结论属性： 跨形态证据成熟度比较与验证优先级；不是市场规模、渗透率、需求率或销量预测"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/embodied-household-research/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/embodied-household-research/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="泛具身家庭场景用户需求研究报告"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"版本： v1.1（2026-08-16，含 v2.1 家庭 Physical Agent 补采） | 项目目录： （本地路径已省略） app/deepseek/泛具身用户研究 方法： SURE（Structured User Research with Evidence）+ E0–E5 证据分级；对照 2026-08-06 机器狗数据审计的 19 项质量门 结论属性： 跨形态证据成熟度比较与验证优先级；不是市场规模、渗透率、需求率或销量预测","headline":"泛具身家庭场景用户需求研究报告","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/embodied-household-research/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/embodied-household-research/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/embodied-household-research/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/embodied-household-research/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>Research report on user demand for all-body home scenarios</h1>
+    <p class="kb-summary">Comparison of the maturity of cross-form evidence of sweeping robots, humanoid robots, robot dogs and companion robots, closed-loop tasks, failure recovery and the next round of verification sequence.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>V1.1 · Including 2026-08 Family Physical Agent Supplement</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-08-16">2026.08.16</time></dd></div>
+      <div><dt>Source</dt><dd>Confirmed and published original research</dd></div>
+      <div><dt>Review status</dt><dd>The caliber and restrictions are disclosed with the report; the rule coding has not completed the labor standard.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Compare the mission evidence, business clues and verification priorities of different forms of home robots.</p></article>
+      <article><span>Public content</span><p>Complete method, summary count, quality gate and product judgment; does not include original posts, accounts or article-by-article corpus.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>The record number is a candidate evidence pool, not the number of users, demand rate, market size or purchase forecast; the rule label still needs to be calibrated manually.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><p><strong>Version:</strong>V1.1 (2026-08-16, including v2.1 family Physical Agent supplementary collection) |<strong>Project Catalogue:</strong> <code class="language-plaintext highlighter-rouge">（本地路径已省略） app/deepseek/泛具身用户研究</code><br/>
+<strong>Method:</strong>SURE (Structured User Research with Evidence) + E0–E5 Evidence Grading; 19 quality gates of robot dog data audit against 2026-08-06<br/>
+<strong>Conclusion attributes:</strong>Comparison and verification priorities of cross-morphological evidence maturity;<strong>No</strong>Market size, penetration rate, demand rate or sales forecast</p>
+
+<hr/>
+
+<h2 id="0-执行摘要">Zero. Executive summary</h2>
+
+<p>This study expands the scope of collection from &quot;robot dog&quot; to<strong>Pan-body family scene</strong>(Sweeping robot/sweeping robot, humanoid robot dog/quaded, companion robot/electronic pet, other household robots), reconstruct the keyword table v2 according to the SURE six sampling framework, and complete the collection with a data pipeline with complete traceability.</p>
+
+<p><strong>Data scale:</strong> raw <strong>227,272 articles</strong> → strict master <strong>208,755 articles</strong>(6 platforms, 100% traceability and de-weighting; v2.1 Reddit 12 community / HN 34 query / Bilibili 16 query according to the positioning of family Physical Agent).</p>
+
+<p><strong>One sentence conclusion:</strong>There is a significant difference in the maturity of the evidence of the four forms--<strong>The sweeping robot is the only form of closed-loop mission.</strong>, and there is real commercial evidence of &quot;buying for parents&quot;;<strong>The home scene of humanoid robot is still based on discussion/concept.</strong>(The only thing close to closure is the developer ecology);<strong>The robot dog is in the middle.</strong>: The developer&#x27;s ecological evidence is mature, and the family consumption scenario is not closed;<strong>Accompanying the robot has evidence of real payment.</strong>(Cozmo/Aibo second-hand and companion motive) but small in scale and concentrated on specific products.</p>
+
+<p><strong>Opportunity card (three-chain closure judgment, 25 cards):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th style="text-align: right">Quantity</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>closed</strong></td>
+      <td style="text-align: right">3</td>
+      <td>Sweeper × Housework Cleaning (Asstion 2,479 / Accept 267 / E5 533), Sweeper × Elderly Care (273/34/44), Sweeper × Developer Ecology (713/39/64)</td>
+    </tr>
+    <tr>
+      <td><strong>partial</strong></td>
+      <td style="text-align: right">23</td>
+      <td>Humanoid × pick-up and delivery logistics (E5=0), humanoid × remote on-site (E5=0), humanoid × developer (E5=1), humanoid × housework (E5=0), robot dog × developer (E5=1), sweeper × security/abnormal confirmation, companionship × care/emotion, etc.</td>
+    </tr>
+    <tr>
+      <td><strong>open_only</strong></td>
+      <td style="text-align: right">22</td>
+      <td>Humanoid × abnormal confirmation/independent life/accompanying, robot dog × security/recovery/remote, other forms × multi-scenes - only scene problems, no plan acceptance and commercial evidence</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Compared with the last robot dog audit:</strong>P0 (DEVELOPER/ROS/SDK PLATFORM) CONCLUSION CONTINUES TO BE ESTABLISHED BUT<strong>Surpassed by the sweeper</strong>——The maturity of the household and care scene evidence of the sweeper (E5 533/44) is much higher than that of humanoid (E5 4) and robot dogs (E5 2); the conclusion that &quot;insufficient evidence of household consumption needs of robot dogs&quot; continues to be established; the substantial evidence added this time is<strong>Mature use and care purchase of sweeping robots</strong>、<strong>Accompanying robot second-hand and emotional motivation</strong>Two directions.</p>
+
+<hr/>
+
+<h2 id="1-研究设计契约-v10">1. Research Design (contract v1.0)</h2>
+
+<h3 id="11-决策问题">1.1 Decision-making issues</h3>
+<ul>
+  <li>D1 Which scenes of the four product lines have the most mature evidence?</li>
+  <li>D2 The real tasks and frictions of various forms (E1/E2)?</li>
+  <li>D3 What forms of real purchase/rejection/return/continuous use (E4+/E4-/E5)?</li>
+  <li>D4 Evidence of the difference between China and English market?</li>
+  <li>D5 Pipeline auditability?</li>
+</ul>
+
+<h3 id="12-采样框架实现与状态">1.2 Sampling framework implementation and status</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Frame</th>
+      <th>Realize</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product</td>
+      <td>Reddit Product Community Time Slice (RobotVacuums/roomba/Roborock/ecovacs/NARWAL/AIBO/AnkiVector/Cozmo) + GitHub repository issue</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Ecosystem</td>
+      <td>robotics/ROS/homeautomation, etc. + GitHub global search + HN 43 query</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Task/Scene</td>
+      <td>Care/Pets/Security/Children 14 Community Open Scene Time Slice</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Substitute / Rejector</td>
+      <td>Discussion on substitution and return in the community (derivation) + query framework</td>
+      <td>⚠️ Query framework blocked (Arctic body 422 / PullPush 429), overwritten by time slice + coding</td>
+    </tr>
+    <tr>
+      <td>Event</td>
+      <td>Futurology/technology/gadgets Event Discussion</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Chinese</td>
+      <td>Bilibili（Playwright+API）+ YouTube-CN</td>
+      <td>⚠️ Both rounds of Bilibili were controlled by 412 risk, and 942 actual collections</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="13-采集明细">1.3 Collection details</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Canal</th>
+      <th style="text-align: right">raw</th>
+      <th style="text-align: right">strict</th>
+      <th>Explain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reddit (Arctic Shift Time Slice)</td>
+      <td style="text-align: right">201,227</td>
+      <td style="text-align: right">184,008</td>
+      <td>41 community × monthly quota (v2.1 adds 12 new scene communities), all with sampling_frame</td>
+    </tr>
+    <tr>
+      <td>Hacker News（Algolia）</td>
+      <td style="text-align: right">19,069</td>
+      <td style="text-align: right">19,023</td>
+      <td>77 queries (v2.1 +34), tags=comment</td>
+    </tr>
+    <tr>
+      <td>YouTube (Playwright browser simulation)</td>
+      <td style="text-align: right">4,036</td>
+      <td style="text-align: right">3,581</td>
+      <td>32+34 Chinese and English queries, date approximate mark</td>
+    </tr>
+    <tr>
+      <td>GitHub (Search API, no token)</td>
+      <td style="text-align: right">1,105</td>
+      <td style="text-align: right">905</td>
+      <td>Issue title + text; 10 req/min speed limit, excluding comments</td>
+    </tr>
+    <tr>
+      <td>Bilibili (Playwright+ Search/Comment API)</td>
+      <td style="text-align: right">1,270</td>
+      <td style="text-align: right">941</td>
+      <td>Three rounds of collection, multiple 412 risk control interruptions</td>
+    </tr>
+    <tr>
+      <td>StackExchange</td>
+      <td style="text-align: right">565</td>
+      <td style="text-align: right">297</td>
+      <td>300 req/day quota</td>
+    </tr>
+    <tr>
+      <td><strong>Amount to</strong></td>
+      <td style="text-align: right"><strong>227,272</strong></td>
+      <td style="text-align: right"><strong>208,755</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2 id="2-质量门19-项13-通过--6-失败">2. Quality gate (19 items: 13 passes / 6 fails)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Examine</th>
+      <th>Bear fruit</th>
+      <th style="text-align: right">Reality</th>
+      <th style="text-align: right">Threshold value</th>
+      <th>Decode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Strict record volume</td>
+      <td>✅</td>
+      <td style="text-align: right">208,755</td>
+      <td style="text-align: right">≥150,000</td>
+      <td>Be up to standard</td>
+    </tr>
+    <tr>
+      <td>The file can be parsed</td>
+      <td>✅</td>
+      <td style="text-align: right">9/9</td>
+      <td style="text-align: right">100%</td>
+      <td>JSONL can be fully parsed</td>
+    </tr>
+    <tr>
+      <td>Platform diversity</td>
+      <td>✅</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">≥6</td>
+      <td>Reddit/HN/YouTube/GitHub/Bilibili/SE</td>
+    </tr>
+    <tr>
+      <td>Single-platform concentration</td>
+      <td>❌</td>
+      <td style="text-align: right">Reddit 88.1%</td>
+      <td style="text-align: right">≤35%</td>
+      <td>Caused by the time slice design; the balance view has been capped by month × platform 3,000</td>
+    </tr>
+    <tr>
+      <td>Single-source family</td>
+      <td>❌</td>
+      <td style="text-align: right">Reddit 88.1%</td>
+      <td style="text-align: right">≤45%</td>
+      <td>Same as above; the conclusion needs to be reported by source.</td>
+    </tr>
+    <tr>
+      <td>Single thread/video</td>
+      <td>✅</td>
+      <td style="text-align: right">0.393%</td>
+      <td style="text-align: right">≤0.5%</td>
+      <td>GitHub global search is the largest thread</td>
+    </tr>
+    <tr>
+      <td>Single author</td>
+      <td>❌</td>
+      <td style="text-align: right">0.460%</td>
+      <td style="text-align: right">≤0.1%</td>
+      <td>High-frequency sweeper users; has been hashed, does not affect privacy</td>
+    </tr>
+    <tr>
+      <td>Single month</td>
+      <td>✅</td>
+      <td style="text-align: right">2023-01 4.4%</td>
+      <td style="text-align: right">≤8%</td>
+      <td>The monthly quota is valid</td>
+    </tr>
+    <tr>
+      <td>Exact date</td>
+      <td>✅</td>
+      <td style="text-align: right">98.3%</td>
+      <td style="text-align: right">≥95%</td>
+      <td>YouTube relative date has been marked approximate</td>
+    </tr>
+    <tr>
+      <td>Complete text</td>
+      <td>✅</td>
+      <td style="text-align: right">100%</td>
+      <td style="text-align: right">100%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Traceable URL</td>
+      <td>✅</td>
+      <td style="text-align: right">100%</td>
+      <td style="text-align: right">100%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Stable record ID</td>
+      <td>✅</td>
+      <td style="text-align: right">100%</td>
+      <td style="text-align: right">100%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>corpus_role+E0-E5</td>
+      <td>✅</td>
+      <td style="text-align: right">100%</td>
+      <td style="text-align: right">100%</td>
+      <td>codebook v1.0</td>
+    </tr>
+    <tr>
+      <td>Traceability query+bias</td>
+      <td>✅</td>
+      <td style="text-align: right">100%/90%</td>
+      <td style="text-align: right">≥99%</td>
+      <td>Can be replayed</td>
+    </tr>
+    <tr>
+      <td>Author&#x27;s privacy</td>
+      <td>✅</td>
+      <td style="text-align: right">Hash 98%</td>
+      <td style="text-align: right">Hash only</td>
+      <td>There is no original user name in the analysis layer.</td>
+    </tr>
+    <tr>
+      <td><strong>East Asia sampling</strong></td>
+      <td>❌</td>
+      <td style="text-align: right">Chinese 1,329 (0.6%)</td>
+      <td style="text-align: right">≥10,000</td>
+      <td>Caused by Bilibili risk control; the Chinese conclusion is only preliminary</td>
+    </tr>
+    <tr>
+      <td>Labor standard</td>
+      <td>❌</td>
+      <td style="text-align: right">0%</td>
+      <td style="text-align: right">&gt;0%</td>
+      <td>This issue is a random check of 98 desktops (see §5)</td>
+    </tr>
+    <tr>
+      <td>Rejection/return override</td>
+      <td>❌</td>
+      <td style="text-align: right">E4- 2,434 (direct corpus 4.7%)</td>
+      <td style="text-align: right">≥8%</td>
+      <td>The double impact of strict rule judgment + query framework blocked</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Core improvements (compared with the last audit):</strong>In the last 17 failures,<strong>Traceability, weight removal, date, text, URL, evidence role, privacy</strong>All 7 items have been fixed; the remaining failures are concentrated in<strong>Source concentration (design selection), Chinese quota (risk control), gold standard (unexecuted) and rejection rate (strict rules)</strong>。</p>
+
+<hr/>
+
+<h2 id="3-跨形态对比">3. Cross-form comparison</h2>
+
+<h3 id="31-语料规模与结构strict-master">3.1 Corpus scale and structure (strict master)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th style="text-align: right">Number of records</th>
+      <th style="text-align: right">Occupy the corps</th>
+      <th style="text-align: right">E3</th>
+      <th style="text-align: right">E4+</th>
+      <th style="text-align: right">E4-</th>
+      <th style="text-align: right"><strong>E5</strong></th>
+      <th style="text-align: right">The proportion of Chinese</th>
+      <th>The main source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sweeping robot/sweeping and mopping all in one</td>
+      <td style="text-align: right">44,150</td>
+      <td style="text-align: right">26.1%</td>
+      <td style="text-align: right">608</td>
+      <td style="text-align: right">2,122</td>
+      <td style="text-align: right">861</td>
+      <td style="text-align: right"><strong>1,285</strong></td>
+      <td style="text-align: right">0.5%</td>
+      <td>Reddit Product Community</td>
+    </tr>
+    <tr>
+      <td>Accompanying robot/electronic pet</td>
+      <td style="text-align: right">2,791</td>
+      <td style="text-align: right">1.7%</td>
+      <td style="text-align: right">27</td>
+      <td style="text-align: right">135</td>
+      <td style="text-align: right">69</td>
+      <td style="text-align: right"><strong>65</strong></td>
+      <td style="text-align: right">0.1%</td>
+      <td>AIBO/AnkiVector/Cozmo</td>
+    </tr>
+    <tr>
+      <td>Humanoid robot</td>
+      <td style="text-align: right">2,534</td>
+      <td style="text-align: right">1.5%</td>
+      <td style="text-align: right">15</td>
+      <td style="text-align: right">350</td>
+      <td style="text-align: right">44</td>
+      <td style="text-align: right"><strong>4</strong></td>
+      <td style="text-align: right">1.3%</td>
+      <td>HN discussion</td>
+    </tr>
+    <tr>
+      <td>Robot dog/four-leged</td>
+      <td style="text-align: right">1,097</td>
+      <td style="text-align: right">0.6%</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">18</td>
+      <td style="text-align: right"><strong>2</strong></td>
+      <td style="text-align: right">9.1%</td>
+      <td>HN/Developer</td>
+    </tr>
+    <tr>
+      <td>Other household robots</td>
+      <td style="text-align: right">376</td>
+      <td style="text-align: right">0.2%</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">36</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right"><strong>3</strong></td>
+      <td style="text-align: right">0.3%</td>
+      <td>HN</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(Evidence level: E1 32,030 / E2 7,105 / E3 668 / E4+ 2,707 / E4- 2,434 / E5 2,721 / E0 161,090)</p>
+
+<h3 id="32-形态--场景证据矩阵问题链方案链e5-商业链">3.2 Form × Scene Evidence Matrix (Problem Chain/Scheme Chain/E5 Business Chain)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scene</th>
+      <th>Sweeping robot</th>
+      <th>Human figure</th>
+      <th>Robot dog</th>
+      <th>Accompany</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Housework and cleaning</td>
+      <td>2,479/267/<strong>533</strong> ✅closed</td>
+      <td>73/3/0 ⚠️</td>
+      <td>16/0/1 ⚠️</td>
+      <td>5/0/0</td>
+    </tr>
+    <tr>
+      <td>Elderly care</td>
+      <td>273/34/<strong>44</strong> ✅closed</td>
+      <td>54/4/0 ⚠️</td>
+      <td>18/1/0 ⚠️</td>
+      <td>20/4/3 ⚠️</td>
+    </tr>
+    <tr>
+      <td>Developer ecology</td>
+      <td>713/39/<strong>64</strong> ✅closed</td>
+      <td>101/4/1 ⚠️</td>
+      <td>60/5/1 ⚠️</td>
+      <td>77/2/2 ⚠️</td>
+    </tr>
+    <tr>
+      <td>Security/inspection</td>
+      <td>74/4/8 ⚠️</td>
+      <td>10/0/0</td>
+      <td>12/1/0</td>
+      <td>9/1/0</td>
+    </tr>
+    <tr>
+      <td>Companionship/Emotion</td>
+      <td>14/4/1</td>
+      <td>9/1/0</td>
+      <td>3/0/0</td>
+      <td>17/1/<strong>3</strong> ⚠️</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(The number is the rule-coded candidate pool, which needs to be manually calibrated; &quot;✅closed&quot; is a three-chain closed card)</p>
+
+<hr/>
+
+<h2 id="4-分形态深度分析">4. In-depth analysis by morphology</h2>
+
+<h3 id="41-扫地机器人扫拖一体唯一任务闭环的形态261-语料e51285">4.1 Sweeping robot/sweeping and mopping: the form of the only task closed loop (26.1% corpus, E5=1,285)</h3>
+
+<p><strong>SURE link (representing evidence):</strong></p>
+<ul>
+  <li>Users: family buyers, long-term owners,<strong>The second buyer bought for parents</strong>, enterprise procurement (small quantity)</li>
+  <li>Tasks: whole house vacuuming/mopping automation, regular cleaning, multi-floor, pet hair, self-cleaning</li>
+  <li>Alternative: manual vacuum cleaner/mop, cleaning (&quot;bought my Roomba in 2013, it cost as much total as I pay my cleaning ladies to come once every two weeks&quot; - E5 long-term comparison), sweeper replacement</li>
+  <li>Friction (open word discovery Top signal):<strong>water tank / dirty water / clean water / mop pads / dust bin / auto empty / base station</strong>(Maintenance complexity),<strong>obstacle avoidance</strong>(Ability),<strong>factory reset / customer service</strong>(After-sales service),<strong>pet hair</strong>(Scene),<strong>black friday</strong>(The timing of purchase)</li>
+  <li>Commercial evidence: E5 1,285 (&quot;I bought the S8 plus&quot;, &quot;My Narwal T10 is an excellent mop&quot;, &quot;I bought it, there are several problems... The threshold is stuck/the rag is not clean/the fallen leaves are smeared&quot;); E4- 861 (&quot;I returned this robot...the app&quot;, &quot;Chasing T70 sewage tank moldy smell directly persuaded to withdraw&quot;)</li>
+</ul>
+
+<p><strong>Key findings:</strong></p>
+<ol>
+  <li><strong>The complaining structure has changed from &quot;do you want to buy it&quot; to &quot;after buying&quot;</strong>——Maintenance/subscription/App/reliability topic is dominated, which is a typical feature of the closed loop of the task (in stark contrast to the robot dog).</li>
+  <li><strong>&quot;Buying for parents&quot; is real and quantifiable commercial evidence of care.</strong>: eldercare×sweeper E5=44, representative example:<em>“My BoB SLAM Pet sweeps have been amazing… My parents also got one based on my recommendation.”</em>——The separation of buyers and users is the cheapest cut-in study for the care scene.</li>
+  <li>Privacy disputes persist (map upload, camera, hacking), and HN and Reddit have discussed it, which constitutes a brand trust risk.</li>
+  <li>Chinese channels (Bilibili 942) appear &quot;low-end = disaster, directly on the flagship&quot; consensus and specific complaints (moldy smell, threshold, rag), which complements the English corpus; at the same time<strong>3,999 yuan bucket version vs P20 Pro</strong>The price anchor point discussion.</li>
+</ol>
+
+<p><strong>Counter-evidence:</strong>E4- Recording coexists with the alternative discussion of &quot;the vacuum cleaner is more thorough and faster manually&quot; - the sweeper solves &quot;frequency&quot; rather than &quot;depth&quot;; the dislike of subscription/App lock is one of the main reasons for the return.</p>
+
+<h3 id="42-人形机器人围观-怀疑结构家庭场景证据未形成15-语料e54">4.2 Humanoid robot: onlookers - suspicious structure, family scene evidence is not formed (1.5% corpus, E5=4)</h3>
+
+<ul>
+  <li>The corpus has a &quot;news-onlookers-doubt&quot; structure: Optimus/Figure/Atlas is mainly questioned (hype/demo/a few years later) under the release of the news; E4-class &quot;humanoid hype&quot; is prominently discussed.</li>
+  <li>The real task description of the family scene (cleaning up, carrying, cooking) exists but<strong>Do not bind the human form</strong>——The user said &quot;I hope there is a robot to help me&quot;, but he didn&#x27;t say &quot;I want a humanoid&quot;.</li>
+  <li>The only thing close to closing is the developer ecology (E5=1: Unitree G1 purchase and deployment problem), but the sample size is 2 orders of magnitude lower than the sweeper.</li>
+  <li><strong>Brand word collision has been handled.</strong>: Nvidia Optimus (notebook graphics card) ≠ Humanoid Optimus, coding layer plus exclusion rules; random inspection shows that the humanoid form still has a 31% availability rate (the loudest noise), and it must be reviewed manually before any conclusion.</li>
+</ul>
+
+<h3 id="43-机器狗四足开发者生态成熟家庭消费未闭环06-语料e52">4.3 Robot dog/four-leged: the developer&#x27;s ecology is mature, and the household consumption is not closed-loop (0.6% corpus, E5=2)</h3>
+
+<ul>
+  <li>Consistent with the last audit: developer/ROS/SDK is the main evidence direction (Unitree Go2/G1 purchase deployment, SDK issue, ROS2 configuration).</li>
+  <li>Family scene (accompanying/security/care) problem chain exists, but the plan chain and business chain are scarce; the Chinese &quot;robot dog IQ tax/eating dust&quot; is an important counter-extence.</li>
+  <li>E5=2 is all for developers/educational purposes,<strong>No household consumption E5</strong>——The conclusion that &quot;there is insufficient evidence of the domestic consumption demand of robot dogs&quot; continues to be valid.</li>
+</ul>
+
+<h3 id="44-陪伴机器人电子宠物真实付费但规模小产品集中17-语料e575">4.4 Accompanying robot/electronic pet: real payment but small scale, product concentration (1.7% corpus, E5=75)</h3>
+
+<ul>
+  <li>After this supplementary collection of AIBO/AnkiVector/vectorrobot/Cozmo community, the real E5 appears:<em>“I bought a used cozmo from ebay to help cope with loneliness”</em>(Accompanying motivation), &quot;had both my second hand Cozmo and vector for about 2 months&quot;, &quot;bought my Cozmo from the Anki Website&quot;.</li>
+  <li>E4+/price evidence focuses on second-hand and subscription (&quot;getting a japanese aibo is cost prohibitive&quot;, &quot;3 years upfront is less expensive&quot;).</li>
+  <li>The general &quot;accompanying robot&quot; form lacks killer products; loneliness/accompanying open scenes (E1/E2) are rich but the scheme chain is weak (accompanying × accompanying/emotion E3=1).</li>
+</ul>
+
+<h3 id="45-其他家用机器人02">4.5 Other household robots (0.2%)</h3>
+
+<p>The mowing robot (Automower/Navimow) has a small number of real uses (&quot;I got an Automower this year and it&#x27;s been one of the best purchases I ever made&quot;, &quot;Just deployed a Segway Navimow&quot;), and the rest is mainly news discussion. Keep an observation and don&#x27;t set up a project.</p>
+
+<hr/>
+
+<h2 id="46-家庭-physical-agent-视角v21-追加家庭消费级人形决策主线">4.6 Family Physical Agent Perspective (v2.1 addition, family consumption-level humanoid decision-making main line)</h2>
+
+<p>According to the &quot;Research Scope Comparison_Family Human Positioning_v1.md&quot; (Reddit +12 Scene Community / HN +34 Query / Bilibili +16 Query), for the human form × four priority entrances + three technical cardpoint dimension rerun opportunity card:</p>
+
+<h3 id="461-人形--新场景证据公开语料">4.6.1 Humanoid × New Scene Evidence (Public Corpus)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scene (user caliber entrance)</th>
+      <th style="text-align: right">Chain of problems</th>
+      <th style="text-align: right">Program chain</th>
+      <th style="text-align: right">E5</th>
+      <th>State</th>
+      <th>The nature of the evidence (sample check)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Home pick-up and delivery/internal logistics</td>
+      <td style="text-align: right">65</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td>partial</td>
+      <td>Most of them are HN discussion level (&quot;hands/robots&quot; general theory), and a small number of &quot;want someone to help me take&quot; open scenes</td>
+    </tr>
+    <tr>
+      <td>Remote on-site / HITL</td>
+      <td style="text-align: right">24</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td>partial</td>
+      <td>Discussion-level main (remote/takeover concept), no family use record</td>
+    </tr>
+    <tr>
+      <td>Failed recovery</td>
+      <td style="text-align: right">23</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">1</td>
+      <td>partial</td>
+      <td>It is isomorphic to the recovery problem of the sweeper, but there is no sample on the humanoid side.</td>
+    </tr>
+    <tr>
+      <td>Family abnormality confirmation</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td>open_only</td>
+      <td>There is almost no direct expression in the public corpus (demand is scattered or overlaps with the camera scene)</td>
+    </tr>
+    <tr>
+      <td>Assisting the elderly in independent life</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td>open_only</td>
+      <td>The recall of the rules may not be enough, and the Chinese/care corpus needs to be supplemented.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Conclusion: All four entrances are not closed in the human form (E3/E5 evidence is missing), and the quality of the existing &quot;question&quot; records is mainly at the discussion level - the public corpus cannot answer &quot;which entrance market is the largest&quot;, and can only give the relative evidence intensity ranking: pick-up and delivery logistics&gt;Failure recovery ≈ Remote on-site&gt;Live independently&gt;Abnormal confirmation.</strong></p>
+
+<h3 id="462-相邻形态对照为什么取送恢复值得先做概念验证">4.6.2 Adjacent morphological comparison (why is it worth checking the concept first for delivery/recovery)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contrast</th>
+      <th>Sweeper (the task is closed-loop form)</th>
+      <th>The meaning of the humanoid entrance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Failed recovery</td>
+      <td><strong>closed</strong>: Question 490 / Accept 33 / E5 94 (&quot;Stuck/card line/cannot be restored after error&quot; is the richest negative sample in the sweeper community)</td>
+      <td>&quot;Failure Recovery&quot; is a home robot.<strong>Common user expectations</strong>; The sweeper community provides the anti-textbook material library of recovery UX, and humanoid products should take Autonomous Recovery Rate as a first-level experience indicator.</td>
+    </tr>
+    <tr>
+      <td>Pick-up and delivery/internal logistics</td>
+      <td>Closed but<strong>Part of the meaning of the word overlaps</strong>(&quot;Pick up pet hair&quot; category) - 211 questions need to be manually reviewed before they can be used as a basis for demand.</td>
+      <td>The open scene of pick-up and delivery needs expresses the real existence (&quot;I want someone to help me get something&quot;), but<strong>Do not bind the form</strong>——The increment of &quot;humanoid/operation arm&quot; relative to &quot;fixed position storage/service&quot; must be verified by concept testing.</td>
+    </tr>
+    <tr>
+      <td>Remote presence</td>
+      <td>Partial (28/4/8, E5=8 for real use)</td>
+      <td>The sweeper with camera + App remote viewing has been used in real life - the feasibility of the HITL channel has been verified, and the human figure needs to answer the increment of &quot;mobile + operation&quot;</td>
+    </tr>
+    <tr>
+      <td>Abnormal confirmation</td>
+      <td>partial（49/2/4）</td>
+      <td>Overlap with security cameras/smart home alarms; public corpus shows that users have alternatives (fixed cameras) - the incremental value is doubtful</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="463-对产品定义的启示对应材料四条产品定义原则">4.6.3 Enlightenment on product definition (corresponding materials&quot; &quot;Four Product Definition Principles&quot;)</h3>
+
+<ol>
+  <li><strong>Role&gt;List of functions</strong>: The role expectation expression (role_expectation scenario) of &quot;robot butler / butler / assistant / errand runner&quot; in the corpus can be retrieved. It is recommended that the concept test directly use the role framework instead of the function list.</li>
+  <li><strong>Narrow Product Promise</strong>: Among the four entrances, the task boundary of pick-up and delivery logistics is the clearest (&quot;pick-delive-return common items&quot;), which is in line with the &quot;General Hardware + Narrow Promise&quot; route.</li>
+  <li><strong>The boundary of initiative</strong>: The semantic_safety scene (knife/drug/gas/child presence/rejection task) has a fragmentary expression in the corpus, and it is recommended to enter the permission framework design of the concept test.</li>
+  <li><strong>Failure/Recovery UX</strong>: Sweeper E4- Record (&quot;returned this robot...the app&quot;) proof<strong>Failure experience directly drives the return</strong>——Recovery UX should be included in the acceptance standards of the first version of PRD.</li>
+</ol>
+
+<h3 id="464-局限">4.6.4 Limitations</h3>
+
+<p>The humanoid × new scene count is all from the rule code and the volume is very small (2–65),<strong>Any ranking is a hypothetical priority, not a market conclusion.</strong>; It is recommended to make the four entrances directly into 4 sets of concept tests (closed-loop / recovery UX / HITL takeover / abnormal confirmation), with 15–20 family samples in each group, compared with the conclusion of the public corpus.</p>
+
+<h2 id="5-编码质量抽查95-条桌面复核75-条给出判定">5. Random inspection of coding quality (95 desktop reviews, 75 judgments)</h2>
+
+<p>The rule codebook (codebook v1.0) is a candidate discovery, which must be manually calibrated before entering the commercial conclusion. This random inspection:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th style="text-align: right">Determine the availability rate (OK+BORDERLINE)</th>
+      <th>Main noise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sweeping robot</td>
+      <td style="text-align: right">81%（n=16）</td>
+      <td>A small number of question sentences, dock-return, &quot;send it back out&quot; and other words misjudgment</td>
+    </tr>
+    <tr>
+      <td>Accompanying robot</td>
+      <td style="text-align: right">81%（n=16）</td>
+      <td>Product update copywriting mismarking, child-driven purchase (BORDERLINE)</td>
+    </tr>
+    <tr>
+      <td>Robot dog</td>
+      <td style="text-align: right">50%（n=14）</td>
+      <td>SDK error,<strong>Apple Cyberdog mail client crash name</strong>, Kickstarter sponsorship mismark</td>
+    </tr>
+    <tr>
+      <td>Other household robots</td>
+      <td style="text-align: right">54%（n=13）</td>
+      <td>Pan-&quot;home robot&quot; discussion, Kattis programming questions are wrongly marked</td>
+    </tr>
+    <tr>
+      <td>Humanoid robot</td>
+      <td style="text-align: right">38%（n=16）</td>
+      <td>Optimus hit the name, macro discussion wrong bid; effective E4+ is mostly the industry price anchor ($100/actuator)</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: right"><strong>61%（46/75）</strong></td>
+      <td>Misjudgment is concentrated in E4-/E5 boundary and morphological attribution (brand collision is the main source of FALSE_FORM)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Conclusion:</strong>The candidate pool of the sweeper/accompanying form has a high reliability; the count of humanoid/other forms<strong>It can only be used as a directional search entrance.</strong>, it must be reviewed manually first. The 600–1,000 stratified labor standard (kappa≥0.70) is a prerequisite for entering any commercial conclusion.</p>
+
+<hr/>
+
+<h2 id="6-中国市场视角中文-1329-条未达-10000-配额">Six Chinese market perspective (1,329 articles in Chinese, not reaching the quota of 10,000)</h2>
+
+<ul>
+  <li><strong>Bilibili</strong>Both rounds of collection were interrupted by 412 risk control (IP level), and 942 pieces were actually collected;<strong>YouTube-CN</strong>Several. The availability of the channel has been verified (search API + comment API can be used), and it can be replenished incrementally after the risk control cools down.</li>
+  <li>There are already Chinese signals (preliminary): the consensus of &quot;low-end = disaster, directly on the flagship&quot; of the sweeper; specific complaints (moldy smell/threshold/unclean rag/fallen leaves smear) are highly consistent with the English; the Chinese expression of &quot;buy a sweeper for parents&quot; also exists; robot dogs/humanoids are mainly questioned by &quot;IQ tax&quot;.</li>
+  <li><strong>Limitations:</strong>The sample comes from the search result page (sorting deviation) and cannot represent the size of the Chinese market; all Chinese conclusions are marked as preliminary.</li>
+</ul>
+
+<hr/>
+
+<h2 id="7-开放词发现证据池-e1e5211-个候选信号">Seven Open word discovery (evidence pool E1–E5, 211 candidate signals)</h2>
+
+<p>Sort by unique thread × platform × month weighted (non-original frequency) Top:<strong>water tank / customer service / mental health / obstacle avoidance / base station / vacuum mop / assisted living / dirty water / pet hair / auto empty / factory reset / family member / black friday</strong>—— Corresponding to four main lines:<strong>Sweeper maintenance complexity, after-sales support, care/accompanying scene, obstacle avoidance ability</strong>。</p>
+
+<hr/>
+
+<h2 id="8-机会卡与下一步验证路线按最便宜证伪优先">8. Opportunity card and next-step verification route (priority according to the cheapest falsification)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Directions</th>
+      <th>The cheapest verification</th>
+      <th>On the basis of</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P0</td>
+      <td>The care scene of &quot;buying a sweeper for parents&quot;</td>
+      <td>20 groups of buyer-user double interview (who buys, parents use it or not, substitution, friction)</td>
+      <td>Eldercare×sweeper E5=44, three chains closed</td>
+    </tr>
+    <tr>
+      <td>P0</td>
+      <td>Sweeper Subscription/App/Privacy Dispute</td>
+      <td>200 E4- Manual review + return rate comparison (authorized data)</td>
+      <td>E4- 861 candidates</td>
+    </tr>
+    <tr>
+      <td><strong>P0 (main line of humanoid products)</strong></td>
+      <td>Home pick-up and delivery/internal logistics concept test</td>
+      <td>One of the 4 group concept tests: pick-send-return common items closed loop, 15–20 family samples</td>
+      <td>Human figure × pick-up and delivery problem chain 65 (unbound form) + sweeper comparison</td>
+    </tr>
+    <tr>
+      <td><strong>P0 (main line of humanoid products)</strong></td>
+      <td>Failed to restore UX test</td>
+      <td>One of the 4 sets of concept tests: capture failure → retry → change method → ask for help → give up reporting Level 5 experience</td>
+      <td>Sweeper recovery problem chain 490 (E4- one of the main causes of return)</td>
+    </tr>
+    <tr>
+      <td><strong>P0 (main line of humanoid products)</strong></td>
+      <td>HITL/Remote Takeover Test</td>
+      <td>One of the 4 concept tests: remote takeover + people in the loop process</td>
+      <td>Remote viewing of the sweeper E5=8 is feasible; humanoid side E5=0</td>
+    </tr>
+    <tr>
+      <td><strong>P1 (main line of humanoid products)</strong></td>
+      <td>Abnormal confirmation test</td>
+      <td>One of the 4 sets of concept tests: water leakage/abnormal sound/alarm confirmation, compared with the fixed camera</td>
+      <td>Humanoid × abnormal confirmation only 2 questions - the weakest entrance, priority forgery</td>
+    </tr>
+    <tr>
+      <td>P1</td>
+      <td>Humanoid robot family expectations vs form</td>
+      <td>Concept test: matching/not matching humanoid for the same task, measuring the difference in acceptance</td>
+      <td>Humanoid E3=15 and loud noise, E5=4, manual review first</td>
+    </tr>
+    <tr>
+      <td>P1</td>
+      <td>Robot dog family scene</td>
+      <td>Continue the check-in narrow concept of the last audit and co-create verification</td>
+      <td>Robot dog family consumption E5=0 (full corpus robot dog E5 only 2, all of which are developers)</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>Accompanying robot</td>
+      <td>Aibo/Cozmo Owner&#x27;s 30-day Diary + Interview with the Retret</td>
+      <td>companion E5=65</td>
+    </tr>
+    <tr>
+      <td>Infrastructure</td>
+      <td>Labor standard</td>
+      <td>600–1,000 hierarchical codes, kappa≥0.70</td>
+      <td>The availability rate of random inspection is 64% (new scenarios need to be calibrated separately)</td>
+    </tr>
+    <tr>
+      <td>Infrastructure</td>
+      <td>Query framework supplementary collection</td>
+      <td>PullPush/Arctic body make up after recovery rejector/substitute</td>
+      <td>Two APIs are currently blocked</td>
+    </tr>
+    <tr>
+      <td>Infrastructure</td>
+      <td>Chinese channel supplementary collection</td>
+      <td>Bilibili 412 time-displit re-mining after cooling (verified and available)</td>
+      <td>Only 1,329 articles in Chinese</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2 id="9-局限性完整">9. Limitations (complete)</h2>
+
+<ol>
+  <li><strong>Rule coding noise</strong>: E0–E5 is determined by the rules, and the availability rate of random checks is 64% (humanoid 31%); all counts are &quot;candidate evidence pool&quot;, not the accuracy rate. V2.1 New scenes (pick-up/abnormal/remote/independent life) have a small level (2–65), and the sorting is a hypothetical priority.</li>
+  <li><strong>Query framework blocked</strong>: Arctic body search 422 + PullPush 429 throughout the whole process, rejector/substitute directional query is not executed; derived coverage from time slice + code (E4- 4.7% of direct, less than 8% design line).</li>
+  <li><strong>Bilibili risk control</strong>: 412 multiple interruptions, 1,329 Chinese articles&lt;10,000 quota; the Chinese conclusion is preliminary.</li>
+  <li><strong>GitHub no token</strong>: Only issue title + text, 10 req/min speed limit; StackExchange quota 300 req/day.</li>
+  <li><strong>Platform concentration</strong>: Reddit 88.1%; Conclusions are listed by source, but the overall representativeness is still limited.</li>
+  <li><strong>Time/event confusion</strong>: The collection window data in 2026 is naturally more; the monthly distribution is interpreted according to the quota, and the event is not marked.</li>
+  <li><strong>The scene label is loose and co-appears.</strong>: The scene word and the morphological word appear together in the full text, and there is a weak correlation (for example, the word eldercare appears in the family context of the sweeper community, and the direction is a real signal but needs to be confirmed manually).</li>
+  <li><strong>No labor fee standard</strong>: In this issue, it will be replaced by 95 desktop random checks (53 will be judged); 600–1,000 layered manual codes must be completed before making business decisions.</li>
+  <li><strong>The date of YouTube is approximate</strong>: The relative time (&quot;1 year ago&quot;) is converted to an approximate date and marked, which cannot be used for accurate monthly trends.</li>
+</ol>
+
+<hr/>
+
+<h2 id="10-与上次审计2026-08-06的对照">10. Compared with the previous audit (2026-08-06)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>The last conclusion</th>
+      <th>This verification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P0: Developer/ROS/SDK platform evidence is the most mature</td>
+      <td>⚠️ Surpassed by the sweeper - the developer ecology is still established (3 forms × developers ≥partial), but the sweeper housework/care E5 order is higher; humanoid × developer E5=1 (Unitree G1 deployment)</td>
+    </tr>
+    <tr>
+      <td>P1: Robot pets have real payment</td>
+      <td>✅ Established (companion E5=65, including second-hand purchase and accompanying motivation), but the product is concentrated (Cozmo/Aibo)</td>
+    </tr>
+    <tr>
+      <td>P2: Strong mobile inspection problem, weak commercial evidence</td>
+      <td>✅ Established (all security scenarios partial/open_only)</td>
+    </tr>
+    <tr>
+      <td>General housework is suspended (the robot dog form is not closed loop)</td>
+      <td>✅ Establish;<strong>The sweeping robot provides a control sample of &quot;closed-loop form&quot;</strong></td>
+    </tr>
+    <tr>
+      <td>Serious care problems and high privacy/security risks</td>
+      <td>✅ Establishment + New Discovery:<strong>&quot;Buying a sweeper for parents&quot; is a real care business behavior.</strong></td>
+    </tr>
+    <tr>
+      <td>Data layer mixing/no traceability/no E0-E5</td>
+      <td>✅ Repaired (this set of data contracts, 7 out of 19 items of data infrastructure classes are all passed)</td>
+    </tr>
+    <tr>
+      <td>Missing sampling in East Asia</td>
+      <td>⚠️ Partial repair (1,329 in Chinese, the channel has been verified, the quota has not been reached)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2 id="附录-a关键代表证据证据账本节选">Appendix A: Key Representative Evidence (Excerpt from the Evidence Book)</h2>
+
+<ol>
+  <li><strong>Sweeper × Care E5</strong>：<em>“My BoB SLAM Pet sweeps have been amazing. Got 1 &amp; loved it so much that I bought one more for upstairs and 2 for my business. My parents also got one based on my recommendation.”</em>（r/RobotVacuums）</li>
+  <li><strong>Sweeper × Housework E4- (Chinese)</strong>：<em>&quot;I just bought the chasing T70ultra... sewage tank... there will be obvious moldy smell... I was directly persuaded to return it&quot;</em>（Bilibili）</li>
+  <li><strong>Sweeper × Housework E5</strong>：<em>“When I bought my Roomba in 2013, it cost as much total as I pay my cleaning ladies to come once every two weeks”</em>（Reddit）</li>
+  <li><strong>Companionship × Emotion E5</strong>：<em>“I bought a used cozmo from ebay to help cope with loneliness”</em>（r/Cozmo）</li>
+  <li><strong>Robot Dog × Developer E5</strong>：<em>“Recently, I purchased a Unitree G1 robot and would like to deploy a PyTorch-trained .pt model…”</em>（robotics.SE）</li>
+  <li><strong>Humanoid × Doubt E4-</strong>：<em>“The level of hype about AI, Machine Learning and Robotics completely distorts people’s understanding of reality”</em>（HN）</li>
+  <li><strong>Mowing × E3</strong>：<em>“I got an Automower this year and it’s been one of the best purchases I ever made”</em>（Reddit）</li>
+</ol>
+
+<h2 id="附录-b交付物清单">Appendix B: List of Deliverables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reports/泛具身家庭场景用户需求研究报告_2026-08-16.md</code></td>
+      <td>This report</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reports/泛具身用户研究审计工作簿_2026-08-16.xlsx</code></td>
+      <td>13 worksheets: overview/quality audit/cross-form × scene/morphological portrait/evidence level distribution/opportunity card/evidence ledger/label spot check/monthly trend/open word discovery/document list/platform distribution/monthly distribution</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docs/关键词表_v2.md</code></td>
+      <td>Keyword table v2 (six frameworks, Chinese and English, extension method)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docs/研究契约_泛具身家庭场景_v1.md</code></td>
+      <td>Research contract</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">config/queries.json</code></td>
+      <td>Machine can execute query configuration (v2.0)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/raw/*</code></td>
+      <td>Original six layers (additional only)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/processed/strict_master_2023plus.jsonl</code></td>
+      <td>Strict master (208,755)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/processed/analysis/*</code></td>
+      <td>Analysis output (opportunity card/ledger/matrix/monthly/balanced view/open word)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">scripts/*</code></td>
+      <td>Complete reproducible pipeline (collection/construction/audit/analysis/workbook)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/embodied-industry/">In-body intelligent industry</a><p>How to put robot demonstration, technical route and real delivery into the same industry map?</p></li><li><a href="/en/knowledge/collections/home-robots/">Home robot</a><p>What tasks are home robots worth entering into daily life, and who will take over after failure?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,285 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/bci-industry-anonymized/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/bci-industry-anonymized/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/bci-industry-anonymized/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Consumer-grade brain imaging: scenarios, paid evidence and verification sequence | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="消费级脑成像：场景、付费证据与验证顺序"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="研究问题"/>
+<meta property="og:description" content="研究问题"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/bci-industry-anonymized/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/bci-industry-anonymized/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="消费级脑成像：场景、付费证据与验证顺序"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"研究问题","headline":"消费级脑成像：场景、付费证据与验证顺序","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/bci-industry-anonymized/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/bci-industry-anonymized/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/bci-industry-anonymized/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/bci-industry-anonymized/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>Consumer-level brain imaging: scene, paid evidence and verification sequence</h1>
+    <p class="kb-summary">The technical constraints, consumer scenarios, professional procurement and paid evidence of wearable brain imaging are disassembled, and the conclusion of the desensitization research is given what to verify first and what cannot be launched.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>2026-10 Desensitization public version</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-10-02">2026.10.02</time></dd></div>
+      <div><dt>Source</dt><dd>Desensitization research and sorting; customers, companies, products, experts and source links are not disclosed</dd></div>
+      <div><dt>Review status</dt><dd>The customer and the identifiable subject have been removed; the technical boundary and research date are retained.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>To evaluate consumer-grade brain imaging products, what kind of task, what kind of buyer and what level of evidence should be verified first.</p></article>
+      <article><span>Public content</span><p>Industry structure, research methods and summary conclusions; excluding customer names, technology providers, interviewees, procurement documents or product models.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>It is not the validity of medical devices, the market size or the prospect of a company; after anonymization, the specific subject cannot be investigated based on this.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><h2 id="研究问题">Research problems</h2>
+
+<p>A new type of wearable brain imaging device hopes to enter sports training, physical and mental health and daily state management. The technical ability seems clear, but the product problem is not automatically established:</p>
+
+<ul>
+  <li>What kind of users need additional brain status information at what time?</li>
+  <li>Why are the existing load, heart rate, sleep and subjective scales not enough?</li>
+  <li>Who is willing to pay for &quot;an extra layer of information&quot;, an individual, a coach, a club or a research institution?</li>
+  <li>From measuring the signal to changing a decision, what verification is missing in the middle?</li>
+</ul>
+
+<p>This page only discusses these issues and does not evaluate any specific equipment or institutions.</p>
+
+<h2 id="三层市场不能混算">The three-tier market can&#x27;t be mixed.</h2>
+
+<p>Public materials often put three types of budgets together:</p>
+
+<ol>
+  <li><strong>Scientific research and clinical equipment budget</strong>: The buyer is a laboratory, hospital or research platform, with a long decision-making cycle, and attaches importance to parameters, methods and compliance;</li>
+  <li><strong>Professional sports and institutional service budget</strong>: The buyer is a club, training center or guarantee team, paying attention to on-site usability and decision-making gain;</li>
+  <li><strong>Budget for consumer health equipment</strong>: The buyer is an individual and pays attention to wearing, price, brand and instant feedback.</li>
+</ol>
+
+<p>The existence of scientific research procurement does not mean that consumer demand is established; the willingness of consumers to try does not mean that institutions will purchase. The three layers of products, evidence and channels must be separated.</p>
+
+<h2 id="证据链">Chain of evidence</h2>
+
+<p>For consumer-level new products, the most common mistake is to use questionnaires to measure imagination. The order of more reliable evidence is:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>What do you need to see?</th>
+      <th>What can be supported?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E0</td>
+      <td>Scene and activity context</td>
+      <td>It can only show that the problem may occur.</td>
+    </tr>
+    <tr>
+      <td>E1</td>
+      <td>Identify tasks, pain points and expected results</td>
+      <td>Hypothesis of supporting problems</td>
+    </tr>
+    <tr>
+      <td>E2</td>
+      <td>Alternative, detour, failure or cost</td>
+      <td>It proves that the user has taken action on the problem.</td>
+    </tr>
+    <tr>
+      <td>E3</td>
+      <td>Real interaction and selection of candidates</td>
+      <td>Support plan accepted</td>
+    </tr>
+    <tr>
+      <td>E4</td>
+      <td>Real purchase or transaction</td>
+      <td>Support business behavior</td>
+    </tr>
+    <tr>
+      <td>E5</td>
+      <td>Continuous use, repurchase or expansion</td>
+      <td>Support retention and long-term value</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Different stages cannot replace each other. A large number of scenario discussions cannot be upgraded to purchase evidence; a trial cannot prove long-term use.</p>
+
+<h2 id="技术约束必须先写进产品定义">Technical constraints must be written into the product definition first.</h2>
+
+<p>Research after anonymization retains four types of hard constraints:</p>
+
+<ul>
+  <li>Signal quality and motion artifacts: whether the device can stably obtain available signals in real activities;</li>
+  <li>Wearing burden: added weight on the head, position stability and long-term comfort;</li>
+  <li>Information increment: compared with the existing indicators, whether the new signal changes the judgment;</li>
+  <li>Using links: whether preparation, calibration, waiting, interpretation and exception handling are simple enough.</li>
+</ul>
+
+<p>If the device can only work in a static environment, the demand cannot be proved by the discussion volume of the dynamic scene. If incremental information cannot change the choice of the coach or user, stronger sensors will not automatically form product value.</p>
+
+<h2 id="付费证据的结构">The structure of paid evidence</h2>
+
+<p>Public research has not found that the consumer-grade whole machine has formed a stable scale of purchase. The more common payment subjects are:</p>
+
+<ul>
+  <li>Equipment procurement for research and educational institutions;</li>
+  <li>Project budget for professional training or health services;</li>
+  <li>Teams with clear research needs for specific abilities.</li>
+</ul>
+
+<p>However, institutional procurement may also come from research budgets, policy projects or equipment updates, which is not equal to market-oriented product demand. For each piece of paid evidence, it should be answered: who paid, what was bought and delivered, whether the contract was renewed, and whether it can be copied in a similar institution.</p>
+
+<h2 id="最便宜的验证顺序">The cheapest verification order</h2>
+
+<ol>
+  <li>Use existing indicators to complete the same task, and record which step the user cannot judge;</li>
+  <li>Only add target signals, compare with tasks, and observe whether the decision-making has changed;</li>
+  <li>Interview buyers, users and maintainers separately;</li>
+  <li>Verify the attribution of the budget with real procurement or paid pilot;</li>
+  <li>Only after the first three steps are established can the scene and sample be expanded.</li>
+</ol>
+
+<p>This is cheaper than continuing to expand the public corpus, and it is also more able to prove falsifying in advance.</p>
+
+<h2 id="边界">Border</h2>
+
+<p>This page does not provide medical conclusions, treatment effects, market size or specific procurement subjects. The original research involved customers, experts, products and procurement materials. The public version has deleted this information, and only the reusable research sequence and judgment framework are retained.</p>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>How to make the demand, competitive products, organization and version evidence really support the next decision?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

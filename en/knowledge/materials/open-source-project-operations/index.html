@@ -1,0 +1,692 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/open-source-project-operations/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/open-source-project-operations/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/open-source-project-operations/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to do a good GitHub open source project: methodology and tool panorama | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="如何做好 GitHub 开源项目：方法论与工具全景"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="研究日期：2026-10-11 研究方式：四个并行研究员实网查证（①权威方法论 ②增长实战 ③工具资产与 skill 生态 ④实证数据），关键论断附来源 URL，非凭记忆 服务对象：开源项目库用途①「学习如何经营 GitHub 项目」；可直接支撑 AgentMeasure 运营 证据标注约定：来源括注为一手复盘/官方文档/同行评审论文/行业调查；少数被搜索工具截断到域名级的链接单独注明"/>
+<meta property="og:description" content="研究日期：2026-10-11 研究方式：四个并行研究员实网查证（①权威方法论 ②增长实战 ③工具资产与 skill 生态 ④实证数据），关键论断附来源 URL，非凭记忆 服务对象：开源项目库用途①「学习如何经营 GitHub 项目」；可直接支撑 AgentMeasure 运营 证据标注约定：来源括注为一手复盘/官方文档/同行评审论文/行业调查；少数被搜索工具截断到域名级的链接单独注明"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/open-source-project-operations/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/open-source-project-operations/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="如何做好 GitHub 开源项目：方法论与工具全景"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"研究日期：2026-10-11 研究方式：四个并行研究员实网查证（①权威方法论 ②增长实战 ③工具资产与 skill 生态 ④实证数据），关键论断附来源 URL，非凭记忆 服务对象：开源项目库用途①「学习如何经营 GitHub 项目」；可直接支撑 AgentMeasure 运营 证据标注约定：来源括注为一手复盘/官方文档/同行评审论文/行业调查；少数被搜索工具截断到域名级的链接单独注明","headline":"如何做好 GitHub 开源项目：方法论与工具全景","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/open-source-project-operations/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/open-source-project-operations/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/open-source-project-operations/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/open-source-project-operations/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>How to do a good GitHub open source project: methodology and tool overview</h1>
+    <p class="kb-summary">Organize the official guidelines, open source collaboration classics, maintainer attention economy, governance and security practices into a set of open source project management methods.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>Methodological Panorama · 2026-10</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-10-12">2026.10.12</time></dd></div>
+      <div><dt>Source</dt><dd>Original collation based on public methods, public documents and public cases</dd></div>
+      <div><dt>Review status</dt><dd>Public sources can be checked back; dynamic rankings and case status need to be updated by date.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Check the gaps in positioning, documentation, governance, community, security and long-term maintenance of an open source project.</p></article>
+      <article><span>Public content</span><p>Methodology and public cases; do not include private project operation data or unauthorized community dialogue.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>The methodology does not guarantee the growth of the project; star, download and discussion volume cannot replace the actual adoption and continuous maintenance.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><ul>
+  <li>Research date: 2026-10-11</li>
+  <li>Research method: four parallel researchers verified the real network (1 authoritative methodology 2 growth practice 3 tool assets and skill ecology 4 empirical data), the key assertion is attached to the source URL, not by memory</li>
+  <li>Service object: open source project library purpose 1 &quot;learn how to run GitHub projects&quot;; can directly support the operation of AgentMeasure</li>
+  <li>Evidence labeling agreement: the source bracket is first-hand review/official document/peer review paper/industry survey; a few links cut off to the domain level by the search tool are indicated separately.</li>
+</ul>
+
+<hr/>
+
+<h2 id="结论速览tldr">Quick view of the conclusion (TL;DR)</h2>
+
+<ol>
+  <li><strong>There is no ready-made &quot;open source project operation skill&quot;</strong>: There is no counterpart in the 30+ skills of this machine; the community side - Anthropic official skills warehouse (19 skills), five mainstream Claude skills catalogs (tens of thousands in total), GitHub search by &quot;open source maintenance skill&quot; - there is no such skill. The blank is real, but the distillation materials are complete (see Section 8), and it is worth building one yourself.</li>
+  <li><strong>The methodology itself is very mature.</strong>, six complementary: GitHub official opensource.guide (personal maintainer full-cycle checklist), Karl Fogel &quot;Producing OSS&quot; (the operating principle of multi-person collaborative machine), Nadia Eghbal &quot;Working in Public&quot; (maintenant attention economics), TODO Group (enterprise OSPO perspective), OpenSSF Badge/Scorecard (engineering health bottom line), CHAOSS (health measurement dashboard).</li>
+  <li><strong>The biggest difference of all methodologies</strong>: &quot;Absorb more contributors&quot; (opensource.guide) vs &quot;Protect the attention of maintainers&quot; (Working in Public). The AI slop tide of 2025-2026 (curl about 20% submission is AI slop, Google freezes OSS vulnerability reward channel to 2027) makes the balance obviously fall to the latter.</li>
+  <li><strong>The hardest in empirical terms</strong>: Issue The Duration Of The First Response Determines The Retention Of Newcomers (Zhou&amp;Mockus 2015, IEEE TSE); star is an attention indicator, not an adoption indicator (Borges&amp;Valente 2018), and the fake star has eroded 16%+ of popular warehouses (CMU StarScout, ICSE 2026); 65% of popular project truck factor ≤2 (Avelino 2016); 16% of popular projects have been abandoned, of which 41% are saved by new core developers (Avelino 2019).</li>
+  <li><strong>The method of repeatedly verified on the growth side</strong>: Document first (don&#x27;t push much before the document station is built), README as a landing page, multi-channel daily scheduling to make the kinetic energy transparent within the 24-48-hour window (Trending according to the star growth rate ranking in the window rather than the total amount), release day and second reply to comments, and change the message after the first release can be sent again.</li>
+  <li><strong>For the current work</strong>: AgentMeasure can directly use GitHub Community Standards + OpenSSF Scorecard as an operation acceptance list; this report can be further distilled into its own skill.</li>
+</ol>
+
+<hr/>
+
+<h2 id="一有没有现成-skill调查结论">I. Do you have any ready-made skills? ( Conclusion of the investigation)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Check the position</th>
+      <th>Bear fruit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local skills list (30+: content writing/research/outreac/document office, etc.)</td>
+      <td>No counterpart</td>
+    </tr>
+    <tr>
+      <td>Anthropics/skills official warehouse (180k stars, 19 skills)</td>
+      <td>All are docx/pdf/pptx/xlsx/front-end/API class, no open source operation</td>
+    </tr>
+    <tr>
+      <td>ComposioHQ/awesome-claude-skills (76.8k stars, maximum catalog)</td>
+      <td>There is no open source/maintainer/repo operation entry in the category</td>
+    </tr>
+    <tr>
+      <td>Travisvn, BehiSecc, seb1n, futantan, helloianneo and other four mainstream skills catalogs</td>
+      <td>None of them</td>
+    </tr>
+    <tr>
+      <td>Obra/superpowers (community large skills library)</td>
+      <td>15 are all development process classes (TDD/debugging/code review), none</td>
+    </tr>
+    <tr>
+      <td>GitHub Search by &quot;open source maintenance skill&quot;</td>
+      <td>No hit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Conclusion: There is no &quot;open source project operation skill&quot; in the community that is included in the mainstream catalog and ready to use.</strong>The closest substitute is the four-layer combination:</p>
+
+<ol>
+  <li><strong>Content layer</strong>: opensource.guide (with official simplified Chinese version https://opensource.guide/zh-hans/) + &quot;Producing Open Source Software&quot; Chinese version (https://producingoss.com/ in Chinese)</li>
+  <li><strong>Execution layer</strong>: GitHub Community Standards Checklist +<code class="language-plaintext highlighter-rouge">.github</code>Default community health file mechanism (platform native, machine executable)</li>
+  <li><strong>Automation layer</strong>: semantic-release / release-please / Renovate / Dependabot / stale bot / anti-slop and other ready-to-use parts</li>
+  <li><strong>Agentic layer (newly added in 2025-26)</strong>: AGENTS.md, llms.txt, AI contribution policy</li>
+</ol>
+
+<hr/>
+
+<h2 id="二方法论版图三大学派--三个辅助体系">II. Methodological layout: three university schools + three auxiliary systems</h2>
+
+<h3 id="21-github-官方-opensourceguide--个人维护者全周期-checklist">2.1 GitHub official opensource.guide - personal maintainer full cycle checklist</h3>
+
+<p>Link: https://opensource.guide/ (GitHub maintenance; repository https://github.com/github/opensource.guide, 15.7k stars, including simplified and traditional Chinese and other 28 languages)</p>
+
+<p>All 13 Chapters: Participation and Contribution / Launching Projects / Finding Users / Building Popular Communities / Maintainer Best Practices / Leadership and Governance / Compensation / Code of Conduct / Indicators / Legal Level / (New) Security Best Practices / (New) Maintainer Balance and Self-Care / (New) Barrier-Free.</p>
+
+<p>Key chapters advocate:</p>
+
+<ul>
+  <li><strong>Start the project</strong>: There is no perfect timing. The standard is &quot;willing to let others see your work and give feedback&quot;; the required four-piece set of LICENSE+README+CONTRIBUTING+CODE_OF_CONDUCT; naming and checking trademarks, pre-registered domain names and social accounts; checking sensitive information before release; at least two people of the open source organization have management authority.</li>
+  <li><strong>Looking for users</strong>: First think clearly about what problem to solve; give the project a unified homepage (the co-founder of Django said that building a station was the most right thing in the early stage); go to the audience gathering place (HN/Reddit/SO/meetup/meetup) to publish accurately, &quot;help others first and then expect return&quot;; trust depends on time, there is no shortcut to become popular overnight.</li>
+  <li><strong>Build a community</strong>: The key to the contributor funnel is to reduce friction at each stage; document priority (GitHub 2017 survey: incomplete documents are the biggest pain point); the return rate of contributors who receive a code review response within 48 hours is significantly higher (Mozilla research); record everything openly; zero tolerance for bad actors; good first issue to welcome newcomers; &quot;README is the charter&quot; in case of conflict.</li>
+  <li><strong>Best practices for maintainers</strong>: Record everything (vision is written into README/VISION to prevent scope creep); &quot;No is temporary, yes is forever&quot;; automation (test, semantic-release, dependdabot, template); allow the suspension of anti-burnout - &quot;the happiness of the maintainer is the non-negotiable requirement for the survival of the project&quot;.</li>
+  <li><strong>Administer</strong>: Role three-point maintainer/contributor/committer; GOVERNMENTANCE.md write the promotion path; three modes BDFL (Python)/elite system (Apache)/free contribution system (Node.js/Rust), the commonality is greater than the difference.</li>
+  <li><strong>Get paid</strong>: Popular project maintenance 10-20 hours a week; Path: Persuasion of employers, independent financing, bounty, OpenCollective, paid support (Sidekiq), paid hosting (Ghost), foundation; apply for funding should be able to answer five questions (influence/traction/value to the funder/use of funds/receiving method).</li>
+  <li><strong>Target</strong>: Four categories - discovery (Traffic/stars), use (download/clones), retention and contribution (first-time/accidental/repeated contributor ratio), maintainer response (response time is the key to encouraging repeated contributions, and confirmation does not need to be processed immediately).</li>
+</ul>
+
+<h3 id="22-karl-fogelproducing-open-source-software-多人协作机器">2.2 Karl Fogel &quot;Producing Open Source Software&quot; - Multiplayer Collaborative Machine</h3>
+
+<p>Link: https://producingoss.com/ (version 2 CC BY-SA full text is free,<strong>There is an official simplified Chinese version.</strong>; The 3rd version is being written)</p>
+
+<ul>
+  <li><strong>Three axioms of transparency</strong>(Chapter 2): Avoid private discussion, explicit code review, and open from the first day.</li>
+  <li><strong>Written culture</strong>(Chapter 6): &quot;Writing clearly is one of the most important skills that a person can have&quot;; In the long run, those who are good at communication can influence the direction of the project more than those who are only good at programming; identify the bikeshed effect (the smaller the topic, the longer the argument); the five-step process of safe disclosure.</li>
+  <li><strong>Commit permission</strong>(Chapter 8): Hippocratic principle &quot;first of all, do not cause harm&quot; - the most important criterion is judgment, not technical ability; relaxed attitude (88 out of 100 committers only correct typos every year is better than only 12 greatness); revocation authority is &quot;the situation that should be avoided as much as possible&quot;, and the revocation discussion must be carried out privately (the only express exception of the transparency principle), but the rules and lists must be made public (MAINTAINERS/COMMITTERS documents are pinned to the top).</li>
+  <li><strong>&quot;Credit is the main currency of the free software world&quot;</strong>: Those who are thanked for their small contributions will come back to do more.</li>
+  <li><strong>Administer</strong>(Chapter 4): forkability is the foundation of governance - &quot;the possibility of forking is the reason why there is no real dictator in free software projects&quot;; the aging of the project will tend from BDFL to consensus democracy (group governance is more stable in evolution and will hardly regress); the written rule is &quot;description agreement rather than invention agreement&quot;, subject to the high-frequency problems of newcomers, and do not write nonsense such as &quot;be polite&quot;.</li>
+</ul>
+
+<p>Application: Serious multi-party participation (enterprise/foundation) medium and large community projects.</p>
+
+<h3 id="23-nadia-eghbalworking-in-public-维护者注意力经济学">2.3 Nadia Eghbal &quot;Working in Public&quot; - Maintainer Attention Economics</h3>
+
+<p>Link: https://press.stripe.com/working-in-public (Stripe Press, including free electronic version); Cross-verification: https://blas.com/working-in-public/ and other independent book excerpts</p>
+
+<ul>
+  <li><strong>Four quadrants (number of users × number of contributors)</strong>：
+    <ul>
+      <li>Toys (less × less): sideline experimental project</li>
+      <li><strong>Stadiums (more × less): the most common form in modern times</strong>(Babel, webpack), the core problem is curation (screening)</li>
+      <li>Clubs (less × more): Most users are contributors (Astropy)</li>
+      <li>Federations (more × more): Rust, Linux, need to be formally governed</li>
+      <li>The project can be migrated between quadrants (Hadoop grows from stadium to federation)</li>
+    </ul>
+  </li>
+  <li><strong>Contributor stratification</strong>: maintainers (trustee, keystone species) → active contributors (motivation is community/reputation/learning) →<strong>casual contributors</strong>(One-time contribution, transactional motivation; analogy NYC tourists: present ≠ community members. Note that the term is casual, not causal - a common miswriting). In 85%+ projects, less than 5% of developers contributed 95% of the code and social interaction.</li>
+  <li><strong>Maintenance cost structure</strong>: The crisis of modern open source is not that the code is overused, but &quot;the excessive participation of users in the attention of the maintainer makes the work difficult&quot; - the essence of the maintainer&#x27;s work is curation, not maximizing participation; GitHub, as a platform, shifts the focus from online communities to individual creators, providing distribution like brokers; funding structure mismatch: traditional property rights solve the &quot;first version cost&quot;, maintenance is a repeated game, and the cost accumulates over time.</li>
+  <li><strong>Operational proposal for stadiums</strong>: Separation of production and consumption - one-way mirror (code can be freely consumed, channels that limit the consumption of maintainer&#x27;s time), reject extractive contributions (contribution of combining marginal costs exceeding project income), CI/robot/template to reduce front-end costs, and even n=1 mode (one-person maintenance, no external PR).</li>
+  <li><strong>Effectiveness of funding</strong>: Valid = patronage (subscription sponsorship), bounty with clear boundaries, direct funding for individuals (the smaller the project, the more modular it is, the more attractive it is); invalid = compensation casual contributors (their contributions are oversupplied), paywall, micropayments.</li>
+</ul>
+
+<h3 id="24-辅助体系">2.4 Auxiliary system</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>System</th>
+      <th>What is it</th>
+      <th>Assessment dimension</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TODO Group Guide</td>
+      <td>Https://todogroup.org/guides/ 24, Linux Foundation, Enterprise OSPO Perspective</td>
+      <td>Accumulate reputation before setting up a project; only open source &quot;non-core but in production&quot; code,<strong>The open source community must not be regarded as a code dump.</strong>; If there is a similar project, join instead of making a wheel; license/CLA legal review; there is even a guide on how to shut down the project with decenty</td>
+    </tr>
+    <tr>
+      <td>OpenSSF Best Practices Badge</td>
+      <td>Https://www.bestpractices.dev/ Self-certification badge, passing/silver/gold level three</td>
+      <td>Passing six-dimensional: basic information (FLOSS license/document/HTTPS), change control (version number + human-readable release notes), report (bug and vulnerability reporting process + response time limit), quality (automated test), security (encryption algorithm/60 days to fix medium vulnerabilities/do not leak credentials), analysis (static/dynamic analysis)</td>
+    </tr>
+    <tr>
+      <td>OpenSSF Scorecard</td>
+      <td>Https://scorecard.dev/ Public warehouse automatically scores 0-10</td>
+      <td>18 checks: vulnerabilities/dependent update tools/continuous maintenance/security policy/license/CI testing/Fuzzing/SAST/branch protection/code review/multi-organization contributors/pinned dependencies/token permissions/signed releases, etc.; 2026-04 release v5.5.0, active</td>
+    </tr>
+    <tr>
+      <td>CHAOSS</td>
+      <td>Https://chaoss.community/ Community health measurement, 89 indicators + 17 models</td>
+      <td>Commonly used: newcomer conversion rate, contribution type, organizational diversity,<strong>Elephant Factor (elephant factor: the proportion of organizations that contribute the most)</strong>, Contributor Absence Factor, burnout/psychological safety; tool GrimoLab/CollectOSS is active, and a new AI Alignment working group will be established in 2026</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="25-学派间的矛盾与调和重要">2.5 Contradictions and reconcination between schools (important)</h3>
+
+<ol>
+  <li><strong>&quot;Absorb more contributors&quot; vs &quot;Protect attention&quot;</strong>: opensource.guide advocates funnel/good first issue/give permission; WiP believes that stadiums should be filtered by one-way mirror or even n=1. Harmonization:<strong>Divide the quadrant first and then choose the strategy.</strong>——Clubs/federations use the former, and stadiums use the latter; AI slop tide makes the balance further invert to WiP.</li>
+  <li><strong>The logic of commit permission</strong>: opensource.guide when motivation (sense of belonging); Fogel opposes identification and comes with a complete revocation procedure.</li>
+  <li><strong>The timing of formalization of governance</strong>: opensource.guide advocates &quot;formalization after observation&quot;; TODO (enterprise) requires that the project is clear; Fogel compromise: it is agreed to accumulate a certain amount and write it down.</li>
+  <li><strong>The meaning of measurement</strong>: opensource.guide/CHAOSS Treat activities as health signals; the scarce resource of WiP is the attention of the maintainer, and growth is the cost. CHAOSS&#x27;s burnout indicator is actually a quantitative response to WiP concerns.</li>
+  <li><strong>Transparent exception</strong>: Fogel - The discussion of revocation of permissions must be private; the same is true for reporting security vulnerabilities and the code of conduct.</li>
+  <li><strong>Differences in positions</strong>: TODO station enterprise (IP/CLA/legal); WiP/opensource.guide station personal maintainer (burnout/funding individual); WiP quoted Evan You: &quot;The project funded by the company will be cut once it no longer serves the company&#x27;s purpose&quot;.</li>
+</ol>
+
+<p><strong>One-word integration: Fogel gives &quot;how to operate a multi-person collaborative machine&quot;, opensource.guide gives &quot;personal maintainer full-cycle checklist&quot;, TODO gives &quot;how to open source for enterprises&quot;, Badge/Scorecard gives &quot;engineering health bottom line&quot;, CHAOSS gives &quot;health dashboard&quot;, WiP gives &quot;when to do less instead of more&quot;.</strong></p>
+
+<hr/>
+
+<h2 id="三生命周期操作框架">III. Life cycle operation framework</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>What does each system emphasize?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>0 Before the project</strong></td>
+      <td>There is no perfect time, set a goal first; participate in existing projects first to accumulate reputation; only open source &quot;non-core but in production&quot; code; join if there is a similar project; think clearly about which quadrant to go to (toys start, target stadium or federation)</td>
+    </tr>
+    <tr>
+      <td><strong>1 Start</strong></td>
+      <td>Four-piece set LICENSE+README+CONTRIBUTING+CODE_OF_CONDUCT; naming and checking trademarks; public from the first day; Standard Readme structure, Keep a Changelog, SemVer, all-contributors from the first day (avoid retroactive costs); Badge passing level requirements (test/release instructions/security policy) when the bottom line of the project</td>
+    </tr>
+    <tr>
+      <td><strong>2 Find the user</strong></td>
+      <td>Unified homepage; accurate release to the audience gathering place; &quot;help others first&quot;; use discovery → use indicators (Traffic/download/clones); be alert: user growth is the beginning of maintaining debt</td>
+    </tr>
+    <tr>
+      <td><strong>3 Community/Contributor</strong></td>
+      <td>Reduce friction at each stage; 48h first sound; good first issue; public record; zero tolerance for bad behavior; written culture;<strong>Hedging: Judge the quadrant first - the correct action of stadiums is curation rather than &quot;building a community&quot;</strong>; AI slop defense must be added from 2025-26</td>
+    </tr>
+    <tr>
+      <td><strong>4 Governance</strong></td>
+      <td>After observation, formalization vs. The project is clear (depending on the nature of the project); GOVERNANCE.md writes the promotion path; forkability is the foundation; consensus is mainly supplemented by voting; the code of conduct is implemented with Contributor Covenant 3.0 (released in 2025-07); funds select financial sponsors (SFC/Apache/LF/Open Collective)</td>
+    </tr>
+    <tr>
+      <td><strong>5 Long-term maintenance</strong></td>
+      <td>Recording everything, saying No, automation, and anti-burnout are &quot;non-negotiable survival conditions&quot;; SECURITY.md+ private vulnerability report; Scorecard 18 items as a physical examination form; CHAOSS maintainer response/absence factor/burnout index;<strong>A decent withdrawal is also a part of maintenance.</strong>(README indicates the project status at the top, and TODO has a special guide)</td>
+    </tr>
+    <tr>
+      <td><strong>6 (optional) commercialization/funding</strong></td>
+      <td>Five-ask framework; business participation is a normal source of energy; the trade-off of &quot;how much to open and how much to close&quot; of open core; effective funding = patronage/bounty/funding individuals/institutional funds (Sovereign Tech Fund→EU-STF is the mainstream direction of 2024-26); invalid = compensation casual contributors/micropayments</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2 id="四增长-playbook冷启动实战">IV. Growth Playbook (cold start actual battle)</h2>
+
+<p>Based on: PHPStan, Wasp×2, Digger four first-hand review + Dub.co PH list review + Supabase Twitter operation analysis + Charlie Marsh (uv) interview.</p>
+
+<h3 id="41-发布前1-8-周">4.1 Before release (1-8 weeks)</h3>
+
+<ol>
+  <li><strong>Verify the problem before writing the code.</strong>: Wasp did 25 question interviews before doing it. The first milestone was &quot;confirming the four pain points&quot; instead of 100 stars; PHPStan&#x27;s lesson: &quot;Do the most difficult core function first, entangling the name/domain name/home page is a delay&quot;.</li>
+  <li><strong>README is designed by landing page</strong>: Banner→Badges→About A sentence (big words! Examples of &quot;flexible polyglot orchestration framework&quot;, good examples of &quot;a tool to easily integrate widgets&quot;) → visual demo GIF → installation → Quickstart (the goal is to bring users to achieve the first small result) → comparison table → Contributing → License; principle &quot;as short as possible, details go to the document station&quot; (https://www.markepear.dev/blog/github-readme-guide).</li>
+  <li><strong>GitHub in-site SEO is independent of Google</strong>: The warehouse ranking mainly depends on Name+About description+Topics instead of README; the core words enter the warehouse name and About (the shorter the description, the higher the proportion of keywords, and small warehouses can be ranked in front of large warehouses that are 20 times more than star); Topics use words, up to 20.</li>
+  <li><strong>The document station is a front part, not a rear part.</strong>: Wasp&#x27;s key discovery - after the Docusaurus document was built, &quot;the developer&#x27;s willingness to criticize indiscriminately decreased significantly&quot;, and then Reddit broke out. Document = conversion page + long-tail SEO assets: about 80% of the traffic is in the task-level keywords (&quot;How to do X in Y&quot; recipe page), 50 recipes × 50 developers/month ≈ 2500 high-quality visitors per month.</li>
+  <li><strong>Polishing messaging is more important than adding functions.</strong>: Wasp changed from &quot;new programming language&quot; to &quot;with React&quot;&amp;After Node&#x27;s glue layer/less boilerplate&quot;, Reddit posts changed from 20 points to 263/365 likes.</li>
+  <li><strong>Contributor&#x27;s hands-on facilities</strong>: CONTRIBUTING.md + small issue (bug repair, document improvement) + entrance issue with good-first-issue label in advance. Don&#x27;t expect newcomers to do great things: 20 out of 24 PRs in Wasp Hacktoberfest are xs/s level.</li>
+  <li><strong>Community base and materials</strong>: Build Discord in advance and raise an X account (&quot;posting is not a tweet but a continuous sharing process&quot;); PH rotation chart&gt;Video, first comment copy, unified short chain.</li>
+  <li><strong>Reddit account warm-up</strong>: More than 6 months, old account with karma; be a contributor first; 90:10 rule (90% useful content,&lt;10% mention your own project); If you have any questions, please send a private message to the moderator first.</li>
+</ol>
+
+<h3 id="42-发布日">4.2 Release date</h3>
+
+<ol>
+  <li><strong>Show HN writing</strong>: Your own tone is like chatting with old colleagues; prohibit the highest-level adjectives; structure = team → clear in one sentence → why it is difficult/important → background story → plan with technical details → differences → invite feedback;<strong>Reply to comments in seconds after publication</strong>, dig deep into the technical details, never find someone to water, and &quot;agree with the part that can be agreed with first&quot; when criticized - the object of persuasion is the onlookers, not the critic (Fly.io joint creation one person replied 53 comments).</li>
+  <li><strong>Show HN timing</strong>: The probability of the homepage on Sunday 06:00 UTC is about 2.5 times that of Wednesday 09:00 UTC (2018-19 full data analysis); the analysis of 23,000 posts in 2025 also points to Sunday night/Monday early morning (Pacific time).<strong>Consensus: It is more important than the time of selection to keep the comments back in the first hour after sending.</strong></li>
+  <li><strong>Reddit</strong>: Select the right section - r/opensource, r/SideProject allows self-promotion; r/webdev only allows Saturday Showoff Saturday; the best quality conversion comes from the technology stack section (r/reactjs, r/golang); writing = tell a story with numbers (&quot;we cut docker build times by 70%&quot;), and the identity disclosure is at the end. Wasp actual measurement r/javascript 263 likes + r/reactjs 365 likes ≈ 270 stars (single maximum jump).</li>
+  <li><strong>X/Twitter</strong>: Structure = hook → the first two push demo GIF → copyable code → warehouse link → clearly ask for star. The counterexample of Supabase is more inspiring: there is almost no need for long threads, &quot;let thumbnails speak&quot;, announcements with meme (people who don&#x27;t care about functions will also turn meme), every tweet must have visual elements; use Launch Week to turn ordinary iterations into events.</li>
+  <li><strong>Product Hunt (expected value adjustment)</strong>: Dub.co style = Tuesday to Thursday, a week in advance Teaser, 12:01 AM PST online, the first hour 150 upvotes/50 comments, reply to each comment → day/week/month three list No. 1 (1085 votes/2000+ visitors/663 registrations). However, the 2025 consensus is cooling down: 387 published studies show that the PH conversion rate is about 3.1%, far lower than the 23.1% of Indie Hackers essence posts; HN/Reddit is often better for the developer audience, and PH value is more badges/endorses.</li>
+  <li><strong>Multi-channel schedule, don&#x27;t send all of them on the same day.</strong>: Digger actual order = Reddit (r/golang) → YouTube Big V Live → Sunday Show HN → Monday into Golang trending → Tuesday into Global Trending.</li>
+  <li><strong>Trending window logic</strong>: Trending is ranked by<strong>The growth rate of star during the window period is not the total amount</strong>——The 500 star warehouse rose by 300 a day, which can be ranked above the 100,000 star warehouse, which only rose by 50; the official algorithm black box (OSS Insight therefore self-built transparent list). Practical meaning: release the kinetic energy of all channels in 24-48 hours, and &quot;continuous small victories amplify each other&quot;.</li>
+</ol>
+
+<h3 id="43-发布后-30-天">4.3 30 days after release</h3>
+
+<ol>
+  <li><strong>Star request to make explicit CTA</strong>: Prompt bar at the top of the document station (Algolia method), README, and open directly in tweets.</li>
+  <li><strong>Submit PR to the awesome-xxx list</strong>: Read the target list CONTRIBUTING and awesome-lint rules (in alphabetical order, single PR single entry, description ending with a period); the big list can open an issue first.</li>
+  <li><strong>Distribute long articles</strong>: dev.to/Hashnode cross-border official account exposure for the second time; Hashnode can bind custom domain names to retain SEO weight.</li>
+  <li><strong>issue/PR response speed = retention</strong>: PHPStan &quot;responds to every bug and PR&quot;; Digger emphasizes that trending is not feasible to rely on the star growth rate and brush volume of real users (GitHub will clean up fake stars from the end of 2024).</li>
+  <li><strong>Hacktoberfest (October) to attract the first batch of contributors</strong>: Prepare small issues, good-first-issue plus context tags (docs/example), entrance issues, official Discord self-recommendation channels in advance; &quot;No one will come to label only the warehouse, and marketing investment determines the return&quot;.</li>
+  <li><strong>Review and re-release</strong>: Write a long review article for each milestone (the review itself becomes a communication material);<strong>If the release fails once, you can change the message and send it again.</strong>——Wasp only scored 20 points at the start, and a year later, he changed his positioning and went to HN to get 222 points.</li>
+</ol>
+
+<h3 id="44-持续增长">4.4 Continuous growth</h3>
+
+<ol>
+  <li><strong>Document station continuous production recipe</strong>: Each public API is equipped with at least one How-to to monitor the natural landing volume of document pages, document → registration conversion, and &quot;in-site search zero results&quot; to find content gaps.</li>
+  <li><strong>Version is the event</strong>: Supabase-style Launch Week, save the functions into a week of concentrated delivery, pre-announced and post-summary.</li>
+  <li><strong>Ecological level design determines compound interest</strong>(Case evidence):<ul>
+      <li><strong>shadcn/ui</strong>: &quot;This is not a component library, but a way for you to build your own component library&quot; - CLI copies the source code into the user repository (full ownership); the registry mode generates a third-party ecology, and then becomes the default output format of AI coding tools,<strong>The propagation is written into the distribution model itself.</strong>。</li>
+      <li><strong>uv（Astral）</strong>: The entrance is deliberately made<code class="language-plaintext highlighter-rouge">uv pip install</code>The compatibility layer reduces the migration cost, and only pushes the complete interface after 6 months; continuously invests in packaging standards to solve ecological pain points; is adopted by AI coding agents to form a positive cycle, with 126 million monthly downloads - &quot;Growth depends on the download volume is not star&quot; (Interview with Charlie Marsh).</li>
+      <li><strong>Ollama</strong>: Stepping on the outbreak point of the Llama 2 open source model in 2023, Docker experience + OpenAI compatible API becomes the ecological default backend, relying on the natural growth of HN/Reddit.</li>
+      <li><strong>browser-use</strong>: At the end of 2024-2025, seize the agent wave, and the demonstration video will spread virally in X, 50k stars (now 110k+) in a few months, 17 million US dollars in 2025-03, and the core MIT+ cloud service will be realized.</li>
+    </ul>
+  </li>
+  <li><strong>Indicator system: star is a vanity indicator</strong>: Harder signal = package manager download volume, dependents, Docker pulls, forks/clones, number of active contributors, document → registration conversion. Positioning:<strong>Star measures attention, download /dependents/retention to measure and adopt.</strong></li>
+</ol>
+
+<h3 id="45-被反复验证的增长共性8-条">4.5 Repeatedly verified growth commonality (8 articles)</h3>
+
+<ol>
+  <li>There is no magic release day, only a ladder - it&#x27;s normal to start the game, and you can change the message and send it again.</li>
+  <li>Document first - don&#x27;t push it before the document station is built.</li>
+  <li>README = landing page - one-word big word value proposition + first screen demo GIF + one line of installation command + quick start to the first result.</li>
+  <li>Each channel has its own character - HN eats modesty + technical details + second reply; Reddit eats stories + 90:10; X eats visual thumbnails + direct CTA; PH eats heavy preparation but average conversion of developer tools.</li>
+  <li>The timing is in the 24-48h window - Trending is ranked according to the growth rate of the window star, and multi-channel daily scheduling forms a continuous momentum.</li>
+  <li>The cold start of the contributor relies on &quot;small + lead the way + second return&quot; - the value of small PR is to make people become contributors, not clear backlogs.</li>
+  <li>The distribution model itself can be a growth engine - reduce migration costs + allow others to build ecology on you (shadcn copy source code/uv pip compatibility layer/Ollama OpenAI compatible API).</li>
+  <li>Use indicators instead of star to measure success or failure.</li>
+</ol>
+
+<hr/>
+
+<h2 id="五实证数据什么真正有效">V. Evidence data: what is really effective</h2>
+
+<h3 id="强证据同行评审平台级数据">Strong evidence (peer review/platform-level data)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Conclusion</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>16% of popular projects have been abandoned; 41% have been revived by new core developers</td>
+      <td>Avelino and others ESEM 2019 (1,932 projects)</td>
+    </tr>
+    <tr>
+      <td>65% Popular project truck factor ≤2 (losing 1-2 people is paralyzed)</td>
+      <td>Avelino et al. ICPC 2016 (133 projects)</td>
+    </tr>
+    <tr>
+      <td>Star=attention≠use/quality, only weakly related to usage</td>
+      <td>Borges &amp;Valente JSS 2018 (500+ cited)</td>
+    </tr>
+    <tr>
+      <td>In 2019-2024, about 6 million suspected fake stars and 18,617 warehouse stars were detected in total; 16.66% of popular warehouses were swiped at the peak of 2024-07.</td>
+      <td>He etc. ICSE 2026 (CMU StarScout)</td>
+    </tr>
+    <tr>
+      <td>The time from the first action of the newcomer to the receipt of the response significantly affects the retention.</td>
+      <td>Zhou &amp;Mockus IEEE TSE 2015 (cited 189)</td>
+    </tr>
+    <tr>
+      <td>The widely used open source has a value of up to 8.8 trillion US dollars, and about 96% of the demand-side value is produced by about 5% developers.</td>
+      <td>HBS（Hoffmann et al. 2024）</td>
+    </tr>
+    <tr>
+      <td>Copilot coding agent 2025-05 to 09 created more than 1 million PRs; 50% of open source projects at least one maintainer is using Copilot; at the same time, the number of commit comments decreased by 27% - the review bandwidth did not increase synchronously</td>
+      <td>GitHub Octoverse 2025</td>
+    </tr>
+    <tr>
+      <td>The number of duplicate code blocks of more than 5 lines will increase by about 8 times in 2024, and the restructuring will continue to decline.</td>
+      <td>GitClear &quot;AI Copilot Code Quality 2025&quot; (211 million line changes)</td>
+    </tr>
+    <tr>
+      <td>Valkey/OpenTofu/OpenSearch successfully forked (83% of large enterprises are testing Valkey; OpenTofu downloads nearly 10 million)</td>
+      <td>LF/AWS/Percona and other multi-party data</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="中等证据">Medium evidence</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Conclusion</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>README contains contribution guidelines/external links/team information is directly related to popularity (related ≠ cause and effect, and it is more likely that successful projects have resources to write documents)</td>
+      <td>Venigalla 2022 (1,950 README), Wang and other JSS 2023 (5,000 warehouses)</td>
+    </tr>
+    <tr>
+      <td>Only about 63% of the public warehouses on the whole platform have README, 5.5% have contribution guidelines, and 2% have codes of conduct - governance support is generally missing.</td>
+      <td>GitHub Octoverse 2025</td>
+    </tr>
+    <tr>
+      <td>46%-60% maintainers are completely unpaid; 60% have resigned or seriously considered resignation (self-selected sample deviation)</td>
+      <td>Tidelift 2021/2023</td>
+    </tr>
+    <tr>
+      <td>The probability of paid maintainers implementing key security practices is 55% high.</td>
+      <td>Tidelift 2024</td>
+    </tr>
+    <tr>
+      <td>A small sponsorship of about $20 reduces the output of innovation relatively (squeeze out the intrinsic motivation)</td>
+      <td>NBER w31668 (quasi-experiment)</td>
+    </tr>
+    <tr>
+      <td>Only about 2/5 of the developers who actively seek funding have actually received donations.</td>
+      <td>ICSE 2024</td>
+    </tr>
+    <tr>
+      <td>42.7% npm package has not been updated for more than two years (single study)</td>
+      <td>Pu 2025</td>
+    </tr>
+    <tr>
+      <td>Dependabot opens 3 to 4 million repair PR every month, and only about 1/3 of the month is consolidated.</td>
+      <td>Octoverse 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="轶事级但密度高的信号">Anecdotal-level but high-density signals</h3>
+
+<ul>
+  <li>Curl: About 20% of the submissions in 2025 were AI slop, and only 1 of the 6 security reports was true at one time (Daniel Stenberg 2025-07); directly shut down the bug bounty in 2026-01.</li>
+  <li>Google 2026-10 due to the surge of AI submission<strong>Freeze OSS Vulnerability Reward Program Product Vulnerability Channel to 2027</strong>(Platform announcement level).</li>
+  <li>AISI&#x27;s Inspect AI warehouse in the UK was flooded with about 400 generated PRs of AI accounts; Ghostty changed to accept only invited PR.</li>
+  <li>Evidence gap tips: issue response time → direct regression evidence of project survival is weak (the strongest link is response → newcomer retention); AI slop accounts for the exact percentage of PR without authoritative statistics.</li>
+</ul>
+
+<hr/>
+
+<h2 id="六2025-2026-新变量老指南没写的">VI. New variables in 2025-2026 (not written in the old guide)</h2>
+
+<ol>
+  <li><strong>AI slop impact and defense</strong>: From 2026-02, GitHub will solicit community opinions to provide the switch (kill switch) and PR rate limit of &quot;close/restrict public PR&quot;; the tool layer has peakoss/anti-slop (844 stars, GitHub Action, 34 rules automatically detect close slop PR), CodeRabbit triage; freeCodeCamp pilot &quot;checking slop is closed after a few days of downgrade priority&quot;; Zig/NetBSD/Gentoo restricts or prohibits AI generation contributions.<strong>The new project should have an AI contribution policy from the first day.</strong></li>
+  <li><strong>README dual readerization</strong>: AGENTS.md (https://agents.md/, managed by the Linux Foundation, adopted by 60,000+ projects, &quot;README for agents&quot;: build/test commands, code agreement) + llms.txt (https://llmstxt.org/, site-level specification, 2026-08 v2). Mainstream practice = README to give, AGENTS.md to agent. Selenium 2026-09 Official Practice: Release llms.txt index + AGENTS.md rule file, so that agent can only learn the current document to reduce AI PR that &quot;goes in the same way&quot;.</li>
+  <li><strong>License clock pendulum back swing</strong>: Relaxed license → 2018-2023 transfer to source-available (Mongo/Elastic/HashiCorp/Redis) → 2024-2025 partial return to open source (Elastic 2024-09 add back to AGPL, Redis 8 2025-05). 2026 Industry consensus:<strong>AGPL becomes the &quot;new defensive open source default&quot;</strong>(It can restrain cloud manufacturers after passing the legal affairs); the fork won and the original factory could not return (Valkey/OpenTofu/OpenSearch three cases); &quot;Infrastructure selection is now governance decision-making, not just technical decision-making&quot;.</li>
+  <li><strong>Governance anti-textbook</strong>: WordPress/WP Engine conflict (2024-09 Mullenweg blocked WP Engine to access WordPress.org and took over its plug-ins; the court issued a preliminary injunction on 2024-12) - the governance risk of &quot;the nominal community infrastructure is actually under personal control&quot;.</li>
+  <li><strong>Funding institutionalization</strong>: The German Sovereign Tech Fund model is promoted to be expanded to Europe EU-STF in 2025; GitHub Secure Open Source Fund continues to pay for key security maintainers.</li>
+  <li><strong>Maintainers use AI to reduce the burden</strong>: Copilot Code Review users 72.6% think it improves review efficiency; Autofix speeds up vulnerability repair by 3 times + (1.5h→28min). AI is both an impact and a burden reduction tool, and it is accelerating in both directions.</li>
+</ol>
+
+<hr/>
+
+<h2 id="七可直接复用的资产清单">VII. List of assets that can be directly reused</h2>
+
+<h3 id="71-机器可执行的运营基线github-原生">7.1 Machine-executable operational baseline (GitHub native)</h3>
+
+<ul>
+  <li><strong>Community Standards Checklist</strong>(Insights→Community): README, License, Code of Conduct, Contributing, Security policy, Issue Template, PR Template, ACCESSIBILITY.md (new), SUPPORT.md, good first issue label. Https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">.github</code>Special warehouse</strong>: Built in the name of the account<code class="language-plaintext highlighter-rouge">.github</code>Public warehouse, community health files automatically become the default value of all warehouses (change one full account to take effect, do not pollute Git history; except for LICENSE). Https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file</li>
+</ul>
+
+<h3 id="72-自动化工具机器人">7.2 Automated tools/robots</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>What to solve?</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all-contributors bot</td>
+      <td>Comment on a command to automatically generate a README contributor emoji table (recognize non-code contributions)</td>
+      <td>https://allcontributors.org</td>
+    </tr>
+    <tr>
+      <td>semantic-release</td>
+      <td>Analyze conventional commits automatically set version/generate changelog/release</td>
+      <td>https://semantic-release.org</td>
+    </tr>
+    <tr>
+      <td>release-please（Google）</td>
+      <td>Release PR is in loop mode, supporting 20+ languages and monorepo</td>
+      <td>https://github.com/googleapis/release-please</td>
+    </tr>
+    <tr>
+      <td>release-drafter</td>
+      <td>PR merger automatically drafts Release Notes, the lightest plan</td>
+      <td>https://github.com/release-drafter/release-drafter</td>
+    </tr>
+    <tr>
+      <td>Renovate</td>
+      <td>Cross-language dependence automatic update, can schedule noise reduction</td>
+      <td>https://docs.renovatebot.com</td>
+    </tr>
+    <tr>
+      <td>Dependabot</td>
+      <td>GitHub native dependency + security + Actions update</td>
+      <td>https://docs.github.com/en/code-security/dependabot</td>
+    </tr>
+    <tr>
+      <td>actions/stale</td>
+      <td>Automatically mark off long-term inactivity issue/PR</td>
+      <td>https://github.com/actions/stale</td>
+    </tr>
+    <tr>
+      <td>CodeQL</td>
+      <td>Code scanning engine, default setup one-click open</td>
+      <td>https://docs.github.com/en/code-security/code-scanning</td>
+    </tr>
+    <tr>
+      <td>Artifact Attestation</td>
+      <td>Build product signature traceability</td>
+      <td>https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations</td>
+    </tr>
+    <tr>
+      <td>anti-slop</td>
+      <td>34 rules automatic detection off AI slop PR</td>
+      <td>https://github.com/peakoss/anti-slop</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="73-模板与生成器">7.3 Templates and Generators</h3>
+
+<p>Contributing-gen (CLI generation CONTRIBUTING+CoC skeleton), Standard Readme (6.4k stars, specification + generator + badge), choosealicense.com (official license selection wizard), FUNDING.yml (11+ sponsorship platform), Issue Forms (YAML form template, reduce low-quality issue), shields.io (badge fact standard).</p>
+
+<h3 id="74-元资源含中文">7.4 yuan resources (including Chinese)</h3>
+
+<ul>
+  <li>Opensource.guide Simplified Chinese version: https://opensource.guide/zh-hans/</li>
+  <li>&quot;The Way of Open Source Software&quot; (Producing OSS Chinese Version): https://producingoss.com/ Cut Chinese</li>
+  <li>Kaiyuanshe (Kaiyuanshe, OSI China&#x27;s first official partner): &quot;China Open Source Annual Report&quot; https://kaiyuanshe.github.io</li>
+  <li>InfoQ &quot;Community Operation&quot; Special Topic: OpenMLDB, PingCAP and other domestic practical articles</li>
+  <li>Zhihu&#x27;s classic question &quot;How to operate an open source project and achieve greater influence&quot; (from 2017)</li>
+  <li>Checklist warehouse: cfpb/open-source-checklist (687 stars), afonsopacifer/open-source-checklist, eddiejaoude/open-source-repo-checklist</li>
+</ul>
+
+<hr/>
+
+<h2 id="八对当前工作的适配建议">VIII. Suggestions for adapting to the current work</h2>
+
+<ol>
+  <li><strong>AgentMeasure landed directly</strong>: Ten Community Standards + OpenSSF Scorecard as the operation acceptance list (machine can be checked); the first thing worth doing in the growth playbook is - document station first, README recomposing landing page (one sentence + demo GIF + one line installation), GitHub site SEO (About/Topics keywords), and multi-channel schedule on the release day. Corresponding to the existing AgentMeasure<code class="language-plaintext highlighter-rouge">运营/</code>、<code class="language-plaintext highlighter-rouge">市场推广/</code>The table of contents can directly refer to this report.</li>
+  <li><strong>The methodology layer of the open source project library is completed</strong>: Two annotation dimensions can be added to the 100+ research objects in the wide table - the life cycle stage (seven stages in the third section of this report) and the four-quadrant type (stadium/club/federation), so that the case library and methodology can be checked with each other.</li>
+  <li><strong>Linked with famous targets</strong>: Open source projects are the material sources and credibility assets of the media system. In the four candidate directions<strong>Evaluation layer natural GitHub-native</strong>——The leaderboard/benchmark project has strong communication (the distribution logic of the benchmark LMSYS Chatbot Arena), and is consistent with the account insight of &quot;the most effective data content to increase fans&quot;.</li>
+  <li><strong>Worth building your own skill</strong>: Community blank + four-layer materials (content/execution/automation/agentic) are complete, and a &quot;open source project operation&quot; skill can be distilled: trigger words such as &quot;open source project operation&quot;, &quot;launch open source project&quot; and &quot;warehouse physical examination&quot;; acceptance standards directly reuse the Community Standards list. It is recommended to use the skill-creator process, and the content boundary = the second, third, fourth and seventh sections of this report.</li>
+</ol>
+
+<hr/>
+
+<h2 id="九主要来源索引">IX. Main Source Index</h2>
+
+<p><strong>Methodology</strong>: opensource.guide (https://opensource.guide and warehouse) · producingoss.com · Working in Public (press.stripe.com/working-in-public, blas.com/working-in-public) · todogroup.org/guides · bestpractices.dev · scorecard.dev · chaoss.community</p>
+
+<p><strong>First-hand review of growth</strong>: PHPStan 0→1k stars (phpstan.org/blog/how-i-got-from-0-to-1000-stars-on-github-in-three-months-with-my-open-source-side-project) · Wasp 1000 stars (wasp.sh/blog/2022/09/29/journey-to-1000-gh-stars) · Wasp Hacktoberfest (wasp.sh/blog/2022/11/17/hacktoberfest-wrap-up) · Digger trending (medium.com/@DiggerHQ/how-we-got-into--trending-c281f3bb06df9) · Dub.co PH Playbook (dub.co/blog/product-hunt) · Markepear series (markepear.dev/blog) · Charlie Marsh talks uv (pydevtool</p>
+
+<p><strong>Empirical paper</strong>：Avelino 2019（arxiv.org/abs/1906.04821）· Avelino 2016（ICPC）· Borges &amp; Valente 2018（arxiv.org/abs/1811.07643）· He et al. ICSE 2026（arxiv.org/abs/2412.13459）· Zhou &amp; Mockus 2015（IEEE TSE）· Venigalla 2022（arxiv.org/abs/2206.10772）· NBER w31668 · Tidelift 2021/2023/2024 · Octoverse 2024/2025（github.blog）· GitClear 2025（gitclear.com）</p>
+
+<p><strong>AI shock and 2025-26 dynamics</strong>: Daniel Stenberg &quot;death-by-a-thousand-slops&quot; (daniel.haxx.se/blog/2025/07/14) · The Register (GitHub PR kill switch, 2026-02) · TechCrunch (Google OSS VRP freeze, 2026-10) · Selenium official blog (2026-09) · agents.md · llmstxt.org · flowverify 2026 relicensing replay (flowverify.co/blog/open-source-relicensing-2026-what-happened)</p>
+
+<blockquote>
+  <p>Note: A small number of secondary sources have been truncated to the domain name level by the search tool (Syften, Ask HN thread, freeCodeCamp forum post, etc.), which have been indicated in the text; the core conclusions are supported by first-hand sources.</p>
+</blockquote>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>How to make the demand, competitive products, organization and version evidence really support the next decision?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,632 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (error) {}
+        var dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#121513' : '#f4f5f2';
+      })();
+    </script>
+    <meta name="author" content="Roy.Tong">
+    
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261109-1">
+    <link rel="stylesheet" href="/assets/css/knowledge.css?v=20260901-v3">
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://roy-tong.github.io/en/knowledge/materials/open-source-breakout-anatomy/">
+      <link rel="alternate" hreflang="zh-CN" href="https://roy-tong.github.io/knowledge/materials/open-source-breakout-anatomy/">
+      <link rel="alternate" hreflang="x-default" href="https://roy-tong.github.io/knowledge/materials/open-source-breakout-anatomy/">
+    <link type="application/atom+xml" rel="alternate" href="https://roy-tong.github.io/feed.xml" title="Roy.Tong"/>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Anatomy of popular open source projects for civilians: Why are they popular | Roy.Tong</title>
+<meta name="generator" content="Jekyll v3.9.5"/>
+<meta property="og:title" content="平民爆款开源项目解剖：他们凭什么火"/>
+<meta name="author" content="Roy.Tong"/>
+<meta property="og:locale" content="en_US">
+<meta name="description" content="研究日期：2026-10-15 研究方式：在既有 105 项目库基础上，四路并行研究员实网补采（①近 6 周 trending 15 案例 ②2023-2026 经典 AI 爆款 26 案例 ③agent 工具链层 20 项目+成本监控细分位专项 ④非 AI 领域个人爆款 18 对照案例），星数全部当日经 GitHub API/shields.io 实测，HN 分数经 Algolia API 核实，爆发触发器尽量追到具体帖子的链接 回应问题：Roy 10/15 提问——热门开源项目（聚焦非大厂明星团队的平民个人项目）具备什么特点、热门的原因是什么、我们能学习借鉴什么 与既有研究的关系：方法论全景讲”怎么运营一个仓库”，本报告讲”爆款本体长什么样、热度从哪来”。两份互补，本报告的”可借鉴点”一节落到 AgentMeasure 当前基线（219 星 / fork 率 3.7% / 发布不带星）上"/>
+<meta property="og:description" content="研究日期：2026-10-15 研究方式：在既有 105 项目库基础上，四路并行研究员实网补采（①近 6 周 trending 15 案例 ②2023-2026 经典 AI 爆款 26 案例 ③agent 工具链层 20 项目+成本监控细分位专项 ④非 AI 领域个人爆款 18 对照案例），星数全部当日经 GitHub API/shields.io 实测，HN 分数经 Algolia API 核实，爆发触发器尽量追到具体帖子的链接 回应问题：Roy 10/15 提问——热门开源项目（聚焦非大厂明星团队的平民个人项目）具备什么特点、热门的原因是什么、我们能学习借鉴什么 与既有研究的关系：方法论全景讲”怎么运营一个仓库”，本报告讲”爆款本体长什么样、热度从哪来”。两份互补，本报告的”可借鉴点”一节落到 AgentMeasure 当前基线（219 星 / fork 率 3.7% / 发布不带星）上"/>
+<link rel="canonical" href="https://roy-tong.github.io/en/knowledge/materials/open-source-breakout-anatomy/">
+<meta property="og:url" content="https://roy-tong.github.io/en/knowledge/materials/open-source-breakout-anatomy/">
+<meta property="og:site_name" content="Roy.Tong"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T17:26:34+08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="平民爆款开源项目解剖：他们凭什么火"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Roy.Tong"},"dateModified":"2026-11-24T17:26:34+08:00","datePublished":"2026-11-24T17:26:34+08:00","description":"研究日期：2026-10-15 研究方式：在既有 105 项目库基础上，四路并行研究员实网补采（①近 6 周 trending 15 案例 ②2023-2026 经典 AI 爆款 26 案例 ③agent 工具链层 20 项目+成本监控细分位专项 ④非 AI 领域个人爆款 18 对照案例），星数全部当日经 GitHub API/shields.io 实测，HN 分数经 Algolia API 核实，爆发触发器尽量追到具体帖子的链接 回应问题：Roy 10/15 提问——热门开源项目（聚焦非大厂明星团队的平民个人项目）具备什么特点、热门的原因是什么、我们能学习借鉴什么 与既有研究的关系：方法论全景讲”怎么运营一个仓库”，本报告讲”爆款本体长什么样、热度从哪来”。两份互补，本报告的”可借鉴点”一节落到 AgentMeasure 当前基线（219 星 / fork 率 3.7% / 发布不带星）上","headline":"平民爆款开源项目解剖：他们凭什么火","mainEntityOfPage":{"@type":"WebPage","@id":"https://roy-tong.github.io/knowledge/materials/open-source-breakout-anatomy/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://roy-tong.github.io/assets/images/social-preview.png"},"name":"Roy.Tong"},"url":"https://roy-tong.github.io/knowledge/materials/open-source-breakout-anatomy/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    
+    
+    
+    <a class="skip-link" href="#main">Jump to the text</a>
+
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/en/" aria-label="Return to the home page">
+          <span class="brand-mark">R</span>
+          <span>Roy.Tong</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Turn on the navigation">
+          <svg viewbox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+
+        <nav class="nav" id="site-navigation" aria-label="Main navigation">
+          
+            <a href="/en/essays/">Article</a>
+          
+            <a href="/en/knowledge/" aria-current="page">Knowledge base</a>
+          
+            <a href="/en/projects/">Project</a>
+          
+            <a href="/en/about/">About</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+          <div class="nav-tools">
+            <a class="language-toggle" href="/knowledge/materials/open-source-breakout-anatomy/" hreflang="zh-CN" lang="zh-CN" data-language-switch data-target-language="zh-CN" aria-label="View in English" title="View in English">EN</a>
+            <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+              <svg class="theme-icon" viewbox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main"><p class="translation-note" aria-label="Translation note">Machine-assisted translation. <a href="/knowledge/materials/open-source-breakout-anatomy/">Read the Chinese original</a>.</p>
+      
+<article class="shell reading-shell kb-document kb-material-detail kb-v3-material">
+  <nav class="kb-breadcrumb" aria-label="Current position"><a href="/en/knowledge/">Research database</a><span aria-hidden="true">/</span><a href="/en/knowledge/library/">All information</a><span aria-hidden="true">/</span><span aria-current="page">Research report</span></nav>
+
+  <header class="kb-material-header">
+    <p class="kb-resource-label">Research Report · Full Text Disclosure</p>
+    <h1>Dissection of popular open source projects for civilians: Why are they popular?</h1>
+    <p class="kb-summary">Analyze the communication, pain points, demonstration, naming and README mechanisms of small team projects with 164 samples of open source and closed-source operators.</p>
+    <dl class="kb-resource-facts">
+      <div><dt>Data version</dt><dd>V2 Expanded Sample Version · 2026-10-15 Snapshot</dd></div>
+      <div><dt>Recent review</dt><dd><time datetime="2026-10-15">2026.10.15</time></dd></div>
+      <div><dt>Source</dt><dd>Based on the original analysis of public GitHub indicators and public projects</dd></div>
+      <div><dt>Review status</dt><dd>The sample and the suspicious points of the brush star have been marked; the case numbers need to be reviewed when quoting.</dd></div>
+    </dl>
+    <div class="kb-resource-actions" aria-label="Read and download">
+      
+    </div>
+  </header>
+
+  <section class="kb-material-use" aria-labelledby="material-use-heading">
+    <div class="kb-v3-section-intro"><p class="kb-v3-kicker">Use the boundary</p><h2 id="material-use-heading">Look before using it.</h2></div>
+    <div>
+      <article><span>Suitable for answering</span><p>Understand the common conditions for small team open source projects to be seen, tested and disseminated.</p></article>
+      <article><span>Public content</span><p>Public project samples, star health inspection and dissemination mechanism analysis; do not include private growth data.</p></article>
+      <article><span>Can&#x27;t be extrapeded</span><p>Star is an attention signal, not revenue, retention or product value; dynamic numbers must be understood according to the snapshot date.</p></article>
+    </div>
+  </section>
+
+  
+
+  <div class="prose kb-material-body"><ul>
+  <li>Research Date: 2026-10-15</li>
+  <li>Research method: On the basis of the existing 105 project library, four-way parallel researcher real network supplement (1 nearly 6 weeks trending 15 cases 22023-2026 classic AI hot 26 cases 3 agent tool chain layer 20 projects + cost monitoring subdivision special 4 non-AI field personal hot 18 control cases), the number of stars are all measured by GitHub API/shields.io on the same day, HN scores are verified by Algolia API, and the outbreak trigger tries to catch up with the link of specific posts as much as possible</li>
+  <li>Respond to the question: Roy 10/15 Question - What are the characteristics of popular open source projects (focusing on civilian individual projects of non-large factory star teams), what are the reasons for being popular, and what can we learn from?</li>
+  <li>Relationship with existing research:<a href="/en/knowledge/materials/open-source-project-operations/">Methodological Panorama</a>Talk about &quot;how to operate a warehouse&quot;, this report talks about &quot;what does the popular body look like and where does the popularity come from&quot;. The two complement each other. The &quot;reference points&quot; section of this report falls on the current baseline of AgentMeasure (219 stars / fork rate 3.7% / release without stars)</li>
+</ul>
+
+<hr/>
+
+<h2 id="结论速览tldr">Quick view of the conclusion (TL;DR)</h2>
+
+<ol>
+  <li><strong>Six commonalities of popular civilian projects</strong>: High-frequency pain points do not show off skills / Press the scarcity ability to a command / There is a forwardable demonstration within 72 hours / Name is spread / Extremely light form README is product / People are in the waves (wait for waves or make waves).</li>
+  <li><strong>The core of the heat mechanism</strong>: star is an emotional currency, not an indicator. The three motivations of the star are curiosity (AutoGPT), identity statement (caveman forwarding = self-expression), and collection (interview guide star = bookmark). Therefore, &quot;emotional concentration&quot; determines the star level, and &quot;practical degree&quot; determines fork and download.</li>
+  <li><strong>The sharpest data on the cost/measurement track</strong>: Monitor the ceiling ≈19k (ccusage), reduce the ceiling ≈164k (ponytail) - users do not star for &quot;see the bill clearly&quot;, but star for &quot;bill becomes smaller&quot;. AgentMeasure&#x27;s buyer-side recalculation is naturally a narrative of &quot;letting money back&quot;, which is one level higher than monitoring, but the current shell (metering/conformity verification) packages itself to a low level.</li>
+  <li><strong>The three most replicable modes for AgentMeasure</strong>: Aider mode (benchmark report = content marketing, each model release is a traffic event → our equivalent = manufacturer&#x27;s verification list); daily_stock_analysis mode (fork is the monthly reconciliation action deployed, the direct fork rate of 3.7% at the bottom); REA mode (prepare the reprodable showcase and multi-language README before the wave comes, and the third-party post explodes when the wave comes - the author&#x27;s self-recommendation twice 3-4 points, the third-party post 805 points).</li>
+  <li><strong>The anti-textbook is equally valuable.</strong>: toktrack three Show HN all 1-4 points (&quot;faster ccusage&quot; is not what the user wants, the user needs insight and action); skillcheck 29 stars (&quot;evaluation of skill effectiveness&quot; = everyone mentioned but no one made the fire, the popularity of demand has not been verified).</li>
+</ol>
+
+<hr/>
+
+<h2 id="一样本构成与数据卫生">I. Sample composition and data hygiene</h2>
+
+<h3 id="11-样本">1.1 Samples</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Quantity</th>
+      <th>Explain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Existing library (merged-oss.json)</td>
+      <td>105</td>
+      <td>Individual 78+ small team 15+ company 11+ foundation 1, 10/11-12 completed</td>
+    </tr>
+    <tr>
+      <td>Complenishment 1: Outbreak in the past 6 weeks</td>
+      <td>15</td>
+      <td>2026-09/10 trending real capture + TrendShift list cross</td>
+    </tr>
+    <tr>
+      <td>Complenishment 2: Classic AI Hot Model</td>
+      <td>26</td>
+      <td>2023-2026 Four waves: Agent boom/local LLM infrastructure/image generation/new generation agent tool</td>
+    </tr>
+    <tr>
+      <td>Supplement 3: agent tool chain layer</td>
+      <td>20</td>
+      <td>Including cost monitoring/token measurement subdivision 12 project special (directly related to product positioning)</td>
+    </tr>
+    <tr>
+      <td>Supplementary Collection 4: Non-AI Comparison</td>
+      <td>18</td>
+      <td>Development tools/creative vision/content education/hardware four categories</td>
+    </tr>
+    <tr>
+      <td>Total after weight removal</td>
+      <td><strong>164</strong>(Open source page tag actual test)</td>
+      <td>The new case has been warehoused.<code class="language-plaintext highlighter-rouge">数据/agent-e.json</code>(59), the wide table has been regenerated</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>According to Roy&#x27;s scope requirements: mainly in the AI field (make up the AI side of 234 + AI class in the library), non-AI cases only leave the typical control group; Chinese cases only leave structural typical (HowToCook/HelloGitHub = content warehouse prototype, NextChat = one-click deployment virus engine, Ventoy = halo-free pure product model), and the rest are not developed.</p>
+
+<h3 id="12-数据卫生本报告所有星数的前提">1.2 Data hygiene (the premise of all stars in this report)</h3>
+
+<ul>
+  <li><strong>Star inflation is serious in 2026, and the discrimination method = watcher/star ratio</strong>: The ratio of healthy hits is about 0.3-1% (REA 250 watchers/78k stars = 0.3% is the lower limit), and if it is less than 0.2%, it is suspicious. ECC (280,000 stars/1.4k watcher=0.5‰), DeusData/codebase-memory-mcp (46.6k stars/181 watcher=0.4‰) are likely to brush stars. This report only refers to them as &quot;extreme samples of growth engineering&quot;, not evidence of heat. Ponytail (164k stars, watcher ratio 0.23%) is partly doubtful.</li>
+  <li><strong>It is normal, not abnormal, that the HN score is seriously decoupled from the star level.</strong>: fugleramme 2391 points only exchange 3.7k stars; Compositor HN 4 points but 17k stars a month. HN decides the &quot;broke the circle moment&quot;, X/influencer decides the magnitude of stars, and GitHub search determines the long tail of the tool. When evaluating the effect of the channel, it must be looked at separately.</li>
+  <li>The number of stars is all the actual measurement caliber of 2026-10-15, which is only used for grade judgment; the daily growth rate is marked as &quot;unverified&quot; except for StarHistory/media storage certificate.</li>
+</ul>
+
+<hr/>
+
+<h2 id="二爆款平民项目的六个共性特点">II. Six common characteristics of popular civilian projects</h2>
+
+<h3 id="21-高频痛点不炫技">2.1 High-frequency pain points, don&#x27;t show off your skills</h3>
+
+<p>The first thing about the hit is &quot;the problem that everyone will encounter every month&quot;, not the technical difficulty. The evidence of the control group is the cleanest:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Case</th>
+      <th>Star</th>
+      <th>Pain point</th>
+      <th>Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ventoy (Chinese individual longpanda)</td>
+      <td>80k</td>
+      <td>To make the boot disk, you need to format the USB disk repeatedly.</td>
+      <td>Everyone who installs the system encounters</td>
+    </tr>
+    <tr>
+      <td>Fzf (Korean individual junegunn)</td>
+      <td>84k</td>
+      <td>Command line history/file not found</td>
+      <td>Dozens of times a day</td>
+    </tr>
+    <tr>
+      <td>Rufus (French one-person company)</td>
+      <td>38k</td>
+      <td>Install the system boot disk</td>
+      <td>High frequency + Windows just need</td>
+    </tr>
+    <tr>
+      <td>system-design-primer</td>
+      <td>374k</td>
+      <td>There are no free textbooks for the system design interview.</td>
+      <td>All job seekers</td>
+    </tr>
+    <tr>
+      <td>ccusage</td>
+      <td>19k</td>
+      <td>How much did my Claude Code spend?</td>
+      <td>Every subscriber wants to see it.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>On the other side: toktrack used Rust+SIMD to make &quot;faster ccusage&quot;, and the three Show HNs were 1-4 points--<strong>Performance is not what users want, but insight and action.</strong>. If you choose the wrong pain point, no matter how good the project is, it won&#x27;t explode.</p>
+
+<p>The corresponding law of the AI side: the popular AI project also hits high-frequency emotional scenarios - job search (career-ops 74k, ai-job-search 46k), bill anxiety (caveman 112k), interview/resume writing, not &quot;a deep technical problem&quot;.</p>
+
+<h3 id="22-把稀缺昂贵禁忌的能力压到一条命令平民化超能力库内-2646-主标签">2.2 Press the scarce/expensive/taboo ability to one command (&quot;popularized superpower&quot;, in the library 26/46 main label)</h3>
+
+<p>This is the largest label in the existing library (26 times of popularization, far exceeding the second-class irony 8 times). It is still valid after expanding the sample, and can be divided into three subtypes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subtype</th>
+      <th>Case</th>
+      <th>What is compressed?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expensive services are free of charge</td>
+      <td>VoiceStudio 68k (ElevenLabs → local), open-design 100k (Claude Design → free plug-in), Reactive Resume 44k (paid resume wall → self-hosting), drawdb 40k (expensive modeling tool → registration-free web page)</td>
+      <td>Subscription fee + data collection</td>
+    </tr>
+    <tr>
+      <td>A word of ten years of strength</td>
+      <td>REA 259k (reverse engineering → one-word instruction, bridge Ghidra/IDA not self-made), gstack 136k (CEO workflow → fork), marketingskills 54k (marketing consultant → skill package)</td>
+      <td>Expert experience</td>
+    </tr>
+    <tr>
+      <td>Taboo/Locked Ability</td>
+      <td>Heretic 35k (one-click removal of secure alignment), AirCard 6.5k (change Wallet skin without jailbreak), Phosphene (reverse Apple video wallpaper format), AnyPS5 38k (PS5 game running PC)</td>
+      <td>Platform Restrictions/Legal Gray</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Common sentence pattern:<strong>&quot;X, from (expensive/difficult/not allowed) to (a command/free/local)&quot;</strong>——If this sentence can be made clear in one sentence, it is a judgment that is not valid.</p>
+
+<h3 id="23-发布-72-小时内有一个可转发的演示">2.3 There will be a &quot;forwardable presentation&quot; within 72 hours of release</h3>
+
+<p>All outbreak cases in the four research directions, without exception, have a forwardable unit at the time of release. Three forms:</p>
+
+<ol>
+  <li><strong>One sentence penetrates cognition.</strong>: llama.cpp&#x27;s &quot;30B model 6GB memory can be run&quot; (HN 1311 points, the hottest of the whole week); NanoChat&#x27;s &quot;$100 to train your own ChatGPT&quot; (HN 1523 points). Digital contrast + price anchor point into the title.</li>
+  <li><strong>Before and after comparison picture/GIF</strong>: ControlNet&#x27;s graffiti → the finished product comparison chart has been circulating on Twitter for a few days (HN only has 135 points, and the popularity is X); RuView&#x27;s first screen hero GIF.</li>
+  <li><strong>Re-reappearable showcase</strong>: REA&#x27;s DX-Ball reconstruction passed 3205 test cases - not to show you the effect, give you the command to run the effect. This is the only form of trust-based tools (measurement/audit) that can be used, because users must check it by hand to believe it.</li>
+</ol>
+
+<p>Reverse: ECC rushes to 220,000 stars by relying on 16-word README + full badge matrix, but the watcher ratio is 0.5‰--<strong>There is no &quot;advertising space README&quot; that can be forwarded for demonstration. You can&#x27;t buy the real popularity.</strong>。</p>
+
+<h3 id="24-命名即传播">2.4 Name is the spread</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Star</th>
+      <th>Machine-made</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>caveman（”why use many token when few token do trick”）</td>
+      <td>112k</td>
+      <td>Self-mockery + picture sense, forwarding = identity statement</td>
+    </tr>
+    <tr>
+      <td>Ponytail (the laziest senior engineer)</td>
+      <td>164k</td>
+      <td>The resonance of workers</td>
+    </tr>
+    <tr>
+      <td>i-have-adhd</td>
+      <td>56k</td>
+      <td>Neurodiversity identity</td>
+    </tr>
+    <tr>
+      <td>what-happens-when</td>
+      <td>43k</td>
+      <td>Engineer culture meme documentation</td>
+    </tr>
+    <tr>
+      <td>Claw Code (&quot;Museum exhibits are not products&quot;)</td>
+      <td>195k</td>
+      <td>Ironic positioning</td>
+    </tr>
+    <tr>
+      <td>Fooocus by ControlNet author</td>
+      <td>53k</td>
+      <td>Title of the author&#x27;s name = traffic entrance</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The essence of naming is<strong>Give the forwarder a reason to forward</strong>(&quot;This is me&quot;). The ceiling of descriptive naming is the rigid type of tools (relying on searching for long tails, such as cc-switch 145k), not relying on forwarding - the two names correspond to two growth engines, not good or bad.</p>
+
+<h3 id="25-形态极轻readme-即产品--单文件--fork-即用">2.5 Extremely light form: README is the product / single file / fork ready to use</h3>
+
+<ul>
+  <li>The most explosive form in 2026 is<strong>Agent skills/configuration warehouse</strong>(ECC, superpowers 299k, mattpocock/skills 292k, ponytail, universal-modder, gstack are all of these): zero code threshold, README is the product, screenshot is the spread.</li>
+  <li>Single file/zero dependence is a new expression of the old rule: BabyAGI 105 line code = &quot;AGI is so simple&quot; shock; diagram-design self-contained zero dependence &quot;post prompt can be used&quot;; llamafile single file crosses OS double-click to run (HN 1075 points).</li>
+  <li><strong>Fork is deployment</strong>It is an extreme form of morphological leverage: daily_stock_analysis 66k stars 55k forks (fork rate 83%) - fork this repository = get a monthly automatically running server-free analysis system (GitHub Actions when computing power); career-ops 74k stars 13.9k forks (fork to change your resume); NextChat 89k&#x27;s virus engine = Vercel one-click deployment.<strong>Fork rate is the real use signal</strong>(REA 21%, tokentab 27%), which is also the threshold reading of &quot;you can use it&quot;.</li>
+</ul>
+
+<h3 id="26-人在浪里等浪或造浪">2.6 People in the waves: wait for the waves or make waves</h3>
+
+<ul>
+  <li><strong>Supported by waves (most, about 70%)</strong>: cc-switch/claude-mem/ccusage (the derivative demand of Claude Code users), koboldcpp (Windows players will not compile C++), awesome-claude-code (56k stars, pure list, &quot;platform outbreak period navigation is traffic&quot;), DesktopCommanderMCP (write something that no one wants a year in advance, and the MCP protocol is viral growth after the release - the author&#x27;s replay title is called &quot;stick to writing what no one wants until the world changes&quot;). Features: HN score is a digit but the star is very high, spread by GitHub search + list diversion.</li>
+  <li><strong>Make waves by yourself (a few but the star is the highest)</strong>: caveman (make token anxiety into a meme, reversely define the &quot;token diet&quot; category), x1xhlol system prompt collection 144k (everyone is curious about how to write the internal business agent), OpenClaw 392k (build in public daily update theater on X + name change disaster series, every time the lawyer&#x27;s letter is on the headline). Features: story, controversial, identity, HN/Twitter real explosion (90-900 posts).</li>
+  <li><strong>Borrow other people&#x27;s waves</strong>: Open Interpreter is a free replacement due to the official popularity of OpenAI Code Interpreter; browser-use was the only open source alternative when the Operator topic exploded, and later it was exposed to be the bottom of Manus (&quot;we are MELTING under customer demand&quot;); Karpathy Skills 218k = the second-hand information difference of a celebrity&#x27;s complaint tweet.</li>
+</ul>
+
+<hr/>
+
+<h2 id="三热度机制为什么火比特点深一层">III. Heat mechanism: why fire (a layer deeper than the feature)</h2>
+
+<h3 id="31-star-是情绪货币不是采用指标">3.1 star is an emotional currency, not an indicator.</h3>
+
+<p>Three types of point star motives (corresponding to three types of popular models):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Motive</th>
+      <th>Example</th>
+      <th>Evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Be inquisitive</td>
+      <td>AutoGPT 188k</td>
+      <td>The author&#x27;s review of the widely cited conclusion: &quot;star reflects curiosity, not practicality&quot;; the empty window of &quot;AGI demonstration&quot; two weeks after the release of GPT-4</td>
+    </tr>
+    <tr>
+      <td>Identity statement</td>
+      <td>caveman/ponytail/i-have-adhd</td>
+      <td>Forwarding = self-expression (the laziest engineer/ADHD/provincial tokenist), the star is to join the tribe</td>
+    </tr>
+    <tr>
+      <td>Collect and own</td>
+      <td>freeCodeCamp 457k/system-design-primer 374k</td>
+      <td>Star=bookmark; the product use action is bound to the star action (learners take the collection as &quot;start learning&quot;)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Reverse calibration: OctoPrint 9k stars but the installed volume is millions; the htop installation is only 5.9k stars.<strong>Star measurement &quot;want to be seen related to it&quot;, fork/download/install measurement &quot;really in use&quot;</strong>——This is consistent with the judgment of the L0 caliber baseline (Star = attention, fork rate = usability agent), and the 150 cases in this report are another independent evidence.</p>
+
+<h3 id="32-焦虑驱动且解决焦虑分两档监测-vs-削减">3.2 Driven by anxiety, and &quot;solving anxiety&quot; is divided into two levels: monitoring vs reduction</h3>
+
+<p>The hardest finding of cost/measurement track special (12 projects):</p>
+
+<ul>
+  <li><strong>Monitor (let the bill be clear)</strong>: ccusage 19k is an ecological base, and its end (menu bar/wdget/narrative review/leaderboard) are all&lt;500 stars.</li>
+  <li><strong>Cut (make the bill smaller)</strong>: caveman 112k, ponytail 164k, rtk-ai (proxy save 60-90% token) 83k, headroom (compression tool output) 75k.</li>
+  <li>Conclusion:<strong>Users don&#x27;t star for &quot;seeing the bill clearly&quot;, but for &quot;the bill becomes smaller&quot;</strong>. Caveman even the commercialization of the trend &quot;Caveman Cloud: observability + evals + automatic cost reduction&quot; - the end of the evaluation is to save money.</li>
+</ul>
+
+<p>The same file is repeated on job search anxiety (less stars for resume scoring tools, more stars for &quot;agent to help you get an offer&quot;) and privacy anxiety (few stars for privacy, more stars for local running).</p>
+
+<h3 id="33-争议与镇压是燃料streisand-效应真实存在">3.3 Controversy and suppression are fuel (the Streisand effect is real)</h3>
+
+<ul>
+  <li>Gpt4free: Received OpenAI/Google lawyer&#x27;s letter off the shelves → off-shelf news on HN homepage 279 points → doubled stars in a week → now 67k.</li>
+  <li>OpenClaw: Anthropic trademark lawyer&#x27;s letter was forced to change its name twice + the warehouse was briefly hijacked by encryption scammers - every disaster is in the headlines, and the narrative of &quot;GitHub&#x27;s fastest growing project in history&quot; is itself a disaster.</li>
+  <li>Bitchat: The Indian government&#x27;s request to remove the shelves = the strongest advertisement.</li>
+  <li>The question was made into a secondary dissemination: gstack responded to the question with 810×/240× productivity data + &quot;LOC controversy&quot; special file; fugleramme was accused of replacing AI illustrations with real illustrator&#x27;s originals that week after a creative crash, and the controversy pushed up the heat (Show HN 2391 points).</li>
+</ul>
+
+<p>Applicable boundary: The controversy must be &quot;others beat you&quot; (suppression record), and the initiative to provoke is ineffective and has backlash.</p>
+
+<h3 id="34-分发先于项目名人存量受众">3.4 Distribution ahead of the project (celebrity/stoll audience)</h3>
+
+<ul>
+  <li><strong>The distributor is hot before the project.</strong>: Skills for Real Engineers 292k - The author first has 60,000 subscribers to the newsletter and then sends the warehouse; mattpocock/skills 292k (50,000 fans).</li>
+  <li><strong>Second-hand information of celebrities is poor</strong>: Karpathy a tweet of complaint → single file productization → 218k stars; gstack=YC CEO&#x27;s self-use configuration 136k.</li>
+  <li><strong>Quantitative comparison of celebrity aura</strong>: garrytan/gstack and addyosmani/agent-skills content are essentially the same (engineering skills set), and the star difference is all in the author.</li>
+  <li>Substitute for ordinary people when there is no stock distribution:<strong>Third-party endorsement chain</strong>——REA author self-pushed Show HN twice (3 points, 4 points) no one was interested, third-party user post 805 points exploded (HN&#x27;s punishment for self-promotion is obvious); Excalidraw actively attracted contributors with &quot;14-day MVP + public review blog&quot;.</li>
+</ul>
+
+<h3 id="35-生态空窗位与寄生位">3.5 Ecological empty window position and parasitic position</h3>
+
+<ul>
+  <li><strong>Drop-in alternative is the channel</strong>: LocalAI (OpenAI API fully compatible) - &quot;All OpenAI tutorials automatically become its tutorials&quot;.</li>
+  <li><strong>The directory is the traffic.</strong>: awesome 519k (the format is forked into a meme, and others fork your format to expand for you); awesome-claude-code 56k (Claude Code&#x27;s first stop of newcomers in the outbreak period); HelloGitHub 161k (the &quot;discovery&quot; entrance of the Chinese circle).</li>
+  <li><strong>Positive cycle of dependence on fact standards</strong>: browser-use was installed by Manus after 1 million pip was adopted; shadcn/ui was output by default by AI coding tool; ripgrep was adopted by VS Code. Being embedded in other people&#x27;s distribution = automatic growth.</li>
+  <li><strong>Trigger the strong binding of channel and project type</strong>(150 cases horizontally):</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Main channel</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Infrastructure/Performance Narrative</td>
+      <td>HN</td>
+      <td>Llama.cpp (989+1311 points), ripgrep (blog + HN headline), llamafile (1075 points)</td>
+    </tr>
+    <tr>
+      <td>Agent/Visual Presentation</td>
+      <td>X/Twitter</td>
+      <td>AutoGPT、Cline、browser-use、ControlNet</td>
+    </tr>
+    <tr>
+      <td>Vertical circle</td>
+      <td>Reddit/Forum</td>
+      <td>koboldcpp(r/LocalLLaMA), ComfyUI(r/StableDiffusion), Ventoy(HN Repeat)</td>
+    </tr>
+    <tr>
+      <td>The tools are just needed.</td>
+      <td>GitHub Search + List</td>
+      <td>cc-switch、ccusage、awesome-claude-code</td>
+    </tr>
+    <tr>
+      <td>Chinese circle</td>
+      <td>GitHubDaily/X Chinese + Official Account</td>
+      <td>HowToLiveBetter(5 weeks 63k), Cherry Studio</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="36-增长曲线有双峰爆款脉冲-vs-十年长青">3.6 The growth curve has double peaks: hot pulse vs ten years of evergreen</h3>
+
+<ul>
+  <li><strong>Content/Educational</strong>: Fast up and down, binding macro cycle (system-design-primer with FAANG interview fever; freeCodeCamp with learning programming fever).</li>
+  <li><strong>Tool type</strong>: Slow burning but the curve is extremely long - fzf/Ventoy/Rufus ten-year dimension is still rising; jq After the author fades out, the community takes over and continues to be evergreen (&quot;de-founderization&quot;).</li>
+  <li><strong>Release is the peak type.</strong>: llamafile (1075 points on the day of release, then decay).</li>
+  <li><strong>Benchmark report-driven (the most special for us)</strong>: Aider slow heat 50k - accumulates authority by continuously releasing rigorous LLM programming benchmark reports, &quot;Every time a new model is released, everyone comes to check the aider list, and the traffic automatically circulates&quot; (two waves of HN 202 points/432 points). This is<strong>The only verified growth engine of methodology/benchmark projects: turn yourself into a public asset that others will quote</strong>。</li>
+</ul>
+
+<hr/>
+
+<h2 id="四对照组不火的共性">IV. Control group: the commonality of not being hot</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Case</th>
+      <th>Star</th>
+      <th>Lesson</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>toktrack</td>
+      <td>195</td>
+      <td>Three Show HN are 1-4 points; &quot;Faster ccusage&quot; (Rust+SIMD) is not what users want - performance is not insight</td>
+    </tr>
+    <tr>
+      <td>skillcheck</td>
+      <td>29</td>
+      <td>The concept of &quot;blindly testing whether skill is really useful&quot; is highly isomorphic to AgentMeasure, but no one makes fire--<strong>&quot;Everyone mentioned&quot; ≠ &quot;The popularity of demand has been verified&quot;</strong></td>
+    </tr>
+    <tr>
+      <td>Agent sandbox/observable layer personal project</td>
+      <td>&lt;300</td>
+      <td>E2B/Langfuse and other company sites, individuals can&#x27;t run out (company comparison 35.9k/118k)</td>
+    </tr>
+    <tr>
+      <td>Security bit personal projects other than mcp-audit-tool</td>
+      <td>≈0</td>
+      <td>Safety audit level &quot;small warehouses can start quickly&quot; (3 weeks 306 stars), but there is more supply and less running out.</td>
+    </tr>
+    <tr>
+      <td>Kunai T3 small and beautiful 33</td>
+      <td>&lt;8k</td>
+      <td>Common missing three to choose one: no forwarding presentation/no emotional hook/no empty window</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2 id="五对-agentmeasure-的可借鉴点">V. Reference points for AgentMeasure</h2>
+
+<p>Current anchor point (L0 caliber baseline 10/11): 219 stars; fork rate 3.7% (cohort bottom, tokentab 27%/clodfarm 32%); star engine 9/17 stop; v0.6.0 three-channel release only brings back 1 star--<strong>The release is not a star event, but the distribution action is.</strong>(All 150 cases in this report coincide: there is no project that &quot;only relies on the publication of the version to get angry&quot;).</p>
+
+<h3 id="51-定位重排recovery-是主词metering-是从词最锐利的一条">5.1 Positioning rearranging: recovery is the subject, and metering is the subordinate word (the sharpest one)</h3>
+
+<p>The data of monitoring vs reduction is directly applicable to us:<strong>Buyer-side recalculation = the narrative of getting the money back, which belongs to the &quot;bill becomes smaller&quot; file.</strong>, but at present, the external shell (metering/consistency verification/conformance) packages itself into the &quot;see the bill&quot; file. Action order:</p>
+
+<ul>
+  <li>The subject of the first screen of README and the title of the content is changed to money:<code class="language-plaintext highlighter-rouge">recovery/recount/多收了多少钱</code>, metering is reduced to a technical support word;</li>
+  <li>&quot;$20 delivery = FAIL demonstration&quot; is in the right direction - that is the only emotional unit (before and after comparison: manufacturer&#x27;s claim vs recalculation difference);</li>
+  <li>Caveman&#x27;s commercialization path (evaluation → automatic cost reduction closed loop) verifies that &quot;the end of evaluation is to save money&quot;: our reconciliation destination is refund/recovery, which is harder than cost reduction.</li>
+</ul>
+
+<h3 id="52-可复现-showcaserea-模式的信任型变体">5.2 Reproducible showcase (trust variant of REA mode)</h3>
+
+<p>REA&#x27;s DX-Ball &quot;through 3205 test cases&quot; is an example of a trust project. Our equivalents:<strong>Public manufacturer&#x27;s price list + a desensitized real bill + one-click recalculation of differences</strong>With a three-minute link, users can run by their own hands. Existing parts: map_to_fmt002.py, vendor-rules registry, recount –contract, FAIL demonstration. What is missing is to encapsulate it into a public showcase of &quot;one command + one result page&quot; (the current FAIL demonstration is a deliverable, not a public exhibit).</p>
+
+<h3 id="53-fork-即部署的月度对账-action对症-fork-率-37">5.3 fork is the monthly reconciliation Action deployed (symptomatic fork rate 3.7%)</h3>
+
+<p>The structure of daily_stock_analysis: GitHub Actions when computing power + fork is deployment + zero server + push notification, 66k stars 55k forks. Our transplant:<strong>One<code class="language-plaintext highlighter-rouge">.github/workflows/reconcile.yml</code>, after fork, fill in your own manufacturer + billing mailbox, automatically reconcile the account every month and push the difference report to the issue/mail.</strong>. This directly hits the fork rate (the threshold difference of &quot;fork can be used&quot; is the source of the gap of 3.7% vs 27%), and changes the &quot;independent verification&quot; from a claim to the user&#x27;s action.</p>
+
+<h3 id="54-aider-模式把厂商核验榜做成公共资产最可复制">5.4 Aider model: make the manufacturer&#x27;s verification list a public asset (the most replicable)</h3>
+
+<p>Aider&#x27;s growth engine = benchmark report, &quot;Every time a new model is released, everyone comes to check your list&quot;. Our equivalents are already being done, but what is missing is the public assetization of the &quot;list&quot;: the manufacturer claims that the verification series + G2 comment material + Verified Ledger can converge into<strong>A continuously updated &quot;manufacturer&#x27;s claim vs independent recalculation&quot; verification list</strong>. Every time the manufacturer changes the price (Zendesk has changed verified-only=semantic war), every time a new agent platform is released, it is a natural traffic event. The two HN waves (202/432 points) of benchmark content marketing prove that this path is effective for methodological projects.</p>
+
+<h3 id="55-等浪清单浪来之前备好什么">5.5 List of waiting for waves: what to prepare before the waves come</h3>
+
+<p>Cohort birth window 9/16-10/2 = the judgment of category wave is established; buyer-side recalculation is all empty. The probability of the trigger of the wave is<strong>A billing scandal broke out in a big factory.</strong>(Historical precedent: there is a propagation wave every time there is a metering bug event). At that time, the most effective path has been verified by REA: third-party posting (the author&#x27;s self-recommendation twice 3-4 points, third-party post 805 points). What should be prepared now:</p>
+
+<ol>
+  <li>Reprodable showcase (§5.2) - a forwardable unit is needed for others to forward when the wave comes;</li>
+  <li>One-click installation chain (npx/pipx one command results);</li>
+  <li>Category words have been done (topics replacement built-for-agents, etc.); README&#x27;s &quot;expensive/difficult → one command&quot; sentence rearraning (§5.1);</li>
+  <li>List (§5.4) - The warehouse that &quot;continuously monitored here&quot; when the scandal broke out is the only ready-made answer.</li>
+</ol>
+
+<h3 id="56-命名与内容钩子分离">5.6 Separate naming and content hooks</h3>
+
+<p>AgentMeasure is a descriptively named tool for rigid positioning, and it is not recommended to change the name (sunk cost + SEO has accumulated). Only<strong>The content title should use the popular nomenclature.</strong>: The hook of external articles/posts is &quot;how much money was over charged to your AI customer service bill&quot; (emotion + money), not &quot;measurement consistency verification&quot; (no emotion). Naming is the reason for forwarding - giving the forwarder an identity hook of &quot;This is me/this is my pain&quot;.</p>
+
+<h3 id="57-渠道错配自查">5.7 Channel mismatch self-examination</h3>
+
+<p>The current main channel = email outreat (commercial line) + X case post. Comparison channel × type binding table: The corresponding star channel of our project type (tool rigid demand + methodology) is<strong>GitHub search word of mouth + list inclusion (awesome-claude-code and other inclusions) + HN rotation contribution (listed 10/20)</strong>. Mail is a commercial conversion line, not a star line - the two lines are bookkeeping separately, and the star line stoppage cannot be solved by adding mail volume.</p>
+
+<hr/>
+
+<h2 id="六入库存档说明">VI. Storage and archiving instructions</h2>
+
+<ul>
+  <li>The new case has been written<code class="language-plaintext highlighter-rouge">数据/agent-e.json</code>(59, the compact field is consistent with the library, and the cred is marked according to the &quot;real test API&quot; - the four-way researcher 10/15 was tested by API/shields.io), run<code class="language-plaintext highlighter-rouge">生成宽表.py</code>The six-page wide table has been regenerated, and the open source page is 105→164 (individual 129 + small team 23=92.7% civilian subject).</li>
+  <li>Credibility processing: The number of stars of ECC/DeusData is marked in the rsk field; the number of stars of REA is updated to 259k (10/15 actual measurement, and the old value of 78.6k in the library is 10/11 reading); all triggers are linked to the src field.</li>
+  <li>The original research draft of this report (the full text returned by the four-way researcher) has been kept in the session, and the key URLs have been compiled into the src field of JSON for direct tracking.</li>
+</ul>
+</div>
+
+  <section class="kb-related" aria-labelledby="collections-heading"><h2 id="collections-heading">What research does this information belong to?</h2><ul><li><a href="/en/knowledge/collections/product-research/">Product research and organization methods</a><p>How to make the demand, competitive products, organization and version evidence really support the next decision?</p></li></ul></section>
+  <p class="kb-citation">When quoting, please indicate Roy.Tong, title, data version and address of this page. Public reading does not expand the right to redistribute third-party content.<a href="/en/knowledge/method/">Check the inclusion and citation rules</a></p>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Roy.Tong</p>
+          <p>Study how AI becomes products, systems and businesses.</p>
+        </div>
+        <div class="footer-links">
+          
+            <a href="/en/knowledge/">Knowledge base</a>
+          
+            <a href="/en/capability-index/">Ability map</a>
+          
+            <a href="https://github.com/roy-tong/verovo">Verovo</a>
+          
+            <a href="https://x.com/elliwoodtong" rel="me">X / Twitter</a>
+          
+            <a href="https://github.com/roy-tong" rel="me">GitHub</a>
+          
+            <a href="/en/support/">Contact</a>
+          
+            <a href="/feed.xml">RSS</a>
+          
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 Roy.Tong</span>
+        <span>Record the facts, and also keep the process of judging the correction.</span>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js?v=20261124-1"></script>
+    
+  </body>
+</html>
