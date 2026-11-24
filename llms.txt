@@ -56,6 +56,13 @@ Long-form topic hubs under the Research program. Each hub tracks current change,
 
 ### November 2026
 
+- [Askovo: a research database needs transaction semantics](https://roy-tong.github.io/notes/01-askovo-a-research-database-needs-transactions/): Evidence graphs, immutable decision records, request-scoped snapshots, and a deterministic response to contradiction.
+- [Askovo: product research needs a type system, not a confidence score](https://roy-tong.github.io/notes/04-askovo-product-research-needs-a-type-system/): Orthogonal evidence qualification, structural transaction checks, conclusion gates, and hash-bound research handoffs.
+- [Growovo: exactly-once execution is the wrong goal](https://roy-tong.github.io/notes/02-growovo-exactly-once-is-the-wrong-goal/): Approval fingerprints, capability derivation, attempt leases, durable ingress, and independent readback for authorized execution.
+- [Growovo: a scheduler that knows when not to send](https://roy-tong.github.io/notes/05-growovo-a-scheduler-that-knows-when-not-to-send/): Eligibility filters, stable action identity, UTC budgets, stale-draft pruning, adaptive ordering, and channel recovery.
+- [Verovo: deterministic replay for AI charges, with the unknowns intact](https://roy-tong.github.io/notes/03-verovo-deterministic-replay-with-unknowns/): Decimal arithmetic, counting grain, content-addressed revisions, OCR integrity, and line-level buyer disposition.
+- [Verovo: a vendor export is not buyer evidence](https://roy-tong.github.io/notes/06-verovo-a-vendor-export-is-not-buyer-evidence/): Control domains, procedural provenance checks, outcome observer grades, canonical completion axes, and evidence-only handoffs.
+
 - [增长自动化先画渠道矩阵](https://roy-tong.github.io/notes/growth-channel-automation-matrix/): Separate research, content, authorization, execution and outcomes; assign system and human work by channel without treating drafts or send receipts as growth.
 - [从月度总账到续约判断：成功任务成本怎么算](https://roy-tong.github.io/notes/successful-task-cost/): Define buyer-accepted successful tasks, connect invoices to task and acceptance records, and calculate cost only where the evidence supports it.
 - [一个人，一个 Agent，三个产品](https://roy-tong.github.io/notes/one-person-one-agent-three-products/): The current positioning essay — one person runs three products (Askovo research, Verovo verification, Growovo growth) as three roles on one loop: the agent advises, the product kernels execute, the author holds the gate.
